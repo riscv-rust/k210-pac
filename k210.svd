@@ -1,0 +1,342 @@
+<?xml version="1.0" encoding="utf-8"?>
+<device schemaVersion="1.1" xmlns:xs="http://www.w3.org/2001/XMLSchema-instance" xs:noNamespaceSchemaLocation="CMSIS-SVD.xsd" >
+    <vendor>Canaan Inc.</vendor>
+    <name>K210</name>
+    <version>1.0</version>
+    <description>Kendryte K210 64-bit RISC-V CPU</description>
+
+    <addressUnitBits>8</addressUnitBits>
+    <width>64</width>
+    <size>32</size>
+    <access>read-write</access>
+
+    <!-- TODO: remove this -->
+    <resetValue>0x00000000</resetValue>
+    <resetMask>0xFFFFFFFF</resetMask>
+
+    <peripherals>
+        <!-- CLINT -->
+        <peripheral>
+            <name>CLINT</name>
+            <description>Core Local Interruptor</description>
+            <groupName>CLINT</groupName>
+            <baseAddress>0x02000000</baseAddress>
+            <registers>
+                <!-- TODO -->
+            </registers>
+        </peripheral>
+        <!-- CLINT -->
+
+        <!-- PLIC -->
+        <peripheral>
+            <name>PLIC</name>
+            <description>Platform-Level Interrupt Controller</description>
+            <groupName>PLIC</groupName>
+            <baseAddress>0x0C000000</baseAddress>
+            <registers>
+                <!-- TODO -->
+            </registers>
+        </peripheral>
+        <!-- PLIC -->
+
+        <!-- UARTHS -->
+        <peripheral>
+            <name>UARTHS</name>
+            <description>High-speed UART</description>
+            <groupName>UARTHS</groupName>
+            <baseAddress>0x38000000</baseAddress>
+            <registers>
+                <!-- TODO -->
+            </registers>
+        </peripheral>
+        <!-- UARTHS -->
+
+        <!-- GPIOHS -->
+        <peripheral>
+            <name>GPIOHS</name>
+            <description>High-speed GPIO</description>
+            <groupName>GPIOHS</groupName>
+            <baseAddress>0x38001000</baseAddress>
+            <registers>
+                <!-- TODO -->
+            </registers>
+        </peripheral>
+        <!-- GPIOHS -->
+
+        <!-- DMAC -->
+        <peripheral>
+            <name>DMAC</name>
+            <description>Direct Memory Access Controller</description>
+            <groupName>DMAC</groupName>
+            <baseAddress>0x50000000</baseAddress>
+            <registers>
+                <!-- TODO -->
+            </registers>
+        </peripheral>
+        <!-- DMAC -->
+
+        <!-- GPIO -->
+        <peripheral>
+            <name>GPIO</name>
+            <description>General Purpose Input/Output Interface</description>
+            <groupName>GPIO</groupName>
+            <baseAddress>0x50200000</baseAddress>
+            <registers>
+                <!-- TODO -->
+            </registers>
+        </peripheral>
+        <!-- GPIO -->
+
+        <!-- UART1 -->
+        <peripheral>
+            <name>UART1</name>
+            <description>Universal Asynchronous Receiver-Transmitter 1</description>
+            <groupName>UART</groupName>
+            <baseAddress>0x50210000</baseAddress>
+            <registers>
+                <!-- TODO -->
+            </registers>
+        </peripheral>
+        <!-- UART1 -->
+
+        <!-- UART2 -->
+        <peripheral derivedFrom="UART1">
+            <name>UART2</name>
+            <description>Universal Asynchronous Receiver-Transmitter 2</description>
+            <baseAddress>0x50220000</baseAddress>
+        </peripheral>
+        <!-- UART2 -->
+
+        <!-- UART3 -->
+        <peripheral derivedFrom="UART1">
+            <name>UART3</name>
+            <description>Universal Asynchronous Receiver-Transmitter 3</description>
+            <baseAddress>0x50230000</baseAddress>
+        </peripheral>
+        <!-- UART3 -->
+
+        <!-- SPI0 -->
+        <peripheral>
+            <name>SPI0</name>
+            <description>Serial Peripheral Interface 0 (master)</description>
+            <groupName>SPI</groupName>
+            <baseAddress>0x52000000</baseAddress>
+            <registers>
+                <!-- TODO -->
+            </registers>
+        </peripheral>
+        <!-- SPI0 -->
+
+        <!-- SPI1 -->
+        <peripheral derivedFrom="SPI0">
+            <name>SPI1</name>
+            <description>Serial Peripheral Interface 1 (master)</description>
+            <baseAddress>0x53000000</baseAddress>
+        </peripheral>
+        <!-- SPI1 -->
+
+        <!-- SPI2 -->
+        <peripheral derivedFrom="SPI0">
+            <name>SPI2</name>
+            <description>Serial Peripheral Interface 2 (slave)</description>
+            <baseAddress>0x50240000</baseAddress>
+        </peripheral>
+        <!-- SPI2 -->
+
+        <!-- SPI3 -->
+        <peripheral derivedFrom="SPI0">
+            <name>SPI3</name>
+            <description>Serial Peripheral Interface 3 (master)</description>
+            <baseAddress>0x54000000</baseAddress>
+        </peripheral>
+        <!-- SPI3 -->
+
+        <!-- I2S0 -->
+        <peripheral>
+            <name>I2S0</name>
+            <description>Inter-Integrated Sound Interface 0</description>
+            <groupName>I2S</groupName>
+            <baseAddress>0x50250000</baseAddress>
+            <registers>
+                <!-- TODO -->
+            </registers>
+        </peripheral>
+        <!-- I2S0 -->
+
+        <!-- I2S1 -->
+        <peripheral derivedFrom="I2S0">
+            <name>I2S1</name>
+            <description>Inter-Integrated Sound Interface 1</description>
+            <baseAddress>0x50260000</baseAddress>
+        </peripheral>
+        <!-- I2S1 -->
+
+        <!-- I2S2 -->
+        <peripheral derivedFrom="I2S0">
+            <name>I2S2</name>
+            <description>Inter-Integrated Sound Interface 2</description>
+            <baseAddress>0x50270000</baseAddress>
+        </peripheral>
+        <!-- I2S2 -->
+
+        <!-- I2C0 -->
+        <peripheral>
+            <name>I2C0</name>
+            <description>Inter-Integrated Circuit Bus 0</description>
+            <groupName>I2C</groupName>
+            <baseAddress>0x50280000</baseAddress>
+            <registers>
+                <!-- TODO -->
+            </registers>
+        </peripheral>
+        <!-- I2C0 -->
+
+        <!-- I2C1 -->
+        <peripheral derivedFrom="I2C0">
+            <name>I2C1</name>
+            <description>Inter-Integrated Circuit Bus 1</description>
+            <baseAddress>0x50290000</baseAddress>
+        </peripheral>
+        <!-- I2C1 -->
+
+        <!-- I2C2 -->
+        <peripheral derivedFrom="I2C0">
+            <name>I2C2</name>
+            <description>Inter-Integrated Circuit Bus 2</description>
+            <baseAddress>0x502A0000</baseAddress>
+        </peripheral>
+        <!-- I2C2 -->
+
+        <!-- FPIOA -->
+        <peripheral>
+            <name>FPIOA</name>
+            <description>Field Programmable IO Array</description>
+            <groupName>FPIOA</groupName>
+            <baseAddress>0x502B0000</baseAddress>
+            <registers>
+                <!-- TODO -->
+            </registers>
+        </peripheral>
+        <!-- FPIOA -->
+
+        <!-- SHA256 -->
+        <peripheral>
+            <name>SHA256</name>
+            <description>SHA256 Accelerator</description>
+            <groupName>SHA256</groupName>
+            <baseAddress>0x502C0000</baseAddress>
+            <registers>
+                <!-- TODO -->
+            </registers>
+        </peripheral>
+        <!-- SHA256 -->
+
+        <!-- TIMER0 -->
+        <peripheral>
+            <name>TIMER0</name>
+            <description>Timer 0</description>
+            <groupName>TIMER</groupName>
+            <baseAddress>0x502D0000</baseAddress>
+            <registers>
+                <!-- TODO -->
+            </registers>
+        </peripheral>
+        <!-- TIMER0 -->
+
+        <!-- TIMER1 -->
+        <peripheral derivedFrom="TIMER0">
+            <name>TIMER1</name>
+            <description>Timer 1</description>
+            <baseAddress>0x502E0000</baseAddress>
+        </peripheral>
+        <!-- TIMER1 -->
+
+        <!-- TIMER2 -->
+        <peripheral derivedFrom="TIMER0">
+            <name>TIMER2</name>
+            <description>Timer 2</description>
+            <baseAddress>0x502F0000</baseAddress>
+        </peripheral>
+        <!-- TIMER2 -->
+
+        <!-- WDT0 -->
+        <peripheral>
+            <name>WDT0</name>
+            <description>Watchdog Timer 0</description>
+            <groupName>WDT</groupName>
+            <baseAddress>0x50400000</baseAddress>
+            <registers>
+                <!-- TODO -->
+            </registers>
+        </peripheral>
+        <!-- WDT0 -->
+
+        <!-- WDT1 -->
+        <peripheral derivedFrom="WDT0">
+            <name>WDT1</name>
+            <description>Watchdog Timer 1</description>
+            <baseAddress>0x50410000</baseAddress>
+        </peripheral>
+        <!-- WDT1 -->
+
+        <!-- OTP -->
+        <peripheral>
+            <name>OTP</name>
+            <description>One-Time Programmable Memory Controller</description>
+            <groupName>OTP</groupName>
+            <baseAddress>0x50420000</baseAddress>
+            <registers>
+                <!-- TODO -->
+            </registers>
+        </peripheral>
+        <!-- OTP -->
+
+        <!-- DVP -->
+        <peripheral>
+            <name>DVP</name>
+            <description>Digital Video Port</description>
+            <groupName>DVP</groupName>
+            <baseAddress>0x50430000</baseAddress>
+            <registers>
+                <!-- TODO -->
+            </registers>
+        </peripheral>
+        <!-- DVP -->
+
+        <!-- SYSCTL -->
+        <peripheral>
+            <name>SYSCTL</name>
+            <description>System Controller</description>
+            <groupName>SYSCTL</groupName>
+            <baseAddress>0x50440000</baseAddress>
+            <registers>
+                <!-- TODO -->
+            </registers>
+        </peripheral>
+        <!-- SYSCTL -->
+
+        <!-- AES -->
+        <peripheral>
+            <name>AES</name>
+            <description>AES Accelerator</description>
+            <groupName>AES</groupName>
+            <baseAddress>0x50450000</baseAddress>
+            <registers>
+                <!-- TODO -->
+            </registers>
+        </peripheral>
+        <!-- AES -->
+
+        <!-- RTC -->
+        <peripheral>
+            <name>RTC</name>
+            <description>Real Time Clock</description>
+            <groupName>RTC</groupName>
+            <baseAddress>0x50460000</baseAddress>
+            <registers>
+                <!-- TODO -->
+            </registers>
+        </peripheral>
+        <!-- RTC -->
+    </peripherals>
+</device>
