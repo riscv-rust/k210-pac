@@ -23,6 +23,11 @@
             <baseAddress>0x02000000</baseAddress>
             <registers>
                 <!-- TODO -->
+                <register>
+                    <name>dummy</name>
+                    <description>Dummy register: this peripheral is not implemented yet</description>
+                    <addressOffset>0x00</addressOffset>
+                </register>
             </registers>
         </peripheral>
         <!-- CLINT -->
@@ -35,6 +40,11 @@
             <baseAddress>0x0C000000</baseAddress>
             <registers>
                 <!-- TODO -->
+                <register>
+                    <name>dummy</name>
+                    <description>Dummy register: this peripheral is not implemented yet</description>
+                    <addressOffset>0x00</addressOffset>
+                </register>
             </registers>
         </peripheral>
         <!-- PLIC -->
@@ -857,6 +867,11 @@
             <baseAddress>0x50000000</baseAddress>
             <registers>
                 <!-- TODO -->
+                <register>
+                    <name>dummy</name>
+                    <description>Dummy register: this peripheral is not implemented yet</description>
+                    <addressOffset>0x00</addressOffset>
+                </register>
             </registers>
         </peripheral>
         <!-- DMAC -->
@@ -869,6 +884,11 @@
             <baseAddress>0x50200000</baseAddress>
             <registers>
                 <!-- TODO -->
+                <register>
+                    <name>dummy</name>
+                    <description>Dummy register: this peripheral is not implemented yet</description>
+                    <addressOffset>0x00</addressOffset>
+                </register>
             </registers>
         </peripheral>
         <!-- GPIO -->
@@ -881,6 +901,11 @@
             <baseAddress>0x50210000</baseAddress>
             <registers>
                 <!-- TODO -->
+                <register>
+                    <name>dummy</name>
+                    <description>Dummy register: this peripheral is not implemented yet</description>
+                    <addressOffset>0x00</addressOffset>
+                </register>
             </registers>
         </peripheral>
         <!-- UART1 -->
@@ -909,6 +934,11 @@
             <baseAddress>0x52000000</baseAddress>
             <registers>
                 <!-- TODO -->
+                <register>
+                    <name>dummy</name>
+                    <description>Dummy register: this peripheral is not implemented yet</description>
+                    <addressOffset>0x00</addressOffset>
+                </register>
             </registers>
         </peripheral>
         <!-- SPI0 -->
@@ -945,6 +975,11 @@
             <baseAddress>0x50250000</baseAddress>
             <registers>
                 <!-- TODO -->
+                <register>
+                    <name>dummy</name>
+                    <description>Dummy register: this peripheral is not implemented yet</description>
+                    <addressOffset>0x00</addressOffset>
+                </register>
             </registers>
         </peripheral>
         <!-- I2S0 -->
@@ -973,6 +1008,11 @@
             <baseAddress>0x50280000</baseAddress>
             <registers>
                 <!-- TODO -->
+                <register>
+                    <name>dummy</name>
+                    <description>Dummy register: this peripheral is not implemented yet</description>
+                    <addressOffset>0x00</addressOffset>
+                </register>
             </registers>
         </peripheral>
         <!-- I2C0 -->
@@ -1001,6 +1041,11 @@
             <baseAddress>0x502B0000</baseAddress>
             <registers>
                 <!-- TODO -->
+                <register>
+                    <name>dummy</name>
+                    <description>Dummy register: this peripheral is not implemented yet</description>
+                    <addressOffset>0x00</addressOffset>
+                </register>
             </registers>
         </peripheral>
         <!-- FPIOA -->
@@ -1013,6 +1058,11 @@
             <baseAddress>0x502C0000</baseAddress>
             <registers>
                 <!-- TODO -->
+                <register>
+                    <name>dummy</name>
+                    <description>Dummy register: this peripheral is not implemented yet</description>
+                    <addressOffset>0x00</addressOffset>
+                </register>
             </registers>
         </peripheral>
         <!-- SHA256 -->
@@ -1025,6 +1075,11 @@
             <baseAddress>0x502D0000</baseAddress>
             <registers>
                 <!-- TODO -->
+                <register>
+                    <name>dummy</name>
+                    <description>Dummy register: this peripheral is not implemented yet</description>
+                    <addressOffset>0x00</addressOffset>
+                </register>
             </registers>
         </peripheral>
         <!-- TIMER0 -->
@@ -1053,6 +1108,11 @@
             <baseAddress>0x50400000</baseAddress>
             <registers>
                 <!-- TODO -->
+                <register>
+                    <name>dummy</name>
+                    <description>Dummy register: this peripheral is not implemented yet</description>
+                    <addressOffset>0x00</addressOffset>
+                </register>
             </registers>
         </peripheral>
         <!-- WDT0 -->
@@ -1073,6 +1133,11 @@
             <baseAddress>0x50420000</baseAddress>
             <registers>
                 <!-- TODO -->
+                <register>
+                    <name>dummy</name>
+                    <description>Dummy register: this peripheral is not implemented yet</description>
+                    <addressOffset>0x00</addressOffset>
+                </register>
             </registers>
         </peripheral>
         <!-- OTP -->
@@ -1085,6 +1150,11 @@
             <baseAddress>0x50430000</baseAddress>
             <registers>
                 <!-- TODO -->
+                <register>
+                    <name>dummy</name>
+                    <description>Dummy register: this peripheral is not implemented yet</description>
+                    <addressOffset>0x00</addressOffset>
+                </register>
             </registers>
         </peripheral>
         <!-- DVP -->
@@ -1097,6 +1167,11 @@
             <baseAddress>0x50440000</baseAddress>
             <registers>
                 <!-- TODO -->
+                <register>
+                    <name>dummy</name>
+                    <description>Dummy register: this peripheral is not implemented yet</description>
+                    <addressOffset>0x00</addressOffset>
+                </register>
             </registers>
         </peripheral>
         <!-- SYSCTL -->
@@ -1109,6 +1184,11 @@
             <baseAddress>0x50450000</baseAddress>
             <registers>
                 <!-- TODO -->
+                <register>
+                    <name>dummy</name>
+                    <description>Dummy register: this peripheral is not implemented yet</description>
+                    <addressOffset>0x00</addressOffset>
+                </register>
             </registers>
         </peripheral>
         <!-- AES -->
@@ -1121,6 +1201,11 @@
             <baseAddress>0x50460000</baseAddress>
             <registers>
                 <!-- TODO -->
+                <register>
+                    <name>dummy</name>
+                    <description>Dummy register: this peripheral is not implemented yet</description>
+                    <addressOffset>0x00</addressOffset>
+                </register>
             </registers>
         </peripheral>
         <!-- RTC -->
