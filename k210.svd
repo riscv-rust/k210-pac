@@ -1040,11 +1040,98 @@
             <groupName>FPIOA</groupName>
             <baseAddress>0x502B0000</baseAddress>
             <registers>
-                <!-- TODO -->
                 <register>
-                    <name>dummy</name>
-                    <description>Dummy register: this peripheral is not implemented yet</description>
+                    <dim>48</dim>
+                    <dimIncrement>0x04</dimIncrement>
+                    <name>io[%s]</name>
+                    <description>FPIOA GPIO multiplexer io array</description>
                     <addressOffset>0x00</addressOffset>
+                    <fields>
+                        <field>
+                            <name>ch_sel</name>
+                            <description>Channel select from 256 input</description>
+                            <bitRange>[7:0]</bitRange>
+                        </field>
+                        <field>
+                            <name>ds</name>
+                            <description>Driving selector</description>
+                            <bitRange>[11:8]</bitRange>
+                        </field>
+                        <field>
+                            <name>oe_en</name>
+                            <description>Static output enable, will AND with OE_INV</description>
+                            <bitRange>[12:12]</bitRange>
+                        </field>
+                        <field>
+                            <name>oe_inv</name>
+                            <description>Invert output enable</description>
+                            <bitRange>[13:13]</bitRange>
+                        </field>
+                        <field>
+                            <name>do_sel</name>
+                            <description>Data output select: 0 for DO, 1 for OE</description>
+                            <bitRange>[14:14]</bitRange>
+                        </field>
+                        <field>
+                            <name>do_inv</name>
+                            <description>Invert the result of data output select (DO_SEL)</description>
+                            <bitRange>[15:15]</bitRange>
+                        </field>
+                        <field>
+                            <name>pu</name>
+                            <description>Pull up enable. 0 for nothing, 1 for pull up</description>
+                            <bitRange>[16:16]</bitRange>
+                        </field>
+                        <field>
+                            <name>pd</name>
+                            <description>Pull down enable. 0 for nothing, 1 for pull down</description>
+                            <bitRange>[17:17]</bitRange>
+                        </field>
+                        <field>
+                            <name>sl</name>
+                            <description>Slew rate control enable</description>
+                            <bitRange>[19:19]</bitRange>
+                        </field>
+                        <field>
+                            <name>ie_en</name>
+                            <description>Static input enable, will AND with IE_INV</description>
+                            <bitRange>[20:20]</bitRange>
+                        </field>
+                        <field>
+                            <name>ie_inv</name>
+                            <description>Invert input enable</description>
+                            <bitRange>[21:21]</bitRange>
+                        </field>
+                        <field>
+                            <name>di_inv</name>
+                            <description>Invert Data input</description>
+                            <bitRange>[22:22]</bitRange>
+                        </field>
+                        <field>
+                            <name>st</name>
+                            <description>Schmitt trigger</description>
+                            <bitRange>[23:23]</bitRange>
+                        </field>
+                        <field>
+                            <name>pad_di</name>
+                            <description>Read current IO's data input</description>
+                            <bitRange>[31:31]</bitRange>
+                        </field>
+                    </fields>
+                </register>
+                <register>
+                    <dim>8</dim>
+                    <dimIncrement>0x04</dimIncrement>
+                    <name>tie_en[%s]</name>
+                    <description>FPIOA GPIO multiplexer tie enable array</description>
+                    <addressOffset>0xC0</addressOffset>
+                </register>
+                <register>
+                    <dim>8</dim>
+                    <dimIncrement>0x04</dimIncrement>
+                    <name>tie_val[%s]</name>
+                    <description>FPIOA GPIO multiplexer tie value array</description>
+                    <addressOffset>0xE0</addressOffset>
                 </register>
             </registers>
         </peripheral>
