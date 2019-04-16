@@ -23,10 +23,10 @@ impl APB_DATA_WIDTHR {
     }
 }
 #[doc = r" Value of the field"]
-pub struct APB_DATA_WIDTHR {
+pub struct MAX_SPEED_MODER {
     bits: u8,
 }
-impl APB_DATA_WIDTHR {
+impl MAX_SPEED_MODER {
     #[doc = r" Value of the field as raw bits"]
     #[inline]
     pub fn bits(&self) -> u8 {
@@ -157,13 +157,13 @@ impl R {
     }
     #[doc = "Bits 2:3 - MAX_SPEED_MODE"]
     #[inline]
-    pub fn apb_data_width(&self) -> APB_DATA_WIDTHR {
+    pub fn max_speed_mode(&self) -> MAX_SPEED_MODER {
         let bits = {
             const MASK: u8 = 3;
             const OFFSET: u8 = 2;
             ((self.bits >> OFFSET) & MASK as u32) as u8
         };
-        APB_DATA_WIDTHR { bits }
+        MAX_SPEED_MODER { bits }
     }
     #[doc = "Bit 4 - HC_COUNT_VALUES"]
     #[inline]

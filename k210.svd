@@ -1826,7 +1826,7 @@
                             <bitRange>[1:0]</bitRange>
                         </field>
                         <field>
-                            <name>APB_DATA_WIDTH</name>
+                            <name>max_speed_mode</name>
                             <description>MAX_SPEED_MODE</description>
                             <bitRange>[3:2]</bitRange>
                         </field>
