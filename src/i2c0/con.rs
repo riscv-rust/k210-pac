@@ -268,6 +268,7 @@ impl<'a> _MASTER_MODEW<'a> {
     }
 }
 #[doc = "Values that can be written to the field `speed`"]
+#[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SPEEDW {
     #[doc = "STANDARD"]
     STANDARD,
@@ -324,6 +325,7 @@ impl<'a> _SPEEDW<'a> {
     }
 }
 #[doc = "Values that can be written to the field `addr_slave_width`"]
+#[derive(Clone, Copy, Debug, PartialEq)]
 pub enum ADDR_SLAVE_WIDTHW {
     #[doc = "7-bit address"]
     B7,

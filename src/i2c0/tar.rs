@@ -204,6 +204,7 @@ impl<'a> _SPECIALW<'a> {
     }
 }
 #[doc = "Values that can be written to the field `addr_master_width`"]
+#[derive(Clone, Copy, Debug, PartialEq)]
 pub enum ADDR_MASTER_WIDTHW {
     #[doc = "7-bit address"]
     B7,
