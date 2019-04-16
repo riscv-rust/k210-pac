@@ -6,7 +6,7 @@ pub struct R {
 pub struct W {
     bits: u32,
 }
-impl super::DUMMY {
+impl super::SDA_SETUP {
     #[doc = r" Modifies the contents of the register"]
     #[inline]
     pub fn modify<F>(&self, f: F)
@@ -42,11 +42,47 @@ impl super::DUMMY {
         self.write(|w| w)
     }
 }
+#[doc = r" Value of the field"]
+pub struct VALUER {
+    bits: u8,
+}
+impl VALUER {
+    #[doc = r" Value of the field as raw bits"]
+    #[inline]
+    pub fn bits(&self) -> u8 {
+        self.bits
+    }
+}
+#[doc = r" Proxy"]
+pub struct _VALUEW<'a> {
+    w: &'a mut W,
+}
+impl<'a> _VALUEW<'a> {
+    #[doc = r" Writes raw bits to the field"]
+    #[inline]
+    pub unsafe fn bits(self, value: u8) -> &'a mut W {
+        const MASK: u8 = 255;
+        const OFFSET: u8 = 0;
+        self.w.bits &= !((MASK as u32) << OFFSET);
+        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w
+    }
+}
 impl R {
     #[doc = r" Value of the register as raw bits"]
     #[inline]
     pub fn bits(&self) -> u32 {
         self.bits
+    }
+    #[doc = "Bits 0:7 - VALUE"]
+    #[inline]
+    pub fn value(&self) -> VALUER {
+        let bits = {
+            const MASK: u8 = 255;
+            const OFFSET: u8 = 0;
+            ((self.bits >> OFFSET) & MASK as u32) as u8
+        };
+        VALUER { bits }
     }
 }
 impl W {
@@ -60,5 +96,10 @@ impl W {
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.bits = bits;
         self
+    }
+    #[doc = "Bits 0:7 - VALUE"]
+    #[inline]
+    pub fn value(&mut self) -> _VALUEW {
+        _VALUEW { w: self }
     }
 }
