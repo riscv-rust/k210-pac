@@ -95,16 +95,15 @@ impl SPECIALR {
         self.bit()
     }
 }
-#[doc = r" Value of the field"]
-pub struct ADDR_MASTERR {
-    bits: bool,
+#[doc = "Possible values of the field `addr_master_width`"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum ADDR_MASTER_WIDTHR {
+    #[doc = "7-bit address"]
+    B7,
+    #[doc = "10-bit address"]
+    B10,
 }
-impl ADDR_MASTERR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
+impl ADDR_MASTER_WIDTHR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
     #[inline]
     pub fn bit_is_clear(&self) -> bool {
@@ -114,6 +113,33 @@ impl ADDR_MASTERR {
     #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
+    }
+    #[doc = r" Value of the field as raw bits"]
+    #[inline]
+    pub fn bit(&self) -> bool {
+        match *self {
+            ADDR_MASTER_WIDTHR::B7 => false,
+            ADDR_MASTER_WIDTHR::B10 => true,
+        }
+    }
+    #[allow(missing_docs)]
+    #[doc(hidden)]
+    #[inline]
+    pub fn _from(value: bool) -> ADDR_MASTER_WIDTHR {
+        match value {
+            false => ADDR_MASTER_WIDTHR::B7,
+            true => ADDR_MASTER_WIDTHR::B10,
+        }
+    }
+    #[doc = "Checks if the value of the field is `B7`"]
+    #[inline]
+    pub fn is_b7(&self) -> bool {
+        *self == ADDR_MASTER_WIDTHR::B7
+    }
+    #[doc = "Checks if the value of the field is `B10`"]
+    #[inline]
+    pub fn is_b10(&self) -> bool {
+        *self == ADDR_MASTER_WIDTHR::B10
     }
 }
 #[doc = r" Proxy"]
@@ -177,11 +203,46 @@ impl<'a> _SPECIALW<'a> {
         self.w
     }
 }
+#[doc = "Values that can be written to the field `addr_master_width`"]
+pub enum ADDR_MASTER_WIDTHW {
+    #[doc = "7-bit address"]
+    B7,
+    #[doc = "10-bit address"]
+    B10,
+}
+impl ADDR_MASTER_WIDTHW {
+    #[allow(missing_docs)]
+    #[doc(hidden)]
+    #[inline]
+    pub fn _bits(&self) -> bool {
+        match *self {
+            ADDR_MASTER_WIDTHW::B7 => false,
+            ADDR_MASTER_WIDTHW::B10 => true,
+        }
+    }
+}
 #[doc = r" Proxy"]
-pub struct _ADDR_MASTERW<'a> {
+pub struct _ADDR_MASTER_WIDTHW<'a> {
     w: &'a mut W,
 }
-impl<'a> _ADDR_MASTERW<'a> {
+impl<'a> _ADDR_MASTER_WIDTHW<'a> {
+    #[doc = r" Writes `variant` to the field"]
+    #[inline]
+    pub fn variant(self, variant: ADDR_MASTER_WIDTHW) -> &'a mut W {
+        {
+            self.bit(variant._bits())
+        }
+    }
+    #[doc = "7-bit address"]
+    #[inline]
+    pub fn b7(self) -> &'a mut W {
+        self.variant(ADDR_MASTER_WIDTHW::B7)
+    }
+    #[doc = "10-bit address"]
+    #[inline]
+    pub fn b10(self) -> &'a mut W {
+        self.variant(ADDR_MASTER_WIDTHW::B10)
+    }
     #[doc = r" Sets the field bit"]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
@@ -238,13 +299,12 @@ impl R {
     }
     #[doc = "Bit 12 - Master Address"]
     #[inline]
-    pub fn addr_master(&self) -> ADDR_MASTERR {
-        let bits = {
+    pub fn addr_master_width(&self) -> ADDR_MASTER_WIDTHR {
+        ADDR_MASTER_WIDTHR::_from({
             const MASK: bool = true;
             const OFFSET: u8 = 12;
             ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        ADDR_MASTERR { bits }
+        })
     }
 }
 impl W {
@@ -276,7 +336,7 @@ impl W {
     }
     #[doc = "Bit 12 - Master Address"]
     #[inline]
-    pub fn addr_master(&mut self) -> _ADDR_MASTERW {
-        _ADDR_MASTERW { w: self }
+    pub fn addr_master_width(&mut self) -> _ADDR_MASTER_WIDTHW {
+        _ADDR_MASTER_WIDTHW { w: self }
     }
 }

@@ -1040,9 +1040,21 @@
                             </enumeratedValues>
                         </field>
                         <field>
-                            <name>addr_slave</name>
-                            <description>10 bit Slave address</description>
+                            <name>addr_slave_width</name>
+                            <description>Slave address width</description>
                             <bitRange>[3:3]</bitRange>
+                            <enumeratedValues>
+                                <enumeratedValue>
+                                    <name>b7</name>
+                                    <description>7-bit address</description>
+                                    <value>0</value>
+                                </enumeratedValue>
+                                <enumeratedValue>
+                                    <name>b10</name>
+                                    <description>10-bit address</description>
+                                    <value>1</value>
+                                </enumeratedValue>
+                            </enumeratedValues>
                         </field>
                         <field>
                             <name>restart_en</name>
@@ -1087,9 +1099,21 @@
                             <bitRange>[11:11]</bitRange>
                         </field>
                         <field>
-                            <name>addr_master</name>
+                            <name>addr_master_width</name>
                             <description>Master Address</description>
                             <bitRange>[12:12]</bitRange>
+                            <enumeratedValues>
+                                <enumeratedValue>
+                                    <name>b7</name>
+                                    <description>7-bit address</description>
+                                    <value>0</value>
+                                </enumeratedValue>
+                                <enumeratedValue>
+                                    <name>b10</name>
+                                    <description>10-bit address</description>
+                                    <value>1</value>
+                                </enumeratedValue>
+                            </enumeratedValues>
                         </field>
                     </fields>
                 </register>

@@ -113,16 +113,15 @@ impl SPEEDR {
         *self == SPEEDR::HIGHSPEED
     }
 }
-#[doc = r" Value of the field"]
-pub struct ADDR_SLAVER {
-    bits: bool,
+#[doc = "Possible values of the field `addr_slave_width`"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum ADDR_SLAVE_WIDTHR {
+    #[doc = "7-bit address"]
+    B7,
+    #[doc = "10-bit address"]
+    B10,
 }
-impl ADDR_SLAVER {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
+impl ADDR_SLAVE_WIDTHR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
     #[inline]
     pub fn bit_is_clear(&self) -> bool {
@@ -132,6 +131,33 @@ impl ADDR_SLAVER {
     #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
+    }
+    #[doc = r" Value of the field as raw bits"]
+    #[inline]
+    pub fn bit(&self) -> bool {
+        match *self {
+            ADDR_SLAVE_WIDTHR::B7 => false,
+            ADDR_SLAVE_WIDTHR::B10 => true,
+        }
+    }
+    #[allow(missing_docs)]
+    #[doc(hidden)]
+    #[inline]
+    pub fn _from(value: bool) -> ADDR_SLAVE_WIDTHR {
+        match value {
+            false => ADDR_SLAVE_WIDTHR::B7,
+            true => ADDR_SLAVE_WIDTHR::B10,
+        }
+    }
+    #[doc = "Checks if the value of the field is `B7`"]
+    #[inline]
+    pub fn is_b7(&self) -> bool {
+        *self == ADDR_SLAVE_WIDTHR::B7
+    }
+    #[doc = "Checks if the value of the field is `B10`"]
+    #[inline]
+    pub fn is_b10(&self) -> bool {
+        *self == ADDR_SLAVE_WIDTHR::B10
     }
 }
 #[doc = r" Value of the field"]
@@ -297,11 +323,46 @@ impl<'a> _SPEEDW<'a> {
         self.w
     }
 }
+#[doc = "Values that can be written to the field `addr_slave_width`"]
+pub enum ADDR_SLAVE_WIDTHW {
+    #[doc = "7-bit address"]
+    B7,
+    #[doc = "10-bit address"]
+    B10,
+}
+impl ADDR_SLAVE_WIDTHW {
+    #[allow(missing_docs)]
+    #[doc(hidden)]
+    #[inline]
+    pub fn _bits(&self) -> bool {
+        match *self {
+            ADDR_SLAVE_WIDTHW::B7 => false,
+            ADDR_SLAVE_WIDTHW::B10 => true,
+        }
+    }
+}
 #[doc = r" Proxy"]
-pub struct _ADDR_SLAVEW<'a> {
+pub struct _ADDR_SLAVE_WIDTHW<'a> {
     w: &'a mut W,
 }
-impl<'a> _ADDR_SLAVEW<'a> {
+impl<'a> _ADDR_SLAVE_WIDTHW<'a> {
+    #[doc = r" Writes `variant` to the field"]
+    #[inline]
+    pub fn variant(self, variant: ADDR_SLAVE_WIDTHW) -> &'a mut W {
+        {
+            self.bit(variant._bits())
+        }
+    }
+    #[doc = "7-bit address"]
+    #[inline]
+    pub fn b7(self) -> &'a mut W {
+        self.variant(ADDR_SLAVE_WIDTHW::B7)
+    }
+    #[doc = "10-bit address"]
+    #[inline]
+    pub fn b10(self) -> &'a mut W {
+        self.variant(ADDR_SLAVE_WIDTHW::B10)
+    }
     #[doc = r" Sets the field bit"]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
@@ -437,15 +498,14 @@ impl R {
             ((self.bits >> OFFSET) & MASK as u32) as u8
         })
     }
-    #[doc = "Bit 3 - 10 bit Slave address"]
+    #[doc = "Bit 3 - Slave address width"]
     #[inline]
-    pub fn addr_slave(&self) -> ADDR_SLAVER {
-        let bits = {
+    pub fn addr_slave_width(&self) -> ADDR_SLAVE_WIDTHR {
+        ADDR_SLAVE_WIDTHR::_from({
             const MASK: bool = true;
             const OFFSET: u8 = 3;
             ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        ADDR_SLAVER { bits }
+        })
     }
     #[doc = "Bit 5 - Enable Restart"]
     #[inline]
@@ -510,10 +570,10 @@ impl W {
     pub fn speed(&mut self) -> _SPEEDW {
         _SPEEDW { w: self }
     }
-    #[doc = "Bit 3 - 10 bit Slave address"]
+    #[doc = "Bit 3 - Slave address width"]
     #[inline]
-    pub fn addr_slave(&mut self) -> _ADDR_SLAVEW {
-        _ADDR_SLAVEW { w: self }
+    pub fn addr_slave_width(&mut self) -> _ADDR_SLAVE_WIDTHW {
+        _ADDR_SLAVE_WIDTHW { w: self }
     }
     #[doc = "Bit 5 - Enable Restart"]
     #[inline]
