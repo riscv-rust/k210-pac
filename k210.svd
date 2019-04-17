@@ -2061,11 +2061,97 @@
             <groupName>TIMER</groupName>
             <baseAddress>0x502D0000</baseAddress>
             <registers>
-                <!-- TODO -->
+                <cluster>
+                    <name>channel%s</name>
+                    <description>Channel cluster: load_count, current_value, control, eoi and intr_stat registers</description>
+                    <addressOffset>0x0</addressOffset>
+                    <dim>4</dim>
+                    <dimIndex>0-3</dimIndex>
+                    <dimIncrement>0x14</dimIncrement>
+                    <register>
+                        <!-- TODO -->
+                        <name>load_count</name>
+                        <description>Load Count Register</description>
+                        <addressOffset>0x00</addressOffset>
+                    </register>
+                    <register>
+                        <!-- TODO -->
+                        <name>current_value</name>
+                        <description>Current Value Register</description>
+                        <addressOffset>0x04</addressOffset>
+                    </register>
+                    <register>
+                        <name>control</name>
+                        <description>Control Register</description>
+                        <addressOffset>0x08</addressOffset>
+                        <fields>
+                            <field>
+                                <name>enable</name>
+                                <description>ENABLE</description>
+                                <bitRange>[0:0]</bitRange>
+                            </field>
+                            <field>
+                                <name>user_mode</name>
+                                <description>USER_MODE</description>
+                                <bitRange>[1:1]</bitRange>
+                            </field>
+                            <field>
+                                <name>interrupt</name>
+                                <description>INTERRUPT_MASK</description>
+                                <bitRange>[2:2]</bitRange>
+                            </field>
+                            <field>
+                                <name>pwm_enable</name>
+                                <description>PWM_ENABLE</description>
+                                <bitRange>[3:3]</bitRange>
+                            </field>
+                        </fields>
+                    </register>
+                    <register>
+                        <!-- TODO -->
+                        <name>eoi</name>
+                        <description>Interrupt Clear Register</description>
+                        <addressOffset>0x0c</addressOffset>
+                    </register>
+                    <register>
+                        <!-- TODO -->
+                        <name>intr_stat</name>
+                        <description>Interrupt Status Register</description>
+                        <addressOffset>0x10</addressOffset>
+                    </register>
+                </cluster>
                 <register>
-                    <name>dummy</name>
-                    <description>Dummy register: this peripheral is not implemented yet</description>
-                    <addressOffset>0x00</addressOffset>
+                    <!-- TODO -->
+                    <name>intr_stat</name>
+                    <description>Interrupt Status Register</description>
+                    <addressOffset>0xa0</addressOffset>
+                </register>
+                <register>
+                    <!-- TODO -->
+                    <name>eoi</name>
+                    <description>Interrupt Clear Register</description>
+                    <addressOffset>0xa4</addressOffset>
+                </register>
+                <register>
+                    <!-- TODO -->
+                    <name>raw_intr_stat</name>
+                    <description>Raw Interrupt Status Register</description>
+                    <addressOffset>0xa8</addressOffset>
+                </register>
+                <register>
+                    <!-- TODO -->
+                    <name>comp_version</name>
+                    <description>Component Version Register</description>
+                    <addressOffset>0xac</addressOffset>
+                </register>
+                <register>
+                    <!-- TODO -->
+                    <name>load_count2%s</name>
+                    <description>Load Count2 Register</description>
+                    <addressOffset>0xb0</addressOffset>
+                    <dim>4</dim>
+                    <dimIndex>0-3</dimIndex>
+                    <dimIncrement>0x4</dimIncrement>
                 </register>
             </registers>
         </peripheral>

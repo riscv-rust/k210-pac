@@ -6,7 +6,7 @@ pub struct R {
 pub struct W {
     bits: u32,
 }
-impl super::TAR {
+impl super::CONTROL {
     #[doc = r" Modifies the contents of the register"]
     #[inline]
     pub fn modify<F>(&self, f: F)
@@ -43,21 +43,10 @@ impl super::TAR {
     }
 }
 #[doc = r" Value of the field"]
-pub struct ADDRESSR {
-    bits: u16,
-}
-impl ADDRESSR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u16 {
-        self.bits
-    }
-}
-#[doc = r" Value of the field"]
-pub struct GCR {
+pub struct ENABLER {
     bits: bool,
 }
-impl GCR {
+impl ENABLER {
     #[doc = r" Value of the field as raw bits"]
     #[inline]
     pub fn bit(&self) -> bool {
@@ -75,10 +64,10 @@ impl GCR {
     }
 }
 #[doc = r" Value of the field"]
-pub struct SPECIALR {
+pub struct USER_MODER {
     bits: bool,
 }
-impl SPECIALR {
+impl USER_MODER {
     #[doc = r" Value of the field as raw bits"]
     #[inline]
     pub fn bit(&self) -> bool {
@@ -95,15 +84,16 @@ impl SPECIALR {
         self.bit()
     }
 }
-#[doc = "Possible values of the field `addr_master_width`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum ADDR_MASTER_WIDTHR {
-    #[doc = "7-bit address"]
-    B7,
-    #[doc = "10-bit address"]
-    B10,
+#[doc = r" Value of the field"]
+pub struct INTERRUPTR {
+    bits: bool,
 }
-impl ADDR_MASTER_WIDTHR {
+impl INTERRUPTR {
+    #[doc = r" Value of the field as raw bits"]
+    #[inline]
+    pub fn bit(&self) -> bool {
+        self.bits
+    }
     #[doc = r" Returns `true` if the bit is clear (0)"]
     #[inline]
     pub fn bit_is_clear(&self) -> bool {
@@ -114,43 +104,45 @@ impl ADDR_MASTER_WIDTHR {
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
+}
+#[doc = r" Value of the field"]
+pub struct PWM_ENABLER {
+    bits: bool,
+}
+impl PWM_ENABLER {
     #[doc = r" Value of the field as raw bits"]
     #[inline]
     pub fn bit(&self) -> bool {
-        match *self {
-            ADDR_MASTER_WIDTHR::B7 => false,
-            ADDR_MASTER_WIDTHR::B10 => true,
-        }
+        self.bits
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
+    #[doc = r" Returns `true` if the bit is clear (0)"]
     #[inline]
-    pub fn _from(value: bool) -> ADDR_MASTER_WIDTHR {
-        match value {
-            false => ADDR_MASTER_WIDTHR::B7,
-            true => ADDR_MASTER_WIDTHR::B10,
-        }
+    pub fn bit_is_clear(&self) -> bool {
+        !self.bit()
     }
-    #[doc = "Checks if the value of the field is `B7`"]
+    #[doc = r" Returns `true` if the bit is set (1)"]
     #[inline]
-    pub fn is_b7(&self) -> bool {
-        *self == ADDR_MASTER_WIDTHR::B7
-    }
-    #[doc = "Checks if the value of the field is `B10`"]
-    #[inline]
-    pub fn is_b10(&self) -> bool {
-        *self == ADDR_MASTER_WIDTHR::B10
+    pub fn bit_is_set(&self) -> bool {
+        self.bit()
     }
 }
 #[doc = r" Proxy"]
-pub struct _ADDRESSW<'a> {
+pub struct _ENABLEW<'a> {
     w: &'a mut W,
 }
-impl<'a> _ADDRESSW<'a> {
+impl<'a> _ENABLEW<'a> {
+    #[doc = r" Sets the field bit"]
+    pub fn set_bit(self) -> &'a mut W {
+        self.bit(true)
+    }
+    #[doc = r" Clears the field bit"]
+    pub fn clear_bit(self) -> &'a mut W {
+        self.bit(false)
+    }
     #[doc = r" Writes raw bits to the field"]
     #[inline]
-    pub unsafe fn bits(self, value: u16) -> &'a mut W {
-        const MASK: u16 = 1023;
+    pub fn bit(self, value: bool) -> &'a mut W {
+        const MASK: bool = true;
         const OFFSET: u8 = 0;
         self.w.bits &= !((MASK as u32) << OFFSET);
         self.w.bits |= ((value & MASK) as u32) << OFFSET;
@@ -158,10 +150,10 @@ impl<'a> _ADDRESSW<'a> {
     }
 }
 #[doc = r" Proxy"]
-pub struct _GCW<'a> {
+pub struct _USER_MODEW<'a> {
     w: &'a mut W,
 }
-impl<'a> _GCW<'a> {
+impl<'a> _USER_MODEW<'a> {
     #[doc = r" Sets the field bit"]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
@@ -174,17 +166,17 @@ impl<'a> _GCW<'a> {
     #[inline]
     pub fn bit(self, value: bool) -> &'a mut W {
         const MASK: bool = true;
-        const OFFSET: u8 = 10;
+        const OFFSET: u8 = 1;
         self.w.bits &= !((MASK as u32) << OFFSET);
         self.w.bits |= ((value & MASK) as u32) << OFFSET;
         self.w
     }
 }
 #[doc = r" Proxy"]
-pub struct _SPECIALW<'a> {
+pub struct _INTERRUPTW<'a> {
     w: &'a mut W,
 }
-impl<'a> _SPECIALW<'a> {
+impl<'a> _INTERRUPTW<'a> {
     #[doc = r" Sets the field bit"]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
@@ -197,52 +189,17 @@ impl<'a> _SPECIALW<'a> {
     #[inline]
     pub fn bit(self, value: bool) -> &'a mut W {
         const MASK: bool = true;
-        const OFFSET: u8 = 11;
+        const OFFSET: u8 = 2;
         self.w.bits &= !((MASK as u32) << OFFSET);
         self.w.bits |= ((value & MASK) as u32) << OFFSET;
         self.w
     }
 }
-#[doc = "Values that can be written to the field `addr_master_width`"]
-pub enum ADDR_MASTER_WIDTHW {
-    #[doc = "7-bit address"]
-    B7,
-    #[doc = "10-bit address"]
-    B10,
-}
-impl ADDR_MASTER_WIDTHW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            ADDR_MASTER_WIDTHW::B7 => false,
-            ADDR_MASTER_WIDTHW::B10 => true,
-        }
-    }
-}
 #[doc = r" Proxy"]
-pub struct _ADDR_MASTER_WIDTHW<'a> {
+pub struct _PWM_ENABLEW<'a> {
     w: &'a mut W,
 }
-impl<'a> _ADDR_MASTER_WIDTHW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: ADDR_MASTER_WIDTHW) -> &'a mut W {
-        {
-            self.bit(variant._bits())
-        }
-    }
-    #[doc = "7-bit address"]
-    #[inline]
-    pub fn b7(self) -> &'a mut W {
-        self.variant(ADDR_MASTER_WIDTHW::B7)
-    }
-    #[doc = "10-bit address"]
-    #[inline]
-    pub fn b10(self) -> &'a mut W {
-        self.variant(ADDR_MASTER_WIDTHW::B10)
-    }
+impl<'a> _PWM_ENABLEW<'a> {
     #[doc = r" Sets the field bit"]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
@@ -255,7 +212,7 @@ impl<'a> _ADDR_MASTER_WIDTHW<'a> {
     #[inline]
     pub fn bit(self, value: bool) -> &'a mut W {
         const MASK: bool = true;
-        const OFFSET: u8 = 12;
+        const OFFSET: u8 = 3;
         self.w.bits &= !((MASK as u32) << OFFSET);
         self.w.bits |= ((value & MASK) as u32) << OFFSET;
         self.w
@@ -267,44 +224,45 @@ impl R {
     pub fn bits(&self) -> u32 {
         self.bits
     }
-    #[doc = "Bits 0:9 - Target Address"]
+    #[doc = "Bit 0 - ENABLE"]
     #[inline]
-    pub fn address(&self) -> ADDRESSR {
+    pub fn enable(&self) -> ENABLER {
         let bits = {
-            const MASK: u16 = 1023;
+            const MASK: bool = true;
             const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u32) as u16
+            ((self.bits >> OFFSET) & MASK as u32) != 0
         };
-        ADDRESSR { bits }
+        ENABLER { bits }
     }
-    #[doc = "Bit 10 - GC_OR_START"]
+    #[doc = "Bit 1 - USER_MODE"]
     #[inline]
-    pub fn gc(&self) -> GCR {
+    pub fn user_mode(&self) -> USER_MODER {
         let bits = {
             const MASK: bool = true;
-            const OFFSET: u8 = 10;
+            const OFFSET: u8 = 1;
             ((self.bits >> OFFSET) & MASK as u32) != 0
         };
-        GCR { bits }
+        USER_MODER { bits }
     }
-    #[doc = "Bit 11 - SPECIAL"]
+    #[doc = "Bit 2 - INTERRUPT_MASK"]
     #[inline]
-    pub fn special(&self) -> SPECIALR {
+    pub fn interrupt(&self) -> INTERRUPTR {
         let bits = {
             const MASK: bool = true;
-            const OFFSET: u8 = 11;
+            const OFFSET: u8 = 2;
             ((self.bits >> OFFSET) & MASK as u32) != 0
         };
-        SPECIALR { bits }
+        INTERRUPTR { bits }
     }
-    #[doc = "Bit 12 - Master Address"]
+    #[doc = "Bit 3 - PWM_ENABLE"]
     #[inline]
-    pub fn addr_master_width(&self) -> ADDR_MASTER_WIDTHR {
-        ADDR_MASTER_WIDTHR::_from({
+    pub fn pwm_enable(&self) -> PWM_ENABLER {
+        let bits = {
             const MASK: bool = true;
-            const OFFSET: u8 = 12;
+            const OFFSET: u8 = 3;
             ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+        };
+        PWM_ENABLER { bits }
     }
 }
 impl W {
@@ -319,24 +277,24 @@ impl W {
         self.bits = bits;
         self
     }
-    #[doc = "Bits 0:9 - Target Address"]
+    #[doc = "Bit 0 - ENABLE"]
     #[inline]
-    pub fn address(&mut self) -> _ADDRESSW {
-        _ADDRESSW { w: self }
+    pub fn enable(&mut self) -> _ENABLEW {
+        _ENABLEW { w: self }
     }
-    #[doc = "Bit 10 - GC_OR_START"]
+    #[doc = "Bit 1 - USER_MODE"]
     #[inline]
-    pub fn gc(&mut self) -> _GCW {
-        _GCW { w: self }
+    pub fn user_mode(&mut self) -> _USER_MODEW {
+        _USER_MODEW { w: self }
     }
-    #[doc = "Bit 11 - SPECIAL"]
+    #[doc = "Bit 2 - INTERRUPT_MASK"]
     #[inline]
-    pub fn special(&mut self) -> _SPECIALW {
-        _SPECIALW { w: self }
+    pub fn interrupt(&mut self) -> _INTERRUPTW {
+        _INTERRUPTW { w: self }
     }
-    #[doc = "Bit 12 - Master Address"]
+    #[doc = "Bit 3 - PWM_ENABLE"]
     #[inline]
-    pub fn addr_master_width(&mut self) -> _ADDR_MASTER_WIDTHW {
-        _ADDR_MASTER_WIDTHW { w: self }
+    pub fn pwm_enable(&mut self) -> _PWM_ENABLEW {
+        _PWM_ENABLEW { w: self }
     }
 }
