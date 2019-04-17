@@ -1,6 +1,3 @@
-#![cfg_attr(feature = "rt", feature(global_asm))]
-#![cfg_attr(feature = "rt", feature(use_extern_macros))]
-#![cfg_attr(feature = "rt", feature(used))]
 #![doc = "Peripheral access API for K210 microcontrollers (generated using svd2rust v0.14.0)\n\nYou can find an overview of the API [here].\n\n[here]: https://docs.rs/svd2rust/0.14.0/svd2rust/#peripheral-api"]
 #![deny(missing_docs)]
 #![deny(warnings)]
@@ -578,8 +575,6 @@ impl Deref for RTC {
 }
 #[doc = "Real Time Clock"]
 pub mod rtc;
-#[allow(renamed_and_removed_lints)]
-#[allow(private_no_mangle_statics)]
 #[no_mangle]
 static mut DEVICE_PERIPHERALS: bool = false;
 #[doc = r" All the peripherals"]
