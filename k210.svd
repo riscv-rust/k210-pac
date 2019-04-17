@@ -3555,11 +3555,235 @@
             <groupName>RTC</groupName>
             <baseAddress>0x50460000</baseAddress>
             <registers>
-                <!-- TODO -->
                 <register>
-                    <name>dummy</name>
-                    <description>Dummy register: this peripheral is not implemented yet</description>
+                    <name>date</name>
+                    <description>Timer date information</description>
                     <addressOffset>0x00</addressOffset>
+                    <fields>
+                        <field>
+                            <name>week</name>
+                            <description>Week. Range [0,6]. 0 is Sunday.</description>
+                            <bitRange>[2:0]</bitRange>
+                            <writeConstraint><range><minimum>0</minimum><maximum>6</maximum></range></writeConstraint>
+                        </field>
+                        <field>
+                            <name>day</name>
+                            <description>Day. Range [1,31] or [1,30] or [1,29] or [1,28]</description>
+                            <bitRange>[12:8]</bitRange>
+                            <writeConstraint><range><minimum>1</minimum><maximum>31</maximum></range></writeConstraint>
+                        </field>
+                        <field>
+                            <name>month</name>
+                            <description>Month. Range [1,12]</description>
+                            <bitRange>[19:16]</bitRange>
+                            <writeConstraint><range><minimum>1</minimum><maximum>12</maximum></range></writeConstraint>
+                        </field>
+                        <field>
+                            <name>year</name>
+                            <description>Year. Range [0,99]</description>
+                            <bitRange>[31:20]</bitRange>
+                            <writeConstraint><range><minimum>0</minimum><maximum>99</maximum></range></writeConstraint>
+                        </field>
+                    </fields>
+                </register>
+                <register>
+                    <name>time</name>
+                    <description>Timer time information</description>
+                    <addressOffset>0x04</addressOffset>
+                    <fields>
+                        <field>
+                            <name>second</name>
+                            <description>Second. Range [0,59]</description>
+                            <bitRange>[15:10]</bitRange>
+                            <writeConstraint><range><minimum>0</minimum><maximum>59</maximum></range></writeConstraint>
+                        </field>
+                        <field>
+                            <name>minute</name>
+                            <description>Minute. Range [0,59]</description>
+                            <bitRange>[21:16]</bitRange>
+                            <writeConstraint><range><minimum>0</minimum><maximum>59</maximum></range></writeConstraint>
+                        </field>
+                        <field>
+                            <name>hour</name>
+                            <description>Hour. Range [0,23]</description>
+                            <bitRange>[28:24]</bitRange>
+                            <writeConstraint><range><minimum>0</minimum><maximum>23</maximum></range></writeConstraint>
+                        </field>
+                    </fields>
+                </register>
+                <register>
+                    <name>alarm_date</name>
+                    <description>Alarm date information</description>
+                    <addressOffset>0x08</addressOffset>
+                    <fields>
+                        <field>
+                            <name>week</name>
+                            <description>Week. Range [0,6]. 0 is Sunday.</description>
+                            <bitRange>[2:0]</bitRange>
+                            <writeConstraint><range><minimum>0</minimum><maximum>6</maximum></range></writeConstraint>
+                        </field>
+                        <field>
+                            <name>day</name>
+                            <description>Day. Range [1,31] or [1,30] or [1,29] or [1,28]</description>
+                            <bitRange>[12:8]</bitRange>
+                            <writeConstraint><range><minimum>1</minimum><maximum>31</maximum></range></writeConstraint>
+                        </field>
+                        <field>
+                            <name>month</name>
+                            <description>Month. Range [1,12]</description>
+                            <bitRange>[19:16]</bitRange>
+                            <writeConstraint><range><minimum>1</minimum><maximum>12</maximum></range></writeConstraint>
+                        </field>
+                        <field>
+                            <name>year</name>
+                            <description>Year. Range [0,99]</description>
+                            <bitRange>[31:20]</bitRange>
+                            <writeConstraint><range><minimum>0</minimum><maximum>99</maximum></range></writeConstraint>
+                        </field>
+                    </fields>
+                </register>
+                <register>
+                    <name>alarm_time</name>
+                    <description>Alarm time information</description>
+                    <addressOffset>0x0c</addressOffset>
+                    <fields>
+                        <field>
+                            <name>second</name>
+                            <description>Second. Range [0,59]</description>
+                            <bitRange>[15:10]</bitRange>
+                            <writeConstraint><range><minimum>0</minimum><maximum>59</maximum></range></writeConstraint>
+                        </field>
+                        <field>
+                            <name>minute</name>
+                            <description>Minute. Range [0,59]</description>
+                            <bitRange>[21:16]</bitRange>
+                            <writeConstraint><range><minimum>0</minimum><maximum>59</maximum></range></writeConstraint>
+                        </field>
+                        <field>
+                            <name>hour</name>
+                            <description>Hour. Range [0,23]</description>
+                            <bitRange>[28:24]</bitRange>
+                            <writeConstraint><range><minimum>0</minimum><maximum>23</maximum></range></writeConstraint>
+                        </field>
+                    </fields>
+                </register>
+                <register>
+                    <name>initial_count</name>
+                    <description>Timer counter initial value</description>
+                    <addressOffset>0x10</addressOffset>
+                    <fields>
+                        <field>
+                            <name>count</name>
+                            <description>RTC counter initial value</description>
+                            <bitRange>[31:0]</bitRange>
+                        </field>
+                    </fields>
+                </register>
+                <register>
+                    <name>current_count</name>
+                    <description>Timer counter current value</description>
+                    <addressOffset>0x14</addressOffset>
+                    <fields>
+                        <field>
+                            <name>count</name>
+                            <description>RTC counter current value</description>
+                            <bitRange>[31:0]</bitRange>
+                        </field>
+                    </fields>
+                </register>
+                <register>
+                    <name>interrupt_ctrl</name>
+                    <description>RTC interrupt settings</description>
+                    <addressOffset>0x18</addressOffset>
+                    <fields>
+                        <field>
+                            <name>tick_enable</name>
+                            <description>TICK_ENABLE</description>
+                            <bitRange>[0:0]</bitRange>
+                        </field>
+                        <field>
+                            <name>alarm_enable</name>
+                            <description>Alarm interrupt enable</description>
+                            <bitRange>[1:1]</bitRange>
+                        </field>
+                        <field>
+                            <name>tick_int_mode</name>
+                            <description>Tick interrupt enable</description>
+                            <bitRange>[3:2]</bitRange>
+                        </field>
+                        <field>
+                            <name>alarm_compare_mask</name>
+                            <description>Alarm compare mask for interrupt</description>
+                            <bitRange>[31:24]</bitRange>
+                        </field>
+                    </fields>
+                </register>
+                <register>
+                    <name>register_ctrl</name>
+                    <description>RTC register settings</description>
+                    <addressOffset>0x1c</addressOffset>
+                    <fields>
+                        <field>
+                            <name>read_enable</name>
+                            <description>RTC timer read enable</description>
+                            <bitRange>[0:0]</bitRange>
+                        </field>
+                        <field>
+                            <name>write_enable</name>
+                            <description>RTC timer write enable</description>
+                            <bitRange>[1:1]</bitRange>
+                        </field>
+                        <field>
+                            <name>timer_mask</name>
+                            <description>RTC timer mask</description>
+                            <bitRange>[20:13]</bitRange>
+                        </field>
+                        <field>
+                            <name>alarm_mask</name>
+                            <description>RTC alarm mask</description>
+                            <bitRange>[28:21]</bitRange>
+                        </field>
+                        <field>
+                            <name>initial_count_mask</name>
+                            <description>RTC counter initial count value mask</description>
+                            <bitRange>[29:29]</bitRange>
+                        </field>
+                        <field>
+                            <name>interrupt_register_mask</name>
+                            <description>RTC interrupt register mask</description>
+                            <bitRange>[30:30]</bitRange>
+                        </field>
+                    </fields>
+                </register>
+                <register>
+                    <name>extended</name>
+                    <description>Timer extended information</description>
+                    <addressOffset>0x28</addressOffset>
+                    <fields>
+                        <field>
+                            <name>century</name>
+                            <description>Century. Range [0,31]</description>
+                            <bitRange>[4:0]</bitRange>
+                            <writeConstraint><range><minimum>0</minimum><maximum>31</maximum></range></writeConstraint>
+                        </field>
+                        <field>
+                            <name>leap_year</name>
+                            <description>Is leap year. 1 is leap year, 0 is not leap year</description>
+                            <bitRange>[4:0]</bitRange>
+                            <enumeratedValues>
+                                <enumeratedValue>
+                                    <name>not_leap</name>
+                                    <description>0 is not leap year</description>
+                                    <value>0</value>
+                                </enumeratedValue>
+                                <enumeratedValue>
+                                    <name>leap</name>
+                                    <description>1 is leap year</description>
+                                    <value>1</value>
+                                </enumeratedValue>
+                            </enumeratedValues>
+                        </field>
+                    </fields>
                 </register>
             </registers>
         </peripheral>
