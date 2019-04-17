@@ -220,16 +220,18 @@ pub struct SPI2 {
 unsafe impl Send for SPI2 {}
 impl SPI2 {
     #[doc = r" Returns a pointer to the register block"]
-    pub fn ptr() -> *const spi0::RegisterBlock {
+    pub fn ptr() -> *const spi2::RegisterBlock {
         1344536576 as *const _
     }
 }
 impl Deref for SPI2 {
-    type Target = spi0::RegisterBlock;
-    fn deref(&self) -> &spi0::RegisterBlock {
+    type Target = spi2::RegisterBlock;
+    fn deref(&self) -> &spi2::RegisterBlock {
         unsafe { &*SPI2::ptr() }
     }
 }
+#[doc = "Serial Peripheral Interface 2 (slave)"]
+pub mod spi2;
 #[doc = "Serial Peripheral Interface 3 (master)"]
 pub struct SPI3 {
     _marker: PhantomData<*const ()>,
@@ -237,16 +239,18 @@ pub struct SPI3 {
 unsafe impl Send for SPI3 {}
 impl SPI3 {
     #[doc = r" Returns a pointer to the register block"]
-    pub fn ptr() -> *const spi0::RegisterBlock {
+    pub fn ptr() -> *const spi3::RegisterBlock {
         1409286144 as *const _
     }
 }
 impl Deref for SPI3 {
-    type Target = spi0::RegisterBlock;
-    fn deref(&self) -> &spi0::RegisterBlock {
+    type Target = spi3::RegisterBlock;
+    fn deref(&self) -> &spi3::RegisterBlock {
         unsafe { &*SPI3::ptr() }
     }
 }
+#[doc = "Serial Peripheral Interface 3 (master)"]
+pub mod spi3;
 #[doc = "Inter-Integrated Sound Interface 0"]
 pub struct I2S0 {
     _marker: PhantomData<*const ()>,
