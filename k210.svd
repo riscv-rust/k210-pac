@@ -3769,7 +3769,7 @@
                         <field>
                             <name>leap_year</name>
                             <description>Is leap year. 1 is leap year, 0 is not leap year</description>
-                            <bitRange>[4:0]</bitRange>
+                            <bitRange>[5:5]</bitRange>
                             <enumeratedValues>
                                 <enumeratedValue>
                                     <name>not_leap</name>

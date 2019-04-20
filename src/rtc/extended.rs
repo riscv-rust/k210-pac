@@ -60,27 +60,33 @@ pub enum LEAP_YEARR {
     NOT_LEAP,
     #[doc = "1 is leap year"]
     LEAP,
-    #[doc = r" Reserved"]
-    _Reserved(u8),
 }
 impl LEAP_YEARR {
+    #[doc = r" Returns `true` if the bit is clear (0)"]
+    #[inline]
+    pub fn bit_is_clear(&self) -> bool {
+        !self.bit()
+    }
+    #[doc = r" Returns `true` if the bit is set (1)"]
+    #[inline]
+    pub fn bit_is_set(&self) -> bool {
+        self.bit()
+    }
     #[doc = r" Value of the field as raw bits"]
     #[inline]
-    pub fn bits(&self) -> u8 {
+    pub fn bit(&self) -> bool {
         match *self {
-            LEAP_YEARR::NOT_LEAP => 0,
-            LEAP_YEARR::LEAP => 1,
-            LEAP_YEARR::_Reserved(bits) => bits,
+            LEAP_YEARR::NOT_LEAP => false,
+            LEAP_YEARR::LEAP => true,
         }
     }
     #[allow(missing_docs)]
     #[doc(hidden)]
     #[inline]
-    pub fn _from(value: u8) -> LEAP_YEARR {
+    pub fn _from(value: bool) -> LEAP_YEARR {
         match value {
-            0 => LEAP_YEARR::NOT_LEAP,
-            1 => LEAP_YEARR::LEAP,
-            i => LEAP_YEARR::_Reserved(i),
+            false => LEAP_YEARR::NOT_LEAP,
+            true => LEAP_YEARR::LEAP,
         }
     }
     #[doc = "Checks if the value of the field is `NOT_LEAP`"]
@@ -121,10 +127,10 @@ impl LEAP_YEARW {
     #[allow(missing_docs)]
     #[doc(hidden)]
     #[inline]
-    pub fn _bits(&self) -> u8 {
+    pub fn _bits(&self) -> bool {
         match *self {
-            LEAP_YEARW::NOT_LEAP => 0,
-            LEAP_YEARW::LEAP => 1,
+            LEAP_YEARW::NOT_LEAP => false,
+            LEAP_YEARW::LEAP => true,
         }
     }
 }
@@ -136,7 +142,9 @@ impl<'a> _LEAP_YEARW<'a> {
     #[doc = r" Writes `variant` to the field"]
     #[inline]
     pub fn variant(self, variant: LEAP_YEARW) -> &'a mut W {
-        unsafe { self.bits(variant._bits()) }
+        {
+            self.bit(variant._bits())
+        }
     }
     #[doc = "0 is not leap year"]
     #[inline]
@@ -148,11 +156,19 @@ impl<'a> _LEAP_YEARW<'a> {
     pub fn leap(self) -> &'a mut W {
         self.variant(LEAP_YEARW::LEAP)
     }
+    #[doc = r" Sets the field bit"]
+    pub fn set_bit(self) -> &'a mut W {
+        self.bit(true)
+    }
+    #[doc = r" Clears the field bit"]
+    pub fn clear_bit(self) -> &'a mut W {
+        self.bit(false)
+    }
     #[doc = r" Writes raw bits to the field"]
     #[inline]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 31;
-        const OFFSET: u8 = 0;
+    pub fn bit(self, value: bool) -> &'a mut W {
+        const MASK: bool = true;
+        const OFFSET: u8 = 5;
         self.w.bits &= !((MASK as u32) << OFFSET);
         self.w.bits |= ((value & MASK) as u32) << OFFSET;
         self.w
@@ -174,13 +190,13 @@ impl R {
         };
         CENTURYR { bits }
     }
-    #[doc = "Bits 0:4 - Is leap year. 1 is leap year, 0 is not leap year"]
+    #[doc = "Bit 5 - Is leap year. 1 is leap year, 0 is not leap year"]
     #[inline]
     pub fn leap_year(&self) -> LEAP_YEARR {
         LEAP_YEARR::_from({
-            const MASK: u8 = 31;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
+            const MASK: bool = true;
+            const OFFSET: u8 = 5;
+            ((self.bits >> OFFSET) & MASK as u32) != 0
         })
     }
 }
@@ -201,7 +217,7 @@ impl W {
     pub fn century(&mut self) -> _CENTURYW {
         _CENTURYW { w: self }
     }
-    #[doc = "Bits 0:4 - Is leap year. 1 is leap year, 0 is not leap year"]
+    #[doc = "Bit 5 - Is leap year. 1 is leap year, 0 is not leap year"]
     #[inline]
     pub fn leap_year(&mut self) -> _LEAP_YEARW {
         _LEAP_YEARW { w: self }
