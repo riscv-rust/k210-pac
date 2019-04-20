@@ -1307,11 +1307,345 @@
             <description>Serial Peripheral Interface 3 (master)</description>
             <baseAddress>0x54000000</baseAddress>
             <registers>
-                <!-- TODO -->
                 <register>
-                    <name>dummy</name>
-                    <description>Dummy register: this peripheral is not implemented yet</description>
+                    <!-- TODO -->
+                    <name>ctrlr0</name>
+                    <description>Control Register 0</description>
                     <addressOffset>0x00</addressOffset>
+                    <fields>
+                        <field>
+                            <name>data_length</name>
+                            <description>DATA_BIT_LENGTH</description>
+                            <bitRange>[4:0]</bitRange>
+                            <writeConstraint><range><minimum>4</minimum><maximum>31</maximum></range></writeConstraint>
+                        </field>
+                        <field>
+                            <name>work_mode</name>
+                            <description>WORK_MODE</description>
+                            <bitRange>[9:8]</bitRange>
+                            <enumeratedValues>
+                                <enumeratedValue>
+                                    <name>mode0</name>
+                                    <description>MODE_0</description>
+                                    <value>0</value>
+                                </enumeratedValue>
+                                <enumeratedValue>
+                                    <name>mode1</name>
+                                    <description>MODE_1</description>
+                                    <value>1</value>
+                                </enumeratedValue>
+                                <enumeratedValue>
+                                    <name>mode2</name>
+                                    <description>MODE_2</description>
+                                    <value>2</value>
+                                </enumeratedValue>
+                                <enumeratedValue>
+                                    <name>mode3</name>
+                                    <description>MODE_3</description>
+                                    <value>3</value>
+                                </enumeratedValue>
+                            </enumeratedValues>
+                        </field>
+                        <field>
+                            <name>tmod</name>
+                            <description>TRANSFER_MODE</description>
+                            <bitRange>[11:10]</bitRange>
+                            <enumeratedValues>
+                                <enumeratedValue>
+                                    <name>trans_recv</name>
+                                    <description>TRANS_RECV</description>
+                                    <value>0</value>
+                                </enumeratedValue>
+                                <enumeratedValue>
+                                    <name>trans</name>
+                                    <description>TRANS</description>
+                                    <value>1</value>
+                                </enumeratedValue>
+                                <enumeratedValue>
+                                    <name>recv</name>
+                                    <description>RECV</description>
+                                    <value>2</value>
+                                </enumeratedValue>
+                                <enumeratedValue>
+                                    <name>eerom</name>
+                                    <description>EEROM</description>
+                                    <value>3</value>
+                                </enumeratedValue>
+                            </enumeratedValues>
+                        </field>
+                        <field>
+                            <name>frame_format</name>
+                            <description>FRAME_FORMAT</description>
+                            <bitRange>[23:22]</bitRange>
+                            <enumeratedValues>
+                                <enumeratedValue>
+                                    <name>standard</name>
+                                    <description>STANDARD</description>
+                                    <value>0</value>
+                                </enumeratedValue>
+                                <enumeratedValue>
+                                    <name>dual</name>
+                                    <description>DUAL</description>
+                                    <value>1</value>
+                                </enumeratedValue>
+                                <enumeratedValue>
+                                    <name>quad</name>
+                                    <description>QUAD</description>
+                                    <value>2</value>
+                                </enumeratedValue>
+                                <enumeratedValue>
+                                    <name>octal</name>
+                                    <description>OCTAL</description>
+                                    <value>3</value>
+                                </enumeratedValue>
+                            </enumeratedValues>
+                        </field>
+                    </fields>
+                </register>
+                <register>
+                    <!-- TODO -->
+                    <name>ctrlr1</name>
+                    <description>Control Register 1</description>
+                    <addressOffset>0x04</addressOffset>
+                </register>
+                <register>
+                    <!-- TODO -->
+                    <name>ssienr</name>
+                    <description>Enable Register</description>
+                    <addressOffset>0x08</addressOffset>
+                </register>
+                <register>
+                    <!-- TODO -->
+                    <name>mwcr</name>
+                    <description>Microwire Control Register</description>
+                    <addressOffset>0x0c</addressOffset>
+                </register>
+                <register>
+                    <!-- TODO -->
+                    <name>ser</name>
+                    <description>Slave Enable Register</description>
+                    <addressOffset>0x10</addressOffset>
+                </register>
+                <register>
+                    <!-- TODO -->
+                    <name>baudr</name>
+                    <description>Baud Rate Select</description>
+                    <addressOffset>0x14</addressOffset>
+                </register>
+                <register>
+                    <!-- TODO -->
+                    <name>txftlr</name>
+                    <description>Transmit FIFO Threshold Level</description>
+                    <addressOffset>0x18</addressOffset>
+                </register>
+                <register>
+                    <!-- TODO -->
+                    <name>rxftlr</name>
+                    <description>Receive FIFO Threshold Level</description>
+                    <addressOffset>0x1c</addressOffset>
+                </register>
+                <register>
+                    <!-- TODO -->
+                    <name>txflr</name>
+                    <description>Transmit FIFO Level Register</description>
+                    <addressOffset>0x20</addressOffset>
+                </register>
+                <register>
+                    <!-- TODO -->
+                    <name>rxflr</name>
+                    <description>Receive FIFO Level Register</description>
+                    <addressOffset>0x24</addressOffset>
+                </register>
+                <register>
+                    <!-- TODO -->
+                    <name>sr</name>
+                    <description>Status Register</description>
+                    <addressOffset>0x28</addressOffset>
+                </register>
+                <register>
+                    <!-- TODO -->
+                    <name>imr</name>
+                    <description>Interrupt Mask Register</description>
+                    <addressOffset>0x2c</addressOffset>
+                </register>
+                <register>
+                    <!-- TODO -->
+                    <name>isr</name>
+                    <description>Interrupt Status Register</description>
+                    <addressOffset>0x30</addressOffset>
+                </register>
+                <register>
+                    <name>risr</name>
+                    <description>Raw Interrupt Status Register</description>
+                    <addressOffset>0x34</addressOffset>
+                </register>
+                <register>
+                    <!-- TODO -->
+                    <name>txoicr</name>
+                    <description>Transmit FIFO Overflow Interrupt Clear Register</description>
+                    <addressOffset>0x38</addressOffset>
+                </register>
+                <register>
+                    <!-- TODO -->
+                    <name>rxoicr</name>
+                    <description>Receive FIFO Overflow Interrupt Clear Register</description>
+                    <addressOffset>0x3c</addressOffset>
+                </register>
+                <register>
+                    <!-- TODO -->
+                    <name>rxuicr</name>
+                    <description>Receive FIFO Underflow Interrupt Clear Register</description>
+                    <addressOffset>0x40</addressOffset>
+                </register>
+                <register>
+                    <!-- TODO -->
+                    <name>msticr</name>
+                    <description>Multi-Master Interrupt Clear Register</description>
+                    <addressOffset>0x44</addressOffset>
+                </register>
+                <register>
+                    <!-- TODO -->
+                    <name>icr</name>
+                    <description>Interrupt Clear Register</description>
+                    <addressOffset>0x48</addressOffset>
+                </register>
+                <register>
+                    <!-- TODO -->
+                    <name>dmacr</name>
+                    <description>DMA Control Register</description>
+                    <addressOffset>0x4c</addressOffset>
+                </register>
+                <register>
+                    <!-- TODO -->
+                    <name>dmatdlr</name>
+                    <description>DMA Transmit Data Level</description>
+                    <addressOffset>0x50</addressOffset>
+                </register>
+                <register>
+                    <!-- TODO -->
+                    <name>dmardlr</name>
+                    <description>DMA Receive Data Level</description>
+                    <addressOffset>0x54</addressOffset>
+                </register>
+                <register>
+                    <!-- TODO -->
+                    <name>idr</name>
+                    <description>Identification Register</description>
+                    <addressOffset>0x58</addressOffset>
+                </register>
+                <register>
+                    <!-- TODO -->
+                    <name>ssic_version_id</name>
+                    <description>DWC_ssi component version</description>
+                    <addressOffset>0x5c</addressOffset>
+                </register>
+                <register>
+                    <!-- TODO -->
+                    <name>dr%s</name>
+                    <description>Data Register</description>
+                    <addressOffset>0x60</addressOffset>
+                    <dim>36</dim>
+                    <dimIndex>0-35</dimIndex>
+                    <dimIncrement>0x4</dimIncrement>
+                </register>
+                <register>
+                    <!-- TODO -->
+                    <name>rx_sample_delay</name>
+                    <description>RX Sample Delay Register</description>
+                    <addressOffset>0xf0</addressOffset>
+                </register>
+                <register>
+                    <!-- TODO -->
+                    <name>spi_ctrlr0</name>
+                    <description>SPI Control Register</description>
+                    <addressOffset>0xf4</addressOffset>
+                    <fields>
+                        <field>
+                            <name>aitm</name>
+                            <description>instruction_address_trans_mode</description>
+                            <bitRange>[1:0]</bitRange>
+                            <enumeratedValues>
+                                <enumeratedValue>
+                                    <name>standard</name>
+                                    <description>STANDARD</description>
+                                    <value>0</value>
+                                </enumeratedValue>
+                                <enumeratedValue>
+                                    <name>addr_standard</name>
+                                    <description>ADDR_STANDARD</description>
+                                    <value>1</value>
+                                </enumeratedValue>
+                                <enumeratedValue>
+                                    <name>as_frame_format</name>
+                                    <description>AS_FRAME_FORMAT</description>
+                                    <value>2</value>
+                                </enumeratedValue>
+                            </enumeratedValues>
+                        </field>
+                        <field>
+                            <name>addr_length</name>
+                            <description>ADDR_LENGTH</description>
+                            <bitRange>[5:2]</bitRange>
+                            <writeConstraint><range><minimum>0</minimum><maximum>3</maximum></range></writeConstraint>
+                        </field>
+                        <field>
+                            <name>inst_length</name>
+                            <description>INSTRUCTION_LENGTH</description>
+                            <bitRange>[9:8]</bitRange>
+                        </field>
+                        <field>
+                            <name>wait_cycles</name>
+                            <description>WAIT_CYCLES</description>
+                            <bitRange>[15:11]</bitRange>
+                            <writeConstraint><range><minimum>0</minimum><maximum>31</maximum></range></writeConstraint>
+                        </field>
+                    </fields>
+                </register>
+                <register>
+                    <!-- TODO -->
+                    <name>xip_mode_bits</name>
+                    <description>XIP Mode bits</description>
+                    <addressOffset>0xfc</addressOffset>
+                </register>
+                <register>
+                    <name>xip_incr_inst</name>
+                    <description>XIP INCR transfer opcode</description>
+                    <addressOffset>0x100</addressOffset>
+                </register>
+                <register>
+                    <!-- TODO -->
+                    <name>xip_wrap_inst</name>
+                    <description>XIP WRAP transfer opcode</description>
+                    <addressOffset>0x104</addressOffset>
+                </register>
+                <register>
+                    <name>xip_ctrl</name>
+                    <description>XIP Control Register</description>
+                    <addressOffset>0x108</addressOffset>
+                </register>
+                <register>
+                    <!-- TODO -->
+                    <name>xip_ser</name>
+                    <description>XIP Slave Enable Register</description>
+                    <addressOffset>0x10c</addressOffset>
+                </register>
+                <register>
+                    <!-- TODO -->
+                    <name>xrxoicr</name>
+                    <description>XIP Receive FIFO Overflow Interrupt Clear Register</description>
+                    <addressOffset>0x110</addressOffset>
+                </register>
+                <register>
+                    <!-- TODO -->
+                    <name>xip_cnt_time_out</name>
+                    <description>XIP time out register for continuous transfers</description>
+                    <addressOffset>0x114</addressOffset>
+                </register>
+                <register>
+                    <!-- TODO -->
+                    <name>endian</name>
+                    <description>ENDIAN</description>
+                    <addressOffset>0x118</addressOffset>
                 </register>
             </registers>
         </peripheral>
