@@ -42,67 +42,6 @@ impl super::CTRLR0 {
         self.write(|w| w)
     }
 }
-#[doc = "Possible values of the field `iatm`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum IATMR {
-    #[doc = "STANDARD"]
-    STANDARD,
-    #[doc = "ADDR_STANDARD"]
-    ADDR_STANDARD,
-    #[doc = "AS_FRAME_FORMAT"]
-    AS_FRAME_FORMAT,
-    #[doc = r" Reserved"]
-    _Reserved(u8),
-}
-impl IATMR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        match *self {
-            IATMR::STANDARD => 0,
-            IATMR::ADDR_STANDARD => 1,
-            IATMR::AS_FRAME_FORMAT => 2,
-            IATMR::_Reserved(bits) => bits,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: u8) -> IATMR {
-        match value {
-            0 => IATMR::STANDARD,
-            1 => IATMR::ADDR_STANDARD,
-            2 => IATMR::AS_FRAME_FORMAT,
-            i => IATMR::_Reserved(i),
-        }
-    }
-    #[doc = "Checks if the value of the field is `STANDARD`"]
-    #[inline]
-    pub fn is_standard(&self) -> bool {
-        *self == IATMR::STANDARD
-    }
-    #[doc = "Checks if the value of the field is `ADDR_STANDARD`"]
-    #[inline]
-    pub fn is_addr_standard(&self) -> bool {
-        *self == IATMR::ADDR_STANDARD
-    }
-    #[doc = "Checks if the value of the field is `AS_FRAME_FORMAT`"]
-    #[inline]
-    pub fn is_as_frame_format(&self) -> bool {
-        *self == IATMR::AS_FRAME_FORMAT
-    }
-}
-#[doc = r" Value of the field"]
-pub struct ADDR_LENGTHR {
-    bits: u8,
-}
-impl ADDR_LENGTHR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        self.bits
-    }
-}
 #[doc = "Possible values of the field `work_mode`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum WORK_MODER {
@@ -215,17 +154,6 @@ impl TMODR {
         *self == TMODR::EEROM
     }
 }
-#[doc = r" Value of the field"]
-pub struct WAIT_CYCLESR {
-    bits: u8,
-}
-impl WAIT_CYCLESR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        self.bits
-    }
-}
 #[doc = "Possible values of the field `frame_format`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum FRAME_FORMATR {
@@ -291,78 +219,6 @@ impl DATA_LENGTHR {
     #[inline]
     pub fn bits(&self) -> u8 {
         self.bits
-    }
-}
-#[doc = "Values that can be written to the field `iatm`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum IATMW {
-    #[doc = "STANDARD"]
-    STANDARD,
-    #[doc = "ADDR_STANDARD"]
-    ADDR_STANDARD,
-    #[doc = "AS_FRAME_FORMAT"]
-    AS_FRAME_FORMAT,
-}
-impl IATMW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> u8 {
-        match *self {
-            IATMW::STANDARD => 0,
-            IATMW::ADDR_STANDARD => 1,
-            IATMW::AS_FRAME_FORMAT => 2,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _IATMW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _IATMW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: IATMW) -> &'a mut W {
-        unsafe { self.bits(variant._bits()) }
-    }
-    #[doc = "STANDARD"]
-    #[inline]
-    pub fn standard(self) -> &'a mut W {
-        self.variant(IATMW::STANDARD)
-    }
-    #[doc = "ADDR_STANDARD"]
-    #[inline]
-    pub fn addr_standard(self) -> &'a mut W {
-        self.variant(IATMW::ADDR_STANDARD)
-    }
-    #[doc = "AS_FRAME_FORMAT"]
-    #[inline]
-    pub fn as_frame_format(self) -> &'a mut W {
-        self.variant(IATMW::AS_FRAME_FORMAT)
-    }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 3;
-        const OFFSET: u8 = 0;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = r" Proxy"]
-pub struct _ADDR_LENGTHW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _ADDR_LENGTHW<'a> {
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 15;
-        const OFFSET: u8 = 2;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
     }
 }
 #[doc = "Values that can be written to the field `work_mode`"]
@@ -499,21 +355,6 @@ impl<'a> _TMODW<'a> {
         self.w
     }
 }
-#[doc = r" Proxy"]
-pub struct _WAIT_CYCLESW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _WAIT_CYCLESW<'a> {
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 31;
-        const OFFSET: u8 = 11;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
 #[doc = "Values that can be written to the field `frame_format`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum FRAME_FORMATW {
@@ -602,25 +443,6 @@ impl R {
     pub fn bits(&self) -> u32 {
         self.bits
     }
-    #[doc = "Bits 0:1 - instruction_address_trans_mode"]
-    #[inline]
-    pub fn iatm(&self) -> IATMR {
-        IATMR::_from({
-            const MASK: u8 = 3;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        })
-    }
-    #[doc = "Bits 2:5 - ADDR_LENGTH"]
-    #[inline]
-    pub fn addr_length(&self) -> ADDR_LENGTHR {
-        let bits = {
-            const MASK: u8 = 15;
-            const OFFSET: u8 = 2;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        };
-        ADDR_LENGTHR { bits }
-    }
     #[doc = "Bits 6:7 - WORK_MODE"]
     #[inline]
     pub fn work_mode(&self) -> WORK_MODER {
@@ -638,16 +460,6 @@ impl R {
             const OFFSET: u8 = 8;
             ((self.bits >> OFFSET) & MASK as u32) as u8
         })
-    }
-    #[doc = "Bits 11:15 - WAIT_CYCLES"]
-    #[inline]
-    pub fn wait_cycles(&self) -> WAIT_CYCLESR {
-        let bits = {
-            const MASK: u8 = 31;
-            const OFFSET: u8 = 11;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        };
-        WAIT_CYCLESR { bits }
     }
     #[doc = "Bits 21:22 - FRAME_FORMAT"]
     #[inline]
@@ -681,16 +493,6 @@ impl W {
         self.bits = bits;
         self
     }
-    #[doc = "Bits 0:1 - instruction_address_trans_mode"]
-    #[inline]
-    pub fn iatm(&mut self) -> _IATMW {
-        _IATMW { w: self }
-    }
-    #[doc = "Bits 2:5 - ADDR_LENGTH"]
-    #[inline]
-    pub fn addr_length(&mut self) -> _ADDR_LENGTHW {
-        _ADDR_LENGTHW { w: self }
-    }
     #[doc = "Bits 6:7 - WORK_MODE"]
     #[inline]
     pub fn work_mode(&mut self) -> _WORK_MODEW {
@@ -700,11 +502,6 @@ impl W {
     #[inline]
     pub fn tmod(&mut self) -> _TMODW {
         _TMODW { w: self }
-    }
-    #[doc = "Bits 11:15 - WAIT_CYCLES"]
-    #[inline]
-    pub fn wait_cycles(&mut self) -> _WAIT_CYCLESW {
-        _WAIT_CYCLESW { w: self }
     }
     #[doc = "Bits 21:22 - FRAME_FORMAT"]
     #[inline]

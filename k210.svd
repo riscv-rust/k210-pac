@@ -940,34 +940,6 @@
                     <addressOffset>0x00</addressOffset>
                     <fields>
                         <field>
-                            <name>iatm</name>
-                            <description>instruction_address_trans_mode</description>
-                            <bitRange>[1:0]</bitRange>
-                            <enumeratedValues>
-                                <enumeratedValue>
-                                    <name>standard</name>
-                                    <description>STANDARD</description>
-                                    <value>0</value>
-                                </enumeratedValue>
-                                <enumeratedValue>
-                                    <name>addr_standard</name>
-                                    <description>ADDR_STANDARD</description>
-                                    <value>1</value>
-                                </enumeratedValue>
-                                <enumeratedValue>
-                                    <name>as_frame_format</name>
-                                    <description>AS_FRAME_FORMAT</description>
-                                    <value>2</value>
-                                </enumeratedValue>
-                            </enumeratedValues>
-                        </field>
-                        <field>
-                            <name>addr_length</name>
-                            <description>ADDR_LENGTH</description>
-                            <bitRange>[5:2]</bitRange>
-                            <writeConstraint><range><minimum>0</minimum><maximum>3</maximum></range></writeConstraint>
-                        </field>
-                        <field>
                             <name>work_mode</name>
                             <description>WORK_MODE</description>
                             <bitRange>[7:6]</bitRange>
@@ -1020,12 +992,6 @@
                                     <value>3</value>
                                 </enumeratedValue>
                             </enumeratedValues>
-                        </field>
-                        <field>
-                            <name>wait_cycles</name>
-                            <description>WAIT_CYCLES</description>
-                            <bitRange>[15:11]</bitRange>
-                            <writeConstraint><range><minimum>0</minimum><maximum>31</maximum></range></writeConstraint>
                         </field>
                         <field>
                             <name>frame_format</name>
@@ -1219,6 +1185,47 @@
                     <name>spi_ctrlr0</name>
                     <description>SPI Control Register</description>
                     <addressOffset>0xf4</addressOffset>
+                    <fields>
+                        <field>
+                            <name>aitm</name>
+                            <description>instruction_address_trans_mode</description>
+                            <bitRange>[1:0]</bitRange>
+                            <enumeratedValues>
+                                <enumeratedValue>
+                                    <name>standard</name>
+                                    <description>STANDARD</description>
+                                    <value>0</value>
+                                </enumeratedValue>
+                                <enumeratedValue>
+                                    <name>addr_standard</name>
+                                    <description>ADDR_STANDARD</description>
+                                    <value>1</value>
+                                </enumeratedValue>
+                                <enumeratedValue>
+                                    <name>as_frame_format</name>
+                                    <description>AS_FRAME_FORMAT</description>
+                                    <value>2</value>
+                                </enumeratedValue>
+                            </enumeratedValues>
+                        </field>
+                        <field>
+                            <name>addr_length</name>
+                            <description>ADDR_LENGTH</description>
+                            <bitRange>[5:2]</bitRange>
+                            <writeConstraint><range><minimum>0</minimum><maximum>3</maximum></range></writeConstraint>
+                        </field>
+                        <field>
+                            <name>inst_length</name>
+                            <description>INSTRUCTION_LENGTH</description>
+                            <bitRange>[9:8]</bitRange>
+                        </field>
+                        <field>
+                            <name>wait_cycles</name>
+                            <description>WAIT_CYCLES</description>
+                            <bitRange>[15:11]</bitRange>
+                            <writeConstraint><range><minimum>0</minimum><maximum>31</maximum></range></writeConstraint>
+                        </field>
+                    </fields>
                 </register>
                 <register>
                     <!-- TODO -->
