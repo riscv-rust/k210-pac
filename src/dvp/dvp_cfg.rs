@@ -168,7 +168,7 @@ impl BURST_SIZE_4BEATSR {
         self.bit()
     }
 }
-#[doc = "Possible values of the field `FORMAT`"]
+#[doc = "Possible values of the field `format`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum FORMATR {
     #[doc = "RGB_FORMAT"]
@@ -378,7 +378,7 @@ impl<'a> _BURST_SIZE_4BEATSW<'a> {
         self.w
     }
 }
-#[doc = "Values that can be written to the field `FORMAT`"]
+#[doc = "Values that can be written to the field `format`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum FORMATW {
     #[doc = "RGB_FORMAT"]

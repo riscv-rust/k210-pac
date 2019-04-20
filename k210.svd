@@ -2614,7 +2614,7 @@
                             <bitRange>[8:8]</bitRange>
                         </field>
                         <field>
-                            <name>FORMAT</name>
+                            <name>format</name>
                             <description>FORMAT</description>
                             <bitRange>[10:9]</bitRange>
                             <enumeratedValues>
