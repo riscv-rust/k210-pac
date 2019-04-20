@@ -1024,7 +1024,7 @@
                             <name>data_length</name>
                             <description>DATA_BIT_LENGTH</description>
                             <bitRange>[20:16]</bitRange>
-                            <writeConstraint><range><minimum>4</minimum><maximum>31</maximum></range></writeConstraint>
+                            <writeConstraint><range><minimum>3</minimum><maximum>31</maximum></range></writeConstraint>
                         </field>
                     </fields>
                 </register>
@@ -1317,7 +1317,7 @@
                             <name>data_length</name>
                             <description>DATA_BIT_LENGTH</description>
                             <bitRange>[4:0]</bitRange>
-                            <writeConstraint><range><minimum>4</minimum><maximum>31</maximum></range></writeConstraint>
+                            <writeConstraint><range><minimum>3</minimum><maximum>31</maximum></range></writeConstraint>
                         </field>
                         <field>
                             <name>work_mode</name>
