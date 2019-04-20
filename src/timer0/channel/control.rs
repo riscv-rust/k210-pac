@@ -63,16 +63,15 @@ impl ENABLER {
         self.bit()
     }
 }
-#[doc = r" Value of the field"]
-pub struct USER_MODER {
-    bits: bool,
+#[doc = "Possible values of the field `mode`"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum MODER {
+    #[doc = "FREE_MODE"]
+    FREE,
+    #[doc = "USER_MODE"]
+    USER,
 }
-impl USER_MODER {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
+impl MODER {
     #[doc = r" Returns `true` if the bit is clear (0)"]
     #[inline]
     pub fn bit_is_clear(&self) -> bool {
@@ -82,6 +81,33 @@ impl USER_MODER {
     #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
+    }
+    #[doc = r" Value of the field as raw bits"]
+    #[inline]
+    pub fn bit(&self) -> bool {
+        match *self {
+            MODER::FREE => false,
+            MODER::USER => true,
+        }
+    }
+    #[allow(missing_docs)]
+    #[doc(hidden)]
+    #[inline]
+    pub fn _from(value: bool) -> MODER {
+        match value {
+            false => MODER::FREE,
+            true => MODER::USER,
+        }
+    }
+    #[doc = "Checks if the value of the field is `FREE`"]
+    #[inline]
+    pub fn is_free(&self) -> bool {
+        *self == MODER::FREE
+    }
+    #[doc = "Checks if the value of the field is `USER`"]
+    #[inline]
+    pub fn is_user(&self) -> bool {
+        *self == MODER::USER
     }
 }
 #[doc = r" Value of the field"]
@@ -149,11 +175,47 @@ impl<'a> _ENABLEW<'a> {
         self.w
     }
 }
+#[doc = "Values that can be written to the field `mode`"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum MODEW {
+    #[doc = "FREE_MODE"]
+    FREE,
+    #[doc = "USER_MODE"]
+    USER,
+}
+impl MODEW {
+    #[allow(missing_docs)]
+    #[doc(hidden)]
+    #[inline]
+    pub fn _bits(&self) -> bool {
+        match *self {
+            MODEW::FREE => false,
+            MODEW::USER => true,
+        }
+    }
+}
 #[doc = r" Proxy"]
-pub struct _USER_MODEW<'a> {
+pub struct _MODEW<'a> {
     w: &'a mut W,
 }
-impl<'a> _USER_MODEW<'a> {
+impl<'a> _MODEW<'a> {
+    #[doc = r" Writes `variant` to the field"]
+    #[inline]
+    pub fn variant(self, variant: MODEW) -> &'a mut W {
+        {
+            self.bit(variant._bits())
+        }
+    }
+    #[doc = "FREE_MODE"]
+    #[inline]
+    pub fn free(self) -> &'a mut W {
+        self.variant(MODEW::FREE)
+    }
+    #[doc = "USER_MODE"]
+    #[inline]
+    pub fn user(self) -> &'a mut W {
+        self.variant(MODEW::USER)
+    }
     #[doc = r" Sets the field bit"]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
@@ -234,15 +296,14 @@ impl R {
         };
         ENABLER { bits }
     }
-    #[doc = "Bit 1 - USER_MODE"]
+    #[doc = "Bit 1 - MODE"]
     #[inline]
-    pub fn user_mode(&self) -> USER_MODER {
-        let bits = {
+    pub fn mode(&self) -> MODER {
+        MODER::_from({
             const MASK: bool = true;
             const OFFSET: u8 = 1;
             ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        USER_MODER { bits }
+        })
     }
     #[doc = "Bit 2 - INTERRUPT_MASK"]
     #[inline]
@@ -282,10 +343,10 @@ impl W {
     pub fn enable(&mut self) -> _ENABLEW {
         _ENABLEW { w: self }
     }
-    #[doc = "Bit 1 - USER_MODE"]
+    #[doc = "Bit 1 - MODE"]
     #[inline]
-    pub fn user_mode(&mut self) -> _USER_MODEW {
-        _USER_MODEW { w: self }
+    pub fn mode(&mut self) -> _MODEW {
+        _MODEW { w: self }
     }
     #[doc = "Bit 2 - INTERRUPT_MASK"]
     #[inline]

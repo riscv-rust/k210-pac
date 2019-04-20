@@ -2434,9 +2434,21 @@
                                 <bitRange>[0:0]</bitRange>
                             </field>
                             <field>
-                                <name>user_mode</name>
-                                <description>USER_MODE</description>
+                                <name>mode</name>
+                                <description>MODE</description>
                                 <bitRange>[1:1]</bitRange>
+                                <enumeratedValues>
+                                    <enumeratedValue>
+                                        <name>free</name>
+                                        <description>FREE_MODE</description>
+                                        <value>0</value>
+                                    </enumeratedValue>
+                                    <enumeratedValue>
+                                        <name>user</name>
+                                        <description>USER_MODE</description>
+                                        <value>1</value>
+                                    </enumeratedValue>
+                                </enumeratedValues>
                             </field>
                             <field>
                                 <name>interrupt</name>
