@@ -3470,22 +3470,66 @@
                         <field>
                             <name>dma_sel0</name>
                             <bitRange>[5:0]</bitRange>
+                            <enumeratedValues>
+                            <name>DMASELECT</name>
+                                <enumeratedValue><name>ssi0_rx_req</name><value>0</value></enumeratedValue>
+                                <enumeratedValue><name>ssi0_tx_req</name><value>1</value></enumeratedValue>
+                                <enumeratedValue><name>ssi1_rx_req</name><value>2</value></enumeratedValue>
+                                <enumeratedValue><name>ssi1_tx_req</name><value>3</value></enumeratedValue>
+                                <enumeratedValue><name>ssi2_rx_req</name><value>4</value></enumeratedValue>
+                                <enumeratedValue><name>ssi2_tx_req</name><value>5</value></enumeratedValue>
+                                <enumeratedValue><name>ssi3_rx_req</name><value>6</value></enumeratedValue>
+                                <enumeratedValue><name>ssi3_tx_req</name><value>7</value></enumeratedValue>
+                                <enumeratedValue><name>i2c0_rx_req</name><value>8</value></enumeratedValue>
+                                <enumeratedValue><name>i2c0_tx_req</name><value>9</value></enumeratedValue>
+                                <enumeratedValue><name>i2c1_rx_req</name><value>10</value></enumeratedValue>
+                                <enumeratedValue><name>i2c1_tx_req</name><value>11</value></enumeratedValue>
+                                <enumeratedValue><name>i2c2_rx_req</name><value>12</value></enumeratedValue>
+                                <enumeratedValue><name>i2c2_tx_req</name><value>13</value></enumeratedValue>
+                                <enumeratedValue><name>uart1_rx_req</name><value>14</value></enumeratedValue>
+                                <enumeratedValue><name>uart1_tx_req</name><value>15</value></enumeratedValue>
+                                <enumeratedValue><name>uart2_rx_req</name><value>16</value></enumeratedValue>
+                                <enumeratedValue><name>uart2_tx_req</name><value>17</value></enumeratedValue>
+                                <enumeratedValue><name>uart3_rx_req</name><value>18</value></enumeratedValue>
+                                <enumeratedValue><name>uart3_tx_req</name><value>19</value></enumeratedValue>
+                                <enumeratedValue><name>aes_req</name><value>20</value></enumeratedValue>
+                                <enumeratedValue><name>sha_rx_req</name><value>21</value></enumeratedValue>
+                                <enumeratedValue><name>ai_rx_req</name><value>22</value></enumeratedValue>
+                                <enumeratedValue><name>fft_rx_req</name><value>23</value></enumeratedValue>
+                                <enumeratedValue><name>fft_tx_req</name><value>24</value></enumeratedValue>
+                                <enumeratedValue><name>i2s0_tx_req</name><value>25</value></enumeratedValue>
+                                <enumeratedValue><name>i2s0_rx_req</name><value>26</value></enumeratedValue>
+                                <enumeratedValue><name>i2s1_tx_req</name><value>27</value></enumeratedValue>
+                                <enumeratedValue><name>i2s1_rx_req</name><value>28</value></enumeratedValue>
+                                <enumeratedValue><name>i2s2_tx_req</name><value>29</value></enumeratedValue>
+                                <enumeratedValue><name>i2s2_rx_req</name><value>30</value></enumeratedValue>
+                                <enumeratedValue><name>i2s0_bf_dir_req</name><value>31</value></enumeratedValue>
+                                <enumeratedValue><name>i2s0_bf_voice_req</name><value>32</value></enumeratedValue>
+                            </enumeratedValues>
                         </field>
                         <field>
                             <name>dma_sel1</name>
                             <bitRange>[11:6]</bitRange>
+                            <enumeratedValues derivedFrom = "DMASELECT">
+                            </enumeratedValues>
                         </field>
                         <field>
                             <name>dma_sel2</name>
                             <bitRange>[17:12]</bitRange>
+                            <enumeratedValues derivedFrom = "DMASELECT">
+                            </enumeratedValues>
                         </field>
                         <field>
                             <name>dma_sel3</name>
                             <bitRange>[23:18]</bitRange>
+                            <enumeratedValues derivedFrom = "DMASELECT">
+                            </enumeratedValues>
                         </field>
                         <field>
                             <name>dma_sel4</name>
                             <bitRange>[29:24]</bitRange>
+                            <enumeratedValues derivedFrom = "DMASELECT">
+                            </enumeratedValues>
                         </field>
                     </fields>
                 </register>
@@ -3497,6 +3541,8 @@
                         <field>
                             <name>dma_sel5</name>
                             <bitRange>[5:0]</bitRange>
+                            <enumeratedValues derivedFrom = "dma_sel0.dma_sel0.DMASELECT">
+                            </enumeratedValues>
                         </field>
                     </fields>
                 </register>
