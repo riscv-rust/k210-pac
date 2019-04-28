@@ -42,6 +42,17 @@ impl super::CTRLR0 {
         self.write(|w| w)
     }
 }
+#[doc = r" Value of the field"]
+pub struct DATA_LENGTHR {
+    bits: u8,
+}
+impl DATA_LENGTHR {
+    #[doc = r" Value of the field as raw bits"]
+    #[inline]
+    pub fn bits(&self) -> u8 {
+        self.bits
+    }
+}
 #[doc = "Possible values of the field `work_mode`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum WORK_MODER {
@@ -210,15 +221,19 @@ impl FRAME_FORMATR {
         *self == FRAME_FORMATR::OCTAL
     }
 }
-#[doc = r" Value of the field"]
-pub struct DATA_LENGTHR {
-    bits: u8,
+#[doc = r" Proxy"]
+pub struct _DATA_LENGTHW<'a> {
+    w: &'a mut W,
 }
-impl DATA_LENGTHR {
-    #[doc = r" Value of the field as raw bits"]
+impl<'a> _DATA_LENGTHW<'a> {
+    #[doc = r" Writes raw bits to the field"]
     #[inline]
-    pub fn bits(&self) -> u8 {
-        self.bits
+    pub unsafe fn bits(self, value: u8) -> &'a mut W {
+        const MASK: u8 = 31;
+        const OFFSET: u8 = 0;
+        self.w.bits &= !((MASK as u32) << OFFSET);
+        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w
     }
 }
 #[doc = "Values that can be written to the field `work_mode`"]
@@ -282,7 +297,7 @@ impl<'a> _WORK_MODEW<'a> {
     #[inline]
     pub fn bits(self, value: u8) -> &'a mut W {
         const MASK: u8 = 3;
-        const OFFSET: u8 = 6;
+        const OFFSET: u8 = 8;
         self.w.bits &= !((MASK as u32) << OFFSET);
         self.w.bits |= ((value & MASK) as u32) << OFFSET;
         self.w
@@ -349,7 +364,7 @@ impl<'a> _TMODW<'a> {
     #[inline]
     pub fn bits(self, value: u8) -> &'a mut W {
         const MASK: u8 = 3;
-        const OFFSET: u8 = 8;
+        const OFFSET: u8 = 10;
         self.w.bits &= !((MASK as u32) << OFFSET);
         self.w.bits |= ((value & MASK) as u32) << OFFSET;
         self.w
@@ -416,22 +431,7 @@ impl<'a> _FRAME_FORMATW<'a> {
     #[inline]
     pub fn bits(self, value: u8) -> &'a mut W {
         const MASK: u8 = 3;
-        const OFFSET: u8 = 21;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = r" Proxy"]
-pub struct _DATA_LENGTHW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _DATA_LENGTHW<'a> {
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 31;
-        const OFFSET: u8 = 16;
+        const OFFSET: u8 = 22;
         self.w.bits &= !((MASK as u32) << OFFSET);
         self.w.bits |= ((value & MASK) as u32) << OFFSET;
         self.w
@@ -443,42 +443,42 @@ impl R {
     pub fn bits(&self) -> u32 {
         self.bits
     }
-    #[doc = "Bits 6:7 - WORK_MODE"]
+    #[doc = "Bits 0:4 - DATA_BIT_LENGTH"]
+    #[inline]
+    pub fn data_length(&self) -> DATA_LENGTHR {
+        let bits = {
+            const MASK: u8 = 31;
+            const OFFSET: u8 = 0;
+            ((self.bits >> OFFSET) & MASK as u32) as u8
+        };
+        DATA_LENGTHR { bits }
+    }
+    #[doc = "Bits 8:9 - WORK_MODE"]
     #[inline]
     pub fn work_mode(&self) -> WORK_MODER {
         WORK_MODER::_from({
-            const MASK: u8 = 3;
-            const OFFSET: u8 = 6;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        })
-    }
-    #[doc = "Bits 8:9 - TRANSFER_MODE"]
-    #[inline]
-    pub fn tmod(&self) -> TMODR {
-        TMODR::_from({
             const MASK: u8 = 3;
             const OFFSET: u8 = 8;
             ((self.bits >> OFFSET) & MASK as u32) as u8
         })
     }
-    #[doc = "Bits 21:22 - FRAME_FORMAT"]
+    #[doc = "Bits 10:11 - TRANSFER_MODE"]
+    #[inline]
+    pub fn tmod(&self) -> TMODR {
+        TMODR::_from({
+            const MASK: u8 = 3;
+            const OFFSET: u8 = 10;
+            ((self.bits >> OFFSET) & MASK as u32) as u8
+        })
+    }
+    #[doc = "Bits 22:23 - FRAME_FORMAT"]
     #[inline]
     pub fn frame_format(&self) -> FRAME_FORMATR {
         FRAME_FORMATR::_from({
             const MASK: u8 = 3;
-            const OFFSET: u8 = 21;
+            const OFFSET: u8 = 22;
             ((self.bits >> OFFSET) & MASK as u32) as u8
         })
-    }
-    #[doc = "Bits 16:20 - DATA_BIT_LENGTH"]
-    #[inline]
-    pub fn data_length(&self) -> DATA_LENGTHR {
-        let bits = {
-            const MASK: u8 = 31;
-            const OFFSET: u8 = 16;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        };
-        DATA_LENGTHR { bits }
     }
 }
 impl W {
@@ -493,24 +493,24 @@ impl W {
         self.bits = bits;
         self
     }
-    #[doc = "Bits 6:7 - WORK_MODE"]
+    #[doc = "Bits 0:4 - DATA_BIT_LENGTH"]
+    #[inline]
+    pub fn data_length(&mut self) -> _DATA_LENGTHW {
+        _DATA_LENGTHW { w: self }
+    }
+    #[doc = "Bits 8:9 - WORK_MODE"]
     #[inline]
     pub fn work_mode(&mut self) -> _WORK_MODEW {
         _WORK_MODEW { w: self }
     }
-    #[doc = "Bits 8:9 - TRANSFER_MODE"]
+    #[doc = "Bits 10:11 - TRANSFER_MODE"]
     #[inline]
     pub fn tmod(&mut self) -> _TMODW {
         _TMODW { w: self }
     }
-    #[doc = "Bits 21:22 - FRAME_FORMAT"]
+    #[doc = "Bits 22:23 - FRAME_FORMAT"]
     #[inline]
     pub fn frame_format(&mut self) -> _FRAME_FORMATW {
         _FRAME_FORMATW { w: self }
-    }
-    #[doc = "Bits 16:20 - DATA_BIT_LENGTH"]
-    #[inline]
-    pub fn data_length(&mut self) -> _DATA_LENGTHW {
-        _DATA_LENGTHW { w: self }
     }
 }
