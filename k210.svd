@@ -4271,11 +4271,343 @@
             <groupName>AES</groupName>
             <baseAddress>0x50450000</baseAddress>
             <registers>
-                <!-- TODO -->
                 <register>
-                    <name>dummy</name>
-                    <description>Dummy register: this peripheral is not implemented yet</description>
+                    <dim>4</dim>
+                    <dimIncrement>0x04</dimIncrement>
+                    <name>key[%s]</name>
+                    <description>1st-4th word of key</description>
                     <addressOffset>0x00</addressOffset>
+                </register>
+                <register>
+                    <name>encrypt_sel</name>
+                    <description>Encryption or decryption select</description>
+                    <addressOffset>0x10</addressOffset>
+                    <fields>
+                        <field>
+                            <name>encrypt_sel</name>
+                            <description>Select encryption or decryption mode</description>
+                            <bitRange>[0:0]</bitRange>
+                            <enumeratedValues>
+                                <enumeratedValue>
+                                    <name>encryption</name>
+                                    <description>Sets encryption mode</description>
+                                    <value>0</value>
+                                </enumeratedValue>
+                                <enumeratedValue>
+                                    <name>decryption</name>
+                                    <description>Sets decryption mode</description>
+                                    <value>1</value>
+                                </enumeratedValue>
+                            </enumeratedValues>
+                        </field>
+                    </fields>
+                </register>
+                <register>
+                    <name>mode_ctl</name>
+                    <description>AES mode register</description>
+                    <addressOffset>0x14</addressOffset>
+                    <fields>
+                        <field>
+                            <name>cipher_mode</name>
+                            <description>Cipher mode</description>
+                            <bitRange>[2:0]</bitRange>
+                            <enumeratedValues>
+                                <enumeratedValue>
+                                    <name>ECB</name>
+                                    <description>Electronic Codebook</description>
+                                    <value>0</value>
+                                </enumeratedValue>
+                                <enumeratedValue>
+                                    <name>CBC</name>
+                                    <description>Cipher Block Chaining</description>
+                                    <value>1</value>
+                                </enumeratedValue>
+                                <enumeratedValue>
+                                    <name>GCM</name>
+                                    <description>Galois/Counter Mode</description>
+                                    <value>2</value>
+                                </enumeratedValue>
+                            </enumeratedValues>
+                        </field>
+                        <field>
+                            <name>key_mode</name>
+                            <description>Key mode</description>
+                            <bitRange>[4:3]</bitRange>
+                            <enumeratedValues>
+                                <enumeratedValue>
+                                    <name>AES128</name>
+                                    <description>AES-128</description>
+                                    <value>0</value>
+                                </enumeratedValue>
+                                <enumeratedValue>
+                                    <name>AES192</name>
+                                    <description>AES-192</description>
+                                    <value>1</value>
+                                </enumeratedValue>
+                                <enumeratedValue>
+                                    <name>AES256</name>
+                                    <description>AES-256</description>
+                                    <value>2</value>
+                                </enumeratedValue>
+                            </enumeratedValues>
+                        </field>
+                        <field>
+                            <name>key_order</name>
+                            <description>Input key order</description>
+                            <bitRange>[6:5]</bitRange>
+                            <enumeratedValues>
+                                <name>ENDIAN</name>
+                                <enumeratedValue>
+                                    <name>be</name>
+                                    <description>Big Endian</description>
+                                    <value>0</value>
+                                </enumeratedValue>
+                                <enumeratedValue>
+                                    <name>le</name>
+                                    <description>Little Endian</description>
+                                    <value>1</value>
+                                </enumeratedValue>
+                            </enumeratedValues>
+                        </field>
+                        <field>
+                            <name>input_order</name>
+                            <description>Input data order</description>
+                            <bitRange>[8:7]</bitRange>
+                            <enumeratedValues derivedFrom="ENDIAN">
+                            </enumeratedValues>
+                        </field>
+                        <field>
+                            <name>output_order</name>
+                            <description>Output data order</description>
+                            <bitRange>[10:9]</bitRange>
+                            <enumeratedValues derivedFrom="ENDIAN">
+                            </enumeratedValues>
+                        </field>
+                    </fields>
+                </register>
+                <register>
+                    <dim>4</dim>
+                    <dimIncrement>0x04</dimIncrement>
+                    <name>iv[%s]</name>
+                    <description>Initialisation Vector (96 bit for GCM, 128 bit for CBC)</description>
+                    <addressOffset>0x18</addressOffset>
+                </register>
+                <register>
+                    <name>endian</name>
+                    <description>Endian control</description>
+                    <addressOffset>0x28</addressOffset>
+                    <fields>
+                        <field>
+                            <name>endian</name>
+                            <description>Input data endian</description>
+                            <bitRange>[0:0]</bitRange>
+                            <enumeratedValues derivedFrom="mode_ctl.key_order.ENDIAN">
+                            </enumeratedValues>
+                        </field>
+                    </fields>
+                </register>
+                <register>
+                    <name>finish</name>
+                    <description>Finished status</description>
+                    <addressOffset>0x2C</addressOffset>
+                    <fields>
+                        <field>
+                            <name>finish</name>
+                            <description>AES operation finished status</description>
+                            <bitRange>[0:0]</bitRange>
+                            <enumeratedValues>
+                                <enumeratedValue>
+                                    <name>not_finished</name>
+                                    <description>Operation not finished</description>
+                                    <value>0</value>
+                                </enumeratedValue>
+                                <enumeratedValue>
+                                    <name>finished</name>
+                                    <description>Operation finished</description>
+                                    <value>1</value>
+                                </enumeratedValue>
+                            </enumeratedValues>
+                        </field>
+                    </fields>
+                </register>
+                <register>
+                    <name>dma_sel</name>
+                    <description>DMA select</description>
+                    <addressOffset>0x30</addressOffset>
+                    <fields>
+                        <field>
+                            <name>dma_sel</name>
+                            <description>Output to DMA if set, to CPU otherwise</description>
+                            <bitRange>[0:0]</bitRange>
+                        </field>
+                    </fields>
+                </register>
+                <register>
+                    <name>aad_num</name>
+                    <description>GCM additional authenticated data count in bytes, minus one</description>
+                    <addressOffset>0x34</addressOffset>
+                </register>
+                <register>
+                    <name>pc_num</name>
+                    <description>Plaintext/ciphertext input data count in bytes, minus one</description>
+                    <addressOffset>0x3c</addressOffset>
+                </register>
+                <register>
+                    <name>text_data</name>
+                    <description>Plaintext/ciphertext input data</description>
+                    <addressOffset>0x40</addressOffset>
+                </register>
+                <register>
+                    <name>aad_data</name>
+                    <description>Additional authenticated data</description>
+                    <addressOffset>0x44</addressOffset>
+                </register>
+                <register>
+                    <name>tag_chk</name>
+                    <description>Tag check status</description>
+                    <addressOffset>0x48</addressOffset>
+                    <fields>
+                        <field>
+                            <name>tag_chk</name>
+                            <description>Tag check status</description>
+                            <bitRange>[1:0]</bitRange>
+                            <enumeratedValues>
+                                <enumeratedValue>
+                                    <name>busy</name>
+                                    <description>Check not finished</description>
+                                    <value>0</value>
+                                </enumeratedValue>
+                                <enumeratedValue>
+                                    <name>fail</name>
+                                    <description>Check failed</description>
+                                    <value>1</value>
+                                </enumeratedValue>
+                                <enumeratedValue>
+                                    <name>success</name>
+                                    <description>Check success</description>
+                                    <value>2</value>
+                                </enumeratedValue>
+                            </enumeratedValues>
+                        </field>
+                    </fields>
+                </register>
+                <register>
+                    <name>data_in_flag</name>
+                    <description>Data can input flag</description>
+                    <addressOffset>0x4c</addressOffset>
+                    <fields>
+                        <field>
+                            <name>data_in_flag</name>
+                            <description>Data can be written to text_data or aad_data when this flag is set</description>
+                            <bitRange>[0:0]</bitRange>
+                            <enumeratedValues>
+                                <name>CAN_INPUT</name>
+                                <enumeratedValue>
+                                    <name>cannot_input</name>
+                                    <description>Cannot input</description>
+                                    <value>0</value>
+                                </enumeratedValue>
+                                <enumeratedValue>
+                                    <name>can_input</name>
+                                    <description>Can input</description>
+                                    <value>1</value>
+                                </enumeratedValue>
+                            </enumeratedValues>
+                        </field>
+                    </fields>
+                </register>
+                <register>
+                    <dim>4</dim>
+                    <dimIncrement>0x04</dimIncrement>
+                    <name>gcm_in_tag[%s]</name>
+                    <description>GCM input tag for comparison with the calculated tag</description>
+                    <addressOffset>0x50</addressOffset>
+                </register>
+                <register>
+                    <name>out_data</name>
+                    <description>Plaintext/ciphertext output data</description>
+                    <addressOffset>0x60</addressOffset>
+                </register>
+                <register>
+                    <name>en</name>
+                    <description>AES module enable</description>
+                    <addressOffset>0x64</addressOffset>
+                    <fields>
+                        <field>
+                            <name>en</name>
+                            <description>AES module enable</description>
+                            <bitRange>[0:0]</bitRange>
+                            <enumeratedValues>
+                                <enumeratedValue>
+                                    <name>disable</name>
+                                    <description>Disable module</description>
+                                    <value>0</value>
+                                </enumeratedValue>
+                                <enumeratedValue>
+                                    <name>enable</name>
+                                    <description>Enable module</description>
+                                    <value>1</value>
+                                </enumeratedValue>
+                            </enumeratedValues>
+                        </field>
+                    </fields>
+                </register>
+                <register>
+                    <name>data_out_flag</name>
+                    <description>Data can output flag</description>
+                    <addressOffset>0x68</addressOffset>
+                    <fields>
+                        <field>
+                            <name>data_out_flag</name>
+                            <description>Data can be read from out_data when this flag is set</description>
+                            <bitRange>[0:0]</bitRange>
+                            <enumeratedValues>
+                                <enumeratedValue>
+                                    <name>cannot_output</name>
+                                    <description>Data cannot output</description>
+                                    <value>0</value>
+                                </enumeratedValue>
+                                <enumeratedValue>
+                                    <name>can_output</name>
+                                    <description>Data can output</description>
+                                    <value>1</value>
+                                </enumeratedValue>
+                            </enumeratedValues>
+                        </field>
+                    </fields>
+                </register>
+                <register>
+                    <name>tag_in_flag</name>
+                    <description>Can input tag (when using GCM)</description>
+                    <addressOffset>0x6c</addressOffset>
+                    <fields>
+                        <field>
+                            <name>tag_in_flag</name>
+                            <description>GCM tag can be written to gcm_in_tag when this flag is set</description>
+                            <bitRange>[0:0]</bitRange>
+                            <enumeratedValues derivedFrom="data_in_flag.data_in_flag.CAN_INPUT">
+                            </enumeratedValues>
+                        </field>
+                    </fields>
+                </register>
+                <register>
+                    <name>tag_clear</name>
+                    <description>Tag clear (a write to this register clears the tag_chk status)</description>
+                    <addressOffset>0x70</addressOffset>
+                </register>
+                <register>
+                    <dim>4</dim>
+                    <dimIncrement>0x04</dimIncrement>
+                    <name>gcm_out_tag[%s]</name>
+                    <description>Computed GCM output tag</description>
+                    <addressOffset>0x74</addressOffset>
+                </register>
+                <register>
+                    <dim>4</dim>
+                    <dimIncrement>0x04</dimIncrement>
+                    <name>key_ext[%s]</name>
+                    <description>5th-8th word of key</description>
+                    <addressOffset>0x84</addressOffset>
                 </register>
             </registers>
         </peripheral>
