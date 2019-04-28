@@ -2728,11 +2728,85 @@
             <groupName>SHA256</groupName>
             <baseAddress>0x502C0000</baseAddress>
             <registers>
-                <!-- TODO -->
                 <register>
-                    <name>dummy</name>
-                    <description>Dummy register: this peripheral is not implemented yet</description>
+                    <dim>8</dim>
+                    <dimIncrement>0x4</dimIncrement>
+                    <name>result[%s]</name>
+                    <description>Calculated SHA256 return value</description>
                     <addressOffset>0x00</addressOffset>
+                </register>
+                <register>
+                    <name>data_in</name>
+                    <description>SHA256 input data is written to this register</description>
+                    <addressOffset>0x20</addressOffset>
+                </register>
+                <register>
+                    <name>num_reg</name>
+                    <description>Counters register</description>
+                    <addressOffset>0x28</addressOffset>
+                    <fields>
+                        <field>
+                            <name>data_cnt</name>
+                            <description>The total amount of data calculated by SHA256 is set by this register, and the smallest unit is 512bit</description>
+                            <bitRange>[15:0]</bitRange>
+                        </field>
+                        <field>
+                            <name>data_num</name>
+                            <description>Currently calculated block number. 512bit=1block</description>
+                            <bitRange>[31:16]</bitRange>
+                        </field>
+                    </fields>
+                </register>
+                <register>
+                    <name>function_reg_0</name>
+                    <description>Function configuration register 0</description>
+                    <addressOffset>0x2C</addressOffset>
+                    <fields>
+                        <field>
+                            <name>en</name>
+                            <description>write:SHA256 enable register. read:Calculation completed flag</description>
+                            <bitRange>[0:0]</bitRange>
+                        </field>
+                        <field>
+                            <name>overflow</name>
+                            <description>SHA256 calculation overflow flag</description>
+                            <bitRange>[8:8]</bitRange>
+                        </field>
+                        <field>
+                            <name>endian</name>
+                            <description>Endian setting</description>
+                            <bitRange>[16:16]</bitRange>
+                            <enumeratedValues>
+                                <enumeratedValue>
+                                    <name>le</name>
+                                    <description>Little endian</description>
+                                    <value>0</value>
+                                </enumeratedValue>
+                                <enumeratedValue>
+                                    <name>be</name>
+                                    <description>Big endian</description>
+                                    <value>1</value>
+                                </enumeratedValue>
+                            </enumeratedValues>
+                        </field>
+                    </fields>
+                </register>
+                <register>
+                    <name>function_reg_1</name>
+                    <description>Function configuration register 1</description>
+                    <addressOffset>0x34</addressOffset>
+                    <fields>
+                        <field>
+                            <name>dma_en</name>
+                            <description>SHA and DMA handshake signals enable. 1:enable; 0:disable</description>
+                            <bitRange>[0:0]</bitRange>
+                        </field>
+                        <field>
+                            <name>fifo_in_full</name>
+                            <description>1:SHA256 input fifo is full; 0:not full</description>
+                            <bitRange>[8:8]</bitRange>
+                        </field>
+                    </fields>
                 </register>
             </registers>
         </peripheral>
