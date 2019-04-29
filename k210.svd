@@ -876,6 +876,23 @@
         </peripheral>
         <!-- KPU -->
 
+        <!-- FFT -->
+        <peripheral>
+            <name>FFT</name>
+            <description>Fast Fourier Transform Accelerator</description>
+            <groupName>FFT</groupName>
+            <baseAddress>0x42000000</baseAddress>
+            <registers>
+                <!-- TODO -->
+                <register>
+                    <name>dummy</name>
+                    <description>Dummy register: this peripheral is not implemented yet</description>
+                    <addressOffset>0x00</addressOffset>
+                </register>
+            </registers>
+        </peripheral>
+        <!-- FFT -->
+
         <!-- DMAC -->
         <peripheral>
             <name>DMAC</name>

@@ -105,6 +105,25 @@ impl Deref for KPU {
 }
 #[doc = "Neural Network Accelerator"]
 pub mod kpu;
+#[doc = "Fast Fourier Transform Accelerator"]
+pub struct FFT {
+    _marker: PhantomData<*const ()>,
+}
+unsafe impl Send for FFT {}
+impl FFT {
+    #[doc = r" Returns a pointer to the register block"]
+    pub fn ptr() -> *const fft::RegisterBlock {
+        1107296256 as *const _
+    }
+}
+impl Deref for FFT {
+    type Target = fft::RegisterBlock;
+    fn deref(&self) -> &fft::RegisterBlock {
+        unsafe { &*FFT::ptr() }
+    }
+}
+#[doc = "Fast Fourier Transform Accelerator"]
+pub mod fft;
 #[doc = "Direct Memory Access Controller"]
 pub struct DMAC {
     _marker: PhantomData<*const ()>,
@@ -632,6 +651,8 @@ pub struct Peripherals {
     pub GPIOHS: GPIOHS,
     #[doc = "KPU"]
     pub KPU: KPU,
+    #[doc = "FFT"]
+    pub FFT: FFT,
     #[doc = "DMAC"]
     pub DMAC: DMAC,
     #[doc = "GPIO"]
@@ -719,6 +740,9 @@ impl Peripherals {
                 _marker: PhantomData,
             },
             KPU: KPU {
+                _marker: PhantomData,
+            },
+            FFT: FFT {
                 _marker: PhantomData,
             },
             DMAC: DMAC {
