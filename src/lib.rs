@@ -86,6 +86,25 @@ impl Deref for GPIOHS {
 }
 #[doc = "High-speed GPIO"]
 pub mod gpiohs;
+#[doc = "Neural Network Accelerator"]
+pub struct KPU {
+    _marker: PhantomData<*const ()>,
+}
+unsafe impl Send for KPU {}
+impl KPU {
+    #[doc = r" Returns a pointer to the register block"]
+    pub fn ptr() -> *const kpu::RegisterBlock {
+        1082130432 as *const _
+    }
+}
+impl Deref for KPU {
+    type Target = kpu::RegisterBlock;
+    fn deref(&self) -> &kpu::RegisterBlock {
+        unsafe { &*KPU::ptr() }
+    }
+}
+#[doc = "Neural Network Accelerator"]
+pub mod kpu;
 #[doc = "Direct Memory Access Controller"]
 pub struct DMAC {
     _marker: PhantomData<*const ()>,
@@ -270,6 +289,25 @@ impl Deref for I2S0 {
 }
 #[doc = "Inter-Integrated Sound Interface 0"]
 pub mod i2s0;
+#[doc = "Audio Processor"]
+pub struct APU {
+    _marker: PhantomData<*const ()>,
+}
+unsafe impl Send for APU {}
+impl APU {
+    #[doc = r" Returns a pointer to the register block"]
+    pub fn ptr() -> *const apu::RegisterBlock {
+        1344602624 as *const _
+    }
+}
+impl Deref for APU {
+    type Target = apu::RegisterBlock;
+    fn deref(&self) -> &apu::RegisterBlock {
+        unsafe { &*APU::ptr() }
+    }
+}
+#[doc = "Audio Processor"]
+pub mod apu;
 #[doc = "Inter-Integrated Sound Interface 1"]
 pub struct I2S1 {
     _marker: PhantomData<*const ()>,
@@ -592,6 +630,8 @@ pub struct Peripherals {
     pub UARTHS: UARTHS,
     #[doc = "GPIOHS"]
     pub GPIOHS: GPIOHS,
+    #[doc = "KPU"]
+    pub KPU: KPU,
     #[doc = "DMAC"]
     pub DMAC: DMAC,
     #[doc = "GPIO"]
@@ -612,6 +652,8 @@ pub struct Peripherals {
     pub SPI3: SPI3,
     #[doc = "I2S0"]
     pub I2S0: I2S0,
+    #[doc = "APU"]
+    pub APU: APU,
     #[doc = "I2S1"]
     pub I2S1: I2S1,
     #[doc = "I2S2"]
@@ -676,6 +718,9 @@ impl Peripherals {
             GPIOHS: GPIOHS {
                 _marker: PhantomData,
             },
+            KPU: KPU {
+                _marker: PhantomData,
+            },
             DMAC: DMAC {
                 _marker: PhantomData,
             },
@@ -704,6 +749,9 @@ impl Peripherals {
                 _marker: PhantomData,
             },
             I2S0: I2S0 {
+                _marker: PhantomData,
+            },
+            APU: APU {
                 _marker: PhantomData,
             },
             I2S1: I2S1 {

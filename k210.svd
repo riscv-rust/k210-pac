@@ -859,6 +859,23 @@
         </peripheral>
         <!-- GPIOHS -->
 
+        <!-- KPU -->
+        <peripheral>
+            <name>KPU</name>
+            <description>Neural Network Accelerator</description>
+            <groupName>KPU</groupName>
+            <baseAddress>0x40800000</baseAddress>
+            <registers>
+                <!-- TODO -->
+                <register>
+                    <name>dummy</name>
+                    <description>Dummy register: this peripheral is not implemented yet</description>
+                    <addressOffset>0x00</addressOffset>
+                </register>
+            </registers>
+        </peripheral>
+        <!-- KPU -->
+
         <!-- DMAC -->
         <peripheral>
             <name>DMAC</name>
@@ -1667,6 +1684,23 @@
             </registers>
         </peripheral>
         <!-- I2S0 -->
+
+        <!-- APU -->
+        <peripheral>
+            <name>APU</name>
+            <description>Audio Processor</description>
+            <groupName>APU</groupName>
+            <baseAddress>0x50250200</baseAddress>
+            <registers>
+                <!-- TODO -->
+                <register>
+                    <name>dummy</name>
+                    <description>Dummy register: this peripheral is not implemented yet</description>
+                    <addressOffset>0x00</addressOffset>
+                </register>
+            </registers>
+        </peripheral>
+        <!-- APU -->
 
         <!-- I2S1 -->
         <peripheral derivedFrom="I2S0">
