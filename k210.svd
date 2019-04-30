@@ -1694,9 +1694,578 @@
             <registers>
                 <!-- TODO -->
                 <register>
-                    <name>dummy</name>
-                    <description>Dummy register: this peripheral is not implemented yet</description>
+                    <name>ier</name>
+                    <description>Enable Register</description>
                     <addressOffset>0x00</addressOffset>
+                    <fields>
+                        <field>
+                            <name>ien</name>
+                            <description>I2S Enable</description>
+                            <bitRange>[0:0]</bitRange>
+                        </field>
+                    </fields>
+                </register>
+                <register>
+                    <name>irer</name>
+                    <description>Receiver Block Enable Register</description>
+                    <addressOffset>0x04</addressOffset>
+                    <fields>
+                        <field>
+                            <name>rxen</name>
+                            <description>Receiver block enable</description>
+                            <bitRange>[0:0]</bitRange>
+                        </field>
+                    </fields>
+                </register>
+                <register>
+                    <name>iter</name>
+                    <description>Transmitter Block Enable Register</description>
+                    <addressOffset>0x08</addressOffset>
+                    <fields>
+                        <field>
+                            <name>txen</name>
+                            <description>Transmitter block enable</description>
+                            <bitRange>[0:0]</bitRange>
+                        </field>
+                    </fields>
+                </register>
+                <register>
+                    <name>cer</name>
+                    <description>Clock Generation enable</description>
+                    <addressOffset>0x0c</addressOffset>
+                    <fields>
+                        <field>
+                            <name>clken</name>
+                            <description>Transmitter block enable</description>
+                            <bitRange>[0:0]</bitRange>
+                        </field>
+                    </fields>
+                </register>
+                <register>
+                    <name>ccr</name>
+                    <description>Clock Configuration Register</description>
+                    <addressOffset>0x10</addressOffset>
+                    <fields>
+                        <field>
+                            <name>clk_gate</name>
+                            <description>Gating of sclk</description>
+                            <bitRange>[2:0]</bitRange>
+                            <enumeratedValues>
+                                <enumeratedValue>
+                                    <name>no</name>
+                                    <description>Clock gating is disabled</description>
+                                    <value>0</value>
+                                </enumeratedValue>
+                                <enumeratedValue>
+                                    <name>cycles12</name>
+                                    <description>Gating after 12 sclk cycles</description>
+                                    <value>1</value>
+                                </enumeratedValue>
+                                <enumeratedValue>
+                                    <name>cycles16</name>
+                                    <description>Gating after 16 sclk cycles</description>
+                                    <value>2</value>
+                                </enumeratedValue>
+                                <enumeratedValue>
+                                    <name>cycles20</name>
+                                    <description>Gating after 20 sclk cycles</description>
+                                    <value>3</value>
+                                </enumeratedValue>
+                                <enumeratedValue>
+                                    <name>cycles24</name>
+                                    <description>Gating after 24 sclk cycles</description>
+                                    <value>4</value>
+                                </enumeratedValue>
+                            </enumeratedValues>
+                        </field>
+                        <field>
+                            <name>clk_word_size</name>
+                            <description>The number of sclk cycles for which the word select line stayd in the left aligned or right aligned mode</description>
+                            <bitRange>[4:3]</bitRange>
+                            <enumeratedValues>
+                                <enumeratedValue>
+                                    <name>cycles16</name>
+                                    <description>16 sclk cycles</description>
+                                    <value>0</value>
+                                </enumeratedValue>
+                                <enumeratedValue>
+                                    <name>cycles24</name>
+                                    <description>24 sclk cycles</description>
+                                    <value>1</value>
+                                </enumeratedValue>
+                                <enumeratedValue>
+                                    <name>cycles32</name>
+                                    <description>32 sclk cycles</description>
+                                    <value>2</value>
+                                </enumeratedValue>
+                            </enumeratedValues>
+                        </field>
+                        <field>
+                            <name>align_mode</name>
+                            <description>Alignment mode setting</description>
+                            <bitRange>[7:5]</bitRange>
+                            <enumeratedValues>
+                                <enumeratedValue>
+                                    <name>standard</name>
+                                    <description>Standard I2S format</description>
+                                    <value>1</value>
+                                </enumeratedValue>
+                                <enumeratedValue>
+                                    <name>right</name>
+                                    <description>Right aligned format</description>
+                                    <value>2</value>
+                                </enumeratedValue>
+                                <enumeratedValue>
+                                    <name>left</name>
+                                    <description>Left aligned format</description>
+                                    <value>4</value>
+                                </enumeratedValue>
+                            </enumeratedValues>
+                        </field>
+                        <field>
+                            <name>dma_tx_en</name>
+                            <description>DMA transmit enable control</description>
+                            <bitRange>[8:8]</bitRange>
+                        </field>
+                        <field>
+                            <name>dma_rx_en</name>
+                            <description>DMA receive enable control</description>
+                            <bitRange>[9:9]</bitRange>
+                        </field>
+                        <field>
+                            <name>dma_divide_16</name>
+                            <description>Split 32bit data to two 16 bit data and filled in left and right channel. Used with dma_tx_en or dma_rx_en</description>
+                            <bitRange>[10:10]</bitRange>
+                        </field>
+                        <field>
+                            <name>sign_expand_en</name>
+                            <description>SIGN_EXPAND_EN</description>
+                            <bitRange>[11:11]</bitRange>
+                        </field>
+                    </fields>
+                </register>
+                <register>
+                    <name>rxffr</name>
+                    <description>Receiver Block FIFO Reset Register</description>
+                    <addressOffset>0x14</addressOffset>
+                    <fields>
+                        <field>
+                            <name>rxffr</name>
+                            <description>Receiver FIFO reset</description>
+                            <bitRange>[0:0]</bitRange>
+                            <enumeratedValues>
+                                <name>FLUSH</name>
+                                <enumeratedValue>
+                                    <name>not_flush</name>
+                                    <description>Not flush FIFO</description>
+                                    <value>0</value>
+                                </enumeratedValue>
+                                <enumeratedValue>
+                                    <name>flush</name>
+                                    <description>Flush FIFO</description>
+                                    <value>1</value>
+                                </enumeratedValue>
+                            </enumeratedValues>
+                        </field>
+                    </fields>
+                </register>
+                <register>
+                    <name>txffr</name>
+                    <description>Transmitter Block FIFO Reset Register</description>
+                    <addressOffset>0x18</addressOffset>
+                    <fields>
+                        <field>
+                            <name>rxffr</name>
+                            <description>Transmitter FIFO reset</description>
+                            <bitRange>[0:0]</bitRange>
+                            <enumeratedValues derivedFrom = "rxffr.rxffr.FLUSH">
+                            </enumeratedValues>
+                        </field>
+                    </fields>
+                </register>
+                <cluster>
+                    <name>channel%s</name>
+                    <description>Channel cluster</description>
+                    <addressOffset>0x20</addressOffset>
+                    <dim>4</dim>
+                    <dimIndex>0-3</dimIndex>
+                    <dimIncrement>0x40</dimIncrement>
+                    <register>
+                        <!-- TODO -->
+                        <name>left_rxtx</name>
+                        <description>Left Receive or Left Transmit Register</description>
+                        <addressOffset>0x00</addressOffset>
+                    </register>
+                    <register>
+                        <name>right_rxtx</name>
+                        <!-- TODO -->
+                        <description>Right Receive or Right Transmit Register</description>
+                        <addressOffset>0x04</addressOffset>
+                    </register>
+                    <register>
+                        <name>rer</name>
+                        <description>Receive Enable Register</description>
+                        <addressOffset>0x08</addressOffset>
+                        <fields>
+                            <field>
+                                <name>rxchenx</name>
+                                <description>Receive channel enable/disable</description>
+                                <bitRange>[0:0]</bitRange>
+                            </field>
+                        </fields>
+                    </register>
+                    <register>
+                        <name>ter</name>
+                        <description>Transmit Enable Register</description>
+                        <addressOffset>0x0c</addressOffset>
+                        <fields>
+                            <field>
+                                <name>txchenx</name>
+                                <description>Transmit channel enable/disable</description>
+                                <bitRange>[0:0]</bitRange>
+                            </field>
+                        </fields>
+                    </register>
+                    <register>
+                        <name>rcr</name>
+                        <description>Receive Configuration Register</description>
+                        <addressOffset>0x10</addressOffset>
+                        <fields>
+                            <field>
+                                <name>wlen</name>
+                                <description>Desired data resolution of receiver</description>
+                                <bitRange>[2:0]</bitRange>
+                                <enumeratedValues>
+                                    <name>WLEN</name>
+                                    <enumeratedValue>
+                                        <name>ignore</name>
+                                        <description>Ignore the word length</description>
+                                        <value>0</value>
+                                    </enumeratedValue>
+                                    <enumeratedValue>
+                                        <name>resolution12</name>
+                                        <description>12-bit data resolution of the receiver</description>
+                                        <value>1</value>
+                                    </enumeratedValue>
+                                    <enumeratedValue>
+                                        <name>resolution16</name>
+                                        <description>16-bit data resolution of the receiver</description>
+                                        <value>2</value>
+                                    </enumeratedValue>
+                                    <enumeratedValue>
+                                        <name>resolution20</name>
+                                        <description>20-bit data resolution of the receiver</description>
+                                        <value>3</value>
+                                    </enumeratedValue>
+                                    <enumeratedValue>
+                                        <name>resolution24</name>
+                                        <description>24-bit data resolution of the receiver</description>
+                                        <value>4</value>
+                                    </enumeratedValue>
+                                    <enumeratedValue>
+                                        <name>resolution32</name>
+                                        <description>32-bit data resolution of the receiver</description>
+                                        <value>5</value>
+                                    </enumeratedValue>
+                                </enumeratedValues>
+                            </field>
+                        </fields>
+                    </register>
+                    <register>
+                        <name>tcr</name>
+                        <description>Transmit Configuration Register</description>
+                        <addressOffset>0x14</addressOffset>
+                        <fields>
+                            <field>
+                                <name>wlen</name>
+                                <description>Desired data resolution of transmitter</description>
+                                <bitRange>[2:0]</bitRange>
+                                <enumeratedValues derivedFrom = "rcr.wlen.WLEN">
+                                </enumeratedValues>
+                            </field>
+                        </fields>
+                    </register>
+                    <register>
+                        <name>isr</name>
+                        <description>Interrupt Status Register</description>
+                        <addressOffset>0x18</addressOffset>
+                        <access>read-only</access>
+                        <fields>
+                            <field>
+                                <name>rxda</name>
+                                <description>Status of receiver data avaliable interrupt</description>
+                                <bitRange>[0:0]</bitRange>
+                            </field>
+                            <field>
+                                <name>rxfo</name>
+                                <description>Status of data overrun interrupt for RX channel</description>
+                                <bitRange>[1:1]</bitRange>
+                            </field>
+                            <field>
+                                <name>txfe</name>
+                                <description>Status of transmit empty triger interrupt</description>
+                                <bitRange>[4:4]</bitRange>
+                            </field>
+                            <field>
+                                <name>txfo</name>
+                                <description>Status of data overrun interrupt for the TX channel</description>
+                                <bitRange>[5:5]</bitRange>
+                            </field>
+                        </fields>
+                    </register>
+                    <register>
+                        <name>imr</name>
+                        <description>Interrupt Mask Register</description>
+                        <addressOffset>0x1c</addressOffset>
+                        <fields>
+                            <field>
+                                <name>rxdam</name>
+                                <description>Mask RX FIFO data avaliable interrupt</description>
+                                <bitRange>[0:0]</bitRange>
+                            </field>
+                            <field>
+                                <name>rxfom</name>
+                                <description>Mask RX FIFO overrun interrupt</description>
+                                <bitRange>[1:1]</bitRange>
+                            </field>
+                            <field>
+                                <name>txfem</name>
+                                <description>Mask TX FIFO empty interrupt</description>
+                                <bitRange>[4:4]</bitRange>
+                            </field>
+                            <field>
+                                <name>txfom</name>
+                                <description>Mask TX FIFO overrun interrupt</description>
+                                <bitRange>[5:5]</bitRange>
+                            </field>
+                        </fields>
+                    </register>
+                    <register>
+                        <name>ror</name>
+                        <description>Receive Overrun Register</description>
+                        <addressOffset>0x20</addressOffset>
+                        <access>read-only</access>
+                        <fields>
+                            <field>
+                                <name>rxcho</name>
+                                <description>Read this bit to clear RX FIFO data overrun interrupt. 0x0 for RX FIFO write valid, 0x1 for RX FIFO write overrun</description>
+                                <bitRange>[0:0]</bitRange>
+                            </field>
+                        </fields>
+                    </register>
+                    <register>
+                        <name>tor</name>
+                        <description>Transmit Overrun Register</description>
+                        <addressOffset>0x24</addressOffset>
+                        <access>read-only</access>
+                        <fields>
+                            <field>
+                                <name>txcho</name>
+                                <description>Read this bit to clear TX FIFO data overrun interrupt. 0x0 for TX FIFO write valid, 0x1 for TX FIFO write overrun</description>
+                                <bitRange>[0:0]</bitRange>
+                            </field>
+                        </fields>
+                    </register>
+                    <register>
+                        <name>rfcr</name>
+                        <description>Receive FIFO Configuration Register</description>
+                        <addressOffset>0x28</addressOffset>
+                        <fields>
+                            <field>
+                                <name>rxchdt</name>
+                                <description>Trigger level in the RX FIFO at which the receiver data available interrupt generate</description>
+                                <bitRange>[3:0]</bitRange>
+                                <enumeratedValues>
+                                    <name>LEVEL</name>
+                                    <enumeratedValue>
+                                        <name>level1</name>
+                                        <description>Interrupt trigger when FIFO level is 1</description>
+                                        <value>0</value>
+                                    </enumeratedValue>
+                                    <enumeratedValue>
+                                        <name>level2</name>
+                                        <description>Interrupt trigger when FIFO level is 2</description>
+                                        <value>1</value>
+                                    </enumeratedValue>
+                                    <enumeratedValue>
+                                        <name>level3</name>
+                                        <description>Interrupt trigger when FIFO level is 3</description>
+                                        <value>2</value>
+                                    </enumeratedValue>
+                                    <enumeratedValue>
+                                        <name>level4</name>
+                                        <description>Interrupt trigger when FIFO level is 4</description>
+                                        <value>3</value>
+                                    </enumeratedValue>
+                                    <enumeratedValue>
+                                        <name>level5</name>
+                                        <description>Interrupt trigger when FIFO level is 5</description>
+                                        <value>4</value>
+                                    </enumeratedValue>
+                                    <enumeratedValue>
+                                        <name>level6</name>
+                                        <description>Interrupt trigger when FIFO level is 6</description>
+                                        <value>5</value>
+                                    </enumeratedValue>
+                                    <enumeratedValue>
+                                        <name>level7</name>
+                                        <description>Interrupt trigger when FIFO level is 7</description>
+                                        <value>6</value>
+                                    </enumeratedValue>
+                                    <enumeratedValue>
+                                        <name>level8</name>
+                                        <description>Interrupt trigger when FIFO level is 8</description>
+                                        <value>7</value>
+                                    </enumeratedValue>
+                                    <enumeratedValue>
+                                        <name>level9</name>
+                                        <description>Interrupt trigger when FIFO level is 9</description>
+                                        <value>8</value>
+                                    </enumeratedValue>
+                                    <enumeratedValue>
+                                        <name>level10</name>
+                                        <description>Interrupt trigger when FIFO level is 10</description>
+                                        <value>9</value>
+                                    </enumeratedValue>
+                                    <enumeratedValue>
+                                        <name>level11</name>
+                                        <description>Interrupt trigger when FIFO level is 11</description>
+                                        <value>10</value>
+                                    </enumeratedValue>
+                                    <enumeratedValue>
+                                        <name>level12</name>
+                                        <description>Interrupt trigger when FIFO level is 12</description>
+                                        <value>11</value>
+                                    </enumeratedValue>
+                                    <enumeratedValue>
+                                        <name>level13</name>
+                                        <description>Interrupt trigger when FIFO level is 13</description>
+                                        <value>12</value>
+                                    </enumeratedValue>
+                                    <enumeratedValue>
+                                        <name>level14</name>
+                                        <description>Interrupt trigger when FIFO level is 14</description>
+                                        <value>13</value>
+                                    </enumeratedValue>
+                                    <enumeratedValue>
+                                        <name>level15</name>
+                                        <description>Interrupt trigger when FIFO level is 15</description>
+                                        <value>14</value>
+                                    </enumeratedValue>
+                                    <enumeratedValue>
+                                        <name>level16</name>
+                                        <description>Interrupt trigger when FIFO level is 16</description>
+                                        <value>15</value>
+                                    </enumeratedValue>
+                                </enumeratedValues>
+                            </field>
+                        </fields>
+                    </register>
+                    <register>
+                        <name>tfcr</name>
+                        <description>Transmit FIFO Configuration Register</description>
+                        <addressOffset>0x2c</addressOffset>
+                        <fields>
+                            <field>
+                                <name>txchet</name>
+                                <description>Trigger level in the TX FIFO at which the transmitter data available interrupt generate</description>
+                                <bitRange>[3:0]</bitRange>
+                                <enumeratedValues derivedFrom = "rfcr.rxchdt.LEVEL">
+                                </enumeratedValues>
+                            </field>
+                        </fields>
+                    </register>
+                    <register>
+                        <name>rff</name>
+                        <description>Receive FIFO Flush Register</description>
+                        <addressOffset>0x30</addressOffset>
+                        <fields>
+                            <field>
+                                <name>rxchfr</name>
+                                <description>Receiver channel FIFO reset</description>
+                                <bitRange>[0:0]</bitRange>
+                                <enumeratedValues>
+                                    <name>FLUSH</name>
+                                    <enumeratedValue>
+                                        <name>not_flush</name>
+                                        <description>Not flush an individual FIFO</description>
+                                        <value>0</value>
+                                    </enumeratedValue>
+                                    <enumeratedValue>
+                                        <name>flush</name>
+                                        <description>Flush an indiviadual FIFO</description>
+                                        <value>1</value>
+                                    </enumeratedValue>
+                                </enumeratedValues>
+                            </field>
+                        </fields>
+                    </register>
+                    <register>
+                        <name>tff</name>
+                        <description>Transmit FIFO Flush Register</description>
+                        <addressOffset>0x34</addressOffset>
+                        <fields>
+                            <field>
+                                <name>rtxchfr</name>
+                                <description>Transmit channel FIFO reset</description>
+                                <bitRange>[0:0]</bitRange>
+                                <enumeratedValues derivedFrom="rff.rxchfr.FLUSH">
+                                </enumeratedValues>
+                            </field>
+                        </fields>
+                    </register>
+                    <register>
+                        <name>_reserved%s</name>
+                        <description>_RESERVED0</description>
+                        <addressOffset>0x38</addressOffset>
+                        <dim>2</dim>
+                        <dimIndex>0-1</dimIndex>
+                        <dimIncrement>0x4</dimIncrement>
+                    </register>
+                </cluster>
+                <register>
+                    <!-- TODO -->
+                    <name>rxdma</name>
+                    <description>Receiver Block DMA Register</description>
+                    <addressOffset>0x1c0</addressOffset>
+                </register>
+                <register>
+                    <!-- TODO -->
+                    <name>rrxdma</name>
+                    <description>Reset Receiver Block DMA Register</description>
+                    <addressOffset>0x1c4</addressOffset>
+                </register>
+                <register>
+                    <!-- TODO -->
+                    <name>txdma</name>
+                    <description>Transmitter Block DMA Register</description>
+                    <addressOffset>0x1c8</addressOffset>
+                </register>
+                <register>
+                    <!-- TODO -->
+                    <name>rtxdma</name>
+                    <description>Reset Transmitter Block DMA Register</description>
+                    <addressOffset>0x1cc</addressOffset>
+                </register>
+                <register>
+                    <name>i2s_comp_param_2</name>
+                    <description>Component Parameter Register 2</description>
+                    <addressOffset>0x1f0</addressOffset>
+                </register>
+                <register>
+                    <name>i2s_comp_param_1</name>
+                    <description>Component Parameter Register 1</description>
+                    <addressOffset>0x1f4</addressOffset>
+                </register>
+                <register>
+                    <name>i2s_comp_version_1</name>
+                    <description>Component Version Register</description>
+                    <addressOffset>0x1f8</addressOffset>
+                </register>
+                <register>
+                    <name>i2s_comp_type</name>
+                    <description>Component Type Register</description>
+                    <addressOffset>0x1fc</addressOffset>
                 </register>
             </registers>
         </peripheral>
