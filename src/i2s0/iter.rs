@@ -42,32 +42,32 @@ impl super::ITER {
         self.write(|w| w)
     }
 }
-#[doc = "Possible values of the field `txen`"]
-pub type TXENR = super::ier::IENR;
-#[doc = "Values that can be written to the field `txen`"]
-pub type TXENW = super::ier::IENW;
+#[doc = r" Value of the field"]
+pub struct TXENR {
+    bits: bool,
+}
+impl TXENR {
+    #[doc = r" Value of the field as raw bits"]
+    #[inline]
+    pub fn bit(&self) -> bool {
+        self.bits
+    }
+    #[doc = r" Returns `true` if the bit is clear (0)"]
+    #[inline]
+    pub fn bit_is_clear(&self) -> bool {
+        !self.bit()
+    }
+    #[doc = r" Returns `true` if the bit is set (1)"]
+    #[inline]
+    pub fn bit_is_set(&self) -> bool {
+        self.bit()
+    }
+}
 #[doc = r" Proxy"]
 pub struct _TXENW<'a> {
     w: &'a mut W,
 }
 impl<'a> _TXENW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: TXENW) -> &'a mut W {
-        {
-            self.bit(variant._bits())
-        }
-    }
-    #[doc = "DISABLE"]
-    #[inline]
-    pub fn disable(self) -> &'a mut W {
-        self.variant(super::ier::IENW::DISABLE)
-    }
-    #[doc = "ENABLE"]
-    #[inline]
-    pub fn enable(self) -> &'a mut W {
-        self.variant(super::ier::IENW::ENABLE)
-    }
     #[doc = r" Sets the field bit"]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
@@ -95,11 +95,12 @@ impl R {
     #[doc = "Bit 0 - Transmitter block enable"]
     #[inline]
     pub fn txen(&self) -> TXENR {
-        TXENR::_from({
+        let bits = {
             const MASK: bool = true;
             const OFFSET: u8 = 0;
             ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+        };
+        TXENR { bits }
     }
 }
 impl W {

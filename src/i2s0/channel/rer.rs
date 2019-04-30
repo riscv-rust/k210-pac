@@ -42,15 +42,16 @@ impl super::RER {
         self.write(|w| w)
     }
 }
-#[doc = "Possible values of the field `rxchenx`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum RXCHENXR {
-    #[doc = "DISABLE"]
-    DISABLE,
-    #[doc = "ENABLE"]
-    ENABLE,
+#[doc = r" Value of the field"]
+pub struct RXCHENXR {
+    bits: bool,
 }
 impl RXCHENXR {
+    #[doc = r" Value of the field as raw bits"]
+    #[inline]
+    pub fn bit(&self) -> bool {
+        self.bits
+    }
     #[doc = r" Returns `true` if the bit is clear (0)"]
     #[inline]
     pub fn bit_is_clear(&self) -> bool {
@@ -61,75 +62,12 @@ impl RXCHENXR {
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            RXCHENXR::DISABLE => false,
-            RXCHENXR::ENABLE => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> RXCHENXR {
-        match value {
-            false => RXCHENXR::DISABLE,
-            true => RXCHENXR::ENABLE,
-        }
-    }
-    #[doc = "Checks if the value of the field is `DISABLE`"]
-    #[inline]
-    pub fn is_disable(&self) -> bool {
-        *self == RXCHENXR::DISABLE
-    }
-    #[doc = "Checks if the value of the field is `ENABLE`"]
-    #[inline]
-    pub fn is_enable(&self) -> bool {
-        *self == RXCHENXR::ENABLE
-    }
-}
-#[doc = "Values that can be written to the field `rxchenx`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum RXCHENXW {
-    #[doc = "DISABLE"]
-    DISABLE,
-    #[doc = "ENABLE"]
-    ENABLE,
-}
-impl RXCHENXW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            RXCHENXW::DISABLE => false,
-            RXCHENXW::ENABLE => true,
-        }
-    }
 }
 #[doc = r" Proxy"]
 pub struct _RXCHENXW<'a> {
     w: &'a mut W,
 }
 impl<'a> _RXCHENXW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: RXCHENXW) -> &'a mut W {
-        {
-            self.bit(variant._bits())
-        }
-    }
-    #[doc = "DISABLE"]
-    #[inline]
-    pub fn disable(self) -> &'a mut W {
-        self.variant(RXCHENXW::DISABLE)
-    }
-    #[doc = "ENABLE"]
-    #[inline]
-    pub fn enable(self) -> &'a mut W {
-        self.variant(RXCHENXW::ENABLE)
-    }
     #[doc = r" Sets the field bit"]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
@@ -157,11 +95,12 @@ impl R {
     #[doc = "Bit 0 - Receive channel enable/disable"]
     #[inline]
     pub fn rxchenx(&self) -> RXCHENXR {
-        RXCHENXR::_from({
+        let bits = {
             const MASK: bool = true;
             const OFFSET: u8 = 0;
             ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+        };
+        RXCHENXR { bits }
     }
 }
 impl W {

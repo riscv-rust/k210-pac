@@ -42,15 +42,16 @@ impl super::IER {
         self.write(|w| w)
     }
 }
-#[doc = "Possible values of the field `ien`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum IENR {
-    #[doc = "DISABLE"]
-    DISABLE,
-    #[doc = "ENABLE"]
-    ENABLE,
+#[doc = r" Value of the field"]
+pub struct IENR {
+    bits: bool,
 }
 impl IENR {
+    #[doc = r" Value of the field as raw bits"]
+    #[inline]
+    pub fn bit(&self) -> bool {
+        self.bits
+    }
     #[doc = r" Returns `true` if the bit is clear (0)"]
     #[inline]
     pub fn bit_is_clear(&self) -> bool {
@@ -61,75 +62,12 @@ impl IENR {
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            IENR::DISABLE => false,
-            IENR::ENABLE => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> IENR {
-        match value {
-            false => IENR::DISABLE,
-            true => IENR::ENABLE,
-        }
-    }
-    #[doc = "Checks if the value of the field is `DISABLE`"]
-    #[inline]
-    pub fn is_disable(&self) -> bool {
-        *self == IENR::DISABLE
-    }
-    #[doc = "Checks if the value of the field is `ENABLE`"]
-    #[inline]
-    pub fn is_enable(&self) -> bool {
-        *self == IENR::ENABLE
-    }
-}
-#[doc = "Values that can be written to the field `ien`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum IENW {
-    #[doc = "DISABLE"]
-    DISABLE,
-    #[doc = "ENABLE"]
-    ENABLE,
-}
-impl IENW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            IENW::DISABLE => false,
-            IENW::ENABLE => true,
-        }
-    }
 }
 #[doc = r" Proxy"]
 pub struct _IENW<'a> {
     w: &'a mut W,
 }
 impl<'a> _IENW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: IENW) -> &'a mut W {
-        {
-            self.bit(variant._bits())
-        }
-    }
-    #[doc = "DISABLE"]
-    #[inline]
-    pub fn disable(self) -> &'a mut W {
-        self.variant(IENW::DISABLE)
-    }
-    #[doc = "ENABLE"]
-    #[inline]
-    pub fn enable(self) -> &'a mut W {
-        self.variant(IENW::ENABLE)
-    }
     #[doc = r" Sets the field bit"]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
@@ -157,11 +95,12 @@ impl R {
     #[doc = "Bit 0 - I2S Enable"]
     #[inline]
     pub fn ien(&self) -> IENR {
-        IENR::_from({
+        let bits = {
             const MASK: bool = true;
             const OFFSET: u8 = 0;
             ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+        };
+        IENR { bits }
     }
 }
 impl W {

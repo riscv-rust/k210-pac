@@ -1327,19 +1327,6 @@
                             <name>ien</name>
                             <description>I2S Enable</description>
                             <bitRange>[0:0]</bitRange>
-                            <enumeratedValues>
-                                <name>ENABLE</name>
-                                <enumeratedValue>
-                                    <name>disable</name>
-                                    <description>DISABLE</description>
-                                    <value>0</value>
-                                </enumeratedValue>
-                                <enumeratedValue>
-                                    <name>enable</name>
-                                    <description>ENABLE</description>
-                                    <value>1</value>
-                                </enumeratedValue>
-                            </enumeratedValues>
                         </field>
                     </fields>
                 </register>
@@ -1352,8 +1339,6 @@
                             <name>rxen</name>
                             <description>Receiver block enable</description>
                             <bitRange>[0:0]</bitRange>
-                            <enumeratedValues derivedFrom="ier.ien.ENABLE">
-                            </enumeratedValues>
                         </field>
                     </fields>
                 </register>
@@ -1366,8 +1351,6 @@
                             <name>txen</name>
                             <description>Transmitter block enable</description>
                             <bitRange>[0:0]</bitRange>
-                            <enumeratedValues derivedFrom="ier.ien.ENABLE">
-                            </enumeratedValues>
                         </field>
                     </fields>
                 </register>
@@ -1380,8 +1363,6 @@
                             <name>clken</name>
                             <description>Transmitter block enable</description>
                             <bitRange>[0:0]</bitRange>
-                            <enumeratedValues derivedFrom="ier.ien.ENABLE">
-                            </enumeratedValues>
                         </field>
                     </fields>
                 </register>
@@ -1397,7 +1378,7 @@
                             <enumeratedValues>
                                 <enumeratedValue>
                                     <name>no</name>
-                                    <description>Clock gating is disable</description>
+                                    <description>Clock gating is disabled</description>
                                     <value>0</value>
                                 </enumeratedValue>
                                 <enumeratedValue>
@@ -1470,29 +1451,21 @@
                             <name>dma_tx_en</name>
                             <description>DMA transmit enable control</description>
                             <bitRange>[8:8]</bitRange>
-                            <enumeratedValues derivedFrom="ier.ien.ENABLE">
-                            </enumeratedValues>
                         </field>
                         <field>
                             <name>dma_rx_en</name>
                             <description>DMA receive enable control</description>
                             <bitRange>[9:9]</bitRange>
-                            <enumeratedValues derivedFrom="ier.ien.ENABLE">
-                            </enumeratedValues>
                         </field>
                         <field>
                             <name>dma_divide_16</name>
                             <description>Split 32bit data to two 16 bit data and filled in left and right channel. Used with dma_tx_en or dma_rx_en</description>
                             <bitRange>[10:10]</bitRange>
-                            <enumeratedValues derivedFrom="ier.ien.ENABLE">
-                            </enumeratedValues>
                         </field>
                         <field>
                             <name>sign_expand_en</name>
                             <description>SIGN_EXPAND_EN</description>
                             <bitRange>[11:11]</bitRange>
-                            <enumeratedValues derivedFrom="ier.ien.ENABLE">
-                            </enumeratedValues>
                         </field>
                     </fields>
                 </register>
@@ -1563,19 +1536,6 @@
                                 <name>rxchenx</name>
                                 <description>Receive channel enable/disable</description>
                                 <bitRange>[0:0]</bitRange>
-                                <enumeratedValues>
-                                    <name>ENABLE</name>
-                                    <enumeratedValue>
-                                        <name>disable</name>
-                                        <description>DISABLE</description>
-                                        <value>0</value>
-                                    </enumeratedValue>
-                                    <enumeratedValue>
-                                        <name>enable</name>
-                                        <description>ENABLE</description>
-                                        <value>1</value>
-                                    </enumeratedValue>
-                                </enumeratedValues>
                             </field>
                         </fields>
                     </register>
@@ -1588,8 +1548,6 @@
                                 <name>txchenx</name>
                                 <description>Transmit channel enable/disable</description>
                                 <bitRange>[0:0]</bitRange>
-                                <enumeratedValues derivedFrom="rer.rxchenx.ENABLE">
-                                </enumeratedValues>
                             </field>
                         </fields>
                     </register>

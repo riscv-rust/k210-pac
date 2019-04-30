@@ -42,32 +42,32 @@ impl super::CER {
         self.write(|w| w)
     }
 }
-#[doc = "Possible values of the field `clken`"]
-pub type CLKENR = super::ier::IENR;
-#[doc = "Values that can be written to the field `clken`"]
-pub type CLKENW = super::ier::IENW;
+#[doc = r" Value of the field"]
+pub struct CLKENR {
+    bits: bool,
+}
+impl CLKENR {
+    #[doc = r" Value of the field as raw bits"]
+    #[inline]
+    pub fn bit(&self) -> bool {
+        self.bits
+    }
+    #[doc = r" Returns `true` if the bit is clear (0)"]
+    #[inline]
+    pub fn bit_is_clear(&self) -> bool {
+        !self.bit()
+    }
+    #[doc = r" Returns `true` if the bit is set (1)"]
+    #[inline]
+    pub fn bit_is_set(&self) -> bool {
+        self.bit()
+    }
+}
 #[doc = r" Proxy"]
 pub struct _CLKENW<'a> {
     w: &'a mut W,
 }
 impl<'a> _CLKENW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: CLKENW) -> &'a mut W {
-        {
-            self.bit(variant._bits())
-        }
-    }
-    #[doc = "DISABLE"]
-    #[inline]
-    pub fn disable(self) -> &'a mut W {
-        self.variant(super::ier::IENW::DISABLE)
-    }
-    #[doc = "ENABLE"]
-    #[inline]
-    pub fn enable(self) -> &'a mut W {
-        self.variant(super::ier::IENW::ENABLE)
-    }
     #[doc = r" Sets the field bit"]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
@@ -95,11 +95,12 @@ impl R {
     #[doc = "Bit 0 - Transmitter block enable"]
     #[inline]
     pub fn clken(&self) -> CLKENR {
-        CLKENR::_from({
+        let bits = {
             const MASK: bool = true;
             const OFFSET: u8 = 0;
             ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+        };
+        CLKENR { bits }
     }
 }
 impl W {

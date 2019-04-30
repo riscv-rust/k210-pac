@@ -45,7 +45,7 @@ impl super::CCR {
 #[doc = "Possible values of the field `clk_gate`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CLK_GATER {
-    #[doc = "Clock gating is disable"]
+    #[doc = "Clock gating is disabled"]
     NO,
     #[doc = "Gating after 12 sclk cycles"]
     CYCLES12,
@@ -210,18 +210,94 @@ impl ALIGN_MODER {
         *self == ALIGN_MODER::LEFT
     }
 }
-#[doc = "Possible values of the field `dma_tx_en`"]
-pub type DMA_TX_ENR = super::ier::IENR;
-#[doc = "Possible values of the field `dma_rx_en`"]
-pub type DMA_RX_ENR = super::ier::IENR;
-#[doc = "Possible values of the field `dma_divide_16`"]
-pub type DMA_DIVIDE_16R = super::ier::IENR;
-#[doc = "Possible values of the field `sign_expand_en`"]
-pub type SIGN_EXPAND_ENR = super::ier::IENR;
+#[doc = r" Value of the field"]
+pub struct DMA_TX_ENR {
+    bits: bool,
+}
+impl DMA_TX_ENR {
+    #[doc = r" Value of the field as raw bits"]
+    #[inline]
+    pub fn bit(&self) -> bool {
+        self.bits
+    }
+    #[doc = r" Returns `true` if the bit is clear (0)"]
+    #[inline]
+    pub fn bit_is_clear(&self) -> bool {
+        !self.bit()
+    }
+    #[doc = r" Returns `true` if the bit is set (1)"]
+    #[inline]
+    pub fn bit_is_set(&self) -> bool {
+        self.bit()
+    }
+}
+#[doc = r" Value of the field"]
+pub struct DMA_RX_ENR {
+    bits: bool,
+}
+impl DMA_RX_ENR {
+    #[doc = r" Value of the field as raw bits"]
+    #[inline]
+    pub fn bit(&self) -> bool {
+        self.bits
+    }
+    #[doc = r" Returns `true` if the bit is clear (0)"]
+    #[inline]
+    pub fn bit_is_clear(&self) -> bool {
+        !self.bit()
+    }
+    #[doc = r" Returns `true` if the bit is set (1)"]
+    #[inline]
+    pub fn bit_is_set(&self) -> bool {
+        self.bit()
+    }
+}
+#[doc = r" Value of the field"]
+pub struct DMA_DIVIDE_16R {
+    bits: bool,
+}
+impl DMA_DIVIDE_16R {
+    #[doc = r" Value of the field as raw bits"]
+    #[inline]
+    pub fn bit(&self) -> bool {
+        self.bits
+    }
+    #[doc = r" Returns `true` if the bit is clear (0)"]
+    #[inline]
+    pub fn bit_is_clear(&self) -> bool {
+        !self.bit()
+    }
+    #[doc = r" Returns `true` if the bit is set (1)"]
+    #[inline]
+    pub fn bit_is_set(&self) -> bool {
+        self.bit()
+    }
+}
+#[doc = r" Value of the field"]
+pub struct SIGN_EXPAND_ENR {
+    bits: bool,
+}
+impl SIGN_EXPAND_ENR {
+    #[doc = r" Value of the field as raw bits"]
+    #[inline]
+    pub fn bit(&self) -> bool {
+        self.bits
+    }
+    #[doc = r" Returns `true` if the bit is clear (0)"]
+    #[inline]
+    pub fn bit_is_clear(&self) -> bool {
+        !self.bit()
+    }
+    #[doc = r" Returns `true` if the bit is set (1)"]
+    #[inline]
+    pub fn bit_is_set(&self) -> bool {
+        self.bit()
+    }
+}
 #[doc = "Values that can be written to the field `clk_gate`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CLK_GATEW {
-    #[doc = "Clock gating is disable"]
+    #[doc = "Clock gating is disabled"]
     NO,
     #[doc = "Gating after 12 sclk cycles"]
     CYCLES12,
@@ -256,7 +332,7 @@ impl<'a> _CLK_GATEW<'a> {
     pub fn variant(self, variant: CLK_GATEW) -> &'a mut W {
         unsafe { self.bits(variant._bits()) }
     }
-    #[doc = "Clock gating is disable"]
+    #[doc = "Clock gating is disabled"]
     #[inline]
     pub fn no(self) -> &'a mut W {
         self.variant(CLK_GATEW::NO)
@@ -405,30 +481,11 @@ impl<'a> _ALIGN_MODEW<'a> {
         self.w
     }
 }
-#[doc = "Values that can be written to the field `dma_tx_en`"]
-pub type DMA_TX_ENW = super::ier::IENW;
 #[doc = r" Proxy"]
 pub struct _DMA_TX_ENW<'a> {
     w: &'a mut W,
 }
 impl<'a> _DMA_TX_ENW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: DMA_TX_ENW) -> &'a mut W {
-        {
-            self.bit(variant._bits())
-        }
-    }
-    #[doc = "DISABLE"]
-    #[inline]
-    pub fn disable(self) -> &'a mut W {
-        self.variant(super::ier::IENW::DISABLE)
-    }
-    #[doc = "ENABLE"]
-    #[inline]
-    pub fn enable(self) -> &'a mut W {
-        self.variant(super::ier::IENW::ENABLE)
-    }
     #[doc = r" Sets the field bit"]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
@@ -447,30 +504,11 @@ impl<'a> _DMA_TX_ENW<'a> {
         self.w
     }
 }
-#[doc = "Values that can be written to the field `dma_rx_en`"]
-pub type DMA_RX_ENW = super::ier::IENW;
 #[doc = r" Proxy"]
 pub struct _DMA_RX_ENW<'a> {
     w: &'a mut W,
 }
 impl<'a> _DMA_RX_ENW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: DMA_RX_ENW) -> &'a mut W {
-        {
-            self.bit(variant._bits())
-        }
-    }
-    #[doc = "DISABLE"]
-    #[inline]
-    pub fn disable(self) -> &'a mut W {
-        self.variant(super::ier::IENW::DISABLE)
-    }
-    #[doc = "ENABLE"]
-    #[inline]
-    pub fn enable(self) -> &'a mut W {
-        self.variant(super::ier::IENW::ENABLE)
-    }
     #[doc = r" Sets the field bit"]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
@@ -489,30 +527,11 @@ impl<'a> _DMA_RX_ENW<'a> {
         self.w
     }
 }
-#[doc = "Values that can be written to the field `dma_divide_16`"]
-pub type DMA_DIVIDE_16W = super::ier::IENW;
 #[doc = r" Proxy"]
 pub struct _DMA_DIVIDE_16W<'a> {
     w: &'a mut W,
 }
 impl<'a> _DMA_DIVIDE_16W<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: DMA_DIVIDE_16W) -> &'a mut W {
-        {
-            self.bit(variant._bits())
-        }
-    }
-    #[doc = "DISABLE"]
-    #[inline]
-    pub fn disable(self) -> &'a mut W {
-        self.variant(super::ier::IENW::DISABLE)
-    }
-    #[doc = "ENABLE"]
-    #[inline]
-    pub fn enable(self) -> &'a mut W {
-        self.variant(super::ier::IENW::ENABLE)
-    }
     #[doc = r" Sets the field bit"]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
@@ -531,30 +550,11 @@ impl<'a> _DMA_DIVIDE_16W<'a> {
         self.w
     }
 }
-#[doc = "Values that can be written to the field `sign_expand_en`"]
-pub type SIGN_EXPAND_ENW = super::ier::IENW;
 #[doc = r" Proxy"]
 pub struct _SIGN_EXPAND_ENW<'a> {
     w: &'a mut W,
 }
 impl<'a> _SIGN_EXPAND_ENW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: SIGN_EXPAND_ENW) -> &'a mut W {
-        {
-            self.bit(variant._bits())
-        }
-    }
-    #[doc = "DISABLE"]
-    #[inline]
-    pub fn disable(self) -> &'a mut W {
-        self.variant(super::ier::IENW::DISABLE)
-    }
-    #[doc = "ENABLE"]
-    #[inline]
-    pub fn enable(self) -> &'a mut W {
-        self.variant(super::ier::IENW::ENABLE)
-    }
     #[doc = r" Sets the field bit"]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
@@ -609,38 +609,42 @@ impl R {
     #[doc = "Bit 8 - DMA transmit enable control"]
     #[inline]
     pub fn dma_tx_en(&self) -> DMA_TX_ENR {
-        DMA_TX_ENR::_from({
+        let bits = {
             const MASK: bool = true;
             const OFFSET: u8 = 8;
             ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+        };
+        DMA_TX_ENR { bits }
     }
     #[doc = "Bit 9 - DMA receive enable control"]
     #[inline]
     pub fn dma_rx_en(&self) -> DMA_RX_ENR {
-        DMA_RX_ENR::_from({
+        let bits = {
             const MASK: bool = true;
             const OFFSET: u8 = 9;
             ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+        };
+        DMA_RX_ENR { bits }
     }
     #[doc = "Bit 10 - Split 32bit data to two 16 bit data and filled in left and right channel. Used with dma_tx_en or dma_rx_en"]
     #[inline]
     pub fn dma_divide_16(&self) -> DMA_DIVIDE_16R {
-        DMA_DIVIDE_16R::_from({
+        let bits = {
             const MASK: bool = true;
             const OFFSET: u8 = 10;
             ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+        };
+        DMA_DIVIDE_16R { bits }
     }
     #[doc = "Bit 11 - SIGN_EXPAND_EN"]
     #[inline]
     pub fn sign_expand_en(&self) -> SIGN_EXPAND_ENR {
-        SIGN_EXPAND_ENR::_from({
+        let bits = {
             const MASK: bool = true;
             const OFFSET: u8 = 11;
             ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+        };
+        SIGN_EXPAND_ENR { bits }
     }
 }
 impl W {
