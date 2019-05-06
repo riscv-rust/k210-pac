@@ -934,11 +934,197 @@
             <groupName>UART</groupName>
             <baseAddress>0x50210000</baseAddress>
             <registers>
-                <!-- TODO -->
                 <register>
-                    <name>dummy</name>
-                    <description>Dummy register: this peripheral is not implemented yet</description>
+                    <name>rbr_dll_thr</name>
+                    <description>Receive Buffer Register / Divisor Latch (Low) / Transmit Holding Register (depending on context and R/W)</description>
                     <addressOffset>0x00</addressOffset>
+                </register>
+                <register>
+                    <name>dlh_ier</name>
+                    <description>Divisor Latch (High) / Interrupt Enable Register</description>
+                    <addressOffset>0x04</addressOffset>
+                </register>
+                <register>
+                    <name>fcr_iir</name>
+                    <description>FIFO Control Register / Interrupt Identification Register</description>
+                    <addressOffset>0x08</addressOffset>
+                </register>
+                <register>
+                    <name>lcr</name>
+                    <description>Line Control Register</description>
+                    <addressOffset>0x0c</addressOffset>
+                </register>
+                <register>
+                    <name>mcr</name>
+                    <description>Modem Control Register</description>
+                    <addressOffset>0x10</addressOffset>
+                </register>
+                <register>
+                    <name>lsr</name>
+                    <description>Line Status Register</description>
+                    <addressOffset>0x14</addressOffset>
+                </register>
+                <register>
+                    <name>msr</name>
+                    <description>Modem Status Register</description>
+                    <addressOffset>0x18</addressOffset>
+                </register>
+                <register>
+                    <name>scr</name>
+                    <description>Scratchpad Register</description>
+                    <addressOffset>0x1c</addressOffset>
+                </register>
+                <register>
+                    <name>lpdll</name>
+                    <description>Low Power Divisor Latch (Low) Register</description>
+                    <addressOffset>0x20</addressOffset>
+                </register>
+                <register>
+                    <name>lpdlh</name>
+                    <description>Low Power Divisor Latch (High) Register</description>
+                    <addressOffset>0x24</addressOffset>
+                </register>
+                <register>
+                    <name>srbr_sthr[%s]</name>
+                    <dim>16</dim>
+                    <dimIncrement>4</dimIncrement>
+                    <description>Shadow Receive Buffer Register / Shadow Transmit Holding Register (depending on R/W)</description>
+                    <addressOffset>0x30</addressOffset>
+                </register>
+                <register>
+                    <name>far</name>
+                    <description>FIFO Access Register</description>
+                    <addressOffset>0x70</addressOffset>
+                </register>
+                <register>
+                    <name>tfr</name>
+                    <description>Transmit FIFO Read Register</description>
+                    <addressOffset>0x74</addressOffset>
+                </register>
+                <register>
+                    <name>rfw</name>
+                    <description>Receive FIFO Write Register</description>
+                    <addressOffset>0x78</addressOffset>
+                </register>
+                <register>
+                    <name>usr</name>
+                    <description>UART Status Register</description>
+                    <addressOffset>0x7c</addressOffset>
+                </register>
+                <register>
+                    <name>tfl</name>
+                    <description>Transmit FIFO Level</description>
+                    <addressOffset>0x80</addressOffset>
+                </register>
+                <register>
+                    <name>rfl</name>
+                    <description>Receive FIFO Level</description>
+                    <addressOffset>0x84</addressOffset>
+                </register>
+                <register>
+                    <name>srr</name>
+                    <description>Software Reset Register</description>
+                    <addressOffset>0x88</addressOffset>
+                </register>
+                <register>
+                    <name>srts</name>
+                    <description>Shadow Request to Send Register</description>
+                    <addressOffset>0x8c</addressOffset>
+                </register>
+                <register>
+                    <name>sbcr</name>
+                    <description>Shadow Break Control Register</description>
+                    <addressOffset>0x90</addressOffset>
+                </register>
+                <register>
+                    <name>sdmam</name>
+                    <description>Shadow DMA Mode</description>
+                    <addressOffset>0x94</addressOffset>
+                </register>
+                <register>
+                    <name>sfe</name>
+                    <description>Shadow FIFO Enable</description>
+                    <addressOffset>0x98</addressOffset>
+                </register>
+                <register>
+                    <name>srt</name>
+                    <description>Shadow RCVR Trigger Register</description>
+                    <addressOffset>0x9c</addressOffset>
+                </register>
+                <register>
+                    <name>stet</name>
+                    <description>Shadow TX Empty Trigger Register</description>
+                    <addressOffset>0xa0</addressOffset>
+                </register>
+                <register>
+                    <name>htx</name>
+                    <description>Halt TX Regster</description>
+                    <addressOffset>0xa4</addressOffset>
+                </register>
+                <register>
+                    <name>dmasa</name>
+                    <description>DMA Software Acknowledge Register</description>
+                    <addressOffset>0xa8</addressOffset>
+                </register>
+                <register>
+                    <name>tcr</name>
+                    <description>Transfer Control Register</description>
+                    <addressOffset>0xac</addressOffset>
+                </register>
+                <register>
+                    <name>de_en</name>
+                    <description>DE Enable Register</description>
+                    <addressOffset>0xb0</addressOffset>
+                </register>
+                <register>
+                    <name>re_en</name>
+                    <description>RE Enable Register</description>
+                    <addressOffset>0xb4</addressOffset>
+                </register>
+                <register>
+                    <name>det</name>
+                    <description>DE Assertion Time Register</description>
+                    <addressOffset>0xb8</addressOffset>
+                </register>
+                <register>
+                    <name>tat</name>
+                    <description>Turn-Around Time Register</description>
+                    <addressOffset>0xbc</addressOffset>
+                </register>
+                <register>
+                    <name>dlf</name>
+                    <description>Divisor Latch (Fractional) Register</description>
+                    <addressOffset>0xc0</addressOffset>
+                </register>
+                <register>
+                    <name>rar</name>
+                    <description>Receive-Mode Address Register</description>
+                    <addressOffset>0xc4</addressOffset>
+                </register>
+                <register>
+                    <name>tar</name>
+                    <description>Transmit-Mode Address Register</description>
+                    <addressOffset>0xc8</addressOffset>
+                </register>
+                <register>
+                    <name>lcr_ext</name>
+                    <description>Line Control Register (Extended)</description>
+                    <addressOffset>0xcc</addressOffset>
+                </register>
+                <register>
+                    <name>cpr</name>
+                    <description>Component Parameter Register</description>
+                    <addressOffset>0xf4</addressOffset>
+                </register>
+                <register>
+                    <name>ucv</name>
+                    <description>UART Component Version</description>
+                    <addressOffset>0xf8</addressOffset>
+                </register>
+                <register>
+                    <name>ctr</name>
+                    <description>Component Type Register</description>
+                    <addressOffset>0xfc</addressOffset>
                 </register>
             </registers>
         </peripheral>
