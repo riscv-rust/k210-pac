@@ -22,11 +22,32 @@
             <groupName>CLINT</groupName>
             <baseAddress>0x02000000</baseAddress>
             <registers>
-                <!-- TODO -->
                 <register>
-                    <name>dummy</name>
-                    <description>Dummy register: this peripheral is not implemented yet</description>
-                    <addressOffset>0x00</addressOffset>
+                    <dim>2</dim>
+                    <dimIncrement>0x04</dimIncrement>
+                    <name>msip[%s]</name>
+                    <description>Hart software interrupt register</description>
+                    <addressOffset>0x0000</addressOffset>
+                    <writeConstraint>
+                        <range>
+                            <minimum>0</minimum>
+                            <maximum>1</maximum>
+                        </range>
+                    </writeConstraint>
+                </register>
+                <register>
+                    <size>64</size>
+                    <dim>2</dim>
+                    <dimIncrement>0x08</dimIncrement>
+                    <name>mtimecmp[%s]</name>
+                    <description>Hart time comparator register</description>
+                    <addressOffset>0x4000</addressOffset>
+                </register>
+                <register>
+                    <size>64</size>
+                    <name>mtime</name>
+                    <description>Timer register</description>
+                    <addressOffset>0xBFF8</addressOffset>
                 </register>
             </registers>
         </peripheral>
