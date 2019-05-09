@@ -1246,7 +1246,6 @@
                             <name>addr_length</name>
                             <description>ADDR_LENGTH</description>
                             <bitRange>[5:2]</bitRange>
-                            <writeConstraint><range><minimum>0</minimum><maximum>3</maximum></range></writeConstraint>
                         </field>
                         <field>
                             <name>inst_length</name>
@@ -1620,7 +1619,6 @@
                             <name>addr_length</name>
                             <description>ADDR_LENGTH</description>
                             <bitRange>[5:2]</bitRange>
-                            <writeConstraint><range><minimum>0</minimum><maximum>3</maximum></range></writeConstraint>
                         </field>
                         <field>
                             <name>inst_length</name>
