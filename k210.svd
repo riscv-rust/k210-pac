@@ -4974,7 +4974,7 @@
                         <field>
                             <name>key_order</name>
                             <description>Input key order</description>
-                            <bitRange>[6:5]</bitRange>
+                            <bitRange>[5:5]</bitRange>
                             <enumeratedValues>
                                 <name>ENDIAN</name>
                                 <enumeratedValue>
@@ -4992,14 +4992,14 @@
                         <field>
                             <name>input_order</name>
                             <description>Input data order</description>
-                            <bitRange>[8:7]</bitRange>
+                            <bitRange>[7:7]</bitRange>
                             <enumeratedValues derivedFrom="ENDIAN">
                             </enumeratedValues>
                         </field>
                         <field>
                             <name>output_order</name>
                             <description>Output data order</description>
-                            <bitRange>[10:9]</bitRange>
+                            <bitRange>[9:9]</bitRange>
                             <enumeratedValues derivedFrom="ENDIAN">
                             </enumeratedValues>
                         </field>

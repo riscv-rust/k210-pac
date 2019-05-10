@@ -149,27 +149,33 @@ pub enum KEY_ORDERR {
     BE,
     #[doc = "Little Endian"]
     LE,
-    #[doc = r" Reserved"]
-    _Reserved(u8),
 }
 impl KEY_ORDERR {
+    #[doc = r" Returns `true` if the bit is clear (0)"]
+    #[inline]
+    pub fn bit_is_clear(&self) -> bool {
+        !self.bit()
+    }
+    #[doc = r" Returns `true` if the bit is set (1)"]
+    #[inline]
+    pub fn bit_is_set(&self) -> bool {
+        self.bit()
+    }
     #[doc = r" Value of the field as raw bits"]
     #[inline]
-    pub fn bits(&self) -> u8 {
+    pub fn bit(&self) -> bool {
         match *self {
-            KEY_ORDERR::BE => 0,
-            KEY_ORDERR::LE => 1,
-            KEY_ORDERR::_Reserved(bits) => bits,
+            KEY_ORDERR::BE => false,
+            KEY_ORDERR::LE => true,
         }
     }
     #[allow(missing_docs)]
     #[doc(hidden)]
     #[inline]
-    pub fn _from(value: u8) -> KEY_ORDERR {
+    pub fn _from(value: bool) -> KEY_ORDERR {
         match value {
-            0 => KEY_ORDERR::BE,
-            1 => KEY_ORDERR::LE,
-            i => KEY_ORDERR::_Reserved(i),
+            false => KEY_ORDERR::BE,
+            true => KEY_ORDERR::LE,
         }
     }
     #[doc = "Checks if the value of the field is `BE`"]
@@ -313,10 +319,10 @@ impl KEY_ORDERW {
     #[allow(missing_docs)]
     #[doc(hidden)]
     #[inline]
-    pub fn _bits(&self) -> u8 {
+    pub fn _bits(&self) -> bool {
         match *self {
-            KEY_ORDERW::BE => 0,
-            KEY_ORDERW::LE => 1,
+            KEY_ORDERW::BE => false,
+            KEY_ORDERW::LE => true,
         }
     }
 }
@@ -328,7 +334,9 @@ impl<'a> _KEY_ORDERW<'a> {
     #[doc = r" Writes `variant` to the field"]
     #[inline]
     pub fn variant(self, variant: KEY_ORDERW) -> &'a mut W {
-        unsafe { self.bits(variant._bits()) }
+        {
+            self.bit(variant._bits())
+        }
     }
     #[doc = "Big Endian"]
     #[inline]
@@ -340,10 +348,18 @@ impl<'a> _KEY_ORDERW<'a> {
     pub fn le(self) -> &'a mut W {
         self.variant(KEY_ORDERW::LE)
     }
+    #[doc = r" Sets the field bit"]
+    pub fn set_bit(self) -> &'a mut W {
+        self.bit(true)
+    }
+    #[doc = r" Clears the field bit"]
+    pub fn clear_bit(self) -> &'a mut W {
+        self.bit(false)
+    }
     #[doc = r" Writes raw bits to the field"]
     #[inline]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 3;
+    pub fn bit(self, value: bool) -> &'a mut W {
+        const MASK: bool = true;
         const OFFSET: u8 = 5;
         self.w.bits &= !((MASK as u32) << OFFSET);
         self.w.bits |= ((value & MASK) as u32) << OFFSET;
@@ -360,7 +376,9 @@ impl<'a> _INPUT_ORDERW<'a> {
     #[doc = r" Writes `variant` to the field"]
     #[inline]
     pub fn variant(self, variant: INPUT_ORDERW) -> &'a mut W {
-        unsafe { self.bits(variant._bits()) }
+        {
+            self.bit(variant._bits())
+        }
     }
     #[doc = "Big Endian"]
     #[inline]
@@ -372,10 +390,18 @@ impl<'a> _INPUT_ORDERW<'a> {
     pub fn le(self) -> &'a mut W {
         self.variant(KEY_ORDERW::LE)
     }
+    #[doc = r" Sets the field bit"]
+    pub fn set_bit(self) -> &'a mut W {
+        self.bit(true)
+    }
+    #[doc = r" Clears the field bit"]
+    pub fn clear_bit(self) -> &'a mut W {
+        self.bit(false)
+    }
     #[doc = r" Writes raw bits to the field"]
     #[inline]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 3;
+    pub fn bit(self, value: bool) -> &'a mut W {
+        const MASK: bool = true;
         const OFFSET: u8 = 7;
         self.w.bits &= !((MASK as u32) << OFFSET);
         self.w.bits |= ((value & MASK) as u32) << OFFSET;
@@ -392,7 +418,9 @@ impl<'a> _OUTPUT_ORDERW<'a> {
     #[doc = r" Writes `variant` to the field"]
     #[inline]
     pub fn variant(self, variant: OUTPUT_ORDERW) -> &'a mut W {
-        unsafe { self.bits(variant._bits()) }
+        {
+            self.bit(variant._bits())
+        }
     }
     #[doc = "Big Endian"]
     #[inline]
@@ -404,10 +432,18 @@ impl<'a> _OUTPUT_ORDERW<'a> {
     pub fn le(self) -> &'a mut W {
         self.variant(KEY_ORDERW::LE)
     }
+    #[doc = r" Sets the field bit"]
+    pub fn set_bit(self) -> &'a mut W {
+        self.bit(true)
+    }
+    #[doc = r" Clears the field bit"]
+    pub fn clear_bit(self) -> &'a mut W {
+        self.bit(false)
+    }
     #[doc = r" Writes raw bits to the field"]
     #[inline]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 3;
+    pub fn bit(self, value: bool) -> &'a mut W {
+        const MASK: bool = true;
         const OFFSET: u8 = 9;
         self.w.bits &= !((MASK as u32) << OFFSET);
         self.w.bits |= ((value & MASK) as u32) << OFFSET;
@@ -438,31 +474,31 @@ impl R {
             ((self.bits >> OFFSET) & MASK as u32) as u8
         })
     }
-    #[doc = "Bits 5:6 - Input key order"]
+    #[doc = "Bit 5 - Input key order"]
     #[inline]
     pub fn key_order(&self) -> KEY_ORDERR {
         KEY_ORDERR::_from({
-            const MASK: u8 = 3;
+            const MASK: bool = true;
             const OFFSET: u8 = 5;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
+            ((self.bits >> OFFSET) & MASK as u32) != 0
         })
     }
-    #[doc = "Bits 7:8 - Input data order"]
+    #[doc = "Bit 7 - Input data order"]
     #[inline]
     pub fn input_order(&self) -> INPUT_ORDERR {
         INPUT_ORDERR::_from({
-            const MASK: u8 = 3;
+            const MASK: bool = true;
             const OFFSET: u8 = 7;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
+            ((self.bits >> OFFSET) & MASK as u32) != 0
         })
     }
-    #[doc = "Bits 9:10 - Output data order"]
+    #[doc = "Bit 9 - Output data order"]
     #[inline]
     pub fn output_order(&self) -> OUTPUT_ORDERR {
         OUTPUT_ORDERR::_from({
-            const MASK: u8 = 3;
+            const MASK: bool = true;
             const OFFSET: u8 = 9;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
+            ((self.bits >> OFFSET) & MASK as u32) != 0
         })
     }
 }
@@ -488,17 +524,17 @@ impl W {
     pub fn key_mode(&mut self) -> _KEY_MODEW {
         _KEY_MODEW { w: self }
     }
-    #[doc = "Bits 5:6 - Input key order"]
+    #[doc = "Bit 5 - Input key order"]
     #[inline]
     pub fn key_order(&mut self) -> _KEY_ORDERW {
         _KEY_ORDERW { w: self }
     }
-    #[doc = "Bits 7:8 - Input data order"]
+    #[doc = "Bit 7 - Input data order"]
     #[inline]
     pub fn input_order(&mut self) -> _INPUT_ORDERW {
         _INPUT_ORDERW { w: self }
     }
-    #[doc = "Bits 9:10 - Output data order"]
+    #[doc = "Bit 9 - Output data order"]
     #[inline]
     pub fn output_order(&mut self) -> _OUTPUT_ORDERW {
         _OUTPUT_ORDERW { w: self }
