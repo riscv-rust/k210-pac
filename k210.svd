@@ -2443,8 +2443,6 @@
                             <description>CMD</description>
                             <bitRange>[8:8]</bitRange>
                         </field>
-                    </fields>
-                    <fields>
                         <field>
                             <name>data</name>
                             <description>Data</description>
