@@ -63,6 +63,17 @@ impl CMDR {
         self.bit()
     }
 }
+#[doc = r" Value of the field"]
+pub struct DATAR {
+    bits: u8,
+}
+impl DATAR {
+    #[doc = r" Value of the field as raw bits"]
+    #[inline]
+    pub fn bits(&self) -> u8 {
+        self.bits
+    }
+}
 #[doc = r" Proxy"]
 pub struct _CMDW<'a> {
     w: &'a mut W,
@@ -86,6 +97,21 @@ impl<'a> _CMDW<'a> {
         self.w
     }
 }
+#[doc = r" Proxy"]
+pub struct _DATAW<'a> {
+    w: &'a mut W,
+}
+impl<'a> _DATAW<'a> {
+    #[doc = r" Writes raw bits to the field"]
+    #[inline]
+    pub unsafe fn bits(self, value: u8) -> &'a mut W {
+        const MASK: u8 = 255;
+        const OFFSET: u8 = 0;
+        self.w.bits &= !((MASK as u32) << OFFSET);
+        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w
+    }
+}
 impl R {
     #[doc = r" Value of the register as raw bits"]
     #[inline]
@@ -101,6 +127,16 @@ impl R {
             ((self.bits >> OFFSET) & MASK as u32) != 0
         };
         CMDR { bits }
+    }
+    #[doc = "Bits 0:7 - Data"]
+    #[inline]
+    pub fn data(&self) -> DATAR {
+        let bits = {
+            const MASK: u8 = 255;
+            const OFFSET: u8 = 0;
+            ((self.bits >> OFFSET) & MASK as u32) as u8
+        };
+        DATAR { bits }
     }
 }
 impl W {
@@ -119,5 +155,10 @@ impl W {
     #[inline]
     pub fn cmd(&mut self) -> _CMDW {
         _CMDW { w: self }
+    }
+    #[doc = "Bits 0:7 - Data"]
+    #[inline]
+    pub fn data(&mut self) -> _DATAW {
+        _DATAW { w: self }
     }
 }
