@@ -2556,11 +2556,352 @@
             <groupName>APU</groupName>
             <baseAddress>0x50250200</baseAddress>
             <registers>
-                <!-- TODO -->
                 <register>
-                    <name>dummy</name>
-                    <description>Dummy register: this peripheral is not implemented yet</description>
+                    <name>ch_cfg</name>
+                    <description>Channel Config Register</description>
                     <addressOffset>0x00</addressOffset>
+                    <fields>
+                        <field>
+                            <name>sound_ch_en</name>
+                            <description>BF unit sound channel enable control bits</description>
+                            <bitRange>[7:0]</bitRange>
+                        </field>
+                        <field>
+                            <name>target_dir</name>
+                            <description>Target direction select for valid voice output</description>
+                            <bitRange>[11:8]</bitRange>
+                        </field>
+                        <field>
+                            <name>audio_gain</name>
+                            <description>Audio sample gain factor</description>
+                            <bitRange>[22:12]</bitRange>
+                        </field>
+                        <!-- reserved bit 23 -->
+                        <field>
+                            <name>data_src_mode</name>
+                            <description>Audio data source configure parameter</description>
+                            <bitRange>[24:24]</bitRange>
+                        </field>
+                        <!-- reserved bit 27..25 -->
+                        <field>
+                            <name>we_sound_ch_en</name>
+                            <description>Write enable for sound_ch_en parameter</description>
+                            <bitRange>[28:28]</bitRange>
+                            <access>write-only</access>
+                        </field>
+                        <field>
+                            <name>we_target_dir</name>
+                            <description>Write enable for target_dir parameter</description>
+                            <bitRange>[29:29]</bitRange>
+                            <access>write-only</access>
+                        </field>
+                        <field>
+                            <name>we_audio_gain</name>
+                            <description>Write enable for audio_gain parameter</description>
+                            <bitRange>[30:30]</bitRange>
+                            <access>write-only</access>
+                        </field>
+                        <field>
+                            <name>we_data_src_mode</name>
+                            <description>Write enable for data_out_mode parameter</description>
+                            <bitRange>[31:31]</bitRange>
+                            <access>write-only</access>
+                        </field>
+                    </fields>
+                </register>
+                <register>
+                    <name>ctl</name>
+                    <description>Control Register</description>
+                    <addressOffset>0x04</addressOffset>
+                    <fields>
+                        <field>
+                            <name>dir_search_en</name>
+                            <description>Sound direction searching enable bit</description>
+                            <bitRange>[0:0]</bitRange>
+                        </field>
+                        <field>
+                            <name>search_path_reset</name>
+                            <description>Reset all control logic on direction search processing path</description>
+                            <bitRange>[1:1]</bitRange>
+                        </field>
+                        <!-- reserved bit 3..2 -->
+                        <field>
+                            <name>stream_gen_en</name>
+                            <description>Valid voice sample stream generation enable bit</description>
+                            <bitRange>[4:4]</bitRange>
+                        </field>
+                        <field>
+                            <name>voice_gen_path_reset</name>
+                            <description>Reset all control logic on voice stream generating path</description>
+                            <bitRange>[5:5]</bitRange>
+                        </field>
+                        <field>
+                            <name>update_voice_dir</name>
+                            <description>Switch to a new voice source direction</description>
+                            <bitRange>[6:6]</bitRange>
+                        </field>
+                        <!-- reserved bit 7 -->
+                        <field>
+                            <name>we_dir_search_en</name>
+                            <description>Write enable for we_dir_search_en parameter</description>
+                            <bitRange>[8:8]</bitRange>
+                            <access>write-only</access>
+                        </field>
+                        <field>
+                            <name>we_search_path_rst</name>
+                            <description>Write enable for we_search_path_rst parameter</description>
+                            <bitRange>[9:9]</bitRange>
+                            <access>write-only</access>
+                        </field>
+                        <field>
+                            <name>we_stream_gen</name>
+                            <description>Write enable for we_stream_gen parameter</description>
+                            <bitRange>[10:10]</bitRange>
+                            <access>write-only</access>
+                        </field>
+                        <field>
+                            <name>we_voice_gen_path_rst</name>
+                            <description>Write enable for we_voice_gen_path_rst parameter</description>
+                            <bitRange>[11:11]</bitRange>
+                            <access>write-only</access>
+                        </field>
+                        <field>
+                            <name>we_update_voice_dir</name>
+                            <description>Write enable for we_update_voice_dir parameter</description>
+                            <bitRange>[12:12]</bitRange>
+                            <access>write-only</access>
+                        </field>
+                        <!-- reserved bit 13..31 -->
+                    </fields>
+                </register>
+                <register>
+                    <name>dir_bidx[%s]</name>
+                    <description>Direction Sample Buffer Read Index Configure Register (16 directions * 2 values * 4 indices)</description>
+                    <addressOffset>0x08</addressOffset>
+                    <dim>32</dim>
+                    <dimIncrement>0x04</dimIncrement>
+                    <fields>
+                        <field>
+                            <name>rd_idx0</name>
+                            <description>rd_idx0</description>
+                            <bitRange>[5:0]</bitRange>
+                        </field>
+                        <!-- reserved bit 7..6 -->
+                        <field>
+                            <name>rd_idx1</name>
+                            <description>rd_idx1</description>
+                            <bitRange>[13:8]</bitRange>
+                        </field>
+                        <!-- reserved bit 15..14 -->
+                        <field>
+                            <name>rd_idx2</name>
+                            <description>rd_idx2</description>
+                            <bitRange>[21:16]</bitRange>
+                        </field>
+                        <!-- reserved bit 23..22 -->
+                        <field>
+                            <name>rd_idx3</name>
+                            <description>rd_idx3</description>
+                            <bitRange>[29:24]</bitRange>
+                        </field>
+                        <!-- reserved bit 31..30 -->
+                    </fields>
+                </register>
+                <register>
+                    <name>pre_fir0_coef[%s]</name>
+                    <description>FIR0 pre-filter coefficients</description>
+                    <addressOffset>0x88</addressOffset>
+                    <dim>9</dim>
+                    <dimIncrement>0x04</dimIncrement>
+                    <fields>
+                        <field>
+                            <name>tap0</name>
+                            <description>Tap 0</description>
+                            <bitRange>[15:0]</bitRange>
+                        </field>
+                        <field>
+                            <name>tap1</name>
+                            <description>Tap 1</description>
+                            <bitRange>[31:16]</bitRange>
+                        </field>
+                    </fields>
+                </register>
+                <register> <!-- duplicating fields: derivedFrom doesn't work for registers -->
+                    <name>post_fir0_coef[%s]</name>
+                    <description>FIR0 post-filter coefficients</description>
+                    <addressOffset>0xac</addressOffset>
+                    <dim>9</dim>
+                    <dimIncrement>0x04</dimIncrement>
+                    <fields>
+                        <field>
+                            <name>tap0</name>
+                            <description>Tap 0</description>
+                            <bitRange>[15:0]</bitRange>
+                        </field>
+                        <field>
+                            <name>tap1</name>
+                            <description>Tap 1</description>
+                            <bitRange>[31:16]</bitRange>
+                        </field>
+                    </fields>
+                </register>
+                <register> <!-- duplicating fields: derivedFrom doesn't work for registers -->
+                    <name>pre_fir1_coef[%s]</name>
+                    <description>FIR1 pre-filter coeffecients</description>
+                    <addressOffset>0xd0</addressOffset>
+                    <dim>9</dim>
+                    <dimIncrement>0x04</dimIncrement>
+                    <fields>
+                        <field>
+                            <name>tap0</name>
+                            <description>Tap 0</description>
+                            <bitRange>[15:0]</bitRange>
+                        </field>
+                        <field>
+                            <name>tap1</name>
+                            <description>Tap 1</description>
+                            <bitRange>[31:16]</bitRange>
+                        </field>
+                    </fields>
+                </register>
+                <register> <!-- duplicating fields: derivedFrom doesn't work for registers -->
+                    <name>post_fir1_coef[%s]</name>
+                    <description>FIR1 post-filter coefficients</description>
+                    <addressOffset>0xf4</addressOffset>
+                    <dim>9</dim>
+                    <dimIncrement>0x04</dimIncrement>
+                    <fields>
+                        <field>
+                            <name>tap0</name>
+                            <description>Tap 0</description>
+                            <bitRange>[15:0]</bitRange>
+                        </field>
+                        <field>
+                            <name>tap1</name>
+                            <description>Tap 1</description>
+                            <bitRange>[31:16]</bitRange>
+                        </field>
+                    </fields>
+                </register>
+                <register>
+                    <name>dwsz_cfg</name>
+                    <description>Downsize Config Register</description>
+                    <addressOffset>0x118</addressOffset>
+                    <fields>
+                        <field>
+                            <name>dir_dwn_siz_rate</name>
+                            <description>Down-sizing ratio used for direction searching</description>
+                            <bitRange>[3:0]</bitRange>
+                        </field>
+                        <field>
+                            <name>voc_dwn_siz_rate</name>
+                            <description>Down-sizing ratio used for voice stream generation</description>
+                            <bitRange>[7:4]</bitRange>
+                        </field>
+                        <field>
+                            <name>smpl_shift_bits</name>
+                            <description>Sample precision reduction when the source sound sample precision is 20/24/32 bits</description>
+                            <bitRange>[12:8]</bitRange>
+                        </field>
+                        <!-- reserved bits 31..13 -->
+                    </fields>
+                </register>
+                <register>
+                    <name>fft_cfg</name>
+                    <description>FFT Config Register</description>
+                    <addressOffset>0x11c</addressOffset>
+                        <field>
+                            <name>fft_shift_factor</name>
+                            <description>FFT shift factor</description>
+                            <bitRange>[8:0]</bitRange>
+                        </field>
+                        <!-- reserved bits 9..11 -->
+                        <field>
+                            <name>fft_enable</name>
+                            <description>FFT enable</description>
+                            <bitRange>[12:12]</bitRange>
+                        </field>
+                        <!-- reserved bits 31..13 -->
+                </register>
+                <register>
+                    <name>sobuf_dma_rdata</name>
+                    <description>Read register for DMA to sample-out buffers</description>
+                    <addressOffset>0x120</addressOffset>
+                </register>
+                <register>
+                    <name>vobuf_dma_rdata</name>
+                    <description>Read register for DMA to voice-out buffers</description>
+                    <addressOffset>0x124</addressOffset>
+                </register>
+                <register>
+                    <name>int_stat</name>
+                    <description>Interrupt Status Register</description>
+                    <addressOffset>0x128</addressOffset>
+                    <fields>
+                        <field>
+                            <name>dir_search_data_rdy</name>
+                            <description>Sound direction searching data ready interrupt event</description>
+                            <bitRange>[0:0]</bitRange>
+                        </field>
+                        <field>
+                            <name>voc_buf_data_rdy</name>
+                            <description>Voice output stream buffer data ready interrupt event</description>
+                            <bitRange>[1:1]</bitRange>
+                        </field>
+                        <!-- reserved bits 2..31 -->
+                    </fields>
+                </register>
+                <register>
+                    <name>int_mask</name>
+                    <description>Interrupt Mask Register</description>
+                    <addressOffset>0x12c</addressOffset>
+                    <fields>
+                        <field>
+                            <name>dir_search_data_rdy</name>
+                            <description>Sound direction searching data ready interrupt event</description>
+                            <bitRange>[0:0]</bitRange>
+                        </field>
+                        <field>
+                            <name>voc_buf_data_rdy</name>
+                            <description>Voice output stream buffer data ready interrupt event</description>
+                            <bitRange>[1:1]</bitRange>
+                        </field>
+                        <!-- reserved bits 2..31 -->
+                    </fields>
+                </register>
+                <register>
+                    <name>sat_counter</name>
+                    <description>Saturation Counter</description>
+                    <addressOffset>0x130</addressOffset>
+                    <fields>
+                        <field>
+                            <name>counter</name>
+                            <description>Counter</description>
+                            <bitRange>[15:0]</bitRange>
+                        </field>
+                        <field>
+                            <name>total</name>
+                            <description>Total</description>
+                            <bitRange>[31:16]</bitRange>
+                        </field>
+                    </fields>
+                </register>
+                <register>
+                    <name>sat_limits</name>
+                    <description>Saturation Limits</description>
+                    <addressOffset>0x134</addressOffset>
+                    <fields>
+                        <field>
+                            <name>upper</name>
+                            <description>Upper limit</description>
+                            <bitRange>[15:0]</bitRange>
+                        </field>
+                        <field>
+                            <name>lower</name>
+                            <description>Lower limit</description>
+                            <bitRange>[31:16]</bitRange>
+                        </field>
+                    </fields>
                 </register>
             </registers>
         </peripheral>
