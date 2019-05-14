@@ -39,12 +39,106 @@
             <groupName>PLIC</groupName>
             <baseAddress>0x0C000000</baseAddress>
             <registers>
-                <!-- TODO -->
                 <register>
-                    <name>dummy</name>
-                    <description>Dummy register: this peripheral is not implemented yet</description>
-                    <addressOffset>0x00</addressOffset>
+                    <dim>1024</dim>
+                    <dimIncrement>0x04</dimIncrement>
+                    <name>priority[%s]</name>
+                    <description>Interrupt Source Priority Register</description>
+                    <addressOffset>0x000000</addressOffset>
+                    <enumeratedValues derivedFrom="threshold">
+                    </enumeratedValues>
                 </register>
+                <register>
+                    <dim>32</dim>
+                    <dimIncrement>0x04</dimIncrement>
+                    <name>pending[%s]</name>
+                    <description>Interrupt Pending Register</description>
+                    <addressOffset>0x001000</addressOffset>
+                </register>
+                <cluster>
+                    <name>target_enables[%s]</name>
+                    <description>Target Interrupt Enables</description>
+                    <addressOffset>0x002000</addressOffset>
+                    <dim>4</dim>
+                    <dimIncrement>0x80</dimIncrement>
+                    <register>
+                        <dim>32</dim>
+                        <dimIncrement>0x04</dimIncrement>
+                        <name>enable[%s]</name>
+                        <description>Interrupt Enable Register</description>
+                        <addressOffset>0</addressOffset>
+                    </register>
+                </cluster>
+                <cluster>
+                    <name>targets[%s]</name>
+                    <description>Target Configuration</description>
+                    <addressOffset>0x0c200000</addressOffset>
+                    <dim>4</dim>
+                    <dimIncrement>0x1000</dimIncrement>
+                    <register>
+                        <name>threshold</name>
+                        <description>Priority Threshold Register</description>
+                        <addressOffset>0x0</addressOffset>
+                        <fields>
+                            <field>
+                                <name>priority</name>
+                                <msb>2</msb><lsb>0</lsb>
+                                <enumeratedValues>
+                                    <name>Priority</name>
+                                    <enumerateValue>
+                                        <name>Never</name>
+                                        <description>Never interrupt</description>
+                                        <value>0</value>
+                                    </enumerateValue>
+                                    <enumerateValue>
+                                        <name>P1</name>
+                                        <description>Priority 1</description>
+                                        <value>1</value>
+                                    </enumerateValue>
+                                    <enumerateValue>
+                                        <name>P2</name>
+                                        <description>Priority 2</description>
+                                        <value>2</value>
+                                    </enumerateValue>
+                                    <enumerateValue>
+                                        <name>P3</name>
+                                        <description>Priority 3</description>
+                                        <value>3</value>
+                                    </enumerateValue>
+                                    <enumerateValue>
+                                        <name>P4</name>
+                                        <description>Priority 4</description>
+                                        <value>4</value>
+                                    </enumerateValue>
+                                    <enumerateValue>
+                                        <name>P5</name>
+                                        <description>Priority 5</description>
+                                        <value>5</value>
+                                    </enumerateValue>
+                                    <enumerateValue>
+                                        <name>P6</name>
+                                        <description>Priority 6</description>
+                                        <value>6</value>
+                                    </enumerateValue>
+                                    <enumerateValue>
+                                        <name>P7</name>
+                                        <description>Priority 7</description>
+                                        <value>7</value>
+                                    </enumerateValue>
+                                </enumeratedValues>
+                            </field>
+                        </fields>
+                    </register>
+                    <register>
+                        <name>claim</name>
+                        <description>Claim/Complete Register</description>
+                        <addressOffset>0x4</addressOffset>
+                        <range>
+                            <minimum>0x00000000</minimum>
+                            <maximum>0xFFFFFFFF</maximum>
+                        </range>
+                    </register>
+                </cluster>
             </registers>
         </peripheral>
         <!-- PLIC -->
