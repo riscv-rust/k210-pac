@@ -1011,11 +1011,127 @@
             <groupName>GPIO</groupName>
             <baseAddress>0x50200000</baseAddress>
             <registers>
-                <!-- TODO -->
                 <register>
-                    <name>dummy</name>
-                    <description>Dummy register: this peripheral is not implemented yet</description>
+                    <name>data_output</name>
+                    <description>Data (output) registers</description>
                     <addressOffset>0x00</addressOffset>
+                    <fields>
+                        <field><name>pin0</name><lsb>0</lsb><msb>0</msb></field>
+                        <field><name>pin1</name><lsb>1</lsb><msb>1</msb></field>
+                        <field><name>pin2</name><lsb>2</lsb><msb>2</msb></field>
+                        <field><name>pin3</name><lsb>3</lsb><msb>3</msb></field>
+                        <field><name>pin4</name><lsb>4</lsb><msb>4</msb></field>
+                        <field><name>pin5</name><lsb>5</lsb><msb>5</msb></field>
+                        <field><name>pin6</name><lsb>6</lsb><msb>6</msb></field>
+                        <field><name>pin7</name><lsb>7</lsb><msb>7</msb></field>
+                    </fields>
+                </register>
+                <register>
+                    <name>direction</name>
+                    <description>Data direction registers</description>
+                    <addressOffset>0x04</addressOffset>
+                    <fields>
+                        <field>
+                            <name>pin0</name>
+                            <lsb>0</lsb>
+                            <msb>0</msb>
+                            <enumeratedValues>
+                                <name>DIRECTION</name>
+                                <enumeratedValue>
+                                    <name>input</name>
+                                    <description>Pin is input</description>
+                                    <value>0</value>
+                                </enumeratedValue>
+                                <enumeratedValue>
+                                    <name>output</name>
+                                    <description>Pin is output</description>
+                                    <value>1</value>
+                                </enumeratedValue>
+                            </enumeratedValues>
+                        </field>
+                        <field><name>pin1</name><lsb>1</lsb><msb>1</msb><enumeratedValues derivedFrom="DIRECTION"/></field>
+                        <field><name>pin2</name><lsb>2</lsb><msb>2</msb><enumeratedValues derivedFrom="DIRECTION"/></field>
+                        <field><name>pin3</name><lsb>3</lsb><msb>3</msb><enumeratedValues derivedFrom="DIRECTION"/></field>
+                        <field><name>pin4</name><lsb>4</lsb><msb>4</msb><enumeratedValues derivedFrom="DIRECTION"/></field>
+                        <field><name>pin5</name><lsb>5</lsb><msb>5</msb><enumeratedValues derivedFrom="DIRECTION"/></field>
+                        <field><name>pin6</name><lsb>6</lsb><msb>6</msb><enumeratedValues derivedFrom="DIRECTION"/></field>
+                        <field><name>pin7</name><lsb>7</lsb><msb>7</msb><enumeratedValues derivedFrom="DIRECTION"/></field>
+                    </fields>
+                </register>
+                <register>
+                    <name>source</name>
+                    <description>Data source registers</description>
+                    <addressOffset>0x08</addressOffset>
+                </register>
+                <register>
+                    <name>interrupt_enable</name>
+                    <description>Interrupt enable/disable registers</description>
+                    <addressOffset>0x30</addressOffset>
+                </register>
+                <register>
+                    <name>interrupt_mask</name>
+                    <description>Interrupt mask registers</description>
+                    <addressOffset>0x34</addressOffset>
+                </register>
+                <register>
+                    <name>interrupt_level</name>
+                    <description>Interrupt level registers</description>
+                    <addressOffset>0x38</addressOffset>
+                </register>
+                <register>
+                    <name>interrupt_polarity</name>
+                    <description>Interrupt polarity registers</description>
+                    <addressOffset>0x3c</addressOffset>
+                </register>
+                <register>
+                    <name>interrupt_status</name>
+                    <description>Interrupt status registers</description>
+                    <addressOffset>0x40</addressOffset>
+                </register>
+                <register>
+                    <name>interrupt_status_raw</name>
+                    <description>Raw interrupt status registers</description>
+                    <addressOffset>0x44</addressOffset>
+                </register>
+                <register>
+                    <name>interrupt_debounce</name>
+                    <description>Interrupt debounce registers</description>
+                    <addressOffset>0x48</addressOffset>
+                </register>
+                <register>
+                    <name>interrupt_clear</name>
+                    <description>Registers for clearing interrupts</description>
+                    <addressOffset>0x4c</addressOffset>
+                </register>
+                <register>
+                    <name>data_input</name>
+                    <description>External port (data input) registers</description>
+                    <addressOffset>0x50</addressOffset>
+                    <fields>
+                        <field><name>pin0</name><lsb>0</lsb><msb>0</msb></field>
+                        <field><name>pin1</name><lsb>1</lsb><msb>1</msb></field>
+                        <field><name>pin2</name><lsb>2</lsb><msb>2</msb></field>
+                        <field><name>pin3</name><lsb>3</lsb><msb>3</msb></field>
+                        <field><name>pin4</name><lsb>4</lsb><msb>4</msb></field>
+                        <field><name>pin5</name><lsb>5</lsb><msb>5</msb></field>
+                        <field><name>pin6</name><lsb>6</lsb><msb>6</msb></field>
+                        <field><name>pin7</name><lsb>7</lsb><msb>7</msb></field>
+                    </fields>
+                </register>
+                <register>
+                    <name>sync_level</name>
+                    <description>Sync level registers</description>
+                    <addressOffset>0x60</addressOffset>
+                </register>
+                <register>
+                    <name>id_code</name>
+                    <description>ID code</description>
+                    <addressOffset>0x64</addressOffset>
+                </register>
+                <register>
+                    <name>interrupt_bothedge</name>
+                    <description>Interrupt both edge type</description>
+                    <addressOffset>0x68</addressOffset>
                 </register>
             </registers>
         </peripheral>
