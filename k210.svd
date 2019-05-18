@@ -3846,11 +3846,236 @@
             <groupName>WDT</groupName>
             <baseAddress>0x50400000</baseAddress>
             <registers>
-                <!-- TODO -->
                 <register>
-                    <name>dummy</name>
-                    <description>Dummy register: this peripheral is not implemented yet</description>
+                    <name>cr</name>
+                    <description>Control Register</description>
                     <addressOffset>0x00</addressOffset>
+                    <fields>
+                        <field>
+                            <name>enable</name>
+                            <description>enable</description>
+                            <bitRange>[0:0]</bitRange>
+                        </field>
+                        <field>
+                            <name>rmod</name>
+                            <description>rmod</description>
+                            <bitRange>[1:1]</bitRange>
+                            <enumeratedValues>
+                                <enumeratedValue>
+                                    <name>reset</name>
+                                    <description>RESET</description>
+                                    <value>0</value>
+                                </enumeratedValue>
+                                <enumeratedValue>
+                                    <name>interrupt</name>
+                                    <description>INTERRUPT</description>
+                                    <value>1</value>
+                                </enumeratedValue>
+                            </enumeratedValues>
+                        </field>
+                        <field>
+                            <name>rpl</name>
+                            <description>rpl</description>
+                            <bitRange>[4:2]</bitRange>
+                        </field>
+                    </fields>
+                </register>
+                <register>
+                    <name>torr</name>
+                    <description>Timeout Range Register</description>
+                    <addressOffset>0x04</addressOffset>
+                    <fields>
+                        <field>
+                            <name>top0</name>
+                            <description>top (lower half)</description>
+                            <bitRange>[3:0]</bitRange>
+                        </field>
+                        <field>
+                            <name>top1</name>
+                            <description>top (upper half)</description>
+                            <bitRange>[7:4]</bitRange>
+                        </field>
+                    </fields>
+                </register>
+                <register>
+                    <name>ccvr</name>
+                    <description>Current Counter Value Register</description>
+                    <addressOffset>0x08</addressOffset>
+                </register>
+                <register>
+                    <name>crr</name>
+                    <description>Counter Restart Register</description>
+                    <addressOffset>0x0c</addressOffset>
+                </register>
+                <register>
+                    <name>stat</name>
+                    <description>Interrupt Status Register</description>
+                    <addressOffset>0x10</addressOffset>
+                    <fields>
+                        <field>
+                            <name>stat</name>
+                            <description>stat</description>
+                            <bitRange>[0:0]</bitRange>
+                        </field>
+                    </fields>
+                </register>
+                <register>
+                    <name>eoi</name>
+                    <description>Interrupt Clear Register</description>
+                    <addressOffset>0x14</addressOffset>
+                    <fields>
+                        <field>
+                            <name>eoi</name>
+                            <description>eoi</description>
+                            <bitRange>[0:0]</bitRange>
+                        </field>
+                    </fields>
+                </register>
+                <!-- reserved 0x18 -->
+                <register>
+                    <name>prot_level</name>
+                    <description>Protection level Register</description>
+                    <addressOffset>0x1c</addressOffset>
+                    <fields>
+                        <field>
+                            <name>prot_level</name>
+                            <description>prot_level</description>
+                            <bitRange>[2:0]</bitRange>
+                        </field>
+                    </fields>
+                </register>
+                <!-- reserved 0x20..0xe0 -->
+                <register>
+                    <name>comp_param_5</name>
+                    <description>Component Parameters Register 5</description>
+                    <addressOffset>0xe4</addressOffset>
+                    <fields>
+                        <field>
+                            <name>user_top_max</name>
+                            <description>user_top_max</description>
+                            <bitRange>[31:0]</bitRange>
+                        </field>
+                    </fields>
+                </register>
+                <register>
+                    <name>comp_param_4</name>
+                    <description>Component Parameters Register 4</description>
+                    <addressOffset>0xe8</addressOffset>
+                    <fields>
+                        <field>
+                            <name>user_top_init_max</name>
+                            <description>user_top_init_max</description>
+                            <bitRange>[31:0]</bitRange>
+                        </field>
+                    </fields>
+                </register>
+                <register>
+                    <name>comp_param_3</name>
+                    <description>Component Parameters Register 3</description>
+                    <addressOffset>0xec</addressOffset>
+                    <fields>
+                        <field>
+                            <name>top_rst</name>
+                            <description>top_rst</description>
+                            <bitRange>[31:0]</bitRange>
+                        </field>
+                    </fields>
+                </register>
+                <register>
+                    <name>comp_param_2</name>
+                    <description>Component Parameters Register 2</description>
+                    <addressOffset>0xf0</addressOffset>
+                    <fields>
+                        <field>
+                            <name>cnt_rst</name>
+                            <description>cnt_rst</description>
+                            <bitRange>[31:0]</bitRange>
+                        </field>
+                    </fields>
+                </register>
+                <register>
+                    <name>comp_param_1</name>
+                    <description>Component Parameters Register 1</description>
+                    <addressOffset>0xf4</addressOffset>
+                    <fields>
+                        <field>
+                            <name>always_en</name>
+                            <description>always_en</description>
+                            <bitRange>[0:0]</bitRange>
+                        </field>
+                        <field>
+                            <name>dflt_rmod</name>
+                            <description>dflt_rmod</description>
+                            <bitRange>[1:1]</bitRange>
+                        </field>
+                        <field>
+                            <name>dual_top</name>
+                            <description>dual_top</description>
+                            <bitRange>[2:2]</bitRange>
+                        </field>
+                        <field>
+                            <name>hc_rmod</name>
+                            <description>hc_rmod</description>
+                            <bitRange>[3:3]</bitRange>
+                        </field>
+                        <field>
+                            <name>hc_rpl</name>
+                            <description>hc_rpl</description>
+                            <bitRange>[4:4]</bitRange>
+                        </field>
+                        <field>
+                            <name>hc_top</name>
+                            <description>hc_top</description>
+                            <bitRange>[5:5]</bitRange>
+                        </field>
+                        <field>
+                            <name>use_fix_top</name>
+                            <description>use_fix_top</description>
+                            <bitRange>[6:6]</bitRange>
+                        </field>
+                        <field>
+                            <name>pause</name>
+                            <description>pause</description>
+                            <bitRange>[7:7]</bitRange>
+                        </field>
+                        <field>
+                            <name>apb_data_width</name>
+                            <description>apb_data_width</description>
+                            <bitRange>[9:8]</bitRange>
+                        </field>
+                        <field>
+                            <name>dflt_rpl</name>
+                            <description>dflt_rpl</description>
+                            <bitRange>[12:10]</bitRange>
+                        </field>
+                        <!-- reserved 13..15 -->
+                        <field>
+                            <name>dflt_top</name>
+                            <description>dflt_top</description>
+                            <bitRange>[19:16]</bitRange>
+                        </field>
+                        <field>
+                            <name>dflt_top_init</name>
+                            <description>dflt_top_init</description>
+                            <bitRange>[23:20]</bitRange>
+                        </field>
+                        <field>
+                            <name>cnt_width</name>
+                            <description>cnt_width</description>
+                            <bitRange>[28:24]</bitRange>
+                        </field>
+                        <!-- reserved 29..31 -->
+                    </fields>
+                </register>
+                <register>
+                    <name>comp_version</name>
+                    <description>Component Version Register</description>
+                    <addressOffset>0xf8</addressOffset>
+                </register>
+                <register>
+                    <name>comp_type</name>
+                    <description>Component Type Register</description>
+                    <addressOffset>0xfc</addressOffset>
                 </register>
             </registers>
         </peripheral>
