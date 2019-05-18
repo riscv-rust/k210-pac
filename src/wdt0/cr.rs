@@ -63,16 +63,15 @@ impl ENABLER {
         self.bit()
     }
 }
-#[doc = r" Value of the field"]
-pub struct RMODR {
-    bits: bool,
+#[doc = "Possible values of the field `rmod`"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum RMODR {
+    #[doc = "RESET"]
+    RESET,
+    #[doc = "INTERRUPT"]
+    INTERRUPT,
 }
 impl RMODR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
     #[doc = r" Returns `true` if the bit is clear (0)"]
     #[inline]
     pub fn bit_is_clear(&self) -> bool {
@@ -82,6 +81,33 @@ impl RMODR {
     #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
+    }
+    #[doc = r" Value of the field as raw bits"]
+    #[inline]
+    pub fn bit(&self) -> bool {
+        match *self {
+            RMODR::RESET => false,
+            RMODR::INTERRUPT => true,
+        }
+    }
+    #[allow(missing_docs)]
+    #[doc(hidden)]
+    #[inline]
+    pub fn _from(value: bool) -> RMODR {
+        match value {
+            false => RMODR::RESET,
+            true => RMODR::INTERRUPT,
+        }
+    }
+    #[doc = "Checks if the value of the field is `RESET`"]
+    #[inline]
+    pub fn is_reset(&self) -> bool {
+        *self == RMODR::RESET
+    }
+    #[doc = "Checks if the value of the field is `INTERRUPT`"]
+    #[inline]
+    pub fn is_interrupt(&self) -> bool {
+        *self == RMODR::INTERRUPT
     }
 }
 #[doc = r" Value of the field"]
@@ -118,11 +144,47 @@ impl<'a> _ENABLEW<'a> {
         self.w
     }
 }
+#[doc = "Values that can be written to the field `rmod`"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum RMODW {
+    #[doc = "RESET"]
+    RESET,
+    #[doc = "INTERRUPT"]
+    INTERRUPT,
+}
+impl RMODW {
+    #[allow(missing_docs)]
+    #[doc(hidden)]
+    #[inline]
+    pub fn _bits(&self) -> bool {
+        match *self {
+            RMODW::RESET => false,
+            RMODW::INTERRUPT => true,
+        }
+    }
+}
 #[doc = r" Proxy"]
 pub struct _RMODW<'a> {
     w: &'a mut W,
 }
 impl<'a> _RMODW<'a> {
+    #[doc = r" Writes `variant` to the field"]
+    #[inline]
+    pub fn variant(self, variant: RMODW) -> &'a mut W {
+        {
+            self.bit(variant._bits())
+        }
+    }
+    #[doc = "RESET"]
+    #[inline]
+    pub fn reset(self) -> &'a mut W {
+        self.variant(RMODW::RESET)
+    }
+    #[doc = "INTERRUPT"]
+    #[inline]
+    pub fn interrupt(self) -> &'a mut W {
+        self.variant(RMODW::INTERRUPT)
+    }
     #[doc = r" Sets the field bit"]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
@@ -175,12 +237,11 @@ impl R {
     #[doc = "Bit 1 - rmod"]
     #[inline]
     pub fn rmod(&self) -> RMODR {
-        let bits = {
+        RMODR::_from({
             const MASK: bool = true;
             const OFFSET: u8 = 1;
             ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        RMODR { bits }
+        })
     }
     #[doc = "Bits 2:4 - rpl"]
     #[inline]

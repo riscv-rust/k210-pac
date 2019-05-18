@@ -42,11 +42,47 @@ impl super::COMP_PARAM_3 {
         self.write(|w| w)
     }
 }
+#[doc = r" Value of the field"]
+pub struct TOP_RSTR {
+    bits: u32,
+}
+impl TOP_RSTR {
+    #[doc = r" Value of the field as raw bits"]
+    #[inline]
+    pub fn bits(&self) -> u32 {
+        self.bits
+    }
+}
+#[doc = r" Proxy"]
+pub struct _TOP_RSTW<'a> {
+    w: &'a mut W,
+}
+impl<'a> _TOP_RSTW<'a> {
+    #[doc = r" Writes raw bits to the field"]
+    #[inline]
+    pub unsafe fn bits(self, value: u32) -> &'a mut W {
+        const MASK: u32 = 4294967295;
+        const OFFSET: u8 = 0;
+        self.w.bits &= !((MASK as u32) << OFFSET);
+        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w
+    }
+}
 impl R {
     #[doc = r" Value of the register as raw bits"]
     #[inline]
     pub fn bits(&self) -> u32 {
         self.bits
+    }
+    #[doc = "Bits 0:31 - top_rst"]
+    #[inline]
+    pub fn top_rst(&self) -> TOP_RSTR {
+        let bits = {
+            const MASK: u32 = 4294967295;
+            const OFFSET: u8 = 0;
+            ((self.bits >> OFFSET) & MASK as u32) as u32
+        };
+        TOP_RSTR { bits }
     }
 }
 impl W {
@@ -60,5 +96,10 @@ impl W {
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.bits = bits;
         self
+    }
+    #[doc = "Bits 0:31 - top_rst"]
+    #[inline]
+    pub fn top_rst(&mut self) -> _TOP_RSTW {
+        _TOP_RSTW { w: self }
     }
 }

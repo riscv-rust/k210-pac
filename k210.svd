@@ -3860,6 +3860,18 @@
                             <name>rmod</name>
                             <description>rmod</description>
                             <bitRange>[1:1]</bitRange>
+                            <enumeratedValues>
+                                <enumeratedValue>
+                                    <name>reset</name>
+                                    <description>RESET</description>
+                                    <value>0</value>
+                                </enumeratedValue>
+                                <enumeratedValue>
+                                    <name>interrupt</name>
+                                    <description>INTERRUPT</description>
+                                    <value>1</value>
+                                </enumeratedValue>
+                            </enumeratedValues>
                         </field>
                         <field>
                             <name>rpl</name>
@@ -3937,21 +3949,49 @@
                     <name>comp_param_5</name>
                     <description>Component Parameters Register 5</description>
                     <addressOffset>0xe4</addressOffset>
+                    <fields>
+                        <field>
+                            <name>user_top_max</name>
+                            <description>user_top_max</description>
+                            <bitRange>[31:0]</bitRange>
+                        </field>
+                    </fields>
                 </register>
                 <register>
                     <name>comp_param_4</name>
                     <description>Component Parameters Register 4</description>
                     <addressOffset>0xe8</addressOffset>
+                    <fields>
+                        <field>
+                            <name>user_top_init_max</name>
+                            <description>user_top_init_max</description>
+                            <bitRange>[31:0]</bitRange>
+                        </field>
+                    </fields>
                 </register>
                 <register>
                     <name>comp_param_3</name>
                     <description>Component Parameters Register 3</description>
                     <addressOffset>0xec</addressOffset>
+                    <fields>
+                        <field>
+                            <name>top_rst</name>
+                            <description>top_rst</description>
+                            <bitRange>[31:0]</bitRange>
+                        </field>
+                    </fields>
                 </register>
                 <register>
                     <name>comp_param_2</name>
                     <description>Component Parameters Register 2</description>
                     <addressOffset>0xf0</addressOffset>
+                    <fields>
+                        <field>
+                            <name>cnt_rst</name>
+                            <description>cnt_rst</description>
+                            <bitRange>[31:0]</bitRange>
+                        </field>
+                    </fields>
                 </register>
                 <register>
                     <name>comp_param_1</name>
