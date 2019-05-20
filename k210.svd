@@ -85,46 +85,46 @@
                                 <msb>2</msb><lsb>0</lsb>
                                 <enumeratedValues>
                                     <name>Priority</name>
-                                    <enumerateValue>
+                                    <enumeratedValue>
                                         <name>Never</name>
                                         <description>Never interrupt</description>
                                         <value>0</value>
-                                    </enumerateValue>
-                                    <enumerateValue>
+                                    </enumeratedValue>
+                                    <enumeratedValue>
                                         <name>P1</name>
                                         <description>Priority 1</description>
                                         <value>1</value>
-                                    </enumerateValue>
-                                    <enumerateValue>
+                                    </enumeratedValue>
+                                    <enumeratedValue>
                                         <name>P2</name>
                                         <description>Priority 2</description>
                                         <value>2</value>
-                                    </enumerateValue>
-                                    <enumerateValue>
+                                    </enumeratedValue>
+                                    <enumeratedValue>
                                         <name>P3</name>
                                         <description>Priority 3</description>
                                         <value>3</value>
-                                    </enumerateValue>
-                                    <enumerateValue>
+                                    </enumeratedValue>
+                                    <enumeratedValue>
                                         <name>P4</name>
                                         <description>Priority 4</description>
                                         <value>4</value>
-                                    </enumerateValue>
-                                    <enumerateValue>
+                                    </enumeratedValue>
+                                    <enumeratedValue>
                                         <name>P5</name>
                                         <description>Priority 5</description>
                                         <value>5</value>
-                                    </enumerateValue>
-                                    <enumerateValue>
+                                    </enumeratedValue>
+                                    <enumeratedValue>
                                         <name>P6</name>
                                         <description>Priority 6</description>
                                         <value>6</value>
-                                    </enumerateValue>
-                                    <enumerateValue>
+                                    </enumeratedValue>
+                                    <enumeratedValue>
                                         <name>P7</name>
                                         <description>Priority 7</description>
                                         <value>7</value>
-                                    </enumerateValue>
+                                    </enumeratedValue>
                                 </enumeratedValues>
                             </field>
                         </fields>
