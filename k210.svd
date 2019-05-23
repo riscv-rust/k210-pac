@@ -2897,8 +2897,8 @@
                             <bitRange>[15:0]</bitRange>
                         </field>
                         <field>
-                            <name>lower</name>
-                            <description>Lower limit</description>
+                            <name>bottom</name>
+                            <description>Bottom limit</description>
                             <bitRange>[31:16]</bitRange>
                         </field>
                     </fields>

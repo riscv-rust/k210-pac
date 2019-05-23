@@ -54,10 +54,10 @@ impl UPPERR {
     }
 }
 #[doc = r" Value of the field"]
-pub struct LOWERR {
+pub struct BOTTOMR {
     bits: u16,
 }
-impl LOWERR {
+impl BOTTOMR {
     #[doc = r" Value of the field as raw bits"]
     #[inline]
     pub fn bits(&self) -> u16 {
@@ -80,10 +80,10 @@ impl<'a> _UPPERW<'a> {
     }
 }
 #[doc = r" Proxy"]
-pub struct _LOWERW<'a> {
+pub struct _BOTTOMW<'a> {
     w: &'a mut W,
 }
-impl<'a> _LOWERW<'a> {
+impl<'a> _BOTTOMW<'a> {
     #[doc = r" Writes raw bits to the field"]
     #[inline]
     pub unsafe fn bits(self, value: u16) -> &'a mut W {
@@ -110,15 +110,15 @@ impl R {
         };
         UPPERR { bits }
     }
-    #[doc = "Bits 16:31 - Lower limit"]
+    #[doc = "Bits 16:31 - Bottom limit"]
     #[inline]
-    pub fn lower(&self) -> LOWERR {
+    pub fn bottom(&self) -> BOTTOMR {
         let bits = {
             const MASK: u16 = 65535;
             const OFFSET: u8 = 16;
             ((self.bits >> OFFSET) & MASK as u32) as u16
         };
-        LOWERR { bits }
+        BOTTOMR { bits }
     }
 }
 impl W {
@@ -138,9 +138,9 @@ impl W {
     pub fn upper(&mut self) -> _UPPERW {
         _UPPERW { w: self }
     }
-    #[doc = "Bits 16:31 - Lower limit"]
+    #[doc = "Bits 16:31 - Bottom limit"]
     #[inline]
-    pub fn lower(&mut self) -> _LOWERW {
-        _LOWERW { w: self }
+    pub fn bottom(&mut self) -> _BOTTOMW {
+        _BOTTOMW { w: self }
     }
 }
