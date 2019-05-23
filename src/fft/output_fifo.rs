@@ -1,12 +1,12 @@
 #[doc = r" Value read from the register"]
 pub struct R {
-    bits: u32,
+    bits: u64,
 }
 #[doc = r" Value to write to the register"]
 pub struct W {
-    bits: u32,
+    bits: u64,
 }
-impl super::DUMMY {
+impl super::OUTPUT_FIFO {
     #[doc = r" Modifies the contents of the register"]
     #[inline]
     pub fn modify<F>(&self, f: F)
@@ -42,11 +42,47 @@ impl super::DUMMY {
         self.write(|w| w)
     }
 }
+#[doc = r" Value of the field"]
+pub struct OUTPUT_FIFOR {
+    bits: u64,
+}
+impl OUTPUT_FIFOR {
+    #[doc = r" Value of the field as raw bits"]
+    #[inline]
+    pub fn bits(&self) -> u64 {
+        self.bits
+    }
+}
+#[doc = r" Proxy"]
+pub struct _OUTPUT_FIFOW<'a> {
+    w: &'a mut W,
+}
+impl<'a> _OUTPUT_FIFOW<'a> {
+    #[doc = r" Writes raw bits to the field"]
+    #[inline]
+    pub unsafe fn bits(self, value: u64) -> &'a mut W {
+        const MASK: u64 = 0;
+        const OFFSET: u8 = 0;
+        self.w.bits &= !((MASK as u64) << OFFSET);
+        self.w.bits |= ((value & MASK) as u64) << OFFSET;
+        self.w
+    }
+}
 impl R {
     #[doc = r" Value of the register as raw bits"]
     #[inline]
-    pub fn bits(&self) -> u32 {
+    pub fn bits(&self) -> u64 {
         self.bits
+    }
+    #[doc = "Bits 0:63 - Output fifo"]
+    #[inline]
+    pub fn output_fifo(&self) -> OUTPUT_FIFOR {
+        let bits = {
+            const MASK: u64 = 0;
+            const OFFSET: u8 = 0;
+            ((self.bits >> OFFSET) & MASK as u64) as u64
+        };
+        OUTPUT_FIFOR { bits }
     }
 }
 impl W {
@@ -57,8 +93,13 @@ impl W {
     }
     #[doc = r" Writes raw bits to the register"]
     #[inline]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
+    pub unsafe fn bits(&mut self, bits: u64) -> &mut Self {
         self.bits = bits;
         self
+    }
+    #[doc = "Bits 0:63 - Output fifo"]
+    #[inline]
+    pub fn output_fifo(&mut self) -> _OUTPUT_FIFOW {
+        _OUTPUT_FIFOW { w: self }
     }
 }

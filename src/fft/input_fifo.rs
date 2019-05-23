@@ -1,0 +1,105 @@
+#[doc = r" Value read from the register"]
+pub struct R {
+    bits: u64,
+}
+#[doc = r" Value to write to the register"]
+pub struct W {
+    bits: u64,
+}
+impl super::INPUT_FIFO {
+    #[doc = r" Modifies the contents of the register"]
+    #[inline]
+    pub fn modify<F>(&self, f: F)
+    where
+        for<'w> F: FnOnce(&R, &'w mut W) -> &'w mut W,
+    {
+        let bits = self.register.get();
+        let r = R { bits: bits };
+        let mut w = W { bits: bits };
+        f(&r, &mut w);
+        self.register.set(w.bits);
+    }
+    #[doc = r" Reads the contents of the register"]
+    #[inline]
+    pub fn read(&self) -> R {
+        R {
+            bits: self.register.get(),
+        }
+    }
+    #[doc = r" Writes to the register"]
+    #[inline]
+    pub fn write<F>(&self, f: F)
+    where
+        F: FnOnce(&mut W) -> &mut W,
+    {
+        let mut w = W::reset_value();
+        f(&mut w);
+        self.register.set(w.bits);
+    }
+    #[doc = r" Writes the reset value to the register"]
+    #[inline]
+    pub fn reset(&self) {
+        self.write(|w| w)
+    }
+}
+#[doc = r" Value of the field"]
+pub struct INPUT_FIFOR {
+    bits: u64,
+}
+impl INPUT_FIFOR {
+    #[doc = r" Value of the field as raw bits"]
+    #[inline]
+    pub fn bits(&self) -> u64 {
+        self.bits
+    }
+}
+#[doc = r" Proxy"]
+pub struct _INPUT_FIFOW<'a> {
+    w: &'a mut W,
+}
+impl<'a> _INPUT_FIFOW<'a> {
+    #[doc = r" Writes raw bits to the field"]
+    #[inline]
+    pub unsafe fn bits(self, value: u64) -> &'a mut W {
+        const MASK: u64 = 0;
+        const OFFSET: u8 = 0;
+        self.w.bits &= !((MASK as u64) << OFFSET);
+        self.w.bits |= ((value & MASK) as u64) << OFFSET;
+        self.w
+    }
+}
+impl R {
+    #[doc = r" Value of the register as raw bits"]
+    #[inline]
+    pub fn bits(&self) -> u64 {
+        self.bits
+    }
+    #[doc = "Bits 0:63 - Input fifo"]
+    #[inline]
+    pub fn input_fifo(&self) -> INPUT_FIFOR {
+        let bits = {
+            const MASK: u64 = 0;
+            const OFFSET: u8 = 0;
+            ((self.bits >> OFFSET) & MASK as u64) as u64
+        };
+        INPUT_FIFOR { bits }
+    }
+}
+impl W {
+    #[doc = r" Reset value of the register"]
+    #[inline]
+    pub fn reset_value() -> W {
+        W { bits: 0 }
+    }
+    #[doc = r" Writes raw bits to the register"]
+    #[inline]
+    pub unsafe fn bits(&mut self, bits: u64) -> &mut Self {
+        self.bits = bits;
+        self
+    }
+    #[doc = "Bits 0:63 - Input fifo"]
+    #[inline]
+    pub fn input_fifo(&mut self) -> _INPUT_FIFOW {
+        _INPUT_FIFOW { w: self }
+    }
+}
