@@ -865,17 +865,19 @@
             <description>Neural Network Accelerator</description>
             <groupName>KPU</groupName>
             <baseAddress>0x40800000</baseAddress>
-            <size>64</size>
+            <!-- TODO <size>64</size> -->
             <registers>
                 <register>
                     <name>layer_argument_fifo</name>
                     <description>Layer arguments FIFO: each layer is defined by writing 12 successive argument values to this register</description>
                     <addressOffset>0x00</addressOffset>
+                    <size>64</size>
                 </register>
                 <register>
                     <name>interrupt_status</name>
                     <description>Interrupt status</description>
                     <addressOffset>0x08</addressOffset>
+                    <size>64</size>
                     <fields>
                         <field>
                             <name>calc_done</name>
@@ -898,21 +900,25 @@
                     <name>interrupt_raw</name>
                     <description>Interrupt raw</description>
                     <addressOffset>0x10</addressOffset>
+                    <size>64</size>
                 </register>
                 <register derivedFrom="interrupt_status">
                     <name>interrupt_mask</name>
                     <description>Interrupt mask: 0 enables the interrupt, 1 masks the interrupt</description>
                     <addressOffset>0x18</addressOffset>
+                    <size>64</size>
                 </register>
                 <register derivedFrom="interrupt_status">
                     <name>interrupt_clear</name>
                     <description>Interrupt clear: write 1 to a bit to clear interrupt</description>
                     <addressOffset>0x20</addressOffset>
+                    <size>64</size>
                 </register>
                 <register>
                     <name>fifo_threshold</name>
                     <description>FIFO threshold</description>
                     <addressOffset>0x28</addressOffset>
+                    <size>64</size>
                     <fields>
                         <field>
                             <name>full</name>
@@ -930,11 +936,13 @@
                     <name>fifo_data_out</name>
                     <description>FIFO data output</description>
                     <addressOffset>0x30</addressOffset>
+                    <size>64</size>
                 </register>
                 <register>
                     <name>fifo_ctrl</name>
                     <description>FIFO control</description>
                     <addressOffset>0x38</addressOffset>
+                    <size>64</size>
                     <fields>
                         <field>
                             <name>dma_flush</name>
@@ -967,6 +975,7 @@
                     <name>eight_bit_mode</name>
                     <description>Eight bit mode</description>
                     <addressOffset>0x40</addressOffset>
+                    <size>64</size>
                     <fields>
                         <field>
                             <name>eight_bit_mode</name>
