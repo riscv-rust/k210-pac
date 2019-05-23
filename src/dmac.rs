@@ -24,22 +24,7 @@ pub struct RegisterBlock {
     pub reset: RESET,
     _reserved1: [u8; 160usize],
     #[doc = "0x100 - Channel configuration"]
-    pub channel0: CHANNEL,
-    _reserved2: [u8; 248usize],
-    #[doc = "0x200 - Channel configuration"]
-    pub channel1: CHANNEL,
-    _reserved3: [u8; 248usize],
-    #[doc = "0x300 - Channel configuration"]
-    pub channel2: CHANNEL,
-    _reserved4: [u8; 248usize],
-    #[doc = "0x400 - Channel configuration"]
-    pub channel3: CHANNEL,
-    _reserved5: [u8; 248usize],
-    #[doc = "0x500 - Channel configuration"]
-    pub channel4: CHANNEL,
-    _reserved6: [u8; 248usize],
-    #[doc = "0x600 - Channel configuration"]
-    pub channel5: CHANNEL,
+    pub channel: [CHANNEL; 6],
 }
 #[doc = r" Register block"]
 #[repr(C)]

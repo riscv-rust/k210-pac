@@ -1447,7 +1447,6 @@
                     <description>Channel configuration</description>
                     <dim>6</dim>
                     <addressOffset>0x100</addressOffset>
-                    <size>64</size>
                     <dimIncrement>0x100</dimIncrement>
                     <register>
                         <name>sar</name>
