@@ -980,12 +980,124 @@
             <description>Neural Network Accelerator</description>
             <groupName>KPU</groupName>
             <baseAddress>0x40800000</baseAddress>
+            <!-- TODO <size>64</size> -->
             <registers>
-                <!-- TODO -->
                 <register>
-                    <name>dummy</name>
-                    <description>Dummy register: this peripheral is not implemented yet</description>
+                    <name>layer_argument_fifo</name>
+                    <description>Layer arguments FIFO: each layer is defined by writing 12 successive argument values to this register</description>
                     <addressOffset>0x00</addressOffset>
+                    <size>64</size>
+                </register>
+                <register>
+                    <name>interrupt_status</name>
+                    <description>Interrupt status</description>
+                    <addressOffset>0x08</addressOffset>
+                    <size>64</size>
+                    <fields>
+                        <field>
+                            <name>calc_done</name>
+                            <description>Interrupt raised when calculation is done</description>
+                            <bitRange>[0:0]</bitRange>
+                        </field>
+                        <field>
+                            <name>layer_cfg_almost_empty</name>
+                            <description>Interrupt raised when layer arguments FIFO almost empty</description>
+                            <bitRange>[1:1]</bitRange>
+                        </field>
+                        <field>
+                            <name>layer_cfg_almost_full</name>
+                            <description>Interrupt raised when layer arguments FIFO almost full</description>
+                            <bitRange>[2:2]</bitRange>
+                        </field>
+                    </fields>
+                </register>
+                <register derivedFrom="interrupt_status">
+                    <name>interrupt_raw</name>
+                    <description>Interrupt raw</description>
+                    <addressOffset>0x10</addressOffset>
+                    <size>64</size>
+                </register>
+                <register derivedFrom="interrupt_status">
+                    <name>interrupt_mask</name>
+                    <description>Interrupt mask: 0 enables the interrupt, 1 masks the interrupt</description>
+                    <addressOffset>0x18</addressOffset>
+                    <size>64</size>
+                </register>
+                <register derivedFrom="interrupt_status">
+                    <name>interrupt_clear</name>
+                    <description>Interrupt clear: write 1 to a bit to clear interrupt</description>
+                    <addressOffset>0x20</addressOffset>
+                    <size>64</size>
+                </register>
+                <register>
+                    <name>fifo_threshold</name>
+                    <description>FIFO threshold</description>
+                    <addressOffset>0x28</addressOffset>
+                    <size>64</size>
+                    <fields>
+                        <field>
+                            <name>full_threshold</name>
+                            <description>FIFO full threshold</description>
+                            <bitRange>[3:0]</bitRange>
+                        </field>
+                        <field>
+                            <name>empty_threshold</name>
+                            <description>FIFO empty threshold</description>
+                            <bitRange>[7:4]</bitRange>
+                        </field>
+                    </fields>
+                </register>
+                <register>
+                    <name>fifo_data_out</name>
+                    <description>FIFO data output</description>
+                    <addressOffset>0x30</addressOffset>
+                    <size>64</size>
+                </register>
+                <register>
+                    <name>fifo_ctrl</name>
+                    <description>FIFO control</description>
+                    <addressOffset>0x38</addressOffset>
+                    <size>64</size>
+                    <fields>
+                        <field>
+                            <name>dma_fifo_flush_n</name>
+                            <description>Flush DMA FIFO</description>
+                            <bitRange>[0:0]</bitRange>
+                        </field>
+                        <field>
+                            <name>gs_fifo_flush_n</name>
+                            <description>Flush GS FIFO</description>
+                            <bitRange>[1:1]</bitRange>
+                        </field>
+                        <field>
+                            <name>cfg_fifo_flush_n</name>
+                            <description>Flush configuration FIFO</description>
+                            <bitRange>[2:2]</bitRange>
+                        </field>
+                        <field>
+                            <name>cmd_fifo_flush_n</name>
+                            <description>Flush command FIFO</description>
+                            <bitRange>[3:3]</bitRange>
+                        </field>
+                        <field>
+                            <name>resp_fifo_flush_n</name>
+                            <description>Flush response FIFO</description>
+                            <bitRange>[4:4]</bitRange>
+                        </field>
+                    </fields>
+                </register>
+                <register>
+                    <name>eight_bit_mode</name>
+                    <description>Eight bit mode</description>
+                    <addressOffset>0x40</addressOffset>
+                    <size>64</size>
+                    <fields>
+                        <field>
+                            <name>eight_bit_mode</name>
+                            <description>Use 8-bit instead of 16-bit precision if set</description>
+                            <bitRange>[0:0]</bitRange>
+                        </field>
+                    </fields>
                 </register>
             </registers>
         </peripheral>
