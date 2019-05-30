@@ -1003,13 +1003,6 @@
                     <description>FFT input data fifo</description>
                     <addressOffset>0x00</addressOffset>
                     <size>64</size>
-                    <fields>
-                        <field>
-                            <name>input_fifo</name>
-                            <description>Input fifo</description>
-                            <bitRange>[63:0]</bitRange>
-                        </field>
-                    </fields>
                 </register>
                 <register>
                     <name>ctrl</name>
@@ -1050,12 +1043,12 @@
                             <bitRange>[3:3]</bitRange>
                             <enumeratedValues>
                                 <enumeratedValue>
-                                    <name>backward</name>
+                                    <name>fft</name>
                                     <description>FFT mode</description>
                                     <value>0</value>
                                 </enumeratedValue>
                                 <enumeratedValue>
-                                    <name>forward</name>
+                                    <name>ifft</name>
                                     <description>Inverse FFT mode</description>
                                     <value>1</value>
                                 </enumeratedValue>
@@ -1208,13 +1201,6 @@
                     <description>FFT output FIFO</description>
                     <addressOffset>0x38</addressOffset>
                     <size>64</size>
-                    <fields>
-                        <field>
-                            <name>output_fifo</name>
-                            <description>Output fifo</description>
-                            <bitRange>[63:0]</bitRange>
-                        </field>
-                    </fields>
                 </register>
             </registers>
         </peripheral>

@@ -105,9 +105,9 @@ impl POINTR {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum MODER {
     #[doc = "FFT mode"]
-    BACKWARD,
+    FFT,
     #[doc = "Inverse FFT mode"]
-    FORWARD,
+    IFFT,
 }
 impl MODER {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -124,8 +124,8 @@ impl MODER {
     #[inline]
     pub fn bit(&self) -> bool {
         match *self {
-            MODER::BACKWARD => false,
-            MODER::FORWARD => true,
+            MODER::FFT => false,
+            MODER::IFFT => true,
         }
     }
     #[allow(missing_docs)]
@@ -133,19 +133,19 @@ impl MODER {
     #[inline]
     pub fn _from(value: bool) -> MODER {
         match value {
-            false => MODER::BACKWARD,
-            true => MODER::FORWARD,
+            false => MODER::FFT,
+            true => MODER::IFFT,
         }
     }
-    #[doc = "Checks if the value of the field is `BACKWARD`"]
+    #[doc = "Checks if the value of the field is `FFT`"]
     #[inline]
-    pub fn is_backward(&self) -> bool {
-        *self == MODER::BACKWARD
+    pub fn is_fft(&self) -> bool {
+        *self == MODER::FFT
     }
-    #[doc = "Checks if the value of the field is `FORWARD`"]
+    #[doc = "Checks if the value of the field is `IFFT`"]
     #[inline]
-    pub fn is_forward(&self) -> bool {
-        *self == MODER::FORWARD
+    pub fn is_ifft(&self) -> bool {
+        *self == MODER::IFFT
     }
 }
 #[doc = r" Value of the field"]
@@ -367,9 +367,9 @@ impl<'a> _POINTW<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum MODEW {
     #[doc = "FFT mode"]
-    BACKWARD,
+    FFT,
     #[doc = "Inverse FFT mode"]
-    FORWARD,
+    IFFT,
 }
 impl MODEW {
     #[allow(missing_docs)]
@@ -377,8 +377,8 @@ impl MODEW {
     #[inline]
     pub fn _bits(&self) -> bool {
         match *self {
-            MODEW::BACKWARD => false,
-            MODEW::FORWARD => true,
+            MODEW::FFT => false,
+            MODEW::IFFT => true,
         }
     }
 }
@@ -396,13 +396,13 @@ impl<'a> _MODEW<'a> {
     }
     #[doc = "FFT mode"]
     #[inline]
-    pub fn backward(self) -> &'a mut W {
-        self.variant(MODEW::BACKWARD)
+    pub fn fft(self) -> &'a mut W {
+        self.variant(MODEW::FFT)
     }
     #[doc = "Inverse FFT mode"]
     #[inline]
-    pub fn forward(self) -> &'a mut W {
-        self.variant(MODEW::FORWARD)
+    pub fn ifft(self) -> &'a mut W {
+        self.variant(MODEW::IFFT)
     }
     #[doc = r" Sets the field bit"]
     pub fn set_bit(self) -> &'a mut W {
