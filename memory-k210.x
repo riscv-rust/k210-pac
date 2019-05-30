@@ -1,3 +1,5 @@
+_max_hart_id = 1;
+
 MEMORY
 {
     /* Workaround for the pcrel issue, as described here:
