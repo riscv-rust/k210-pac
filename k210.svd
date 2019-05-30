@@ -921,12 +921,12 @@
                     <size>64</size>
                     <fields>
                         <field>
-                            <name>full</name>
+                            <name>full_threshold</name>
                             <description>FIFO full threshold</description>
                             <bitRange>[3:0]</bitRange>
                         </field>
                         <field>
-                            <name>empty</name>
+                            <name>empty_threshold</name>
                             <description>FIFO empty threshold</description>
                             <bitRange>[7:4]</bitRange>
                         </field>
@@ -945,27 +945,27 @@
                     <size>64</size>
                     <fields>
                         <field>
-                            <name>dma_flush</name>
+                            <name>dma_fifo_flush_n</name>
                             <description>Flush DMA FIFO</description>
                             <bitRange>[0:0]</bitRange>
                         </field>
                         <field>
-                            <name>gs_flush</name>
+                            <name>gs_fifo_flush_n</name>
                             <description>Flush GS FIFO</description>
                             <bitRange>[1:1]</bitRange>
                         </field>
                         <field>
-                            <name>cfg_flush</name>
+                            <name>cfg_fifo_flush_n</name>
                             <description>Flush configuration FIFO</description>
                             <bitRange>[2:2]</bitRange>
                         </field>
                         <field>
-                            <name>cmd_flush</name>
+                            <name>cmd_fifo_flush_n</name>
                             <description>Flush command FIFO</description>
                             <bitRange>[3:3]</bitRange>
                         </field>
                         <field>
-                            <name>resp_flush</name>
+                            <name>resp_fifo_flush_n</name>
                             <description>Flush response FIFO</description>
                             <bitRange>[4:4]</bitRange>
                         </field>

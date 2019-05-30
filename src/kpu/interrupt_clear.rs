@@ -1,10 +1,10 @@
 #[doc = r" Value read from the register"]
 pub struct R {
-    bits: u32,
+    bits: u64,
 }
 #[doc = r" Value to write to the register"]
 pub struct W {
-    bits: u32,
+    bits: u64,
 }
 impl super::INTERRUPT_CLEAR {
     #[doc = r" Modifies the contents of the register"]
@@ -45,7 +45,7 @@ impl super::INTERRUPT_CLEAR {
 impl R {
     #[doc = r" Value of the register as raw bits"]
     #[inline]
-    pub fn bits(&self) -> u32 {
+    pub fn bits(&self) -> u64 {
         self.bits
     }
 }
@@ -57,7 +57,7 @@ impl W {
     }
     #[doc = r" Writes raw bits to the register"]
     #[inline]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
+    pub unsafe fn bits(&mut self, bits: u64) -> &mut Self {
         self.bits = bits;
         self
     }

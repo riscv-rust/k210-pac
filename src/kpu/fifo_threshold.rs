@@ -1,10 +1,10 @@
 #[doc = r" Value read from the register"]
 pub struct R {
-    bits: u32,
+    bits: u64,
 }
 #[doc = r" Value to write to the register"]
 pub struct W {
-    bits: u32,
+    bits: u64,
 }
 impl super::FIFO_THRESHOLD {
     #[doc = r" Modifies the contents of the register"]
@@ -43,10 +43,10 @@ impl super::FIFO_THRESHOLD {
     }
 }
 #[doc = r" Value of the field"]
-pub struct FULLR {
+pub struct FULL_THRESHOLDR {
     bits: u8,
 }
-impl FULLR {
+impl FULL_THRESHOLDR {
     #[doc = r" Value of the field as raw bits"]
     #[inline]
     pub fn bits(&self) -> u8 {
@@ -54,10 +54,10 @@ impl FULLR {
     }
 }
 #[doc = r" Value of the field"]
-pub struct EMPTYR {
+pub struct EMPTY_THRESHOLDR {
     bits: u8,
 }
-impl EMPTYR {
+impl EMPTY_THRESHOLDR {
     #[doc = r" Value of the field as raw bits"]
     #[inline]
     pub fn bits(&self) -> u8 {
@@ -65,60 +65,60 @@ impl EMPTYR {
     }
 }
 #[doc = r" Proxy"]
-pub struct _FULLW<'a> {
+pub struct _FULL_THRESHOLDW<'a> {
     w: &'a mut W,
 }
-impl<'a> _FULLW<'a> {
+impl<'a> _FULL_THRESHOLDW<'a> {
     #[doc = r" Writes raw bits to the field"]
     #[inline]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
         const MASK: u8 = 15;
         const OFFSET: u8 = 0;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits &= !((MASK as u64) << OFFSET);
+        self.w.bits |= ((value & MASK) as u64) << OFFSET;
         self.w
     }
 }
 #[doc = r" Proxy"]
-pub struct _EMPTYW<'a> {
+pub struct _EMPTY_THRESHOLDW<'a> {
     w: &'a mut W,
 }
-impl<'a> _EMPTYW<'a> {
+impl<'a> _EMPTY_THRESHOLDW<'a> {
     #[doc = r" Writes raw bits to the field"]
     #[inline]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
         const MASK: u8 = 15;
         const OFFSET: u8 = 4;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits &= !((MASK as u64) << OFFSET);
+        self.w.bits |= ((value & MASK) as u64) << OFFSET;
         self.w
     }
 }
 impl R {
     #[doc = r" Value of the register as raw bits"]
     #[inline]
-    pub fn bits(&self) -> u32 {
+    pub fn bits(&self) -> u64 {
         self.bits
     }
     #[doc = "Bits 0:3 - FIFO full threshold"]
     #[inline]
-    pub fn full(&self) -> FULLR {
+    pub fn full_threshold(&self) -> FULL_THRESHOLDR {
         let bits = {
             const MASK: u8 = 15;
             const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
+            ((self.bits >> OFFSET) & MASK as u64) as u8
         };
-        FULLR { bits }
+        FULL_THRESHOLDR { bits }
     }
     #[doc = "Bits 4:7 - FIFO empty threshold"]
     #[inline]
-    pub fn empty(&self) -> EMPTYR {
+    pub fn empty_threshold(&self) -> EMPTY_THRESHOLDR {
         let bits = {
             const MASK: u8 = 15;
             const OFFSET: u8 = 4;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
+            ((self.bits >> OFFSET) & MASK as u64) as u8
         };
-        EMPTYR { bits }
+        EMPTY_THRESHOLDR { bits }
     }
 }
 impl W {
@@ -129,18 +129,18 @@ impl W {
     }
     #[doc = r" Writes raw bits to the register"]
     #[inline]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
+    pub unsafe fn bits(&mut self, bits: u64) -> &mut Self {
         self.bits = bits;
         self
     }
     #[doc = "Bits 0:3 - FIFO full threshold"]
     #[inline]
-    pub fn full(&mut self) -> _FULLW {
-        _FULLW { w: self }
+    pub fn full_threshold(&mut self) -> _FULL_THRESHOLDW {
+        _FULL_THRESHOLDW { w: self }
     }
     #[doc = "Bits 4:7 - FIFO empty threshold"]
     #[inline]
-    pub fn empty(&mut self) -> _EMPTYW {
-        _EMPTYW { w: self }
+    pub fn empty_threshold(&mut self) -> _EMPTY_THRESHOLDW {
+        _EMPTY_THRESHOLDW { w: self }
     }
 }

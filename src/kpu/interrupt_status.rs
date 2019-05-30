@@ -1,10 +1,10 @@
 #[doc = r" Value read from the register"]
 pub struct R {
-    bits: u32,
+    bits: u64,
 }
 #[doc = r" Value to write to the register"]
 pub struct W {
-    bits: u32,
+    bits: u64,
 }
 impl super::INTERRUPT_STATUS {
     #[doc = r" Modifies the contents of the register"]
@@ -123,8 +123,8 @@ impl<'a> _CALC_DONEW<'a> {
     pub fn bit(self, value: bool) -> &'a mut W {
         const MASK: bool = true;
         const OFFSET: u8 = 0;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits &= !((MASK as u64) << OFFSET);
+        self.w.bits |= ((value & MASK) as u64) << OFFSET;
         self.w
     }
 }
@@ -146,8 +146,8 @@ impl<'a> _LAYER_CFG_ALMOST_EMPTYW<'a> {
     pub fn bit(self, value: bool) -> &'a mut W {
         const MASK: bool = true;
         const OFFSET: u8 = 1;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits &= !((MASK as u64) << OFFSET);
+        self.w.bits |= ((value & MASK) as u64) << OFFSET;
         self.w
     }
 }
@@ -169,15 +169,15 @@ impl<'a> _LAYER_CFG_ALMOST_FULLW<'a> {
     pub fn bit(self, value: bool) -> &'a mut W {
         const MASK: bool = true;
         const OFFSET: u8 = 2;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits &= !((MASK as u64) << OFFSET);
+        self.w.bits |= ((value & MASK) as u64) << OFFSET;
         self.w
     }
 }
 impl R {
     #[doc = r" Value of the register as raw bits"]
     #[inline]
-    pub fn bits(&self) -> u32 {
+    pub fn bits(&self) -> u64 {
         self.bits
     }
     #[doc = "Bit 0 - Interrupt raised when calculation is done"]
@@ -186,7 +186,7 @@ impl R {
         let bits = {
             const MASK: bool = true;
             const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
+            ((self.bits >> OFFSET) & MASK as u64) != 0
         };
         CALC_DONER { bits }
     }
@@ -196,7 +196,7 @@ impl R {
         let bits = {
             const MASK: bool = true;
             const OFFSET: u8 = 1;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
+            ((self.bits >> OFFSET) & MASK as u64) != 0
         };
         LAYER_CFG_ALMOST_EMPTYR { bits }
     }
@@ -206,7 +206,7 @@ impl R {
         let bits = {
             const MASK: bool = true;
             const OFFSET: u8 = 2;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
+            ((self.bits >> OFFSET) & MASK as u64) != 0
         };
         LAYER_CFG_ALMOST_FULLR { bits }
     }
@@ -219,7 +219,7 @@ impl W {
     }
     #[doc = r" Writes raw bits to the register"]
     #[inline]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
+    pub unsafe fn bits(&mut self, bits: u64) -> &mut Self {
         self.bits = bits;
         self
     }

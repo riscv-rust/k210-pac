@@ -1,10 +1,10 @@
 #[doc = r" Value read from the register"]
 pub struct R {
-    bits: u32,
+    bits: u64,
 }
 #[doc = r" Value to write to the register"]
 pub struct W {
-    bits: u32,
+    bits: u64,
 }
 impl super::EIGHT_BIT_MODE {
     #[doc = r" Modifies the contents of the register"]
@@ -81,15 +81,15 @@ impl<'a> _EIGHT_BIT_MODEW<'a> {
     pub fn bit(self, value: bool) -> &'a mut W {
         const MASK: bool = true;
         const OFFSET: u8 = 0;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits &= !((MASK as u64) << OFFSET);
+        self.w.bits |= ((value & MASK) as u64) << OFFSET;
         self.w
     }
 }
 impl R {
     #[doc = r" Value of the register as raw bits"]
     #[inline]
-    pub fn bits(&self) -> u32 {
+    pub fn bits(&self) -> u64 {
         self.bits
     }
     #[doc = "Bit 0 - Use 8-bit instead of 16-bit precision if set"]
@@ -98,7 +98,7 @@ impl R {
         let bits = {
             const MASK: bool = true;
             const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
+            ((self.bits >> OFFSET) & MASK as u64) != 0
         };
         EIGHT_BIT_MODER { bits }
     }
@@ -111,7 +111,7 @@ impl W {
     }
     #[doc = r" Writes raw bits to the register"]
     #[inline]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
+    pub unsafe fn bits(&mut self, bits: u64) -> &mut Self {
         self.bits = bits;
         self
     }
