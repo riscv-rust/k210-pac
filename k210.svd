@@ -998,11 +998,209 @@
             <groupName>FFT</groupName>
             <baseAddress>0x42000000</baseAddress>
             <registers>
-                <!-- TODO -->
                 <register>
-                    <name>dummy</name>
-                    <description>Dummy register: this peripheral is not implemented yet</description>
+                    <name>input_fifo</name>
+                    <description>FFT input data fifo</description>
                     <addressOffset>0x00</addressOffset>
+                    <size>64</size>
+                </register>
+                <register>
+                    <name>ctrl</name>
+                    <description>FFT control register</description>
+                    <addressOffset>0x08</addressOffset>
+                    <size>64</size>
+                    <fields>
+                        <field>
+                            <name>point</name>
+                            <description>FFT calculation data length</description>
+                            <bitRange>[2:0]</bitRange>
+                            <enumeratedValues>
+                                <enumeratedValue>
+                                    <name>p512</name>
+                                    <description>512 point</description>
+                                    <value>0</value>
+                                </enumeratedValue>
+                                <enumeratedValue>
+                                    <name>p256</name>
+                                    <description>256 point</description>
+                                    <value>1</value>
+                                </enumeratedValue>
+                                <enumeratedValue>
+                                    <name>p128</name>
+                                    <description>128 point</description>
+                                    <value>2</value>
+                                </enumeratedValue>
+                                <enumeratedValue>
+                                    <name>p64</name>
+                                    <description>64 point</description>
+                                    <value>3</value>
+                                </enumeratedValue>
+                            </enumeratedValues>
+                        </field>
+                        <field>
+                            <name>mode</name>
+                            <description>FFT mode</description>
+                            <bitRange>[3:3]</bitRange>
+                            <enumeratedValues>
+                                <enumeratedValue>
+                                    <name>fft</name>
+                                    <description>FFT mode</description>
+                                    <value>0</value>
+                                </enumeratedValue>
+                                <enumeratedValue>
+                                    <name>ifft</name>
+                                    <description>Inverse FFT mode</description>
+                                    <value>1</value>
+                                </enumeratedValue>
+                            </enumeratedValues>
+                        </field>
+                        <field>
+                            <name>shift</name>
+                            <description>Corresponding to the nine layer butterfly shift operation, 0x0: does not shift; 0x1: shift 1st layer. ...</description>
+                            <bitRange>[12:4]</bitRange>
+                        </field>
+                        <field>
+                            <name>enable</name>
+                            <description>FFT enable</description>
+                            <bitRange>[13:13]</bitRange>
+                        </field>
+                        <field>
+                            <name>dma_send</name>
+                            <description>FFT DMA enable</description>
+                            <bitRange>[14:14]</bitRange>
+                        </field>
+                        <field>
+                            <name>input_mode</name>
+                            <description>Input data arrangement</description>
+                            <bitRange>[16:15]</bitRange>
+                            <enumeratedValues>
+                                <enumeratedValue>
+                                    <name>riri</name>
+                                    <description>RIRI (real imaginary interleaved)</description>
+                                    <value>0</value>
+                                </enumeratedValue>
+                                <enumeratedValue>
+                                    <name>rrrr</name>
+                                    <description>RRRR (only real part)</description>
+                                    <value>1</value>
+                                </enumeratedValue>
+                                <enumeratedValue>
+                                    <name>rrii</name>
+                                    <description>First input the real part and then input the imaginary part</description>
+                                    <value>2</value>
+                                </enumeratedValue>
+                            </enumeratedValues>
+                        </field>
+                        <field>
+                            <name>data_mode</name>
+                            <description>Effective width of input data</description>
+                            <bitRange>[17:17]</bitRange>
+                            <enumeratedValues>
+                                <enumeratedValue>
+                                    <name>width_64</name>
+                                    <description>64 bit effective</description>
+                                    <value>0</value>
+                                </enumeratedValue>
+                                <enumeratedValue>
+                                    <name>width_128</name>
+                                    <description>128 bit effective</description>
+                                    <value>1</value>
+                                </enumeratedValue>
+                            </enumeratedValues>
+                        </field>
+                        <!-- reserved bit 18..63 -->
+                    </fields>
+                </register>
+                <register>
+                    <name>fifo_ctrl</name>
+                    <description>FIFO control</description>
+                    <addressOffset>0x10</addressOffset>
+                    <size>64</size>
+                    <fields>
+                        <field>
+                            <name>resp_fifo_flush</name>
+                            <description>Response memory initialization flag</description>
+                            <bitRange>[0:0]</bitRange>
+                        </field>
+                        <field>
+                            <name>cmd_fifo_flush</name>
+                            <description>Command memory initialization flag</description>
+                            <bitRange>[1:1]</bitRange>
+                        </field>
+                        <field>
+                            <name>gs_fifo_flush</name>
+                            <description>Output interface memory initialization flag</description>
+                            <bitRange>[2:2]</bitRange>
+                        </field>
+                        <!-- reserved bit 3..63 -->
+                    </fields>
+                </register>
+                <register>
+                    <name>interrupt mask</name>
+                    <description>intr_mask</description>
+                    <addressOffset>0x18</addressOffset>
+                    <size>64</size>
+                    <fields>
+                        <field>
+                            <name>fft_done</name>
+                            <description>FFT done</description>
+                            <bitRange>[0:0]</bitRange>
+                        </field>
+                        <!-- reserved bit 1..63 -->
+                    </fields>
+                </register>
+                <register>
+                    <name>intr_clear</name>
+                    <description>Interrupt clear</description>
+                    <addressOffset>0x20</addressOffset>
+                    <size>64</size>
+                    <fields>
+                        <field>
+                            <name>fft_done</name>
+                            <description>FFT done</description>
+                            <bitRange>[0:0]</bitRange>
+                        </field>
+                        <!-- reserved bit 1..63 -->
+                    </fields>
+                </register>
+                <register>
+                    <name>status</name>
+                    <description>FFT status register</description>
+                    <addressOffset>0x28</addressOffset>
+                    <size>64</size>
+                    <fields>
+                        <field>
+                            <name>fft_done</name>
+                            <description>FFT done</description>
+                            <bitRange>[0:0]</bitRange>
+                        </field>
+                        <!-- reserved bit 1..63 -->
+                    </fields>
+                </register>
+                <register>
+                    <name>status_raw</name>
+                    <description>FFT status raw</description>
+                    <addressOffset>0x30</addressOffset>
+                    <size>64</size>
+                    <fields>
+                        <field>
+                            <name>fft_done</name>
+                            <description>FFT done</description>
+                            <bitRange>[0:0]</bitRange>
+                        </field>
+                        <field>
+                            <name>fft_work</name>
+                            <description>FFT work</description>
+                            <bitRange>[1:1]</bitRange>
+                        </field>
+                        <!-- reserved bit 2..63 -->
+                    </fields>
+                </register>
+                <register>
+                    <name>output_fifo</name>
+                    <description>FFT output FIFO</description>
+                    <addressOffset>0x38</addressOffset>
+                    <size>64</size>
                 </register>
             </registers>
         </peripheral>
