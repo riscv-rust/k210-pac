@@ -385,8 +385,17 @@ impl ARLEN_ENR {
         self.bit()
     }
 }
-#[doc = "Possible values of the field `arlen`"]
-pub type ARLENR = SRC_MSIZER;
+#[doc = r" Value of the field"]
+pub struct ARLENR {
+    bits: u8,
+}
+impl ARLENR {
+    #[doc = r" Value of the field as raw bits"]
+    #[inline]
+    pub fn bits(&self) -> u8 {
+        self.bits
+    }
+}
 #[doc = r" Value of the field"]
 pub struct AWLEN_ENR {
     bits: bool,
@@ -408,8 +417,17 @@ impl AWLEN_ENR {
         self.bit()
     }
 }
-#[doc = "Possible values of the field `awlen`"]
-pub type AWLENR = SRC_MSIZER;
+#[doc = r" Value of the field"]
+pub struct AWLENR {
+    bits: u8,
+}
+impl AWLENR {
+    #[doc = r" Value of the field as raw bits"]
+    #[inline]
+    pub fn bits(&self) -> u8 {
+        self.bits
+    }
+}
 #[doc = r" Value of the field"]
 pub struct SRC_STAT_ENR {
     bits: bool,
@@ -1094,68 +1112,11 @@ impl<'a> _ARLEN_ENW<'a> {
         self.w
     }
 }
-#[doc = "Values that can be written to the field `arlen`"]
-pub type ARLENW = SRC_MSIZEW;
 #[doc = r" Proxy"]
 pub struct _ARLENW<'a> {
     w: &'a mut W,
 }
 impl<'a> _ARLENW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: ARLENW) -> &'a mut W {
-        unsafe { self.bits(variant._bits()) }
-    }
-    #[doc = "1 data item"]
-    #[inline]
-    pub fn length_1(self) -> &'a mut W {
-        self.variant(SRC_MSIZEW::LENGTH_1)
-    }
-    #[doc = "4 data items"]
-    #[inline]
-    pub fn length_4(self) -> &'a mut W {
-        self.variant(SRC_MSIZEW::LENGTH_4)
-    }
-    #[doc = "8 data items"]
-    #[inline]
-    pub fn length_8(self) -> &'a mut W {
-        self.variant(SRC_MSIZEW::LENGTH_8)
-    }
-    #[doc = "16 data items"]
-    #[inline]
-    pub fn length_16(self) -> &'a mut W {
-        self.variant(SRC_MSIZEW::LENGTH_16)
-    }
-    #[doc = "32 data items"]
-    #[inline]
-    pub fn length_32(self) -> &'a mut W {
-        self.variant(SRC_MSIZEW::LENGTH_32)
-    }
-    #[doc = "64 data items"]
-    #[inline]
-    pub fn length_64(self) -> &'a mut W {
-        self.variant(SRC_MSIZEW::LENGTH_64)
-    }
-    #[doc = "128 data items"]
-    #[inline]
-    pub fn length_128(self) -> &'a mut W {
-        self.variant(SRC_MSIZEW::LENGTH_128)
-    }
-    #[doc = "256 data items"]
-    #[inline]
-    pub fn length_256(self) -> &'a mut W {
-        self.variant(SRC_MSIZEW::LENGTH_256)
-    }
-    #[doc = "512 data items"]
-    #[inline]
-    pub fn length_512(self) -> &'a mut W {
-        self.variant(SRC_MSIZEW::LENGTH_512)
-    }
-    #[doc = "1024 data items"]
-    #[inline]
-    pub fn length_1024(self) -> &'a mut W {
-        self.variant(SRC_MSIZEW::LENGTH_1024)
-    }
     #[doc = r" Writes raw bits to the field"]
     #[inline]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
@@ -1189,68 +1150,11 @@ impl<'a> _AWLEN_ENW<'a> {
         self.w
     }
 }
-#[doc = "Values that can be written to the field `awlen`"]
-pub type AWLENW = SRC_MSIZEW;
 #[doc = r" Proxy"]
 pub struct _AWLENW<'a> {
     w: &'a mut W,
 }
 impl<'a> _AWLENW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: AWLENW) -> &'a mut W {
-        unsafe { self.bits(variant._bits()) }
-    }
-    #[doc = "1 data item"]
-    #[inline]
-    pub fn length_1(self) -> &'a mut W {
-        self.variant(SRC_MSIZEW::LENGTH_1)
-    }
-    #[doc = "4 data items"]
-    #[inline]
-    pub fn length_4(self) -> &'a mut W {
-        self.variant(SRC_MSIZEW::LENGTH_4)
-    }
-    #[doc = "8 data items"]
-    #[inline]
-    pub fn length_8(self) -> &'a mut W {
-        self.variant(SRC_MSIZEW::LENGTH_8)
-    }
-    #[doc = "16 data items"]
-    #[inline]
-    pub fn length_16(self) -> &'a mut W {
-        self.variant(SRC_MSIZEW::LENGTH_16)
-    }
-    #[doc = "32 data items"]
-    #[inline]
-    pub fn length_32(self) -> &'a mut W {
-        self.variant(SRC_MSIZEW::LENGTH_32)
-    }
-    #[doc = "64 data items"]
-    #[inline]
-    pub fn length_64(self) -> &'a mut W {
-        self.variant(SRC_MSIZEW::LENGTH_64)
-    }
-    #[doc = "128 data items"]
-    #[inline]
-    pub fn length_128(self) -> &'a mut W {
-        self.variant(SRC_MSIZEW::LENGTH_128)
-    }
-    #[doc = "256 data items"]
-    #[inline]
-    pub fn length_256(self) -> &'a mut W {
-        self.variant(SRC_MSIZEW::LENGTH_256)
-    }
-    #[doc = "512 data items"]
-    #[inline]
-    pub fn length_512(self) -> &'a mut W {
-        self.variant(SRC_MSIZEW::LENGTH_512)
-    }
-    #[doc = "1024 data items"]
-    #[inline]
-    pub fn length_1024(self) -> &'a mut W {
-        self.variant(SRC_MSIZEW::LENGTH_1024)
-    }
     #[doc = r" Writes raw bits to the field"]
     #[inline]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
@@ -1477,11 +1381,12 @@ impl R {
     #[doc = "Bits 39:46 - Source burst length"]
     #[inline]
     pub fn arlen(&self) -> ARLENR {
-        ARLENR::_from({
+        let bits = {
             const MASK: u8 = 255;
             const OFFSET: u8 = 39;
             ((self.bits >> OFFSET) & MASK as u64) as u8
-        })
+        };
+        ARLENR { bits }
     }
     #[doc = "Bit 47 - Destination burst length enable"]
     #[inline]
@@ -1496,11 +1401,12 @@ impl R {
     #[doc = "Bits 48:55 - Destination burst length"]
     #[inline]
     pub fn awlen(&self) -> AWLENR {
-        AWLENR::_from({
+        let bits = {
             const MASK: u8 = 255;
             const OFFSET: u8 = 48;
             ((self.bits >> OFFSET) & MASK as u64) as u8
-        })
+        };
+        AWLENR { bits }
     }
     #[doc = "Bit 56 - Source status enable"]
     #[inline]

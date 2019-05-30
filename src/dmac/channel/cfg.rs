@@ -50,9 +50,9 @@ pub enum SRC_MULTBLK_TYPER {
     #[doc = "Reload multi-block type"]
     RELOAD,
     #[doc = "Shadow register based multi-block type"]
-    SHADOWREGISTER,
+    SHADOW_REGISTER,
     #[doc = "Linked list based multi-block type"]
-    LINKEDLIST,
+    LINKED_LIST,
 }
 impl SRC_MULTBLK_TYPER {
     #[doc = r" Value of the field as raw bits"]
@@ -61,8 +61,8 @@ impl SRC_MULTBLK_TYPER {
         match *self {
             SRC_MULTBLK_TYPER::CONTIGUOUS => 0,
             SRC_MULTBLK_TYPER::RELOAD => 1,
-            SRC_MULTBLK_TYPER::SHADOWREGISTER => 2,
-            SRC_MULTBLK_TYPER::LINKEDLIST => 3,
+            SRC_MULTBLK_TYPER::SHADOW_REGISTER => 2,
+            SRC_MULTBLK_TYPER::LINKED_LIST => 3,
         }
     }
     #[allow(missing_docs)]
@@ -72,8 +72,8 @@ impl SRC_MULTBLK_TYPER {
         match value {
             0 => SRC_MULTBLK_TYPER::CONTIGUOUS,
             1 => SRC_MULTBLK_TYPER::RELOAD,
-            2 => SRC_MULTBLK_TYPER::SHADOWREGISTER,
-            3 => SRC_MULTBLK_TYPER::LINKEDLIST,
+            2 => SRC_MULTBLK_TYPER::SHADOW_REGISTER,
+            3 => SRC_MULTBLK_TYPER::LINKED_LIST,
             _ => unreachable!(),
         }
     }
@@ -87,15 +87,15 @@ impl SRC_MULTBLK_TYPER {
     pub fn is_reload(&self) -> bool {
         *self == SRC_MULTBLK_TYPER::RELOAD
     }
-    #[doc = "Checks if the value of the field is `SHADOWREGISTER`"]
+    #[doc = "Checks if the value of the field is `SHADOW_REGISTER`"]
     #[inline]
-    pub fn is_shadowregister(&self) -> bool {
-        *self == SRC_MULTBLK_TYPER::SHADOWREGISTER
+    pub fn is_shadow_register(&self) -> bool {
+        *self == SRC_MULTBLK_TYPER::SHADOW_REGISTER
     }
-    #[doc = "Checks if the value of the field is `LINKEDLIST`"]
+    #[doc = "Checks if the value of the field is `LINKED_LIST`"]
     #[inline]
-    pub fn is_linkedlist(&self) -> bool {
-        *self == SRC_MULTBLK_TYPER::LINKEDLIST
+    pub fn is_linked_list(&self) -> bool {
+        *self == SRC_MULTBLK_TYPER::LINKED_LIST
     }
 }
 #[doc = "Possible values of the field `dst_multblk_type`"]
@@ -424,9 +424,9 @@ pub enum SRC_MULTBLK_TYPEW {
     #[doc = "Reload multi-block type"]
     RELOAD,
     #[doc = "Shadow register based multi-block type"]
-    SHADOWREGISTER,
+    SHADOW_REGISTER,
     #[doc = "Linked list based multi-block type"]
-    LINKEDLIST,
+    LINKED_LIST,
 }
 impl SRC_MULTBLK_TYPEW {
     #[allow(missing_docs)]
@@ -436,8 +436,8 @@ impl SRC_MULTBLK_TYPEW {
         match *self {
             SRC_MULTBLK_TYPEW::CONTIGUOUS => 0,
             SRC_MULTBLK_TYPEW::RELOAD => 1,
-            SRC_MULTBLK_TYPEW::SHADOWREGISTER => 2,
-            SRC_MULTBLK_TYPEW::LINKEDLIST => 3,
+            SRC_MULTBLK_TYPEW::SHADOW_REGISTER => 2,
+            SRC_MULTBLK_TYPEW::LINKED_LIST => 3,
         }
     }
 }
@@ -465,13 +465,13 @@ impl<'a> _SRC_MULTBLK_TYPEW<'a> {
     }
     #[doc = "Shadow register based multi-block type"]
     #[inline]
-    pub fn shadowregister(self) -> &'a mut W {
-        self.variant(SRC_MULTBLK_TYPEW::SHADOWREGISTER)
+    pub fn shadow_register(self) -> &'a mut W {
+        self.variant(SRC_MULTBLK_TYPEW::SHADOW_REGISTER)
     }
     #[doc = "Linked list based multi-block type"]
     #[inline]
-    pub fn linkedlist(self) -> &'a mut W {
-        self.variant(SRC_MULTBLK_TYPEW::LINKEDLIST)
+    pub fn linked_list(self) -> &'a mut W {
+        self.variant(SRC_MULTBLK_TYPEW::LINKED_LIST)
     }
     #[doc = r" Writes raw bits to the field"]
     #[inline]
@@ -509,13 +509,13 @@ impl<'a> _DST_MULTBLK_TYPEW<'a> {
     }
     #[doc = "Shadow register based multi-block type"]
     #[inline]
-    pub fn shadowregister(self) -> &'a mut W {
-        self.variant(SRC_MULTBLK_TYPEW::SHADOWREGISTER)
+    pub fn shadow_register(self) -> &'a mut W {
+        self.variant(SRC_MULTBLK_TYPEW::SHADOW_REGISTER)
     }
     #[doc = "Linked list based multi-block type"]
     #[inline]
-    pub fn linkedlist(self) -> &'a mut W {
-        self.variant(SRC_MULTBLK_TYPEW::LINKEDLIST)
+    pub fn linked_list(self) -> &'a mut W {
+        self.variant(SRC_MULTBLK_TYPEW::LINKED_LIST)
     }
     #[doc = r" Writes raw bits to the field"]
     #[inline]

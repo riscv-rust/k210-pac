@@ -127,10 +127,10 @@ impl SLVIF_WRONHOLD_ERRR {
     }
 }
 #[doc = r" Value of the field"]
-pub struct SLVIF_UNDEFINEDREG_DECR {
+pub struct SLVIF_UNDEFINEDREG_DEC_ERRR {
     bits: bool,
 }
-impl SLVIF_UNDEFINEDREG_DECR {
+impl SLVIF_UNDEFINEDREG_DEC_ERRR {
     #[doc = r" Value of the field as raw bits"]
     #[inline]
     pub fn bit(&self) -> bool {
@@ -240,10 +240,10 @@ impl<'a> _SLVIF_WRONHOLD_ERRW<'a> {
     }
 }
 #[doc = r" Proxy"]
-pub struct _SLVIF_UNDEFINEDREG_DECW<'a> {
+pub struct _SLVIF_UNDEFINEDREG_DEC_ERRW<'a> {
     w: &'a mut W,
 }
-impl<'a> _SLVIF_UNDEFINEDREG_DECW<'a> {
+impl<'a> _SLVIF_UNDEFINEDREG_DEC_ERRW<'a> {
     #[doc = r" Sets the field bit"]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
@@ -310,13 +310,13 @@ impl R {
     }
     #[doc = "Bit 8 - Slave Interface Undefined Register Decode Error"]
     #[inline]
-    pub fn slvif_undefinedreg_dec(&self) -> SLVIF_UNDEFINEDREG_DECR {
+    pub fn slvif_undefinedreg_dec_err(&self) -> SLVIF_UNDEFINEDREG_DEC_ERRR {
         let bits = {
             const MASK: bool = true;
             const OFFSET: u8 = 8;
             ((self.bits >> OFFSET) & MASK as u64) != 0
         };
-        SLVIF_UNDEFINEDREG_DECR { bits }
+        SLVIF_UNDEFINEDREG_DEC_ERRR { bits }
     }
 }
 impl W {
@@ -353,7 +353,7 @@ impl W {
     }
     #[doc = "Bit 8 - Slave Interface Undefined Register Decode Error"]
     #[inline]
-    pub fn slvif_undefinedreg_dec(&mut self) -> _SLVIF_UNDEFINEDREG_DECW {
-        _SLVIF_UNDEFINEDREG_DECW { w: self }
+    pub fn slvif_undefinedreg_dec_err(&mut self) -> _SLVIF_UNDEFINEDREG_DEC_ERRW {
+        _SLVIF_UNDEFINEDREG_DEC_ERRW { w: self }
     }
 }

@@ -1,7 +1,7 @@
 #[doc = r" Register block"]
 #[repr(C)]
 pub struct RegisterBlock {
-    #[doc = "0x00 - ID Rgister"]
+    #[doc = "0x00 - ID Register"]
     pub id: ID,
     #[doc = "0x08 - COMPVER Register"]
     pub compver: COMPVER,
@@ -69,11 +69,11 @@ pub struct CHANNEL {
 #[doc = r" Register block"]
 #[doc = "Channel configuration"]
 pub mod channel;
-#[doc = "ID Rgister"]
+#[doc = "ID Register"]
 pub struct ID {
     register: ::vcell::VolatileCell<u64>,
 }
-#[doc = "ID Rgister"]
+#[doc = "ID Register"]
 pub mod id;
 #[doc = "COMPVER Register"]
 pub struct COMPVER {

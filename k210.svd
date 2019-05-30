@@ -1018,7 +1018,7 @@
             <registers>
                 <register>
                     <name>id</name>
-                    <description>ID Rgister</description>
+                    <description>ID Register</description>
                     <addressOffset>0x00</addressOffset>
                     <size>64</size>
                 </register>
@@ -1315,7 +1315,7 @@
                         </field>
                         <!-- reserved bit 4..7 -->
                         <field>
-                            <name>slvif_undefinedreg_dec</name>
+                            <name>slvif_undefinedreg_dec_err</name>
                             <description>Clear slvif_undefinedreg_dec in com_intstatus</description>
                             <bitRange>[8:8]</bitRange>
                         </field>
@@ -1350,7 +1350,7 @@
                         </field>
                         <!-- reserved bit 4..7 -->
                         <field>
-                            <name>slvif_undefinedreg_dec</name>
+                            <name>slvif_undefinedreg_dec_err</name>
                             <description>Slave Interface Undefined Register Decode Error</description>
                             <bitRange>[8:8]</bitRange>
                         </field>
@@ -1385,7 +1385,7 @@
                         </field>
                         <!-- reserved bit 4..7 -->
                         <field>
-                            <name>slvif_undefinedreg_dec</name>
+                            <name>slvif_undefinedreg_dec_err</name>
                             <description>Slave Interface Undefined Register Decode Error</description>
                             <bitRange>[8:8]</bitRange>
                         </field>
@@ -1420,7 +1420,7 @@
                         </field>
                         <!-- reserved bit 4..7 -->
                         <field>
-                            <name>slvif_undefinedreg_dec</name>
+                            <name>slvif_undefinedreg_dec_err</name>
                             <description>Slave Interface Undefined Register Decode Error</description>
                             <bitRange>[8:8]</bitRange>
                         </field>
@@ -1661,7 +1661,6 @@
                                 <name>arlen</name>
                                 <description>Source burst length</description>
                                 <bitRange>[46:39]</bitRange>
-                                <enumeratedValues derivedFrom="BURST_LENGTH" />
                             </field>
                             <field>
                                 <name>awlen_en</name>
@@ -1672,7 +1671,6 @@
                                 <name>awlen</name>
                                 <description>Destination burst length</description>
                                 <bitRange>[55:48]</bitRange>
-                                <enumeratedValues derivedFrom="BURST_LENGTH" />
                             </field>
                             <field>
                                 <name>src_stat_en</name>
@@ -1697,7 +1695,7 @@
                             </field>
                             <field>
                                 <name>shadowreg_or_lli_valid</name>
-                                <description>last shadow linked list item valid (indicate shadowreg/LLI content is  valid)</description>
+                                <description>last shadow linked list item valid (indicate shadowreg/LLI content is valid)</description>
                                 <bitRange>[63:63]</bitRange>
                             </field>
                         </fields>
@@ -1725,12 +1723,12 @@
                                         <value>1</value>
                                     </enumeratedValue>
                                     <enumeratedValue>
-                                        <name>shadowregister</name>
+                                        <name>shadow_register</name>
                                         <description>Shadow register based multi-block type</description>
                                         <value>2</value>
                                     </enumeratedValue>
                                     <enumeratedValue>
-                                        <name>linkedlist</name>
+                                        <name>linked_list</name>
                                         <description>Linked list based multi-block type</description>
                                         <value>3</value>
                                     </enumeratedValue>
