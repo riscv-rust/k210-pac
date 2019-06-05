@@ -308,7 +308,7 @@ impl R {
         };
         SLVIF_WRONHOLD_ERRR { bits }
     }
-    #[doc = "Bit 8 - Clear slvif_undefinedreg_dec in com_intstatus"]
+    #[doc = "Bit 8 - Clear slvif_undefinedreg_dec_err in com_intstatus"]
     #[inline]
     pub fn slvif_undefinedreg_dec_err(&self) -> SLVIF_UNDEFINEDREG_DEC_ERRR {
         let bits = {
@@ -351,7 +351,7 @@ impl W {
     pub fn slvif_wronhold_err(&mut self) -> _SLVIF_WRONHOLD_ERRW {
         _SLVIF_WRONHOLD_ERRW { w: self }
     }
-    #[doc = "Bit 8 - Clear slvif_undefinedreg_dec in com_intstatus"]
+    #[doc = "Bit 8 - Clear slvif_undefinedreg_dec_err in com_intstatus"]
     #[inline]
     pub fn slvif_undefinedreg_dec_err(&mut self) -> _SLVIF_UNDEFINEDREG_DEC_ERRW {
         _SLVIF_UNDEFINEDREG_DEC_ERRW { w: self }

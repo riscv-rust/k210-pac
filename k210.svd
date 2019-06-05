@@ -1316,7 +1316,7 @@
                         <!-- reserved bit 4..7 -->
                         <field>
                             <name>slvif_undefinedreg_dec_err</name>
-                            <description>Clear slvif_undefinedreg_dec in com_intstatus</description>
+                            <description>Clear slvif_undefinedreg_dec_err in com_intstatus</description>
                             <bitRange>[8:8]</bitRange>
                         </field>
                         <!-- reserved bit 9..63 -->
