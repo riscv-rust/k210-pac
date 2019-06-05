@@ -1324,13 +1324,1312 @@
             <description>Direct Memory Access Controller</description>
             <groupName>DMAC</groupName>
             <baseAddress>0x50000000</baseAddress>
+            <!-- TODO <size>64</size> -->
             <registers>
-                <!-- TODO -->
                 <register>
-                    <name>dummy</name>
-                    <description>Dummy register: this peripheral is not implemented yet</description>
+                    <name>id</name>
+                    <description>ID Register</description>
                     <addressOffset>0x00</addressOffset>
+                    <size>64</size>
                 </register>
+                <register>
+                    <name>compver</name>
+                    <description>COMPVER Register</description>
+                    <addressOffset>0x08</addressOffset>
+                    <size>64</size>
+                </register>
+                <register>
+                    <name>cfg</name>
+                    <description>Configure Register</description>
+                    <addressOffset>0x10</addressOffset>
+                    <size>64</size>
+                    <fields>
+                        <field>
+                            <name>dmac_en</name>
+                            <description>Enable DMAC</description>
+                            <bitRange>[0:0]</bitRange>
+                        </field>
+                        <field>
+                            <name>int_en</name>
+                            <description>Globally enable interrupt generation</description>
+                            <bitRange>[1:1]</bitRange>
+                        </field>
+                        <!-- reserved bit 2..63 -->
+                    </fields>
+                </register>
+                <register>
+                    <name>chen</name>
+                    <description>Channel Enable Register</description>
+                    <addressOffset>0x18</addressOffset>
+                    <size>64</size>
+                    <fields>
+                        <field>
+                            <name>ch1_en</name>
+                            <description>Enable channel 1</description>
+                            <bitRange>[0:0]</bitRange>
+                        </field>
+                        <field>
+                            <name>ch2_en</name>
+                            <description>Enable channel 2</description>
+                            <bitRange>[1:1]</bitRange>
+                        </field>
+                        <field>
+                            <name>ch3_en</name>
+                            <description>Enable channel 3</description>
+                            <bitRange>[2:2]</bitRange>
+                        </field>
+                        <field>
+                            <name>ch4_en</name>
+                            <description>Enable channel 4</description>
+                            <bitRange>[3:3]</bitRange>
+                        </field>
+                        <field>
+                            <name>ch5_en</name>
+                            <description>Enable channel 5</description>
+                            <bitRange>[4:4]</bitRange>
+                        </field>
+                        <field>
+                            <name>ch6_en</name>
+                            <description>Enable channel 6</description>
+                            <bitRange>[5:5]</bitRange>
+                        </field>
+                        <!-- reserved bit 6..7 -->
+                        <field>
+                            <name>ch1_en_we</name>
+                            <description>Write enable channel 1</description>
+                            <bitRange>[8:8]</bitRange>
+                        </field>
+                        <field>
+                            <name>ch2_en_we</name>
+                            <description>Write enable channel 2</description>
+                            <bitRange>[9:9]</bitRange>
+                        </field>
+                        <field>
+                            <name>ch3_en_we</name>
+                            <description>Write enable channel 3</description>
+                            <bitRange>[10:10]</bitRange>
+                        </field>
+                        <field>
+                            <name>ch4_en_we</name>
+                            <description>Write enable channel 4</description>
+                            <bitRange>[11:11]</bitRange>
+                        </field>
+                        <field>
+                            <name>ch5_en_we</name>
+                            <description>Write enable channel 5</description>
+                            <bitRange>[12:12]</bitRange>
+                        </field>
+                        <field>
+                            <name>ch6_en_we</name>
+                            <description>Write enable channel 6</description>
+                            <bitRange>[13:13]</bitRange>
+                        </field>
+                        <!-- reserved bit 14..15 -->
+                        <field>
+                            <name>ch1_susp</name>
+                            <description>Suspend request channel 1</description>
+                            <bitRange>[16:16]</bitRange>
+                        </field>
+                        <field>
+                            <name>ch2_susp</name>
+                            <description>Suspend request channel 2</description>
+                            <bitRange>[17:17]</bitRange>
+                        </field>
+                        <field>
+                            <name>ch3_susp</name>
+                            <description>Suspend request channel 3</description>
+                            <bitRange>[18:18]</bitRange>
+                        </field>
+                        <field>
+                            <name>ch4_susp</name>
+                            <description>Suspend request channel 4</description>
+                            <bitRange>[19:19]</bitRange>
+                        </field>
+                        <field>
+                            <name>ch5_susp</name>
+                            <description>Suspend request channel 5</description>
+                            <bitRange>[20:20]</bitRange>
+                        </field>
+                        <field>
+                            <name>ch6_susp</name>
+                            <description>Suspend request channel 6</description>
+                            <bitRange>[21:21]</bitRange>
+                        </field>
+                        <!-- reserved bit 22.23 -->
+                        <field>
+                            <name>ch1_susp_we</name>
+                            <description>Enable write to ch1_susp bit</description>
+                            <bitRange>[24:24]</bitRange>
+                        </field>
+                        <field>
+                            <name>ch2_susp_we</name>
+                            <description>Enable write to ch2_susp bit</description>
+                            <bitRange>[25:25]</bitRange>
+                        </field>
+                        <field>
+                            <name>ch3_susp_we</name>
+                            <description>Enable write to ch3_susp bit</description>
+                            <bitRange>[26:26]</bitRange>
+                        </field>
+                        <field>
+                            <name>ch4_susp_we</name>
+                            <description>Enable write to ch4_susp bit</description>
+                            <bitRange>[27:27]</bitRange>
+                        </field>
+                        <field>
+                            <name>ch5_susp_we</name>
+                            <description>Enable write to ch5_susp bit</description>
+                            <bitRange>[28:28]</bitRange>
+                        </field>
+                        <field>
+                            <name>ch6_susp_we</name>
+                            <description>Enable write to ch6_susp bit</description>
+                            <bitRange>[29:29]</bitRange>
+                        </field>
+                        <!-- reserved bit 30..31 -->
+                        <field>
+                            <name>ch1_abort</name>
+                            <description>Abort request channel 1</description>
+                            <bitRange>[32:32]</bitRange>
+                        </field>
+                        <field>
+                            <name>ch2_abort</name>
+                            <description>Abort request channel 2</description>
+                            <bitRange>[33:33]</bitRange>
+                        </field>
+                        <field>
+                            <name>ch3_abort</name>
+                            <description>Abort request channel 3</description>
+                            <bitRange>[34:34]</bitRange>
+                        </field>
+                        <field>
+                            <name>ch4_abort</name>
+                            <description>Abort request channel 4</description>
+                            <bitRange>[35:35]</bitRange>
+                        </field>
+                        <field>
+                            <name>ch5_abort</name>
+                            <description>Abort request channel 5</description>
+                            <bitRange>[36:36]</bitRange>
+                        </field>
+                        <field>
+                            <name>ch6_abort</name>
+                            <description>Abort request channel 6</description>
+                            <bitRange>[37:37]</bitRange>
+                        </field>
+                        <!-- reserved bit 38..39 -->
+                        <field>
+                            <name>ch1_abort_we</name>
+                            <description>Enable write to ch1_abort bit</description>
+                            <bitRange>[40:40]</bitRange>
+                        </field>
+                        <field>
+                            <name>ch2_abort_we</name>
+                            <description>Enable write to ch2_abort bit</description>
+                            <bitRange>[41:41]</bitRange>
+                        </field>
+                        <field>
+                            <name>ch3_abort_we</name>
+                            <description>Enable write to ch3_abort bit</description>
+                            <bitRange>[42:42]</bitRange>
+                        </field>
+                        <field>
+                            <name>ch4_abort_we</name>
+                            <description>Enable write to ch4_abort bit</description>
+                            <bitRange>[43:43]</bitRange>
+                        </field>
+                        <field>
+                            <name>ch5_abort_we</name>
+                            <description>Enable write to ch5_abort bit</description>
+                            <bitRange>[44:44]</bitRange>
+                        </field>
+                        <field>
+                            <name>ch6_abort_we</name>
+                            <description>Enable write to ch6_abort bit</description>
+                            <bitRange>[45:45]</bitRange>
+                        </field>
+                        <!-- reserved bit 46..63 -->
+                    </fields>
+                </register>
+                <!-- reserved: 0x20..0x2f -->
+                <register>
+                    <name>intstatus</name>
+                    <description>Interrupt Status Register</description>
+                    <addressOffset>0x30</addressOffset>
+                    <size>64</size>
+                    <fields>
+                        <field>
+                            <name>ch1_intstat</name>
+                            <description>Channel 1 interrupt bit</description>
+                            <bitRange>[0:0]</bitRange>
+                        </field>
+                        <field>
+                            <name>ch2_intstat</name>
+                            <description>Channel 2 interrupt bit</description>
+                            <bitRange>[1:1]</bitRange>
+                        </field>
+                        <field>
+                            <name>ch3_intstat</name>
+                            <description>Channel 3 interrupt bit</description>
+                            <bitRange>[2:2]</bitRange>
+                        </field>
+                        <field>
+                            <name>ch4_intstat</name>
+                            <description>Channel 4 interrupt bit</description>
+                            <bitRange>[3:3]</bitRange>
+                        </field>
+                        <field>
+                            <name>ch5_intstat</name>
+                            <description>Channel 5 interrupt bit</description>
+                            <bitRange>[4:4]</bitRange>
+                        </field>
+                        <field>
+                            <name>ch6_intstat</name>
+                            <description>Channel 6 interrupt bit</description>
+                            <bitRange>[5:5]</bitRange>
+                        </field>
+                        <!-- reserved bit 6..15 -->
+                        <field>
+                            <name>commonreg_intstat</name>
+                            <description>Common register status bit</description>
+                            <bitRange>[16:16]</bitRange>
+                        </field>
+                        <!-- reserved bit 17..63 -->
+                    </fields>
+                </register>
+                <register>
+                    <name>com_intclear</name>
+                    <description>Common Interrupt Clear Register</description>
+                    <addressOffset>0x38</addressOffset>
+                    <size>64</size>
+                    <fields>
+                        <field>
+                            <name>slvif_dec_err</name>
+                            <description>Clear slvif_dec_err interrupt in com_intstatus</description>
+                            <bitRange>[0:0]</bitRange>
+                        </field>
+                        <field>
+                            <name>slvif_wr2ro_err</name>
+                            <description>Clear slvif_wr2ro_err interrupt in com_intstatus</description>
+                            <bitRange>[1:1]</bitRange>
+                        </field>
+                        <field>
+                            <name>slvif_rd2wo_err</name>
+                            <description>Clear slvif_rd2wo_err interrupt in com_intstatus</description>
+                            <bitRange>[2:2]</bitRange>
+                        </field>
+                        <field>
+                            <name>slvif_wronhold_err</name>
+                            <description>Clear slvif_wronhold_err interrupt in com_intstatus</description>
+                            <bitRange>[3:3]</bitRange>
+                        </field>
+                        <!-- reserved bit 4..7 -->
+                        <field>
+                            <name>slvif_undefinedreg_dec_err</name>
+                            <description>Clear slvif_undefinedreg_dec_err in com_intstatus</description>
+                            <bitRange>[8:8]</bitRange>
+                        </field>
+                        <!-- reserved bit 9..63 -->
+                    </fields>
+                </register>
+                <register>
+                    <name>com_intstatus_en</name>
+                    <description>Common Interrupt Status Enable Register</description>
+                    <addressOffset>0x40</addressOffset>
+                    <size>64</size>
+                    <fields>
+                        <field>
+                            <name>slvif_dec_err</name>
+                            <description>Slave Interface Common Register Decode Error</description>
+                            <bitRange>[0:0]</bitRange>
+                        </field>
+                        <field>
+                            <name>slvif_wr2ro_err</name>
+                            <description>Slave Interface Common Register Write to Read only Error</description>
+                            <bitRange>[1:1]</bitRange>
+                        </field>
+                        <field>
+                            <name>slvif_rd2wo_err</name>
+                            <description>Slave Interface Common Register Read to Write-only Error</description>
+                            <bitRange>[2:2]</bitRange>
+                        </field>
+                        <field>
+                            <name>slvif_wronhold_err</name>
+                            <description>Slave Interface Common Register Write On Hold Error</description>
+                            <bitRange>[3:3]</bitRange>
+                        </field>
+                        <!-- reserved bit 4..7 -->
+                        <field>
+                            <name>slvif_undefinedreg_dec_err</name>
+                            <description>Slave Interface Undefined Register Decode Error</description>
+                            <bitRange>[8:8]</bitRange>
+                        </field>
+                        <!-- reserved bit 9..63 -->
+                    </fields>
+                </register>
+                <register>
+                    <name>com_intsignal_en</name>
+                    <description>Common Interrupt Signal Enable Register</description>
+                    <addressOffset>0x48</addressOffset>
+                    <size>64</size>
+                    <fields>
+                        <field>
+                            <name>slvif_dec_err</name>
+                            <description>Slave Interface Common Register Decode Error</description>
+                            <bitRange>[0:0]</bitRange>
+                        </field>
+                        <field>
+                            <name>slvif_wr2ro_err</name>
+                            <description>Slave Interface Common Register Write to Read only Error</description>
+                            <bitRange>[1:1]</bitRange>
+                        </field>
+                        <field>
+                            <name>slvif_rd2wo_err</name>
+                            <description>Slave Interface Common Register Read to Write-only Error</description>
+                            <bitRange>[2:2]</bitRange>
+                        </field>
+                        <field>
+                            <name>slvif_wronhold_err</name>
+                            <description>Slave Interface Common Register Write On Hold Error</description>
+                            <bitRange>[3:3]</bitRange>
+                        </field>
+                        <!-- reserved bit 4..7 -->
+                        <field>
+                            <name>slvif_undefinedreg_dec_err</name>
+                            <description>Slave Interface Undefined Register Decode Error</description>
+                            <bitRange>[8:8]</bitRange>
+                        </field>
+                        <!-- reserved bit 9..63 -->
+                    </fields>
+                </register>
+                <register>
+                    <name>com_intstatus</name>
+                    <description>Common Interrupt Status</description>
+                    <addressOffset>0x50</addressOffset>
+                    <size>64</size>
+                    <fields>
+                        <field>
+                            <name>slvif_dec_err</name>
+                            <description>Slave Interface Common Register Decode Error</description>
+                            <bitRange>[0:0]</bitRange>
+                        </field>
+                        <field>
+                            <name>slvif_wr2ro_err</name>
+                            <description>Slave Interface Common Register Write to Read only Error</description>
+                            <bitRange>[1:1]</bitRange>
+                        </field>
+                        <field>
+                            <name>slvif_rd2wo_err</name>
+                            <description>Slave Interface Common Register Read to Write-only Error</description>
+                            <bitRange>[2:2]</bitRange>
+                        </field>
+                        <field>
+                            <name>slvif_wronhold_err</name>
+                            <description>Slave Interface Common Register Write On Hold Error</description>
+                            <bitRange>[3:3]</bitRange>
+                        </field>
+                        <!-- reserved bit 4..7 -->
+                        <field>
+                            <name>slvif_undefinedreg_dec_err</name>
+                            <description>Slave Interface Undefined Register Decode Error</description>
+                            <bitRange>[8:8]</bitRange>
+                        </field>
+                        <!-- reserved bit 9..63 -->
+                    </fields>
+                </register>
+                <register>
+                    <name>reset</name>
+                    <description>Reset register</description>
+                    <addressOffset>0x58</addressOffset>
+                    <size>64</size>
+                    <fields>
+                        <field>
+                            <name>rst</name>
+                            <description>DMAC reset request bit</description>
+                            <bitRange>[0:0]</bitRange>
+                        </field>
+                        <!-- reserved bit 1..63 -->
+                    </fields>
+                </register>
+                <!-- reserved: 0x60..0xff -->
+                <cluster>
+                    <name>channel[%s]</name>
+                    <description>Channel configuration</description>
+                    <dim>6</dim>
+                    <addressOffset>0x100</addressOffset>
+                    <dimIncrement>0x100</dimIncrement>
+                    <register>
+                        <name>sar</name>
+                        <description>SAR Address Register</description>
+                        <addressOffset>0x00</addressOffset>
+                        <size>64</size>
+                    </register>
+                    <register>
+                        <name>dar</name>
+                        <description>DAR Address Register</description>
+                        <addressOffset>0x08</addressOffset>
+                        <size>64</size>
+                    </register>
+                    <register>
+                        <name>block_ts</name>
+                        <description>Block Transfer Size Register</description>
+                        <addressOffset>0x10</addressOffset>
+                        <size>64</size>
+                        <fields>
+                            <field>
+                                <name>block_ts</name>
+                                <description>Block transfer size</description>
+                                <bitRange>[21:0]</bitRange>
+                            </field>
+                            <!-- reserved bit 22..63 -->
+                        </fields>
+                    </register>
+                    <register>
+                        <name>ctl</name>
+                        <description>Control Register</description>
+                        <addressOffset>0x18</addressOffset>
+                        <size>64</size>
+                        <fields>
+                            <field>
+                                <name>sms</name>
+                                <description>Source master select</description>
+                                <bitRange>[0:0]</bitRange>
+                                <enumeratedValues>
+                                    <name>MASTER_SELECT</name>
+                                    <enumeratedValue>
+                                        <name>axi_master_1</name>
+                                        <description>AXI master 1</description>
+                                        <value>0</value>
+                                    </enumeratedValue>
+                                    <enumeratedValue>
+                                        <name>axi_master_2</name>
+                                        <description>AXI master 2</description>
+                                        <value>1</value>
+                                    </enumeratedValue>
+                                </enumeratedValues>
+                            </field>
+                            <!-- reserved bit 1 -->
+                            <field>
+                                <name>dms</name>
+                                <description>Destination master select</description>
+                                <bitRange>[2:2]</bitRange>
+                                <enumeratedValues derivedFrom="MASTER_SELECT"/>
+                            </field>
+                            <!-- reserved bit 3 -->
+                            <field>
+                                <name>sinc</name>
+                                <description>Source address increment</description>
+                                <bitRange>[4:4]</bitRange>
+                                <enumeratedValues>
+                                    <name>INCREMENT</name>
+                                    <enumeratedValue>
+                                        <name>increment</name>
+                                        <description>Increment address</description>
+                                        <value>0</value>
+                                    </enumeratedValue>
+                                    <enumeratedValue>
+                                        <name>nochange</name>
+                                        <description>Don't increment address</description>
+                                        <value>1</value>
+                                    </enumeratedValue>
+                                </enumeratedValues>
+                            </field>
+                            <!-- reserved bit 5 -->
+                            <field>
+                                <name>dinc</name>
+                                <description>Destination address increment</description>
+                                <bitRange>[6:6]</bitRange>
+                                <enumeratedValues derivedFrom="INCREMENT"/>
+                            </field>
+                            <!-- reserved bit 7 -->
+                            <field>
+                                <name>src_tr_width</name>
+                                <description>Source transfer width</description>
+                                <bitRange>[10:8]</bitRange>
+                                <enumeratedValues>
+                                    <name>TRANSFER_WIDTH</name>
+                                    <enumeratedValue>
+                                        <name>width_8</name>
+                                        <description>8 bits</description>
+                                        <value>0</value>
+                                    </enumeratedValue>
+                                    <enumeratedValue>
+                                        <name>width_16</name>
+                                        <description>16 bits</description>
+                                        <value>1</value>
+                                    </enumeratedValue>
+                                    <enumeratedValue>
+                                        <name>width_32</name>
+                                        <description>32 bits</description>
+                                        <value>2</value>
+                                    </enumeratedValue>
+                                    <enumeratedValue>
+                                        <name>width_64</name>
+                                        <description>64 bits</description>
+                                        <value>3</value>
+                                    </enumeratedValue>
+                                    <enumeratedValue>
+                                        <name>width_128</name>
+                                        <description>128 bits</description>
+                                        <value>4</value>
+                                    </enumeratedValue>
+                                    <enumeratedValue>
+                                        <name>width_256</name>
+                                        <description>256 bits</description>
+                                        <value>5</value>
+                                    </enumeratedValue>
+                                    <enumeratedValue>
+                                        <name>width_512</name>
+                                        <description>512 bits</description>
+                                        <value>6</value>
+                                    </enumeratedValue>
+                                </enumeratedValues>
+                            </field>
+                            <field>
+                                <name>dst_tr_width</name>
+                                <description>Destination transfer width</description>
+                                <bitRange>[13:11]</bitRange>
+                                <enumeratedValues derivedFrom="TRANSFER_WIDTH"/>
+                            </field>
+                            <field>
+                                <name>src_msize</name>
+                                <description>Source burst transaction length</description>
+                                <bitRange>[17:14]</bitRange>
+                                <enumeratedValues>
+                                    <name>BURST_LENGTH</name>
+                                    <enumeratedValue>
+                                        <name>length_1</name>
+                                        <description>1 data item</description>
+                                        <value>0</value>
+                                    </enumeratedValue>
+                                    <enumeratedValue>
+                                        <name>length_4</name>
+                                        <description>4 data items</description>
+                                        <value>1</value>
+                                    </enumeratedValue>
+                                    <enumeratedValue>
+                                        <name>length_8</name>
+                                        <description>8 data items</description>
+                                        <value>2</value>
+                                    </enumeratedValue>
+                                    <enumeratedValue>
+                                        <name>length_16</name>
+                                        <description>16 data items</description>
+                                        <value>3</value>
+                                    </enumeratedValue>
+                                    <enumeratedValue>
+                                        <name>length_32</name>
+                                        <description>32 data items</description>
+                                        <value>4</value>
+                                    </enumeratedValue>
+                                    <enumeratedValue>
+                                        <name>length_64</name>
+                                        <description>64 data items</description>
+                                        <value>5</value>
+                                    </enumeratedValue>
+                                    <enumeratedValue>
+                                        <name>length_128</name>
+                                        <description>128 data items</description>
+                                        <value>6</value>
+                                    </enumeratedValue>
+                                    <enumeratedValue>
+                                        <name>length_256</name>
+                                        <description>256 data items</description>
+                                        <value>7</value>
+                                    </enumeratedValue>
+                                    <enumeratedValue>
+                                        <name>length_512</name>
+                                        <description>512 data items</description>
+                                        <value>8</value>
+                                    </enumeratedValue>
+                                    <enumeratedValue>
+                                        <name>length_1024</name>
+                                        <description>1024 data items</description>
+                                        <value>9</value>
+                                    </enumeratedValue>
+                                </enumeratedValues>
+                            </field>
+                            <field>
+                                <name>dst_msize</name>
+                                <description>Destination burst transaction length</description>
+                                <bitRange>[21:18]</bitRange>
+                                <enumeratedValues derivedFrom="BURST_LENGTH" />
+                            </field>
+                            <!-- reserved bit 22..29 -->
+                            <field>
+                                <name>nonposted_lastwrite_en</name>
+                                <description>Non Posted Last Write Enable (posted writes may be used till the end of the block)</description>
+                                <bitRange>[30:30]</bitRange>
+                            </field>
+                            <!-- reserved bit 31..37 -->
+                            <field>
+                                <name>arlen_en</name>
+                                <description>Source burst length enable</description>
+                                <bitRange>[38:38]</bitRange>
+                            </field>
+                            <field>
+                                <name>arlen</name>
+                                <description>Source burst length</description>
+                                <bitRange>[46:39]</bitRange>
+                            </field>
+                            <field>
+                                <name>awlen_en</name>
+                                <description>Destination burst length enable</description>
+                                <bitRange>[47:47]</bitRange>
+                            </field>
+                            <field>
+                                <name>awlen</name>
+                                <description>Destination burst length</description>
+                                <bitRange>[55:48]</bitRange>
+                            </field>
+                            <field>
+                                <name>src_stat_en</name>
+                                <description>Source status enable</description>
+                                <bitRange>[56:56]</bitRange>
+                            </field>
+                            <field>
+                                <name>dst_stat_en</name>
+                                <description>Destination status enable</description>
+                                <bitRange>[57:57]</bitRange>
+                            </field>
+                            <field>
+                                <name>ioc_blktfr</name>
+                                <description>Interrupt completion of block transfer</description>
+                                <bitRange>[58:58]</bitRange>
+                            </field>
+                            <!-- reserved bit 59..61 -->
+                            <field>
+                                <name>shadowreg_or_lli_last</name>
+                                <description>Last shadow linked list item (indicates shadowreg/LLI content is the last one)</description>
+                                <bitRange>[62:62]</bitRange>
+                            </field>
+                            <field>
+                                <name>shadowreg_or_lli_valid</name>
+                                <description>last shadow linked list item valid (indicate shadowreg/LLI content is valid)</description>
+                                <bitRange>[63:63]</bitRange>
+                            </field>
+                        </fields>
+                    </register>
+                    <register>
+                        <name>cfg</name>
+                        <description>Configure Register</description>
+                        <addressOffset>0x20</addressOffset>
+                        <size>64</size>
+                        <fields>
+                            <field>
+                                <name>src_multblk_type</name>
+                                <description>Source multi-block transfer type</description>
+                                <bitRange>[1:0]</bitRange>
+                                <enumeratedValues>
+                                    <name>MULTIBLK_TRANSFER_TYPE</name>
+                                    <enumeratedValue>
+                                        <name>contiguous</name>
+                                        <description>Continuous multi-block type</description>
+                                        <value>0</value>
+                                    </enumeratedValue>
+                                    <enumeratedValue>
+                                        <name>reload</name>
+                                        <description>Reload multi-block type</description>
+                                        <value>1</value>
+                                    </enumeratedValue>
+                                    <enumeratedValue>
+                                        <name>shadow_register</name>
+                                        <description>Shadow register based multi-block type</description>
+                                        <value>2</value>
+                                    </enumeratedValue>
+                                    <enumeratedValue>
+                                        <name>linked_list</name>
+                                        <description>Linked list based multi-block type</description>
+                                        <value>3</value>
+                                    </enumeratedValue>
+                                </enumeratedValues>
+                            </field>
+                            <field>
+                                <name>dst_multblk_type</name>
+                                <description>Destination multi-block transfer type</description>
+                                <bitRange>[3:2]</bitRange>
+                                <enumeratedValues derivedFrom="MULTIBLK_TRANSFER_TYPE" />
+                            </field>
+                            <!-- reserved bit 4..31 -->
+                            <field>
+                                <name>tt_fc</name>
+                                <description>Transfer type and flow control</description>
+                                <bitRange>[34:32]</bitRange>
+                                <enumeratedValues>
+                                    <enumeratedValue>
+                                        <name>mem2mem_dma</name>
+                                        <description>Transfer memory to memory and flow controller is DMAC</description>
+                                        <value>0</value>
+                                    </enumeratedValue>
+                                    <enumeratedValue>
+                                        <name>mem2prf_dma</name>
+                                        <description>Transfer memory to peripheral and flow controller is DMAC</description>
+                                        <value>1</value>
+                                    </enumeratedValue>
+                                    <enumeratedValue>
+                                        <name>prf2mem_dma</name>
+                                        <description>Transfer peripheral to memory and flow controller is DMAC</description>
+                                        <value>2</value>
+                                    </enumeratedValue>
+                                    <enumeratedValue>
+                                        <name>prf2prf_dma</name>
+                                        <description>Transfer peripheral to peripheral and flow controller is DMAC</description>
+                                        <value>3</value>
+                                    </enumeratedValue>
+                                    <enumeratedValue>
+                                        <name>prf2mem_prf</name>
+                                        <description>Transfer peripheral to memory and flow controller is source peripheral</description>
+                                        <value>4</value>
+                                    </enumeratedValue>
+                                    <enumeratedValue>
+                                        <name>prf2prf_srcprf</name>
+                                        <description>Transfer peripheral to peripheral and flow controller is source peripheral</description>
+                                        <value>5</value>
+                                    </enumeratedValue>
+                                    <enumeratedValue>
+                                        <name>mem2prf_prf</name>
+                                        <description>Transfer memory to peripheral and flow controller is destination peripheral</description>
+                                        <value>6</value>
+                                    </enumeratedValue>
+                                    <enumeratedValue>
+                                        <name>prf2prf_dstprf</name>
+                                        <description>Transfer peripheral to peripheral and flow controller is destination peripheral</description>
+                                        <value>7</value>
+                                    </enumeratedValue>
+                                </enumeratedValues>
+                            </field>
+                            <field>
+                                <name>hs_sel_src</name>
+                                <description>Source software or hardware handshaking select</description>
+                                <bitRange>[35:35]</bitRange>
+                                <enumeratedValues>
+                                    <name>HANDSHAKING</name>
+                                    <enumeratedValue>
+                                        <name>hardware</name>
+                                        <description>Hardware handshaking is used</description>
+                                        <value>0</value>
+                                    </enumeratedValue>
+                                    <enumeratedValue>
+                                        <name>software</name>
+                                        <description>Software handshaking is used</description>
+                                        <value>1</value>
+                                    </enumeratedValue>
+                                </enumeratedValues>
+                            </field>
+                            <field>
+                                <name>hs_sel_dst</name>
+                                <description>Destination software or hardware handshaking select</description>
+                                <bitRange>[36:36]</bitRange>
+                                <enumeratedValues derivedFrom="HANDSHAKING" />
+                            </field>
+                            <field>
+                                <name>src_hwhs_pol</name>
+                                <description>Source hardware handshaking interface polarity</description>
+                                <bitRange>[37:37]</bitRange>
+                                <enumeratedValues>
+                                    <name>POLARITY</name>
+                                    <enumeratedValue>
+                                        <name>active_high</name>
+                                        <description>Active high</description>
+                                        <value>0</value>
+                                    </enumeratedValue>
+                                    <enumeratedValue>
+                                        <name>active_low</name>
+                                        <description>Active low</description>
+                                        <value>1</value>
+                                    </enumeratedValue>
+                                </enumeratedValues>
+                            </field>
+                            <field>
+                                <name>dst_hwhs_pol</name>
+                                <description>Destination hardware handshaking interface polarity</description>
+                                <bitRange>[38:38]</bitRange>
+                                <enumeratedValues derivedFrom="POLARITY" />
+                            </field>
+                            <field>
+                                <name>src_per</name>
+                                <description>Assign a hardware handshaking interface to source of channel</description>
+                                <bitRange>[42:39]</bitRange>
+                            </field>
+                            <!-- reserved bit 43 -->
+                            <field>
+                                <name>dst_per</name>
+                                <description>Assign a hardware handshaking interface to destination of channel</description>
+                                <bitRange>[47:44]</bitRange>
+                            </field>
+                            <!-- reserved bit 48 -->
+                            <field>
+                                <name>ch_prior</name>
+                                <description>Channel priority (7 is highest, 0 is lowest)</description>
+                                <bitRange>[51:49]</bitRange>
+                            </field>
+                            <field>
+                                <name>lock_ch</name>
+                                <description>Channel lock bit</description>
+                                <bitRange>[52:52]</bitRange>
+                            </field>
+                            <field>
+                                <name>lock_ch_l</name>
+                                <description>Channel lock level</description>
+                                <bitRange>[54:53]</bitRange>
+                                <enumeratedValues>
+                                    <enumeratedValue>
+                                        <name>dma_transfer</name>
+                                        <description>Duration of channel is locked for entire DMA transfer</description>
+                                        <value>0</value>
+                                    </enumeratedValue>
+                                    <enumeratedValue>
+                                        <name>block_transfer</name>
+                                        <description>Duration of channel is locked for current block transfer</description>
+                                        <value>1</value>
+                                    </enumeratedValue>
+                                    <enumeratedValue>
+                                        <name>transaction</name>
+                                        <description>Duration of channel is locked for current transaction</description>
+                                        <value>2</value>
+                                    </enumeratedValue>
+                                </enumeratedValues>
+                            </field>
+                            <field>
+                                <name>src_osr_lmt</name>
+                                <description>Source outstanding request limit</description>
+                                <bitRange>[58:55]</bitRange>
+                            </field>
+                            <field>
+                                <name>dst_osr_lmt</name>
+                                <description>Destination outstanding request limit</description>
+                                <bitRange>[62:59]</bitRange>
+                            </field>
+                            <!-- reserved bit 63 -->
+                        </fields>
+                    </register>
+                    <register>
+                        <name>llp</name>
+                        <description>Linked List Pointer register</description>
+                        <addressOffset>0x28</addressOffset>
+                        <size>64</size>
+                        <fields>
+                            <field>
+                                <name>lms</name>
+                                <description>LLI master select</description>
+                                <bitRange>[0:0]</bitRange>
+                                <enumeratedValues derivedFrom="ctl.sms.MASTER_SELECT" />
+                            </field>
+                            <!-- reserved bit 1..5 -->
+                            <field>
+                                <name>loc</name>
+                                <description>Starting address memeory of LLI block</description>
+                                <bitRange>[63:6]</bitRange>
+                            </field>
+                        </fields>
+                    </register>
+                    <register>
+                        <name>status</name>
+                        <description>Channel Status Register</description>
+                        <addressOffset>0x30</addressOffset>
+                        <size>64</size>
+                        <fields>
+                            <field>
+                                <name>cmpltd_blk_size</name>
+                                <description>Completed block transfer size</description>
+                                <bitRange>[21:0]</bitRange>
+                            </field>
+                            <!-- reserved bit 22..63 -->
+                        </fields>
+                    </register>
+                    <register>
+                        <name>swhssrc</name>
+                        <description>Channel Software handshake Source Register</description>
+                        <addressOffset>0x38</addressOffset>
+                        <size>64</size>
+                        <fields>
+                            <field>
+                                <name>req</name>
+                                <description>Software handshake request for channel source</description>
+                                <bitRange>[0:0]</bitRange>
+                            </field>
+                            <field>
+                                <name>req_we</name>
+                                <description>Write enable bit for software handshake request</description>
+                                <bitRange>[1:1]</bitRange>
+                            </field>
+                            <field>
+                                <name>sglreq</name>
+                                <description>Software handshake single request for channel source</description>
+                                <bitRange>[2:2]</bitRange>
+                            </field>
+                            <field>
+                                <name>sglreq_we</name>
+                                <description>Write enable bit for software handshake</description>
+                                <bitRange>[3:3]</bitRange>
+                            </field>
+                            <field>
+                                <name>lst</name>
+                                <description>Software handshake last request for channel source</description>
+                                <bitRange>[4:4]</bitRange>
+                            </field>
+                            <field>
+                                <name>lst_we</name>
+                                <description>Write enable bit for software handshake last request</description>
+                                <bitRange>[5:5]</bitRange>
+                            </field>
+                            <!-- reserved bits 6..63 -->
+                        </fields>
+                    </register>
+                    <register>
+                        <name>swhsdst</name>
+                        <description>Channel Software handshake Destination Register</description>
+                        <addressOffset>0x40</addressOffset>
+                        <size>64</size>
+                        <fields>
+                            <field>
+                                <name>req</name>
+                                <description>Software handshake request for channel destination</description>
+                                <bitRange>[0:0]</bitRange>
+                            </field>
+                            <field>
+                                <name>req_we</name>
+                                <description>Write enable bit for software handshake request</description>
+                                <bitRange>[1:1]</bitRange>
+                            </field>
+                            <field>
+                                <name>sglreq</name>
+                                <description>Software handshake single request for channel destination</description>
+                                <bitRange>[2:2]</bitRange>
+                            </field>
+                            <field>
+                                <name>sglreq_we</name>
+                                <description>Write enable bit for software handshake</description>
+                                <bitRange>[3:3]</bitRange>
+                            </field>
+                            <field>
+                                <name>lst</name>
+                                <description>Software handshake last request for channel destination</description>
+                                <bitRange>[4:4]</bitRange>
+                            </field>
+                            <field>
+                                <name>lst_we</name>
+                                <description>Write enable bit for software handshake last request</description>
+                                <bitRange>[5:5]</bitRange>
+                            </field>
+                            <!-- reserved bits 6..63 -->
+                        </fields>
+                    </register>
+                    <register>
+                        <name>blk_tfr</name>
+                        <description>Channel Block Transfer Resume Request Register</description>
+                        <addressOffset>0x48</addressOffset>
+                        <size>64</size>
+                        <fields>
+                            <field>
+                                <name>resumereq</name>
+                                <description>Block transfer resume request</description>
+                                <bitRange>[0:0]</bitRange>
+                            </field>
+                            <!-- reserved bits 1..63 -->
+                        </fields>
+                    </register>
+                    <register>
+                        <name>axi_id</name>
+                        <description>Channel AXI ID Register</description>
+                        <addressOffset>0x50</addressOffset>
+                        <size>64</size>
+                    </register>
+                    <register>
+                        <name>axi_qos</name>
+                        <description>AXI QOS Register</description>
+                        <addressOffset>0x58</addressOffset>
+                        <size>64</size>
+                    </register>
+                    <!-- reserved: 0x60..0x7f -->
+                    <register>
+                        <name>intstatus_en</name>
+                        <description>Interrupt Status Enable Register</description>
+                        <addressOffset>0x80</addressOffset>
+                        <size>64</size>
+                        <fields>
+                            <field>
+                                <name>block_tfr_done</name>
+                                <description>Block transfer done</description>
+                                <bitRange>[0:0]</bitRange>
+                            </field>
+                            <field>
+                                <name>tfr_done</name>
+                                <description>Transfer done</description>
+                                <bitRange>[1:1]</bitRange>
+                            </field>
+                            <!-- reserved bit 2 -->
+                            <field>
+                                <name>src_transcomp</name>
+                                <description>Source transaction complete</description>
+                                <bitRange>[3:3]</bitRange>
+                            </field>
+                            <field>
+                                <name>dst_transcomp</name>
+                                <description>Destination transaction complete</description>
+                                <bitRange>[4:4]</bitRange>
+                            </field>
+                            <field>
+                                <name>src_dec_err</name>
+                                <description>Source Decode Error</description>
+                                <bitRange>[5:5]</bitRange>
+                            </field>
+                            <field>
+                                <name>dst_dec_err</name>
+                                <description>Destination Decode Error</description>
+                                <bitRange>[6:6]</bitRange>
+                            </field>
+                            <field>
+                                <name>src_slv_err</name>
+                                <description>Source Slave Error</description>
+                                <bitRange>[7:7]</bitRange>
+                            </field>
+                            <field>
+                                <name>dst_slv_err</name>
+                                <description>Destination Slave Error</description>
+                                <bitRange>[8:8]</bitRange>
+                            </field>
+                            <field>
+                                <name>lli_rd_dec_err</name>
+                                <description>LLI Read Decode Error Status Enable</description>
+                                <bitRange>[9:9]</bitRange>
+                            </field>
+                            <field>
+                                <name>lli_wr_dec_err</name>
+                                <description>LLI WRITE Decode Error</description>
+                                <bitRange>[10:10]</bitRange>
+                            </field>
+                            <field>
+                                <name>lli_rd_slv_err</name>
+                                <description>LLI Read Slave Error</description>
+                                <bitRange>[11:11]</bitRange>
+                            </field>
+                            <field>
+                                <name>lli_wr_slv_err</name>
+                                <description>LLI WRITE Slave Error</description>
+                                <bitRange>[12:12]</bitRange>
+                            </field>
+                            <!-- reserved bit 13..63 -->
+                        </fields>
+                    </register>
+                    <register>
+                        <name>intstatus</name>
+                        <description>Channel Interrupt Status Register</description>
+                        <addressOffset>0x88</addressOffset>
+                        <size>64</size>
+                        <fields>
+                            <field>
+                                <name>block_tfr_done</name>
+                                <description>Block transfer done</description>
+                                <bitRange>[0:0]</bitRange>
+                            </field>
+                            <field>
+                                <name>tfr_done</name>
+                                <description>Transfer done</description>
+                                <bitRange>[1:1]</bitRange>
+                            </field>
+                            <!-- reserved bit 2 -->
+                            <field>
+                                <name>src_transcomp</name>
+                                <description>Source transaction complete</description>
+                                <bitRange>[3:3]</bitRange>
+                            </field>
+                            <field>
+                                <name>dst_transcomp</name>
+                                <description>Destination transaction complete</description>
+                                <bitRange>[4:4]</bitRange>
+                            </field>
+                            <field>
+                                <name>src_dec_err</name>
+                                <description>Source Decode Error</description>
+                                <bitRange>[5:5]</bitRange>
+                            </field>
+                            <field>
+                                <name>dst_dec_err</name>
+                                <description>Destination Decode Error</description>
+                                <bitRange>[6:6]</bitRange>
+                            </field>
+                            <field>
+                                <name>src_slv_err</name>
+                                <description>Source Slave Error</description>
+                                <bitRange>[7:7]</bitRange>
+                            </field>
+                            <field>
+                                <name>dst_slv_err</name>
+                                <description>Destination Slave Error</description>
+                                <bitRange>[8:8]</bitRange>
+                            </field>
+                            <field>
+                                <name>lli_rd_dec_err</name>
+                                <description>LLI Read Decode Error Status Enable</description>
+                                <bitRange>[9:9]</bitRange>
+                            </field>
+                            <field>
+                                <name>lli_wr_dec_err</name>
+                                <description>LLI WRITE Decode Error</description>
+                                <bitRange>[10:10]</bitRange>
+                            </field>
+                            <field>
+                                <name>lli_rd_slv_err</name>
+                                <description>LLI Read Slave Error</description>
+                                <bitRange>[11:11]</bitRange>
+                            </field>
+                            <field>
+                                <name>lli_wr_slv_err</name>
+                                <description>LLI WRITE Slave Error</description>
+                                <bitRange>[12:12]</bitRange>
+                            </field>
+                            <!-- reserved bit 13..63 -->
+                        </fields>
+                    </register>
+                    <register>
+                        <name>intsignal_en</name>
+                        <description>Interrupt Signal Enable Register</description>
+                        <addressOffset>0x90</addressOffset>
+                        <size>64</size>
+                        <fields>
+                            <field>
+                                <name>block_tfr_done</name>
+                                <description>Block transfer done</description>
+                                <bitRange>[0:0]</bitRange>
+                            </field>
+                            <field>
+                                <name>tfr_done</name>
+                                <description>Transfer done</description>
+                                <bitRange>[1:1]</bitRange>
+                            </field>
+                            <!-- reserved bit 2 -->
+                            <field>
+                                <name>src_transcomp</name>
+                                <description>Source transaction complete</description>
+                                <bitRange>[3:3]</bitRange>
+                            </field>
+                            <field>
+                                <name>dst_transcomp</name>
+                                <description>Destination transaction complete</description>
+                                <bitRange>[4:4]</bitRange>
+                            </field>
+                            <field>
+                                <name>src_dec_err</name>
+                                <description>Source Decode Error</description>
+                                <bitRange>[5:5]</bitRange>
+                            </field>
+                            <field>
+                                <name>dst_dec_err</name>
+                                <description>Destination Decode Error</description>
+                                <bitRange>[6:6]</bitRange>
+                            </field>
+                            <field>
+                                <name>src_slv_err</name>
+                                <description>Source Slave Error</description>
+                                <bitRange>[7:7]</bitRange>
+                            </field>
+                            <field>
+                                <name>dst_slv_err</name>
+                                <description>Destination Slave Error</description>
+                                <bitRange>[8:8]</bitRange>
+                            </field>
+                            <field>
+                                <name>lli_rd_dec_err</name>
+                                <description>LLI Read Decode Error Status Enable</description>
+                                <bitRange>[9:9]</bitRange>
+                            </field>
+                            <field>
+                                <name>lli_wr_dec_err</name>
+                                <description>LLI WRITE Decode Error</description>
+                                <bitRange>[10:10]</bitRange>
+                            </field>
+                            <field>
+                                <name>lli_rd_slv_err</name>
+                                <description>LLI Read Slave Error</description>
+                                <bitRange>[11:11]</bitRange>
+                            </field>
+                            <field>
+                                <name>lli_wr_slv_err</name>
+                                <description>LLI WRITE Slave Error</description>
+                                <bitRange>[12:12]</bitRange>
+                            </field>
+                            <!-- reserved bit 13..63 -->
+                        </fields>
+                    </register>
+                    <register>
+                        <name>intclear</name>
+                        <description>Interrupt Clear Register</description>
+                        <addressOffset>0x98</addressOffset>
+                        <size>64</size>
+                        <fields>
+                            <field>
+                                <name>block_tfr_done</name>
+                                <description>Block transfer done</description>
+                                <bitRange>[0:0]</bitRange>
+                            </field>
+                            <field>
+                                <name>tfr_done</name>
+                                <description>Transfer done</description>
+                                <bitRange>[1:1]</bitRange>
+                            </field>
+                            <!-- reserved bit 2 -->
+                            <field>
+                                <name>src_transcomp</name>
+                                <description>Source transaction complete</description>
+                                <bitRange>[3:3]</bitRange>
+                            </field>
+                            <field>
+                                <name>dst_transcomp</name>
+                                <description>Destination transaction complete</description>
+                                <bitRange>[4:4]</bitRange>
+                            </field>
+                            <field>
+                                <name>src_dec_err</name>
+                                <description>Source Decode Error</description>
+                                <bitRange>[5:5]</bitRange>
+                            </field>
+                            <field>
+                                <name>dst_dec_err</name>
+                                <description>Destination Decode Error</description>
+                                <bitRange>[6:6]</bitRange>
+                            </field>
+                            <field>
+                                <name>src_slv_err</name>
+                                <description>Source Slave Error</description>
+                                <bitRange>[7:7]</bitRange>
+                            </field>
+                            <field>
+                                <name>dst_slv_err</name>
+                                <description>Destination Slave Error</description>
+                                <bitRange>[8:8]</bitRange>
+                            </field>
+                            <field>
+                                <name>lli_rd_dec_err</name>
+                                <description>LLI Read Decode Error Status Enable</description>
+                                <bitRange>[9:9]</bitRange>
+                            </field>
+                            <field>
+                                <name>lli_wr_dec_err</name>
+                                <description>LLI WRITE Decode Error</description>
+                                <bitRange>[10:10]</bitRange>
+                            </field>
+                            <field>
+                                <name>lli_rd_slv_err</name>
+                                <description>LLI Read Slave Error</description>
+                                <bitRange>[11:11]</bitRange>
+                            </field>
+                            <field>
+                                <name>lli_wr_slv_err</name>
+                                <description>LLI WRITE Slave Error</description>
+                                <bitRange>[12:12]</bitRange>
+                            </field>
+                            <!-- reserved bit 13..63 -->
+                        </fields>
+                    </register>
+                    <!-- reserved: 0xa0..0xff -->
+                    <register>
+                        <name>_reserved</name>
+                        <description>Padding to make structure size 256 bytes so that channels[] is an array</description>
+                        <addressOffset>0xf8</addressOffset>
+                        <size>64</size>
+                    </register>
+                </cluster>
             </registers>
         </peripheral>
         <!-- DMAC -->

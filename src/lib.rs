@@ -724,7 +724,6 @@ impl Peripherals {
     }
     #[doc = r" Unchecked version of `Peripherals::take`"]
     pub unsafe fn steal() -> Self {
-        debug_assert!(!DEVICE_PERIPHERALS);
         DEVICE_PERIPHERALS = true;
         Peripherals {
             CLINT: CLINT {
