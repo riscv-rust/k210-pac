@@ -1,6 +1,6 @@
 [package]
 name = "k210-pac"
-version = "0.1.0"
+version = "0.1.1"
 authors = ["The RISC-V Team <risc-v@teams.rust-embedded.org>"]
 categories = ["embedded", "hardware-support", "no-std"]
 description = "Peripheral access API for K210 SoC"
