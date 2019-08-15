@@ -159,6 +159,11 @@
                             <maximum>0xFFFFFFFF</maximum>
                         </range>
                     </register>
+                    <register>
+                        <name>_reserved</name>
+                        <description>Padding to make sure targets is an array</description>
+                        <addressOffset>0xffc</addressOffset>
+                    </register>
                 </cluster>
             </registers>
         </peripheral>
