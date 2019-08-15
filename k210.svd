@@ -297,6 +297,10 @@
                     </fields>
                 </register>
             </registers>
+            <interrupt>
+                <name>UARTHS</name>
+                <value>33</value>
+            </interrupt>
         </peripheral>
         <!-- UARTHS -->
 
@@ -971,6 +975,134 @@
                     </fields>
                 </register>
             </registers>
+            <interrupt>
+                <name>GPIOHS0</name>
+                <value>34</value>
+            </interrupt>
+            <interrupt>
+                <name>GPIOHS1</name>
+                <value>35</value>
+            </interrupt>
+            <interrupt>
+                <name>GPIOHS2</name>
+                <value>36</value>
+            </interrupt>
+            <interrupt>
+                <name>GPIOHS3</name>
+                <value>37</value>
+            </interrupt>
+            <interrupt>
+                <name>GPIOHS4</name>
+                <value>38</value>
+            </interrupt>
+            <interrupt>
+                <name>GPIOHS5</name>
+                <value>39</value>
+            </interrupt>
+            <interrupt>
+                <name>GPIOHS6</name>
+                <value>40</value>
+            </interrupt>
+            <interrupt>
+                <name>GPIOHS7</name>
+                <value>41</value>
+            </interrupt>
+            <interrupt>
+                <name>GPIOHS8</name>
+                <value>42</value>
+            </interrupt>
+            <interrupt>
+                <name>GPIOHS9</name>
+                <value>43</value>
+            </interrupt>
+            <interrupt>
+                <name>GPIOHS10</name>
+                <value>44</value>
+            </interrupt>
+            <interrupt>
+                <name>GPIOHS11</name>
+                <value>45</value>
+            </interrupt>
+            <interrupt>
+                <name>GPIOHS12</name>
+                <value>46</value>
+            </interrupt>
+            <interrupt>
+                <name>GPIOHS13</name>
+                <value>47</value>
+            </interrupt>
+            <interrupt>
+                <name>GPIOHS14</name>
+                <value>48</value>
+            </interrupt>
+            <interrupt>
+                <name>GPIOHS15</name>
+                <value>49</value>
+            </interrupt>
+            <interrupt>
+                <name>GPIOHS16</name>
+                <value>50</value>
+            </interrupt>
+            <interrupt>
+                <name>GPIOHS17</name>
+                <value>51</value>
+            </interrupt>
+            <interrupt>
+                <name>GPIOHS18</name>
+                <value>52</value>
+            </interrupt>
+            <interrupt>
+                <name>GPIOHS19</name>
+                <value>53</value>
+            </interrupt>
+            <interrupt>
+                <name>GPIOHS20</name>
+                <value>54</value>
+            </interrupt>
+            <interrupt>
+                <name>GPIOHS21</name>
+                <value>55</value>
+            </interrupt>
+            <interrupt>
+                <name>GPIOHS22</name>
+                <value>56</value>
+            </interrupt>
+            <interrupt>
+                <name>GPIOHS23</name>
+                <value>57</value>
+            </interrupt>
+            <interrupt>
+                <name>GPIOHS24</name>
+                <value>58</value>
+            </interrupt>
+            <interrupt>
+                <name>GPIOHS25</name>
+                <value>59</value>
+            </interrupt>
+            <interrupt>
+                <name>GPIOHS26</name>
+                <value>60</value>
+            </interrupt>
+            <interrupt>
+                <name>GPIOHS27</name>
+                <value>61</value>
+            </interrupt>
+            <interrupt>
+                <name>GPIOHS28</name>
+                <value>62</value>
+            </interrupt>
+            <interrupt>
+                <name>GPIOHS29</name>
+                <value>63</value>
+            </interrupt>
+            <interrupt>
+                <name>GPIOHS30</name>
+                <value>64</value>
+            </interrupt>
+            <interrupt>
+                <name>GPIOHS31</name>
+                <value>65</value>
+            </interrupt>
         </peripheral>
         <!-- GPIOHS -->
 
@@ -1100,6 +1232,10 @@
                     </fields>
                 </register>
             </registers>
+            <interrupt>
+                <name>KPU</name>
+                <value>25</value>
+            </interrupt>
         </peripheral>
         <!-- KPU -->
 
@@ -1315,6 +1451,10 @@
                     <size>64</size>
                 </register>
             </registers>
+            <interrupt>
+                <name>FFT</name>
+                <value>26</value>
+            </interrupt>
         </peripheral>
         <!-- FFT -->
 
@@ -2631,6 +2771,30 @@
                     </register>
                 </cluster>
             </registers>
+            <interrupt>
+                <name>DMA0</name>
+                <value>27</value>
+            </interrupt>
+            <interrupt>
+                <name>DMA1</name>
+                <value>28</value>
+            </interrupt>
+            <interrupt>
+                <name>DMA2</name>
+                <value>29</value>
+            </interrupt>
+            <interrupt>
+                <name>DMA3</name>
+                <value>30</value>
+            </interrupt>
+            <interrupt>
+                <name>DMA4</name>
+                <value>31</value>
+            </interrupt>
+            <interrupt>
+                <name>DMA5</name>
+                <value>32</value>
+            </interrupt>
         </peripheral>
         <!-- DMAC -->
 
@@ -2764,6 +2928,10 @@
                     <addressOffset>0x68</addressOffset>
                 </register>
             </registers>
+            <interrupt>
+                <name>APB_GPIO</name>
+                <value>23</value>
+            </interrupt>
         </peripheral>
         <!-- GPIO -->
 
@@ -2967,6 +3135,10 @@
                     <addressOffset>0xfc</addressOffset>
                 </register>
             </registers>
+            <interrupt>
+                <name>UART1</name>
+                <value>11</value>
+            </interrupt>
         </peripheral>
         <!-- UART1 -->
 
@@ -2975,6 +3147,10 @@
             <name>UART2</name>
             <description>Universal Asynchronous Receiver-Transmitter 2</description>
             <baseAddress>0x50220000</baseAddress>
+            <interrupt>
+                <name>UART2</name>
+                <value>12</value>
+            </interrupt>
         </peripheral>
         <!-- UART2 -->
 
@@ -2983,6 +3159,10 @@
             <name>UART3</name>
             <description>Universal Asynchronous Receiver-Transmitter 3</description>
             <baseAddress>0x50230000</baseAddress>
+            <interrupt>
+                <name>UART3</name>
+                <value>13</value>
+            </interrupt>
         </peripheral>
         <!-- UART3 -->
 
@@ -3333,6 +3513,10 @@
                     <addressOffset>0x118</addressOffset>
                 </register>
             </registers>
+            <interrupt>
+                <name>SPI0</name>
+                <value>1</value>
+            </interrupt>
         </peripheral>
         <!-- SPI0 -->
 
@@ -3341,6 +3525,10 @@
             <name>SPI1</name>
             <description>Serial Peripheral Interface 1 (master)</description>
             <baseAddress>0x53000000</baseAddress>
+            <interrupt>
+                <name>SPI1</name>
+                <value>2</value>
+            </interrupt>
         </peripheral>
         <!-- SPI1 -->
 
@@ -3357,6 +3545,10 @@
                     <addressOffset>0x00</addressOffset>
                 </register>
             </registers>
+            <interrupt>
+                <name>SPI_SLAVE</name>
+                <value>3</value>
+            </interrupt>
         </peripheral>
         <!-- SPI2 -->
 
@@ -3706,6 +3898,10 @@
                     <addressOffset>0x118</addressOffset>
                 </register>
             </registers>
+            <interrupt>
+                <name>SPI3</name>
+                <value>4</value>
+            </interrupt>
         </peripheral>
         <!-- SPI3 -->
 
@@ -4292,6 +4488,10 @@
                     <addressOffset>0x1fc</addressOffset>
                 </register>
             </registers>
+            <interrupt>
+                <name>I2S0</name>
+                <value>5</value>
+            </interrupt>
         </peripheral>
         <!-- I2S0 -->
 
@@ -4658,6 +4858,10 @@
             <name>I2S1</name>
             <description>Inter-Integrated Sound Interface 1</description>
             <baseAddress>0x50260000</baseAddress>
+            <interrupt>
+                <name>I2S1</name>
+                <value>6</value>
+            </interrupt>
         </peripheral>
         <!-- I2S1 -->
 
@@ -4666,6 +4870,10 @@
             <name>I2S2</name>
             <description>Inter-Integrated Sound Interface 2</description>
             <baseAddress>0x50270000</baseAddress>
+            <interrupt>
+                <name>I2S2</name>
+                <value>7</value>
+            </interrupt>
         </peripheral>
         <!-- I2S2 -->
 
@@ -5581,6 +5789,10 @@
                     </fields>
                 </register>
             </registers>
+            <interrupt>
+                <name>I2C0</name>
+                <value>8</value>
+            </interrupt>
         </peripheral>
         <!-- I2C0 -->
 
@@ -5589,6 +5801,10 @@
             <name>I2C1</name>
             <description>Inter-Integrated Circuit Bus 1</description>
             <baseAddress>0x50290000</baseAddress>
+            <interrupt>
+                <name>I2C1</name>
+                <value>9</value>
+            </interrupt>
         </peripheral>
         <!-- I2C1 -->
 
@@ -5597,6 +5813,10 @@
             <name>I2C2</name>
             <description>Inter-Integrated Circuit Bus 2</description>
             <baseAddress>0x502A0000</baseAddress>
+            <interrupt>
+                <name>I2C2</name>
+                <value>10</value>
+            </interrupt>
         </peripheral>
         <!-- I2C2 -->
 
@@ -5907,6 +6127,16 @@
                     <dimIncrement>0x4</dimIncrement>
                 </register>
             </registers>
+            <interrupt>
+                <name>TIMER0A</name>
+                <value>14</value>
+                <description>TIMER0 channel 0 or 1 interrupt</description>
+            </interrupt>
+            <interrupt>
+                <name>TIMER0B</name>
+                <value>15</value>
+                <description>TIMER0 channel 2 or 3 interrupt</description>
+            </interrupt>
         </peripheral>
         <!-- TIMER0 -->
 
@@ -5915,6 +6145,16 @@
             <name>TIMER1</name>
             <description>Timer 1</description>
             <baseAddress>0x502E0000</baseAddress>
+            <interrupt>
+                <name>TIMER1A</name>
+                <value>16</value>
+                <description>TIMER1 channel 0 or 1 interrupt</description>
+            </interrupt>
+            <interrupt>
+                <name>TIMER1B</name>
+                <value>17</value>
+                <description>TIMER1 channel 2 or 3 interrupt</description>
+            </interrupt>
         </peripheral>
         <!-- TIMER1 -->
 
@@ -5923,6 +6163,16 @@
             <name>TIMER2</name>
             <description>Timer 2</description>
             <baseAddress>0x502F0000</baseAddress>
+            <interrupt>
+                <name>TIMER2A</name>
+                <value>18</value>
+                <description>TIMER2 channel 0 or 1 interrupt</description>
+            </interrupt>
+            <interrupt>
+                <name>TIMER2B</name>
+                <value>19</value>
+                <description>TIMER2 channel 2 or 3 interrupt</description>
+            </interrupt>
         </peripheral>
         <!-- TIMER2 -->
 
@@ -6165,6 +6415,10 @@
                     <addressOffset>0xfc</addressOffset>
                 </register>
             </registers>
+            <interrupt>
+                <name>WDT0</name>
+                <value>21</value>
+            </interrupt>
         </peripheral>
         <!-- WDT0 -->
 
@@ -6173,6 +6427,10 @@
             <name>WDT1</name>
             <description>Watchdog Timer 1</description>
             <baseAddress>0x50410000</baseAddress>
+            <interrupt>
+                <name>WDT1</name>
+                <value>22</value>
+            </interrupt>
         </peripheral>
         <!-- WDT1 -->
 
@@ -6467,6 +6725,10 @@
                     <addressOffset>0x28</addressOffset>
                 </register>
             </registers>
+            <interrupt>
+                <name>DVP</name>
+                <value>24</value>
+            </interrupt>
         </peripheral>
         <!-- DVP -->
 
@@ -8059,6 +8321,10 @@
                     </fields>
                 </register>
             </registers>
+            <interrupt>
+                <name>RTC</name>
+                <value>20</value>
+            </interrupt>
         </peripheral>
         <!-- RTC -->
     </peripherals>
