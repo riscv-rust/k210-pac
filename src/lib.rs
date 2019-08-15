@@ -723,8 +723,8 @@ pub mod plic {
         _reserved2: [u8; 3968usize],
         #[doc = "0x2000 - Target Interrupt Enables"]
         pub target_enables: [TARGET_ENABLES; 4],
-        _reserved3: [u8; 203415040usize],
-        #[doc = "0xc200000 - Target Configuration"]
+        _reserved3: [u8; 2088448usize],
+        #[doc = "0x200000 - Target Configuration"]
         pub targets: [TARGETS; 4],
     }
     #[doc = r"Register block"]
