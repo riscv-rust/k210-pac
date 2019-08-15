@@ -723,18 +723,9 @@ pub mod plic {
         _reserved2: [u8; 3968usize],
         #[doc = "0x2000 - Target Interrupt Enables"]
         pub target_enables: [TARGET_ENABLES; 4],
-        _reserved3: [u8; 203415040usize],
-        #[doc = "0xc200000 - Target Configuration"]
-        pub targets0: TARGETS,
-        _reserved4: [u8; 4088usize],
-        #[doc = "0xc201000 - Target Configuration"]
-        pub targets1: TARGETS,
-        _reserved5: [u8; 4088usize],
-        #[doc = "0xc202000 - Target Configuration"]
-        pub targets2: TARGETS,
-        _reserved6: [u8; 4088usize],
-        #[doc = "0xc203000 - Target Configuration"]
-        pub targets3: TARGETS,
+        _reserved3: [u8; 2088448usize],
+        #[doc = "0x200000 - Target Configuration"]
+        pub targets: [TARGETS; 4],
     }
     #[doc = r"Register block"]
     #[repr(C)]
@@ -779,6 +770,9 @@ pub mod plic {
         pub threshold: self::targets::THRESHOLD,
         #[doc = "0x04 - Claim/Complete Register"]
         pub claim: self::targets::CLAIM,
+        _reserved2: [u8; 4084usize],
+        #[doc = "0xffc - Padding to make sure targets is an array"]
+        pub _reserved: self::targets::_RESERVED,
     }
     #[doc = r"Register block"]
     #[doc = "Target Configuration"]
@@ -992,6 +986,32 @@ pub mod plic {
             pub type W = crate::W<u32, super::CLAIM>;
             #[doc = "Register claim `reset()`'s with value 0"]
             impl crate::ResetValue for super::CLAIM {
+                type Type = u32;
+                #[inline(always)]
+                fn reset_value() -> Self::Type {
+                    0
+                }
+            }
+            impl R {}
+            impl W {}
+        }
+        #[doc = "Padding to make sure targets is an array\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [_reserved](_reserved) module"]
+        pub type _RESERVED = crate::Reg<u32, __RESERVED>;
+        #[allow(missing_docs)]
+        #[doc(hidden)]
+        pub struct __RESERVED;
+        #[doc = "`read()` method returns [_reserved::R](_reserved::R) reader structure"]
+        impl crate::Readable for _RESERVED {}
+        #[doc = "`write(|w| ..)` method takes [_reserved::W](_reserved::W) writer structure"]
+        impl crate::Writable for _RESERVED {}
+        #[doc = "Padding to make sure targets is an array"]
+        pub mod _reserved {
+            #[doc = "Reader of register _reserved"]
+            pub type R = crate::R<u32, super::_RESERVED>;
+            #[doc = "Writer for register _reserved"]
+            pub type W = crate::W<u32, super::_RESERVED>;
+            #[doc = "Register _reserved `reset()`'s with value 0"]
+            impl crate::ResetValue for super::_RESERVED {
                 type Type = u32;
                 #[inline(always)]
                 fn reset_value() -> Self::Type {
