@@ -1903,23 +1903,21 @@
                     <dim>6</dim>
                     <addressOffset>0x100</addressOffset>
                     <dimIncrement>0x100</dimIncrement>
+                    <size>64</size>
                     <register>
                         <name>sar</name>
                         <description>SAR Address Register</description>
                         <addressOffset>0x00</addressOffset>
-                        <size>64</size>
                     </register>
                     <register>
                         <name>dar</name>
                         <description>DAR Address Register</description>
                         <addressOffset>0x08</addressOffset>
-                        <size>64</size>
                     </register>
                     <register>
                         <name>block_ts</name>
                         <description>Block Transfer Size Register</description>
                         <addressOffset>0x10</addressOffset>
-                        <size>64</size>
                         <fields>
                             <field>
                                 <name>block_ts</name>
@@ -1933,7 +1931,6 @@
                         <name>ctl</name>
                         <description>Control Register</description>
                         <addressOffset>0x18</addressOffset>
-                        <size>64</size>
                         <fields>
                             <field>
                                 <name>sms</name>
@@ -2159,7 +2156,6 @@
                         <name>cfg</name>
                         <description>Configure Register</description>
                         <addressOffset>0x20</addressOffset>
-                        <size>64</size>
                         <fields>
                             <field>
                                 <name>src_multblk_type</name>
@@ -2352,7 +2348,6 @@
                         <name>llp</name>
                         <description>Linked List Pointer register</description>
                         <addressOffset>0x28</addressOffset>
-                        <size>64</size>
                         <fields>
                             <field>
                                 <name>lms</name>
@@ -2372,7 +2367,6 @@
                         <name>status</name>
                         <description>Channel Status Register</description>
                         <addressOffset>0x30</addressOffset>
-                        <size>64</size>
                         <fields>
                             <field>
                                 <name>cmpltd_blk_size</name>
@@ -2386,7 +2380,6 @@
                         <name>swhssrc</name>
                         <description>Channel Software handshake Source Register</description>
                         <addressOffset>0x38</addressOffset>
-                        <size>64</size>
                         <fields>
                             <field>
                                 <name>req</name>
@@ -2425,7 +2418,6 @@
                         <name>swhsdst</name>
                         <description>Channel Software handshake Destination Register</description>
                         <addressOffset>0x40</addressOffset>
-                        <size>64</size>
                         <fields>
                             <field>
                                 <name>req</name>
@@ -2464,7 +2456,6 @@
                         <name>blk_tfr</name>
                         <description>Channel Block Transfer Resume Request Register</description>
                         <addressOffset>0x48</addressOffset>
-                        <size>64</size>
                         <fields>
                             <field>
                                 <name>resumereq</name>
@@ -2478,20 +2469,17 @@
                         <name>axi_id</name>
                         <description>Channel AXI ID Register</description>
                         <addressOffset>0x50</addressOffset>
-                        <size>64</size>
                     </register>
                     <register>
                         <name>axi_qos</name>
                         <description>AXI QOS Register</description>
                         <addressOffset>0x58</addressOffset>
-                        <size>64</size>
                     </register>
                     <!-- reserved: 0x60..0x7f -->
                     <register>
                         <name>intstatus_en</name>
                         <description>Interrupt Status Enable Register</description>
                         <addressOffset>0x80</addressOffset>
-                        <size>64</size>
                         <fields>
                             <field>
                                 <name>block_tfr_done</name>
@@ -2561,7 +2549,6 @@
                         <name>intstatus</name>
                         <description>Channel Interrupt Status Register</description>
                         <addressOffset>0x88</addressOffset>
-                        <size>64</size>
                         <fields>
                             <field>
                                 <name>block_tfr_done</name>
@@ -2631,7 +2618,6 @@
                         <name>intsignal_en</name>
                         <description>Interrupt Signal Enable Register</description>
                         <addressOffset>0x90</addressOffset>
-                        <size>64</size>
                         <fields>
                             <field>
                                 <name>block_tfr_done</name>
@@ -2701,7 +2687,6 @@
                         <name>intclear</name>
                         <description>Interrupt Clear Register</description>
                         <addressOffset>0x98</addressOffset>
-                        <size>64</size>
                         <fields>
                             <field>
                                 <name>block_tfr_done</name>
@@ -2772,7 +2757,6 @@
                         <name>_reserved</name>
                         <description>Padding to make structure size 256 bytes so that channels[] is an array</description>
                         <addressOffset>0xf8</addressOffset>
-                        <size>64</size>
                     </register>
                 </cluster>
             </registers>
