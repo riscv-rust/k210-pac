@@ -1,4 +1,4 @@
-#![doc = "Peripheral access API for K210 microcontrollers (generated using svd2rust v0.16.0)\n\nYou can find an overview of the API [here].\n\n[here]: https://docs.rs/svd2rust/0.16.0/svd2rust/#peripheral-api"]
+#![doc = "Peripheral access API for K210 microcontrollers (generated using svd2rust v0.16.1)\n\nYou can find an overview of the API [here].\n\n[here]: https://docs.rs/svd2rust/0.16.1/svd2rust/#peripheral-api"]
 #![deny(missing_docs)]
 #![deny(warnings)]
 #![allow(non_camel_case_types)]
@@ -356,11 +356,6 @@ pub mod generic {
         ///Reset value of the register
         fn reset_value() -> Self::Type;
     }
-    ///Converting enumerated values to bits
-    pub trait ToBits<N> {
-        ///Conversion method
-        fn _bits(&self) -> N;
-    }
     ///This structure provides volatile access to register
     pub struct Reg<U, REG> {
         register: vcell::VolatileCell<U>,
@@ -533,11 +528,11 @@ pub mod generic {
     impl<U, T, FI> PartialEq<FI> for R<U, T>
     where
         U: PartialEq,
-        FI: ToBits<U>,
+        FI: Copy + Into<U>,
     {
         #[inline(always)]
         fn eq(&self, other: &FI) -> bool {
-            self.bits.eq(&other._bits())
+            self.bits.eq(&(*other).into())
         }
     }
     impl<FI> R<bool, FI> {
@@ -800,30 +795,30 @@ pub mod plic {
                     0
                 }
             }
-            #[doc = "Possible values of the field `priority`"]
+            #[doc = "\n\nValue on reset: 0"]
             #[derive(Clone, Copy, Debug, PartialEq)]
             pub enum PRIORITY_A {
-                #[doc = "Never interrupt"]
+                #[doc = "0: Never interrupt"]
                 NEVER,
-                #[doc = "Priority 1"]
+                #[doc = "1: Priority 1"]
                 P1,
-                #[doc = "Priority 2"]
+                #[doc = "2: Priority 2"]
                 P2,
-                #[doc = "Priority 3"]
+                #[doc = "3: Priority 3"]
                 P3,
-                #[doc = "Priority 4"]
+                #[doc = "4: Priority 4"]
                 P4,
-                #[doc = "Priority 5"]
+                #[doc = "5: Priority 5"]
                 P5,
-                #[doc = "Priority 6"]
+                #[doc = "6: Priority 6"]
                 P6,
-                #[doc = "Priority 7"]
+                #[doc = "7: Priority 7"]
                 P7,
             }
-            impl crate::ToBits<u8> for PRIORITY_A {
+            impl From<PRIORITY_A> for u8 {
                 #[inline(always)]
-                fn _bits(&self) -> u8 {
-                    match *self {
+                fn from(variant: PRIORITY_A) -> Self {
+                    match variant {
                         PRIORITY_A::NEVER => 0,
                         PRIORITY_A::P1 => 1,
                         PRIORITY_A::P2 => 2,
@@ -902,9 +897,8 @@ pub mod plic {
                 #[doc = r"Writes `variant` to the field"]
                 #[inline(always)]
                 pub fn variant(self, variant: PRIORITY_A) -> &'a mut W {
-                    use crate::ToBits;
                     {
-                        self.bits(variant._bits())
+                        self.bits(variant.into())
                     }
                 }
                 #[doc = "Never interrupt"]
@@ -21807,22 +21801,22 @@ pub mod fft {
                 0
             }
         }
-        #[doc = "Possible values of the field `point`"]
+        #[doc = "FFT calculation data length\n\nValue on reset: 0"]
         #[derive(Clone, Copy, Debug, PartialEq)]
         pub enum POINT_A {
-            #[doc = "512 point"]
+            #[doc = "0: 512 point"]
             P512,
-            #[doc = "256 point"]
+            #[doc = "1: 256 point"]
             P256,
-            #[doc = "128 point"]
+            #[doc = "2: 128 point"]
             P128,
-            #[doc = "64 point"]
+            #[doc = "3: 64 point"]
             P64,
         }
-        impl crate::ToBits<u8> for POINT_A {
+        impl From<POINT_A> for u8 {
             #[inline(always)]
-            fn _bits(&self) -> u8 {
-                match *self {
+            fn from(variant: POINT_A) -> Self {
+                match variant {
                     POINT_A::P512 => 0,
                     POINT_A::P256 => 1,
                     POINT_A::P128 => 2,
@@ -21874,8 +21868,7 @@ pub mod fft {
             #[doc = r"Writes `variant` to the field"]
             #[inline(always)]
             pub fn variant(self, variant: POINT_A) -> &'a mut W {
-                use crate::ToBits;
-                unsafe { self.bits(variant._bits()) }
+                unsafe { self.bits(variant.into()) }
             }
             #[doc = "512 point"]
             #[inline(always)]
@@ -21904,18 +21897,18 @@ pub mod fft {
                 self.w
             }
         }
-        #[doc = "Possible values of the field `mode`"]
+        #[doc = "FFT mode\n\nValue on reset: 0"]
         #[derive(Clone, Copy, Debug, PartialEq)]
         pub enum MODE_A {
-            #[doc = "FFT mode"]
+            #[doc = "0: FFT mode"]
             FFT,
-            #[doc = "Inverse FFT mode"]
+            #[doc = "1: Inverse FFT mode"]
             IFFT,
         }
-        impl crate::ToBits<bool> for MODE_A {
+        impl From<MODE_A> for bool {
             #[inline(always)]
-            fn _bits(&self) -> bool {
-                match *self {
+            fn from(variant: MODE_A) -> Self {
+                match variant {
                     MODE_A::FFT => false,
                     MODE_A::IFFT => true,
                 }
@@ -21951,9 +21944,8 @@ pub mod fft {
             #[doc = r"Writes `variant` to the field"]
             #[inline(always)]
             pub fn variant(self, variant: MODE_A) -> &'a mut W {
-                use crate::ToBits;
                 {
-                    self.bit(variant._bits())
+                    self.bit(variant.into())
                 }
             }
             #[doc = "FFT mode"]
@@ -22045,20 +22037,20 @@ pub mod fft {
                 self.w
             }
         }
-        #[doc = "Possible values of the field `input_mode`"]
+        #[doc = "Input data arrangement\n\nValue on reset: 0"]
         #[derive(Clone, Copy, Debug, PartialEq)]
         pub enum INPUT_MODE_A {
-            #[doc = "RIRI (real imaginary interleaved)"]
+            #[doc = "0: RIRI (real imaginary interleaved)"]
             RIRI,
-            #[doc = "RRRR (only real part)"]
+            #[doc = "1: RRRR (only real part)"]
             RRRR,
-            #[doc = "First input the real part and then input the imaginary part"]
+            #[doc = "2: First input the real part and then input the imaginary part"]
             RRII,
         }
-        impl crate::ToBits<u8> for INPUT_MODE_A {
+        impl From<INPUT_MODE_A> for u8 {
             #[inline(always)]
-            fn _bits(&self) -> u8 {
-                match *self {
+            fn from(variant: INPUT_MODE_A) -> Self {
+                match variant {
                     INPUT_MODE_A::RIRI => 0,
                     INPUT_MODE_A::RRRR => 1,
                     INPUT_MODE_A::RRII => 2,
@@ -22103,8 +22095,7 @@ pub mod fft {
             #[doc = r"Writes `variant` to the field"]
             #[inline(always)]
             pub fn variant(self, variant: INPUT_MODE_A) -> &'a mut W {
-                use crate::ToBits;
-                unsafe { self.bits(variant._bits()) }
+                unsafe { self.bits(variant.into()) }
             }
             #[doc = "RIRI (real imaginary interleaved)"]
             #[inline(always)]
@@ -22128,18 +22119,18 @@ pub mod fft {
                 self.w
             }
         }
-        #[doc = "Possible values of the field `data_mode`"]
+        #[doc = "Effective width of input data\n\nValue on reset: 0"]
         #[derive(Clone, Copy, Debug, PartialEq)]
         pub enum DATA_MODE_A {
-            #[doc = "64 bit effective"]
+            #[doc = "0: 64 bit effective"]
             WIDTH_64,
-            #[doc = "128 bit effective"]
+            #[doc = "1: 128 bit effective"]
             WIDTH_128,
         }
-        impl crate::ToBits<bool> for DATA_MODE_A {
+        impl From<DATA_MODE_A> for bool {
             #[inline(always)]
-            fn _bits(&self) -> bool {
-                match *self {
+            fn from(variant: DATA_MODE_A) -> Self {
+                match variant {
                     DATA_MODE_A::WIDTH_64 => false,
                     DATA_MODE_A::WIDTH_128 => true,
                 }
@@ -22175,9 +22166,8 @@ pub mod fft {
             #[doc = r"Writes `variant` to the field"]
             #[inline(always)]
             pub fn variant(self, variant: DATA_MODE_A) -> &'a mut W {
-                use crate::ToBits;
                 {
-                    self.bit(variant._bits())
+                    self.bit(variant.into())
                 }
             }
             #[doc = "64 bit effective"]
@@ -22939,18 +22929,18 @@ pub mod dmac {
                     0
                 }
             }
-            #[doc = "Possible values of the field `sms`"]
+            #[doc = "Source master select\n\nValue on reset: 0"]
             #[derive(Clone, Copy, Debug, PartialEq)]
             pub enum SMS_A {
-                #[doc = "AXI master 1"]
+                #[doc = "0: AXI master 1"]
                 AXI_MASTER_1,
-                #[doc = "AXI master 2"]
+                #[doc = "1: AXI master 2"]
                 AXI_MASTER_2,
             }
-            impl crate::ToBits<bool> for SMS_A {
+            impl From<SMS_A> for bool {
                 #[inline(always)]
-                fn _bits(&self) -> bool {
-                    match *self {
+                fn from(variant: SMS_A) -> Self {
+                    match variant {
                         SMS_A::AXI_MASTER_1 => false,
                         SMS_A::AXI_MASTER_2 => true,
                     }
@@ -22986,9 +22976,8 @@ pub mod dmac {
                 #[doc = r"Writes `variant` to the field"]
                 #[inline(always)]
                 pub fn variant(self, variant: SMS_A) -> &'a mut W {
-                    use crate::ToBits;
                     {
-                        self.bit(variant._bits())
+                        self.bit(variant.into())
                     }
                 }
                 #[doc = "AXI master 1"]
@@ -23018,7 +23007,7 @@ pub mod dmac {
                     self.w
                 }
             }
-            #[doc = "Possible values of the field `dms`"]
+            #[doc = "Destination master select"]
             pub type DMS_A = SMS_A;
             #[doc = "Reader of field `dms`"]
             pub type DMS_R = crate::R<bool, SMS_A>;
@@ -23030,9 +23019,8 @@ pub mod dmac {
                 #[doc = r"Writes `variant` to the field"]
                 #[inline(always)]
                 pub fn variant(self, variant: DMS_A) -> &'a mut W {
-                    use crate::ToBits;
                     {
-                        self.bit(variant._bits())
+                        self.bit(variant.into())
                     }
                 }
                 #[doc = "AXI master 1"]
@@ -23062,18 +23050,18 @@ pub mod dmac {
                     self.w
                 }
             }
-            #[doc = "Possible values of the field `sinc`"]
+            #[doc = "Source address increment\n\nValue on reset: 0"]
             #[derive(Clone, Copy, Debug, PartialEq)]
             pub enum SINC_A {
-                #[doc = "Increment address"]
+                #[doc = "0: Increment address"]
                 INCREMENT,
-                #[doc = "Don't increment address"]
+                #[doc = "1: Don't increment address"]
                 NOCHANGE,
             }
-            impl crate::ToBits<bool> for SINC_A {
+            impl From<SINC_A> for bool {
                 #[inline(always)]
-                fn _bits(&self) -> bool {
-                    match *self {
+                fn from(variant: SINC_A) -> Self {
+                    match variant {
                         SINC_A::INCREMENT => false,
                         SINC_A::NOCHANGE => true,
                     }
@@ -23109,9 +23097,8 @@ pub mod dmac {
                 #[doc = r"Writes `variant` to the field"]
                 #[inline(always)]
                 pub fn variant(self, variant: SINC_A) -> &'a mut W {
-                    use crate::ToBits;
                     {
-                        self.bit(variant._bits())
+                        self.bit(variant.into())
                     }
                 }
                 #[doc = "Increment address"]
@@ -23141,7 +23128,7 @@ pub mod dmac {
                     self.w
                 }
             }
-            #[doc = "Possible values of the field `dinc`"]
+            #[doc = "Destination address increment"]
             pub type DINC_A = SINC_A;
             #[doc = "Reader of field `dinc`"]
             pub type DINC_R = crate::R<bool, SINC_A>;
@@ -23153,9 +23140,8 @@ pub mod dmac {
                 #[doc = r"Writes `variant` to the field"]
                 #[inline(always)]
                 pub fn variant(self, variant: DINC_A) -> &'a mut W {
-                    use crate::ToBits;
                     {
-                        self.bit(variant._bits())
+                        self.bit(variant.into())
                     }
                 }
                 #[doc = "Increment address"]
@@ -23185,28 +23171,28 @@ pub mod dmac {
                     self.w
                 }
             }
-            #[doc = "Possible values of the field `src_tr_width`"]
+            #[doc = "Source transfer width\n\nValue on reset: 0"]
             #[derive(Clone, Copy, Debug, PartialEq)]
             pub enum SRC_TR_WIDTH_A {
-                #[doc = "8 bits"]
+                #[doc = "0: 8 bits"]
                 WIDTH_8,
-                #[doc = "16 bits"]
+                #[doc = "1: 16 bits"]
                 WIDTH_16,
-                #[doc = "32 bits"]
+                #[doc = "2: 32 bits"]
                 WIDTH_32,
-                #[doc = "64 bits"]
+                #[doc = "3: 64 bits"]
                 WIDTH_64,
-                #[doc = "128 bits"]
+                #[doc = "4: 128 bits"]
                 WIDTH_128,
-                #[doc = "256 bits"]
+                #[doc = "5: 256 bits"]
                 WIDTH_256,
-                #[doc = "512 bits"]
+                #[doc = "6: 512 bits"]
                 WIDTH_512,
             }
-            impl crate::ToBits<u8> for SRC_TR_WIDTH_A {
+            impl From<SRC_TR_WIDTH_A> for u8 {
                 #[inline(always)]
-                fn _bits(&self) -> u8 {
-                    match *self {
+                fn from(variant: SRC_TR_WIDTH_A) -> Self {
+                    match variant {
                         SRC_TR_WIDTH_A::WIDTH_8 => 0,
                         SRC_TR_WIDTH_A::WIDTH_16 => 1,
                         SRC_TR_WIDTH_A::WIDTH_32 => 2,
@@ -23279,8 +23265,7 @@ pub mod dmac {
                 #[doc = r"Writes `variant` to the field"]
                 #[inline(always)]
                 pub fn variant(self, variant: SRC_TR_WIDTH_A) -> &'a mut W {
-                    use crate::ToBits;
-                    unsafe { self.bits(variant._bits()) }
+                    unsafe { self.bits(variant.into()) }
                 }
                 #[doc = "8 bits"]
                 #[inline(always)]
@@ -23324,7 +23309,7 @@ pub mod dmac {
                     self.w
                 }
             }
-            #[doc = "Possible values of the field `dst_tr_width`"]
+            #[doc = "Destination transfer width"]
             pub type DST_TR_WIDTH_A = SRC_TR_WIDTH_A;
             #[doc = "Reader of field `dst_tr_width`"]
             pub type DST_TR_WIDTH_R = crate::R<u8, SRC_TR_WIDTH_A>;
@@ -23336,8 +23321,7 @@ pub mod dmac {
                 #[doc = r"Writes `variant` to the field"]
                 #[inline(always)]
                 pub fn variant(self, variant: DST_TR_WIDTH_A) -> &'a mut W {
-                    use crate::ToBits;
-                    unsafe { self.bits(variant._bits()) }
+                    unsafe { self.bits(variant.into()) }
                 }
                 #[doc = "8 bits"]
                 #[inline(always)]
@@ -23381,34 +23365,34 @@ pub mod dmac {
                     self.w
                 }
             }
-            #[doc = "Possible values of the field `src_msize`"]
+            #[doc = "Source burst transaction length\n\nValue on reset: 0"]
             #[derive(Clone, Copy, Debug, PartialEq)]
             pub enum SRC_MSIZE_A {
-                #[doc = "1 data item"]
+                #[doc = "0: 1 data item"]
                 LENGTH_1,
-                #[doc = "4 data items"]
+                #[doc = "1: 4 data items"]
                 LENGTH_4,
-                #[doc = "8 data items"]
+                #[doc = "2: 8 data items"]
                 LENGTH_8,
-                #[doc = "16 data items"]
+                #[doc = "3: 16 data items"]
                 LENGTH_16,
-                #[doc = "32 data items"]
+                #[doc = "4: 32 data items"]
                 LENGTH_32,
-                #[doc = "64 data items"]
+                #[doc = "5: 64 data items"]
                 LENGTH_64,
-                #[doc = "128 data items"]
+                #[doc = "6: 128 data items"]
                 LENGTH_128,
-                #[doc = "256 data items"]
+                #[doc = "7: 256 data items"]
                 LENGTH_256,
-                #[doc = "512 data items"]
+                #[doc = "8: 512 data items"]
                 LENGTH_512,
-                #[doc = "1024 data items"]
+                #[doc = "9: 1024 data items"]
                 LENGTH_1024,
             }
-            impl crate::ToBits<u8> for SRC_MSIZE_A {
+            impl From<SRC_MSIZE_A> for u8 {
                 #[inline(always)]
-                fn _bits(&self) -> u8 {
-                    match *self {
+                fn from(variant: SRC_MSIZE_A) -> Self {
+                    match variant {
                         SRC_MSIZE_A::LENGTH_1 => 0,
                         SRC_MSIZE_A::LENGTH_4 => 1,
                         SRC_MSIZE_A::LENGTH_8 => 2,
@@ -23502,8 +23486,7 @@ pub mod dmac {
                 #[doc = r"Writes `variant` to the field"]
                 #[inline(always)]
                 pub fn variant(self, variant: SRC_MSIZE_A) -> &'a mut W {
-                    use crate::ToBits;
-                    unsafe { self.bits(variant._bits()) }
+                    unsafe { self.bits(variant.into()) }
                 }
                 #[doc = "1 data item"]
                 #[inline(always)]
@@ -23562,7 +23545,7 @@ pub mod dmac {
                     self.w
                 }
             }
-            #[doc = "Possible values of the field `dst_msize`"]
+            #[doc = "Destination burst transaction length"]
             pub type DST_MSIZE_A = SRC_MSIZE_A;
             #[doc = "Reader of field `dst_msize`"]
             pub type DST_MSIZE_R = crate::R<u8, SRC_MSIZE_A>;
@@ -23574,8 +23557,7 @@ pub mod dmac {
                 #[doc = r"Writes `variant` to the field"]
                 #[inline(always)]
                 pub fn variant(self, variant: DST_MSIZE_A) -> &'a mut W {
-                    use crate::ToBits;
-                    unsafe { self.bits(variant._bits()) }
+                    unsafe { self.bits(variant.into()) }
                 }
                 #[doc = "1 data item"]
                 #[inline(always)]
@@ -24062,22 +24044,22 @@ pub mod dmac {
                     0
                 }
             }
-            #[doc = "Possible values of the field `src_multblk_type`"]
+            #[doc = "Source multi-block transfer type\n\nValue on reset: 0"]
             #[derive(Clone, Copy, Debug, PartialEq)]
             pub enum SRC_MULTBLK_TYPE_A {
-                #[doc = "Continuous multi-block type"]
+                #[doc = "0: Continuous multi-block type"]
                 CONTIGUOUS,
-                #[doc = "Reload multi-block type"]
+                #[doc = "1: Reload multi-block type"]
                 RELOAD,
-                #[doc = "Shadow register based multi-block type"]
+                #[doc = "2: Shadow register based multi-block type"]
                 SHADOW_REGISTER,
-                #[doc = "Linked list based multi-block type"]
+                #[doc = "3: Linked list based multi-block type"]
                 LINKED_LIST,
             }
-            impl crate::ToBits<u8> for SRC_MULTBLK_TYPE_A {
+            impl From<SRC_MULTBLK_TYPE_A> for u8 {
                 #[inline(always)]
-                fn _bits(&self) -> u8 {
-                    match *self {
+                fn from(variant: SRC_MULTBLK_TYPE_A) -> Self {
+                    match variant {
                         SRC_MULTBLK_TYPE_A::CONTIGUOUS => 0,
                         SRC_MULTBLK_TYPE_A::RELOAD => 1,
                         SRC_MULTBLK_TYPE_A::SHADOW_REGISTER => 2,
@@ -24128,9 +24110,8 @@ pub mod dmac {
                 #[doc = r"Writes `variant` to the field"]
                 #[inline(always)]
                 pub fn variant(self, variant: SRC_MULTBLK_TYPE_A) -> &'a mut W {
-                    use crate::ToBits;
                     {
-                        self.bits(variant._bits())
+                        self.bits(variant.into())
                     }
                 }
                 #[doc = "Continuous multi-block type"]
@@ -24160,7 +24141,7 @@ pub mod dmac {
                     self.w
                 }
             }
-            #[doc = "Possible values of the field `dst_multblk_type`"]
+            #[doc = "Destination multi-block transfer type"]
             pub type DST_MULTBLK_TYPE_A = SRC_MULTBLK_TYPE_A;
             #[doc = "Reader of field `dst_multblk_type`"]
             pub type DST_MULTBLK_TYPE_R = crate::R<u8, SRC_MULTBLK_TYPE_A>;
@@ -24172,9 +24153,8 @@ pub mod dmac {
                 #[doc = r"Writes `variant` to the field"]
                 #[inline(always)]
                 pub fn variant(self, variant: DST_MULTBLK_TYPE_A) -> &'a mut W {
-                    use crate::ToBits;
                     {
-                        self.bits(variant._bits())
+                        self.bits(variant.into())
                     }
                 }
                 #[doc = "Continuous multi-block type"]
@@ -24204,30 +24184,30 @@ pub mod dmac {
                     self.w
                 }
             }
-            #[doc = "Possible values of the field `tt_fc`"]
+            #[doc = "Transfer type and flow control\n\nValue on reset: 0"]
             #[derive(Clone, Copy, Debug, PartialEq)]
             pub enum TT_FC_A {
-                #[doc = "Transfer memory to memory and flow controller is DMAC"]
+                #[doc = "0: Transfer memory to memory and flow controller is DMAC"]
                 MEM2MEM_DMA,
-                #[doc = "Transfer memory to peripheral and flow controller is DMAC"]
+                #[doc = "1: Transfer memory to peripheral and flow controller is DMAC"]
                 MEM2PRF_DMA,
-                #[doc = "Transfer peripheral to memory and flow controller is DMAC"]
+                #[doc = "2: Transfer peripheral to memory and flow controller is DMAC"]
                 PRF2MEM_DMA,
-                #[doc = "Transfer peripheral to peripheral and flow controller is DMAC"]
+                #[doc = "3: Transfer peripheral to peripheral and flow controller is DMAC"]
                 PRF2PRF_DMA,
-                #[doc = "Transfer peripheral to memory and flow controller is source peripheral"]
+                #[doc = "4: Transfer peripheral to memory and flow controller is source peripheral"]
                 PRF2MEM_PRF,
-                #[doc = "Transfer peripheral to peripheral and flow controller is source peripheral"]
+                #[doc = "5: Transfer peripheral to peripheral and flow controller is source peripheral"]
                 PRF2PRF_SRCPRF,
-                #[doc = "Transfer memory to peripheral and flow controller is destination peripheral"]
+                #[doc = "6: Transfer memory to peripheral and flow controller is destination peripheral"]
                 MEM2PRF_PRF,
-                #[doc = "Transfer peripheral to peripheral and flow controller is destination peripheral"]
+                #[doc = "7: Transfer peripheral to peripheral and flow controller is destination peripheral"]
                 PRF2PRF_DSTPRF,
             }
-            impl crate::ToBits<u8> for TT_FC_A {
+            impl From<TT_FC_A> for u8 {
                 #[inline(always)]
-                fn _bits(&self) -> u8 {
-                    match *self {
+                fn from(variant: TT_FC_A) -> Self {
+                    match variant {
                         TT_FC_A::MEM2MEM_DMA => 0,
                         TT_FC_A::MEM2PRF_DMA => 1,
                         TT_FC_A::PRF2MEM_DMA => 2,
@@ -24306,9 +24286,8 @@ pub mod dmac {
                 #[doc = r"Writes `variant` to the field"]
                 #[inline(always)]
                 pub fn variant(self, variant: TT_FC_A) -> &'a mut W {
-                    use crate::ToBits;
                     {
-                        self.bits(variant._bits())
+                        self.bits(variant.into())
                     }
                 }
                 #[doc = "Transfer memory to memory and flow controller is DMAC"]
@@ -24358,18 +24337,18 @@ pub mod dmac {
                     self.w
                 }
             }
-            #[doc = "Possible values of the field `hs_sel_src`"]
+            #[doc = "Source software or hardware handshaking select\n\nValue on reset: 0"]
             #[derive(Clone, Copy, Debug, PartialEq)]
             pub enum HS_SEL_SRC_A {
-                #[doc = "Hardware handshaking is used"]
+                #[doc = "0: Hardware handshaking is used"]
                 HARDWARE,
-                #[doc = "Software handshaking is used"]
+                #[doc = "1: Software handshaking is used"]
                 SOFTWARE,
             }
-            impl crate::ToBits<bool> for HS_SEL_SRC_A {
+            impl From<HS_SEL_SRC_A> for bool {
                 #[inline(always)]
-                fn _bits(&self) -> bool {
-                    match *self {
+                fn from(variant: HS_SEL_SRC_A) -> Self {
+                    match variant {
                         HS_SEL_SRC_A::HARDWARE => false,
                         HS_SEL_SRC_A::SOFTWARE => true,
                     }
@@ -24405,9 +24384,8 @@ pub mod dmac {
                 #[doc = r"Writes `variant` to the field"]
                 #[inline(always)]
                 pub fn variant(self, variant: HS_SEL_SRC_A) -> &'a mut W {
-                    use crate::ToBits;
                     {
-                        self.bit(variant._bits())
+                        self.bit(variant.into())
                     }
                 }
                 #[doc = "Hardware handshaking is used"]
@@ -24437,7 +24415,7 @@ pub mod dmac {
                     self.w
                 }
             }
-            #[doc = "Possible values of the field `hs_sel_dst`"]
+            #[doc = "Destination software or hardware handshaking select"]
             pub type HS_SEL_DST_A = HS_SEL_SRC_A;
             #[doc = "Reader of field `hs_sel_dst`"]
             pub type HS_SEL_DST_R = crate::R<bool, HS_SEL_SRC_A>;
@@ -24449,9 +24427,8 @@ pub mod dmac {
                 #[doc = r"Writes `variant` to the field"]
                 #[inline(always)]
                 pub fn variant(self, variant: HS_SEL_DST_A) -> &'a mut W {
-                    use crate::ToBits;
                     {
-                        self.bit(variant._bits())
+                        self.bit(variant.into())
                     }
                 }
                 #[doc = "Hardware handshaking is used"]
@@ -24481,18 +24458,18 @@ pub mod dmac {
                     self.w
                 }
             }
-            #[doc = "Possible values of the field `src_hwhs_pol`"]
+            #[doc = "Source hardware handshaking interface polarity\n\nValue on reset: 0"]
             #[derive(Clone, Copy, Debug, PartialEq)]
             pub enum SRC_HWHS_POL_A {
-                #[doc = "Active high"]
+                #[doc = "0: Active high"]
                 ACTIVE_HIGH,
-                #[doc = "Active low"]
+                #[doc = "1: Active low"]
                 ACTIVE_LOW,
             }
-            impl crate::ToBits<bool> for SRC_HWHS_POL_A {
+            impl From<SRC_HWHS_POL_A> for bool {
                 #[inline(always)]
-                fn _bits(&self) -> bool {
-                    match *self {
+                fn from(variant: SRC_HWHS_POL_A) -> Self {
+                    match variant {
                         SRC_HWHS_POL_A::ACTIVE_HIGH => false,
                         SRC_HWHS_POL_A::ACTIVE_LOW => true,
                     }
@@ -24528,9 +24505,8 @@ pub mod dmac {
                 #[doc = r"Writes `variant` to the field"]
                 #[inline(always)]
                 pub fn variant(self, variant: SRC_HWHS_POL_A) -> &'a mut W {
-                    use crate::ToBits;
                     {
-                        self.bit(variant._bits())
+                        self.bit(variant.into())
                     }
                 }
                 #[doc = "Active high"]
@@ -24560,7 +24536,7 @@ pub mod dmac {
                     self.w
                 }
             }
-            #[doc = "Possible values of the field `dst_hwhs_pol`"]
+            #[doc = "Destination hardware handshaking interface polarity"]
             pub type DST_HWHS_POL_A = SRC_HWHS_POL_A;
             #[doc = "Reader of field `dst_hwhs_pol`"]
             pub type DST_HWHS_POL_R = crate::R<bool, SRC_HWHS_POL_A>;
@@ -24572,9 +24548,8 @@ pub mod dmac {
                 #[doc = r"Writes `variant` to the field"]
                 #[inline(always)]
                 pub fn variant(self, variant: DST_HWHS_POL_A) -> &'a mut W {
-                    use crate::ToBits;
                     {
-                        self.bit(variant._bits())
+                        self.bit(variant.into())
                     }
                 }
                 #[doc = "Active high"]
@@ -24670,20 +24645,20 @@ pub mod dmac {
                     self.w
                 }
             }
-            #[doc = "Possible values of the field `lock_ch_l`"]
+            #[doc = "Channel lock level\n\nValue on reset: 0"]
             #[derive(Clone, Copy, Debug, PartialEq)]
             pub enum LOCK_CH_L_A {
-                #[doc = "Duration of channel is locked for entire DMA transfer"]
+                #[doc = "0: Duration of channel is locked for entire DMA transfer"]
                 DMA_TRANSFER,
-                #[doc = "Duration of channel is locked for current block transfer"]
+                #[doc = "1: Duration of channel is locked for current block transfer"]
                 BLOCK_TRANSFER,
-                #[doc = "Duration of channel is locked for current transaction"]
+                #[doc = "2: Duration of channel is locked for current transaction"]
                 TRANSACTION,
             }
-            impl crate::ToBits<u8> for LOCK_CH_L_A {
+            impl From<LOCK_CH_L_A> for u8 {
                 #[inline(always)]
-                fn _bits(&self) -> u8 {
-                    match *self {
+                fn from(variant: LOCK_CH_L_A) -> Self {
+                    match variant {
                         LOCK_CH_L_A::DMA_TRANSFER => 0,
                         LOCK_CH_L_A::BLOCK_TRANSFER => 1,
                         LOCK_CH_L_A::TRANSACTION => 2,
@@ -24728,8 +24703,7 @@ pub mod dmac {
                 #[doc = r"Writes `variant` to the field"]
                 #[inline(always)]
                 pub fn variant(self, variant: LOCK_CH_L_A) -> &'a mut W {
-                    use crate::ToBits;
-                    unsafe { self.bits(variant._bits()) }
+                    unsafe { self.bits(variant.into()) }
                 }
                 #[doc = "Duration of channel is locked for entire DMA transfer"]
                 #[inline(always)]
@@ -24949,7 +24923,7 @@ pub mod dmac {
                     0
                 }
             }
-            #[doc = "Possible values of the field `lms`"]
+            #[doc = "LLI master select"]
             pub type LMS_A = super::ctl::SMS_A;
             #[doc = "Reader of field `lms`"]
             pub type LMS_R = crate::R<bool, super::ctl::SMS_A>;
@@ -24961,9 +24935,8 @@ pub mod dmac {
                 #[doc = r"Writes `variant` to the field"]
                 #[inline(always)]
                 pub fn variant(self, variant: LMS_A) -> &'a mut W {
-                    use crate::ToBits;
                     {
-                        self.bit(variant._bits())
+                        self.bit(variant.into())
                     }
                 }
                 #[doc = "AXI master 1"]
@@ -30334,18 +30307,18 @@ pub mod gpio {
                 0
             }
         }
-        #[doc = "Possible values of the field `pin0`"]
+        #[doc = "\n\nValue on reset: 0"]
         #[derive(Clone, Copy, Debug, PartialEq)]
         pub enum PIN0_A {
-            #[doc = "Pin is input"]
+            #[doc = "0: Pin is input"]
             INPUT,
-            #[doc = "Pin is output"]
+            #[doc = "1: Pin is output"]
             OUTPUT,
         }
-        impl crate::ToBits<bool> for PIN0_A {
+        impl From<PIN0_A> for bool {
             #[inline(always)]
-            fn _bits(&self) -> bool {
-                match *self {
+            fn from(variant: PIN0_A) -> Self {
+                match variant {
                     PIN0_A::INPUT => false,
                     PIN0_A::OUTPUT => true,
                 }
@@ -30381,9 +30354,8 @@ pub mod gpio {
             #[doc = r"Writes `variant` to the field"]
             #[inline(always)]
             pub fn variant(self, variant: PIN0_A) -> &'a mut W {
-                use crate::ToBits;
                 {
-                    self.bit(variant._bits())
+                    self.bit(variant.into())
                 }
             }
             #[doc = "Pin is input"]
@@ -30413,7 +30385,7 @@ pub mod gpio {
                 self.w
             }
         }
-        #[doc = "Possible values of the field `pin1`"]
+        #[doc = ""]
         pub type PIN1_A = PIN0_A;
         #[doc = "Reader of field `pin1`"]
         pub type PIN1_R = crate::R<bool, PIN0_A>;
@@ -30425,9 +30397,8 @@ pub mod gpio {
             #[doc = r"Writes `variant` to the field"]
             #[inline(always)]
             pub fn variant(self, variant: PIN1_A) -> &'a mut W {
-                use crate::ToBits;
                 {
-                    self.bit(variant._bits())
+                    self.bit(variant.into())
                 }
             }
             #[doc = "Pin is input"]
@@ -30457,7 +30428,7 @@ pub mod gpio {
                 self.w
             }
         }
-        #[doc = "Possible values of the field `pin2`"]
+        #[doc = ""]
         pub type PIN2_A = PIN0_A;
         #[doc = "Reader of field `pin2`"]
         pub type PIN2_R = crate::R<bool, PIN0_A>;
@@ -30469,9 +30440,8 @@ pub mod gpio {
             #[doc = r"Writes `variant` to the field"]
             #[inline(always)]
             pub fn variant(self, variant: PIN2_A) -> &'a mut W {
-                use crate::ToBits;
                 {
-                    self.bit(variant._bits())
+                    self.bit(variant.into())
                 }
             }
             #[doc = "Pin is input"]
@@ -30501,7 +30471,7 @@ pub mod gpio {
                 self.w
             }
         }
-        #[doc = "Possible values of the field `pin3`"]
+        #[doc = ""]
         pub type PIN3_A = PIN0_A;
         #[doc = "Reader of field `pin3`"]
         pub type PIN3_R = crate::R<bool, PIN0_A>;
@@ -30513,9 +30483,8 @@ pub mod gpio {
             #[doc = r"Writes `variant` to the field"]
             #[inline(always)]
             pub fn variant(self, variant: PIN3_A) -> &'a mut W {
-                use crate::ToBits;
                 {
-                    self.bit(variant._bits())
+                    self.bit(variant.into())
                 }
             }
             #[doc = "Pin is input"]
@@ -30545,7 +30514,7 @@ pub mod gpio {
                 self.w
             }
         }
-        #[doc = "Possible values of the field `pin4`"]
+        #[doc = ""]
         pub type PIN4_A = PIN0_A;
         #[doc = "Reader of field `pin4`"]
         pub type PIN4_R = crate::R<bool, PIN0_A>;
@@ -30557,9 +30526,8 @@ pub mod gpio {
             #[doc = r"Writes `variant` to the field"]
             #[inline(always)]
             pub fn variant(self, variant: PIN4_A) -> &'a mut W {
-                use crate::ToBits;
                 {
-                    self.bit(variant._bits())
+                    self.bit(variant.into())
                 }
             }
             #[doc = "Pin is input"]
@@ -30589,7 +30557,7 @@ pub mod gpio {
                 self.w
             }
         }
-        #[doc = "Possible values of the field `pin5`"]
+        #[doc = ""]
         pub type PIN5_A = PIN0_A;
         #[doc = "Reader of field `pin5`"]
         pub type PIN5_R = crate::R<bool, PIN0_A>;
@@ -30601,9 +30569,8 @@ pub mod gpio {
             #[doc = r"Writes `variant` to the field"]
             #[inline(always)]
             pub fn variant(self, variant: PIN5_A) -> &'a mut W {
-                use crate::ToBits;
                 {
-                    self.bit(variant._bits())
+                    self.bit(variant.into())
                 }
             }
             #[doc = "Pin is input"]
@@ -30633,7 +30600,7 @@ pub mod gpio {
                 self.w
             }
         }
-        #[doc = "Possible values of the field `pin6`"]
+        #[doc = ""]
         pub type PIN6_A = PIN0_A;
         #[doc = "Reader of field `pin6`"]
         pub type PIN6_R = crate::R<bool, PIN0_A>;
@@ -30645,9 +30612,8 @@ pub mod gpio {
             #[doc = r"Writes `variant` to the field"]
             #[inline(always)]
             pub fn variant(self, variant: PIN6_A) -> &'a mut W {
-                use crate::ToBits;
                 {
-                    self.bit(variant._bits())
+                    self.bit(variant.into())
                 }
             }
             #[doc = "Pin is input"]
@@ -30677,7 +30643,7 @@ pub mod gpio {
                 self.w
             }
         }
-        #[doc = "Possible values of the field `pin7`"]
+        #[doc = ""]
         pub type PIN7_A = PIN0_A;
         #[doc = "Reader of field `pin7`"]
         pub type PIN7_R = crate::R<bool, PIN0_A>;
@@ -30689,9 +30655,8 @@ pub mod gpio {
             #[doc = r"Writes `variant` to the field"]
             #[inline(always)]
             pub fn variant(self, variant: PIN7_A) -> &'a mut W {
-                use crate::ToBits;
                 {
-                    self.bit(variant._bits())
+                    self.bit(variant.into())
                 }
             }
             #[doc = "Pin is input"]
@@ -32664,22 +32629,22 @@ pub mod spi0 {
                 0
             }
         }
-        #[doc = "Possible values of the field `work_mode`"]
+        #[doc = "WORK_MODE\n\nValue on reset: 0"]
         #[derive(Clone, Copy, Debug, PartialEq)]
         pub enum WORK_MODE_A {
-            #[doc = "MODE_0"]
+            #[doc = "0: MODE_0"]
             MODE0,
-            #[doc = "MODE_1"]
+            #[doc = "1: MODE_1"]
             MODE1,
-            #[doc = "MODE_2"]
+            #[doc = "2: MODE_2"]
             MODE2,
-            #[doc = "MODE_3"]
+            #[doc = "3: MODE_3"]
             MODE3,
         }
-        impl crate::ToBits<u8> for WORK_MODE_A {
+        impl From<WORK_MODE_A> for u8 {
             #[inline(always)]
-            fn _bits(&self) -> u8 {
-                match *self {
+            fn from(variant: WORK_MODE_A) -> Self {
+                match variant {
                     WORK_MODE_A::MODE0 => 0,
                     WORK_MODE_A::MODE1 => 1,
                     WORK_MODE_A::MODE2 => 2,
@@ -32730,9 +32695,8 @@ pub mod spi0 {
             #[doc = r"Writes `variant` to the field"]
             #[inline(always)]
             pub fn variant(self, variant: WORK_MODE_A) -> &'a mut W {
-                use crate::ToBits;
                 {
-                    self.bits(variant._bits())
+                    self.bits(variant.into())
                 }
             }
             #[doc = "MODE_0"]
@@ -32762,22 +32726,22 @@ pub mod spi0 {
                 self.w
             }
         }
-        #[doc = "Possible values of the field `tmod`"]
+        #[doc = "TRANSFER_MODE\n\nValue on reset: 0"]
         #[derive(Clone, Copy, Debug, PartialEq)]
         pub enum TMOD_A {
-            #[doc = "TRANS_RECV"]
+            #[doc = "0: TRANS_RECV"]
             TRANS_RECV,
-            #[doc = "TRANS"]
+            #[doc = "1: TRANS"]
             TRANS,
-            #[doc = "RECV"]
+            #[doc = "2: RECV"]
             RECV,
-            #[doc = "EEROM"]
+            #[doc = "3: EEROM"]
             EEROM,
         }
-        impl crate::ToBits<u8> for TMOD_A {
+        impl From<TMOD_A> for u8 {
             #[inline(always)]
-            fn _bits(&self) -> u8 {
-                match *self {
+            fn from(variant: TMOD_A) -> Self {
+                match variant {
                     TMOD_A::TRANS_RECV => 0,
                     TMOD_A::TRANS => 1,
                     TMOD_A::RECV => 2,
@@ -32828,9 +32792,8 @@ pub mod spi0 {
             #[doc = r"Writes `variant` to the field"]
             #[inline(always)]
             pub fn variant(self, variant: TMOD_A) -> &'a mut W {
-                use crate::ToBits;
                 {
-                    self.bits(variant._bits())
+                    self.bits(variant.into())
                 }
             }
             #[doc = "TRANS_RECV"]
@@ -32860,22 +32823,22 @@ pub mod spi0 {
                 self.w
             }
         }
-        #[doc = "Possible values of the field `frame_format`"]
+        #[doc = "FRAME_FORMAT\n\nValue on reset: 0"]
         #[derive(Clone, Copy, Debug, PartialEq)]
         pub enum FRAME_FORMAT_A {
-            #[doc = "STANDARD"]
+            #[doc = "0: STANDARD"]
             STANDARD,
-            #[doc = "DUAL"]
+            #[doc = "1: DUAL"]
             DUAL,
-            #[doc = "QUAD"]
+            #[doc = "2: QUAD"]
             QUAD,
-            #[doc = "OCTAL"]
+            #[doc = "3: OCTAL"]
             OCTAL,
         }
-        impl crate::ToBits<u8> for FRAME_FORMAT_A {
+        impl From<FRAME_FORMAT_A> for u8 {
             #[inline(always)]
-            fn _bits(&self) -> u8 {
-                match *self {
+            fn from(variant: FRAME_FORMAT_A) -> Self {
+                match variant {
                     FRAME_FORMAT_A::STANDARD => 0,
                     FRAME_FORMAT_A::DUAL => 1,
                     FRAME_FORMAT_A::QUAD => 2,
@@ -32926,9 +32889,8 @@ pub mod spi0 {
             #[doc = r"Writes `variant` to the field"]
             #[inline(always)]
             pub fn variant(self, variant: FRAME_FORMAT_A) -> &'a mut W {
-                use crate::ToBits;
                 {
-                    self.bits(variant._bits())
+                    self.bits(variant.into())
                 }
             }
             #[doc = "STANDARD"]
@@ -33690,20 +33652,20 @@ pub mod spi0 {
                 0
             }
         }
-        #[doc = "Possible values of the field `aitm`"]
+        #[doc = "instruction_address_trans_mode\n\nValue on reset: 0"]
         #[derive(Clone, Copy, Debug, PartialEq)]
         pub enum AITM_A {
-            #[doc = "STANDARD"]
+            #[doc = "0: STANDARD"]
             STANDARD,
-            #[doc = "ADDR_STANDARD"]
+            #[doc = "1: ADDR_STANDARD"]
             ADDR_STANDARD,
-            #[doc = "AS_FRAME_FORMAT"]
+            #[doc = "2: AS_FRAME_FORMAT"]
             AS_FRAME_FORMAT,
         }
-        impl crate::ToBits<u8> for AITM_A {
+        impl From<AITM_A> for u8 {
             #[inline(always)]
-            fn _bits(&self) -> u8 {
-                match *self {
+            fn from(variant: AITM_A) -> Self {
+                match variant {
                     AITM_A::STANDARD => 0,
                     AITM_A::ADDR_STANDARD => 1,
                     AITM_A::AS_FRAME_FORMAT => 2,
@@ -33748,8 +33710,7 @@ pub mod spi0 {
             #[doc = r"Writes `variant` to the field"]
             #[inline(always)]
             pub fn variant(self, variant: AITM_A) -> &'a mut W {
-                use crate::ToBits;
-                unsafe { self.bits(variant._bits()) }
+                unsafe { self.bits(variant.into()) }
             }
             #[doc = "STANDARD"]
             #[inline(always)]
@@ -34272,22 +34233,22 @@ pub mod spi3 {
                 self.w
             }
         }
-        #[doc = "Possible values of the field `work_mode`"]
+        #[doc = "WORK_MODE\n\nValue on reset: 0"]
         #[derive(Clone, Copy, Debug, PartialEq)]
         pub enum WORK_MODE_A {
-            #[doc = "MODE_0"]
+            #[doc = "0: MODE_0"]
             MODE0,
-            #[doc = "MODE_1"]
+            #[doc = "1: MODE_1"]
             MODE1,
-            #[doc = "MODE_2"]
+            #[doc = "2: MODE_2"]
             MODE2,
-            #[doc = "MODE_3"]
+            #[doc = "3: MODE_3"]
             MODE3,
         }
-        impl crate::ToBits<u8> for WORK_MODE_A {
+        impl From<WORK_MODE_A> for u8 {
             #[inline(always)]
-            fn _bits(&self) -> u8 {
-                match *self {
+            fn from(variant: WORK_MODE_A) -> Self {
+                match variant {
                     WORK_MODE_A::MODE0 => 0,
                     WORK_MODE_A::MODE1 => 1,
                     WORK_MODE_A::MODE2 => 2,
@@ -34338,9 +34299,8 @@ pub mod spi3 {
             #[doc = r"Writes `variant` to the field"]
             #[inline(always)]
             pub fn variant(self, variant: WORK_MODE_A) -> &'a mut W {
-                use crate::ToBits;
                 {
-                    self.bits(variant._bits())
+                    self.bits(variant.into())
                 }
             }
             #[doc = "MODE_0"]
@@ -34370,22 +34330,22 @@ pub mod spi3 {
                 self.w
             }
         }
-        #[doc = "Possible values of the field `tmod`"]
+        #[doc = "TRANSFER_MODE\n\nValue on reset: 0"]
         #[derive(Clone, Copy, Debug, PartialEq)]
         pub enum TMOD_A {
-            #[doc = "TRANS_RECV"]
+            #[doc = "0: TRANS_RECV"]
             TRANS_RECV,
-            #[doc = "TRANS"]
+            #[doc = "1: TRANS"]
             TRANS,
-            #[doc = "RECV"]
+            #[doc = "2: RECV"]
             RECV,
-            #[doc = "EEROM"]
+            #[doc = "3: EEROM"]
             EEROM,
         }
-        impl crate::ToBits<u8> for TMOD_A {
+        impl From<TMOD_A> for u8 {
             #[inline(always)]
-            fn _bits(&self) -> u8 {
-                match *self {
+            fn from(variant: TMOD_A) -> Self {
+                match variant {
                     TMOD_A::TRANS_RECV => 0,
                     TMOD_A::TRANS => 1,
                     TMOD_A::RECV => 2,
@@ -34436,9 +34396,8 @@ pub mod spi3 {
             #[doc = r"Writes `variant` to the field"]
             #[inline(always)]
             pub fn variant(self, variant: TMOD_A) -> &'a mut W {
-                use crate::ToBits;
                 {
-                    self.bits(variant._bits())
+                    self.bits(variant.into())
                 }
             }
             #[doc = "TRANS_RECV"]
@@ -34468,22 +34427,22 @@ pub mod spi3 {
                 self.w
             }
         }
-        #[doc = "Possible values of the field `frame_format`"]
+        #[doc = "FRAME_FORMAT\n\nValue on reset: 0"]
         #[derive(Clone, Copy, Debug, PartialEq)]
         pub enum FRAME_FORMAT_A {
-            #[doc = "STANDARD"]
+            #[doc = "0: STANDARD"]
             STANDARD,
-            #[doc = "DUAL"]
+            #[doc = "1: DUAL"]
             DUAL,
-            #[doc = "QUAD"]
+            #[doc = "2: QUAD"]
             QUAD,
-            #[doc = "OCTAL"]
+            #[doc = "3: OCTAL"]
             OCTAL,
         }
-        impl crate::ToBits<u8> for FRAME_FORMAT_A {
+        impl From<FRAME_FORMAT_A> for u8 {
             #[inline(always)]
-            fn _bits(&self) -> u8 {
-                match *self {
+            fn from(variant: FRAME_FORMAT_A) -> Self {
+                match variant {
                     FRAME_FORMAT_A::STANDARD => 0,
                     FRAME_FORMAT_A::DUAL => 1,
                     FRAME_FORMAT_A::QUAD => 2,
@@ -34534,9 +34493,8 @@ pub mod spi3 {
             #[doc = r"Writes `variant` to the field"]
             #[inline(always)]
             pub fn variant(self, variant: FRAME_FORMAT_A) -> &'a mut W {
-                use crate::ToBits;
                 {
-                    self.bits(variant._bits())
+                    self.bits(variant.into())
                 }
             }
             #[doc = "STANDARD"]
@@ -35284,20 +35242,20 @@ pub mod spi3 {
                 0
             }
         }
-        #[doc = "Possible values of the field `aitm`"]
+        #[doc = "instruction_address_trans_mode\n\nValue on reset: 0"]
         #[derive(Clone, Copy, Debug, PartialEq)]
         pub enum AITM_A {
-            #[doc = "STANDARD"]
+            #[doc = "0: STANDARD"]
             STANDARD,
-            #[doc = "ADDR_STANDARD"]
+            #[doc = "1: ADDR_STANDARD"]
             ADDR_STANDARD,
-            #[doc = "AS_FRAME_FORMAT"]
+            #[doc = "2: AS_FRAME_FORMAT"]
             AS_FRAME_FORMAT,
         }
-        impl crate::ToBits<u8> for AITM_A {
+        impl From<AITM_A> for u8 {
             #[inline(always)]
-            fn _bits(&self) -> u8 {
-                match *self {
+            fn from(variant: AITM_A) -> Self {
+                match variant {
                     AITM_A::STANDARD => 0,
                     AITM_A::ADDR_STANDARD => 1,
                     AITM_A::AS_FRAME_FORMAT => 2,
@@ -35342,8 +35300,7 @@ pub mod spi3 {
             #[doc = r"Writes `variant` to the field"]
             #[inline(always)]
             pub fn variant(self, variant: AITM_A) -> &'a mut W {
-                use crate::ToBits;
-                unsafe { self.bits(variant._bits()) }
+                unsafe { self.bits(variant.into()) }
             }
             #[doc = "STANDARD"]
             #[inline(always)]
@@ -35958,26 +35915,26 @@ pub mod i2s0 {
                     0
                 }
             }
-            #[doc = "Possible values of the field `wlen`"]
+            #[doc = "Desired data resolution of receiver\n\nValue on reset: 0"]
             #[derive(Clone, Copy, Debug, PartialEq)]
             pub enum WLEN_A {
-                #[doc = "Ignore the word length"]
+                #[doc = "0: Ignore the word length"]
                 IGNORE,
-                #[doc = "12-bit data resolution of the receiver"]
+                #[doc = "1: 12-bit data resolution of the receiver"]
                 RESOLUTION12,
-                #[doc = "16-bit data resolution of the receiver"]
+                #[doc = "2: 16-bit data resolution of the receiver"]
                 RESOLUTION16,
-                #[doc = "20-bit data resolution of the receiver"]
+                #[doc = "3: 20-bit data resolution of the receiver"]
                 RESOLUTION20,
-                #[doc = "24-bit data resolution of the receiver"]
+                #[doc = "4: 24-bit data resolution of the receiver"]
                 RESOLUTION24,
-                #[doc = "32-bit data resolution of the receiver"]
+                #[doc = "5: 32-bit data resolution of the receiver"]
                 RESOLUTION32,
             }
-            impl crate::ToBits<u8> for WLEN_A {
+            impl From<WLEN_A> for u8 {
                 #[inline(always)]
-                fn _bits(&self) -> u8 {
-                    match *self {
+                fn from(variant: WLEN_A) -> Self {
+                    match variant {
                         WLEN_A::IGNORE => 0,
                         WLEN_A::RESOLUTION12 => 1,
                         WLEN_A::RESOLUTION16 => 2,
@@ -36043,8 +36000,7 @@ pub mod i2s0 {
                 #[doc = r"Writes `variant` to the field"]
                 #[inline(always)]
                 pub fn variant(self, variant: WLEN_A) -> &'a mut W {
-                    use crate::ToBits;
-                    unsafe { self.bits(variant._bits()) }
+                    unsafe { self.bits(variant.into()) }
                 }
                 #[doc = "Ignore the word length"]
                 #[inline(always)]
@@ -36121,7 +36077,7 @@ pub mod i2s0 {
                     0
                 }
             }
-            #[doc = "Possible values of the field `wlen`"]
+            #[doc = "Desired data resolution of transmitter"]
             pub type WLEN_A = super::rcr::WLEN_A;
             #[doc = "Reader of field `wlen`"]
             pub type WLEN_R = crate::R<u8, super::rcr::WLEN_A>;
@@ -36133,8 +36089,7 @@ pub mod i2s0 {
                 #[doc = r"Writes `variant` to the field"]
                 #[inline(always)]
                 pub fn variant(self, variant: WLEN_A) -> &'a mut W {
-                    use crate::ToBits;
-                    unsafe { self.bits(variant._bits()) }
+                    unsafe { self.bits(variant.into()) }
                 }
                 #[doc = "Ignore the word length"]
                 #[inline(always)]
@@ -36459,46 +36414,46 @@ pub mod i2s0 {
                     0
                 }
             }
-            #[doc = "Possible values of the field `rxchdt`"]
+            #[doc = "Trigger level in the RX FIFO at which the receiver data available interrupt generate\n\nValue on reset: 0"]
             #[derive(Clone, Copy, Debug, PartialEq)]
             pub enum RXCHDT_A {
-                #[doc = "Interrupt trigger when FIFO level is 1"]
+                #[doc = "0: Interrupt trigger when FIFO level is 1"]
                 LEVEL1,
-                #[doc = "Interrupt trigger when FIFO level is 2"]
+                #[doc = "1: Interrupt trigger when FIFO level is 2"]
                 LEVEL2,
-                #[doc = "Interrupt trigger when FIFO level is 3"]
+                #[doc = "2: Interrupt trigger when FIFO level is 3"]
                 LEVEL3,
-                #[doc = "Interrupt trigger when FIFO level is 4"]
+                #[doc = "3: Interrupt trigger when FIFO level is 4"]
                 LEVEL4,
-                #[doc = "Interrupt trigger when FIFO level is 5"]
+                #[doc = "4: Interrupt trigger when FIFO level is 5"]
                 LEVEL5,
-                #[doc = "Interrupt trigger when FIFO level is 6"]
+                #[doc = "5: Interrupt trigger when FIFO level is 6"]
                 LEVEL6,
-                #[doc = "Interrupt trigger when FIFO level is 7"]
+                #[doc = "6: Interrupt trigger when FIFO level is 7"]
                 LEVEL7,
-                #[doc = "Interrupt trigger when FIFO level is 8"]
+                #[doc = "7: Interrupt trigger when FIFO level is 8"]
                 LEVEL8,
-                #[doc = "Interrupt trigger when FIFO level is 9"]
+                #[doc = "8: Interrupt trigger when FIFO level is 9"]
                 LEVEL9,
-                #[doc = "Interrupt trigger when FIFO level is 10"]
+                #[doc = "9: Interrupt trigger when FIFO level is 10"]
                 LEVEL10,
-                #[doc = "Interrupt trigger when FIFO level is 11"]
+                #[doc = "10: Interrupt trigger when FIFO level is 11"]
                 LEVEL11,
-                #[doc = "Interrupt trigger when FIFO level is 12"]
+                #[doc = "11: Interrupt trigger when FIFO level is 12"]
                 LEVEL12,
-                #[doc = "Interrupt trigger when FIFO level is 13"]
+                #[doc = "12: Interrupt trigger when FIFO level is 13"]
                 LEVEL13,
-                #[doc = "Interrupt trigger when FIFO level is 14"]
+                #[doc = "13: Interrupt trigger when FIFO level is 14"]
                 LEVEL14,
-                #[doc = "Interrupt trigger when FIFO level is 15"]
+                #[doc = "14: Interrupt trigger when FIFO level is 15"]
                 LEVEL15,
-                #[doc = "Interrupt trigger when FIFO level is 16"]
+                #[doc = "15: Interrupt trigger when FIFO level is 16"]
                 LEVEL16,
             }
-            impl crate::ToBits<u8> for RXCHDT_A {
+            impl From<RXCHDT_A> for u8 {
                 #[inline(always)]
-                fn _bits(&self) -> u8 {
-                    match *self {
+                fn from(variant: RXCHDT_A) -> Self {
+                    match variant {
                         RXCHDT_A::LEVEL1 => 0,
                         RXCHDT_A::LEVEL2 => 1,
                         RXCHDT_A::LEVEL3 => 2,
@@ -36633,9 +36588,8 @@ pub mod i2s0 {
                 #[doc = r"Writes `variant` to the field"]
                 #[inline(always)]
                 pub fn variant(self, variant: RXCHDT_A) -> &'a mut W {
-                    use crate::ToBits;
                     {
-                        self.bits(variant._bits())
+                        self.bits(variant.into())
                     }
                 }
                 #[doc = "Interrupt trigger when FIFO level is 1"]
@@ -36763,7 +36717,7 @@ pub mod i2s0 {
                     0
                 }
             }
-            #[doc = "Possible values of the field `txchet`"]
+            #[doc = "Trigger level in the TX FIFO at which the transmitter data available interrupt generate"]
             pub type TXCHET_A = super::rfcr::RXCHDT_A;
             #[doc = "Reader of field `txchet`"]
             pub type TXCHET_R = crate::R<u8, super::rfcr::RXCHDT_A>;
@@ -36775,9 +36729,8 @@ pub mod i2s0 {
                 #[doc = r"Writes `variant` to the field"]
                 #[inline(always)]
                 pub fn variant(self, variant: TXCHET_A) -> &'a mut W {
-                    use crate::ToBits;
                     {
-                        self.bits(variant._bits())
+                        self.bits(variant.into())
                     }
                 }
                 #[doc = "Interrupt trigger when FIFO level is 1"]
@@ -36905,18 +36858,18 @@ pub mod i2s0 {
                     0
                 }
             }
-            #[doc = "Possible values of the field `rxchfr`"]
+            #[doc = "Receiver channel FIFO reset\n\nValue on reset: 0"]
             #[derive(Clone, Copy, Debug, PartialEq)]
             pub enum RXCHFR_A {
-                #[doc = "Not flush an individual FIFO"]
+                #[doc = "0: Not flush an individual FIFO"]
                 NOT_FLUSH,
-                #[doc = "Flush an indiviadual FIFO"]
+                #[doc = "1: Flush an indiviadual FIFO"]
                 FLUSH,
             }
-            impl crate::ToBits<bool> for RXCHFR_A {
+            impl From<RXCHFR_A> for bool {
                 #[inline(always)]
-                fn _bits(&self) -> bool {
-                    match *self {
+                fn from(variant: RXCHFR_A) -> Self {
+                    match variant {
                         RXCHFR_A::NOT_FLUSH => false,
                         RXCHFR_A::FLUSH => true,
                     }
@@ -36952,9 +36905,8 @@ pub mod i2s0 {
                 #[doc = r"Writes `variant` to the field"]
                 #[inline(always)]
                 pub fn variant(self, variant: RXCHFR_A) -> &'a mut W {
-                    use crate::ToBits;
                     {
-                        self.bit(variant._bits())
+                        self.bit(variant.into())
                     }
                 }
                 #[doc = "Not flush an individual FIFO"]
@@ -37022,7 +36974,7 @@ pub mod i2s0 {
                     0
                 }
             }
-            #[doc = "Possible values of the field `rtxchfr`"]
+            #[doc = "Transmit channel FIFO reset"]
             pub type RTXCHFR_A = super::rff::RXCHFR_A;
             #[doc = "Reader of field `rtxchfr`"]
             pub type RTXCHFR_R = crate::R<bool, super::rff::RXCHFR_A>;
@@ -37034,9 +36986,8 @@ pub mod i2s0 {
                 #[doc = r"Writes `variant` to the field"]
                 #[inline(always)]
                 pub fn variant(self, variant: RTXCHFR_A) -> &'a mut W {
-                    use crate::ToBits;
                     {
-                        self.bit(variant._bits())
+                        self.bit(variant.into())
                     }
                 }
                 #[doc = "Not flush an individual FIFO"]
@@ -37379,24 +37330,24 @@ pub mod i2s0 {
                 0
             }
         }
-        #[doc = "Possible values of the field `clk_gate`"]
+        #[doc = "Gating of sclk\n\nValue on reset: 0"]
         #[derive(Clone, Copy, Debug, PartialEq)]
         pub enum CLK_GATE_A {
-            #[doc = "Clock gating is disabled"]
+            #[doc = "0: Clock gating is disabled"]
             NO,
-            #[doc = "Gating after 12 sclk cycles"]
+            #[doc = "1: Gating after 12 sclk cycles"]
             CYCLES12,
-            #[doc = "Gating after 16 sclk cycles"]
+            #[doc = "2: Gating after 16 sclk cycles"]
             CYCLES16,
-            #[doc = "Gating after 20 sclk cycles"]
+            #[doc = "3: Gating after 20 sclk cycles"]
             CYCLES20,
-            #[doc = "Gating after 24 sclk cycles"]
+            #[doc = "4: Gating after 24 sclk cycles"]
             CYCLES24,
         }
-        impl crate::ToBits<u8> for CLK_GATE_A {
+        impl From<CLK_GATE_A> for u8 {
             #[inline(always)]
-            fn _bits(&self) -> u8 {
-                match *self {
+            fn from(variant: CLK_GATE_A) -> Self {
+                match variant {
                     CLK_GATE_A::NO => 0,
                     CLK_GATE_A::CYCLES12 => 1,
                     CLK_GATE_A::CYCLES16 => 2,
@@ -37455,8 +37406,7 @@ pub mod i2s0 {
             #[doc = r"Writes `variant` to the field"]
             #[inline(always)]
             pub fn variant(self, variant: CLK_GATE_A) -> &'a mut W {
-                use crate::ToBits;
-                unsafe { self.bits(variant._bits()) }
+                unsafe { self.bits(variant.into()) }
             }
             #[doc = "Clock gating is disabled"]
             #[inline(always)]
@@ -37490,20 +37440,20 @@ pub mod i2s0 {
                 self.w
             }
         }
-        #[doc = "Possible values of the field `clk_word_size`"]
+        #[doc = "The number of sclk cycles for which the word select line stayd in the left aligned or right aligned mode\n\nValue on reset: 0"]
         #[derive(Clone, Copy, Debug, PartialEq)]
         pub enum CLK_WORD_SIZE_A {
-            #[doc = "16 sclk cycles"]
+            #[doc = "0: 16 sclk cycles"]
             CYCLES16,
-            #[doc = "24 sclk cycles"]
+            #[doc = "1: 24 sclk cycles"]
             CYCLES24,
-            #[doc = "32 sclk cycles"]
+            #[doc = "2: 32 sclk cycles"]
             CYCLES32,
         }
-        impl crate::ToBits<u8> for CLK_WORD_SIZE_A {
+        impl From<CLK_WORD_SIZE_A> for u8 {
             #[inline(always)]
-            fn _bits(&self) -> u8 {
-                match *self {
+            fn from(variant: CLK_WORD_SIZE_A) -> Self {
+                match variant {
                     CLK_WORD_SIZE_A::CYCLES16 => 0,
                     CLK_WORD_SIZE_A::CYCLES24 => 1,
                     CLK_WORD_SIZE_A::CYCLES32 => 2,
@@ -37548,8 +37498,7 @@ pub mod i2s0 {
             #[doc = r"Writes `variant` to the field"]
             #[inline(always)]
             pub fn variant(self, variant: CLK_WORD_SIZE_A) -> &'a mut W {
-                use crate::ToBits;
-                unsafe { self.bits(variant._bits()) }
+                unsafe { self.bits(variant.into()) }
             }
             #[doc = "16 sclk cycles"]
             #[inline(always)]
@@ -37573,20 +37522,20 @@ pub mod i2s0 {
                 self.w
             }
         }
-        #[doc = "Possible values of the field `align_mode`"]
+        #[doc = "Alignment mode setting\n\nValue on reset: 0"]
         #[derive(Clone, Copy, Debug, PartialEq)]
         pub enum ALIGN_MODE_A {
-            #[doc = "Standard I2S format"]
+            #[doc = "1: Standard I2S format"]
             STANDARD,
-            #[doc = "Right aligned format"]
+            #[doc = "2: Right aligned format"]
             RIGHT,
-            #[doc = "Left aligned format"]
+            #[doc = "4: Left aligned format"]
             LEFT,
         }
-        impl crate::ToBits<u8> for ALIGN_MODE_A {
+        impl From<ALIGN_MODE_A> for u8 {
             #[inline(always)]
-            fn _bits(&self) -> u8 {
-                match *self {
+            fn from(variant: ALIGN_MODE_A) -> Self {
+                match variant {
                     ALIGN_MODE_A::STANDARD => 1,
                     ALIGN_MODE_A::RIGHT => 2,
                     ALIGN_MODE_A::LEFT => 4,
@@ -37631,8 +37580,7 @@ pub mod i2s0 {
             #[doc = r"Writes `variant` to the field"]
             #[inline(always)]
             pub fn variant(self, variant: ALIGN_MODE_A) -> &'a mut W {
-                use crate::ToBits;
-                unsafe { self.bits(variant._bits()) }
+                unsafe { self.bits(variant.into()) }
             }
             #[doc = "Standard I2S format"]
             #[inline(always)]
@@ -37850,18 +37798,18 @@ pub mod i2s0 {
                 0
             }
         }
-        #[doc = "Possible values of the field `rxffr`"]
+        #[doc = "Receiver FIFO reset\n\nValue on reset: 0"]
         #[derive(Clone, Copy, Debug, PartialEq)]
         pub enum RXFFR_A {
-            #[doc = "Not flush FIFO"]
+            #[doc = "0: Not flush FIFO"]
             NOT_FLUSH,
-            #[doc = "Flush FIFO"]
+            #[doc = "1: Flush FIFO"]
             FLUSH,
         }
-        impl crate::ToBits<bool> for RXFFR_A {
+        impl From<RXFFR_A> for bool {
             #[inline(always)]
-            fn _bits(&self) -> bool {
-                match *self {
+            fn from(variant: RXFFR_A) -> Self {
+                match variant {
                     RXFFR_A::NOT_FLUSH => false,
                     RXFFR_A::FLUSH => true,
                 }
@@ -37897,9 +37845,8 @@ pub mod i2s0 {
             #[doc = r"Writes `variant` to the field"]
             #[inline(always)]
             pub fn variant(self, variant: RXFFR_A) -> &'a mut W {
-                use crate::ToBits;
                 {
-                    self.bit(variant._bits())
+                    self.bit(variant.into())
                 }
             }
             #[doc = "Not flush FIFO"]
@@ -37967,7 +37914,7 @@ pub mod i2s0 {
                 0
             }
         }
-        #[doc = "Possible values of the field `rxffr`"]
+        #[doc = "Transmitter FIFO reset"]
         pub type RXFFR_A = super::rxffr::RXFFR_A;
         #[doc = "Reader of field `rxffr`"]
         pub type RXFFR_R = crate::R<bool, super::rxffr::RXFFR_A>;
@@ -37979,9 +37926,8 @@ pub mod i2s0 {
             #[doc = r"Writes `variant` to the field"]
             #[inline(always)]
             pub fn variant(self, variant: RXFFR_A) -> &'a mut W {
-                use crate::ToBits;
                 {
-                    self.bit(variant._bits())
+                    self.bit(variant.into())
                 }
             }
             #[doc = "Not flush FIFO"]
@@ -40002,20 +39948,20 @@ pub mod i2c0 {
                 self.w
             }
         }
-        #[doc = "Possible values of the field `speed`"]
+        #[doc = "Speed\n\nValue on reset: 0"]
         #[derive(Clone, Copy, Debug, PartialEq)]
         pub enum SPEED_A {
-            #[doc = "STANDARD"]
+            #[doc = "0: STANDARD"]
             STANDARD,
-            #[doc = "FAST"]
+            #[doc = "1: FAST"]
             FAST,
-            #[doc = "HIGHSPEED"]
+            #[doc = "2: HIGHSPEED"]
             HIGHSPEED,
         }
-        impl crate::ToBits<u8> for SPEED_A {
+        impl From<SPEED_A> for u8 {
             #[inline(always)]
-            fn _bits(&self) -> u8 {
-                match *self {
+            fn from(variant: SPEED_A) -> Self {
+                match variant {
                     SPEED_A::STANDARD => 0,
                     SPEED_A::FAST => 1,
                     SPEED_A::HIGHSPEED => 2,
@@ -40060,8 +40006,7 @@ pub mod i2c0 {
             #[doc = r"Writes `variant` to the field"]
             #[inline(always)]
             pub fn variant(self, variant: SPEED_A) -> &'a mut W {
-                use crate::ToBits;
-                unsafe { self.bits(variant._bits()) }
+                unsafe { self.bits(variant.into()) }
             }
             #[doc = "STANDARD"]
             #[inline(always)]
@@ -40085,18 +40030,18 @@ pub mod i2c0 {
                 self.w
             }
         }
-        #[doc = "Possible values of the field `addr_slave_width`"]
+        #[doc = "Slave address width\n\nValue on reset: 0"]
         #[derive(Clone, Copy, Debug, PartialEq)]
         pub enum ADDR_SLAVE_WIDTH_A {
-            #[doc = "7-bit address"]
+            #[doc = "0: 7-bit address"]
             B7,
-            #[doc = "10-bit address"]
+            #[doc = "1: 10-bit address"]
             B10,
         }
-        impl crate::ToBits<bool> for ADDR_SLAVE_WIDTH_A {
+        impl From<ADDR_SLAVE_WIDTH_A> for bool {
             #[inline(always)]
-            fn _bits(&self) -> bool {
-                match *self {
+            fn from(variant: ADDR_SLAVE_WIDTH_A) -> Self {
+                match variant {
                     ADDR_SLAVE_WIDTH_A::B7 => false,
                     ADDR_SLAVE_WIDTH_A::B10 => true,
                 }
@@ -40132,9 +40077,8 @@ pub mod i2c0 {
             #[doc = r"Writes `variant` to the field"]
             #[inline(always)]
             pub fn variant(self, variant: ADDR_SLAVE_WIDTH_A) -> &'a mut W {
-                use crate::ToBits;
                 {
-                    self.bit(variant._bits())
+                    self.bit(variant.into())
                 }
             }
             #[doc = "7-bit address"]
@@ -40420,18 +40364,18 @@ pub mod i2c0 {
                 self.w
             }
         }
-        #[doc = "Possible values of the field `addr_master_width`"]
+        #[doc = "Master Address\n\nValue on reset: 0"]
         #[derive(Clone, Copy, Debug, PartialEq)]
         pub enum ADDR_MASTER_WIDTH_A {
-            #[doc = "7-bit address"]
+            #[doc = "0: 7-bit address"]
             B7,
-            #[doc = "10-bit address"]
+            #[doc = "1: 10-bit address"]
             B10,
         }
-        impl crate::ToBits<bool> for ADDR_MASTER_WIDTH_A {
+        impl From<ADDR_MASTER_WIDTH_A> for bool {
             #[inline(always)]
-            fn _bits(&self) -> bool {
-                match *self {
+            fn from(variant: ADDR_MASTER_WIDTH_A) -> Self {
+                match variant {
                     ADDR_MASTER_WIDTH_A::B7 => false,
                     ADDR_MASTER_WIDTH_A::B10 => true,
                 }
@@ -40467,9 +40411,8 @@ pub mod i2c0 {
             #[doc = r"Writes `variant` to the field"]
             #[inline(always)]
             pub fn variant(self, variant: ADDR_MASTER_WIDTH_A) -> &'a mut W {
-                use crate::ToBits;
                 {
-                    self.bit(variant._bits())
+                    self.bit(variant.into())
                 }
             }
             #[doc = "7-bit address"]
@@ -44422,18 +44365,18 @@ pub mod sha256 {
                 self.w
             }
         }
-        #[doc = "Possible values of the field `endian`"]
+        #[doc = "Endian setting\n\nValue on reset: 0"]
         #[derive(Clone, Copy, Debug, PartialEq)]
         pub enum ENDIAN_A {
-            #[doc = "Little endian"]
+            #[doc = "0: Little endian"]
             LE,
-            #[doc = "Big endian"]
+            #[doc = "1: Big endian"]
             BE,
         }
-        impl crate::ToBits<bool> for ENDIAN_A {
+        impl From<ENDIAN_A> for bool {
             #[inline(always)]
-            fn _bits(&self) -> bool {
-                match *self {
+            fn from(variant: ENDIAN_A) -> Self {
+                match variant {
                     ENDIAN_A::LE => false,
                     ENDIAN_A::BE => true,
                 }
@@ -44469,9 +44412,8 @@ pub mod sha256 {
             #[doc = r"Writes `variant` to the field"]
             #[inline(always)]
             pub fn variant(self, variant: ENDIAN_A) -> &'a mut W {
-                use crate::ToBits;
                 {
-                    self.bit(variant._bits())
+                    self.bit(variant.into())
                 }
             }
             #[doc = "Little endian"]
@@ -44786,18 +44728,18 @@ pub mod timer0 {
                     self.w
                 }
             }
-            #[doc = "Possible values of the field `mode`"]
+            #[doc = "MODE\n\nValue on reset: 0"]
             #[derive(Clone, Copy, Debug, PartialEq)]
             pub enum MODE_A {
-                #[doc = "FREE_MODE"]
+                #[doc = "0: FREE_MODE"]
                 FREE,
-                #[doc = "USER_MODE"]
+                #[doc = "1: USER_MODE"]
                 USER,
             }
-            impl crate::ToBits<bool> for MODE_A {
+            impl From<MODE_A> for bool {
                 #[inline(always)]
-                fn _bits(&self) -> bool {
-                    match *self {
+                fn from(variant: MODE_A) -> Self {
+                    match variant {
                         MODE_A::FREE => false,
                         MODE_A::USER => true,
                     }
@@ -44833,9 +44775,8 @@ pub mod timer0 {
                 #[doc = r"Writes `variant` to the field"]
                 #[inline(always)]
                 pub fn variant(self, variant: MODE_A) -> &'a mut W {
-                    use crate::ToBits;
                     {
-                        self.bit(variant._bits())
+                        self.bit(variant.into())
                     }
                 }
                 #[doc = "FREE_MODE"]
@@ -45279,18 +45220,18 @@ pub mod wdt0 {
                 self.w
             }
         }
-        #[doc = "Possible values of the field `rmod`"]
+        #[doc = "rmod\n\nValue on reset: 0"]
         #[derive(Clone, Copy, Debug, PartialEq)]
         pub enum RMOD_A {
-            #[doc = "RESET"]
+            #[doc = "0: RESET"]
             RESET,
-            #[doc = "INTERRUPT"]
+            #[doc = "1: INTERRUPT"]
             INTERRUPT,
         }
-        impl crate::ToBits<bool> for RMOD_A {
+        impl From<RMOD_A> for bool {
             #[inline(always)]
-            fn _bits(&self) -> bool {
-                match *self {
+            fn from(variant: RMOD_A) -> Self {
+                match variant {
                     RMOD_A::RESET => false,
                     RMOD_A::INTERRUPT => true,
                 }
@@ -45326,9 +45267,8 @@ pub mod wdt0 {
             #[doc = r"Writes `variant` to the field"]
             #[inline(always)]
             pub fn variant(self, variant: RMOD_A) -> &'a mut W {
-                use crate::ToBits;
                 {
-                    self.bit(variant._bits())
+                    self.bit(variant.into())
                 }
             }
             #[doc = "RESET"]
@@ -46676,20 +46616,20 @@ pub mod dvp {
                 self.w
             }
         }
-        #[doc = "Possible values of the field `format`"]
+        #[doc = "FORMAT\n\nValue on reset: 0"]
         #[derive(Clone, Copy, Debug, PartialEq)]
         pub enum FORMAT_A {
-            #[doc = "RGB_FORMAT"]
+            #[doc = "0: RGB_FORMAT"]
             RGB,
-            #[doc = "YUV_FORMAT"]
+            #[doc = "1: YUV_FORMAT"]
             YUV,
-            #[doc = "Y_FORMAT"]
+            #[doc = "3: Y_FORMAT"]
             Y,
         }
-        impl crate::ToBits<u8> for FORMAT_A {
+        impl From<FORMAT_A> for u8 {
             #[inline(always)]
-            fn _bits(&self) -> u8 {
-                match *self {
+            fn from(variant: FORMAT_A) -> Self {
+                match variant {
                     FORMAT_A::RGB => 0,
                     FORMAT_A::YUV => 1,
                     FORMAT_A::Y => 3,
@@ -46734,8 +46674,7 @@ pub mod dvp {
             #[doc = r"Writes `variant` to the field"]
             #[inline(always)]
             pub fn variant(self, variant: FORMAT_A) -> &'a mut W {
-                use crate::ToBits;
-                unsafe { self.bits(variant._bits()) }
+                unsafe { self.bits(variant.into()) }
             }
             #[doc = "RGB_FORMAT"]
             #[inline(always)]
@@ -47137,20 +47076,20 @@ pub mod dvp {
                 0
             }
         }
-        #[doc = "Possible values of the field `byte_num`"]
+        #[doc = "BYTE_NUM\n\nValue on reset: 0"]
         #[derive(Clone, Copy, Debug, PartialEq)]
         pub enum BYTE_NUM_A {
-            #[doc = "BYTE_NUM_2"]
+            #[doc = "1: BYTE_NUM_2"]
             NUM2,
-            #[doc = "BYTE_NUM_3"]
+            #[doc = "2: BYTE_NUM_3"]
             NUM3,
-            #[doc = "BYTE_NUM_4"]
+            #[doc = "3: BYTE_NUM_4"]
             NUM4,
         }
-        impl crate::ToBits<u8> for BYTE_NUM_A {
+        impl From<BYTE_NUM_A> for u8 {
             #[inline(always)]
-            fn _bits(&self) -> u8 {
-                match *self {
+            fn from(variant: BYTE_NUM_A) -> Self {
+                match variant {
                     BYTE_NUM_A::NUM2 => 1,
                     BYTE_NUM_A::NUM3 => 2,
                     BYTE_NUM_A::NUM4 => 3,
@@ -47195,8 +47134,7 @@ pub mod dvp {
             #[doc = r"Writes `variant` to the field"]
             #[inline(always)]
             pub fn variant(self, variant: BYTE_NUM_A) -> &'a mut W {
-                use crate::ToBits;
-                unsafe { self.bits(variant._bits()) }
+                unsafe { self.bits(variant.into()) }
             }
             #[doc = "BYTE_NUM_2"]
             #[inline(always)]
@@ -47437,18 +47375,18 @@ pub mod dvp {
                 0
             }
         }
-        #[doc = "Possible values of the field `gm_mlen`"]
+        #[doc = "GM_MLEN\n\nValue on reset: 0"]
         #[derive(Clone, Copy, Debug, PartialEq)]
         pub enum GM_MLEN_A {
-            #[doc = "GM_MLEN_1BYTE"]
+            #[doc = "0: GM_MLEN_1BYTE"]
             BYTE1,
-            #[doc = "GM_MLEN_4BYTE"]
+            #[doc = "3: GM_MLEN_4BYTE"]
             BYTE4,
         }
-        impl crate::ToBits<u8> for GM_MLEN_A {
+        impl From<GM_MLEN_A> for u8 {
             #[inline(always)]
-            fn _bits(&self) -> u8 {
-                match *self {
+            fn from(variant: GM_MLEN_A) -> Self {
+                match variant {
                     GM_MLEN_A::BYTE1 => 0,
                     GM_MLEN_A::BYTE4 => 3,
                 }
@@ -47486,8 +47424,7 @@ pub mod dvp {
             #[doc = r"Writes `variant` to the field"]
             #[inline(always)]
             pub fn variant(self, variant: GM_MLEN_A) -> &'a mut W {
-                use crate::ToBits;
-                unsafe { self.bits(variant._bits()) }
+                unsafe { self.bits(variant.into()) }
             }
             #[doc = "GM_MLEN_1BYTE"]
             #[inline(always)]
@@ -54188,80 +54125,80 @@ pub mod sysctl {
                 0
             }
         }
-        #[doc = "Possible values of the field `dma_sel0`"]
+        #[doc = "\n\nValue on reset: 0"]
         #[derive(Clone, Copy, Debug, PartialEq)]
         pub enum DMA_SEL0_A {
-            #[doc = "`0`"]
+            #[doc = "0: `0`"]
             SSI0_RX_REQ,
-            #[doc = "`1`"]
+            #[doc = "1: `1`"]
             SSI0_TX_REQ,
-            #[doc = "`10`"]
+            #[doc = "2: `10`"]
             SSI1_RX_REQ,
-            #[doc = "`11`"]
+            #[doc = "3: `11`"]
             SSI1_TX_REQ,
-            #[doc = "`100`"]
+            #[doc = "4: `100`"]
             SSI2_RX_REQ,
-            #[doc = "`101`"]
+            #[doc = "5: `101`"]
             SSI2_TX_REQ,
-            #[doc = "`110`"]
+            #[doc = "6: `110`"]
             SSI3_RX_REQ,
-            #[doc = "`111`"]
+            #[doc = "7: `111`"]
             SSI3_TX_REQ,
-            #[doc = "`1000`"]
+            #[doc = "8: `1000`"]
             I2C0_RX_REQ,
-            #[doc = "`1001`"]
+            #[doc = "9: `1001`"]
             I2C0_TX_REQ,
-            #[doc = "`1010`"]
+            #[doc = "10: `1010`"]
             I2C1_RX_REQ,
-            #[doc = "`1011`"]
+            #[doc = "11: `1011`"]
             I2C1_TX_REQ,
-            #[doc = "`1100`"]
+            #[doc = "12: `1100`"]
             I2C2_RX_REQ,
-            #[doc = "`1101`"]
+            #[doc = "13: `1101`"]
             I2C2_TX_REQ,
-            #[doc = "`1110`"]
+            #[doc = "14: `1110`"]
             UART1_RX_REQ,
-            #[doc = "`1111`"]
+            #[doc = "15: `1111`"]
             UART1_TX_REQ,
-            #[doc = "`10000`"]
+            #[doc = "16: `10000`"]
             UART2_RX_REQ,
-            #[doc = "`10001`"]
+            #[doc = "17: `10001`"]
             UART2_TX_REQ,
-            #[doc = "`10010`"]
+            #[doc = "18: `10010`"]
             UART3_RX_REQ,
-            #[doc = "`10011`"]
+            #[doc = "19: `10011`"]
             UART3_TX_REQ,
-            #[doc = "`10100`"]
+            #[doc = "20: `10100`"]
             AES_REQ,
-            #[doc = "`10101`"]
+            #[doc = "21: `10101`"]
             SHA_RX_REQ,
-            #[doc = "`10110`"]
+            #[doc = "22: `10110`"]
             AI_RX_REQ,
-            #[doc = "`10111`"]
+            #[doc = "23: `10111`"]
             FFT_RX_REQ,
-            #[doc = "`11000`"]
+            #[doc = "24: `11000`"]
             FFT_TX_REQ,
-            #[doc = "`11001`"]
+            #[doc = "25: `11001`"]
             I2S0_TX_REQ,
-            #[doc = "`11010`"]
+            #[doc = "26: `11010`"]
             I2S0_RX_REQ,
-            #[doc = "`11011`"]
+            #[doc = "27: `11011`"]
             I2S1_TX_REQ,
-            #[doc = "`11100`"]
+            #[doc = "28: `11100`"]
             I2S1_RX_REQ,
-            #[doc = "`11101`"]
+            #[doc = "29: `11101`"]
             I2S2_TX_REQ,
-            #[doc = "`11110`"]
+            #[doc = "30: `11110`"]
             I2S2_RX_REQ,
-            #[doc = "`11111`"]
+            #[doc = "31: `11111`"]
             I2S0_BF_DIR_REQ,
-            #[doc = "`100000`"]
+            #[doc = "32: `100000`"]
             I2S0_BF_VOICE_REQ,
         }
-        impl crate::ToBits<u8> for DMA_SEL0_A {
+        impl From<DMA_SEL0_A> for u8 {
             #[inline(always)]
-            fn _bits(&self) -> u8 {
-                match *self {
+            fn from(variant: DMA_SEL0_A) -> Self {
+                match variant {
                     DMA_SEL0_A::SSI0_RX_REQ => 0,
                     DMA_SEL0_A::SSI0_TX_REQ => 1,
                     DMA_SEL0_A::SSI1_RX_REQ => 2,
@@ -54516,8 +54453,7 @@ pub mod sysctl {
             #[doc = r"Writes `variant` to the field"]
             #[inline(always)]
             pub fn variant(self, variant: DMA_SEL0_A) -> &'a mut W {
-                use crate::ToBits;
-                unsafe { self.bits(variant._bits()) }
+                unsafe { self.bits(variant.into()) }
             }
             #[doc = "`0`"]
             #[inline(always)]
@@ -54691,7 +54627,7 @@ pub mod sysctl {
                 self.w
             }
         }
-        #[doc = "Possible values of the field `dma_sel1`"]
+        #[doc = ""]
         pub type DMA_SEL1_A = DMA_SEL0_A;
         #[doc = "Reader of field `dma_sel1`"]
         pub type DMA_SEL1_R = crate::R<u8, DMA_SEL0_A>;
@@ -54703,8 +54639,7 @@ pub mod sysctl {
             #[doc = r"Writes `variant` to the field"]
             #[inline(always)]
             pub fn variant(self, variant: DMA_SEL1_A) -> &'a mut W {
-                use crate::ToBits;
-                unsafe { self.bits(variant._bits()) }
+                unsafe { self.bits(variant.into()) }
             }
             #[doc = "`0`"]
             #[inline(always)]
@@ -54878,7 +54813,7 @@ pub mod sysctl {
                 self.w
             }
         }
-        #[doc = "Possible values of the field `dma_sel2`"]
+        #[doc = ""]
         pub type DMA_SEL2_A = DMA_SEL0_A;
         #[doc = "Reader of field `dma_sel2`"]
         pub type DMA_SEL2_R = crate::R<u8, DMA_SEL0_A>;
@@ -54890,8 +54825,7 @@ pub mod sysctl {
             #[doc = r"Writes `variant` to the field"]
             #[inline(always)]
             pub fn variant(self, variant: DMA_SEL2_A) -> &'a mut W {
-                use crate::ToBits;
-                unsafe { self.bits(variant._bits()) }
+                unsafe { self.bits(variant.into()) }
             }
             #[doc = "`0`"]
             #[inline(always)]
@@ -55065,7 +54999,7 @@ pub mod sysctl {
                 self.w
             }
         }
-        #[doc = "Possible values of the field `dma_sel3`"]
+        #[doc = ""]
         pub type DMA_SEL3_A = DMA_SEL0_A;
         #[doc = "Reader of field `dma_sel3`"]
         pub type DMA_SEL3_R = crate::R<u8, DMA_SEL0_A>;
@@ -55077,8 +55011,7 @@ pub mod sysctl {
             #[doc = r"Writes `variant` to the field"]
             #[inline(always)]
             pub fn variant(self, variant: DMA_SEL3_A) -> &'a mut W {
-                use crate::ToBits;
-                unsafe { self.bits(variant._bits()) }
+                unsafe { self.bits(variant.into()) }
             }
             #[doc = "`0`"]
             #[inline(always)]
@@ -55252,7 +55185,7 @@ pub mod sysctl {
                 self.w
             }
         }
-        #[doc = "Possible values of the field `dma_sel4`"]
+        #[doc = ""]
         pub type DMA_SEL4_A = DMA_SEL0_A;
         #[doc = "Reader of field `dma_sel4`"]
         pub type DMA_SEL4_R = crate::R<u8, DMA_SEL0_A>;
@@ -55264,8 +55197,7 @@ pub mod sysctl {
             #[doc = r"Writes `variant` to the field"]
             #[inline(always)]
             pub fn variant(self, variant: DMA_SEL4_A) -> &'a mut W {
-                use crate::ToBits;
-                unsafe { self.bits(variant._bits()) }
+                unsafe { self.bits(variant.into()) }
             }
             #[doc = "`0`"]
             #[inline(always)]
@@ -55517,7 +55449,7 @@ pub mod sysctl {
                 0
             }
         }
-        #[doc = "Possible values of the field `dma_sel5`"]
+        #[doc = ""]
         pub type DMA_SEL5_A = super::dma_sel0::DMA_SEL0_A;
         #[doc = "Reader of field `dma_sel5`"]
         pub type DMA_SEL5_R = crate::R<u8, super::dma_sel0::DMA_SEL0_A>;
@@ -55529,8 +55461,7 @@ pub mod sysctl {
             #[doc = r"Writes `variant` to the field"]
             #[inline(always)]
             pub fn variant(self, variant: DMA_SEL5_A) -> &'a mut W {
-                use crate::ToBits;
-                unsafe { self.bits(variant._bits()) }
+                unsafe { self.bits(variant.into()) }
             }
             #[doc = "`0`"]
             #[inline(always)]
@@ -56136,18 +56067,18 @@ pub mod aes {
                 0
             }
         }
-        #[doc = "Possible values of the field `encrypt_sel`"]
+        #[doc = "Select encryption or decryption mode\n\nValue on reset: 0"]
         #[derive(Clone, Copy, Debug, PartialEq)]
         pub enum ENCRYPT_SEL_A {
-            #[doc = "Sets encryption mode"]
+            #[doc = "0: Sets encryption mode"]
             ENCRYPTION,
-            #[doc = "Sets decryption mode"]
+            #[doc = "1: Sets decryption mode"]
             DECRYPTION,
         }
-        impl crate::ToBits<bool> for ENCRYPT_SEL_A {
+        impl From<ENCRYPT_SEL_A> for bool {
             #[inline(always)]
-            fn _bits(&self) -> bool {
-                match *self {
+            fn from(variant: ENCRYPT_SEL_A) -> Self {
+                match variant {
                     ENCRYPT_SEL_A::ENCRYPTION => false,
                     ENCRYPT_SEL_A::DECRYPTION => true,
                 }
@@ -56183,9 +56114,8 @@ pub mod aes {
             #[doc = r"Writes `variant` to the field"]
             #[inline(always)]
             pub fn variant(self, variant: ENCRYPT_SEL_A) -> &'a mut W {
-                use crate::ToBits;
                 {
-                    self.bit(variant._bits())
+                    self.bit(variant.into())
                 }
             }
             #[doc = "Sets encryption mode"]
@@ -56253,20 +56183,20 @@ pub mod aes {
                 0
             }
         }
-        #[doc = "Possible values of the field `cipher_mode`"]
+        #[doc = "Cipher mode\n\nValue on reset: 0"]
         #[derive(Clone, Copy, Debug, PartialEq)]
         pub enum CIPHER_MODE_A {
-            #[doc = "Electronic Codebook"]
+            #[doc = "0: Electronic Codebook"]
             ECB,
-            #[doc = "Cipher Block Chaining"]
+            #[doc = "1: Cipher Block Chaining"]
             CBC,
-            #[doc = "Galois/Counter Mode"]
+            #[doc = "2: Galois/Counter Mode"]
             GCM,
         }
-        impl crate::ToBits<u8> for CIPHER_MODE_A {
+        impl From<CIPHER_MODE_A> for u8 {
             #[inline(always)]
-            fn _bits(&self) -> u8 {
-                match *self {
+            fn from(variant: CIPHER_MODE_A) -> Self {
+                match variant {
                     CIPHER_MODE_A::ECB => 0,
                     CIPHER_MODE_A::CBC => 1,
                     CIPHER_MODE_A::GCM => 2,
@@ -56311,8 +56241,7 @@ pub mod aes {
             #[doc = r"Writes `variant` to the field"]
             #[inline(always)]
             pub fn variant(self, variant: CIPHER_MODE_A) -> &'a mut W {
-                use crate::ToBits;
-                unsafe { self.bits(variant._bits()) }
+                unsafe { self.bits(variant.into()) }
             }
             #[doc = "Electronic Codebook"]
             #[inline(always)]
@@ -56336,20 +56265,20 @@ pub mod aes {
                 self.w
             }
         }
-        #[doc = "Possible values of the field `key_mode`"]
+        #[doc = "Key mode\n\nValue on reset: 0"]
         #[derive(Clone, Copy, Debug, PartialEq)]
         pub enum KEY_MODE_A {
-            #[doc = "AES-128"]
+            #[doc = "0: AES-128"]
             AES128,
-            #[doc = "AES-192"]
+            #[doc = "1: AES-192"]
             AES192,
-            #[doc = "AES-256"]
+            #[doc = "2: AES-256"]
             AES256,
         }
-        impl crate::ToBits<u8> for KEY_MODE_A {
+        impl From<KEY_MODE_A> for u8 {
             #[inline(always)]
-            fn _bits(&self) -> u8 {
-                match *self {
+            fn from(variant: KEY_MODE_A) -> Self {
+                match variant {
                     KEY_MODE_A::AES128 => 0,
                     KEY_MODE_A::AES192 => 1,
                     KEY_MODE_A::AES256 => 2,
@@ -56394,8 +56323,7 @@ pub mod aes {
             #[doc = r"Writes `variant` to the field"]
             #[inline(always)]
             pub fn variant(self, variant: KEY_MODE_A) -> &'a mut W {
-                use crate::ToBits;
-                unsafe { self.bits(variant._bits()) }
+                unsafe { self.bits(variant.into()) }
             }
             #[doc = "AES-128"]
             #[inline(always)]
@@ -56419,18 +56347,18 @@ pub mod aes {
                 self.w
             }
         }
-        #[doc = "Possible values of the field `key_order`"]
+        #[doc = "Input key order\n\nValue on reset: 0"]
         #[derive(Clone, Copy, Debug, PartialEq)]
         pub enum KEY_ORDER_A {
-            #[doc = "Big Endian"]
+            #[doc = "0: Big Endian"]
             BE,
-            #[doc = "Little Endian"]
+            #[doc = "1: Little Endian"]
             LE,
         }
-        impl crate::ToBits<bool> for KEY_ORDER_A {
+        impl From<KEY_ORDER_A> for bool {
             #[inline(always)]
-            fn _bits(&self) -> bool {
-                match *self {
+            fn from(variant: KEY_ORDER_A) -> Self {
+                match variant {
                     KEY_ORDER_A::BE => false,
                     KEY_ORDER_A::LE => true,
                 }
@@ -56466,9 +56394,8 @@ pub mod aes {
             #[doc = r"Writes `variant` to the field"]
             #[inline(always)]
             pub fn variant(self, variant: KEY_ORDER_A) -> &'a mut W {
-                use crate::ToBits;
                 {
-                    self.bit(variant._bits())
+                    self.bit(variant.into())
                 }
             }
             #[doc = "Big Endian"]
@@ -56498,7 +56425,7 @@ pub mod aes {
                 self.w
             }
         }
-        #[doc = "Possible values of the field `input_order`"]
+        #[doc = "Input data order"]
         pub type INPUT_ORDER_A = KEY_ORDER_A;
         #[doc = "Reader of field `input_order`"]
         pub type INPUT_ORDER_R = crate::R<bool, KEY_ORDER_A>;
@@ -56510,9 +56437,8 @@ pub mod aes {
             #[doc = r"Writes `variant` to the field"]
             #[inline(always)]
             pub fn variant(self, variant: INPUT_ORDER_A) -> &'a mut W {
-                use crate::ToBits;
                 {
-                    self.bit(variant._bits())
+                    self.bit(variant.into())
                 }
             }
             #[doc = "Big Endian"]
@@ -56542,7 +56468,7 @@ pub mod aes {
                 self.w
             }
         }
-        #[doc = "Possible values of the field `output_order`"]
+        #[doc = "Output data order"]
         pub type OUTPUT_ORDER_A = KEY_ORDER_A;
         #[doc = "Reader of field `output_order`"]
         pub type OUTPUT_ORDER_R = crate::R<bool, KEY_ORDER_A>;
@@ -56554,9 +56480,8 @@ pub mod aes {
             #[doc = r"Writes `variant` to the field"]
             #[inline(always)]
             pub fn variant(self, variant: OUTPUT_ORDER_A) -> &'a mut W {
-                use crate::ToBits;
                 {
-                    self.bit(variant._bits())
+                    self.bit(variant.into())
                 }
             }
             #[doc = "Big Endian"]
@@ -56690,7 +56615,7 @@ pub mod aes {
                 0
             }
         }
-        #[doc = "Possible values of the field `endian`"]
+        #[doc = "Input data endian"]
         pub type ENDIAN_A = super::mode_ctl::KEY_ORDER_A;
         #[doc = "Reader of field `endian`"]
         pub type ENDIAN_R = crate::R<bool, super::mode_ctl::KEY_ORDER_A>;
@@ -56702,9 +56627,8 @@ pub mod aes {
             #[doc = r"Writes `variant` to the field"]
             #[inline(always)]
             pub fn variant(self, variant: ENDIAN_A) -> &'a mut W {
-                use crate::ToBits;
                 {
-                    self.bit(variant._bits())
+                    self.bit(variant.into())
                 }
             }
             #[doc = "Big Endian"]
@@ -56772,18 +56696,18 @@ pub mod aes {
                 0
             }
         }
-        #[doc = "Possible values of the field `finish`"]
+        #[doc = "AES operation finished status\n\nValue on reset: 0"]
         #[derive(Clone, Copy, Debug, PartialEq)]
         pub enum FINISH_A {
-            #[doc = "Operation not finished"]
+            #[doc = "0: Operation not finished"]
             NOT_FINISHED,
-            #[doc = "Operation finished"]
+            #[doc = "1: Operation finished"]
             FINISHED,
         }
-        impl crate::ToBits<bool> for FINISH_A {
+        impl From<FINISH_A> for bool {
             #[inline(always)]
-            fn _bits(&self) -> bool {
-                match *self {
+            fn from(variant: FINISH_A) -> Self {
+                match variant {
                     FINISH_A::NOT_FINISHED => false,
                     FINISH_A::FINISHED => true,
                 }
@@ -56819,9 +56743,8 @@ pub mod aes {
             #[doc = r"Writes `variant` to the field"]
             #[inline(always)]
             pub fn variant(self, variant: FINISH_A) -> &'a mut W {
-                use crate::ToBits;
                 {
-                    self.bit(variant._bits())
+                    self.bit(variant.into())
                 }
             }
             #[doc = "Operation not finished"]
@@ -57055,20 +56978,20 @@ pub mod aes {
                 0
             }
         }
-        #[doc = "Possible values of the field `tag_chk`"]
+        #[doc = "Tag check status\n\nValue on reset: 0"]
         #[derive(Clone, Copy, Debug, PartialEq)]
         pub enum TAG_CHK_A {
-            #[doc = "Check not finished"]
+            #[doc = "0: Check not finished"]
             BUSY,
-            #[doc = "Check failed"]
+            #[doc = "1: Check failed"]
             FAIL,
-            #[doc = "Check success"]
+            #[doc = "2: Check success"]
             SUCCESS,
         }
-        impl crate::ToBits<u8> for TAG_CHK_A {
+        impl From<TAG_CHK_A> for u8 {
             #[inline(always)]
-            fn _bits(&self) -> u8 {
-                match *self {
+            fn from(variant: TAG_CHK_A) -> Self {
+                match variant {
                     TAG_CHK_A::BUSY => 0,
                     TAG_CHK_A::FAIL => 1,
                     TAG_CHK_A::SUCCESS => 2,
@@ -57113,8 +57036,7 @@ pub mod aes {
             #[doc = r"Writes `variant` to the field"]
             #[inline(always)]
             pub fn variant(self, variant: TAG_CHK_A) -> &'a mut W {
-                use crate::ToBits;
-                unsafe { self.bits(variant._bits()) }
+                unsafe { self.bits(variant.into()) }
             }
             #[doc = "Check not finished"]
             #[inline(always)]
@@ -57176,18 +57098,18 @@ pub mod aes {
                 0
             }
         }
-        #[doc = "Possible values of the field `data_in_flag`"]
+        #[doc = "Data can be written to text_data or aad_data when this flag is set\n\nValue on reset: 0"]
         #[derive(Clone, Copy, Debug, PartialEq)]
         pub enum DATA_IN_FLAG_A {
-            #[doc = "Cannot input"]
+            #[doc = "0: Cannot input"]
             CANNOT_INPUT,
-            #[doc = "Can input"]
+            #[doc = "1: Can input"]
             CAN_INPUT,
         }
-        impl crate::ToBits<bool> for DATA_IN_FLAG_A {
+        impl From<DATA_IN_FLAG_A> for bool {
             #[inline(always)]
-            fn _bits(&self) -> bool {
-                match *self {
+            fn from(variant: DATA_IN_FLAG_A) -> Self {
+                match variant {
                     DATA_IN_FLAG_A::CANNOT_INPUT => false,
                     DATA_IN_FLAG_A::CAN_INPUT => true,
                 }
@@ -57223,9 +57145,8 @@ pub mod aes {
             #[doc = r"Writes `variant` to the field"]
             #[inline(always)]
             pub fn variant(self, variant: DATA_IN_FLAG_A) -> &'a mut W {
-                use crate::ToBits;
                 {
-                    self.bit(variant._bits())
+                    self.bit(variant.into())
                 }
             }
             #[doc = "Cannot input"]
@@ -57345,18 +57266,18 @@ pub mod aes {
                 0
             }
         }
-        #[doc = "Possible values of the field `en`"]
+        #[doc = "AES module enable\n\nValue on reset: 0"]
         #[derive(Clone, Copy, Debug, PartialEq)]
         pub enum EN_A {
-            #[doc = "Disable module"]
+            #[doc = "0: Disable module"]
             DISABLE,
-            #[doc = "Enable module"]
+            #[doc = "1: Enable module"]
             ENABLE,
         }
-        impl crate::ToBits<bool> for EN_A {
+        impl From<EN_A> for bool {
             #[inline(always)]
-            fn _bits(&self) -> bool {
-                match *self {
+            fn from(variant: EN_A) -> Self {
+                match variant {
                     EN_A::DISABLE => false,
                     EN_A::ENABLE => true,
                 }
@@ -57392,9 +57313,8 @@ pub mod aes {
             #[doc = r"Writes `variant` to the field"]
             #[inline(always)]
             pub fn variant(self, variant: EN_A) -> &'a mut W {
-                use crate::ToBits;
                 {
-                    self.bit(variant._bits())
+                    self.bit(variant.into())
                 }
             }
             #[doc = "Disable module"]
@@ -57462,18 +57382,18 @@ pub mod aes {
                 0
             }
         }
-        #[doc = "Possible values of the field `data_out_flag`"]
+        #[doc = "Data can be read from out_data when this flag is set\n\nValue on reset: 0"]
         #[derive(Clone, Copy, Debug, PartialEq)]
         pub enum DATA_OUT_FLAG_A {
-            #[doc = "Data cannot output"]
+            #[doc = "0: Data cannot output"]
             CANNOT_OUTPUT,
-            #[doc = "Data can output"]
+            #[doc = "1: Data can output"]
             CAN_OUTPUT,
         }
-        impl crate::ToBits<bool> for DATA_OUT_FLAG_A {
+        impl From<DATA_OUT_FLAG_A> for bool {
             #[inline(always)]
-            fn _bits(&self) -> bool {
-                match *self {
+            fn from(variant: DATA_OUT_FLAG_A) -> Self {
+                match variant {
                     DATA_OUT_FLAG_A::CANNOT_OUTPUT => false,
                     DATA_OUT_FLAG_A::CAN_OUTPUT => true,
                 }
@@ -57509,9 +57429,8 @@ pub mod aes {
             #[doc = r"Writes `variant` to the field"]
             #[inline(always)]
             pub fn variant(self, variant: DATA_OUT_FLAG_A) -> &'a mut W {
-                use crate::ToBits;
                 {
-                    self.bit(variant._bits())
+                    self.bit(variant.into())
                 }
             }
             #[doc = "Data cannot output"]
@@ -57579,7 +57498,7 @@ pub mod aes {
                 0
             }
         }
-        #[doc = "Possible values of the field `tag_in_flag`"]
+        #[doc = "GCM tag can be written to gcm_in_tag when this flag is set"]
         pub type TAG_IN_FLAG_A = super::data_in_flag::DATA_IN_FLAG_A;
         #[doc = "Reader of field `tag_in_flag`"]
         pub type TAG_IN_FLAG_R = crate::R<bool, super::data_in_flag::DATA_IN_FLAG_A>;
@@ -57591,9 +57510,8 @@ pub mod aes {
             #[doc = r"Writes `variant` to the field"]
             #[inline(always)]
             pub fn variant(self, variant: TAG_IN_FLAG_A) -> &'a mut W {
-                use crate::ToBits;
                 {
-                    self.bit(variant._bits())
+                    self.bit(variant.into())
                 }
             }
             #[doc = "Cannot input"]
@@ -58705,18 +58623,18 @@ pub mod rtc {
                 self.w
             }
         }
-        #[doc = "Possible values of the field `leap_year`"]
+        #[doc = "Is leap year. 1 is leap year, 0 is not leap year\n\nValue on reset: 0"]
         #[derive(Clone, Copy, Debug, PartialEq)]
         pub enum LEAP_YEAR_A {
-            #[doc = "0 is not leap year"]
+            #[doc = "0: 0 is not leap year"]
             NOT_LEAP,
-            #[doc = "1 is leap year"]
+            #[doc = "1: 1 is leap year"]
             LEAP,
         }
-        impl crate::ToBits<bool> for LEAP_YEAR_A {
+        impl From<LEAP_YEAR_A> for bool {
             #[inline(always)]
-            fn _bits(&self) -> bool {
-                match *self {
+            fn from(variant: LEAP_YEAR_A) -> Self {
+                match variant {
                     LEAP_YEAR_A::NOT_LEAP => false,
                     LEAP_YEAR_A::LEAP => true,
                 }
@@ -58752,9 +58670,8 @@ pub mod rtc {
             #[doc = r"Writes `variant` to the field"]
             #[inline(always)]
             pub fn variant(self, variant: LEAP_YEAR_A) -> &'a mut W {
-                use crate::ToBits;
                 {
-                    self.bit(variant._bits())
+                    self.bit(variant.into())
                 }
             }
             #[doc = "0 is not leap year"]
