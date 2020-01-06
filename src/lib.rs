@@ -1770,13 +1770,14 @@ pub mod gpiohs {
                 0
             }
         }
-        #[doc = "Reader of field `pin0`"]
-        pub type PIN0_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin0`"]
-        pub struct PIN0_W<'a> {
+        #[doc = "Reader of field `pin%s`"]
+        pub type PIN_R = crate::R<bool, bool>;
+        #[doc = "Write proxy for fields `pin(0-31)`"]
+        pub struct PIN_W<'a> {
             w: &'a mut W,
+            offset: usize,
         }
-        impl<'a> PIN0_W<'a> {
+        impl<'a> PIN_W<'a> {
             #[doc = r"Sets the field bit"]
             #[inline(always)]
             pub fn set_bit(self) -> &'a mut W {
@@ -1790,1076 +1791,409 @@ pub mod gpiohs {
             #[doc = r"Writes raw bits to the field"]
             #[inline(always)]
             pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !0x01) | ((value as u32) & 0x01);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin1`"]
-        pub type PIN1_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin1`"]
-        pub struct PIN1_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN1_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 1)) | (((value as u32) & 0x01) << 1);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin2`"]
-        pub type PIN2_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin2`"]
-        pub struct PIN2_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN2_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 2)) | (((value as u32) & 0x01) << 2);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin3`"]
-        pub type PIN3_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin3`"]
-        pub struct PIN3_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN3_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 3)) | (((value as u32) & 0x01) << 3);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin4`"]
-        pub type PIN4_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin4`"]
-        pub struct PIN4_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN4_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 4)) | (((value as u32) & 0x01) << 4);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin5`"]
-        pub type PIN5_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin5`"]
-        pub struct PIN5_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN5_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 5)) | (((value as u32) & 0x01) << 5);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin6`"]
-        pub type PIN6_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin6`"]
-        pub struct PIN6_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN6_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 6)) | (((value as u32) & 0x01) << 6);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin7`"]
-        pub type PIN7_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin7`"]
-        pub struct PIN7_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN7_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 7)) | (((value as u32) & 0x01) << 7);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin8`"]
-        pub type PIN8_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin8`"]
-        pub struct PIN8_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN8_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 8)) | (((value as u32) & 0x01) << 8);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin9`"]
-        pub type PIN9_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin9`"]
-        pub struct PIN9_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN9_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 9)) | (((value as u32) & 0x01) << 9);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin10`"]
-        pub type PIN10_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin10`"]
-        pub struct PIN10_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN10_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 10)) | (((value as u32) & 0x01) << 10);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin11`"]
-        pub type PIN11_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin11`"]
-        pub struct PIN11_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN11_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 11)) | (((value as u32) & 0x01) << 11);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin12`"]
-        pub type PIN12_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin12`"]
-        pub struct PIN12_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN12_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 12)) | (((value as u32) & 0x01) << 12);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin13`"]
-        pub type PIN13_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin13`"]
-        pub struct PIN13_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN13_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 13)) | (((value as u32) & 0x01) << 13);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin14`"]
-        pub type PIN14_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin14`"]
-        pub struct PIN14_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN14_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 14)) | (((value as u32) & 0x01) << 14);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin15`"]
-        pub type PIN15_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin15`"]
-        pub struct PIN15_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN15_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 15)) | (((value as u32) & 0x01) << 15);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin16`"]
-        pub type PIN16_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin16`"]
-        pub struct PIN16_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN16_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 16)) | (((value as u32) & 0x01) << 16);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin17`"]
-        pub type PIN17_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin17`"]
-        pub struct PIN17_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN17_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 17)) | (((value as u32) & 0x01) << 17);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin18`"]
-        pub type PIN18_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin18`"]
-        pub struct PIN18_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN18_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 18)) | (((value as u32) & 0x01) << 18);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin19`"]
-        pub type PIN19_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin19`"]
-        pub struct PIN19_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN19_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 19)) | (((value as u32) & 0x01) << 19);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin20`"]
-        pub type PIN20_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin20`"]
-        pub struct PIN20_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN20_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 20)) | (((value as u32) & 0x01) << 20);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin21`"]
-        pub type PIN21_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin21`"]
-        pub struct PIN21_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN21_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 21)) | (((value as u32) & 0x01) << 21);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin22`"]
-        pub type PIN22_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin22`"]
-        pub struct PIN22_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN22_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 22)) | (((value as u32) & 0x01) << 22);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin23`"]
-        pub type PIN23_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin23`"]
-        pub struct PIN23_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN23_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 23)) | (((value as u32) & 0x01) << 23);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin24`"]
-        pub type PIN24_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin24`"]
-        pub struct PIN24_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN24_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 24)) | (((value as u32) & 0x01) << 24);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin25`"]
-        pub type PIN25_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin25`"]
-        pub struct PIN25_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN25_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 25)) | (((value as u32) & 0x01) << 25);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin26`"]
-        pub type PIN26_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin26`"]
-        pub struct PIN26_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN26_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 26)) | (((value as u32) & 0x01) << 26);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin27`"]
-        pub type PIN27_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin27`"]
-        pub struct PIN27_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN27_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 27)) | (((value as u32) & 0x01) << 27);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin28`"]
-        pub type PIN28_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin28`"]
-        pub struct PIN28_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN28_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 28)) | (((value as u32) & 0x01) << 28);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin29`"]
-        pub type PIN29_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin29`"]
-        pub struct PIN29_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN29_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 29)) | (((value as u32) & 0x01) << 29);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin30`"]
-        pub type PIN30_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin30`"]
-        pub struct PIN30_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN30_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 30)) | (((value as u32) & 0x01) << 30);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin31`"]
-        pub type PIN31_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin31`"]
-        pub struct PIN31_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN31_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 31)) | (((value as u32) & 0x01) << 31);
+                self.w.bits = (self.w.bits & !(0x01 << self.offset))
+                    | (((value as u32) & 0x01) << self.offset);
                 self.w
             }
         }
         impl R {
+            #[doc = ""]
+            #[inline(always)]
+            pub unsafe fn pin(&self, n: usize) -> PIN_R {
+                PIN_R::new(((self.bits >> n) & 0x01) != 0)
+            }
             #[doc = "Bit 0"]
             #[inline(always)]
-            pub fn pin0(&self) -> PIN0_R {
-                PIN0_R::new((self.bits & 0x01) != 0)
+            pub fn pin0(&self) -> PIN_R {
+                PIN_R::new((self.bits & 0x01) != 0)
             }
             #[doc = "Bit 1"]
             #[inline(always)]
-            pub fn pin1(&self) -> PIN1_R {
-                PIN1_R::new(((self.bits >> 1) & 0x01) != 0)
+            pub fn pin1(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 1) & 0x01) != 0)
             }
             #[doc = "Bit 2"]
             #[inline(always)]
-            pub fn pin2(&self) -> PIN2_R {
-                PIN2_R::new(((self.bits >> 2) & 0x01) != 0)
+            pub fn pin2(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 2) & 0x01) != 0)
             }
             #[doc = "Bit 3"]
             #[inline(always)]
-            pub fn pin3(&self) -> PIN3_R {
-                PIN3_R::new(((self.bits >> 3) & 0x01) != 0)
+            pub fn pin3(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 3) & 0x01) != 0)
             }
             #[doc = "Bit 4"]
             #[inline(always)]
-            pub fn pin4(&self) -> PIN4_R {
-                PIN4_R::new(((self.bits >> 4) & 0x01) != 0)
+            pub fn pin4(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 4) & 0x01) != 0)
             }
             #[doc = "Bit 5"]
             #[inline(always)]
-            pub fn pin5(&self) -> PIN5_R {
-                PIN5_R::new(((self.bits >> 5) & 0x01) != 0)
+            pub fn pin5(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 5) & 0x01) != 0)
             }
             #[doc = "Bit 6"]
             #[inline(always)]
-            pub fn pin6(&self) -> PIN6_R {
-                PIN6_R::new(((self.bits >> 6) & 0x01) != 0)
+            pub fn pin6(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 6) & 0x01) != 0)
             }
             #[doc = "Bit 7"]
             #[inline(always)]
-            pub fn pin7(&self) -> PIN7_R {
-                PIN7_R::new(((self.bits >> 7) & 0x01) != 0)
+            pub fn pin7(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 7) & 0x01) != 0)
             }
             #[doc = "Bit 8"]
             #[inline(always)]
-            pub fn pin8(&self) -> PIN8_R {
-                PIN8_R::new(((self.bits >> 8) & 0x01) != 0)
+            pub fn pin8(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 8) & 0x01) != 0)
             }
             #[doc = "Bit 9"]
             #[inline(always)]
-            pub fn pin9(&self) -> PIN9_R {
-                PIN9_R::new(((self.bits >> 9) & 0x01) != 0)
+            pub fn pin9(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 9) & 0x01) != 0)
             }
             #[doc = "Bit 10"]
             #[inline(always)]
-            pub fn pin10(&self) -> PIN10_R {
-                PIN10_R::new(((self.bits >> 10) & 0x01) != 0)
+            pub fn pin10(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 10) & 0x01) != 0)
             }
             #[doc = "Bit 11"]
             #[inline(always)]
-            pub fn pin11(&self) -> PIN11_R {
-                PIN11_R::new(((self.bits >> 11) & 0x01) != 0)
+            pub fn pin11(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 11) & 0x01) != 0)
             }
             #[doc = "Bit 12"]
             #[inline(always)]
-            pub fn pin12(&self) -> PIN12_R {
-                PIN12_R::new(((self.bits >> 12) & 0x01) != 0)
+            pub fn pin12(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 12) & 0x01) != 0)
             }
             #[doc = "Bit 13"]
             #[inline(always)]
-            pub fn pin13(&self) -> PIN13_R {
-                PIN13_R::new(((self.bits >> 13) & 0x01) != 0)
+            pub fn pin13(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 13) & 0x01) != 0)
             }
             #[doc = "Bit 14"]
             #[inline(always)]
-            pub fn pin14(&self) -> PIN14_R {
-                PIN14_R::new(((self.bits >> 14) & 0x01) != 0)
+            pub fn pin14(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 14) & 0x01) != 0)
             }
             #[doc = "Bit 15"]
             #[inline(always)]
-            pub fn pin15(&self) -> PIN15_R {
-                PIN15_R::new(((self.bits >> 15) & 0x01) != 0)
+            pub fn pin15(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 15) & 0x01) != 0)
             }
             #[doc = "Bit 16"]
             #[inline(always)]
-            pub fn pin16(&self) -> PIN16_R {
-                PIN16_R::new(((self.bits >> 16) & 0x01) != 0)
+            pub fn pin16(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 16) & 0x01) != 0)
             }
             #[doc = "Bit 17"]
             #[inline(always)]
-            pub fn pin17(&self) -> PIN17_R {
-                PIN17_R::new(((self.bits >> 17) & 0x01) != 0)
+            pub fn pin17(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 17) & 0x01) != 0)
             }
             #[doc = "Bit 18"]
             #[inline(always)]
-            pub fn pin18(&self) -> PIN18_R {
-                PIN18_R::new(((self.bits >> 18) & 0x01) != 0)
+            pub fn pin18(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 18) & 0x01) != 0)
             }
             #[doc = "Bit 19"]
             #[inline(always)]
-            pub fn pin19(&self) -> PIN19_R {
-                PIN19_R::new(((self.bits >> 19) & 0x01) != 0)
+            pub fn pin19(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 19) & 0x01) != 0)
             }
             #[doc = "Bit 20"]
             #[inline(always)]
-            pub fn pin20(&self) -> PIN20_R {
-                PIN20_R::new(((self.bits >> 20) & 0x01) != 0)
+            pub fn pin20(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 20) & 0x01) != 0)
             }
             #[doc = "Bit 21"]
             #[inline(always)]
-            pub fn pin21(&self) -> PIN21_R {
-                PIN21_R::new(((self.bits >> 21) & 0x01) != 0)
+            pub fn pin21(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 21) & 0x01) != 0)
             }
             #[doc = "Bit 22"]
             #[inline(always)]
-            pub fn pin22(&self) -> PIN22_R {
-                PIN22_R::new(((self.bits >> 22) & 0x01) != 0)
+            pub fn pin22(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 22) & 0x01) != 0)
             }
             #[doc = "Bit 23"]
             #[inline(always)]
-            pub fn pin23(&self) -> PIN23_R {
-                PIN23_R::new(((self.bits >> 23) & 0x01) != 0)
+            pub fn pin23(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 23) & 0x01) != 0)
             }
             #[doc = "Bit 24"]
             #[inline(always)]
-            pub fn pin24(&self) -> PIN24_R {
-                PIN24_R::new(((self.bits >> 24) & 0x01) != 0)
+            pub fn pin24(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 24) & 0x01) != 0)
             }
             #[doc = "Bit 25"]
             #[inline(always)]
-            pub fn pin25(&self) -> PIN25_R {
-                PIN25_R::new(((self.bits >> 25) & 0x01) != 0)
+            pub fn pin25(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 25) & 0x01) != 0)
             }
             #[doc = "Bit 26"]
             #[inline(always)]
-            pub fn pin26(&self) -> PIN26_R {
-                PIN26_R::new(((self.bits >> 26) & 0x01) != 0)
+            pub fn pin26(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 26) & 0x01) != 0)
             }
             #[doc = "Bit 27"]
             #[inline(always)]
-            pub fn pin27(&self) -> PIN27_R {
-                PIN27_R::new(((self.bits >> 27) & 0x01) != 0)
+            pub fn pin27(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 27) & 0x01) != 0)
             }
             #[doc = "Bit 28"]
             #[inline(always)]
-            pub fn pin28(&self) -> PIN28_R {
-                PIN28_R::new(((self.bits >> 28) & 0x01) != 0)
+            pub fn pin28(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 28) & 0x01) != 0)
             }
             #[doc = "Bit 29"]
             #[inline(always)]
-            pub fn pin29(&self) -> PIN29_R {
-                PIN29_R::new(((self.bits >> 29) & 0x01) != 0)
+            pub fn pin29(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 29) & 0x01) != 0)
             }
             #[doc = "Bit 30"]
             #[inline(always)]
-            pub fn pin30(&self) -> PIN30_R {
-                PIN30_R::new(((self.bits >> 30) & 0x01) != 0)
+            pub fn pin30(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 30) & 0x01) != 0)
             }
             #[doc = "Bit 31"]
             #[inline(always)]
-            pub fn pin31(&self) -> PIN31_R {
-                PIN31_R::new(((self.bits >> 31) & 0x01) != 0)
+            pub fn pin31(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 31) & 0x01) != 0)
             }
         }
         impl W {
+            #[doc = ""]
+            #[inline(always)]
+            pub unsafe fn pin(&mut self, n: usize) -> PIN_W {
+                PIN_W { w: self, offset: n }
+            }
             #[doc = "Bit 0"]
             #[inline(always)]
-            pub fn pin0(&mut self) -> PIN0_W {
-                PIN0_W { w: self }
+            pub fn pin0(&mut self) -> PIN_W {
+                PIN_W { w: self, offset: 0 }
             }
             #[doc = "Bit 1"]
             #[inline(always)]
-            pub fn pin1(&mut self) -> PIN1_W {
-                PIN1_W { w: self }
+            pub fn pin1(&mut self) -> PIN_W {
+                PIN_W { w: self, offset: 1 }
             }
             #[doc = "Bit 2"]
             #[inline(always)]
-            pub fn pin2(&mut self) -> PIN2_W {
-                PIN2_W { w: self }
+            pub fn pin2(&mut self) -> PIN_W {
+                PIN_W { w: self, offset: 2 }
             }
             #[doc = "Bit 3"]
             #[inline(always)]
-            pub fn pin3(&mut self) -> PIN3_W {
-                PIN3_W { w: self }
+            pub fn pin3(&mut self) -> PIN_W {
+                PIN_W { w: self, offset: 3 }
             }
             #[doc = "Bit 4"]
             #[inline(always)]
-            pub fn pin4(&mut self) -> PIN4_W {
-                PIN4_W { w: self }
+            pub fn pin4(&mut self) -> PIN_W {
+                PIN_W { w: self, offset: 4 }
             }
             #[doc = "Bit 5"]
             #[inline(always)]
-            pub fn pin5(&mut self) -> PIN5_W {
-                PIN5_W { w: self }
+            pub fn pin5(&mut self) -> PIN_W {
+                PIN_W { w: self, offset: 5 }
             }
             #[doc = "Bit 6"]
             #[inline(always)]
-            pub fn pin6(&mut self) -> PIN6_W {
-                PIN6_W { w: self }
+            pub fn pin6(&mut self) -> PIN_W {
+                PIN_W { w: self, offset: 6 }
             }
             #[doc = "Bit 7"]
             #[inline(always)]
-            pub fn pin7(&mut self) -> PIN7_W {
-                PIN7_W { w: self }
+            pub fn pin7(&mut self) -> PIN_W {
+                PIN_W { w: self, offset: 7 }
             }
             #[doc = "Bit 8"]
             #[inline(always)]
-            pub fn pin8(&mut self) -> PIN8_W {
-                PIN8_W { w: self }
+            pub fn pin8(&mut self) -> PIN_W {
+                PIN_W { w: self, offset: 8 }
             }
             #[doc = "Bit 9"]
             #[inline(always)]
-            pub fn pin9(&mut self) -> PIN9_W {
-                PIN9_W { w: self }
+            pub fn pin9(&mut self) -> PIN_W {
+                PIN_W { w: self, offset: 9 }
             }
             #[doc = "Bit 10"]
             #[inline(always)]
-            pub fn pin10(&mut self) -> PIN10_W {
-                PIN10_W { w: self }
+            pub fn pin10(&mut self) -> PIN_W {
+                PIN_W {
+                    w: self,
+                    offset: 10,
+                }
             }
             #[doc = "Bit 11"]
             #[inline(always)]
-            pub fn pin11(&mut self) -> PIN11_W {
-                PIN11_W { w: self }
+            pub fn pin11(&mut self) -> PIN_W {
+                PIN_W {
+                    w: self,
+                    offset: 11,
+                }
             }
             #[doc = "Bit 12"]
             #[inline(always)]
-            pub fn pin12(&mut self) -> PIN12_W {
-                PIN12_W { w: self }
+            pub fn pin12(&mut self) -> PIN_W {
+                PIN_W {
+                    w: self,
+                    offset: 12,
+                }
             }
             #[doc = "Bit 13"]
             #[inline(always)]
-            pub fn pin13(&mut self) -> PIN13_W {
-                PIN13_W { w: self }
+            pub fn pin13(&mut self) -> PIN_W {
+                PIN_W {
+                    w: self,
+                    offset: 13,
+                }
             }
             #[doc = "Bit 14"]
             #[inline(always)]
-            pub fn pin14(&mut self) -> PIN14_W {
-                PIN14_W { w: self }
+            pub fn pin14(&mut self) -> PIN_W {
+                PIN_W {
+                    w: self,
+                    offset: 14,
+                }
             }
             #[doc = "Bit 15"]
             #[inline(always)]
-            pub fn pin15(&mut self) -> PIN15_W {
-                PIN15_W { w: self }
+            pub fn pin15(&mut self) -> PIN_W {
+                PIN_W {
+                    w: self,
+                    offset: 15,
+                }
             }
             #[doc = "Bit 16"]
             #[inline(always)]
-            pub fn pin16(&mut self) -> PIN16_W {
-                PIN16_W { w: self }
+            pub fn pin16(&mut self) -> PIN_W {
+                PIN_W {
+                    w: self,
+                    offset: 16,
+                }
             }
             #[doc = "Bit 17"]
             #[inline(always)]
-            pub fn pin17(&mut self) -> PIN17_W {
-                PIN17_W { w: self }
+            pub fn pin17(&mut self) -> PIN_W {
+                PIN_W {
+                    w: self,
+                    offset: 17,
+                }
             }
             #[doc = "Bit 18"]
             #[inline(always)]
-            pub fn pin18(&mut self) -> PIN18_W {
-                PIN18_W { w: self }
+            pub fn pin18(&mut self) -> PIN_W {
+                PIN_W {
+                    w: self,
+                    offset: 18,
+                }
             }
             #[doc = "Bit 19"]
             #[inline(always)]
-            pub fn pin19(&mut self) -> PIN19_W {
-                PIN19_W { w: self }
+            pub fn pin19(&mut self) -> PIN_W {
+                PIN_W {
+                    w: self,
+                    offset: 19,
+                }
             }
             #[doc = "Bit 20"]
             #[inline(always)]
-            pub fn pin20(&mut self) -> PIN20_W {
-                PIN20_W { w: self }
+            pub fn pin20(&mut self) -> PIN_W {
+                PIN_W {
+                    w: self,
+                    offset: 20,
+                }
             }
             #[doc = "Bit 21"]
             #[inline(always)]
-            pub fn pin21(&mut self) -> PIN21_W {
-                PIN21_W { w: self }
+            pub fn pin21(&mut self) -> PIN_W {
+                PIN_W {
+                    w: self,
+                    offset: 21,
+                }
             }
             #[doc = "Bit 22"]
             #[inline(always)]
-            pub fn pin22(&mut self) -> PIN22_W {
-                PIN22_W { w: self }
+            pub fn pin22(&mut self) -> PIN_W {
+                PIN_W {
+                    w: self,
+                    offset: 22,
+                }
             }
             #[doc = "Bit 23"]
             #[inline(always)]
-            pub fn pin23(&mut self) -> PIN23_W {
-                PIN23_W { w: self }
+            pub fn pin23(&mut self) -> PIN_W {
+                PIN_W {
+                    w: self,
+                    offset: 23,
+                }
             }
             #[doc = "Bit 24"]
             #[inline(always)]
-            pub fn pin24(&mut self) -> PIN24_W {
-                PIN24_W { w: self }
+            pub fn pin24(&mut self) -> PIN_W {
+                PIN_W {
+                    w: self,
+                    offset: 24,
+                }
             }
             #[doc = "Bit 25"]
             #[inline(always)]
-            pub fn pin25(&mut self) -> PIN25_W {
-                PIN25_W { w: self }
+            pub fn pin25(&mut self) -> PIN_W {
+                PIN_W {
+                    w: self,
+                    offset: 25,
+                }
             }
             #[doc = "Bit 26"]
             #[inline(always)]
-            pub fn pin26(&mut self) -> PIN26_W {
-                PIN26_W { w: self }
+            pub fn pin26(&mut self) -> PIN_W {
+                PIN_W {
+                    w: self,
+                    offset: 26,
+                }
             }
             #[doc = "Bit 27"]
             #[inline(always)]
-            pub fn pin27(&mut self) -> PIN27_W {
-                PIN27_W { w: self }
+            pub fn pin27(&mut self) -> PIN_W {
+                PIN_W {
+                    w: self,
+                    offset: 27,
+                }
             }
             #[doc = "Bit 28"]
             #[inline(always)]
-            pub fn pin28(&mut self) -> PIN28_W {
-                PIN28_W { w: self }
+            pub fn pin28(&mut self) -> PIN_W {
+                PIN_W {
+                    w: self,
+                    offset: 28,
+                }
             }
             #[doc = "Bit 29"]
             #[inline(always)]
-            pub fn pin29(&mut self) -> PIN29_W {
-                PIN29_W { w: self }
+            pub fn pin29(&mut self) -> PIN_W {
+                PIN_W {
+                    w: self,
+                    offset: 29,
+                }
             }
             #[doc = "Bit 30"]
             #[inline(always)]
-            pub fn pin30(&mut self) -> PIN30_W {
-                PIN30_W { w: self }
+            pub fn pin30(&mut self) -> PIN_W {
+                PIN_W {
+                    w: self,
+                    offset: 30,
+                }
             }
             #[doc = "Bit 31"]
             #[inline(always)]
-            pub fn pin31(&mut self) -> PIN31_W {
-                PIN31_W { w: self }
+            pub fn pin31(&mut self) -> PIN_W {
+                PIN_W {
+                    w: self,
+                    offset: 31,
+                }
             }
         }
     }
@@ -2886,13 +2220,14 @@ pub mod gpiohs {
                 0
             }
         }
-        #[doc = "Reader of field `pin0`"]
-        pub type PIN0_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin0`"]
-        pub struct PIN0_W<'a> {
+        #[doc = "Reader of field `pin%s`"]
+        pub type PIN_R = crate::R<bool, bool>;
+        #[doc = "Write proxy for fields `pin(0-31)`"]
+        pub struct PIN_W<'a> {
             w: &'a mut W,
+            offset: usize,
         }
-        impl<'a> PIN0_W<'a> {
+        impl<'a> PIN_W<'a> {
             #[doc = r"Sets the field bit"]
             #[inline(always)]
             pub fn set_bit(self) -> &'a mut W {
@@ -2906,1076 +2241,409 @@ pub mod gpiohs {
             #[doc = r"Writes raw bits to the field"]
             #[inline(always)]
             pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !0x01) | ((value as u32) & 0x01);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin1`"]
-        pub type PIN1_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin1`"]
-        pub struct PIN1_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN1_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 1)) | (((value as u32) & 0x01) << 1);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin2`"]
-        pub type PIN2_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin2`"]
-        pub struct PIN2_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN2_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 2)) | (((value as u32) & 0x01) << 2);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin3`"]
-        pub type PIN3_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin3`"]
-        pub struct PIN3_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN3_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 3)) | (((value as u32) & 0x01) << 3);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin4`"]
-        pub type PIN4_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin4`"]
-        pub struct PIN4_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN4_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 4)) | (((value as u32) & 0x01) << 4);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin5`"]
-        pub type PIN5_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin5`"]
-        pub struct PIN5_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN5_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 5)) | (((value as u32) & 0x01) << 5);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin6`"]
-        pub type PIN6_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin6`"]
-        pub struct PIN6_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN6_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 6)) | (((value as u32) & 0x01) << 6);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin7`"]
-        pub type PIN7_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin7`"]
-        pub struct PIN7_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN7_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 7)) | (((value as u32) & 0x01) << 7);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin8`"]
-        pub type PIN8_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin8`"]
-        pub struct PIN8_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN8_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 8)) | (((value as u32) & 0x01) << 8);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin9`"]
-        pub type PIN9_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin9`"]
-        pub struct PIN9_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN9_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 9)) | (((value as u32) & 0x01) << 9);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin10`"]
-        pub type PIN10_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin10`"]
-        pub struct PIN10_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN10_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 10)) | (((value as u32) & 0x01) << 10);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin11`"]
-        pub type PIN11_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin11`"]
-        pub struct PIN11_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN11_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 11)) | (((value as u32) & 0x01) << 11);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin12`"]
-        pub type PIN12_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin12`"]
-        pub struct PIN12_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN12_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 12)) | (((value as u32) & 0x01) << 12);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin13`"]
-        pub type PIN13_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin13`"]
-        pub struct PIN13_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN13_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 13)) | (((value as u32) & 0x01) << 13);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin14`"]
-        pub type PIN14_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin14`"]
-        pub struct PIN14_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN14_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 14)) | (((value as u32) & 0x01) << 14);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin15`"]
-        pub type PIN15_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin15`"]
-        pub struct PIN15_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN15_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 15)) | (((value as u32) & 0x01) << 15);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin16`"]
-        pub type PIN16_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin16`"]
-        pub struct PIN16_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN16_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 16)) | (((value as u32) & 0x01) << 16);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin17`"]
-        pub type PIN17_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin17`"]
-        pub struct PIN17_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN17_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 17)) | (((value as u32) & 0x01) << 17);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin18`"]
-        pub type PIN18_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin18`"]
-        pub struct PIN18_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN18_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 18)) | (((value as u32) & 0x01) << 18);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin19`"]
-        pub type PIN19_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin19`"]
-        pub struct PIN19_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN19_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 19)) | (((value as u32) & 0x01) << 19);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin20`"]
-        pub type PIN20_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin20`"]
-        pub struct PIN20_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN20_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 20)) | (((value as u32) & 0x01) << 20);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin21`"]
-        pub type PIN21_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin21`"]
-        pub struct PIN21_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN21_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 21)) | (((value as u32) & 0x01) << 21);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin22`"]
-        pub type PIN22_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin22`"]
-        pub struct PIN22_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN22_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 22)) | (((value as u32) & 0x01) << 22);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin23`"]
-        pub type PIN23_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin23`"]
-        pub struct PIN23_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN23_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 23)) | (((value as u32) & 0x01) << 23);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin24`"]
-        pub type PIN24_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin24`"]
-        pub struct PIN24_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN24_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 24)) | (((value as u32) & 0x01) << 24);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin25`"]
-        pub type PIN25_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin25`"]
-        pub struct PIN25_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN25_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 25)) | (((value as u32) & 0x01) << 25);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin26`"]
-        pub type PIN26_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin26`"]
-        pub struct PIN26_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN26_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 26)) | (((value as u32) & 0x01) << 26);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin27`"]
-        pub type PIN27_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin27`"]
-        pub struct PIN27_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN27_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 27)) | (((value as u32) & 0x01) << 27);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin28`"]
-        pub type PIN28_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin28`"]
-        pub struct PIN28_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN28_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 28)) | (((value as u32) & 0x01) << 28);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin29`"]
-        pub type PIN29_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin29`"]
-        pub struct PIN29_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN29_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 29)) | (((value as u32) & 0x01) << 29);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin30`"]
-        pub type PIN30_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin30`"]
-        pub struct PIN30_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN30_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 30)) | (((value as u32) & 0x01) << 30);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin31`"]
-        pub type PIN31_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin31`"]
-        pub struct PIN31_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN31_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 31)) | (((value as u32) & 0x01) << 31);
+                self.w.bits = (self.w.bits & !(0x01 << self.offset))
+                    | (((value as u32) & 0x01) << self.offset);
                 self.w
             }
         }
         impl R {
+            #[doc = ""]
+            #[inline(always)]
+            pub unsafe fn pin(&self, n: usize) -> PIN_R {
+                PIN_R::new(((self.bits >> n) & 0x01) != 0)
+            }
             #[doc = "Bit 0"]
             #[inline(always)]
-            pub fn pin0(&self) -> PIN0_R {
-                PIN0_R::new((self.bits & 0x01) != 0)
+            pub fn pin0(&self) -> PIN_R {
+                PIN_R::new((self.bits & 0x01) != 0)
             }
             #[doc = "Bit 1"]
             #[inline(always)]
-            pub fn pin1(&self) -> PIN1_R {
-                PIN1_R::new(((self.bits >> 1) & 0x01) != 0)
+            pub fn pin1(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 1) & 0x01) != 0)
             }
             #[doc = "Bit 2"]
             #[inline(always)]
-            pub fn pin2(&self) -> PIN2_R {
-                PIN2_R::new(((self.bits >> 2) & 0x01) != 0)
+            pub fn pin2(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 2) & 0x01) != 0)
             }
             #[doc = "Bit 3"]
             #[inline(always)]
-            pub fn pin3(&self) -> PIN3_R {
-                PIN3_R::new(((self.bits >> 3) & 0x01) != 0)
+            pub fn pin3(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 3) & 0x01) != 0)
             }
             #[doc = "Bit 4"]
             #[inline(always)]
-            pub fn pin4(&self) -> PIN4_R {
-                PIN4_R::new(((self.bits >> 4) & 0x01) != 0)
+            pub fn pin4(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 4) & 0x01) != 0)
             }
             #[doc = "Bit 5"]
             #[inline(always)]
-            pub fn pin5(&self) -> PIN5_R {
-                PIN5_R::new(((self.bits >> 5) & 0x01) != 0)
+            pub fn pin5(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 5) & 0x01) != 0)
             }
             #[doc = "Bit 6"]
             #[inline(always)]
-            pub fn pin6(&self) -> PIN6_R {
-                PIN6_R::new(((self.bits >> 6) & 0x01) != 0)
+            pub fn pin6(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 6) & 0x01) != 0)
             }
             #[doc = "Bit 7"]
             #[inline(always)]
-            pub fn pin7(&self) -> PIN7_R {
-                PIN7_R::new(((self.bits >> 7) & 0x01) != 0)
+            pub fn pin7(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 7) & 0x01) != 0)
             }
             #[doc = "Bit 8"]
             #[inline(always)]
-            pub fn pin8(&self) -> PIN8_R {
-                PIN8_R::new(((self.bits >> 8) & 0x01) != 0)
+            pub fn pin8(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 8) & 0x01) != 0)
             }
             #[doc = "Bit 9"]
             #[inline(always)]
-            pub fn pin9(&self) -> PIN9_R {
-                PIN9_R::new(((self.bits >> 9) & 0x01) != 0)
+            pub fn pin9(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 9) & 0x01) != 0)
             }
             #[doc = "Bit 10"]
             #[inline(always)]
-            pub fn pin10(&self) -> PIN10_R {
-                PIN10_R::new(((self.bits >> 10) & 0x01) != 0)
+            pub fn pin10(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 10) & 0x01) != 0)
             }
             #[doc = "Bit 11"]
             #[inline(always)]
-            pub fn pin11(&self) -> PIN11_R {
-                PIN11_R::new(((self.bits >> 11) & 0x01) != 0)
+            pub fn pin11(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 11) & 0x01) != 0)
             }
             #[doc = "Bit 12"]
             #[inline(always)]
-            pub fn pin12(&self) -> PIN12_R {
-                PIN12_R::new(((self.bits >> 12) & 0x01) != 0)
+            pub fn pin12(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 12) & 0x01) != 0)
             }
             #[doc = "Bit 13"]
             #[inline(always)]
-            pub fn pin13(&self) -> PIN13_R {
-                PIN13_R::new(((self.bits >> 13) & 0x01) != 0)
+            pub fn pin13(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 13) & 0x01) != 0)
             }
             #[doc = "Bit 14"]
             #[inline(always)]
-            pub fn pin14(&self) -> PIN14_R {
-                PIN14_R::new(((self.bits >> 14) & 0x01) != 0)
+            pub fn pin14(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 14) & 0x01) != 0)
             }
             #[doc = "Bit 15"]
             #[inline(always)]
-            pub fn pin15(&self) -> PIN15_R {
-                PIN15_R::new(((self.bits >> 15) & 0x01) != 0)
+            pub fn pin15(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 15) & 0x01) != 0)
             }
             #[doc = "Bit 16"]
             #[inline(always)]
-            pub fn pin16(&self) -> PIN16_R {
-                PIN16_R::new(((self.bits >> 16) & 0x01) != 0)
+            pub fn pin16(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 16) & 0x01) != 0)
             }
             #[doc = "Bit 17"]
             #[inline(always)]
-            pub fn pin17(&self) -> PIN17_R {
-                PIN17_R::new(((self.bits >> 17) & 0x01) != 0)
+            pub fn pin17(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 17) & 0x01) != 0)
             }
             #[doc = "Bit 18"]
             #[inline(always)]
-            pub fn pin18(&self) -> PIN18_R {
-                PIN18_R::new(((self.bits >> 18) & 0x01) != 0)
+            pub fn pin18(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 18) & 0x01) != 0)
             }
             #[doc = "Bit 19"]
             #[inline(always)]
-            pub fn pin19(&self) -> PIN19_R {
-                PIN19_R::new(((self.bits >> 19) & 0x01) != 0)
+            pub fn pin19(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 19) & 0x01) != 0)
             }
             #[doc = "Bit 20"]
             #[inline(always)]
-            pub fn pin20(&self) -> PIN20_R {
-                PIN20_R::new(((self.bits >> 20) & 0x01) != 0)
+            pub fn pin20(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 20) & 0x01) != 0)
             }
             #[doc = "Bit 21"]
             #[inline(always)]
-            pub fn pin21(&self) -> PIN21_R {
-                PIN21_R::new(((self.bits >> 21) & 0x01) != 0)
+            pub fn pin21(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 21) & 0x01) != 0)
             }
             #[doc = "Bit 22"]
             #[inline(always)]
-            pub fn pin22(&self) -> PIN22_R {
-                PIN22_R::new(((self.bits >> 22) & 0x01) != 0)
+            pub fn pin22(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 22) & 0x01) != 0)
             }
             #[doc = "Bit 23"]
             #[inline(always)]
-            pub fn pin23(&self) -> PIN23_R {
-                PIN23_R::new(((self.bits >> 23) & 0x01) != 0)
+            pub fn pin23(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 23) & 0x01) != 0)
             }
             #[doc = "Bit 24"]
             #[inline(always)]
-            pub fn pin24(&self) -> PIN24_R {
-                PIN24_R::new(((self.bits >> 24) & 0x01) != 0)
+            pub fn pin24(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 24) & 0x01) != 0)
             }
             #[doc = "Bit 25"]
             #[inline(always)]
-            pub fn pin25(&self) -> PIN25_R {
-                PIN25_R::new(((self.bits >> 25) & 0x01) != 0)
+            pub fn pin25(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 25) & 0x01) != 0)
             }
             #[doc = "Bit 26"]
             #[inline(always)]
-            pub fn pin26(&self) -> PIN26_R {
-                PIN26_R::new(((self.bits >> 26) & 0x01) != 0)
+            pub fn pin26(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 26) & 0x01) != 0)
             }
             #[doc = "Bit 27"]
             #[inline(always)]
-            pub fn pin27(&self) -> PIN27_R {
-                PIN27_R::new(((self.bits >> 27) & 0x01) != 0)
+            pub fn pin27(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 27) & 0x01) != 0)
             }
             #[doc = "Bit 28"]
             #[inline(always)]
-            pub fn pin28(&self) -> PIN28_R {
-                PIN28_R::new(((self.bits >> 28) & 0x01) != 0)
+            pub fn pin28(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 28) & 0x01) != 0)
             }
             #[doc = "Bit 29"]
             #[inline(always)]
-            pub fn pin29(&self) -> PIN29_R {
-                PIN29_R::new(((self.bits >> 29) & 0x01) != 0)
+            pub fn pin29(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 29) & 0x01) != 0)
             }
             #[doc = "Bit 30"]
             #[inline(always)]
-            pub fn pin30(&self) -> PIN30_R {
-                PIN30_R::new(((self.bits >> 30) & 0x01) != 0)
+            pub fn pin30(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 30) & 0x01) != 0)
             }
             #[doc = "Bit 31"]
             #[inline(always)]
-            pub fn pin31(&self) -> PIN31_R {
-                PIN31_R::new(((self.bits >> 31) & 0x01) != 0)
+            pub fn pin31(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 31) & 0x01) != 0)
             }
         }
         impl W {
+            #[doc = ""]
+            #[inline(always)]
+            pub unsafe fn pin(&mut self, n: usize) -> PIN_W {
+                PIN_W { w: self, offset: n }
+            }
             #[doc = "Bit 0"]
             #[inline(always)]
-            pub fn pin0(&mut self) -> PIN0_W {
-                PIN0_W { w: self }
+            pub fn pin0(&mut self) -> PIN_W {
+                PIN_W { w: self, offset: 0 }
             }
             #[doc = "Bit 1"]
             #[inline(always)]
-            pub fn pin1(&mut self) -> PIN1_W {
-                PIN1_W { w: self }
+            pub fn pin1(&mut self) -> PIN_W {
+                PIN_W { w: self, offset: 1 }
             }
             #[doc = "Bit 2"]
             #[inline(always)]
-            pub fn pin2(&mut self) -> PIN2_W {
-                PIN2_W { w: self }
+            pub fn pin2(&mut self) -> PIN_W {
+                PIN_W { w: self, offset: 2 }
             }
             #[doc = "Bit 3"]
             #[inline(always)]
-            pub fn pin3(&mut self) -> PIN3_W {
-                PIN3_W { w: self }
+            pub fn pin3(&mut self) -> PIN_W {
+                PIN_W { w: self, offset: 3 }
             }
             #[doc = "Bit 4"]
             #[inline(always)]
-            pub fn pin4(&mut self) -> PIN4_W {
-                PIN4_W { w: self }
+            pub fn pin4(&mut self) -> PIN_W {
+                PIN_W { w: self, offset: 4 }
             }
             #[doc = "Bit 5"]
             #[inline(always)]
-            pub fn pin5(&mut self) -> PIN5_W {
-                PIN5_W { w: self }
+            pub fn pin5(&mut self) -> PIN_W {
+                PIN_W { w: self, offset: 5 }
             }
             #[doc = "Bit 6"]
             #[inline(always)]
-            pub fn pin6(&mut self) -> PIN6_W {
-                PIN6_W { w: self }
+            pub fn pin6(&mut self) -> PIN_W {
+                PIN_W { w: self, offset: 6 }
             }
             #[doc = "Bit 7"]
             #[inline(always)]
-            pub fn pin7(&mut self) -> PIN7_W {
-                PIN7_W { w: self }
+            pub fn pin7(&mut self) -> PIN_W {
+                PIN_W { w: self, offset: 7 }
             }
             #[doc = "Bit 8"]
             #[inline(always)]
-            pub fn pin8(&mut self) -> PIN8_W {
-                PIN8_W { w: self }
+            pub fn pin8(&mut self) -> PIN_W {
+                PIN_W { w: self, offset: 8 }
             }
             #[doc = "Bit 9"]
             #[inline(always)]
-            pub fn pin9(&mut self) -> PIN9_W {
-                PIN9_W { w: self }
+            pub fn pin9(&mut self) -> PIN_W {
+                PIN_W { w: self, offset: 9 }
             }
             #[doc = "Bit 10"]
             #[inline(always)]
-            pub fn pin10(&mut self) -> PIN10_W {
-                PIN10_W { w: self }
+            pub fn pin10(&mut self) -> PIN_W {
+                PIN_W {
+                    w: self,
+                    offset: 10,
+                }
             }
             #[doc = "Bit 11"]
             #[inline(always)]
-            pub fn pin11(&mut self) -> PIN11_W {
-                PIN11_W { w: self }
+            pub fn pin11(&mut self) -> PIN_W {
+                PIN_W {
+                    w: self,
+                    offset: 11,
+                }
             }
             #[doc = "Bit 12"]
             #[inline(always)]
-            pub fn pin12(&mut self) -> PIN12_W {
-                PIN12_W { w: self }
+            pub fn pin12(&mut self) -> PIN_W {
+                PIN_W {
+                    w: self,
+                    offset: 12,
+                }
             }
             #[doc = "Bit 13"]
             #[inline(always)]
-            pub fn pin13(&mut self) -> PIN13_W {
-                PIN13_W { w: self }
+            pub fn pin13(&mut self) -> PIN_W {
+                PIN_W {
+                    w: self,
+                    offset: 13,
+                }
             }
             #[doc = "Bit 14"]
             #[inline(always)]
-            pub fn pin14(&mut self) -> PIN14_W {
-                PIN14_W { w: self }
+            pub fn pin14(&mut self) -> PIN_W {
+                PIN_W {
+                    w: self,
+                    offset: 14,
+                }
             }
             #[doc = "Bit 15"]
             #[inline(always)]
-            pub fn pin15(&mut self) -> PIN15_W {
-                PIN15_W { w: self }
+            pub fn pin15(&mut self) -> PIN_W {
+                PIN_W {
+                    w: self,
+                    offset: 15,
+                }
             }
             #[doc = "Bit 16"]
             #[inline(always)]
-            pub fn pin16(&mut self) -> PIN16_W {
-                PIN16_W { w: self }
+            pub fn pin16(&mut self) -> PIN_W {
+                PIN_W {
+                    w: self,
+                    offset: 16,
+                }
             }
             #[doc = "Bit 17"]
             #[inline(always)]
-            pub fn pin17(&mut self) -> PIN17_W {
-                PIN17_W { w: self }
+            pub fn pin17(&mut self) -> PIN_W {
+                PIN_W {
+                    w: self,
+                    offset: 17,
+                }
             }
             #[doc = "Bit 18"]
             #[inline(always)]
-            pub fn pin18(&mut self) -> PIN18_W {
-                PIN18_W { w: self }
+            pub fn pin18(&mut self) -> PIN_W {
+                PIN_W {
+                    w: self,
+                    offset: 18,
+                }
             }
             #[doc = "Bit 19"]
             #[inline(always)]
-            pub fn pin19(&mut self) -> PIN19_W {
-                PIN19_W { w: self }
+            pub fn pin19(&mut self) -> PIN_W {
+                PIN_W {
+                    w: self,
+                    offset: 19,
+                }
             }
             #[doc = "Bit 20"]
             #[inline(always)]
-            pub fn pin20(&mut self) -> PIN20_W {
-                PIN20_W { w: self }
+            pub fn pin20(&mut self) -> PIN_W {
+                PIN_W {
+                    w: self,
+                    offset: 20,
+                }
             }
             #[doc = "Bit 21"]
             #[inline(always)]
-            pub fn pin21(&mut self) -> PIN21_W {
-                PIN21_W { w: self }
+            pub fn pin21(&mut self) -> PIN_W {
+                PIN_W {
+                    w: self,
+                    offset: 21,
+                }
             }
             #[doc = "Bit 22"]
             #[inline(always)]
-            pub fn pin22(&mut self) -> PIN22_W {
-                PIN22_W { w: self }
+            pub fn pin22(&mut self) -> PIN_W {
+                PIN_W {
+                    w: self,
+                    offset: 22,
+                }
             }
             #[doc = "Bit 23"]
             #[inline(always)]
-            pub fn pin23(&mut self) -> PIN23_W {
-                PIN23_W { w: self }
+            pub fn pin23(&mut self) -> PIN_W {
+                PIN_W {
+                    w: self,
+                    offset: 23,
+                }
             }
             #[doc = "Bit 24"]
             #[inline(always)]
-            pub fn pin24(&mut self) -> PIN24_W {
-                PIN24_W { w: self }
+            pub fn pin24(&mut self) -> PIN_W {
+                PIN_W {
+                    w: self,
+                    offset: 24,
+                }
             }
             #[doc = "Bit 25"]
             #[inline(always)]
-            pub fn pin25(&mut self) -> PIN25_W {
-                PIN25_W { w: self }
+            pub fn pin25(&mut self) -> PIN_W {
+                PIN_W {
+                    w: self,
+                    offset: 25,
+                }
             }
             #[doc = "Bit 26"]
             #[inline(always)]
-            pub fn pin26(&mut self) -> PIN26_W {
-                PIN26_W { w: self }
+            pub fn pin26(&mut self) -> PIN_W {
+                PIN_W {
+                    w: self,
+                    offset: 26,
+                }
             }
             #[doc = "Bit 27"]
             #[inline(always)]
-            pub fn pin27(&mut self) -> PIN27_W {
-                PIN27_W { w: self }
+            pub fn pin27(&mut self) -> PIN_W {
+                PIN_W {
+                    w: self,
+                    offset: 27,
+                }
             }
             #[doc = "Bit 28"]
             #[inline(always)]
-            pub fn pin28(&mut self) -> PIN28_W {
-                PIN28_W { w: self }
+            pub fn pin28(&mut self) -> PIN_W {
+                PIN_W {
+                    w: self,
+                    offset: 28,
+                }
             }
             #[doc = "Bit 29"]
             #[inline(always)]
-            pub fn pin29(&mut self) -> PIN29_W {
-                PIN29_W { w: self }
+            pub fn pin29(&mut self) -> PIN_W {
+                PIN_W {
+                    w: self,
+                    offset: 29,
+                }
             }
             #[doc = "Bit 30"]
             #[inline(always)]
-            pub fn pin30(&mut self) -> PIN30_W {
-                PIN30_W { w: self }
+            pub fn pin30(&mut self) -> PIN_W {
+                PIN_W {
+                    w: self,
+                    offset: 30,
+                }
             }
             #[doc = "Bit 31"]
             #[inline(always)]
-            pub fn pin31(&mut self) -> PIN31_W {
-                PIN31_W { w: self }
+            pub fn pin31(&mut self) -> PIN_W {
+                PIN_W {
+                    w: self,
+                    offset: 31,
+                }
             }
         }
     }
@@ -4002,13 +2670,14 @@ pub mod gpiohs {
                 0
             }
         }
-        #[doc = "Reader of field `pin0`"]
-        pub type PIN0_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin0`"]
-        pub struct PIN0_W<'a> {
+        #[doc = "Reader of field `pin%s`"]
+        pub type PIN_R = crate::R<bool, bool>;
+        #[doc = "Write proxy for fields `pin(0-31)`"]
+        pub struct PIN_W<'a> {
             w: &'a mut W,
+            offset: usize,
         }
-        impl<'a> PIN0_W<'a> {
+        impl<'a> PIN_W<'a> {
             #[doc = r"Sets the field bit"]
             #[inline(always)]
             pub fn set_bit(self) -> &'a mut W {
@@ -4022,1076 +2691,409 @@ pub mod gpiohs {
             #[doc = r"Writes raw bits to the field"]
             #[inline(always)]
             pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !0x01) | ((value as u32) & 0x01);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin1`"]
-        pub type PIN1_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin1`"]
-        pub struct PIN1_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN1_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 1)) | (((value as u32) & 0x01) << 1);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin2`"]
-        pub type PIN2_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin2`"]
-        pub struct PIN2_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN2_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 2)) | (((value as u32) & 0x01) << 2);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin3`"]
-        pub type PIN3_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin3`"]
-        pub struct PIN3_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN3_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 3)) | (((value as u32) & 0x01) << 3);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin4`"]
-        pub type PIN4_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin4`"]
-        pub struct PIN4_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN4_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 4)) | (((value as u32) & 0x01) << 4);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin5`"]
-        pub type PIN5_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin5`"]
-        pub struct PIN5_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN5_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 5)) | (((value as u32) & 0x01) << 5);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin6`"]
-        pub type PIN6_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin6`"]
-        pub struct PIN6_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN6_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 6)) | (((value as u32) & 0x01) << 6);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin7`"]
-        pub type PIN7_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin7`"]
-        pub struct PIN7_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN7_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 7)) | (((value as u32) & 0x01) << 7);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin8`"]
-        pub type PIN8_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin8`"]
-        pub struct PIN8_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN8_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 8)) | (((value as u32) & 0x01) << 8);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin9`"]
-        pub type PIN9_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin9`"]
-        pub struct PIN9_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN9_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 9)) | (((value as u32) & 0x01) << 9);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin10`"]
-        pub type PIN10_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin10`"]
-        pub struct PIN10_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN10_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 10)) | (((value as u32) & 0x01) << 10);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin11`"]
-        pub type PIN11_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin11`"]
-        pub struct PIN11_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN11_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 11)) | (((value as u32) & 0x01) << 11);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin12`"]
-        pub type PIN12_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin12`"]
-        pub struct PIN12_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN12_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 12)) | (((value as u32) & 0x01) << 12);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin13`"]
-        pub type PIN13_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin13`"]
-        pub struct PIN13_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN13_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 13)) | (((value as u32) & 0x01) << 13);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin14`"]
-        pub type PIN14_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin14`"]
-        pub struct PIN14_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN14_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 14)) | (((value as u32) & 0x01) << 14);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin15`"]
-        pub type PIN15_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin15`"]
-        pub struct PIN15_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN15_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 15)) | (((value as u32) & 0x01) << 15);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin16`"]
-        pub type PIN16_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin16`"]
-        pub struct PIN16_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN16_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 16)) | (((value as u32) & 0x01) << 16);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin17`"]
-        pub type PIN17_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin17`"]
-        pub struct PIN17_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN17_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 17)) | (((value as u32) & 0x01) << 17);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin18`"]
-        pub type PIN18_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin18`"]
-        pub struct PIN18_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN18_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 18)) | (((value as u32) & 0x01) << 18);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin19`"]
-        pub type PIN19_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin19`"]
-        pub struct PIN19_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN19_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 19)) | (((value as u32) & 0x01) << 19);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin20`"]
-        pub type PIN20_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin20`"]
-        pub struct PIN20_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN20_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 20)) | (((value as u32) & 0x01) << 20);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin21`"]
-        pub type PIN21_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin21`"]
-        pub struct PIN21_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN21_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 21)) | (((value as u32) & 0x01) << 21);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin22`"]
-        pub type PIN22_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin22`"]
-        pub struct PIN22_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN22_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 22)) | (((value as u32) & 0x01) << 22);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin23`"]
-        pub type PIN23_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin23`"]
-        pub struct PIN23_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN23_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 23)) | (((value as u32) & 0x01) << 23);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin24`"]
-        pub type PIN24_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin24`"]
-        pub struct PIN24_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN24_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 24)) | (((value as u32) & 0x01) << 24);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin25`"]
-        pub type PIN25_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin25`"]
-        pub struct PIN25_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN25_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 25)) | (((value as u32) & 0x01) << 25);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin26`"]
-        pub type PIN26_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin26`"]
-        pub struct PIN26_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN26_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 26)) | (((value as u32) & 0x01) << 26);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin27`"]
-        pub type PIN27_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin27`"]
-        pub struct PIN27_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN27_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 27)) | (((value as u32) & 0x01) << 27);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin28`"]
-        pub type PIN28_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin28`"]
-        pub struct PIN28_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN28_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 28)) | (((value as u32) & 0x01) << 28);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin29`"]
-        pub type PIN29_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin29`"]
-        pub struct PIN29_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN29_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 29)) | (((value as u32) & 0x01) << 29);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin30`"]
-        pub type PIN30_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin30`"]
-        pub struct PIN30_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN30_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 30)) | (((value as u32) & 0x01) << 30);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin31`"]
-        pub type PIN31_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin31`"]
-        pub struct PIN31_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN31_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 31)) | (((value as u32) & 0x01) << 31);
+                self.w.bits = (self.w.bits & !(0x01 << self.offset))
+                    | (((value as u32) & 0x01) << self.offset);
                 self.w
             }
         }
         impl R {
+            #[doc = ""]
+            #[inline(always)]
+            pub unsafe fn pin(&self, n: usize) -> PIN_R {
+                PIN_R::new(((self.bits >> n) & 0x01) != 0)
+            }
             #[doc = "Bit 0"]
             #[inline(always)]
-            pub fn pin0(&self) -> PIN0_R {
-                PIN0_R::new((self.bits & 0x01) != 0)
+            pub fn pin0(&self) -> PIN_R {
+                PIN_R::new((self.bits & 0x01) != 0)
             }
             #[doc = "Bit 1"]
             #[inline(always)]
-            pub fn pin1(&self) -> PIN1_R {
-                PIN1_R::new(((self.bits >> 1) & 0x01) != 0)
+            pub fn pin1(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 1) & 0x01) != 0)
             }
             #[doc = "Bit 2"]
             #[inline(always)]
-            pub fn pin2(&self) -> PIN2_R {
-                PIN2_R::new(((self.bits >> 2) & 0x01) != 0)
+            pub fn pin2(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 2) & 0x01) != 0)
             }
             #[doc = "Bit 3"]
             #[inline(always)]
-            pub fn pin3(&self) -> PIN3_R {
-                PIN3_R::new(((self.bits >> 3) & 0x01) != 0)
+            pub fn pin3(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 3) & 0x01) != 0)
             }
             #[doc = "Bit 4"]
             #[inline(always)]
-            pub fn pin4(&self) -> PIN4_R {
-                PIN4_R::new(((self.bits >> 4) & 0x01) != 0)
+            pub fn pin4(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 4) & 0x01) != 0)
             }
             #[doc = "Bit 5"]
             #[inline(always)]
-            pub fn pin5(&self) -> PIN5_R {
-                PIN5_R::new(((self.bits >> 5) & 0x01) != 0)
+            pub fn pin5(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 5) & 0x01) != 0)
             }
             #[doc = "Bit 6"]
             #[inline(always)]
-            pub fn pin6(&self) -> PIN6_R {
-                PIN6_R::new(((self.bits >> 6) & 0x01) != 0)
+            pub fn pin6(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 6) & 0x01) != 0)
             }
             #[doc = "Bit 7"]
             #[inline(always)]
-            pub fn pin7(&self) -> PIN7_R {
-                PIN7_R::new(((self.bits >> 7) & 0x01) != 0)
+            pub fn pin7(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 7) & 0x01) != 0)
             }
             #[doc = "Bit 8"]
             #[inline(always)]
-            pub fn pin8(&self) -> PIN8_R {
-                PIN8_R::new(((self.bits >> 8) & 0x01) != 0)
+            pub fn pin8(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 8) & 0x01) != 0)
             }
             #[doc = "Bit 9"]
             #[inline(always)]
-            pub fn pin9(&self) -> PIN9_R {
-                PIN9_R::new(((self.bits >> 9) & 0x01) != 0)
+            pub fn pin9(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 9) & 0x01) != 0)
             }
             #[doc = "Bit 10"]
             #[inline(always)]
-            pub fn pin10(&self) -> PIN10_R {
-                PIN10_R::new(((self.bits >> 10) & 0x01) != 0)
+            pub fn pin10(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 10) & 0x01) != 0)
             }
             #[doc = "Bit 11"]
             #[inline(always)]
-            pub fn pin11(&self) -> PIN11_R {
-                PIN11_R::new(((self.bits >> 11) & 0x01) != 0)
+            pub fn pin11(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 11) & 0x01) != 0)
             }
             #[doc = "Bit 12"]
             #[inline(always)]
-            pub fn pin12(&self) -> PIN12_R {
-                PIN12_R::new(((self.bits >> 12) & 0x01) != 0)
+            pub fn pin12(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 12) & 0x01) != 0)
             }
             #[doc = "Bit 13"]
             #[inline(always)]
-            pub fn pin13(&self) -> PIN13_R {
-                PIN13_R::new(((self.bits >> 13) & 0x01) != 0)
+            pub fn pin13(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 13) & 0x01) != 0)
             }
             #[doc = "Bit 14"]
             #[inline(always)]
-            pub fn pin14(&self) -> PIN14_R {
-                PIN14_R::new(((self.bits >> 14) & 0x01) != 0)
+            pub fn pin14(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 14) & 0x01) != 0)
             }
             #[doc = "Bit 15"]
             #[inline(always)]
-            pub fn pin15(&self) -> PIN15_R {
-                PIN15_R::new(((self.bits >> 15) & 0x01) != 0)
+            pub fn pin15(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 15) & 0x01) != 0)
             }
             #[doc = "Bit 16"]
             #[inline(always)]
-            pub fn pin16(&self) -> PIN16_R {
-                PIN16_R::new(((self.bits >> 16) & 0x01) != 0)
+            pub fn pin16(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 16) & 0x01) != 0)
             }
             #[doc = "Bit 17"]
             #[inline(always)]
-            pub fn pin17(&self) -> PIN17_R {
-                PIN17_R::new(((self.bits >> 17) & 0x01) != 0)
+            pub fn pin17(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 17) & 0x01) != 0)
             }
             #[doc = "Bit 18"]
             #[inline(always)]
-            pub fn pin18(&self) -> PIN18_R {
-                PIN18_R::new(((self.bits >> 18) & 0x01) != 0)
+            pub fn pin18(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 18) & 0x01) != 0)
             }
             #[doc = "Bit 19"]
             #[inline(always)]
-            pub fn pin19(&self) -> PIN19_R {
-                PIN19_R::new(((self.bits >> 19) & 0x01) != 0)
+            pub fn pin19(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 19) & 0x01) != 0)
             }
             #[doc = "Bit 20"]
             #[inline(always)]
-            pub fn pin20(&self) -> PIN20_R {
-                PIN20_R::new(((self.bits >> 20) & 0x01) != 0)
+            pub fn pin20(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 20) & 0x01) != 0)
             }
             #[doc = "Bit 21"]
             #[inline(always)]
-            pub fn pin21(&self) -> PIN21_R {
-                PIN21_R::new(((self.bits >> 21) & 0x01) != 0)
+            pub fn pin21(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 21) & 0x01) != 0)
             }
             #[doc = "Bit 22"]
             #[inline(always)]
-            pub fn pin22(&self) -> PIN22_R {
-                PIN22_R::new(((self.bits >> 22) & 0x01) != 0)
+            pub fn pin22(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 22) & 0x01) != 0)
             }
             #[doc = "Bit 23"]
             #[inline(always)]
-            pub fn pin23(&self) -> PIN23_R {
-                PIN23_R::new(((self.bits >> 23) & 0x01) != 0)
+            pub fn pin23(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 23) & 0x01) != 0)
             }
             #[doc = "Bit 24"]
             #[inline(always)]
-            pub fn pin24(&self) -> PIN24_R {
-                PIN24_R::new(((self.bits >> 24) & 0x01) != 0)
+            pub fn pin24(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 24) & 0x01) != 0)
             }
             #[doc = "Bit 25"]
             #[inline(always)]
-            pub fn pin25(&self) -> PIN25_R {
-                PIN25_R::new(((self.bits >> 25) & 0x01) != 0)
+            pub fn pin25(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 25) & 0x01) != 0)
             }
             #[doc = "Bit 26"]
             #[inline(always)]
-            pub fn pin26(&self) -> PIN26_R {
-                PIN26_R::new(((self.bits >> 26) & 0x01) != 0)
+            pub fn pin26(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 26) & 0x01) != 0)
             }
             #[doc = "Bit 27"]
             #[inline(always)]
-            pub fn pin27(&self) -> PIN27_R {
-                PIN27_R::new(((self.bits >> 27) & 0x01) != 0)
+            pub fn pin27(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 27) & 0x01) != 0)
             }
             #[doc = "Bit 28"]
             #[inline(always)]
-            pub fn pin28(&self) -> PIN28_R {
-                PIN28_R::new(((self.bits >> 28) & 0x01) != 0)
+            pub fn pin28(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 28) & 0x01) != 0)
             }
             #[doc = "Bit 29"]
             #[inline(always)]
-            pub fn pin29(&self) -> PIN29_R {
-                PIN29_R::new(((self.bits >> 29) & 0x01) != 0)
+            pub fn pin29(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 29) & 0x01) != 0)
             }
             #[doc = "Bit 30"]
             #[inline(always)]
-            pub fn pin30(&self) -> PIN30_R {
-                PIN30_R::new(((self.bits >> 30) & 0x01) != 0)
+            pub fn pin30(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 30) & 0x01) != 0)
             }
             #[doc = "Bit 31"]
             #[inline(always)]
-            pub fn pin31(&self) -> PIN31_R {
-                PIN31_R::new(((self.bits >> 31) & 0x01) != 0)
+            pub fn pin31(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 31) & 0x01) != 0)
             }
         }
         impl W {
+            #[doc = ""]
+            #[inline(always)]
+            pub unsafe fn pin(&mut self, n: usize) -> PIN_W {
+                PIN_W { w: self, offset: n }
+            }
             #[doc = "Bit 0"]
             #[inline(always)]
-            pub fn pin0(&mut self) -> PIN0_W {
-                PIN0_W { w: self }
+            pub fn pin0(&mut self) -> PIN_W {
+                PIN_W { w: self, offset: 0 }
             }
             #[doc = "Bit 1"]
             #[inline(always)]
-            pub fn pin1(&mut self) -> PIN1_W {
-                PIN1_W { w: self }
+            pub fn pin1(&mut self) -> PIN_W {
+                PIN_W { w: self, offset: 1 }
             }
             #[doc = "Bit 2"]
             #[inline(always)]
-            pub fn pin2(&mut self) -> PIN2_W {
-                PIN2_W { w: self }
+            pub fn pin2(&mut self) -> PIN_W {
+                PIN_W { w: self, offset: 2 }
             }
             #[doc = "Bit 3"]
             #[inline(always)]
-            pub fn pin3(&mut self) -> PIN3_W {
-                PIN3_W { w: self }
+            pub fn pin3(&mut self) -> PIN_W {
+                PIN_W { w: self, offset: 3 }
             }
             #[doc = "Bit 4"]
             #[inline(always)]
-            pub fn pin4(&mut self) -> PIN4_W {
-                PIN4_W { w: self }
+            pub fn pin4(&mut self) -> PIN_W {
+                PIN_W { w: self, offset: 4 }
             }
             #[doc = "Bit 5"]
             #[inline(always)]
-            pub fn pin5(&mut self) -> PIN5_W {
-                PIN5_W { w: self }
+            pub fn pin5(&mut self) -> PIN_W {
+                PIN_W { w: self, offset: 5 }
             }
             #[doc = "Bit 6"]
             #[inline(always)]
-            pub fn pin6(&mut self) -> PIN6_W {
-                PIN6_W { w: self }
+            pub fn pin6(&mut self) -> PIN_W {
+                PIN_W { w: self, offset: 6 }
             }
             #[doc = "Bit 7"]
             #[inline(always)]
-            pub fn pin7(&mut self) -> PIN7_W {
-                PIN7_W { w: self }
+            pub fn pin7(&mut self) -> PIN_W {
+                PIN_W { w: self, offset: 7 }
             }
             #[doc = "Bit 8"]
             #[inline(always)]
-            pub fn pin8(&mut self) -> PIN8_W {
-                PIN8_W { w: self }
+            pub fn pin8(&mut self) -> PIN_W {
+                PIN_W { w: self, offset: 8 }
             }
             #[doc = "Bit 9"]
             #[inline(always)]
-            pub fn pin9(&mut self) -> PIN9_W {
-                PIN9_W { w: self }
+            pub fn pin9(&mut self) -> PIN_W {
+                PIN_W { w: self, offset: 9 }
             }
             #[doc = "Bit 10"]
             #[inline(always)]
-            pub fn pin10(&mut self) -> PIN10_W {
-                PIN10_W { w: self }
+            pub fn pin10(&mut self) -> PIN_W {
+                PIN_W {
+                    w: self,
+                    offset: 10,
+                }
             }
             #[doc = "Bit 11"]
             #[inline(always)]
-            pub fn pin11(&mut self) -> PIN11_W {
-                PIN11_W { w: self }
+            pub fn pin11(&mut self) -> PIN_W {
+                PIN_W {
+                    w: self,
+                    offset: 11,
+                }
             }
             #[doc = "Bit 12"]
             #[inline(always)]
-            pub fn pin12(&mut self) -> PIN12_W {
-                PIN12_W { w: self }
+            pub fn pin12(&mut self) -> PIN_W {
+                PIN_W {
+                    w: self,
+                    offset: 12,
+                }
             }
             #[doc = "Bit 13"]
             #[inline(always)]
-            pub fn pin13(&mut self) -> PIN13_W {
-                PIN13_W { w: self }
+            pub fn pin13(&mut self) -> PIN_W {
+                PIN_W {
+                    w: self,
+                    offset: 13,
+                }
             }
             #[doc = "Bit 14"]
             #[inline(always)]
-            pub fn pin14(&mut self) -> PIN14_W {
-                PIN14_W { w: self }
+            pub fn pin14(&mut self) -> PIN_W {
+                PIN_W {
+                    w: self,
+                    offset: 14,
+                }
             }
             #[doc = "Bit 15"]
             #[inline(always)]
-            pub fn pin15(&mut self) -> PIN15_W {
-                PIN15_W { w: self }
+            pub fn pin15(&mut self) -> PIN_W {
+                PIN_W {
+                    w: self,
+                    offset: 15,
+                }
             }
             #[doc = "Bit 16"]
             #[inline(always)]
-            pub fn pin16(&mut self) -> PIN16_W {
-                PIN16_W { w: self }
+            pub fn pin16(&mut self) -> PIN_W {
+                PIN_W {
+                    w: self,
+                    offset: 16,
+                }
             }
             #[doc = "Bit 17"]
             #[inline(always)]
-            pub fn pin17(&mut self) -> PIN17_W {
-                PIN17_W { w: self }
+            pub fn pin17(&mut self) -> PIN_W {
+                PIN_W {
+                    w: self,
+                    offset: 17,
+                }
             }
             #[doc = "Bit 18"]
             #[inline(always)]
-            pub fn pin18(&mut self) -> PIN18_W {
-                PIN18_W { w: self }
+            pub fn pin18(&mut self) -> PIN_W {
+                PIN_W {
+                    w: self,
+                    offset: 18,
+                }
             }
             #[doc = "Bit 19"]
             #[inline(always)]
-            pub fn pin19(&mut self) -> PIN19_W {
-                PIN19_W { w: self }
+            pub fn pin19(&mut self) -> PIN_W {
+                PIN_W {
+                    w: self,
+                    offset: 19,
+                }
             }
             #[doc = "Bit 20"]
             #[inline(always)]
-            pub fn pin20(&mut self) -> PIN20_W {
-                PIN20_W { w: self }
+            pub fn pin20(&mut self) -> PIN_W {
+                PIN_W {
+                    w: self,
+                    offset: 20,
+                }
             }
             #[doc = "Bit 21"]
             #[inline(always)]
-            pub fn pin21(&mut self) -> PIN21_W {
-                PIN21_W { w: self }
+            pub fn pin21(&mut self) -> PIN_W {
+                PIN_W {
+                    w: self,
+                    offset: 21,
+                }
             }
             #[doc = "Bit 22"]
             #[inline(always)]
-            pub fn pin22(&mut self) -> PIN22_W {
-                PIN22_W { w: self }
+            pub fn pin22(&mut self) -> PIN_W {
+                PIN_W {
+                    w: self,
+                    offset: 22,
+                }
             }
             #[doc = "Bit 23"]
             #[inline(always)]
-            pub fn pin23(&mut self) -> PIN23_W {
-                PIN23_W { w: self }
+            pub fn pin23(&mut self) -> PIN_W {
+                PIN_W {
+                    w: self,
+                    offset: 23,
+                }
             }
             #[doc = "Bit 24"]
             #[inline(always)]
-            pub fn pin24(&mut self) -> PIN24_W {
-                PIN24_W { w: self }
+            pub fn pin24(&mut self) -> PIN_W {
+                PIN_W {
+                    w: self,
+                    offset: 24,
+                }
             }
             #[doc = "Bit 25"]
             #[inline(always)]
-            pub fn pin25(&mut self) -> PIN25_W {
-                PIN25_W { w: self }
+            pub fn pin25(&mut self) -> PIN_W {
+                PIN_W {
+                    w: self,
+                    offset: 25,
+                }
             }
             #[doc = "Bit 26"]
             #[inline(always)]
-            pub fn pin26(&mut self) -> PIN26_W {
-                PIN26_W { w: self }
+            pub fn pin26(&mut self) -> PIN_W {
+                PIN_W {
+                    w: self,
+                    offset: 26,
+                }
             }
             #[doc = "Bit 27"]
             #[inline(always)]
-            pub fn pin27(&mut self) -> PIN27_W {
-                PIN27_W { w: self }
+            pub fn pin27(&mut self) -> PIN_W {
+                PIN_W {
+                    w: self,
+                    offset: 27,
+                }
             }
             #[doc = "Bit 28"]
             #[inline(always)]
-            pub fn pin28(&mut self) -> PIN28_W {
-                PIN28_W { w: self }
+            pub fn pin28(&mut self) -> PIN_W {
+                PIN_W {
+                    w: self,
+                    offset: 28,
+                }
             }
             #[doc = "Bit 29"]
             #[inline(always)]
-            pub fn pin29(&mut self) -> PIN29_W {
-                PIN29_W { w: self }
+            pub fn pin29(&mut self) -> PIN_W {
+                PIN_W {
+                    w: self,
+                    offset: 29,
+                }
             }
             #[doc = "Bit 30"]
             #[inline(always)]
-            pub fn pin30(&mut self) -> PIN30_W {
-                PIN30_W { w: self }
+            pub fn pin30(&mut self) -> PIN_W {
+                PIN_W {
+                    w: self,
+                    offset: 30,
+                }
             }
             #[doc = "Bit 31"]
             #[inline(always)]
-            pub fn pin31(&mut self) -> PIN31_W {
-                PIN31_W { w: self }
+            pub fn pin31(&mut self) -> PIN_W {
+                PIN_W {
+                    w: self,
+                    offset: 31,
+                }
             }
         }
     }
@@ -5118,13 +3120,14 @@ pub mod gpiohs {
                 0
             }
         }
-        #[doc = "Reader of field `pin0`"]
-        pub type PIN0_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin0`"]
-        pub struct PIN0_W<'a> {
+        #[doc = "Reader of field `pin%s`"]
+        pub type PIN_R = crate::R<bool, bool>;
+        #[doc = "Write proxy for fields `pin(0-31)`"]
+        pub struct PIN_W<'a> {
             w: &'a mut W,
+            offset: usize,
         }
-        impl<'a> PIN0_W<'a> {
+        impl<'a> PIN_W<'a> {
             #[doc = r"Sets the field bit"]
             #[inline(always)]
             pub fn set_bit(self) -> &'a mut W {
@@ -5138,1076 +3141,409 @@ pub mod gpiohs {
             #[doc = r"Writes raw bits to the field"]
             #[inline(always)]
             pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !0x01) | ((value as u32) & 0x01);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin1`"]
-        pub type PIN1_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin1`"]
-        pub struct PIN1_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN1_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 1)) | (((value as u32) & 0x01) << 1);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin2`"]
-        pub type PIN2_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin2`"]
-        pub struct PIN2_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN2_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 2)) | (((value as u32) & 0x01) << 2);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin3`"]
-        pub type PIN3_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin3`"]
-        pub struct PIN3_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN3_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 3)) | (((value as u32) & 0x01) << 3);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin4`"]
-        pub type PIN4_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin4`"]
-        pub struct PIN4_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN4_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 4)) | (((value as u32) & 0x01) << 4);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin5`"]
-        pub type PIN5_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin5`"]
-        pub struct PIN5_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN5_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 5)) | (((value as u32) & 0x01) << 5);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin6`"]
-        pub type PIN6_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin6`"]
-        pub struct PIN6_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN6_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 6)) | (((value as u32) & 0x01) << 6);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin7`"]
-        pub type PIN7_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin7`"]
-        pub struct PIN7_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN7_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 7)) | (((value as u32) & 0x01) << 7);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin8`"]
-        pub type PIN8_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin8`"]
-        pub struct PIN8_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN8_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 8)) | (((value as u32) & 0x01) << 8);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin9`"]
-        pub type PIN9_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin9`"]
-        pub struct PIN9_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN9_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 9)) | (((value as u32) & 0x01) << 9);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin10`"]
-        pub type PIN10_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin10`"]
-        pub struct PIN10_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN10_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 10)) | (((value as u32) & 0x01) << 10);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin11`"]
-        pub type PIN11_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin11`"]
-        pub struct PIN11_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN11_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 11)) | (((value as u32) & 0x01) << 11);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin12`"]
-        pub type PIN12_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin12`"]
-        pub struct PIN12_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN12_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 12)) | (((value as u32) & 0x01) << 12);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin13`"]
-        pub type PIN13_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin13`"]
-        pub struct PIN13_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN13_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 13)) | (((value as u32) & 0x01) << 13);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin14`"]
-        pub type PIN14_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin14`"]
-        pub struct PIN14_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN14_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 14)) | (((value as u32) & 0x01) << 14);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin15`"]
-        pub type PIN15_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin15`"]
-        pub struct PIN15_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN15_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 15)) | (((value as u32) & 0x01) << 15);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin16`"]
-        pub type PIN16_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin16`"]
-        pub struct PIN16_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN16_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 16)) | (((value as u32) & 0x01) << 16);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin17`"]
-        pub type PIN17_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin17`"]
-        pub struct PIN17_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN17_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 17)) | (((value as u32) & 0x01) << 17);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin18`"]
-        pub type PIN18_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin18`"]
-        pub struct PIN18_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN18_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 18)) | (((value as u32) & 0x01) << 18);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin19`"]
-        pub type PIN19_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin19`"]
-        pub struct PIN19_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN19_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 19)) | (((value as u32) & 0x01) << 19);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin20`"]
-        pub type PIN20_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin20`"]
-        pub struct PIN20_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN20_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 20)) | (((value as u32) & 0x01) << 20);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin21`"]
-        pub type PIN21_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin21`"]
-        pub struct PIN21_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN21_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 21)) | (((value as u32) & 0x01) << 21);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin22`"]
-        pub type PIN22_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin22`"]
-        pub struct PIN22_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN22_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 22)) | (((value as u32) & 0x01) << 22);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin23`"]
-        pub type PIN23_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin23`"]
-        pub struct PIN23_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN23_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 23)) | (((value as u32) & 0x01) << 23);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin24`"]
-        pub type PIN24_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin24`"]
-        pub struct PIN24_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN24_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 24)) | (((value as u32) & 0x01) << 24);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin25`"]
-        pub type PIN25_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin25`"]
-        pub struct PIN25_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN25_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 25)) | (((value as u32) & 0x01) << 25);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin26`"]
-        pub type PIN26_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin26`"]
-        pub struct PIN26_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN26_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 26)) | (((value as u32) & 0x01) << 26);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin27`"]
-        pub type PIN27_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin27`"]
-        pub struct PIN27_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN27_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 27)) | (((value as u32) & 0x01) << 27);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin28`"]
-        pub type PIN28_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin28`"]
-        pub struct PIN28_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN28_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 28)) | (((value as u32) & 0x01) << 28);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin29`"]
-        pub type PIN29_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin29`"]
-        pub struct PIN29_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN29_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 29)) | (((value as u32) & 0x01) << 29);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin30`"]
-        pub type PIN30_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin30`"]
-        pub struct PIN30_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN30_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 30)) | (((value as u32) & 0x01) << 30);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin31`"]
-        pub type PIN31_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin31`"]
-        pub struct PIN31_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN31_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 31)) | (((value as u32) & 0x01) << 31);
+                self.w.bits = (self.w.bits & !(0x01 << self.offset))
+                    | (((value as u32) & 0x01) << self.offset);
                 self.w
             }
         }
         impl R {
+            #[doc = ""]
+            #[inline(always)]
+            pub unsafe fn pin(&self, n: usize) -> PIN_R {
+                PIN_R::new(((self.bits >> n) & 0x01) != 0)
+            }
             #[doc = "Bit 0"]
             #[inline(always)]
-            pub fn pin0(&self) -> PIN0_R {
-                PIN0_R::new((self.bits & 0x01) != 0)
+            pub fn pin0(&self) -> PIN_R {
+                PIN_R::new((self.bits & 0x01) != 0)
             }
             #[doc = "Bit 1"]
             #[inline(always)]
-            pub fn pin1(&self) -> PIN1_R {
-                PIN1_R::new(((self.bits >> 1) & 0x01) != 0)
+            pub fn pin1(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 1) & 0x01) != 0)
             }
             #[doc = "Bit 2"]
             #[inline(always)]
-            pub fn pin2(&self) -> PIN2_R {
-                PIN2_R::new(((self.bits >> 2) & 0x01) != 0)
+            pub fn pin2(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 2) & 0x01) != 0)
             }
             #[doc = "Bit 3"]
             #[inline(always)]
-            pub fn pin3(&self) -> PIN3_R {
-                PIN3_R::new(((self.bits >> 3) & 0x01) != 0)
+            pub fn pin3(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 3) & 0x01) != 0)
             }
             #[doc = "Bit 4"]
             #[inline(always)]
-            pub fn pin4(&self) -> PIN4_R {
-                PIN4_R::new(((self.bits >> 4) & 0x01) != 0)
+            pub fn pin4(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 4) & 0x01) != 0)
             }
             #[doc = "Bit 5"]
             #[inline(always)]
-            pub fn pin5(&self) -> PIN5_R {
-                PIN5_R::new(((self.bits >> 5) & 0x01) != 0)
+            pub fn pin5(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 5) & 0x01) != 0)
             }
             #[doc = "Bit 6"]
             #[inline(always)]
-            pub fn pin6(&self) -> PIN6_R {
-                PIN6_R::new(((self.bits >> 6) & 0x01) != 0)
+            pub fn pin6(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 6) & 0x01) != 0)
             }
             #[doc = "Bit 7"]
             #[inline(always)]
-            pub fn pin7(&self) -> PIN7_R {
-                PIN7_R::new(((self.bits >> 7) & 0x01) != 0)
+            pub fn pin7(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 7) & 0x01) != 0)
             }
             #[doc = "Bit 8"]
             #[inline(always)]
-            pub fn pin8(&self) -> PIN8_R {
-                PIN8_R::new(((self.bits >> 8) & 0x01) != 0)
+            pub fn pin8(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 8) & 0x01) != 0)
             }
             #[doc = "Bit 9"]
             #[inline(always)]
-            pub fn pin9(&self) -> PIN9_R {
-                PIN9_R::new(((self.bits >> 9) & 0x01) != 0)
+            pub fn pin9(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 9) & 0x01) != 0)
             }
             #[doc = "Bit 10"]
             #[inline(always)]
-            pub fn pin10(&self) -> PIN10_R {
-                PIN10_R::new(((self.bits >> 10) & 0x01) != 0)
+            pub fn pin10(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 10) & 0x01) != 0)
             }
             #[doc = "Bit 11"]
             #[inline(always)]
-            pub fn pin11(&self) -> PIN11_R {
-                PIN11_R::new(((self.bits >> 11) & 0x01) != 0)
+            pub fn pin11(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 11) & 0x01) != 0)
             }
             #[doc = "Bit 12"]
             #[inline(always)]
-            pub fn pin12(&self) -> PIN12_R {
-                PIN12_R::new(((self.bits >> 12) & 0x01) != 0)
+            pub fn pin12(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 12) & 0x01) != 0)
             }
             #[doc = "Bit 13"]
             #[inline(always)]
-            pub fn pin13(&self) -> PIN13_R {
-                PIN13_R::new(((self.bits >> 13) & 0x01) != 0)
+            pub fn pin13(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 13) & 0x01) != 0)
             }
             #[doc = "Bit 14"]
             #[inline(always)]
-            pub fn pin14(&self) -> PIN14_R {
-                PIN14_R::new(((self.bits >> 14) & 0x01) != 0)
+            pub fn pin14(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 14) & 0x01) != 0)
             }
             #[doc = "Bit 15"]
             #[inline(always)]
-            pub fn pin15(&self) -> PIN15_R {
-                PIN15_R::new(((self.bits >> 15) & 0x01) != 0)
+            pub fn pin15(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 15) & 0x01) != 0)
             }
             #[doc = "Bit 16"]
             #[inline(always)]
-            pub fn pin16(&self) -> PIN16_R {
-                PIN16_R::new(((self.bits >> 16) & 0x01) != 0)
+            pub fn pin16(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 16) & 0x01) != 0)
             }
             #[doc = "Bit 17"]
             #[inline(always)]
-            pub fn pin17(&self) -> PIN17_R {
-                PIN17_R::new(((self.bits >> 17) & 0x01) != 0)
+            pub fn pin17(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 17) & 0x01) != 0)
             }
             #[doc = "Bit 18"]
             #[inline(always)]
-            pub fn pin18(&self) -> PIN18_R {
-                PIN18_R::new(((self.bits >> 18) & 0x01) != 0)
+            pub fn pin18(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 18) & 0x01) != 0)
             }
             #[doc = "Bit 19"]
             #[inline(always)]
-            pub fn pin19(&self) -> PIN19_R {
-                PIN19_R::new(((self.bits >> 19) & 0x01) != 0)
+            pub fn pin19(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 19) & 0x01) != 0)
             }
             #[doc = "Bit 20"]
             #[inline(always)]
-            pub fn pin20(&self) -> PIN20_R {
-                PIN20_R::new(((self.bits >> 20) & 0x01) != 0)
+            pub fn pin20(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 20) & 0x01) != 0)
             }
             #[doc = "Bit 21"]
             #[inline(always)]
-            pub fn pin21(&self) -> PIN21_R {
-                PIN21_R::new(((self.bits >> 21) & 0x01) != 0)
+            pub fn pin21(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 21) & 0x01) != 0)
             }
             #[doc = "Bit 22"]
             #[inline(always)]
-            pub fn pin22(&self) -> PIN22_R {
-                PIN22_R::new(((self.bits >> 22) & 0x01) != 0)
+            pub fn pin22(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 22) & 0x01) != 0)
             }
             #[doc = "Bit 23"]
             #[inline(always)]
-            pub fn pin23(&self) -> PIN23_R {
-                PIN23_R::new(((self.bits >> 23) & 0x01) != 0)
+            pub fn pin23(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 23) & 0x01) != 0)
             }
             #[doc = "Bit 24"]
             #[inline(always)]
-            pub fn pin24(&self) -> PIN24_R {
-                PIN24_R::new(((self.bits >> 24) & 0x01) != 0)
+            pub fn pin24(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 24) & 0x01) != 0)
             }
             #[doc = "Bit 25"]
             #[inline(always)]
-            pub fn pin25(&self) -> PIN25_R {
-                PIN25_R::new(((self.bits >> 25) & 0x01) != 0)
+            pub fn pin25(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 25) & 0x01) != 0)
             }
             #[doc = "Bit 26"]
             #[inline(always)]
-            pub fn pin26(&self) -> PIN26_R {
-                PIN26_R::new(((self.bits >> 26) & 0x01) != 0)
+            pub fn pin26(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 26) & 0x01) != 0)
             }
             #[doc = "Bit 27"]
             #[inline(always)]
-            pub fn pin27(&self) -> PIN27_R {
-                PIN27_R::new(((self.bits >> 27) & 0x01) != 0)
+            pub fn pin27(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 27) & 0x01) != 0)
             }
             #[doc = "Bit 28"]
             #[inline(always)]
-            pub fn pin28(&self) -> PIN28_R {
-                PIN28_R::new(((self.bits >> 28) & 0x01) != 0)
+            pub fn pin28(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 28) & 0x01) != 0)
             }
             #[doc = "Bit 29"]
             #[inline(always)]
-            pub fn pin29(&self) -> PIN29_R {
-                PIN29_R::new(((self.bits >> 29) & 0x01) != 0)
+            pub fn pin29(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 29) & 0x01) != 0)
             }
             #[doc = "Bit 30"]
             #[inline(always)]
-            pub fn pin30(&self) -> PIN30_R {
-                PIN30_R::new(((self.bits >> 30) & 0x01) != 0)
+            pub fn pin30(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 30) & 0x01) != 0)
             }
             #[doc = "Bit 31"]
             #[inline(always)]
-            pub fn pin31(&self) -> PIN31_R {
-                PIN31_R::new(((self.bits >> 31) & 0x01) != 0)
+            pub fn pin31(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 31) & 0x01) != 0)
             }
         }
         impl W {
+            #[doc = ""]
+            #[inline(always)]
+            pub unsafe fn pin(&mut self, n: usize) -> PIN_W {
+                PIN_W { w: self, offset: n }
+            }
             #[doc = "Bit 0"]
             #[inline(always)]
-            pub fn pin0(&mut self) -> PIN0_W {
-                PIN0_W { w: self }
+            pub fn pin0(&mut self) -> PIN_W {
+                PIN_W { w: self, offset: 0 }
             }
             #[doc = "Bit 1"]
             #[inline(always)]
-            pub fn pin1(&mut self) -> PIN1_W {
-                PIN1_W { w: self }
+            pub fn pin1(&mut self) -> PIN_W {
+                PIN_W { w: self, offset: 1 }
             }
             #[doc = "Bit 2"]
             #[inline(always)]
-            pub fn pin2(&mut self) -> PIN2_W {
-                PIN2_W { w: self }
+            pub fn pin2(&mut self) -> PIN_W {
+                PIN_W { w: self, offset: 2 }
             }
             #[doc = "Bit 3"]
             #[inline(always)]
-            pub fn pin3(&mut self) -> PIN3_W {
-                PIN3_W { w: self }
+            pub fn pin3(&mut self) -> PIN_W {
+                PIN_W { w: self, offset: 3 }
             }
             #[doc = "Bit 4"]
             #[inline(always)]
-            pub fn pin4(&mut self) -> PIN4_W {
-                PIN4_W { w: self }
+            pub fn pin4(&mut self) -> PIN_W {
+                PIN_W { w: self, offset: 4 }
             }
             #[doc = "Bit 5"]
             #[inline(always)]
-            pub fn pin5(&mut self) -> PIN5_W {
-                PIN5_W { w: self }
+            pub fn pin5(&mut self) -> PIN_W {
+                PIN_W { w: self, offset: 5 }
             }
             #[doc = "Bit 6"]
             #[inline(always)]
-            pub fn pin6(&mut self) -> PIN6_W {
-                PIN6_W { w: self }
+            pub fn pin6(&mut self) -> PIN_W {
+                PIN_W { w: self, offset: 6 }
             }
             #[doc = "Bit 7"]
             #[inline(always)]
-            pub fn pin7(&mut self) -> PIN7_W {
-                PIN7_W { w: self }
+            pub fn pin7(&mut self) -> PIN_W {
+                PIN_W { w: self, offset: 7 }
             }
             #[doc = "Bit 8"]
             #[inline(always)]
-            pub fn pin8(&mut self) -> PIN8_W {
-                PIN8_W { w: self }
+            pub fn pin8(&mut self) -> PIN_W {
+                PIN_W { w: self, offset: 8 }
             }
             #[doc = "Bit 9"]
             #[inline(always)]
-            pub fn pin9(&mut self) -> PIN9_W {
-                PIN9_W { w: self }
+            pub fn pin9(&mut self) -> PIN_W {
+                PIN_W { w: self, offset: 9 }
             }
             #[doc = "Bit 10"]
             #[inline(always)]
-            pub fn pin10(&mut self) -> PIN10_W {
-                PIN10_W { w: self }
+            pub fn pin10(&mut self) -> PIN_W {
+                PIN_W {
+                    w: self,
+                    offset: 10,
+                }
             }
             #[doc = "Bit 11"]
             #[inline(always)]
-            pub fn pin11(&mut self) -> PIN11_W {
-                PIN11_W { w: self }
+            pub fn pin11(&mut self) -> PIN_W {
+                PIN_W {
+                    w: self,
+                    offset: 11,
+                }
             }
             #[doc = "Bit 12"]
             #[inline(always)]
-            pub fn pin12(&mut self) -> PIN12_W {
-                PIN12_W { w: self }
+            pub fn pin12(&mut self) -> PIN_W {
+                PIN_W {
+                    w: self,
+                    offset: 12,
+                }
             }
             #[doc = "Bit 13"]
             #[inline(always)]
-            pub fn pin13(&mut self) -> PIN13_W {
-                PIN13_W { w: self }
+            pub fn pin13(&mut self) -> PIN_W {
+                PIN_W {
+                    w: self,
+                    offset: 13,
+                }
             }
             #[doc = "Bit 14"]
             #[inline(always)]
-            pub fn pin14(&mut self) -> PIN14_W {
-                PIN14_W { w: self }
+            pub fn pin14(&mut self) -> PIN_W {
+                PIN_W {
+                    w: self,
+                    offset: 14,
+                }
             }
             #[doc = "Bit 15"]
             #[inline(always)]
-            pub fn pin15(&mut self) -> PIN15_W {
-                PIN15_W { w: self }
+            pub fn pin15(&mut self) -> PIN_W {
+                PIN_W {
+                    w: self,
+                    offset: 15,
+                }
             }
             #[doc = "Bit 16"]
             #[inline(always)]
-            pub fn pin16(&mut self) -> PIN16_W {
-                PIN16_W { w: self }
+            pub fn pin16(&mut self) -> PIN_W {
+                PIN_W {
+                    w: self,
+                    offset: 16,
+                }
             }
             #[doc = "Bit 17"]
             #[inline(always)]
-            pub fn pin17(&mut self) -> PIN17_W {
-                PIN17_W { w: self }
+            pub fn pin17(&mut self) -> PIN_W {
+                PIN_W {
+                    w: self,
+                    offset: 17,
+                }
             }
             #[doc = "Bit 18"]
             #[inline(always)]
-            pub fn pin18(&mut self) -> PIN18_W {
-                PIN18_W { w: self }
+            pub fn pin18(&mut self) -> PIN_W {
+                PIN_W {
+                    w: self,
+                    offset: 18,
+                }
             }
             #[doc = "Bit 19"]
             #[inline(always)]
-            pub fn pin19(&mut self) -> PIN19_W {
-                PIN19_W { w: self }
+            pub fn pin19(&mut self) -> PIN_W {
+                PIN_W {
+                    w: self,
+                    offset: 19,
+                }
             }
             #[doc = "Bit 20"]
             #[inline(always)]
-            pub fn pin20(&mut self) -> PIN20_W {
-                PIN20_W { w: self }
+            pub fn pin20(&mut self) -> PIN_W {
+                PIN_W {
+                    w: self,
+                    offset: 20,
+                }
             }
             #[doc = "Bit 21"]
             #[inline(always)]
-            pub fn pin21(&mut self) -> PIN21_W {
-                PIN21_W { w: self }
+            pub fn pin21(&mut self) -> PIN_W {
+                PIN_W {
+                    w: self,
+                    offset: 21,
+                }
             }
             #[doc = "Bit 22"]
             #[inline(always)]
-            pub fn pin22(&mut self) -> PIN22_W {
-                PIN22_W { w: self }
+            pub fn pin22(&mut self) -> PIN_W {
+                PIN_W {
+                    w: self,
+                    offset: 22,
+                }
             }
             #[doc = "Bit 23"]
             #[inline(always)]
-            pub fn pin23(&mut self) -> PIN23_W {
-                PIN23_W { w: self }
+            pub fn pin23(&mut self) -> PIN_W {
+                PIN_W {
+                    w: self,
+                    offset: 23,
+                }
             }
             #[doc = "Bit 24"]
             #[inline(always)]
-            pub fn pin24(&mut self) -> PIN24_W {
-                PIN24_W { w: self }
+            pub fn pin24(&mut self) -> PIN_W {
+                PIN_W {
+                    w: self,
+                    offset: 24,
+                }
             }
             #[doc = "Bit 25"]
             #[inline(always)]
-            pub fn pin25(&mut self) -> PIN25_W {
-                PIN25_W { w: self }
+            pub fn pin25(&mut self) -> PIN_W {
+                PIN_W {
+                    w: self,
+                    offset: 25,
+                }
             }
             #[doc = "Bit 26"]
             #[inline(always)]
-            pub fn pin26(&mut self) -> PIN26_W {
-                PIN26_W { w: self }
+            pub fn pin26(&mut self) -> PIN_W {
+                PIN_W {
+                    w: self,
+                    offset: 26,
+                }
             }
             #[doc = "Bit 27"]
             #[inline(always)]
-            pub fn pin27(&mut self) -> PIN27_W {
-                PIN27_W { w: self }
+            pub fn pin27(&mut self) -> PIN_W {
+                PIN_W {
+                    w: self,
+                    offset: 27,
+                }
             }
             #[doc = "Bit 28"]
             #[inline(always)]
-            pub fn pin28(&mut self) -> PIN28_W {
-                PIN28_W { w: self }
+            pub fn pin28(&mut self) -> PIN_W {
+                PIN_W {
+                    w: self,
+                    offset: 28,
+                }
             }
             #[doc = "Bit 29"]
             #[inline(always)]
-            pub fn pin29(&mut self) -> PIN29_W {
-                PIN29_W { w: self }
+            pub fn pin29(&mut self) -> PIN_W {
+                PIN_W {
+                    w: self,
+                    offset: 29,
+                }
             }
             #[doc = "Bit 30"]
             #[inline(always)]
-            pub fn pin30(&mut self) -> PIN30_W {
-                PIN30_W { w: self }
+            pub fn pin30(&mut self) -> PIN_W {
+                PIN_W {
+                    w: self,
+                    offset: 30,
+                }
             }
             #[doc = "Bit 31"]
             #[inline(always)]
-            pub fn pin31(&mut self) -> PIN31_W {
-                PIN31_W { w: self }
+            pub fn pin31(&mut self) -> PIN_W {
+                PIN_W {
+                    w: self,
+                    offset: 31,
+                }
             }
         }
     }
@@ -6234,13 +3570,14 @@ pub mod gpiohs {
                 0
             }
         }
-        #[doc = "Reader of field `pin0`"]
-        pub type PIN0_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin0`"]
-        pub struct PIN0_W<'a> {
+        #[doc = "Reader of field `pin%s`"]
+        pub type PIN_R = crate::R<bool, bool>;
+        #[doc = "Write proxy for fields `pin(0-31)`"]
+        pub struct PIN_W<'a> {
             w: &'a mut W,
+            offset: usize,
         }
-        impl<'a> PIN0_W<'a> {
+        impl<'a> PIN_W<'a> {
             #[doc = r"Sets the field bit"]
             #[inline(always)]
             pub fn set_bit(self) -> &'a mut W {
@@ -6254,1076 +3591,409 @@ pub mod gpiohs {
             #[doc = r"Writes raw bits to the field"]
             #[inline(always)]
             pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !0x01) | ((value as u32) & 0x01);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin1`"]
-        pub type PIN1_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin1`"]
-        pub struct PIN1_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN1_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 1)) | (((value as u32) & 0x01) << 1);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin2`"]
-        pub type PIN2_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin2`"]
-        pub struct PIN2_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN2_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 2)) | (((value as u32) & 0x01) << 2);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin3`"]
-        pub type PIN3_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin3`"]
-        pub struct PIN3_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN3_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 3)) | (((value as u32) & 0x01) << 3);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin4`"]
-        pub type PIN4_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin4`"]
-        pub struct PIN4_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN4_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 4)) | (((value as u32) & 0x01) << 4);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin5`"]
-        pub type PIN5_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin5`"]
-        pub struct PIN5_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN5_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 5)) | (((value as u32) & 0x01) << 5);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin6`"]
-        pub type PIN6_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin6`"]
-        pub struct PIN6_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN6_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 6)) | (((value as u32) & 0x01) << 6);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin7`"]
-        pub type PIN7_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin7`"]
-        pub struct PIN7_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN7_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 7)) | (((value as u32) & 0x01) << 7);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin8`"]
-        pub type PIN8_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin8`"]
-        pub struct PIN8_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN8_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 8)) | (((value as u32) & 0x01) << 8);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin9`"]
-        pub type PIN9_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin9`"]
-        pub struct PIN9_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN9_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 9)) | (((value as u32) & 0x01) << 9);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin10`"]
-        pub type PIN10_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin10`"]
-        pub struct PIN10_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN10_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 10)) | (((value as u32) & 0x01) << 10);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin11`"]
-        pub type PIN11_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin11`"]
-        pub struct PIN11_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN11_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 11)) | (((value as u32) & 0x01) << 11);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin12`"]
-        pub type PIN12_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin12`"]
-        pub struct PIN12_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN12_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 12)) | (((value as u32) & 0x01) << 12);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin13`"]
-        pub type PIN13_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin13`"]
-        pub struct PIN13_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN13_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 13)) | (((value as u32) & 0x01) << 13);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin14`"]
-        pub type PIN14_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin14`"]
-        pub struct PIN14_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN14_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 14)) | (((value as u32) & 0x01) << 14);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin15`"]
-        pub type PIN15_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin15`"]
-        pub struct PIN15_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN15_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 15)) | (((value as u32) & 0x01) << 15);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin16`"]
-        pub type PIN16_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin16`"]
-        pub struct PIN16_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN16_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 16)) | (((value as u32) & 0x01) << 16);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin17`"]
-        pub type PIN17_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin17`"]
-        pub struct PIN17_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN17_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 17)) | (((value as u32) & 0x01) << 17);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin18`"]
-        pub type PIN18_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin18`"]
-        pub struct PIN18_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN18_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 18)) | (((value as u32) & 0x01) << 18);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin19`"]
-        pub type PIN19_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin19`"]
-        pub struct PIN19_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN19_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 19)) | (((value as u32) & 0x01) << 19);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin20`"]
-        pub type PIN20_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin20`"]
-        pub struct PIN20_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN20_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 20)) | (((value as u32) & 0x01) << 20);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin21`"]
-        pub type PIN21_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin21`"]
-        pub struct PIN21_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN21_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 21)) | (((value as u32) & 0x01) << 21);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin22`"]
-        pub type PIN22_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin22`"]
-        pub struct PIN22_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN22_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 22)) | (((value as u32) & 0x01) << 22);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin23`"]
-        pub type PIN23_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin23`"]
-        pub struct PIN23_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN23_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 23)) | (((value as u32) & 0x01) << 23);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin24`"]
-        pub type PIN24_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin24`"]
-        pub struct PIN24_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN24_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 24)) | (((value as u32) & 0x01) << 24);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin25`"]
-        pub type PIN25_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin25`"]
-        pub struct PIN25_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN25_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 25)) | (((value as u32) & 0x01) << 25);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin26`"]
-        pub type PIN26_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin26`"]
-        pub struct PIN26_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN26_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 26)) | (((value as u32) & 0x01) << 26);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin27`"]
-        pub type PIN27_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin27`"]
-        pub struct PIN27_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN27_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 27)) | (((value as u32) & 0x01) << 27);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin28`"]
-        pub type PIN28_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin28`"]
-        pub struct PIN28_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN28_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 28)) | (((value as u32) & 0x01) << 28);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin29`"]
-        pub type PIN29_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin29`"]
-        pub struct PIN29_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN29_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 29)) | (((value as u32) & 0x01) << 29);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin30`"]
-        pub type PIN30_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin30`"]
-        pub struct PIN30_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN30_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 30)) | (((value as u32) & 0x01) << 30);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin31`"]
-        pub type PIN31_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin31`"]
-        pub struct PIN31_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN31_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 31)) | (((value as u32) & 0x01) << 31);
+                self.w.bits = (self.w.bits & !(0x01 << self.offset))
+                    | (((value as u32) & 0x01) << self.offset);
                 self.w
             }
         }
         impl R {
+            #[doc = ""]
+            #[inline(always)]
+            pub unsafe fn pin(&self, n: usize) -> PIN_R {
+                PIN_R::new(((self.bits >> n) & 0x01) != 0)
+            }
             #[doc = "Bit 0"]
             #[inline(always)]
-            pub fn pin0(&self) -> PIN0_R {
-                PIN0_R::new((self.bits & 0x01) != 0)
+            pub fn pin0(&self) -> PIN_R {
+                PIN_R::new((self.bits & 0x01) != 0)
             }
             #[doc = "Bit 1"]
             #[inline(always)]
-            pub fn pin1(&self) -> PIN1_R {
-                PIN1_R::new(((self.bits >> 1) & 0x01) != 0)
+            pub fn pin1(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 1) & 0x01) != 0)
             }
             #[doc = "Bit 2"]
             #[inline(always)]
-            pub fn pin2(&self) -> PIN2_R {
-                PIN2_R::new(((self.bits >> 2) & 0x01) != 0)
+            pub fn pin2(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 2) & 0x01) != 0)
             }
             #[doc = "Bit 3"]
             #[inline(always)]
-            pub fn pin3(&self) -> PIN3_R {
-                PIN3_R::new(((self.bits >> 3) & 0x01) != 0)
+            pub fn pin3(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 3) & 0x01) != 0)
             }
             #[doc = "Bit 4"]
             #[inline(always)]
-            pub fn pin4(&self) -> PIN4_R {
-                PIN4_R::new(((self.bits >> 4) & 0x01) != 0)
+            pub fn pin4(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 4) & 0x01) != 0)
             }
             #[doc = "Bit 5"]
             #[inline(always)]
-            pub fn pin5(&self) -> PIN5_R {
-                PIN5_R::new(((self.bits >> 5) & 0x01) != 0)
+            pub fn pin5(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 5) & 0x01) != 0)
             }
             #[doc = "Bit 6"]
             #[inline(always)]
-            pub fn pin6(&self) -> PIN6_R {
-                PIN6_R::new(((self.bits >> 6) & 0x01) != 0)
+            pub fn pin6(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 6) & 0x01) != 0)
             }
             #[doc = "Bit 7"]
             #[inline(always)]
-            pub fn pin7(&self) -> PIN7_R {
-                PIN7_R::new(((self.bits >> 7) & 0x01) != 0)
+            pub fn pin7(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 7) & 0x01) != 0)
             }
             #[doc = "Bit 8"]
             #[inline(always)]
-            pub fn pin8(&self) -> PIN8_R {
-                PIN8_R::new(((self.bits >> 8) & 0x01) != 0)
+            pub fn pin8(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 8) & 0x01) != 0)
             }
             #[doc = "Bit 9"]
             #[inline(always)]
-            pub fn pin9(&self) -> PIN9_R {
-                PIN9_R::new(((self.bits >> 9) & 0x01) != 0)
+            pub fn pin9(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 9) & 0x01) != 0)
             }
             #[doc = "Bit 10"]
             #[inline(always)]
-            pub fn pin10(&self) -> PIN10_R {
-                PIN10_R::new(((self.bits >> 10) & 0x01) != 0)
+            pub fn pin10(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 10) & 0x01) != 0)
             }
             #[doc = "Bit 11"]
             #[inline(always)]
-            pub fn pin11(&self) -> PIN11_R {
-                PIN11_R::new(((self.bits >> 11) & 0x01) != 0)
+            pub fn pin11(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 11) & 0x01) != 0)
             }
             #[doc = "Bit 12"]
             #[inline(always)]
-            pub fn pin12(&self) -> PIN12_R {
-                PIN12_R::new(((self.bits >> 12) & 0x01) != 0)
+            pub fn pin12(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 12) & 0x01) != 0)
             }
             #[doc = "Bit 13"]
             #[inline(always)]
-            pub fn pin13(&self) -> PIN13_R {
-                PIN13_R::new(((self.bits >> 13) & 0x01) != 0)
+            pub fn pin13(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 13) & 0x01) != 0)
             }
             #[doc = "Bit 14"]
             #[inline(always)]
-            pub fn pin14(&self) -> PIN14_R {
-                PIN14_R::new(((self.bits >> 14) & 0x01) != 0)
+            pub fn pin14(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 14) & 0x01) != 0)
             }
             #[doc = "Bit 15"]
             #[inline(always)]
-            pub fn pin15(&self) -> PIN15_R {
-                PIN15_R::new(((self.bits >> 15) & 0x01) != 0)
+            pub fn pin15(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 15) & 0x01) != 0)
             }
             #[doc = "Bit 16"]
             #[inline(always)]
-            pub fn pin16(&self) -> PIN16_R {
-                PIN16_R::new(((self.bits >> 16) & 0x01) != 0)
+            pub fn pin16(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 16) & 0x01) != 0)
             }
             #[doc = "Bit 17"]
             #[inline(always)]
-            pub fn pin17(&self) -> PIN17_R {
-                PIN17_R::new(((self.bits >> 17) & 0x01) != 0)
+            pub fn pin17(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 17) & 0x01) != 0)
             }
             #[doc = "Bit 18"]
             #[inline(always)]
-            pub fn pin18(&self) -> PIN18_R {
-                PIN18_R::new(((self.bits >> 18) & 0x01) != 0)
+            pub fn pin18(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 18) & 0x01) != 0)
             }
             #[doc = "Bit 19"]
             #[inline(always)]
-            pub fn pin19(&self) -> PIN19_R {
-                PIN19_R::new(((self.bits >> 19) & 0x01) != 0)
+            pub fn pin19(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 19) & 0x01) != 0)
             }
             #[doc = "Bit 20"]
             #[inline(always)]
-            pub fn pin20(&self) -> PIN20_R {
-                PIN20_R::new(((self.bits >> 20) & 0x01) != 0)
+            pub fn pin20(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 20) & 0x01) != 0)
             }
             #[doc = "Bit 21"]
             #[inline(always)]
-            pub fn pin21(&self) -> PIN21_R {
-                PIN21_R::new(((self.bits >> 21) & 0x01) != 0)
+            pub fn pin21(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 21) & 0x01) != 0)
             }
             #[doc = "Bit 22"]
             #[inline(always)]
-            pub fn pin22(&self) -> PIN22_R {
-                PIN22_R::new(((self.bits >> 22) & 0x01) != 0)
+            pub fn pin22(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 22) & 0x01) != 0)
             }
             #[doc = "Bit 23"]
             #[inline(always)]
-            pub fn pin23(&self) -> PIN23_R {
-                PIN23_R::new(((self.bits >> 23) & 0x01) != 0)
+            pub fn pin23(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 23) & 0x01) != 0)
             }
             #[doc = "Bit 24"]
             #[inline(always)]
-            pub fn pin24(&self) -> PIN24_R {
-                PIN24_R::new(((self.bits >> 24) & 0x01) != 0)
+            pub fn pin24(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 24) & 0x01) != 0)
             }
             #[doc = "Bit 25"]
             #[inline(always)]
-            pub fn pin25(&self) -> PIN25_R {
-                PIN25_R::new(((self.bits >> 25) & 0x01) != 0)
+            pub fn pin25(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 25) & 0x01) != 0)
             }
             #[doc = "Bit 26"]
             #[inline(always)]
-            pub fn pin26(&self) -> PIN26_R {
-                PIN26_R::new(((self.bits >> 26) & 0x01) != 0)
+            pub fn pin26(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 26) & 0x01) != 0)
             }
             #[doc = "Bit 27"]
             #[inline(always)]
-            pub fn pin27(&self) -> PIN27_R {
-                PIN27_R::new(((self.bits >> 27) & 0x01) != 0)
+            pub fn pin27(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 27) & 0x01) != 0)
             }
             #[doc = "Bit 28"]
             #[inline(always)]
-            pub fn pin28(&self) -> PIN28_R {
-                PIN28_R::new(((self.bits >> 28) & 0x01) != 0)
+            pub fn pin28(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 28) & 0x01) != 0)
             }
             #[doc = "Bit 29"]
             #[inline(always)]
-            pub fn pin29(&self) -> PIN29_R {
-                PIN29_R::new(((self.bits >> 29) & 0x01) != 0)
+            pub fn pin29(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 29) & 0x01) != 0)
             }
             #[doc = "Bit 30"]
             #[inline(always)]
-            pub fn pin30(&self) -> PIN30_R {
-                PIN30_R::new(((self.bits >> 30) & 0x01) != 0)
+            pub fn pin30(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 30) & 0x01) != 0)
             }
             #[doc = "Bit 31"]
             #[inline(always)]
-            pub fn pin31(&self) -> PIN31_R {
-                PIN31_R::new(((self.bits >> 31) & 0x01) != 0)
+            pub fn pin31(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 31) & 0x01) != 0)
             }
         }
         impl W {
+            #[doc = ""]
+            #[inline(always)]
+            pub unsafe fn pin(&mut self, n: usize) -> PIN_W {
+                PIN_W { w: self, offset: n }
+            }
             #[doc = "Bit 0"]
             #[inline(always)]
-            pub fn pin0(&mut self) -> PIN0_W {
-                PIN0_W { w: self }
+            pub fn pin0(&mut self) -> PIN_W {
+                PIN_W { w: self, offset: 0 }
             }
             #[doc = "Bit 1"]
             #[inline(always)]
-            pub fn pin1(&mut self) -> PIN1_W {
-                PIN1_W { w: self }
+            pub fn pin1(&mut self) -> PIN_W {
+                PIN_W { w: self, offset: 1 }
             }
             #[doc = "Bit 2"]
             #[inline(always)]
-            pub fn pin2(&mut self) -> PIN2_W {
-                PIN2_W { w: self }
+            pub fn pin2(&mut self) -> PIN_W {
+                PIN_W { w: self, offset: 2 }
             }
             #[doc = "Bit 3"]
             #[inline(always)]
-            pub fn pin3(&mut self) -> PIN3_W {
-                PIN3_W { w: self }
+            pub fn pin3(&mut self) -> PIN_W {
+                PIN_W { w: self, offset: 3 }
             }
             #[doc = "Bit 4"]
             #[inline(always)]
-            pub fn pin4(&mut self) -> PIN4_W {
-                PIN4_W { w: self }
+            pub fn pin4(&mut self) -> PIN_W {
+                PIN_W { w: self, offset: 4 }
             }
             #[doc = "Bit 5"]
             #[inline(always)]
-            pub fn pin5(&mut self) -> PIN5_W {
-                PIN5_W { w: self }
+            pub fn pin5(&mut self) -> PIN_W {
+                PIN_W { w: self, offset: 5 }
             }
             #[doc = "Bit 6"]
             #[inline(always)]
-            pub fn pin6(&mut self) -> PIN6_W {
-                PIN6_W { w: self }
+            pub fn pin6(&mut self) -> PIN_W {
+                PIN_W { w: self, offset: 6 }
             }
             #[doc = "Bit 7"]
             #[inline(always)]
-            pub fn pin7(&mut self) -> PIN7_W {
-                PIN7_W { w: self }
+            pub fn pin7(&mut self) -> PIN_W {
+                PIN_W { w: self, offset: 7 }
             }
             #[doc = "Bit 8"]
             #[inline(always)]
-            pub fn pin8(&mut self) -> PIN8_W {
-                PIN8_W { w: self }
+            pub fn pin8(&mut self) -> PIN_W {
+                PIN_W { w: self, offset: 8 }
             }
             #[doc = "Bit 9"]
             #[inline(always)]
-            pub fn pin9(&mut self) -> PIN9_W {
-                PIN9_W { w: self }
+            pub fn pin9(&mut self) -> PIN_W {
+                PIN_W { w: self, offset: 9 }
             }
             #[doc = "Bit 10"]
             #[inline(always)]
-            pub fn pin10(&mut self) -> PIN10_W {
-                PIN10_W { w: self }
+            pub fn pin10(&mut self) -> PIN_W {
+                PIN_W {
+                    w: self,
+                    offset: 10,
+                }
             }
             #[doc = "Bit 11"]
             #[inline(always)]
-            pub fn pin11(&mut self) -> PIN11_W {
-                PIN11_W { w: self }
+            pub fn pin11(&mut self) -> PIN_W {
+                PIN_W {
+                    w: self,
+                    offset: 11,
+                }
             }
             #[doc = "Bit 12"]
             #[inline(always)]
-            pub fn pin12(&mut self) -> PIN12_W {
-                PIN12_W { w: self }
+            pub fn pin12(&mut self) -> PIN_W {
+                PIN_W {
+                    w: self,
+                    offset: 12,
+                }
             }
             #[doc = "Bit 13"]
             #[inline(always)]
-            pub fn pin13(&mut self) -> PIN13_W {
-                PIN13_W { w: self }
+            pub fn pin13(&mut self) -> PIN_W {
+                PIN_W {
+                    w: self,
+                    offset: 13,
+                }
             }
             #[doc = "Bit 14"]
             #[inline(always)]
-            pub fn pin14(&mut self) -> PIN14_W {
-                PIN14_W { w: self }
+            pub fn pin14(&mut self) -> PIN_W {
+                PIN_W {
+                    w: self,
+                    offset: 14,
+                }
             }
             #[doc = "Bit 15"]
             #[inline(always)]
-            pub fn pin15(&mut self) -> PIN15_W {
-                PIN15_W { w: self }
+            pub fn pin15(&mut self) -> PIN_W {
+                PIN_W {
+                    w: self,
+                    offset: 15,
+                }
             }
             #[doc = "Bit 16"]
             #[inline(always)]
-            pub fn pin16(&mut self) -> PIN16_W {
-                PIN16_W { w: self }
+            pub fn pin16(&mut self) -> PIN_W {
+                PIN_W {
+                    w: self,
+                    offset: 16,
+                }
             }
             #[doc = "Bit 17"]
             #[inline(always)]
-            pub fn pin17(&mut self) -> PIN17_W {
-                PIN17_W { w: self }
+            pub fn pin17(&mut self) -> PIN_W {
+                PIN_W {
+                    w: self,
+                    offset: 17,
+                }
             }
             #[doc = "Bit 18"]
             #[inline(always)]
-            pub fn pin18(&mut self) -> PIN18_W {
-                PIN18_W { w: self }
+            pub fn pin18(&mut self) -> PIN_W {
+                PIN_W {
+                    w: self,
+                    offset: 18,
+                }
             }
             #[doc = "Bit 19"]
             #[inline(always)]
-            pub fn pin19(&mut self) -> PIN19_W {
-                PIN19_W { w: self }
+            pub fn pin19(&mut self) -> PIN_W {
+                PIN_W {
+                    w: self,
+                    offset: 19,
+                }
             }
             #[doc = "Bit 20"]
             #[inline(always)]
-            pub fn pin20(&mut self) -> PIN20_W {
-                PIN20_W { w: self }
+            pub fn pin20(&mut self) -> PIN_W {
+                PIN_W {
+                    w: self,
+                    offset: 20,
+                }
             }
             #[doc = "Bit 21"]
             #[inline(always)]
-            pub fn pin21(&mut self) -> PIN21_W {
-                PIN21_W { w: self }
+            pub fn pin21(&mut self) -> PIN_W {
+                PIN_W {
+                    w: self,
+                    offset: 21,
+                }
             }
             #[doc = "Bit 22"]
             #[inline(always)]
-            pub fn pin22(&mut self) -> PIN22_W {
-                PIN22_W { w: self }
+            pub fn pin22(&mut self) -> PIN_W {
+                PIN_W {
+                    w: self,
+                    offset: 22,
+                }
             }
             #[doc = "Bit 23"]
             #[inline(always)]
-            pub fn pin23(&mut self) -> PIN23_W {
-                PIN23_W { w: self }
+            pub fn pin23(&mut self) -> PIN_W {
+                PIN_W {
+                    w: self,
+                    offset: 23,
+                }
             }
             #[doc = "Bit 24"]
             #[inline(always)]
-            pub fn pin24(&mut self) -> PIN24_W {
-                PIN24_W { w: self }
+            pub fn pin24(&mut self) -> PIN_W {
+                PIN_W {
+                    w: self,
+                    offset: 24,
+                }
             }
             #[doc = "Bit 25"]
             #[inline(always)]
-            pub fn pin25(&mut self) -> PIN25_W {
-                PIN25_W { w: self }
+            pub fn pin25(&mut self) -> PIN_W {
+                PIN_W {
+                    w: self,
+                    offset: 25,
+                }
             }
             #[doc = "Bit 26"]
             #[inline(always)]
-            pub fn pin26(&mut self) -> PIN26_W {
-                PIN26_W { w: self }
+            pub fn pin26(&mut self) -> PIN_W {
+                PIN_W {
+                    w: self,
+                    offset: 26,
+                }
             }
             #[doc = "Bit 27"]
             #[inline(always)]
-            pub fn pin27(&mut self) -> PIN27_W {
-                PIN27_W { w: self }
+            pub fn pin27(&mut self) -> PIN_W {
+                PIN_W {
+                    w: self,
+                    offset: 27,
+                }
             }
             #[doc = "Bit 28"]
             #[inline(always)]
-            pub fn pin28(&mut self) -> PIN28_W {
-                PIN28_W { w: self }
+            pub fn pin28(&mut self) -> PIN_W {
+                PIN_W {
+                    w: self,
+                    offset: 28,
+                }
             }
             #[doc = "Bit 29"]
             #[inline(always)]
-            pub fn pin29(&mut self) -> PIN29_W {
-                PIN29_W { w: self }
+            pub fn pin29(&mut self) -> PIN_W {
+                PIN_W {
+                    w: self,
+                    offset: 29,
+                }
             }
             #[doc = "Bit 30"]
             #[inline(always)]
-            pub fn pin30(&mut self) -> PIN30_W {
-                PIN30_W { w: self }
+            pub fn pin30(&mut self) -> PIN_W {
+                PIN_W {
+                    w: self,
+                    offset: 30,
+                }
             }
             #[doc = "Bit 31"]
             #[inline(always)]
-            pub fn pin31(&mut self) -> PIN31_W {
-                PIN31_W { w: self }
+            pub fn pin31(&mut self) -> PIN_W {
+                PIN_W {
+                    w: self,
+                    offset: 31,
+                }
             }
         }
     }
@@ -7350,13 +4020,14 @@ pub mod gpiohs {
                 0
             }
         }
-        #[doc = "Reader of field `pin0`"]
-        pub type PIN0_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin0`"]
-        pub struct PIN0_W<'a> {
+        #[doc = "Reader of field `pin%s`"]
+        pub type PIN_R = crate::R<bool, bool>;
+        #[doc = "Write proxy for fields `pin(0-31)`"]
+        pub struct PIN_W<'a> {
             w: &'a mut W,
+            offset: usize,
         }
-        impl<'a> PIN0_W<'a> {
+        impl<'a> PIN_W<'a> {
             #[doc = r"Sets the field bit"]
             #[inline(always)]
             pub fn set_bit(self) -> &'a mut W {
@@ -7370,1076 +4041,409 @@ pub mod gpiohs {
             #[doc = r"Writes raw bits to the field"]
             #[inline(always)]
             pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !0x01) | ((value as u32) & 0x01);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin1`"]
-        pub type PIN1_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin1`"]
-        pub struct PIN1_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN1_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 1)) | (((value as u32) & 0x01) << 1);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin2`"]
-        pub type PIN2_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin2`"]
-        pub struct PIN2_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN2_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 2)) | (((value as u32) & 0x01) << 2);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin3`"]
-        pub type PIN3_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin3`"]
-        pub struct PIN3_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN3_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 3)) | (((value as u32) & 0x01) << 3);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin4`"]
-        pub type PIN4_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin4`"]
-        pub struct PIN4_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN4_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 4)) | (((value as u32) & 0x01) << 4);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin5`"]
-        pub type PIN5_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin5`"]
-        pub struct PIN5_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN5_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 5)) | (((value as u32) & 0x01) << 5);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin6`"]
-        pub type PIN6_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin6`"]
-        pub struct PIN6_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN6_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 6)) | (((value as u32) & 0x01) << 6);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin7`"]
-        pub type PIN7_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin7`"]
-        pub struct PIN7_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN7_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 7)) | (((value as u32) & 0x01) << 7);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin8`"]
-        pub type PIN8_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin8`"]
-        pub struct PIN8_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN8_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 8)) | (((value as u32) & 0x01) << 8);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin9`"]
-        pub type PIN9_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin9`"]
-        pub struct PIN9_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN9_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 9)) | (((value as u32) & 0x01) << 9);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin10`"]
-        pub type PIN10_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin10`"]
-        pub struct PIN10_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN10_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 10)) | (((value as u32) & 0x01) << 10);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin11`"]
-        pub type PIN11_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin11`"]
-        pub struct PIN11_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN11_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 11)) | (((value as u32) & 0x01) << 11);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin12`"]
-        pub type PIN12_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin12`"]
-        pub struct PIN12_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN12_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 12)) | (((value as u32) & 0x01) << 12);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin13`"]
-        pub type PIN13_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin13`"]
-        pub struct PIN13_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN13_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 13)) | (((value as u32) & 0x01) << 13);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin14`"]
-        pub type PIN14_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin14`"]
-        pub struct PIN14_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN14_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 14)) | (((value as u32) & 0x01) << 14);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin15`"]
-        pub type PIN15_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin15`"]
-        pub struct PIN15_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN15_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 15)) | (((value as u32) & 0x01) << 15);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin16`"]
-        pub type PIN16_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin16`"]
-        pub struct PIN16_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN16_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 16)) | (((value as u32) & 0x01) << 16);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin17`"]
-        pub type PIN17_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin17`"]
-        pub struct PIN17_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN17_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 17)) | (((value as u32) & 0x01) << 17);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin18`"]
-        pub type PIN18_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin18`"]
-        pub struct PIN18_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN18_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 18)) | (((value as u32) & 0x01) << 18);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin19`"]
-        pub type PIN19_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin19`"]
-        pub struct PIN19_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN19_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 19)) | (((value as u32) & 0x01) << 19);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin20`"]
-        pub type PIN20_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin20`"]
-        pub struct PIN20_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN20_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 20)) | (((value as u32) & 0x01) << 20);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin21`"]
-        pub type PIN21_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin21`"]
-        pub struct PIN21_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN21_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 21)) | (((value as u32) & 0x01) << 21);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin22`"]
-        pub type PIN22_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin22`"]
-        pub struct PIN22_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN22_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 22)) | (((value as u32) & 0x01) << 22);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin23`"]
-        pub type PIN23_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin23`"]
-        pub struct PIN23_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN23_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 23)) | (((value as u32) & 0x01) << 23);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin24`"]
-        pub type PIN24_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin24`"]
-        pub struct PIN24_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN24_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 24)) | (((value as u32) & 0x01) << 24);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin25`"]
-        pub type PIN25_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin25`"]
-        pub struct PIN25_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN25_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 25)) | (((value as u32) & 0x01) << 25);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin26`"]
-        pub type PIN26_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin26`"]
-        pub struct PIN26_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN26_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 26)) | (((value as u32) & 0x01) << 26);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin27`"]
-        pub type PIN27_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin27`"]
-        pub struct PIN27_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN27_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 27)) | (((value as u32) & 0x01) << 27);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin28`"]
-        pub type PIN28_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin28`"]
-        pub struct PIN28_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN28_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 28)) | (((value as u32) & 0x01) << 28);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin29`"]
-        pub type PIN29_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin29`"]
-        pub struct PIN29_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN29_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 29)) | (((value as u32) & 0x01) << 29);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin30`"]
-        pub type PIN30_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin30`"]
-        pub struct PIN30_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN30_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 30)) | (((value as u32) & 0x01) << 30);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin31`"]
-        pub type PIN31_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin31`"]
-        pub struct PIN31_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN31_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 31)) | (((value as u32) & 0x01) << 31);
+                self.w.bits = (self.w.bits & !(0x01 << self.offset))
+                    | (((value as u32) & 0x01) << self.offset);
                 self.w
             }
         }
         impl R {
+            #[doc = ""]
+            #[inline(always)]
+            pub unsafe fn pin(&self, n: usize) -> PIN_R {
+                PIN_R::new(((self.bits >> n) & 0x01) != 0)
+            }
             #[doc = "Bit 0"]
             #[inline(always)]
-            pub fn pin0(&self) -> PIN0_R {
-                PIN0_R::new((self.bits & 0x01) != 0)
+            pub fn pin0(&self) -> PIN_R {
+                PIN_R::new((self.bits & 0x01) != 0)
             }
             #[doc = "Bit 1"]
             #[inline(always)]
-            pub fn pin1(&self) -> PIN1_R {
-                PIN1_R::new(((self.bits >> 1) & 0x01) != 0)
+            pub fn pin1(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 1) & 0x01) != 0)
             }
             #[doc = "Bit 2"]
             #[inline(always)]
-            pub fn pin2(&self) -> PIN2_R {
-                PIN2_R::new(((self.bits >> 2) & 0x01) != 0)
+            pub fn pin2(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 2) & 0x01) != 0)
             }
             #[doc = "Bit 3"]
             #[inline(always)]
-            pub fn pin3(&self) -> PIN3_R {
-                PIN3_R::new(((self.bits >> 3) & 0x01) != 0)
+            pub fn pin3(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 3) & 0x01) != 0)
             }
             #[doc = "Bit 4"]
             #[inline(always)]
-            pub fn pin4(&self) -> PIN4_R {
-                PIN4_R::new(((self.bits >> 4) & 0x01) != 0)
+            pub fn pin4(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 4) & 0x01) != 0)
             }
             #[doc = "Bit 5"]
             #[inline(always)]
-            pub fn pin5(&self) -> PIN5_R {
-                PIN5_R::new(((self.bits >> 5) & 0x01) != 0)
+            pub fn pin5(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 5) & 0x01) != 0)
             }
             #[doc = "Bit 6"]
             #[inline(always)]
-            pub fn pin6(&self) -> PIN6_R {
-                PIN6_R::new(((self.bits >> 6) & 0x01) != 0)
+            pub fn pin6(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 6) & 0x01) != 0)
             }
             #[doc = "Bit 7"]
             #[inline(always)]
-            pub fn pin7(&self) -> PIN7_R {
-                PIN7_R::new(((self.bits >> 7) & 0x01) != 0)
+            pub fn pin7(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 7) & 0x01) != 0)
             }
             #[doc = "Bit 8"]
             #[inline(always)]
-            pub fn pin8(&self) -> PIN8_R {
-                PIN8_R::new(((self.bits >> 8) & 0x01) != 0)
+            pub fn pin8(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 8) & 0x01) != 0)
             }
             #[doc = "Bit 9"]
             #[inline(always)]
-            pub fn pin9(&self) -> PIN9_R {
-                PIN9_R::new(((self.bits >> 9) & 0x01) != 0)
+            pub fn pin9(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 9) & 0x01) != 0)
             }
             #[doc = "Bit 10"]
             #[inline(always)]
-            pub fn pin10(&self) -> PIN10_R {
-                PIN10_R::new(((self.bits >> 10) & 0x01) != 0)
+            pub fn pin10(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 10) & 0x01) != 0)
             }
             #[doc = "Bit 11"]
             #[inline(always)]
-            pub fn pin11(&self) -> PIN11_R {
-                PIN11_R::new(((self.bits >> 11) & 0x01) != 0)
+            pub fn pin11(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 11) & 0x01) != 0)
             }
             #[doc = "Bit 12"]
             #[inline(always)]
-            pub fn pin12(&self) -> PIN12_R {
-                PIN12_R::new(((self.bits >> 12) & 0x01) != 0)
+            pub fn pin12(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 12) & 0x01) != 0)
             }
             #[doc = "Bit 13"]
             #[inline(always)]
-            pub fn pin13(&self) -> PIN13_R {
-                PIN13_R::new(((self.bits >> 13) & 0x01) != 0)
+            pub fn pin13(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 13) & 0x01) != 0)
             }
             #[doc = "Bit 14"]
             #[inline(always)]
-            pub fn pin14(&self) -> PIN14_R {
-                PIN14_R::new(((self.bits >> 14) & 0x01) != 0)
+            pub fn pin14(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 14) & 0x01) != 0)
             }
             #[doc = "Bit 15"]
             #[inline(always)]
-            pub fn pin15(&self) -> PIN15_R {
-                PIN15_R::new(((self.bits >> 15) & 0x01) != 0)
+            pub fn pin15(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 15) & 0x01) != 0)
             }
             #[doc = "Bit 16"]
             #[inline(always)]
-            pub fn pin16(&self) -> PIN16_R {
-                PIN16_R::new(((self.bits >> 16) & 0x01) != 0)
+            pub fn pin16(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 16) & 0x01) != 0)
             }
             #[doc = "Bit 17"]
             #[inline(always)]
-            pub fn pin17(&self) -> PIN17_R {
-                PIN17_R::new(((self.bits >> 17) & 0x01) != 0)
+            pub fn pin17(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 17) & 0x01) != 0)
             }
             #[doc = "Bit 18"]
             #[inline(always)]
-            pub fn pin18(&self) -> PIN18_R {
-                PIN18_R::new(((self.bits >> 18) & 0x01) != 0)
+            pub fn pin18(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 18) & 0x01) != 0)
             }
             #[doc = "Bit 19"]
             #[inline(always)]
-            pub fn pin19(&self) -> PIN19_R {
-                PIN19_R::new(((self.bits >> 19) & 0x01) != 0)
+            pub fn pin19(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 19) & 0x01) != 0)
             }
             #[doc = "Bit 20"]
             #[inline(always)]
-            pub fn pin20(&self) -> PIN20_R {
-                PIN20_R::new(((self.bits >> 20) & 0x01) != 0)
+            pub fn pin20(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 20) & 0x01) != 0)
             }
             #[doc = "Bit 21"]
             #[inline(always)]
-            pub fn pin21(&self) -> PIN21_R {
-                PIN21_R::new(((self.bits >> 21) & 0x01) != 0)
+            pub fn pin21(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 21) & 0x01) != 0)
             }
             #[doc = "Bit 22"]
             #[inline(always)]
-            pub fn pin22(&self) -> PIN22_R {
-                PIN22_R::new(((self.bits >> 22) & 0x01) != 0)
+            pub fn pin22(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 22) & 0x01) != 0)
             }
             #[doc = "Bit 23"]
             #[inline(always)]
-            pub fn pin23(&self) -> PIN23_R {
-                PIN23_R::new(((self.bits >> 23) & 0x01) != 0)
+            pub fn pin23(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 23) & 0x01) != 0)
             }
             #[doc = "Bit 24"]
             #[inline(always)]
-            pub fn pin24(&self) -> PIN24_R {
-                PIN24_R::new(((self.bits >> 24) & 0x01) != 0)
+            pub fn pin24(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 24) & 0x01) != 0)
             }
             #[doc = "Bit 25"]
             #[inline(always)]
-            pub fn pin25(&self) -> PIN25_R {
-                PIN25_R::new(((self.bits >> 25) & 0x01) != 0)
+            pub fn pin25(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 25) & 0x01) != 0)
             }
             #[doc = "Bit 26"]
             #[inline(always)]
-            pub fn pin26(&self) -> PIN26_R {
-                PIN26_R::new(((self.bits >> 26) & 0x01) != 0)
+            pub fn pin26(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 26) & 0x01) != 0)
             }
             #[doc = "Bit 27"]
             #[inline(always)]
-            pub fn pin27(&self) -> PIN27_R {
-                PIN27_R::new(((self.bits >> 27) & 0x01) != 0)
+            pub fn pin27(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 27) & 0x01) != 0)
             }
             #[doc = "Bit 28"]
             #[inline(always)]
-            pub fn pin28(&self) -> PIN28_R {
-                PIN28_R::new(((self.bits >> 28) & 0x01) != 0)
+            pub fn pin28(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 28) & 0x01) != 0)
             }
             #[doc = "Bit 29"]
             #[inline(always)]
-            pub fn pin29(&self) -> PIN29_R {
-                PIN29_R::new(((self.bits >> 29) & 0x01) != 0)
+            pub fn pin29(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 29) & 0x01) != 0)
             }
             #[doc = "Bit 30"]
             #[inline(always)]
-            pub fn pin30(&self) -> PIN30_R {
-                PIN30_R::new(((self.bits >> 30) & 0x01) != 0)
+            pub fn pin30(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 30) & 0x01) != 0)
             }
             #[doc = "Bit 31"]
             #[inline(always)]
-            pub fn pin31(&self) -> PIN31_R {
-                PIN31_R::new(((self.bits >> 31) & 0x01) != 0)
+            pub fn pin31(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 31) & 0x01) != 0)
             }
         }
         impl W {
+            #[doc = ""]
+            #[inline(always)]
+            pub unsafe fn pin(&mut self, n: usize) -> PIN_W {
+                PIN_W { w: self, offset: n }
+            }
             #[doc = "Bit 0"]
             #[inline(always)]
-            pub fn pin0(&mut self) -> PIN0_W {
-                PIN0_W { w: self }
+            pub fn pin0(&mut self) -> PIN_W {
+                PIN_W { w: self, offset: 0 }
             }
             #[doc = "Bit 1"]
             #[inline(always)]
-            pub fn pin1(&mut self) -> PIN1_W {
-                PIN1_W { w: self }
+            pub fn pin1(&mut self) -> PIN_W {
+                PIN_W { w: self, offset: 1 }
             }
             #[doc = "Bit 2"]
             #[inline(always)]
-            pub fn pin2(&mut self) -> PIN2_W {
-                PIN2_W { w: self }
+            pub fn pin2(&mut self) -> PIN_W {
+                PIN_W { w: self, offset: 2 }
             }
             #[doc = "Bit 3"]
             #[inline(always)]
-            pub fn pin3(&mut self) -> PIN3_W {
-                PIN3_W { w: self }
+            pub fn pin3(&mut self) -> PIN_W {
+                PIN_W { w: self, offset: 3 }
             }
             #[doc = "Bit 4"]
             #[inline(always)]
-            pub fn pin4(&mut self) -> PIN4_W {
-                PIN4_W { w: self }
+            pub fn pin4(&mut self) -> PIN_W {
+                PIN_W { w: self, offset: 4 }
             }
             #[doc = "Bit 5"]
             #[inline(always)]
-            pub fn pin5(&mut self) -> PIN5_W {
-                PIN5_W { w: self }
+            pub fn pin5(&mut self) -> PIN_W {
+                PIN_W { w: self, offset: 5 }
             }
             #[doc = "Bit 6"]
             #[inline(always)]
-            pub fn pin6(&mut self) -> PIN6_W {
-                PIN6_W { w: self }
+            pub fn pin6(&mut self) -> PIN_W {
+                PIN_W { w: self, offset: 6 }
             }
             #[doc = "Bit 7"]
             #[inline(always)]
-            pub fn pin7(&mut self) -> PIN7_W {
-                PIN7_W { w: self }
+            pub fn pin7(&mut self) -> PIN_W {
+                PIN_W { w: self, offset: 7 }
             }
             #[doc = "Bit 8"]
             #[inline(always)]
-            pub fn pin8(&mut self) -> PIN8_W {
-                PIN8_W { w: self }
+            pub fn pin8(&mut self) -> PIN_W {
+                PIN_W { w: self, offset: 8 }
             }
             #[doc = "Bit 9"]
             #[inline(always)]
-            pub fn pin9(&mut self) -> PIN9_W {
-                PIN9_W { w: self }
+            pub fn pin9(&mut self) -> PIN_W {
+                PIN_W { w: self, offset: 9 }
             }
             #[doc = "Bit 10"]
             #[inline(always)]
-            pub fn pin10(&mut self) -> PIN10_W {
-                PIN10_W { w: self }
+            pub fn pin10(&mut self) -> PIN_W {
+                PIN_W {
+                    w: self,
+                    offset: 10,
+                }
             }
             #[doc = "Bit 11"]
             #[inline(always)]
-            pub fn pin11(&mut self) -> PIN11_W {
-                PIN11_W { w: self }
+            pub fn pin11(&mut self) -> PIN_W {
+                PIN_W {
+                    w: self,
+                    offset: 11,
+                }
             }
             #[doc = "Bit 12"]
             #[inline(always)]
-            pub fn pin12(&mut self) -> PIN12_W {
-                PIN12_W { w: self }
+            pub fn pin12(&mut self) -> PIN_W {
+                PIN_W {
+                    w: self,
+                    offset: 12,
+                }
             }
             #[doc = "Bit 13"]
             #[inline(always)]
-            pub fn pin13(&mut self) -> PIN13_W {
-                PIN13_W { w: self }
+            pub fn pin13(&mut self) -> PIN_W {
+                PIN_W {
+                    w: self,
+                    offset: 13,
+                }
             }
             #[doc = "Bit 14"]
             #[inline(always)]
-            pub fn pin14(&mut self) -> PIN14_W {
-                PIN14_W { w: self }
+            pub fn pin14(&mut self) -> PIN_W {
+                PIN_W {
+                    w: self,
+                    offset: 14,
+                }
             }
             #[doc = "Bit 15"]
             #[inline(always)]
-            pub fn pin15(&mut self) -> PIN15_W {
-                PIN15_W { w: self }
+            pub fn pin15(&mut self) -> PIN_W {
+                PIN_W {
+                    w: self,
+                    offset: 15,
+                }
             }
             #[doc = "Bit 16"]
             #[inline(always)]
-            pub fn pin16(&mut self) -> PIN16_W {
-                PIN16_W { w: self }
+            pub fn pin16(&mut self) -> PIN_W {
+                PIN_W {
+                    w: self,
+                    offset: 16,
+                }
             }
             #[doc = "Bit 17"]
             #[inline(always)]
-            pub fn pin17(&mut self) -> PIN17_W {
-                PIN17_W { w: self }
+            pub fn pin17(&mut self) -> PIN_W {
+                PIN_W {
+                    w: self,
+                    offset: 17,
+                }
             }
             #[doc = "Bit 18"]
             #[inline(always)]
-            pub fn pin18(&mut self) -> PIN18_W {
-                PIN18_W { w: self }
+            pub fn pin18(&mut self) -> PIN_W {
+                PIN_W {
+                    w: self,
+                    offset: 18,
+                }
             }
             #[doc = "Bit 19"]
             #[inline(always)]
-            pub fn pin19(&mut self) -> PIN19_W {
-                PIN19_W { w: self }
+            pub fn pin19(&mut self) -> PIN_W {
+                PIN_W {
+                    w: self,
+                    offset: 19,
+                }
             }
             #[doc = "Bit 20"]
             #[inline(always)]
-            pub fn pin20(&mut self) -> PIN20_W {
-                PIN20_W { w: self }
+            pub fn pin20(&mut self) -> PIN_W {
+                PIN_W {
+                    w: self,
+                    offset: 20,
+                }
             }
             #[doc = "Bit 21"]
             #[inline(always)]
-            pub fn pin21(&mut self) -> PIN21_W {
-                PIN21_W { w: self }
+            pub fn pin21(&mut self) -> PIN_W {
+                PIN_W {
+                    w: self,
+                    offset: 21,
+                }
             }
             #[doc = "Bit 22"]
             #[inline(always)]
-            pub fn pin22(&mut self) -> PIN22_W {
-                PIN22_W { w: self }
+            pub fn pin22(&mut self) -> PIN_W {
+                PIN_W {
+                    w: self,
+                    offset: 22,
+                }
             }
             #[doc = "Bit 23"]
             #[inline(always)]
-            pub fn pin23(&mut self) -> PIN23_W {
-                PIN23_W { w: self }
+            pub fn pin23(&mut self) -> PIN_W {
+                PIN_W {
+                    w: self,
+                    offset: 23,
+                }
             }
             #[doc = "Bit 24"]
             #[inline(always)]
-            pub fn pin24(&mut self) -> PIN24_W {
-                PIN24_W { w: self }
+            pub fn pin24(&mut self) -> PIN_W {
+                PIN_W {
+                    w: self,
+                    offset: 24,
+                }
             }
             #[doc = "Bit 25"]
             #[inline(always)]
-            pub fn pin25(&mut self) -> PIN25_W {
-                PIN25_W { w: self }
+            pub fn pin25(&mut self) -> PIN_W {
+                PIN_W {
+                    w: self,
+                    offset: 25,
+                }
             }
             #[doc = "Bit 26"]
             #[inline(always)]
-            pub fn pin26(&mut self) -> PIN26_W {
-                PIN26_W { w: self }
+            pub fn pin26(&mut self) -> PIN_W {
+                PIN_W {
+                    w: self,
+                    offset: 26,
+                }
             }
             #[doc = "Bit 27"]
             #[inline(always)]
-            pub fn pin27(&mut self) -> PIN27_W {
-                PIN27_W { w: self }
+            pub fn pin27(&mut self) -> PIN_W {
+                PIN_W {
+                    w: self,
+                    offset: 27,
+                }
             }
             #[doc = "Bit 28"]
             #[inline(always)]
-            pub fn pin28(&mut self) -> PIN28_W {
-                PIN28_W { w: self }
+            pub fn pin28(&mut self) -> PIN_W {
+                PIN_W {
+                    w: self,
+                    offset: 28,
+                }
             }
             #[doc = "Bit 29"]
             #[inline(always)]
-            pub fn pin29(&mut self) -> PIN29_W {
-                PIN29_W { w: self }
+            pub fn pin29(&mut self) -> PIN_W {
+                PIN_W {
+                    w: self,
+                    offset: 29,
+                }
             }
             #[doc = "Bit 30"]
             #[inline(always)]
-            pub fn pin30(&mut self) -> PIN30_W {
-                PIN30_W { w: self }
+            pub fn pin30(&mut self) -> PIN_W {
+                PIN_W {
+                    w: self,
+                    offset: 30,
+                }
             }
             #[doc = "Bit 31"]
             #[inline(always)]
-            pub fn pin31(&mut self) -> PIN31_W {
-                PIN31_W { w: self }
+            pub fn pin31(&mut self) -> PIN_W {
+                PIN_W {
+                    w: self,
+                    offset: 31,
+                }
             }
         }
     }
@@ -8466,13 +4470,14 @@ pub mod gpiohs {
                 0
             }
         }
-        #[doc = "Reader of field `pin0`"]
-        pub type PIN0_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin0`"]
-        pub struct PIN0_W<'a> {
+        #[doc = "Reader of field `pin%s`"]
+        pub type PIN_R = crate::R<bool, bool>;
+        #[doc = "Write proxy for fields `pin(0-31)`"]
+        pub struct PIN_W<'a> {
             w: &'a mut W,
+            offset: usize,
         }
-        impl<'a> PIN0_W<'a> {
+        impl<'a> PIN_W<'a> {
             #[doc = r"Sets the field bit"]
             #[inline(always)]
             pub fn set_bit(self) -> &'a mut W {
@@ -8486,1076 +4491,409 @@ pub mod gpiohs {
             #[doc = r"Writes raw bits to the field"]
             #[inline(always)]
             pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !0x01) | ((value as u32) & 0x01);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin1`"]
-        pub type PIN1_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin1`"]
-        pub struct PIN1_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN1_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 1)) | (((value as u32) & 0x01) << 1);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin2`"]
-        pub type PIN2_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin2`"]
-        pub struct PIN2_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN2_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 2)) | (((value as u32) & 0x01) << 2);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin3`"]
-        pub type PIN3_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin3`"]
-        pub struct PIN3_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN3_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 3)) | (((value as u32) & 0x01) << 3);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin4`"]
-        pub type PIN4_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin4`"]
-        pub struct PIN4_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN4_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 4)) | (((value as u32) & 0x01) << 4);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin5`"]
-        pub type PIN5_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin5`"]
-        pub struct PIN5_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN5_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 5)) | (((value as u32) & 0x01) << 5);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin6`"]
-        pub type PIN6_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin6`"]
-        pub struct PIN6_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN6_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 6)) | (((value as u32) & 0x01) << 6);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin7`"]
-        pub type PIN7_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin7`"]
-        pub struct PIN7_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN7_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 7)) | (((value as u32) & 0x01) << 7);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin8`"]
-        pub type PIN8_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin8`"]
-        pub struct PIN8_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN8_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 8)) | (((value as u32) & 0x01) << 8);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin9`"]
-        pub type PIN9_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin9`"]
-        pub struct PIN9_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN9_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 9)) | (((value as u32) & 0x01) << 9);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin10`"]
-        pub type PIN10_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin10`"]
-        pub struct PIN10_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN10_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 10)) | (((value as u32) & 0x01) << 10);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin11`"]
-        pub type PIN11_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin11`"]
-        pub struct PIN11_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN11_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 11)) | (((value as u32) & 0x01) << 11);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin12`"]
-        pub type PIN12_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin12`"]
-        pub struct PIN12_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN12_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 12)) | (((value as u32) & 0x01) << 12);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin13`"]
-        pub type PIN13_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin13`"]
-        pub struct PIN13_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN13_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 13)) | (((value as u32) & 0x01) << 13);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin14`"]
-        pub type PIN14_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin14`"]
-        pub struct PIN14_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN14_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 14)) | (((value as u32) & 0x01) << 14);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin15`"]
-        pub type PIN15_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin15`"]
-        pub struct PIN15_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN15_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 15)) | (((value as u32) & 0x01) << 15);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin16`"]
-        pub type PIN16_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin16`"]
-        pub struct PIN16_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN16_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 16)) | (((value as u32) & 0x01) << 16);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin17`"]
-        pub type PIN17_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin17`"]
-        pub struct PIN17_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN17_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 17)) | (((value as u32) & 0x01) << 17);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin18`"]
-        pub type PIN18_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin18`"]
-        pub struct PIN18_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN18_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 18)) | (((value as u32) & 0x01) << 18);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin19`"]
-        pub type PIN19_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin19`"]
-        pub struct PIN19_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN19_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 19)) | (((value as u32) & 0x01) << 19);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin20`"]
-        pub type PIN20_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin20`"]
-        pub struct PIN20_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN20_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 20)) | (((value as u32) & 0x01) << 20);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin21`"]
-        pub type PIN21_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin21`"]
-        pub struct PIN21_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN21_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 21)) | (((value as u32) & 0x01) << 21);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin22`"]
-        pub type PIN22_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin22`"]
-        pub struct PIN22_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN22_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 22)) | (((value as u32) & 0x01) << 22);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin23`"]
-        pub type PIN23_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin23`"]
-        pub struct PIN23_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN23_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 23)) | (((value as u32) & 0x01) << 23);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin24`"]
-        pub type PIN24_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin24`"]
-        pub struct PIN24_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN24_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 24)) | (((value as u32) & 0x01) << 24);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin25`"]
-        pub type PIN25_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin25`"]
-        pub struct PIN25_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN25_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 25)) | (((value as u32) & 0x01) << 25);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin26`"]
-        pub type PIN26_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin26`"]
-        pub struct PIN26_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN26_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 26)) | (((value as u32) & 0x01) << 26);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin27`"]
-        pub type PIN27_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin27`"]
-        pub struct PIN27_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN27_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 27)) | (((value as u32) & 0x01) << 27);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin28`"]
-        pub type PIN28_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin28`"]
-        pub struct PIN28_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN28_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 28)) | (((value as u32) & 0x01) << 28);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin29`"]
-        pub type PIN29_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin29`"]
-        pub struct PIN29_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN29_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 29)) | (((value as u32) & 0x01) << 29);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin30`"]
-        pub type PIN30_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin30`"]
-        pub struct PIN30_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN30_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 30)) | (((value as u32) & 0x01) << 30);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin31`"]
-        pub type PIN31_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin31`"]
-        pub struct PIN31_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN31_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 31)) | (((value as u32) & 0x01) << 31);
+                self.w.bits = (self.w.bits & !(0x01 << self.offset))
+                    | (((value as u32) & 0x01) << self.offset);
                 self.w
             }
         }
         impl R {
+            #[doc = ""]
+            #[inline(always)]
+            pub unsafe fn pin(&self, n: usize) -> PIN_R {
+                PIN_R::new(((self.bits >> n) & 0x01) != 0)
+            }
             #[doc = "Bit 0"]
             #[inline(always)]
-            pub fn pin0(&self) -> PIN0_R {
-                PIN0_R::new((self.bits & 0x01) != 0)
+            pub fn pin0(&self) -> PIN_R {
+                PIN_R::new((self.bits & 0x01) != 0)
             }
             #[doc = "Bit 1"]
             #[inline(always)]
-            pub fn pin1(&self) -> PIN1_R {
-                PIN1_R::new(((self.bits >> 1) & 0x01) != 0)
+            pub fn pin1(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 1) & 0x01) != 0)
             }
             #[doc = "Bit 2"]
             #[inline(always)]
-            pub fn pin2(&self) -> PIN2_R {
-                PIN2_R::new(((self.bits >> 2) & 0x01) != 0)
+            pub fn pin2(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 2) & 0x01) != 0)
             }
             #[doc = "Bit 3"]
             #[inline(always)]
-            pub fn pin3(&self) -> PIN3_R {
-                PIN3_R::new(((self.bits >> 3) & 0x01) != 0)
+            pub fn pin3(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 3) & 0x01) != 0)
             }
             #[doc = "Bit 4"]
             #[inline(always)]
-            pub fn pin4(&self) -> PIN4_R {
-                PIN4_R::new(((self.bits >> 4) & 0x01) != 0)
+            pub fn pin4(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 4) & 0x01) != 0)
             }
             #[doc = "Bit 5"]
             #[inline(always)]
-            pub fn pin5(&self) -> PIN5_R {
-                PIN5_R::new(((self.bits >> 5) & 0x01) != 0)
+            pub fn pin5(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 5) & 0x01) != 0)
             }
             #[doc = "Bit 6"]
             #[inline(always)]
-            pub fn pin6(&self) -> PIN6_R {
-                PIN6_R::new(((self.bits >> 6) & 0x01) != 0)
+            pub fn pin6(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 6) & 0x01) != 0)
             }
             #[doc = "Bit 7"]
             #[inline(always)]
-            pub fn pin7(&self) -> PIN7_R {
-                PIN7_R::new(((self.bits >> 7) & 0x01) != 0)
+            pub fn pin7(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 7) & 0x01) != 0)
             }
             #[doc = "Bit 8"]
             #[inline(always)]
-            pub fn pin8(&self) -> PIN8_R {
-                PIN8_R::new(((self.bits >> 8) & 0x01) != 0)
+            pub fn pin8(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 8) & 0x01) != 0)
             }
             #[doc = "Bit 9"]
             #[inline(always)]
-            pub fn pin9(&self) -> PIN9_R {
-                PIN9_R::new(((self.bits >> 9) & 0x01) != 0)
+            pub fn pin9(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 9) & 0x01) != 0)
             }
             #[doc = "Bit 10"]
             #[inline(always)]
-            pub fn pin10(&self) -> PIN10_R {
-                PIN10_R::new(((self.bits >> 10) & 0x01) != 0)
+            pub fn pin10(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 10) & 0x01) != 0)
             }
             #[doc = "Bit 11"]
             #[inline(always)]
-            pub fn pin11(&self) -> PIN11_R {
-                PIN11_R::new(((self.bits >> 11) & 0x01) != 0)
+            pub fn pin11(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 11) & 0x01) != 0)
             }
             #[doc = "Bit 12"]
             #[inline(always)]
-            pub fn pin12(&self) -> PIN12_R {
-                PIN12_R::new(((self.bits >> 12) & 0x01) != 0)
+            pub fn pin12(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 12) & 0x01) != 0)
             }
             #[doc = "Bit 13"]
             #[inline(always)]
-            pub fn pin13(&self) -> PIN13_R {
-                PIN13_R::new(((self.bits >> 13) & 0x01) != 0)
+            pub fn pin13(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 13) & 0x01) != 0)
             }
             #[doc = "Bit 14"]
             #[inline(always)]
-            pub fn pin14(&self) -> PIN14_R {
-                PIN14_R::new(((self.bits >> 14) & 0x01) != 0)
+            pub fn pin14(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 14) & 0x01) != 0)
             }
             #[doc = "Bit 15"]
             #[inline(always)]
-            pub fn pin15(&self) -> PIN15_R {
-                PIN15_R::new(((self.bits >> 15) & 0x01) != 0)
+            pub fn pin15(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 15) & 0x01) != 0)
             }
             #[doc = "Bit 16"]
             #[inline(always)]
-            pub fn pin16(&self) -> PIN16_R {
-                PIN16_R::new(((self.bits >> 16) & 0x01) != 0)
+            pub fn pin16(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 16) & 0x01) != 0)
             }
             #[doc = "Bit 17"]
             #[inline(always)]
-            pub fn pin17(&self) -> PIN17_R {
-                PIN17_R::new(((self.bits >> 17) & 0x01) != 0)
+            pub fn pin17(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 17) & 0x01) != 0)
             }
             #[doc = "Bit 18"]
             #[inline(always)]
-            pub fn pin18(&self) -> PIN18_R {
-                PIN18_R::new(((self.bits >> 18) & 0x01) != 0)
+            pub fn pin18(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 18) & 0x01) != 0)
             }
             #[doc = "Bit 19"]
             #[inline(always)]
-            pub fn pin19(&self) -> PIN19_R {
-                PIN19_R::new(((self.bits >> 19) & 0x01) != 0)
+            pub fn pin19(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 19) & 0x01) != 0)
             }
             #[doc = "Bit 20"]
             #[inline(always)]
-            pub fn pin20(&self) -> PIN20_R {
-                PIN20_R::new(((self.bits >> 20) & 0x01) != 0)
+            pub fn pin20(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 20) & 0x01) != 0)
             }
             #[doc = "Bit 21"]
             #[inline(always)]
-            pub fn pin21(&self) -> PIN21_R {
-                PIN21_R::new(((self.bits >> 21) & 0x01) != 0)
+            pub fn pin21(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 21) & 0x01) != 0)
             }
             #[doc = "Bit 22"]
             #[inline(always)]
-            pub fn pin22(&self) -> PIN22_R {
-                PIN22_R::new(((self.bits >> 22) & 0x01) != 0)
+            pub fn pin22(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 22) & 0x01) != 0)
             }
             #[doc = "Bit 23"]
             #[inline(always)]
-            pub fn pin23(&self) -> PIN23_R {
-                PIN23_R::new(((self.bits >> 23) & 0x01) != 0)
+            pub fn pin23(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 23) & 0x01) != 0)
             }
             #[doc = "Bit 24"]
             #[inline(always)]
-            pub fn pin24(&self) -> PIN24_R {
-                PIN24_R::new(((self.bits >> 24) & 0x01) != 0)
+            pub fn pin24(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 24) & 0x01) != 0)
             }
             #[doc = "Bit 25"]
             #[inline(always)]
-            pub fn pin25(&self) -> PIN25_R {
-                PIN25_R::new(((self.bits >> 25) & 0x01) != 0)
+            pub fn pin25(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 25) & 0x01) != 0)
             }
             #[doc = "Bit 26"]
             #[inline(always)]
-            pub fn pin26(&self) -> PIN26_R {
-                PIN26_R::new(((self.bits >> 26) & 0x01) != 0)
+            pub fn pin26(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 26) & 0x01) != 0)
             }
             #[doc = "Bit 27"]
             #[inline(always)]
-            pub fn pin27(&self) -> PIN27_R {
-                PIN27_R::new(((self.bits >> 27) & 0x01) != 0)
+            pub fn pin27(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 27) & 0x01) != 0)
             }
             #[doc = "Bit 28"]
             #[inline(always)]
-            pub fn pin28(&self) -> PIN28_R {
-                PIN28_R::new(((self.bits >> 28) & 0x01) != 0)
+            pub fn pin28(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 28) & 0x01) != 0)
             }
             #[doc = "Bit 29"]
             #[inline(always)]
-            pub fn pin29(&self) -> PIN29_R {
-                PIN29_R::new(((self.bits >> 29) & 0x01) != 0)
+            pub fn pin29(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 29) & 0x01) != 0)
             }
             #[doc = "Bit 30"]
             #[inline(always)]
-            pub fn pin30(&self) -> PIN30_R {
-                PIN30_R::new(((self.bits >> 30) & 0x01) != 0)
+            pub fn pin30(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 30) & 0x01) != 0)
             }
             #[doc = "Bit 31"]
             #[inline(always)]
-            pub fn pin31(&self) -> PIN31_R {
-                PIN31_R::new(((self.bits >> 31) & 0x01) != 0)
+            pub fn pin31(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 31) & 0x01) != 0)
             }
         }
         impl W {
+            #[doc = ""]
+            #[inline(always)]
+            pub unsafe fn pin(&mut self, n: usize) -> PIN_W {
+                PIN_W { w: self, offset: n }
+            }
             #[doc = "Bit 0"]
             #[inline(always)]
-            pub fn pin0(&mut self) -> PIN0_W {
-                PIN0_W { w: self }
+            pub fn pin0(&mut self) -> PIN_W {
+                PIN_W { w: self, offset: 0 }
             }
             #[doc = "Bit 1"]
             #[inline(always)]
-            pub fn pin1(&mut self) -> PIN1_W {
-                PIN1_W { w: self }
+            pub fn pin1(&mut self) -> PIN_W {
+                PIN_W { w: self, offset: 1 }
             }
             #[doc = "Bit 2"]
             #[inline(always)]
-            pub fn pin2(&mut self) -> PIN2_W {
-                PIN2_W { w: self }
+            pub fn pin2(&mut self) -> PIN_W {
+                PIN_W { w: self, offset: 2 }
             }
             #[doc = "Bit 3"]
             #[inline(always)]
-            pub fn pin3(&mut self) -> PIN3_W {
-                PIN3_W { w: self }
+            pub fn pin3(&mut self) -> PIN_W {
+                PIN_W { w: self, offset: 3 }
             }
             #[doc = "Bit 4"]
             #[inline(always)]
-            pub fn pin4(&mut self) -> PIN4_W {
-                PIN4_W { w: self }
+            pub fn pin4(&mut self) -> PIN_W {
+                PIN_W { w: self, offset: 4 }
             }
             #[doc = "Bit 5"]
             #[inline(always)]
-            pub fn pin5(&mut self) -> PIN5_W {
-                PIN5_W { w: self }
+            pub fn pin5(&mut self) -> PIN_W {
+                PIN_W { w: self, offset: 5 }
             }
             #[doc = "Bit 6"]
             #[inline(always)]
-            pub fn pin6(&mut self) -> PIN6_W {
-                PIN6_W { w: self }
+            pub fn pin6(&mut self) -> PIN_W {
+                PIN_W { w: self, offset: 6 }
             }
             #[doc = "Bit 7"]
             #[inline(always)]
-            pub fn pin7(&mut self) -> PIN7_W {
-                PIN7_W { w: self }
+            pub fn pin7(&mut self) -> PIN_W {
+                PIN_W { w: self, offset: 7 }
             }
             #[doc = "Bit 8"]
             #[inline(always)]
-            pub fn pin8(&mut self) -> PIN8_W {
-                PIN8_W { w: self }
+            pub fn pin8(&mut self) -> PIN_W {
+                PIN_W { w: self, offset: 8 }
             }
             #[doc = "Bit 9"]
             #[inline(always)]
-            pub fn pin9(&mut self) -> PIN9_W {
-                PIN9_W { w: self }
+            pub fn pin9(&mut self) -> PIN_W {
+                PIN_W { w: self, offset: 9 }
             }
             #[doc = "Bit 10"]
             #[inline(always)]
-            pub fn pin10(&mut self) -> PIN10_W {
-                PIN10_W { w: self }
+            pub fn pin10(&mut self) -> PIN_W {
+                PIN_W {
+                    w: self,
+                    offset: 10,
+                }
             }
             #[doc = "Bit 11"]
             #[inline(always)]
-            pub fn pin11(&mut self) -> PIN11_W {
-                PIN11_W { w: self }
+            pub fn pin11(&mut self) -> PIN_W {
+                PIN_W {
+                    w: self,
+                    offset: 11,
+                }
             }
             #[doc = "Bit 12"]
             #[inline(always)]
-            pub fn pin12(&mut self) -> PIN12_W {
-                PIN12_W { w: self }
+            pub fn pin12(&mut self) -> PIN_W {
+                PIN_W {
+                    w: self,
+                    offset: 12,
+                }
             }
             #[doc = "Bit 13"]
             #[inline(always)]
-            pub fn pin13(&mut self) -> PIN13_W {
-                PIN13_W { w: self }
+            pub fn pin13(&mut self) -> PIN_W {
+                PIN_W {
+                    w: self,
+                    offset: 13,
+                }
             }
             #[doc = "Bit 14"]
             #[inline(always)]
-            pub fn pin14(&mut self) -> PIN14_W {
-                PIN14_W { w: self }
+            pub fn pin14(&mut self) -> PIN_W {
+                PIN_W {
+                    w: self,
+                    offset: 14,
+                }
             }
             #[doc = "Bit 15"]
             #[inline(always)]
-            pub fn pin15(&mut self) -> PIN15_W {
-                PIN15_W { w: self }
+            pub fn pin15(&mut self) -> PIN_W {
+                PIN_W {
+                    w: self,
+                    offset: 15,
+                }
             }
             #[doc = "Bit 16"]
             #[inline(always)]
-            pub fn pin16(&mut self) -> PIN16_W {
-                PIN16_W { w: self }
+            pub fn pin16(&mut self) -> PIN_W {
+                PIN_W {
+                    w: self,
+                    offset: 16,
+                }
             }
             #[doc = "Bit 17"]
             #[inline(always)]
-            pub fn pin17(&mut self) -> PIN17_W {
-                PIN17_W { w: self }
+            pub fn pin17(&mut self) -> PIN_W {
+                PIN_W {
+                    w: self,
+                    offset: 17,
+                }
             }
             #[doc = "Bit 18"]
             #[inline(always)]
-            pub fn pin18(&mut self) -> PIN18_W {
-                PIN18_W { w: self }
+            pub fn pin18(&mut self) -> PIN_W {
+                PIN_W {
+                    w: self,
+                    offset: 18,
+                }
             }
             #[doc = "Bit 19"]
             #[inline(always)]
-            pub fn pin19(&mut self) -> PIN19_W {
-                PIN19_W { w: self }
+            pub fn pin19(&mut self) -> PIN_W {
+                PIN_W {
+                    w: self,
+                    offset: 19,
+                }
             }
             #[doc = "Bit 20"]
             #[inline(always)]
-            pub fn pin20(&mut self) -> PIN20_W {
-                PIN20_W { w: self }
+            pub fn pin20(&mut self) -> PIN_W {
+                PIN_W {
+                    w: self,
+                    offset: 20,
+                }
             }
             #[doc = "Bit 21"]
             #[inline(always)]
-            pub fn pin21(&mut self) -> PIN21_W {
-                PIN21_W { w: self }
+            pub fn pin21(&mut self) -> PIN_W {
+                PIN_W {
+                    w: self,
+                    offset: 21,
+                }
             }
             #[doc = "Bit 22"]
             #[inline(always)]
-            pub fn pin22(&mut self) -> PIN22_W {
-                PIN22_W { w: self }
+            pub fn pin22(&mut self) -> PIN_W {
+                PIN_W {
+                    w: self,
+                    offset: 22,
+                }
             }
             #[doc = "Bit 23"]
             #[inline(always)]
-            pub fn pin23(&mut self) -> PIN23_W {
-                PIN23_W { w: self }
+            pub fn pin23(&mut self) -> PIN_W {
+                PIN_W {
+                    w: self,
+                    offset: 23,
+                }
             }
             #[doc = "Bit 24"]
             #[inline(always)]
-            pub fn pin24(&mut self) -> PIN24_W {
-                PIN24_W { w: self }
+            pub fn pin24(&mut self) -> PIN_W {
+                PIN_W {
+                    w: self,
+                    offset: 24,
+                }
             }
             #[doc = "Bit 25"]
             #[inline(always)]
-            pub fn pin25(&mut self) -> PIN25_W {
-                PIN25_W { w: self }
+            pub fn pin25(&mut self) -> PIN_W {
+                PIN_W {
+                    w: self,
+                    offset: 25,
+                }
             }
             #[doc = "Bit 26"]
             #[inline(always)]
-            pub fn pin26(&mut self) -> PIN26_W {
-                PIN26_W { w: self }
+            pub fn pin26(&mut self) -> PIN_W {
+                PIN_W {
+                    w: self,
+                    offset: 26,
+                }
             }
             #[doc = "Bit 27"]
             #[inline(always)]
-            pub fn pin27(&mut self) -> PIN27_W {
-                PIN27_W { w: self }
+            pub fn pin27(&mut self) -> PIN_W {
+                PIN_W {
+                    w: self,
+                    offset: 27,
+                }
             }
             #[doc = "Bit 28"]
             #[inline(always)]
-            pub fn pin28(&mut self) -> PIN28_W {
-                PIN28_W { w: self }
+            pub fn pin28(&mut self) -> PIN_W {
+                PIN_W {
+                    w: self,
+                    offset: 28,
+                }
             }
             #[doc = "Bit 29"]
             #[inline(always)]
-            pub fn pin29(&mut self) -> PIN29_W {
-                PIN29_W { w: self }
+            pub fn pin29(&mut self) -> PIN_W {
+                PIN_W {
+                    w: self,
+                    offset: 29,
+                }
             }
             #[doc = "Bit 30"]
             #[inline(always)]
-            pub fn pin30(&mut self) -> PIN30_W {
-                PIN30_W { w: self }
+            pub fn pin30(&mut self) -> PIN_W {
+                PIN_W {
+                    w: self,
+                    offset: 30,
+                }
             }
             #[doc = "Bit 31"]
             #[inline(always)]
-            pub fn pin31(&mut self) -> PIN31_W {
-                PIN31_W { w: self }
+            pub fn pin31(&mut self) -> PIN_W {
+                PIN_W {
+                    w: self,
+                    offset: 31,
+                }
             }
         }
     }
@@ -9582,13 +4920,14 @@ pub mod gpiohs {
                 0
             }
         }
-        #[doc = "Reader of field `pin0`"]
-        pub type PIN0_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin0`"]
-        pub struct PIN0_W<'a> {
+        #[doc = "Reader of field `pin%s`"]
+        pub type PIN_R = crate::R<bool, bool>;
+        #[doc = "Write proxy for fields `pin(0-31)`"]
+        pub struct PIN_W<'a> {
             w: &'a mut W,
+            offset: usize,
         }
-        impl<'a> PIN0_W<'a> {
+        impl<'a> PIN_W<'a> {
             #[doc = r"Sets the field bit"]
             #[inline(always)]
             pub fn set_bit(self) -> &'a mut W {
@@ -9602,1076 +4941,409 @@ pub mod gpiohs {
             #[doc = r"Writes raw bits to the field"]
             #[inline(always)]
             pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !0x01) | ((value as u32) & 0x01);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin1`"]
-        pub type PIN1_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin1`"]
-        pub struct PIN1_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN1_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 1)) | (((value as u32) & 0x01) << 1);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin2`"]
-        pub type PIN2_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin2`"]
-        pub struct PIN2_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN2_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 2)) | (((value as u32) & 0x01) << 2);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin3`"]
-        pub type PIN3_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin3`"]
-        pub struct PIN3_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN3_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 3)) | (((value as u32) & 0x01) << 3);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin4`"]
-        pub type PIN4_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin4`"]
-        pub struct PIN4_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN4_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 4)) | (((value as u32) & 0x01) << 4);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin5`"]
-        pub type PIN5_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin5`"]
-        pub struct PIN5_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN5_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 5)) | (((value as u32) & 0x01) << 5);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin6`"]
-        pub type PIN6_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin6`"]
-        pub struct PIN6_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN6_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 6)) | (((value as u32) & 0x01) << 6);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin7`"]
-        pub type PIN7_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin7`"]
-        pub struct PIN7_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN7_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 7)) | (((value as u32) & 0x01) << 7);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin8`"]
-        pub type PIN8_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin8`"]
-        pub struct PIN8_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN8_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 8)) | (((value as u32) & 0x01) << 8);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin9`"]
-        pub type PIN9_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin9`"]
-        pub struct PIN9_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN9_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 9)) | (((value as u32) & 0x01) << 9);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin10`"]
-        pub type PIN10_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin10`"]
-        pub struct PIN10_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN10_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 10)) | (((value as u32) & 0x01) << 10);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin11`"]
-        pub type PIN11_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin11`"]
-        pub struct PIN11_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN11_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 11)) | (((value as u32) & 0x01) << 11);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin12`"]
-        pub type PIN12_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin12`"]
-        pub struct PIN12_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN12_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 12)) | (((value as u32) & 0x01) << 12);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin13`"]
-        pub type PIN13_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin13`"]
-        pub struct PIN13_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN13_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 13)) | (((value as u32) & 0x01) << 13);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin14`"]
-        pub type PIN14_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin14`"]
-        pub struct PIN14_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN14_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 14)) | (((value as u32) & 0x01) << 14);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin15`"]
-        pub type PIN15_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin15`"]
-        pub struct PIN15_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN15_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 15)) | (((value as u32) & 0x01) << 15);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin16`"]
-        pub type PIN16_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin16`"]
-        pub struct PIN16_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN16_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 16)) | (((value as u32) & 0x01) << 16);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin17`"]
-        pub type PIN17_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin17`"]
-        pub struct PIN17_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN17_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 17)) | (((value as u32) & 0x01) << 17);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin18`"]
-        pub type PIN18_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin18`"]
-        pub struct PIN18_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN18_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 18)) | (((value as u32) & 0x01) << 18);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin19`"]
-        pub type PIN19_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin19`"]
-        pub struct PIN19_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN19_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 19)) | (((value as u32) & 0x01) << 19);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin20`"]
-        pub type PIN20_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin20`"]
-        pub struct PIN20_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN20_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 20)) | (((value as u32) & 0x01) << 20);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin21`"]
-        pub type PIN21_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin21`"]
-        pub struct PIN21_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN21_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 21)) | (((value as u32) & 0x01) << 21);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin22`"]
-        pub type PIN22_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin22`"]
-        pub struct PIN22_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN22_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 22)) | (((value as u32) & 0x01) << 22);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin23`"]
-        pub type PIN23_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin23`"]
-        pub struct PIN23_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN23_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 23)) | (((value as u32) & 0x01) << 23);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin24`"]
-        pub type PIN24_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin24`"]
-        pub struct PIN24_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN24_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 24)) | (((value as u32) & 0x01) << 24);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin25`"]
-        pub type PIN25_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin25`"]
-        pub struct PIN25_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN25_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 25)) | (((value as u32) & 0x01) << 25);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin26`"]
-        pub type PIN26_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin26`"]
-        pub struct PIN26_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN26_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 26)) | (((value as u32) & 0x01) << 26);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin27`"]
-        pub type PIN27_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin27`"]
-        pub struct PIN27_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN27_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 27)) | (((value as u32) & 0x01) << 27);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin28`"]
-        pub type PIN28_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin28`"]
-        pub struct PIN28_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN28_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 28)) | (((value as u32) & 0x01) << 28);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin29`"]
-        pub type PIN29_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin29`"]
-        pub struct PIN29_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN29_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 29)) | (((value as u32) & 0x01) << 29);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin30`"]
-        pub type PIN30_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin30`"]
-        pub struct PIN30_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN30_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 30)) | (((value as u32) & 0x01) << 30);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin31`"]
-        pub type PIN31_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin31`"]
-        pub struct PIN31_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN31_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 31)) | (((value as u32) & 0x01) << 31);
+                self.w.bits = (self.w.bits & !(0x01 << self.offset))
+                    | (((value as u32) & 0x01) << self.offset);
                 self.w
             }
         }
         impl R {
+            #[doc = ""]
+            #[inline(always)]
+            pub unsafe fn pin(&self, n: usize) -> PIN_R {
+                PIN_R::new(((self.bits >> n) & 0x01) != 0)
+            }
             #[doc = "Bit 0"]
             #[inline(always)]
-            pub fn pin0(&self) -> PIN0_R {
-                PIN0_R::new((self.bits & 0x01) != 0)
+            pub fn pin0(&self) -> PIN_R {
+                PIN_R::new((self.bits & 0x01) != 0)
             }
             #[doc = "Bit 1"]
             #[inline(always)]
-            pub fn pin1(&self) -> PIN1_R {
-                PIN1_R::new(((self.bits >> 1) & 0x01) != 0)
+            pub fn pin1(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 1) & 0x01) != 0)
             }
             #[doc = "Bit 2"]
             #[inline(always)]
-            pub fn pin2(&self) -> PIN2_R {
-                PIN2_R::new(((self.bits >> 2) & 0x01) != 0)
+            pub fn pin2(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 2) & 0x01) != 0)
             }
             #[doc = "Bit 3"]
             #[inline(always)]
-            pub fn pin3(&self) -> PIN3_R {
-                PIN3_R::new(((self.bits >> 3) & 0x01) != 0)
+            pub fn pin3(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 3) & 0x01) != 0)
             }
             #[doc = "Bit 4"]
             #[inline(always)]
-            pub fn pin4(&self) -> PIN4_R {
-                PIN4_R::new(((self.bits >> 4) & 0x01) != 0)
+            pub fn pin4(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 4) & 0x01) != 0)
             }
             #[doc = "Bit 5"]
             #[inline(always)]
-            pub fn pin5(&self) -> PIN5_R {
-                PIN5_R::new(((self.bits >> 5) & 0x01) != 0)
+            pub fn pin5(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 5) & 0x01) != 0)
             }
             #[doc = "Bit 6"]
             #[inline(always)]
-            pub fn pin6(&self) -> PIN6_R {
-                PIN6_R::new(((self.bits >> 6) & 0x01) != 0)
+            pub fn pin6(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 6) & 0x01) != 0)
             }
             #[doc = "Bit 7"]
             #[inline(always)]
-            pub fn pin7(&self) -> PIN7_R {
-                PIN7_R::new(((self.bits >> 7) & 0x01) != 0)
+            pub fn pin7(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 7) & 0x01) != 0)
             }
             #[doc = "Bit 8"]
             #[inline(always)]
-            pub fn pin8(&self) -> PIN8_R {
-                PIN8_R::new(((self.bits >> 8) & 0x01) != 0)
+            pub fn pin8(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 8) & 0x01) != 0)
             }
             #[doc = "Bit 9"]
             #[inline(always)]
-            pub fn pin9(&self) -> PIN9_R {
-                PIN9_R::new(((self.bits >> 9) & 0x01) != 0)
+            pub fn pin9(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 9) & 0x01) != 0)
             }
             #[doc = "Bit 10"]
             #[inline(always)]
-            pub fn pin10(&self) -> PIN10_R {
-                PIN10_R::new(((self.bits >> 10) & 0x01) != 0)
+            pub fn pin10(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 10) & 0x01) != 0)
             }
             #[doc = "Bit 11"]
             #[inline(always)]
-            pub fn pin11(&self) -> PIN11_R {
-                PIN11_R::new(((self.bits >> 11) & 0x01) != 0)
+            pub fn pin11(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 11) & 0x01) != 0)
             }
             #[doc = "Bit 12"]
             #[inline(always)]
-            pub fn pin12(&self) -> PIN12_R {
-                PIN12_R::new(((self.bits >> 12) & 0x01) != 0)
+            pub fn pin12(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 12) & 0x01) != 0)
             }
             #[doc = "Bit 13"]
             #[inline(always)]
-            pub fn pin13(&self) -> PIN13_R {
-                PIN13_R::new(((self.bits >> 13) & 0x01) != 0)
+            pub fn pin13(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 13) & 0x01) != 0)
             }
             #[doc = "Bit 14"]
             #[inline(always)]
-            pub fn pin14(&self) -> PIN14_R {
-                PIN14_R::new(((self.bits >> 14) & 0x01) != 0)
+            pub fn pin14(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 14) & 0x01) != 0)
             }
             #[doc = "Bit 15"]
             #[inline(always)]
-            pub fn pin15(&self) -> PIN15_R {
-                PIN15_R::new(((self.bits >> 15) & 0x01) != 0)
+            pub fn pin15(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 15) & 0x01) != 0)
             }
             #[doc = "Bit 16"]
             #[inline(always)]
-            pub fn pin16(&self) -> PIN16_R {
-                PIN16_R::new(((self.bits >> 16) & 0x01) != 0)
+            pub fn pin16(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 16) & 0x01) != 0)
             }
             #[doc = "Bit 17"]
             #[inline(always)]
-            pub fn pin17(&self) -> PIN17_R {
-                PIN17_R::new(((self.bits >> 17) & 0x01) != 0)
+            pub fn pin17(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 17) & 0x01) != 0)
             }
             #[doc = "Bit 18"]
             #[inline(always)]
-            pub fn pin18(&self) -> PIN18_R {
-                PIN18_R::new(((self.bits >> 18) & 0x01) != 0)
+            pub fn pin18(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 18) & 0x01) != 0)
             }
             #[doc = "Bit 19"]
             #[inline(always)]
-            pub fn pin19(&self) -> PIN19_R {
-                PIN19_R::new(((self.bits >> 19) & 0x01) != 0)
+            pub fn pin19(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 19) & 0x01) != 0)
             }
             #[doc = "Bit 20"]
             #[inline(always)]
-            pub fn pin20(&self) -> PIN20_R {
-                PIN20_R::new(((self.bits >> 20) & 0x01) != 0)
+            pub fn pin20(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 20) & 0x01) != 0)
             }
             #[doc = "Bit 21"]
             #[inline(always)]
-            pub fn pin21(&self) -> PIN21_R {
-                PIN21_R::new(((self.bits >> 21) & 0x01) != 0)
+            pub fn pin21(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 21) & 0x01) != 0)
             }
             #[doc = "Bit 22"]
             #[inline(always)]
-            pub fn pin22(&self) -> PIN22_R {
-                PIN22_R::new(((self.bits >> 22) & 0x01) != 0)
+            pub fn pin22(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 22) & 0x01) != 0)
             }
             #[doc = "Bit 23"]
             #[inline(always)]
-            pub fn pin23(&self) -> PIN23_R {
-                PIN23_R::new(((self.bits >> 23) & 0x01) != 0)
+            pub fn pin23(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 23) & 0x01) != 0)
             }
             #[doc = "Bit 24"]
             #[inline(always)]
-            pub fn pin24(&self) -> PIN24_R {
-                PIN24_R::new(((self.bits >> 24) & 0x01) != 0)
+            pub fn pin24(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 24) & 0x01) != 0)
             }
             #[doc = "Bit 25"]
             #[inline(always)]
-            pub fn pin25(&self) -> PIN25_R {
-                PIN25_R::new(((self.bits >> 25) & 0x01) != 0)
+            pub fn pin25(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 25) & 0x01) != 0)
             }
             #[doc = "Bit 26"]
             #[inline(always)]
-            pub fn pin26(&self) -> PIN26_R {
-                PIN26_R::new(((self.bits >> 26) & 0x01) != 0)
+            pub fn pin26(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 26) & 0x01) != 0)
             }
             #[doc = "Bit 27"]
             #[inline(always)]
-            pub fn pin27(&self) -> PIN27_R {
-                PIN27_R::new(((self.bits >> 27) & 0x01) != 0)
+            pub fn pin27(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 27) & 0x01) != 0)
             }
             #[doc = "Bit 28"]
             #[inline(always)]
-            pub fn pin28(&self) -> PIN28_R {
-                PIN28_R::new(((self.bits >> 28) & 0x01) != 0)
+            pub fn pin28(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 28) & 0x01) != 0)
             }
             #[doc = "Bit 29"]
             #[inline(always)]
-            pub fn pin29(&self) -> PIN29_R {
-                PIN29_R::new(((self.bits >> 29) & 0x01) != 0)
+            pub fn pin29(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 29) & 0x01) != 0)
             }
             #[doc = "Bit 30"]
             #[inline(always)]
-            pub fn pin30(&self) -> PIN30_R {
-                PIN30_R::new(((self.bits >> 30) & 0x01) != 0)
+            pub fn pin30(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 30) & 0x01) != 0)
             }
             #[doc = "Bit 31"]
             #[inline(always)]
-            pub fn pin31(&self) -> PIN31_R {
-                PIN31_R::new(((self.bits >> 31) & 0x01) != 0)
+            pub fn pin31(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 31) & 0x01) != 0)
             }
         }
         impl W {
+            #[doc = ""]
+            #[inline(always)]
+            pub unsafe fn pin(&mut self, n: usize) -> PIN_W {
+                PIN_W { w: self, offset: n }
+            }
             #[doc = "Bit 0"]
             #[inline(always)]
-            pub fn pin0(&mut self) -> PIN0_W {
-                PIN0_W { w: self }
+            pub fn pin0(&mut self) -> PIN_W {
+                PIN_W { w: self, offset: 0 }
             }
             #[doc = "Bit 1"]
             #[inline(always)]
-            pub fn pin1(&mut self) -> PIN1_W {
-                PIN1_W { w: self }
+            pub fn pin1(&mut self) -> PIN_W {
+                PIN_W { w: self, offset: 1 }
             }
             #[doc = "Bit 2"]
             #[inline(always)]
-            pub fn pin2(&mut self) -> PIN2_W {
-                PIN2_W { w: self }
+            pub fn pin2(&mut self) -> PIN_W {
+                PIN_W { w: self, offset: 2 }
             }
             #[doc = "Bit 3"]
             #[inline(always)]
-            pub fn pin3(&mut self) -> PIN3_W {
-                PIN3_W { w: self }
+            pub fn pin3(&mut self) -> PIN_W {
+                PIN_W { w: self, offset: 3 }
             }
             #[doc = "Bit 4"]
             #[inline(always)]
-            pub fn pin4(&mut self) -> PIN4_W {
-                PIN4_W { w: self }
+            pub fn pin4(&mut self) -> PIN_W {
+                PIN_W { w: self, offset: 4 }
             }
             #[doc = "Bit 5"]
             #[inline(always)]
-            pub fn pin5(&mut self) -> PIN5_W {
-                PIN5_W { w: self }
+            pub fn pin5(&mut self) -> PIN_W {
+                PIN_W { w: self, offset: 5 }
             }
             #[doc = "Bit 6"]
             #[inline(always)]
-            pub fn pin6(&mut self) -> PIN6_W {
-                PIN6_W { w: self }
+            pub fn pin6(&mut self) -> PIN_W {
+                PIN_W { w: self, offset: 6 }
             }
             #[doc = "Bit 7"]
             #[inline(always)]
-            pub fn pin7(&mut self) -> PIN7_W {
-                PIN7_W { w: self }
+            pub fn pin7(&mut self) -> PIN_W {
+                PIN_W { w: self, offset: 7 }
             }
             #[doc = "Bit 8"]
             #[inline(always)]
-            pub fn pin8(&mut self) -> PIN8_W {
-                PIN8_W { w: self }
+            pub fn pin8(&mut self) -> PIN_W {
+                PIN_W { w: self, offset: 8 }
             }
             #[doc = "Bit 9"]
             #[inline(always)]
-            pub fn pin9(&mut self) -> PIN9_W {
-                PIN9_W { w: self }
+            pub fn pin9(&mut self) -> PIN_W {
+                PIN_W { w: self, offset: 9 }
             }
             #[doc = "Bit 10"]
             #[inline(always)]
-            pub fn pin10(&mut self) -> PIN10_W {
-                PIN10_W { w: self }
+            pub fn pin10(&mut self) -> PIN_W {
+                PIN_W {
+                    w: self,
+                    offset: 10,
+                }
             }
             #[doc = "Bit 11"]
             #[inline(always)]
-            pub fn pin11(&mut self) -> PIN11_W {
-                PIN11_W { w: self }
+            pub fn pin11(&mut self) -> PIN_W {
+                PIN_W {
+                    w: self,
+                    offset: 11,
+                }
             }
             #[doc = "Bit 12"]
             #[inline(always)]
-            pub fn pin12(&mut self) -> PIN12_W {
-                PIN12_W { w: self }
+            pub fn pin12(&mut self) -> PIN_W {
+                PIN_W {
+                    w: self,
+                    offset: 12,
+                }
             }
             #[doc = "Bit 13"]
             #[inline(always)]
-            pub fn pin13(&mut self) -> PIN13_W {
-                PIN13_W { w: self }
+            pub fn pin13(&mut self) -> PIN_W {
+                PIN_W {
+                    w: self,
+                    offset: 13,
+                }
             }
             #[doc = "Bit 14"]
             #[inline(always)]
-            pub fn pin14(&mut self) -> PIN14_W {
-                PIN14_W { w: self }
+            pub fn pin14(&mut self) -> PIN_W {
+                PIN_W {
+                    w: self,
+                    offset: 14,
+                }
             }
             #[doc = "Bit 15"]
             #[inline(always)]
-            pub fn pin15(&mut self) -> PIN15_W {
-                PIN15_W { w: self }
+            pub fn pin15(&mut self) -> PIN_W {
+                PIN_W {
+                    w: self,
+                    offset: 15,
+                }
             }
             #[doc = "Bit 16"]
             #[inline(always)]
-            pub fn pin16(&mut self) -> PIN16_W {
-                PIN16_W { w: self }
+            pub fn pin16(&mut self) -> PIN_W {
+                PIN_W {
+                    w: self,
+                    offset: 16,
+                }
             }
             #[doc = "Bit 17"]
             #[inline(always)]
-            pub fn pin17(&mut self) -> PIN17_W {
-                PIN17_W { w: self }
+            pub fn pin17(&mut self) -> PIN_W {
+                PIN_W {
+                    w: self,
+                    offset: 17,
+                }
             }
             #[doc = "Bit 18"]
             #[inline(always)]
-            pub fn pin18(&mut self) -> PIN18_W {
-                PIN18_W { w: self }
+            pub fn pin18(&mut self) -> PIN_W {
+                PIN_W {
+                    w: self,
+                    offset: 18,
+                }
             }
             #[doc = "Bit 19"]
             #[inline(always)]
-            pub fn pin19(&mut self) -> PIN19_W {
-                PIN19_W { w: self }
+            pub fn pin19(&mut self) -> PIN_W {
+                PIN_W {
+                    w: self,
+                    offset: 19,
+                }
             }
             #[doc = "Bit 20"]
             #[inline(always)]
-            pub fn pin20(&mut self) -> PIN20_W {
-                PIN20_W { w: self }
+            pub fn pin20(&mut self) -> PIN_W {
+                PIN_W {
+                    w: self,
+                    offset: 20,
+                }
             }
             #[doc = "Bit 21"]
             #[inline(always)]
-            pub fn pin21(&mut self) -> PIN21_W {
-                PIN21_W { w: self }
+            pub fn pin21(&mut self) -> PIN_W {
+                PIN_W {
+                    w: self,
+                    offset: 21,
+                }
             }
             #[doc = "Bit 22"]
             #[inline(always)]
-            pub fn pin22(&mut self) -> PIN22_W {
-                PIN22_W { w: self }
+            pub fn pin22(&mut self) -> PIN_W {
+                PIN_W {
+                    w: self,
+                    offset: 22,
+                }
             }
             #[doc = "Bit 23"]
             #[inline(always)]
-            pub fn pin23(&mut self) -> PIN23_W {
-                PIN23_W { w: self }
+            pub fn pin23(&mut self) -> PIN_W {
+                PIN_W {
+                    w: self,
+                    offset: 23,
+                }
             }
             #[doc = "Bit 24"]
             #[inline(always)]
-            pub fn pin24(&mut self) -> PIN24_W {
-                PIN24_W { w: self }
+            pub fn pin24(&mut self) -> PIN_W {
+                PIN_W {
+                    w: self,
+                    offset: 24,
+                }
             }
             #[doc = "Bit 25"]
             #[inline(always)]
-            pub fn pin25(&mut self) -> PIN25_W {
-                PIN25_W { w: self }
+            pub fn pin25(&mut self) -> PIN_W {
+                PIN_W {
+                    w: self,
+                    offset: 25,
+                }
             }
             #[doc = "Bit 26"]
             #[inline(always)]
-            pub fn pin26(&mut self) -> PIN26_W {
-                PIN26_W { w: self }
+            pub fn pin26(&mut self) -> PIN_W {
+                PIN_W {
+                    w: self,
+                    offset: 26,
+                }
             }
             #[doc = "Bit 27"]
             #[inline(always)]
-            pub fn pin27(&mut self) -> PIN27_W {
-                PIN27_W { w: self }
+            pub fn pin27(&mut self) -> PIN_W {
+                PIN_W {
+                    w: self,
+                    offset: 27,
+                }
             }
             #[doc = "Bit 28"]
             #[inline(always)]
-            pub fn pin28(&mut self) -> PIN28_W {
-                PIN28_W { w: self }
+            pub fn pin28(&mut self) -> PIN_W {
+                PIN_W {
+                    w: self,
+                    offset: 28,
+                }
             }
             #[doc = "Bit 29"]
             #[inline(always)]
-            pub fn pin29(&mut self) -> PIN29_W {
-                PIN29_W { w: self }
+            pub fn pin29(&mut self) -> PIN_W {
+                PIN_W {
+                    w: self,
+                    offset: 29,
+                }
             }
             #[doc = "Bit 30"]
             #[inline(always)]
-            pub fn pin30(&mut self) -> PIN30_W {
-                PIN30_W { w: self }
+            pub fn pin30(&mut self) -> PIN_W {
+                PIN_W {
+                    w: self,
+                    offset: 30,
+                }
             }
             #[doc = "Bit 31"]
             #[inline(always)]
-            pub fn pin31(&mut self) -> PIN31_W {
-                PIN31_W { w: self }
+            pub fn pin31(&mut self) -> PIN_W {
+                PIN_W {
+                    w: self,
+                    offset: 31,
+                }
             }
         }
     }
@@ -10698,13 +5370,14 @@ pub mod gpiohs {
                 0
             }
         }
-        #[doc = "Reader of field `pin0`"]
-        pub type PIN0_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin0`"]
-        pub struct PIN0_W<'a> {
+        #[doc = "Reader of field `pin%s`"]
+        pub type PIN_R = crate::R<bool, bool>;
+        #[doc = "Write proxy for fields `pin(0-31)`"]
+        pub struct PIN_W<'a> {
             w: &'a mut W,
+            offset: usize,
         }
-        impl<'a> PIN0_W<'a> {
+        impl<'a> PIN_W<'a> {
             #[doc = r"Sets the field bit"]
             #[inline(always)]
             pub fn set_bit(self) -> &'a mut W {
@@ -10718,1076 +5391,409 @@ pub mod gpiohs {
             #[doc = r"Writes raw bits to the field"]
             #[inline(always)]
             pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !0x01) | ((value as u32) & 0x01);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin1`"]
-        pub type PIN1_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin1`"]
-        pub struct PIN1_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN1_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 1)) | (((value as u32) & 0x01) << 1);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin2`"]
-        pub type PIN2_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin2`"]
-        pub struct PIN2_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN2_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 2)) | (((value as u32) & 0x01) << 2);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin3`"]
-        pub type PIN3_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin3`"]
-        pub struct PIN3_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN3_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 3)) | (((value as u32) & 0x01) << 3);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin4`"]
-        pub type PIN4_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin4`"]
-        pub struct PIN4_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN4_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 4)) | (((value as u32) & 0x01) << 4);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin5`"]
-        pub type PIN5_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin5`"]
-        pub struct PIN5_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN5_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 5)) | (((value as u32) & 0x01) << 5);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin6`"]
-        pub type PIN6_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin6`"]
-        pub struct PIN6_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN6_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 6)) | (((value as u32) & 0x01) << 6);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin7`"]
-        pub type PIN7_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin7`"]
-        pub struct PIN7_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN7_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 7)) | (((value as u32) & 0x01) << 7);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin8`"]
-        pub type PIN8_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin8`"]
-        pub struct PIN8_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN8_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 8)) | (((value as u32) & 0x01) << 8);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin9`"]
-        pub type PIN9_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin9`"]
-        pub struct PIN9_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN9_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 9)) | (((value as u32) & 0x01) << 9);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin10`"]
-        pub type PIN10_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin10`"]
-        pub struct PIN10_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN10_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 10)) | (((value as u32) & 0x01) << 10);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin11`"]
-        pub type PIN11_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin11`"]
-        pub struct PIN11_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN11_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 11)) | (((value as u32) & 0x01) << 11);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin12`"]
-        pub type PIN12_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin12`"]
-        pub struct PIN12_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN12_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 12)) | (((value as u32) & 0x01) << 12);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin13`"]
-        pub type PIN13_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin13`"]
-        pub struct PIN13_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN13_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 13)) | (((value as u32) & 0x01) << 13);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin14`"]
-        pub type PIN14_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin14`"]
-        pub struct PIN14_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN14_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 14)) | (((value as u32) & 0x01) << 14);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin15`"]
-        pub type PIN15_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin15`"]
-        pub struct PIN15_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN15_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 15)) | (((value as u32) & 0x01) << 15);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin16`"]
-        pub type PIN16_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin16`"]
-        pub struct PIN16_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN16_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 16)) | (((value as u32) & 0x01) << 16);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin17`"]
-        pub type PIN17_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin17`"]
-        pub struct PIN17_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN17_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 17)) | (((value as u32) & 0x01) << 17);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin18`"]
-        pub type PIN18_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin18`"]
-        pub struct PIN18_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN18_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 18)) | (((value as u32) & 0x01) << 18);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin19`"]
-        pub type PIN19_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin19`"]
-        pub struct PIN19_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN19_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 19)) | (((value as u32) & 0x01) << 19);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin20`"]
-        pub type PIN20_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin20`"]
-        pub struct PIN20_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN20_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 20)) | (((value as u32) & 0x01) << 20);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin21`"]
-        pub type PIN21_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin21`"]
-        pub struct PIN21_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN21_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 21)) | (((value as u32) & 0x01) << 21);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin22`"]
-        pub type PIN22_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin22`"]
-        pub struct PIN22_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN22_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 22)) | (((value as u32) & 0x01) << 22);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin23`"]
-        pub type PIN23_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin23`"]
-        pub struct PIN23_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN23_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 23)) | (((value as u32) & 0x01) << 23);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin24`"]
-        pub type PIN24_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin24`"]
-        pub struct PIN24_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN24_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 24)) | (((value as u32) & 0x01) << 24);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin25`"]
-        pub type PIN25_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin25`"]
-        pub struct PIN25_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN25_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 25)) | (((value as u32) & 0x01) << 25);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin26`"]
-        pub type PIN26_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin26`"]
-        pub struct PIN26_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN26_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 26)) | (((value as u32) & 0x01) << 26);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin27`"]
-        pub type PIN27_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin27`"]
-        pub struct PIN27_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN27_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 27)) | (((value as u32) & 0x01) << 27);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin28`"]
-        pub type PIN28_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin28`"]
-        pub struct PIN28_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN28_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 28)) | (((value as u32) & 0x01) << 28);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin29`"]
-        pub type PIN29_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin29`"]
-        pub struct PIN29_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN29_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 29)) | (((value as u32) & 0x01) << 29);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin30`"]
-        pub type PIN30_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin30`"]
-        pub struct PIN30_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN30_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 30)) | (((value as u32) & 0x01) << 30);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin31`"]
-        pub type PIN31_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin31`"]
-        pub struct PIN31_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN31_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 31)) | (((value as u32) & 0x01) << 31);
+                self.w.bits = (self.w.bits & !(0x01 << self.offset))
+                    | (((value as u32) & 0x01) << self.offset);
                 self.w
             }
         }
         impl R {
+            #[doc = ""]
+            #[inline(always)]
+            pub unsafe fn pin(&self, n: usize) -> PIN_R {
+                PIN_R::new(((self.bits >> n) & 0x01) != 0)
+            }
             #[doc = "Bit 0"]
             #[inline(always)]
-            pub fn pin0(&self) -> PIN0_R {
-                PIN0_R::new((self.bits & 0x01) != 0)
+            pub fn pin0(&self) -> PIN_R {
+                PIN_R::new((self.bits & 0x01) != 0)
             }
             #[doc = "Bit 1"]
             #[inline(always)]
-            pub fn pin1(&self) -> PIN1_R {
-                PIN1_R::new(((self.bits >> 1) & 0x01) != 0)
+            pub fn pin1(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 1) & 0x01) != 0)
             }
             #[doc = "Bit 2"]
             #[inline(always)]
-            pub fn pin2(&self) -> PIN2_R {
-                PIN2_R::new(((self.bits >> 2) & 0x01) != 0)
+            pub fn pin2(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 2) & 0x01) != 0)
             }
             #[doc = "Bit 3"]
             #[inline(always)]
-            pub fn pin3(&self) -> PIN3_R {
-                PIN3_R::new(((self.bits >> 3) & 0x01) != 0)
+            pub fn pin3(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 3) & 0x01) != 0)
             }
             #[doc = "Bit 4"]
             #[inline(always)]
-            pub fn pin4(&self) -> PIN4_R {
-                PIN4_R::new(((self.bits >> 4) & 0x01) != 0)
+            pub fn pin4(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 4) & 0x01) != 0)
             }
             #[doc = "Bit 5"]
             #[inline(always)]
-            pub fn pin5(&self) -> PIN5_R {
-                PIN5_R::new(((self.bits >> 5) & 0x01) != 0)
+            pub fn pin5(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 5) & 0x01) != 0)
             }
             #[doc = "Bit 6"]
             #[inline(always)]
-            pub fn pin6(&self) -> PIN6_R {
-                PIN6_R::new(((self.bits >> 6) & 0x01) != 0)
+            pub fn pin6(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 6) & 0x01) != 0)
             }
             #[doc = "Bit 7"]
             #[inline(always)]
-            pub fn pin7(&self) -> PIN7_R {
-                PIN7_R::new(((self.bits >> 7) & 0x01) != 0)
+            pub fn pin7(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 7) & 0x01) != 0)
             }
             #[doc = "Bit 8"]
             #[inline(always)]
-            pub fn pin8(&self) -> PIN8_R {
-                PIN8_R::new(((self.bits >> 8) & 0x01) != 0)
+            pub fn pin8(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 8) & 0x01) != 0)
             }
             #[doc = "Bit 9"]
             #[inline(always)]
-            pub fn pin9(&self) -> PIN9_R {
-                PIN9_R::new(((self.bits >> 9) & 0x01) != 0)
+            pub fn pin9(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 9) & 0x01) != 0)
             }
             #[doc = "Bit 10"]
             #[inline(always)]
-            pub fn pin10(&self) -> PIN10_R {
-                PIN10_R::new(((self.bits >> 10) & 0x01) != 0)
+            pub fn pin10(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 10) & 0x01) != 0)
             }
             #[doc = "Bit 11"]
             #[inline(always)]
-            pub fn pin11(&self) -> PIN11_R {
-                PIN11_R::new(((self.bits >> 11) & 0x01) != 0)
+            pub fn pin11(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 11) & 0x01) != 0)
             }
             #[doc = "Bit 12"]
             #[inline(always)]
-            pub fn pin12(&self) -> PIN12_R {
-                PIN12_R::new(((self.bits >> 12) & 0x01) != 0)
+            pub fn pin12(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 12) & 0x01) != 0)
             }
             #[doc = "Bit 13"]
             #[inline(always)]
-            pub fn pin13(&self) -> PIN13_R {
-                PIN13_R::new(((self.bits >> 13) & 0x01) != 0)
+            pub fn pin13(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 13) & 0x01) != 0)
             }
             #[doc = "Bit 14"]
             #[inline(always)]
-            pub fn pin14(&self) -> PIN14_R {
-                PIN14_R::new(((self.bits >> 14) & 0x01) != 0)
+            pub fn pin14(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 14) & 0x01) != 0)
             }
             #[doc = "Bit 15"]
             #[inline(always)]
-            pub fn pin15(&self) -> PIN15_R {
-                PIN15_R::new(((self.bits >> 15) & 0x01) != 0)
+            pub fn pin15(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 15) & 0x01) != 0)
             }
             #[doc = "Bit 16"]
             #[inline(always)]
-            pub fn pin16(&self) -> PIN16_R {
-                PIN16_R::new(((self.bits >> 16) & 0x01) != 0)
+            pub fn pin16(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 16) & 0x01) != 0)
             }
             #[doc = "Bit 17"]
             #[inline(always)]
-            pub fn pin17(&self) -> PIN17_R {
-                PIN17_R::new(((self.bits >> 17) & 0x01) != 0)
+            pub fn pin17(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 17) & 0x01) != 0)
             }
             #[doc = "Bit 18"]
             #[inline(always)]
-            pub fn pin18(&self) -> PIN18_R {
-                PIN18_R::new(((self.bits >> 18) & 0x01) != 0)
+            pub fn pin18(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 18) & 0x01) != 0)
             }
             #[doc = "Bit 19"]
             #[inline(always)]
-            pub fn pin19(&self) -> PIN19_R {
-                PIN19_R::new(((self.bits >> 19) & 0x01) != 0)
+            pub fn pin19(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 19) & 0x01) != 0)
             }
             #[doc = "Bit 20"]
             #[inline(always)]
-            pub fn pin20(&self) -> PIN20_R {
-                PIN20_R::new(((self.bits >> 20) & 0x01) != 0)
+            pub fn pin20(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 20) & 0x01) != 0)
             }
             #[doc = "Bit 21"]
             #[inline(always)]
-            pub fn pin21(&self) -> PIN21_R {
-                PIN21_R::new(((self.bits >> 21) & 0x01) != 0)
+            pub fn pin21(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 21) & 0x01) != 0)
             }
             #[doc = "Bit 22"]
             #[inline(always)]
-            pub fn pin22(&self) -> PIN22_R {
-                PIN22_R::new(((self.bits >> 22) & 0x01) != 0)
+            pub fn pin22(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 22) & 0x01) != 0)
             }
             #[doc = "Bit 23"]
             #[inline(always)]
-            pub fn pin23(&self) -> PIN23_R {
-                PIN23_R::new(((self.bits >> 23) & 0x01) != 0)
+            pub fn pin23(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 23) & 0x01) != 0)
             }
             #[doc = "Bit 24"]
             #[inline(always)]
-            pub fn pin24(&self) -> PIN24_R {
-                PIN24_R::new(((self.bits >> 24) & 0x01) != 0)
+            pub fn pin24(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 24) & 0x01) != 0)
             }
             #[doc = "Bit 25"]
             #[inline(always)]
-            pub fn pin25(&self) -> PIN25_R {
-                PIN25_R::new(((self.bits >> 25) & 0x01) != 0)
+            pub fn pin25(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 25) & 0x01) != 0)
             }
             #[doc = "Bit 26"]
             #[inline(always)]
-            pub fn pin26(&self) -> PIN26_R {
-                PIN26_R::new(((self.bits >> 26) & 0x01) != 0)
+            pub fn pin26(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 26) & 0x01) != 0)
             }
             #[doc = "Bit 27"]
             #[inline(always)]
-            pub fn pin27(&self) -> PIN27_R {
-                PIN27_R::new(((self.bits >> 27) & 0x01) != 0)
+            pub fn pin27(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 27) & 0x01) != 0)
             }
             #[doc = "Bit 28"]
             #[inline(always)]
-            pub fn pin28(&self) -> PIN28_R {
-                PIN28_R::new(((self.bits >> 28) & 0x01) != 0)
+            pub fn pin28(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 28) & 0x01) != 0)
             }
             #[doc = "Bit 29"]
             #[inline(always)]
-            pub fn pin29(&self) -> PIN29_R {
-                PIN29_R::new(((self.bits >> 29) & 0x01) != 0)
+            pub fn pin29(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 29) & 0x01) != 0)
             }
             #[doc = "Bit 30"]
             #[inline(always)]
-            pub fn pin30(&self) -> PIN30_R {
-                PIN30_R::new(((self.bits >> 30) & 0x01) != 0)
+            pub fn pin30(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 30) & 0x01) != 0)
             }
             #[doc = "Bit 31"]
             #[inline(always)]
-            pub fn pin31(&self) -> PIN31_R {
-                PIN31_R::new(((self.bits >> 31) & 0x01) != 0)
+            pub fn pin31(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 31) & 0x01) != 0)
             }
         }
         impl W {
+            #[doc = ""]
+            #[inline(always)]
+            pub unsafe fn pin(&mut self, n: usize) -> PIN_W {
+                PIN_W { w: self, offset: n }
+            }
             #[doc = "Bit 0"]
             #[inline(always)]
-            pub fn pin0(&mut self) -> PIN0_W {
-                PIN0_W { w: self }
+            pub fn pin0(&mut self) -> PIN_W {
+                PIN_W { w: self, offset: 0 }
             }
             #[doc = "Bit 1"]
             #[inline(always)]
-            pub fn pin1(&mut self) -> PIN1_W {
-                PIN1_W { w: self }
+            pub fn pin1(&mut self) -> PIN_W {
+                PIN_W { w: self, offset: 1 }
             }
             #[doc = "Bit 2"]
             #[inline(always)]
-            pub fn pin2(&mut self) -> PIN2_W {
-                PIN2_W { w: self }
+            pub fn pin2(&mut self) -> PIN_W {
+                PIN_W { w: self, offset: 2 }
             }
             #[doc = "Bit 3"]
             #[inline(always)]
-            pub fn pin3(&mut self) -> PIN3_W {
-                PIN3_W { w: self }
+            pub fn pin3(&mut self) -> PIN_W {
+                PIN_W { w: self, offset: 3 }
             }
             #[doc = "Bit 4"]
             #[inline(always)]
-            pub fn pin4(&mut self) -> PIN4_W {
-                PIN4_W { w: self }
+            pub fn pin4(&mut self) -> PIN_W {
+                PIN_W { w: self, offset: 4 }
             }
             #[doc = "Bit 5"]
             #[inline(always)]
-            pub fn pin5(&mut self) -> PIN5_W {
-                PIN5_W { w: self }
+            pub fn pin5(&mut self) -> PIN_W {
+                PIN_W { w: self, offset: 5 }
             }
             #[doc = "Bit 6"]
             #[inline(always)]
-            pub fn pin6(&mut self) -> PIN6_W {
-                PIN6_W { w: self }
+            pub fn pin6(&mut self) -> PIN_W {
+                PIN_W { w: self, offset: 6 }
             }
             #[doc = "Bit 7"]
             #[inline(always)]
-            pub fn pin7(&mut self) -> PIN7_W {
-                PIN7_W { w: self }
+            pub fn pin7(&mut self) -> PIN_W {
+                PIN_W { w: self, offset: 7 }
             }
             #[doc = "Bit 8"]
             #[inline(always)]
-            pub fn pin8(&mut self) -> PIN8_W {
-                PIN8_W { w: self }
+            pub fn pin8(&mut self) -> PIN_W {
+                PIN_W { w: self, offset: 8 }
             }
             #[doc = "Bit 9"]
             #[inline(always)]
-            pub fn pin9(&mut self) -> PIN9_W {
-                PIN9_W { w: self }
+            pub fn pin9(&mut self) -> PIN_W {
+                PIN_W { w: self, offset: 9 }
             }
             #[doc = "Bit 10"]
             #[inline(always)]
-            pub fn pin10(&mut self) -> PIN10_W {
-                PIN10_W { w: self }
+            pub fn pin10(&mut self) -> PIN_W {
+                PIN_W {
+                    w: self,
+                    offset: 10,
+                }
             }
             #[doc = "Bit 11"]
             #[inline(always)]
-            pub fn pin11(&mut self) -> PIN11_W {
-                PIN11_W { w: self }
+            pub fn pin11(&mut self) -> PIN_W {
+                PIN_W {
+                    w: self,
+                    offset: 11,
+                }
             }
             #[doc = "Bit 12"]
             #[inline(always)]
-            pub fn pin12(&mut self) -> PIN12_W {
-                PIN12_W { w: self }
+            pub fn pin12(&mut self) -> PIN_W {
+                PIN_W {
+                    w: self,
+                    offset: 12,
+                }
             }
             #[doc = "Bit 13"]
             #[inline(always)]
-            pub fn pin13(&mut self) -> PIN13_W {
-                PIN13_W { w: self }
+            pub fn pin13(&mut self) -> PIN_W {
+                PIN_W {
+                    w: self,
+                    offset: 13,
+                }
             }
             #[doc = "Bit 14"]
             #[inline(always)]
-            pub fn pin14(&mut self) -> PIN14_W {
-                PIN14_W { w: self }
+            pub fn pin14(&mut self) -> PIN_W {
+                PIN_W {
+                    w: self,
+                    offset: 14,
+                }
             }
             #[doc = "Bit 15"]
             #[inline(always)]
-            pub fn pin15(&mut self) -> PIN15_W {
-                PIN15_W { w: self }
+            pub fn pin15(&mut self) -> PIN_W {
+                PIN_W {
+                    w: self,
+                    offset: 15,
+                }
             }
             #[doc = "Bit 16"]
             #[inline(always)]
-            pub fn pin16(&mut self) -> PIN16_W {
-                PIN16_W { w: self }
+            pub fn pin16(&mut self) -> PIN_W {
+                PIN_W {
+                    w: self,
+                    offset: 16,
+                }
             }
             #[doc = "Bit 17"]
             #[inline(always)]
-            pub fn pin17(&mut self) -> PIN17_W {
-                PIN17_W { w: self }
+            pub fn pin17(&mut self) -> PIN_W {
+                PIN_W {
+                    w: self,
+                    offset: 17,
+                }
             }
             #[doc = "Bit 18"]
             #[inline(always)]
-            pub fn pin18(&mut self) -> PIN18_W {
-                PIN18_W { w: self }
+            pub fn pin18(&mut self) -> PIN_W {
+                PIN_W {
+                    w: self,
+                    offset: 18,
+                }
             }
             #[doc = "Bit 19"]
             #[inline(always)]
-            pub fn pin19(&mut self) -> PIN19_W {
-                PIN19_W { w: self }
+            pub fn pin19(&mut self) -> PIN_W {
+                PIN_W {
+                    w: self,
+                    offset: 19,
+                }
             }
             #[doc = "Bit 20"]
             #[inline(always)]
-            pub fn pin20(&mut self) -> PIN20_W {
-                PIN20_W { w: self }
+            pub fn pin20(&mut self) -> PIN_W {
+                PIN_W {
+                    w: self,
+                    offset: 20,
+                }
             }
             #[doc = "Bit 21"]
             #[inline(always)]
-            pub fn pin21(&mut self) -> PIN21_W {
-                PIN21_W { w: self }
+            pub fn pin21(&mut self) -> PIN_W {
+                PIN_W {
+                    w: self,
+                    offset: 21,
+                }
             }
             #[doc = "Bit 22"]
             #[inline(always)]
-            pub fn pin22(&mut self) -> PIN22_W {
-                PIN22_W { w: self }
+            pub fn pin22(&mut self) -> PIN_W {
+                PIN_W {
+                    w: self,
+                    offset: 22,
+                }
             }
             #[doc = "Bit 23"]
             #[inline(always)]
-            pub fn pin23(&mut self) -> PIN23_W {
-                PIN23_W { w: self }
+            pub fn pin23(&mut self) -> PIN_W {
+                PIN_W {
+                    w: self,
+                    offset: 23,
+                }
             }
             #[doc = "Bit 24"]
             #[inline(always)]
-            pub fn pin24(&mut self) -> PIN24_W {
-                PIN24_W { w: self }
+            pub fn pin24(&mut self) -> PIN_W {
+                PIN_W {
+                    w: self,
+                    offset: 24,
+                }
             }
             #[doc = "Bit 25"]
             #[inline(always)]
-            pub fn pin25(&mut self) -> PIN25_W {
-                PIN25_W { w: self }
+            pub fn pin25(&mut self) -> PIN_W {
+                PIN_W {
+                    w: self,
+                    offset: 25,
+                }
             }
             #[doc = "Bit 26"]
             #[inline(always)]
-            pub fn pin26(&mut self) -> PIN26_W {
-                PIN26_W { w: self }
+            pub fn pin26(&mut self) -> PIN_W {
+                PIN_W {
+                    w: self,
+                    offset: 26,
+                }
             }
             #[doc = "Bit 27"]
             #[inline(always)]
-            pub fn pin27(&mut self) -> PIN27_W {
-                PIN27_W { w: self }
+            pub fn pin27(&mut self) -> PIN_W {
+                PIN_W {
+                    w: self,
+                    offset: 27,
+                }
             }
             #[doc = "Bit 28"]
             #[inline(always)]
-            pub fn pin28(&mut self) -> PIN28_W {
-                PIN28_W { w: self }
+            pub fn pin28(&mut self) -> PIN_W {
+                PIN_W {
+                    w: self,
+                    offset: 28,
+                }
             }
             #[doc = "Bit 29"]
             #[inline(always)]
-            pub fn pin29(&mut self) -> PIN29_W {
-                PIN29_W { w: self }
+            pub fn pin29(&mut self) -> PIN_W {
+                PIN_W {
+                    w: self,
+                    offset: 29,
+                }
             }
             #[doc = "Bit 30"]
             #[inline(always)]
-            pub fn pin30(&mut self) -> PIN30_W {
-                PIN30_W { w: self }
+            pub fn pin30(&mut self) -> PIN_W {
+                PIN_W {
+                    w: self,
+                    offset: 30,
+                }
             }
             #[doc = "Bit 31"]
             #[inline(always)]
-            pub fn pin31(&mut self) -> PIN31_W {
-                PIN31_W { w: self }
+            pub fn pin31(&mut self) -> PIN_W {
+                PIN_W {
+                    w: self,
+                    offset: 31,
+                }
             }
         }
     }
@@ -11814,13 +5820,14 @@ pub mod gpiohs {
                 0
             }
         }
-        #[doc = "Reader of field `pin0`"]
-        pub type PIN0_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin0`"]
-        pub struct PIN0_W<'a> {
+        #[doc = "Reader of field `pin%s`"]
+        pub type PIN_R = crate::R<bool, bool>;
+        #[doc = "Write proxy for fields `pin(0-31)`"]
+        pub struct PIN_W<'a> {
             w: &'a mut W,
+            offset: usize,
         }
-        impl<'a> PIN0_W<'a> {
+        impl<'a> PIN_W<'a> {
             #[doc = r"Sets the field bit"]
             #[inline(always)]
             pub fn set_bit(self) -> &'a mut W {
@@ -11834,1076 +5841,409 @@ pub mod gpiohs {
             #[doc = r"Writes raw bits to the field"]
             #[inline(always)]
             pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !0x01) | ((value as u32) & 0x01);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin1`"]
-        pub type PIN1_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin1`"]
-        pub struct PIN1_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN1_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 1)) | (((value as u32) & 0x01) << 1);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin2`"]
-        pub type PIN2_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin2`"]
-        pub struct PIN2_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN2_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 2)) | (((value as u32) & 0x01) << 2);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin3`"]
-        pub type PIN3_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin3`"]
-        pub struct PIN3_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN3_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 3)) | (((value as u32) & 0x01) << 3);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin4`"]
-        pub type PIN4_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin4`"]
-        pub struct PIN4_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN4_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 4)) | (((value as u32) & 0x01) << 4);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin5`"]
-        pub type PIN5_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin5`"]
-        pub struct PIN5_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN5_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 5)) | (((value as u32) & 0x01) << 5);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin6`"]
-        pub type PIN6_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin6`"]
-        pub struct PIN6_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN6_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 6)) | (((value as u32) & 0x01) << 6);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin7`"]
-        pub type PIN7_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin7`"]
-        pub struct PIN7_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN7_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 7)) | (((value as u32) & 0x01) << 7);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin8`"]
-        pub type PIN8_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin8`"]
-        pub struct PIN8_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN8_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 8)) | (((value as u32) & 0x01) << 8);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin9`"]
-        pub type PIN9_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin9`"]
-        pub struct PIN9_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN9_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 9)) | (((value as u32) & 0x01) << 9);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin10`"]
-        pub type PIN10_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin10`"]
-        pub struct PIN10_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN10_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 10)) | (((value as u32) & 0x01) << 10);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin11`"]
-        pub type PIN11_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin11`"]
-        pub struct PIN11_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN11_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 11)) | (((value as u32) & 0x01) << 11);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin12`"]
-        pub type PIN12_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin12`"]
-        pub struct PIN12_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN12_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 12)) | (((value as u32) & 0x01) << 12);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin13`"]
-        pub type PIN13_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin13`"]
-        pub struct PIN13_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN13_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 13)) | (((value as u32) & 0x01) << 13);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin14`"]
-        pub type PIN14_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin14`"]
-        pub struct PIN14_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN14_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 14)) | (((value as u32) & 0x01) << 14);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin15`"]
-        pub type PIN15_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin15`"]
-        pub struct PIN15_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN15_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 15)) | (((value as u32) & 0x01) << 15);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin16`"]
-        pub type PIN16_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin16`"]
-        pub struct PIN16_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN16_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 16)) | (((value as u32) & 0x01) << 16);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin17`"]
-        pub type PIN17_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin17`"]
-        pub struct PIN17_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN17_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 17)) | (((value as u32) & 0x01) << 17);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin18`"]
-        pub type PIN18_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin18`"]
-        pub struct PIN18_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN18_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 18)) | (((value as u32) & 0x01) << 18);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin19`"]
-        pub type PIN19_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin19`"]
-        pub struct PIN19_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN19_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 19)) | (((value as u32) & 0x01) << 19);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin20`"]
-        pub type PIN20_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin20`"]
-        pub struct PIN20_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN20_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 20)) | (((value as u32) & 0x01) << 20);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin21`"]
-        pub type PIN21_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin21`"]
-        pub struct PIN21_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN21_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 21)) | (((value as u32) & 0x01) << 21);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin22`"]
-        pub type PIN22_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin22`"]
-        pub struct PIN22_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN22_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 22)) | (((value as u32) & 0x01) << 22);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin23`"]
-        pub type PIN23_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin23`"]
-        pub struct PIN23_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN23_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 23)) | (((value as u32) & 0x01) << 23);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin24`"]
-        pub type PIN24_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin24`"]
-        pub struct PIN24_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN24_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 24)) | (((value as u32) & 0x01) << 24);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin25`"]
-        pub type PIN25_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin25`"]
-        pub struct PIN25_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN25_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 25)) | (((value as u32) & 0x01) << 25);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin26`"]
-        pub type PIN26_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin26`"]
-        pub struct PIN26_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN26_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 26)) | (((value as u32) & 0x01) << 26);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin27`"]
-        pub type PIN27_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin27`"]
-        pub struct PIN27_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN27_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 27)) | (((value as u32) & 0x01) << 27);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin28`"]
-        pub type PIN28_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin28`"]
-        pub struct PIN28_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN28_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 28)) | (((value as u32) & 0x01) << 28);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin29`"]
-        pub type PIN29_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin29`"]
-        pub struct PIN29_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN29_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 29)) | (((value as u32) & 0x01) << 29);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin30`"]
-        pub type PIN30_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin30`"]
-        pub struct PIN30_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN30_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 30)) | (((value as u32) & 0x01) << 30);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin31`"]
-        pub type PIN31_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin31`"]
-        pub struct PIN31_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN31_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 31)) | (((value as u32) & 0x01) << 31);
+                self.w.bits = (self.w.bits & !(0x01 << self.offset))
+                    | (((value as u32) & 0x01) << self.offset);
                 self.w
             }
         }
         impl R {
+            #[doc = ""]
+            #[inline(always)]
+            pub unsafe fn pin(&self, n: usize) -> PIN_R {
+                PIN_R::new(((self.bits >> n) & 0x01) != 0)
+            }
             #[doc = "Bit 0"]
             #[inline(always)]
-            pub fn pin0(&self) -> PIN0_R {
-                PIN0_R::new((self.bits & 0x01) != 0)
+            pub fn pin0(&self) -> PIN_R {
+                PIN_R::new((self.bits & 0x01) != 0)
             }
             #[doc = "Bit 1"]
             #[inline(always)]
-            pub fn pin1(&self) -> PIN1_R {
-                PIN1_R::new(((self.bits >> 1) & 0x01) != 0)
+            pub fn pin1(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 1) & 0x01) != 0)
             }
             #[doc = "Bit 2"]
             #[inline(always)]
-            pub fn pin2(&self) -> PIN2_R {
-                PIN2_R::new(((self.bits >> 2) & 0x01) != 0)
+            pub fn pin2(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 2) & 0x01) != 0)
             }
             #[doc = "Bit 3"]
             #[inline(always)]
-            pub fn pin3(&self) -> PIN3_R {
-                PIN3_R::new(((self.bits >> 3) & 0x01) != 0)
+            pub fn pin3(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 3) & 0x01) != 0)
             }
             #[doc = "Bit 4"]
             #[inline(always)]
-            pub fn pin4(&self) -> PIN4_R {
-                PIN4_R::new(((self.bits >> 4) & 0x01) != 0)
+            pub fn pin4(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 4) & 0x01) != 0)
             }
             #[doc = "Bit 5"]
             #[inline(always)]
-            pub fn pin5(&self) -> PIN5_R {
-                PIN5_R::new(((self.bits >> 5) & 0x01) != 0)
+            pub fn pin5(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 5) & 0x01) != 0)
             }
             #[doc = "Bit 6"]
             #[inline(always)]
-            pub fn pin6(&self) -> PIN6_R {
-                PIN6_R::new(((self.bits >> 6) & 0x01) != 0)
+            pub fn pin6(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 6) & 0x01) != 0)
             }
             #[doc = "Bit 7"]
             #[inline(always)]
-            pub fn pin7(&self) -> PIN7_R {
-                PIN7_R::new(((self.bits >> 7) & 0x01) != 0)
+            pub fn pin7(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 7) & 0x01) != 0)
             }
             #[doc = "Bit 8"]
             #[inline(always)]
-            pub fn pin8(&self) -> PIN8_R {
-                PIN8_R::new(((self.bits >> 8) & 0x01) != 0)
+            pub fn pin8(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 8) & 0x01) != 0)
             }
             #[doc = "Bit 9"]
             #[inline(always)]
-            pub fn pin9(&self) -> PIN9_R {
-                PIN9_R::new(((self.bits >> 9) & 0x01) != 0)
+            pub fn pin9(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 9) & 0x01) != 0)
             }
             #[doc = "Bit 10"]
             #[inline(always)]
-            pub fn pin10(&self) -> PIN10_R {
-                PIN10_R::new(((self.bits >> 10) & 0x01) != 0)
+            pub fn pin10(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 10) & 0x01) != 0)
             }
             #[doc = "Bit 11"]
             #[inline(always)]
-            pub fn pin11(&self) -> PIN11_R {
-                PIN11_R::new(((self.bits >> 11) & 0x01) != 0)
+            pub fn pin11(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 11) & 0x01) != 0)
             }
             #[doc = "Bit 12"]
             #[inline(always)]
-            pub fn pin12(&self) -> PIN12_R {
-                PIN12_R::new(((self.bits >> 12) & 0x01) != 0)
+            pub fn pin12(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 12) & 0x01) != 0)
             }
             #[doc = "Bit 13"]
             #[inline(always)]
-            pub fn pin13(&self) -> PIN13_R {
-                PIN13_R::new(((self.bits >> 13) & 0x01) != 0)
+            pub fn pin13(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 13) & 0x01) != 0)
             }
             #[doc = "Bit 14"]
             #[inline(always)]
-            pub fn pin14(&self) -> PIN14_R {
-                PIN14_R::new(((self.bits >> 14) & 0x01) != 0)
+            pub fn pin14(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 14) & 0x01) != 0)
             }
             #[doc = "Bit 15"]
             #[inline(always)]
-            pub fn pin15(&self) -> PIN15_R {
-                PIN15_R::new(((self.bits >> 15) & 0x01) != 0)
+            pub fn pin15(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 15) & 0x01) != 0)
             }
             #[doc = "Bit 16"]
             #[inline(always)]
-            pub fn pin16(&self) -> PIN16_R {
-                PIN16_R::new(((self.bits >> 16) & 0x01) != 0)
+            pub fn pin16(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 16) & 0x01) != 0)
             }
             #[doc = "Bit 17"]
             #[inline(always)]
-            pub fn pin17(&self) -> PIN17_R {
-                PIN17_R::new(((self.bits >> 17) & 0x01) != 0)
+            pub fn pin17(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 17) & 0x01) != 0)
             }
             #[doc = "Bit 18"]
             #[inline(always)]
-            pub fn pin18(&self) -> PIN18_R {
-                PIN18_R::new(((self.bits >> 18) & 0x01) != 0)
+            pub fn pin18(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 18) & 0x01) != 0)
             }
             #[doc = "Bit 19"]
             #[inline(always)]
-            pub fn pin19(&self) -> PIN19_R {
-                PIN19_R::new(((self.bits >> 19) & 0x01) != 0)
+            pub fn pin19(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 19) & 0x01) != 0)
             }
             #[doc = "Bit 20"]
             #[inline(always)]
-            pub fn pin20(&self) -> PIN20_R {
-                PIN20_R::new(((self.bits >> 20) & 0x01) != 0)
+            pub fn pin20(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 20) & 0x01) != 0)
             }
             #[doc = "Bit 21"]
             #[inline(always)]
-            pub fn pin21(&self) -> PIN21_R {
-                PIN21_R::new(((self.bits >> 21) & 0x01) != 0)
+            pub fn pin21(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 21) & 0x01) != 0)
             }
             #[doc = "Bit 22"]
             #[inline(always)]
-            pub fn pin22(&self) -> PIN22_R {
-                PIN22_R::new(((self.bits >> 22) & 0x01) != 0)
+            pub fn pin22(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 22) & 0x01) != 0)
             }
             #[doc = "Bit 23"]
             #[inline(always)]
-            pub fn pin23(&self) -> PIN23_R {
-                PIN23_R::new(((self.bits >> 23) & 0x01) != 0)
+            pub fn pin23(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 23) & 0x01) != 0)
             }
             #[doc = "Bit 24"]
             #[inline(always)]
-            pub fn pin24(&self) -> PIN24_R {
-                PIN24_R::new(((self.bits >> 24) & 0x01) != 0)
+            pub fn pin24(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 24) & 0x01) != 0)
             }
             #[doc = "Bit 25"]
             #[inline(always)]
-            pub fn pin25(&self) -> PIN25_R {
-                PIN25_R::new(((self.bits >> 25) & 0x01) != 0)
+            pub fn pin25(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 25) & 0x01) != 0)
             }
             #[doc = "Bit 26"]
             #[inline(always)]
-            pub fn pin26(&self) -> PIN26_R {
-                PIN26_R::new(((self.bits >> 26) & 0x01) != 0)
+            pub fn pin26(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 26) & 0x01) != 0)
             }
             #[doc = "Bit 27"]
             #[inline(always)]
-            pub fn pin27(&self) -> PIN27_R {
-                PIN27_R::new(((self.bits >> 27) & 0x01) != 0)
+            pub fn pin27(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 27) & 0x01) != 0)
             }
             #[doc = "Bit 28"]
             #[inline(always)]
-            pub fn pin28(&self) -> PIN28_R {
-                PIN28_R::new(((self.bits >> 28) & 0x01) != 0)
+            pub fn pin28(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 28) & 0x01) != 0)
             }
             #[doc = "Bit 29"]
             #[inline(always)]
-            pub fn pin29(&self) -> PIN29_R {
-                PIN29_R::new(((self.bits >> 29) & 0x01) != 0)
+            pub fn pin29(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 29) & 0x01) != 0)
             }
             #[doc = "Bit 30"]
             #[inline(always)]
-            pub fn pin30(&self) -> PIN30_R {
-                PIN30_R::new(((self.bits >> 30) & 0x01) != 0)
+            pub fn pin30(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 30) & 0x01) != 0)
             }
             #[doc = "Bit 31"]
             #[inline(always)]
-            pub fn pin31(&self) -> PIN31_R {
-                PIN31_R::new(((self.bits >> 31) & 0x01) != 0)
+            pub fn pin31(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 31) & 0x01) != 0)
             }
         }
         impl W {
+            #[doc = ""]
+            #[inline(always)]
+            pub unsafe fn pin(&mut self, n: usize) -> PIN_W {
+                PIN_W { w: self, offset: n }
+            }
             #[doc = "Bit 0"]
             #[inline(always)]
-            pub fn pin0(&mut self) -> PIN0_W {
-                PIN0_W { w: self }
+            pub fn pin0(&mut self) -> PIN_W {
+                PIN_W { w: self, offset: 0 }
             }
             #[doc = "Bit 1"]
             #[inline(always)]
-            pub fn pin1(&mut self) -> PIN1_W {
-                PIN1_W { w: self }
+            pub fn pin1(&mut self) -> PIN_W {
+                PIN_W { w: self, offset: 1 }
             }
             #[doc = "Bit 2"]
             #[inline(always)]
-            pub fn pin2(&mut self) -> PIN2_W {
-                PIN2_W { w: self }
+            pub fn pin2(&mut self) -> PIN_W {
+                PIN_W { w: self, offset: 2 }
             }
             #[doc = "Bit 3"]
             #[inline(always)]
-            pub fn pin3(&mut self) -> PIN3_W {
-                PIN3_W { w: self }
+            pub fn pin3(&mut self) -> PIN_W {
+                PIN_W { w: self, offset: 3 }
             }
             #[doc = "Bit 4"]
             #[inline(always)]
-            pub fn pin4(&mut self) -> PIN4_W {
-                PIN4_W { w: self }
+            pub fn pin4(&mut self) -> PIN_W {
+                PIN_W { w: self, offset: 4 }
             }
             #[doc = "Bit 5"]
             #[inline(always)]
-            pub fn pin5(&mut self) -> PIN5_W {
-                PIN5_W { w: self }
+            pub fn pin5(&mut self) -> PIN_W {
+                PIN_W { w: self, offset: 5 }
             }
             #[doc = "Bit 6"]
             #[inline(always)]
-            pub fn pin6(&mut self) -> PIN6_W {
-                PIN6_W { w: self }
+            pub fn pin6(&mut self) -> PIN_W {
+                PIN_W { w: self, offset: 6 }
             }
             #[doc = "Bit 7"]
             #[inline(always)]
-            pub fn pin7(&mut self) -> PIN7_W {
-                PIN7_W { w: self }
+            pub fn pin7(&mut self) -> PIN_W {
+                PIN_W { w: self, offset: 7 }
             }
             #[doc = "Bit 8"]
             #[inline(always)]
-            pub fn pin8(&mut self) -> PIN8_W {
-                PIN8_W { w: self }
+            pub fn pin8(&mut self) -> PIN_W {
+                PIN_W { w: self, offset: 8 }
             }
             #[doc = "Bit 9"]
             #[inline(always)]
-            pub fn pin9(&mut self) -> PIN9_W {
-                PIN9_W { w: self }
+            pub fn pin9(&mut self) -> PIN_W {
+                PIN_W { w: self, offset: 9 }
             }
             #[doc = "Bit 10"]
             #[inline(always)]
-            pub fn pin10(&mut self) -> PIN10_W {
-                PIN10_W { w: self }
+            pub fn pin10(&mut self) -> PIN_W {
+                PIN_W {
+                    w: self,
+                    offset: 10,
+                }
             }
             #[doc = "Bit 11"]
             #[inline(always)]
-            pub fn pin11(&mut self) -> PIN11_W {
-                PIN11_W { w: self }
+            pub fn pin11(&mut self) -> PIN_W {
+                PIN_W {
+                    w: self,
+                    offset: 11,
+                }
             }
             #[doc = "Bit 12"]
             #[inline(always)]
-            pub fn pin12(&mut self) -> PIN12_W {
-                PIN12_W { w: self }
+            pub fn pin12(&mut self) -> PIN_W {
+                PIN_W {
+                    w: self,
+                    offset: 12,
+                }
             }
             #[doc = "Bit 13"]
             #[inline(always)]
-            pub fn pin13(&mut self) -> PIN13_W {
-                PIN13_W { w: self }
+            pub fn pin13(&mut self) -> PIN_W {
+                PIN_W {
+                    w: self,
+                    offset: 13,
+                }
             }
             #[doc = "Bit 14"]
             #[inline(always)]
-            pub fn pin14(&mut self) -> PIN14_W {
-                PIN14_W { w: self }
+            pub fn pin14(&mut self) -> PIN_W {
+                PIN_W {
+                    w: self,
+                    offset: 14,
+                }
             }
             #[doc = "Bit 15"]
             #[inline(always)]
-            pub fn pin15(&mut self) -> PIN15_W {
-                PIN15_W { w: self }
+            pub fn pin15(&mut self) -> PIN_W {
+                PIN_W {
+                    w: self,
+                    offset: 15,
+                }
             }
             #[doc = "Bit 16"]
             #[inline(always)]
-            pub fn pin16(&mut self) -> PIN16_W {
-                PIN16_W { w: self }
+            pub fn pin16(&mut self) -> PIN_W {
+                PIN_W {
+                    w: self,
+                    offset: 16,
+                }
             }
             #[doc = "Bit 17"]
             #[inline(always)]
-            pub fn pin17(&mut self) -> PIN17_W {
-                PIN17_W { w: self }
+            pub fn pin17(&mut self) -> PIN_W {
+                PIN_W {
+                    w: self,
+                    offset: 17,
+                }
             }
             #[doc = "Bit 18"]
             #[inline(always)]
-            pub fn pin18(&mut self) -> PIN18_W {
-                PIN18_W { w: self }
+            pub fn pin18(&mut self) -> PIN_W {
+                PIN_W {
+                    w: self,
+                    offset: 18,
+                }
             }
             #[doc = "Bit 19"]
             #[inline(always)]
-            pub fn pin19(&mut self) -> PIN19_W {
-                PIN19_W { w: self }
+            pub fn pin19(&mut self) -> PIN_W {
+                PIN_W {
+                    w: self,
+                    offset: 19,
+                }
             }
             #[doc = "Bit 20"]
             #[inline(always)]
-            pub fn pin20(&mut self) -> PIN20_W {
-                PIN20_W { w: self }
+            pub fn pin20(&mut self) -> PIN_W {
+                PIN_W {
+                    w: self,
+                    offset: 20,
+                }
             }
             #[doc = "Bit 21"]
             #[inline(always)]
-            pub fn pin21(&mut self) -> PIN21_W {
-                PIN21_W { w: self }
+            pub fn pin21(&mut self) -> PIN_W {
+                PIN_W {
+                    w: self,
+                    offset: 21,
+                }
             }
             #[doc = "Bit 22"]
             #[inline(always)]
-            pub fn pin22(&mut self) -> PIN22_W {
-                PIN22_W { w: self }
+            pub fn pin22(&mut self) -> PIN_W {
+                PIN_W {
+                    w: self,
+                    offset: 22,
+                }
             }
             #[doc = "Bit 23"]
             #[inline(always)]
-            pub fn pin23(&mut self) -> PIN23_W {
-                PIN23_W { w: self }
+            pub fn pin23(&mut self) -> PIN_W {
+                PIN_W {
+                    w: self,
+                    offset: 23,
+                }
             }
             #[doc = "Bit 24"]
             #[inline(always)]
-            pub fn pin24(&mut self) -> PIN24_W {
-                PIN24_W { w: self }
+            pub fn pin24(&mut self) -> PIN_W {
+                PIN_W {
+                    w: self,
+                    offset: 24,
+                }
             }
             #[doc = "Bit 25"]
             #[inline(always)]
-            pub fn pin25(&mut self) -> PIN25_W {
-                PIN25_W { w: self }
+            pub fn pin25(&mut self) -> PIN_W {
+                PIN_W {
+                    w: self,
+                    offset: 25,
+                }
             }
             #[doc = "Bit 26"]
             #[inline(always)]
-            pub fn pin26(&mut self) -> PIN26_W {
-                PIN26_W { w: self }
+            pub fn pin26(&mut self) -> PIN_W {
+                PIN_W {
+                    w: self,
+                    offset: 26,
+                }
             }
             #[doc = "Bit 27"]
             #[inline(always)]
-            pub fn pin27(&mut self) -> PIN27_W {
-                PIN27_W { w: self }
+            pub fn pin27(&mut self) -> PIN_W {
+                PIN_W {
+                    w: self,
+                    offset: 27,
+                }
             }
             #[doc = "Bit 28"]
             #[inline(always)]
-            pub fn pin28(&mut self) -> PIN28_W {
-                PIN28_W { w: self }
+            pub fn pin28(&mut self) -> PIN_W {
+                PIN_W {
+                    w: self,
+                    offset: 28,
+                }
             }
             #[doc = "Bit 29"]
             #[inline(always)]
-            pub fn pin29(&mut self) -> PIN29_W {
-                PIN29_W { w: self }
+            pub fn pin29(&mut self) -> PIN_W {
+                PIN_W {
+                    w: self,
+                    offset: 29,
+                }
             }
             #[doc = "Bit 30"]
             #[inline(always)]
-            pub fn pin30(&mut self) -> PIN30_W {
-                PIN30_W { w: self }
+            pub fn pin30(&mut self) -> PIN_W {
+                PIN_W {
+                    w: self,
+                    offset: 30,
+                }
             }
             #[doc = "Bit 31"]
             #[inline(always)]
-            pub fn pin31(&mut self) -> PIN31_W {
-                PIN31_W { w: self }
+            pub fn pin31(&mut self) -> PIN_W {
+                PIN_W {
+                    w: self,
+                    offset: 31,
+                }
             }
         }
     }
@@ -12930,13 +6270,14 @@ pub mod gpiohs {
                 0
             }
         }
-        #[doc = "Reader of field `pin0`"]
-        pub type PIN0_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin0`"]
-        pub struct PIN0_W<'a> {
+        #[doc = "Reader of field `pin%s`"]
+        pub type PIN_R = crate::R<bool, bool>;
+        #[doc = "Write proxy for fields `pin(0-31)`"]
+        pub struct PIN_W<'a> {
             w: &'a mut W,
+            offset: usize,
         }
-        impl<'a> PIN0_W<'a> {
+        impl<'a> PIN_W<'a> {
             #[doc = r"Sets the field bit"]
             #[inline(always)]
             pub fn set_bit(self) -> &'a mut W {
@@ -12950,1076 +6291,409 @@ pub mod gpiohs {
             #[doc = r"Writes raw bits to the field"]
             #[inline(always)]
             pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !0x01) | ((value as u32) & 0x01);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin1`"]
-        pub type PIN1_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin1`"]
-        pub struct PIN1_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN1_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 1)) | (((value as u32) & 0x01) << 1);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin2`"]
-        pub type PIN2_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin2`"]
-        pub struct PIN2_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN2_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 2)) | (((value as u32) & 0x01) << 2);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin3`"]
-        pub type PIN3_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin3`"]
-        pub struct PIN3_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN3_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 3)) | (((value as u32) & 0x01) << 3);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin4`"]
-        pub type PIN4_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin4`"]
-        pub struct PIN4_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN4_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 4)) | (((value as u32) & 0x01) << 4);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin5`"]
-        pub type PIN5_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin5`"]
-        pub struct PIN5_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN5_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 5)) | (((value as u32) & 0x01) << 5);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin6`"]
-        pub type PIN6_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin6`"]
-        pub struct PIN6_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN6_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 6)) | (((value as u32) & 0x01) << 6);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin7`"]
-        pub type PIN7_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin7`"]
-        pub struct PIN7_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN7_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 7)) | (((value as u32) & 0x01) << 7);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin8`"]
-        pub type PIN8_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin8`"]
-        pub struct PIN8_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN8_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 8)) | (((value as u32) & 0x01) << 8);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin9`"]
-        pub type PIN9_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin9`"]
-        pub struct PIN9_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN9_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 9)) | (((value as u32) & 0x01) << 9);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin10`"]
-        pub type PIN10_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin10`"]
-        pub struct PIN10_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN10_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 10)) | (((value as u32) & 0x01) << 10);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin11`"]
-        pub type PIN11_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin11`"]
-        pub struct PIN11_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN11_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 11)) | (((value as u32) & 0x01) << 11);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin12`"]
-        pub type PIN12_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin12`"]
-        pub struct PIN12_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN12_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 12)) | (((value as u32) & 0x01) << 12);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin13`"]
-        pub type PIN13_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin13`"]
-        pub struct PIN13_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN13_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 13)) | (((value as u32) & 0x01) << 13);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin14`"]
-        pub type PIN14_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin14`"]
-        pub struct PIN14_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN14_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 14)) | (((value as u32) & 0x01) << 14);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin15`"]
-        pub type PIN15_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin15`"]
-        pub struct PIN15_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN15_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 15)) | (((value as u32) & 0x01) << 15);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin16`"]
-        pub type PIN16_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin16`"]
-        pub struct PIN16_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN16_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 16)) | (((value as u32) & 0x01) << 16);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin17`"]
-        pub type PIN17_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin17`"]
-        pub struct PIN17_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN17_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 17)) | (((value as u32) & 0x01) << 17);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin18`"]
-        pub type PIN18_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin18`"]
-        pub struct PIN18_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN18_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 18)) | (((value as u32) & 0x01) << 18);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin19`"]
-        pub type PIN19_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin19`"]
-        pub struct PIN19_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN19_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 19)) | (((value as u32) & 0x01) << 19);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin20`"]
-        pub type PIN20_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin20`"]
-        pub struct PIN20_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN20_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 20)) | (((value as u32) & 0x01) << 20);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin21`"]
-        pub type PIN21_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin21`"]
-        pub struct PIN21_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN21_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 21)) | (((value as u32) & 0x01) << 21);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin22`"]
-        pub type PIN22_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin22`"]
-        pub struct PIN22_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN22_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 22)) | (((value as u32) & 0x01) << 22);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin23`"]
-        pub type PIN23_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin23`"]
-        pub struct PIN23_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN23_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 23)) | (((value as u32) & 0x01) << 23);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin24`"]
-        pub type PIN24_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin24`"]
-        pub struct PIN24_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN24_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 24)) | (((value as u32) & 0x01) << 24);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin25`"]
-        pub type PIN25_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin25`"]
-        pub struct PIN25_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN25_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 25)) | (((value as u32) & 0x01) << 25);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin26`"]
-        pub type PIN26_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin26`"]
-        pub struct PIN26_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN26_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 26)) | (((value as u32) & 0x01) << 26);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin27`"]
-        pub type PIN27_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin27`"]
-        pub struct PIN27_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN27_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 27)) | (((value as u32) & 0x01) << 27);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin28`"]
-        pub type PIN28_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin28`"]
-        pub struct PIN28_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN28_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 28)) | (((value as u32) & 0x01) << 28);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin29`"]
-        pub type PIN29_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin29`"]
-        pub struct PIN29_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN29_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 29)) | (((value as u32) & 0x01) << 29);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin30`"]
-        pub type PIN30_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin30`"]
-        pub struct PIN30_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN30_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 30)) | (((value as u32) & 0x01) << 30);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin31`"]
-        pub type PIN31_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin31`"]
-        pub struct PIN31_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN31_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 31)) | (((value as u32) & 0x01) << 31);
+                self.w.bits = (self.w.bits & !(0x01 << self.offset))
+                    | (((value as u32) & 0x01) << self.offset);
                 self.w
             }
         }
         impl R {
+            #[doc = ""]
+            #[inline(always)]
+            pub unsafe fn pin(&self, n: usize) -> PIN_R {
+                PIN_R::new(((self.bits >> n) & 0x01) != 0)
+            }
             #[doc = "Bit 0"]
             #[inline(always)]
-            pub fn pin0(&self) -> PIN0_R {
-                PIN0_R::new((self.bits & 0x01) != 0)
+            pub fn pin0(&self) -> PIN_R {
+                PIN_R::new((self.bits & 0x01) != 0)
             }
             #[doc = "Bit 1"]
             #[inline(always)]
-            pub fn pin1(&self) -> PIN1_R {
-                PIN1_R::new(((self.bits >> 1) & 0x01) != 0)
+            pub fn pin1(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 1) & 0x01) != 0)
             }
             #[doc = "Bit 2"]
             #[inline(always)]
-            pub fn pin2(&self) -> PIN2_R {
-                PIN2_R::new(((self.bits >> 2) & 0x01) != 0)
+            pub fn pin2(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 2) & 0x01) != 0)
             }
             #[doc = "Bit 3"]
             #[inline(always)]
-            pub fn pin3(&self) -> PIN3_R {
-                PIN3_R::new(((self.bits >> 3) & 0x01) != 0)
+            pub fn pin3(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 3) & 0x01) != 0)
             }
             #[doc = "Bit 4"]
             #[inline(always)]
-            pub fn pin4(&self) -> PIN4_R {
-                PIN4_R::new(((self.bits >> 4) & 0x01) != 0)
+            pub fn pin4(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 4) & 0x01) != 0)
             }
             #[doc = "Bit 5"]
             #[inline(always)]
-            pub fn pin5(&self) -> PIN5_R {
-                PIN5_R::new(((self.bits >> 5) & 0x01) != 0)
+            pub fn pin5(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 5) & 0x01) != 0)
             }
             #[doc = "Bit 6"]
             #[inline(always)]
-            pub fn pin6(&self) -> PIN6_R {
-                PIN6_R::new(((self.bits >> 6) & 0x01) != 0)
+            pub fn pin6(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 6) & 0x01) != 0)
             }
             #[doc = "Bit 7"]
             #[inline(always)]
-            pub fn pin7(&self) -> PIN7_R {
-                PIN7_R::new(((self.bits >> 7) & 0x01) != 0)
+            pub fn pin7(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 7) & 0x01) != 0)
             }
             #[doc = "Bit 8"]
             #[inline(always)]
-            pub fn pin8(&self) -> PIN8_R {
-                PIN8_R::new(((self.bits >> 8) & 0x01) != 0)
+            pub fn pin8(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 8) & 0x01) != 0)
             }
             #[doc = "Bit 9"]
             #[inline(always)]
-            pub fn pin9(&self) -> PIN9_R {
-                PIN9_R::new(((self.bits >> 9) & 0x01) != 0)
+            pub fn pin9(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 9) & 0x01) != 0)
             }
             #[doc = "Bit 10"]
             #[inline(always)]
-            pub fn pin10(&self) -> PIN10_R {
-                PIN10_R::new(((self.bits >> 10) & 0x01) != 0)
+            pub fn pin10(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 10) & 0x01) != 0)
             }
             #[doc = "Bit 11"]
             #[inline(always)]
-            pub fn pin11(&self) -> PIN11_R {
-                PIN11_R::new(((self.bits >> 11) & 0x01) != 0)
+            pub fn pin11(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 11) & 0x01) != 0)
             }
             #[doc = "Bit 12"]
             #[inline(always)]
-            pub fn pin12(&self) -> PIN12_R {
-                PIN12_R::new(((self.bits >> 12) & 0x01) != 0)
+            pub fn pin12(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 12) & 0x01) != 0)
             }
             #[doc = "Bit 13"]
             #[inline(always)]
-            pub fn pin13(&self) -> PIN13_R {
-                PIN13_R::new(((self.bits >> 13) & 0x01) != 0)
+            pub fn pin13(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 13) & 0x01) != 0)
             }
             #[doc = "Bit 14"]
             #[inline(always)]
-            pub fn pin14(&self) -> PIN14_R {
-                PIN14_R::new(((self.bits >> 14) & 0x01) != 0)
+            pub fn pin14(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 14) & 0x01) != 0)
             }
             #[doc = "Bit 15"]
             #[inline(always)]
-            pub fn pin15(&self) -> PIN15_R {
-                PIN15_R::new(((self.bits >> 15) & 0x01) != 0)
+            pub fn pin15(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 15) & 0x01) != 0)
             }
             #[doc = "Bit 16"]
             #[inline(always)]
-            pub fn pin16(&self) -> PIN16_R {
-                PIN16_R::new(((self.bits >> 16) & 0x01) != 0)
+            pub fn pin16(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 16) & 0x01) != 0)
             }
             #[doc = "Bit 17"]
             #[inline(always)]
-            pub fn pin17(&self) -> PIN17_R {
-                PIN17_R::new(((self.bits >> 17) & 0x01) != 0)
+            pub fn pin17(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 17) & 0x01) != 0)
             }
             #[doc = "Bit 18"]
             #[inline(always)]
-            pub fn pin18(&self) -> PIN18_R {
-                PIN18_R::new(((self.bits >> 18) & 0x01) != 0)
+            pub fn pin18(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 18) & 0x01) != 0)
             }
             #[doc = "Bit 19"]
             #[inline(always)]
-            pub fn pin19(&self) -> PIN19_R {
-                PIN19_R::new(((self.bits >> 19) & 0x01) != 0)
+            pub fn pin19(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 19) & 0x01) != 0)
             }
             #[doc = "Bit 20"]
             #[inline(always)]
-            pub fn pin20(&self) -> PIN20_R {
-                PIN20_R::new(((self.bits >> 20) & 0x01) != 0)
+            pub fn pin20(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 20) & 0x01) != 0)
             }
             #[doc = "Bit 21"]
             #[inline(always)]
-            pub fn pin21(&self) -> PIN21_R {
-                PIN21_R::new(((self.bits >> 21) & 0x01) != 0)
+            pub fn pin21(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 21) & 0x01) != 0)
             }
             #[doc = "Bit 22"]
             #[inline(always)]
-            pub fn pin22(&self) -> PIN22_R {
-                PIN22_R::new(((self.bits >> 22) & 0x01) != 0)
+            pub fn pin22(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 22) & 0x01) != 0)
             }
             #[doc = "Bit 23"]
             #[inline(always)]
-            pub fn pin23(&self) -> PIN23_R {
-                PIN23_R::new(((self.bits >> 23) & 0x01) != 0)
+            pub fn pin23(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 23) & 0x01) != 0)
             }
             #[doc = "Bit 24"]
             #[inline(always)]
-            pub fn pin24(&self) -> PIN24_R {
-                PIN24_R::new(((self.bits >> 24) & 0x01) != 0)
+            pub fn pin24(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 24) & 0x01) != 0)
             }
             #[doc = "Bit 25"]
             #[inline(always)]
-            pub fn pin25(&self) -> PIN25_R {
-                PIN25_R::new(((self.bits >> 25) & 0x01) != 0)
+            pub fn pin25(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 25) & 0x01) != 0)
             }
             #[doc = "Bit 26"]
             #[inline(always)]
-            pub fn pin26(&self) -> PIN26_R {
-                PIN26_R::new(((self.bits >> 26) & 0x01) != 0)
+            pub fn pin26(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 26) & 0x01) != 0)
             }
             #[doc = "Bit 27"]
             #[inline(always)]
-            pub fn pin27(&self) -> PIN27_R {
-                PIN27_R::new(((self.bits >> 27) & 0x01) != 0)
+            pub fn pin27(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 27) & 0x01) != 0)
             }
             #[doc = "Bit 28"]
             #[inline(always)]
-            pub fn pin28(&self) -> PIN28_R {
-                PIN28_R::new(((self.bits >> 28) & 0x01) != 0)
+            pub fn pin28(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 28) & 0x01) != 0)
             }
             #[doc = "Bit 29"]
             #[inline(always)]
-            pub fn pin29(&self) -> PIN29_R {
-                PIN29_R::new(((self.bits >> 29) & 0x01) != 0)
+            pub fn pin29(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 29) & 0x01) != 0)
             }
             #[doc = "Bit 30"]
             #[inline(always)]
-            pub fn pin30(&self) -> PIN30_R {
-                PIN30_R::new(((self.bits >> 30) & 0x01) != 0)
+            pub fn pin30(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 30) & 0x01) != 0)
             }
             #[doc = "Bit 31"]
             #[inline(always)]
-            pub fn pin31(&self) -> PIN31_R {
-                PIN31_R::new(((self.bits >> 31) & 0x01) != 0)
+            pub fn pin31(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 31) & 0x01) != 0)
             }
         }
         impl W {
+            #[doc = ""]
+            #[inline(always)]
+            pub unsafe fn pin(&mut self, n: usize) -> PIN_W {
+                PIN_W { w: self, offset: n }
+            }
             #[doc = "Bit 0"]
             #[inline(always)]
-            pub fn pin0(&mut self) -> PIN0_W {
-                PIN0_W { w: self }
+            pub fn pin0(&mut self) -> PIN_W {
+                PIN_W { w: self, offset: 0 }
             }
             #[doc = "Bit 1"]
             #[inline(always)]
-            pub fn pin1(&mut self) -> PIN1_W {
-                PIN1_W { w: self }
+            pub fn pin1(&mut self) -> PIN_W {
+                PIN_W { w: self, offset: 1 }
             }
             #[doc = "Bit 2"]
             #[inline(always)]
-            pub fn pin2(&mut self) -> PIN2_W {
-                PIN2_W { w: self }
+            pub fn pin2(&mut self) -> PIN_W {
+                PIN_W { w: self, offset: 2 }
             }
             #[doc = "Bit 3"]
             #[inline(always)]
-            pub fn pin3(&mut self) -> PIN3_W {
-                PIN3_W { w: self }
+            pub fn pin3(&mut self) -> PIN_W {
+                PIN_W { w: self, offset: 3 }
             }
             #[doc = "Bit 4"]
             #[inline(always)]
-            pub fn pin4(&mut self) -> PIN4_W {
-                PIN4_W { w: self }
+            pub fn pin4(&mut self) -> PIN_W {
+                PIN_W { w: self, offset: 4 }
             }
             #[doc = "Bit 5"]
             #[inline(always)]
-            pub fn pin5(&mut self) -> PIN5_W {
-                PIN5_W { w: self }
+            pub fn pin5(&mut self) -> PIN_W {
+                PIN_W { w: self, offset: 5 }
             }
             #[doc = "Bit 6"]
             #[inline(always)]
-            pub fn pin6(&mut self) -> PIN6_W {
-                PIN6_W { w: self }
+            pub fn pin6(&mut self) -> PIN_W {
+                PIN_W { w: self, offset: 6 }
             }
             #[doc = "Bit 7"]
             #[inline(always)]
-            pub fn pin7(&mut self) -> PIN7_W {
-                PIN7_W { w: self }
+            pub fn pin7(&mut self) -> PIN_W {
+                PIN_W { w: self, offset: 7 }
             }
             #[doc = "Bit 8"]
             #[inline(always)]
-            pub fn pin8(&mut self) -> PIN8_W {
-                PIN8_W { w: self }
+            pub fn pin8(&mut self) -> PIN_W {
+                PIN_W { w: self, offset: 8 }
             }
             #[doc = "Bit 9"]
             #[inline(always)]
-            pub fn pin9(&mut self) -> PIN9_W {
-                PIN9_W { w: self }
+            pub fn pin9(&mut self) -> PIN_W {
+                PIN_W { w: self, offset: 9 }
             }
             #[doc = "Bit 10"]
             #[inline(always)]
-            pub fn pin10(&mut self) -> PIN10_W {
-                PIN10_W { w: self }
+            pub fn pin10(&mut self) -> PIN_W {
+                PIN_W {
+                    w: self,
+                    offset: 10,
+                }
             }
             #[doc = "Bit 11"]
             #[inline(always)]
-            pub fn pin11(&mut self) -> PIN11_W {
-                PIN11_W { w: self }
+            pub fn pin11(&mut self) -> PIN_W {
+                PIN_W {
+                    w: self,
+                    offset: 11,
+                }
             }
             #[doc = "Bit 12"]
             #[inline(always)]
-            pub fn pin12(&mut self) -> PIN12_W {
-                PIN12_W { w: self }
+            pub fn pin12(&mut self) -> PIN_W {
+                PIN_W {
+                    w: self,
+                    offset: 12,
+                }
             }
             #[doc = "Bit 13"]
             #[inline(always)]
-            pub fn pin13(&mut self) -> PIN13_W {
-                PIN13_W { w: self }
+            pub fn pin13(&mut self) -> PIN_W {
+                PIN_W {
+                    w: self,
+                    offset: 13,
+                }
             }
             #[doc = "Bit 14"]
             #[inline(always)]
-            pub fn pin14(&mut self) -> PIN14_W {
-                PIN14_W { w: self }
+            pub fn pin14(&mut self) -> PIN_W {
+                PIN_W {
+                    w: self,
+                    offset: 14,
+                }
             }
             #[doc = "Bit 15"]
             #[inline(always)]
-            pub fn pin15(&mut self) -> PIN15_W {
-                PIN15_W { w: self }
+            pub fn pin15(&mut self) -> PIN_W {
+                PIN_W {
+                    w: self,
+                    offset: 15,
+                }
             }
             #[doc = "Bit 16"]
             #[inline(always)]
-            pub fn pin16(&mut self) -> PIN16_W {
-                PIN16_W { w: self }
+            pub fn pin16(&mut self) -> PIN_W {
+                PIN_W {
+                    w: self,
+                    offset: 16,
+                }
             }
             #[doc = "Bit 17"]
             #[inline(always)]
-            pub fn pin17(&mut self) -> PIN17_W {
-                PIN17_W { w: self }
+            pub fn pin17(&mut self) -> PIN_W {
+                PIN_W {
+                    w: self,
+                    offset: 17,
+                }
             }
             #[doc = "Bit 18"]
             #[inline(always)]
-            pub fn pin18(&mut self) -> PIN18_W {
-                PIN18_W { w: self }
+            pub fn pin18(&mut self) -> PIN_W {
+                PIN_W {
+                    w: self,
+                    offset: 18,
+                }
             }
             #[doc = "Bit 19"]
             #[inline(always)]
-            pub fn pin19(&mut self) -> PIN19_W {
-                PIN19_W { w: self }
+            pub fn pin19(&mut self) -> PIN_W {
+                PIN_W {
+                    w: self,
+                    offset: 19,
+                }
             }
             #[doc = "Bit 20"]
             #[inline(always)]
-            pub fn pin20(&mut self) -> PIN20_W {
-                PIN20_W { w: self }
+            pub fn pin20(&mut self) -> PIN_W {
+                PIN_W {
+                    w: self,
+                    offset: 20,
+                }
             }
             #[doc = "Bit 21"]
             #[inline(always)]
-            pub fn pin21(&mut self) -> PIN21_W {
-                PIN21_W { w: self }
+            pub fn pin21(&mut self) -> PIN_W {
+                PIN_W {
+                    w: self,
+                    offset: 21,
+                }
             }
             #[doc = "Bit 22"]
             #[inline(always)]
-            pub fn pin22(&mut self) -> PIN22_W {
-                PIN22_W { w: self }
+            pub fn pin22(&mut self) -> PIN_W {
+                PIN_W {
+                    w: self,
+                    offset: 22,
+                }
             }
             #[doc = "Bit 23"]
             #[inline(always)]
-            pub fn pin23(&mut self) -> PIN23_W {
-                PIN23_W { w: self }
+            pub fn pin23(&mut self) -> PIN_W {
+                PIN_W {
+                    w: self,
+                    offset: 23,
+                }
             }
             #[doc = "Bit 24"]
             #[inline(always)]
-            pub fn pin24(&mut self) -> PIN24_W {
-                PIN24_W { w: self }
+            pub fn pin24(&mut self) -> PIN_W {
+                PIN_W {
+                    w: self,
+                    offset: 24,
+                }
             }
             #[doc = "Bit 25"]
             #[inline(always)]
-            pub fn pin25(&mut self) -> PIN25_W {
-                PIN25_W { w: self }
+            pub fn pin25(&mut self) -> PIN_W {
+                PIN_W {
+                    w: self,
+                    offset: 25,
+                }
             }
             #[doc = "Bit 26"]
             #[inline(always)]
-            pub fn pin26(&mut self) -> PIN26_W {
-                PIN26_W { w: self }
+            pub fn pin26(&mut self) -> PIN_W {
+                PIN_W {
+                    w: self,
+                    offset: 26,
+                }
             }
             #[doc = "Bit 27"]
             #[inline(always)]
-            pub fn pin27(&mut self) -> PIN27_W {
-                PIN27_W { w: self }
+            pub fn pin27(&mut self) -> PIN_W {
+                PIN_W {
+                    w: self,
+                    offset: 27,
+                }
             }
             #[doc = "Bit 28"]
             #[inline(always)]
-            pub fn pin28(&mut self) -> PIN28_W {
-                PIN28_W { w: self }
+            pub fn pin28(&mut self) -> PIN_W {
+                PIN_W {
+                    w: self,
+                    offset: 28,
+                }
             }
             #[doc = "Bit 29"]
             #[inline(always)]
-            pub fn pin29(&mut self) -> PIN29_W {
-                PIN29_W { w: self }
+            pub fn pin29(&mut self) -> PIN_W {
+                PIN_W {
+                    w: self,
+                    offset: 29,
+                }
             }
             #[doc = "Bit 30"]
             #[inline(always)]
-            pub fn pin30(&mut self) -> PIN30_W {
-                PIN30_W { w: self }
+            pub fn pin30(&mut self) -> PIN_W {
+                PIN_W {
+                    w: self,
+                    offset: 30,
+                }
             }
             #[doc = "Bit 31"]
             #[inline(always)]
-            pub fn pin31(&mut self) -> PIN31_W {
-                PIN31_W { w: self }
+            pub fn pin31(&mut self) -> PIN_W {
+                PIN_W {
+                    w: self,
+                    offset: 31,
+                }
             }
         }
     }
@@ -14046,13 +6720,14 @@ pub mod gpiohs {
                 0
             }
         }
-        #[doc = "Reader of field `pin0`"]
-        pub type PIN0_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin0`"]
-        pub struct PIN0_W<'a> {
+        #[doc = "Reader of field `pin%s`"]
+        pub type PIN_R = crate::R<bool, bool>;
+        #[doc = "Write proxy for fields `pin(0-31)`"]
+        pub struct PIN_W<'a> {
             w: &'a mut W,
+            offset: usize,
         }
-        impl<'a> PIN0_W<'a> {
+        impl<'a> PIN_W<'a> {
             #[doc = r"Sets the field bit"]
             #[inline(always)]
             pub fn set_bit(self) -> &'a mut W {
@@ -14066,1076 +6741,409 @@ pub mod gpiohs {
             #[doc = r"Writes raw bits to the field"]
             #[inline(always)]
             pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !0x01) | ((value as u32) & 0x01);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin1`"]
-        pub type PIN1_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin1`"]
-        pub struct PIN1_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN1_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 1)) | (((value as u32) & 0x01) << 1);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin2`"]
-        pub type PIN2_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin2`"]
-        pub struct PIN2_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN2_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 2)) | (((value as u32) & 0x01) << 2);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin3`"]
-        pub type PIN3_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin3`"]
-        pub struct PIN3_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN3_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 3)) | (((value as u32) & 0x01) << 3);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin4`"]
-        pub type PIN4_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin4`"]
-        pub struct PIN4_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN4_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 4)) | (((value as u32) & 0x01) << 4);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin5`"]
-        pub type PIN5_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin5`"]
-        pub struct PIN5_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN5_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 5)) | (((value as u32) & 0x01) << 5);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin6`"]
-        pub type PIN6_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin6`"]
-        pub struct PIN6_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN6_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 6)) | (((value as u32) & 0x01) << 6);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin7`"]
-        pub type PIN7_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin7`"]
-        pub struct PIN7_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN7_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 7)) | (((value as u32) & 0x01) << 7);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin8`"]
-        pub type PIN8_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin8`"]
-        pub struct PIN8_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN8_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 8)) | (((value as u32) & 0x01) << 8);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin9`"]
-        pub type PIN9_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin9`"]
-        pub struct PIN9_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN9_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 9)) | (((value as u32) & 0x01) << 9);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin10`"]
-        pub type PIN10_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin10`"]
-        pub struct PIN10_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN10_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 10)) | (((value as u32) & 0x01) << 10);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin11`"]
-        pub type PIN11_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin11`"]
-        pub struct PIN11_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN11_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 11)) | (((value as u32) & 0x01) << 11);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin12`"]
-        pub type PIN12_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin12`"]
-        pub struct PIN12_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN12_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 12)) | (((value as u32) & 0x01) << 12);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin13`"]
-        pub type PIN13_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin13`"]
-        pub struct PIN13_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN13_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 13)) | (((value as u32) & 0x01) << 13);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin14`"]
-        pub type PIN14_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin14`"]
-        pub struct PIN14_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN14_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 14)) | (((value as u32) & 0x01) << 14);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin15`"]
-        pub type PIN15_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin15`"]
-        pub struct PIN15_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN15_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 15)) | (((value as u32) & 0x01) << 15);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin16`"]
-        pub type PIN16_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin16`"]
-        pub struct PIN16_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN16_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 16)) | (((value as u32) & 0x01) << 16);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin17`"]
-        pub type PIN17_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin17`"]
-        pub struct PIN17_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN17_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 17)) | (((value as u32) & 0x01) << 17);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin18`"]
-        pub type PIN18_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin18`"]
-        pub struct PIN18_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN18_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 18)) | (((value as u32) & 0x01) << 18);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin19`"]
-        pub type PIN19_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin19`"]
-        pub struct PIN19_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN19_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 19)) | (((value as u32) & 0x01) << 19);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin20`"]
-        pub type PIN20_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin20`"]
-        pub struct PIN20_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN20_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 20)) | (((value as u32) & 0x01) << 20);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin21`"]
-        pub type PIN21_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin21`"]
-        pub struct PIN21_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN21_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 21)) | (((value as u32) & 0x01) << 21);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin22`"]
-        pub type PIN22_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin22`"]
-        pub struct PIN22_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN22_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 22)) | (((value as u32) & 0x01) << 22);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin23`"]
-        pub type PIN23_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin23`"]
-        pub struct PIN23_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN23_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 23)) | (((value as u32) & 0x01) << 23);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin24`"]
-        pub type PIN24_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin24`"]
-        pub struct PIN24_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN24_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 24)) | (((value as u32) & 0x01) << 24);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin25`"]
-        pub type PIN25_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin25`"]
-        pub struct PIN25_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN25_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 25)) | (((value as u32) & 0x01) << 25);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin26`"]
-        pub type PIN26_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin26`"]
-        pub struct PIN26_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN26_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 26)) | (((value as u32) & 0x01) << 26);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin27`"]
-        pub type PIN27_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin27`"]
-        pub struct PIN27_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN27_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 27)) | (((value as u32) & 0x01) << 27);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin28`"]
-        pub type PIN28_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin28`"]
-        pub struct PIN28_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN28_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 28)) | (((value as u32) & 0x01) << 28);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin29`"]
-        pub type PIN29_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin29`"]
-        pub struct PIN29_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN29_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 29)) | (((value as u32) & 0x01) << 29);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin30`"]
-        pub type PIN30_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin30`"]
-        pub struct PIN30_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN30_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 30)) | (((value as u32) & 0x01) << 30);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin31`"]
-        pub type PIN31_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin31`"]
-        pub struct PIN31_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN31_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 31)) | (((value as u32) & 0x01) << 31);
+                self.w.bits = (self.w.bits & !(0x01 << self.offset))
+                    | (((value as u32) & 0x01) << self.offset);
                 self.w
             }
         }
         impl R {
+            #[doc = ""]
+            #[inline(always)]
+            pub unsafe fn pin(&self, n: usize) -> PIN_R {
+                PIN_R::new(((self.bits >> n) & 0x01) != 0)
+            }
             #[doc = "Bit 0"]
             #[inline(always)]
-            pub fn pin0(&self) -> PIN0_R {
-                PIN0_R::new((self.bits & 0x01) != 0)
+            pub fn pin0(&self) -> PIN_R {
+                PIN_R::new((self.bits & 0x01) != 0)
             }
             #[doc = "Bit 1"]
             #[inline(always)]
-            pub fn pin1(&self) -> PIN1_R {
-                PIN1_R::new(((self.bits >> 1) & 0x01) != 0)
+            pub fn pin1(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 1) & 0x01) != 0)
             }
             #[doc = "Bit 2"]
             #[inline(always)]
-            pub fn pin2(&self) -> PIN2_R {
-                PIN2_R::new(((self.bits >> 2) & 0x01) != 0)
+            pub fn pin2(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 2) & 0x01) != 0)
             }
             #[doc = "Bit 3"]
             #[inline(always)]
-            pub fn pin3(&self) -> PIN3_R {
-                PIN3_R::new(((self.bits >> 3) & 0x01) != 0)
+            pub fn pin3(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 3) & 0x01) != 0)
             }
             #[doc = "Bit 4"]
             #[inline(always)]
-            pub fn pin4(&self) -> PIN4_R {
-                PIN4_R::new(((self.bits >> 4) & 0x01) != 0)
+            pub fn pin4(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 4) & 0x01) != 0)
             }
             #[doc = "Bit 5"]
             #[inline(always)]
-            pub fn pin5(&self) -> PIN5_R {
-                PIN5_R::new(((self.bits >> 5) & 0x01) != 0)
+            pub fn pin5(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 5) & 0x01) != 0)
             }
             #[doc = "Bit 6"]
             #[inline(always)]
-            pub fn pin6(&self) -> PIN6_R {
-                PIN6_R::new(((self.bits >> 6) & 0x01) != 0)
+            pub fn pin6(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 6) & 0x01) != 0)
             }
             #[doc = "Bit 7"]
             #[inline(always)]
-            pub fn pin7(&self) -> PIN7_R {
-                PIN7_R::new(((self.bits >> 7) & 0x01) != 0)
+            pub fn pin7(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 7) & 0x01) != 0)
             }
             #[doc = "Bit 8"]
             #[inline(always)]
-            pub fn pin8(&self) -> PIN8_R {
-                PIN8_R::new(((self.bits >> 8) & 0x01) != 0)
+            pub fn pin8(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 8) & 0x01) != 0)
             }
             #[doc = "Bit 9"]
             #[inline(always)]
-            pub fn pin9(&self) -> PIN9_R {
-                PIN9_R::new(((self.bits >> 9) & 0x01) != 0)
+            pub fn pin9(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 9) & 0x01) != 0)
             }
             #[doc = "Bit 10"]
             #[inline(always)]
-            pub fn pin10(&self) -> PIN10_R {
-                PIN10_R::new(((self.bits >> 10) & 0x01) != 0)
+            pub fn pin10(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 10) & 0x01) != 0)
             }
             #[doc = "Bit 11"]
             #[inline(always)]
-            pub fn pin11(&self) -> PIN11_R {
-                PIN11_R::new(((self.bits >> 11) & 0x01) != 0)
+            pub fn pin11(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 11) & 0x01) != 0)
             }
             #[doc = "Bit 12"]
             #[inline(always)]
-            pub fn pin12(&self) -> PIN12_R {
-                PIN12_R::new(((self.bits >> 12) & 0x01) != 0)
+            pub fn pin12(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 12) & 0x01) != 0)
             }
             #[doc = "Bit 13"]
             #[inline(always)]
-            pub fn pin13(&self) -> PIN13_R {
-                PIN13_R::new(((self.bits >> 13) & 0x01) != 0)
+            pub fn pin13(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 13) & 0x01) != 0)
             }
             #[doc = "Bit 14"]
             #[inline(always)]
-            pub fn pin14(&self) -> PIN14_R {
-                PIN14_R::new(((self.bits >> 14) & 0x01) != 0)
+            pub fn pin14(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 14) & 0x01) != 0)
             }
             #[doc = "Bit 15"]
             #[inline(always)]
-            pub fn pin15(&self) -> PIN15_R {
-                PIN15_R::new(((self.bits >> 15) & 0x01) != 0)
+            pub fn pin15(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 15) & 0x01) != 0)
             }
             #[doc = "Bit 16"]
             #[inline(always)]
-            pub fn pin16(&self) -> PIN16_R {
-                PIN16_R::new(((self.bits >> 16) & 0x01) != 0)
+            pub fn pin16(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 16) & 0x01) != 0)
             }
             #[doc = "Bit 17"]
             #[inline(always)]
-            pub fn pin17(&self) -> PIN17_R {
-                PIN17_R::new(((self.bits >> 17) & 0x01) != 0)
+            pub fn pin17(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 17) & 0x01) != 0)
             }
             #[doc = "Bit 18"]
             #[inline(always)]
-            pub fn pin18(&self) -> PIN18_R {
-                PIN18_R::new(((self.bits >> 18) & 0x01) != 0)
+            pub fn pin18(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 18) & 0x01) != 0)
             }
             #[doc = "Bit 19"]
             #[inline(always)]
-            pub fn pin19(&self) -> PIN19_R {
-                PIN19_R::new(((self.bits >> 19) & 0x01) != 0)
+            pub fn pin19(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 19) & 0x01) != 0)
             }
             #[doc = "Bit 20"]
             #[inline(always)]
-            pub fn pin20(&self) -> PIN20_R {
-                PIN20_R::new(((self.bits >> 20) & 0x01) != 0)
+            pub fn pin20(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 20) & 0x01) != 0)
             }
             #[doc = "Bit 21"]
             #[inline(always)]
-            pub fn pin21(&self) -> PIN21_R {
-                PIN21_R::new(((self.bits >> 21) & 0x01) != 0)
+            pub fn pin21(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 21) & 0x01) != 0)
             }
             #[doc = "Bit 22"]
             #[inline(always)]
-            pub fn pin22(&self) -> PIN22_R {
-                PIN22_R::new(((self.bits >> 22) & 0x01) != 0)
+            pub fn pin22(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 22) & 0x01) != 0)
             }
             #[doc = "Bit 23"]
             #[inline(always)]
-            pub fn pin23(&self) -> PIN23_R {
-                PIN23_R::new(((self.bits >> 23) & 0x01) != 0)
+            pub fn pin23(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 23) & 0x01) != 0)
             }
             #[doc = "Bit 24"]
             #[inline(always)]
-            pub fn pin24(&self) -> PIN24_R {
-                PIN24_R::new(((self.bits >> 24) & 0x01) != 0)
+            pub fn pin24(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 24) & 0x01) != 0)
             }
             #[doc = "Bit 25"]
             #[inline(always)]
-            pub fn pin25(&self) -> PIN25_R {
-                PIN25_R::new(((self.bits >> 25) & 0x01) != 0)
+            pub fn pin25(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 25) & 0x01) != 0)
             }
             #[doc = "Bit 26"]
             #[inline(always)]
-            pub fn pin26(&self) -> PIN26_R {
-                PIN26_R::new(((self.bits >> 26) & 0x01) != 0)
+            pub fn pin26(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 26) & 0x01) != 0)
             }
             #[doc = "Bit 27"]
             #[inline(always)]
-            pub fn pin27(&self) -> PIN27_R {
-                PIN27_R::new(((self.bits >> 27) & 0x01) != 0)
+            pub fn pin27(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 27) & 0x01) != 0)
             }
             #[doc = "Bit 28"]
             #[inline(always)]
-            pub fn pin28(&self) -> PIN28_R {
-                PIN28_R::new(((self.bits >> 28) & 0x01) != 0)
+            pub fn pin28(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 28) & 0x01) != 0)
             }
             #[doc = "Bit 29"]
             #[inline(always)]
-            pub fn pin29(&self) -> PIN29_R {
-                PIN29_R::new(((self.bits >> 29) & 0x01) != 0)
+            pub fn pin29(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 29) & 0x01) != 0)
             }
             #[doc = "Bit 30"]
             #[inline(always)]
-            pub fn pin30(&self) -> PIN30_R {
-                PIN30_R::new(((self.bits >> 30) & 0x01) != 0)
+            pub fn pin30(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 30) & 0x01) != 0)
             }
             #[doc = "Bit 31"]
             #[inline(always)]
-            pub fn pin31(&self) -> PIN31_R {
-                PIN31_R::new(((self.bits >> 31) & 0x01) != 0)
+            pub fn pin31(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 31) & 0x01) != 0)
             }
         }
         impl W {
+            #[doc = ""]
+            #[inline(always)]
+            pub unsafe fn pin(&mut self, n: usize) -> PIN_W {
+                PIN_W { w: self, offset: n }
+            }
             #[doc = "Bit 0"]
             #[inline(always)]
-            pub fn pin0(&mut self) -> PIN0_W {
-                PIN0_W { w: self }
+            pub fn pin0(&mut self) -> PIN_W {
+                PIN_W { w: self, offset: 0 }
             }
             #[doc = "Bit 1"]
             #[inline(always)]
-            pub fn pin1(&mut self) -> PIN1_W {
-                PIN1_W { w: self }
+            pub fn pin1(&mut self) -> PIN_W {
+                PIN_W { w: self, offset: 1 }
             }
             #[doc = "Bit 2"]
             #[inline(always)]
-            pub fn pin2(&mut self) -> PIN2_W {
-                PIN2_W { w: self }
+            pub fn pin2(&mut self) -> PIN_W {
+                PIN_W { w: self, offset: 2 }
             }
             #[doc = "Bit 3"]
             #[inline(always)]
-            pub fn pin3(&mut self) -> PIN3_W {
-                PIN3_W { w: self }
+            pub fn pin3(&mut self) -> PIN_W {
+                PIN_W { w: self, offset: 3 }
             }
             #[doc = "Bit 4"]
             #[inline(always)]
-            pub fn pin4(&mut self) -> PIN4_W {
-                PIN4_W { w: self }
+            pub fn pin4(&mut self) -> PIN_W {
+                PIN_W { w: self, offset: 4 }
             }
             #[doc = "Bit 5"]
             #[inline(always)]
-            pub fn pin5(&mut self) -> PIN5_W {
-                PIN5_W { w: self }
+            pub fn pin5(&mut self) -> PIN_W {
+                PIN_W { w: self, offset: 5 }
             }
             #[doc = "Bit 6"]
             #[inline(always)]
-            pub fn pin6(&mut self) -> PIN6_W {
-                PIN6_W { w: self }
+            pub fn pin6(&mut self) -> PIN_W {
+                PIN_W { w: self, offset: 6 }
             }
             #[doc = "Bit 7"]
             #[inline(always)]
-            pub fn pin7(&mut self) -> PIN7_W {
-                PIN7_W { w: self }
+            pub fn pin7(&mut self) -> PIN_W {
+                PIN_W { w: self, offset: 7 }
             }
             #[doc = "Bit 8"]
             #[inline(always)]
-            pub fn pin8(&mut self) -> PIN8_W {
-                PIN8_W { w: self }
+            pub fn pin8(&mut self) -> PIN_W {
+                PIN_W { w: self, offset: 8 }
             }
             #[doc = "Bit 9"]
             #[inline(always)]
-            pub fn pin9(&mut self) -> PIN9_W {
-                PIN9_W { w: self }
+            pub fn pin9(&mut self) -> PIN_W {
+                PIN_W { w: self, offset: 9 }
             }
             #[doc = "Bit 10"]
             #[inline(always)]
-            pub fn pin10(&mut self) -> PIN10_W {
-                PIN10_W { w: self }
+            pub fn pin10(&mut self) -> PIN_W {
+                PIN_W {
+                    w: self,
+                    offset: 10,
+                }
             }
             #[doc = "Bit 11"]
             #[inline(always)]
-            pub fn pin11(&mut self) -> PIN11_W {
-                PIN11_W { w: self }
+            pub fn pin11(&mut self) -> PIN_W {
+                PIN_W {
+                    w: self,
+                    offset: 11,
+                }
             }
             #[doc = "Bit 12"]
             #[inline(always)]
-            pub fn pin12(&mut self) -> PIN12_W {
-                PIN12_W { w: self }
+            pub fn pin12(&mut self) -> PIN_W {
+                PIN_W {
+                    w: self,
+                    offset: 12,
+                }
             }
             #[doc = "Bit 13"]
             #[inline(always)]
-            pub fn pin13(&mut self) -> PIN13_W {
-                PIN13_W { w: self }
+            pub fn pin13(&mut self) -> PIN_W {
+                PIN_W {
+                    w: self,
+                    offset: 13,
+                }
             }
             #[doc = "Bit 14"]
             #[inline(always)]
-            pub fn pin14(&mut self) -> PIN14_W {
-                PIN14_W { w: self }
+            pub fn pin14(&mut self) -> PIN_W {
+                PIN_W {
+                    w: self,
+                    offset: 14,
+                }
             }
             #[doc = "Bit 15"]
             #[inline(always)]
-            pub fn pin15(&mut self) -> PIN15_W {
-                PIN15_W { w: self }
+            pub fn pin15(&mut self) -> PIN_W {
+                PIN_W {
+                    w: self,
+                    offset: 15,
+                }
             }
             #[doc = "Bit 16"]
             #[inline(always)]
-            pub fn pin16(&mut self) -> PIN16_W {
-                PIN16_W { w: self }
+            pub fn pin16(&mut self) -> PIN_W {
+                PIN_W {
+                    w: self,
+                    offset: 16,
+                }
             }
             #[doc = "Bit 17"]
             #[inline(always)]
-            pub fn pin17(&mut self) -> PIN17_W {
-                PIN17_W { w: self }
+            pub fn pin17(&mut self) -> PIN_W {
+                PIN_W {
+                    w: self,
+                    offset: 17,
+                }
             }
             #[doc = "Bit 18"]
             #[inline(always)]
-            pub fn pin18(&mut self) -> PIN18_W {
-                PIN18_W { w: self }
+            pub fn pin18(&mut self) -> PIN_W {
+                PIN_W {
+                    w: self,
+                    offset: 18,
+                }
             }
             #[doc = "Bit 19"]
             #[inline(always)]
-            pub fn pin19(&mut self) -> PIN19_W {
-                PIN19_W { w: self }
+            pub fn pin19(&mut self) -> PIN_W {
+                PIN_W {
+                    w: self,
+                    offset: 19,
+                }
             }
             #[doc = "Bit 20"]
             #[inline(always)]
-            pub fn pin20(&mut self) -> PIN20_W {
-                PIN20_W { w: self }
+            pub fn pin20(&mut self) -> PIN_W {
+                PIN_W {
+                    w: self,
+                    offset: 20,
+                }
             }
             #[doc = "Bit 21"]
             #[inline(always)]
-            pub fn pin21(&mut self) -> PIN21_W {
-                PIN21_W { w: self }
+            pub fn pin21(&mut self) -> PIN_W {
+                PIN_W {
+                    w: self,
+                    offset: 21,
+                }
             }
             #[doc = "Bit 22"]
             #[inline(always)]
-            pub fn pin22(&mut self) -> PIN22_W {
-                PIN22_W { w: self }
+            pub fn pin22(&mut self) -> PIN_W {
+                PIN_W {
+                    w: self,
+                    offset: 22,
+                }
             }
             #[doc = "Bit 23"]
             #[inline(always)]
-            pub fn pin23(&mut self) -> PIN23_W {
-                PIN23_W { w: self }
+            pub fn pin23(&mut self) -> PIN_W {
+                PIN_W {
+                    w: self,
+                    offset: 23,
+                }
             }
             #[doc = "Bit 24"]
             #[inline(always)]
-            pub fn pin24(&mut self) -> PIN24_W {
-                PIN24_W { w: self }
+            pub fn pin24(&mut self) -> PIN_W {
+                PIN_W {
+                    w: self,
+                    offset: 24,
+                }
             }
             #[doc = "Bit 25"]
             #[inline(always)]
-            pub fn pin25(&mut self) -> PIN25_W {
-                PIN25_W { w: self }
+            pub fn pin25(&mut self) -> PIN_W {
+                PIN_W {
+                    w: self,
+                    offset: 25,
+                }
             }
             #[doc = "Bit 26"]
             #[inline(always)]
-            pub fn pin26(&mut self) -> PIN26_W {
-                PIN26_W { w: self }
+            pub fn pin26(&mut self) -> PIN_W {
+                PIN_W {
+                    w: self,
+                    offset: 26,
+                }
             }
             #[doc = "Bit 27"]
             #[inline(always)]
-            pub fn pin27(&mut self) -> PIN27_W {
-                PIN27_W { w: self }
+            pub fn pin27(&mut self) -> PIN_W {
+                PIN_W {
+                    w: self,
+                    offset: 27,
+                }
             }
             #[doc = "Bit 28"]
             #[inline(always)]
-            pub fn pin28(&mut self) -> PIN28_W {
-                PIN28_W { w: self }
+            pub fn pin28(&mut self) -> PIN_W {
+                PIN_W {
+                    w: self,
+                    offset: 28,
+                }
             }
             #[doc = "Bit 29"]
             #[inline(always)]
-            pub fn pin29(&mut self) -> PIN29_W {
-                PIN29_W { w: self }
+            pub fn pin29(&mut self) -> PIN_W {
+                PIN_W {
+                    w: self,
+                    offset: 29,
+                }
             }
             #[doc = "Bit 30"]
             #[inline(always)]
-            pub fn pin30(&mut self) -> PIN30_W {
-                PIN30_W { w: self }
+            pub fn pin30(&mut self) -> PIN_W {
+                PIN_W {
+                    w: self,
+                    offset: 30,
+                }
             }
             #[doc = "Bit 31"]
             #[inline(always)]
-            pub fn pin31(&mut self) -> PIN31_W {
-                PIN31_W { w: self }
+            pub fn pin31(&mut self) -> PIN_W {
+                PIN_W {
+                    w: self,
+                    offset: 31,
+                }
             }
         }
     }
@@ -15162,13 +7170,14 @@ pub mod gpiohs {
                 0
             }
         }
-        #[doc = "Reader of field `pin0`"]
-        pub type PIN0_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin0`"]
-        pub struct PIN0_W<'a> {
+        #[doc = "Reader of field `pin%s`"]
+        pub type PIN_R = crate::R<bool, bool>;
+        #[doc = "Write proxy for fields `pin(0-31)`"]
+        pub struct PIN_W<'a> {
             w: &'a mut W,
+            offset: usize,
         }
-        impl<'a> PIN0_W<'a> {
+        impl<'a> PIN_W<'a> {
             #[doc = r"Sets the field bit"]
             #[inline(always)]
             pub fn set_bit(self) -> &'a mut W {
@@ -15182,1076 +7191,409 @@ pub mod gpiohs {
             #[doc = r"Writes raw bits to the field"]
             #[inline(always)]
             pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !0x01) | ((value as u32) & 0x01);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin1`"]
-        pub type PIN1_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin1`"]
-        pub struct PIN1_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN1_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 1)) | (((value as u32) & 0x01) << 1);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin2`"]
-        pub type PIN2_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin2`"]
-        pub struct PIN2_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN2_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 2)) | (((value as u32) & 0x01) << 2);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin3`"]
-        pub type PIN3_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin3`"]
-        pub struct PIN3_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN3_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 3)) | (((value as u32) & 0x01) << 3);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin4`"]
-        pub type PIN4_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin4`"]
-        pub struct PIN4_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN4_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 4)) | (((value as u32) & 0x01) << 4);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin5`"]
-        pub type PIN5_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin5`"]
-        pub struct PIN5_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN5_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 5)) | (((value as u32) & 0x01) << 5);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin6`"]
-        pub type PIN6_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin6`"]
-        pub struct PIN6_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN6_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 6)) | (((value as u32) & 0x01) << 6);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin7`"]
-        pub type PIN7_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin7`"]
-        pub struct PIN7_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN7_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 7)) | (((value as u32) & 0x01) << 7);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin8`"]
-        pub type PIN8_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin8`"]
-        pub struct PIN8_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN8_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 8)) | (((value as u32) & 0x01) << 8);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin9`"]
-        pub type PIN9_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin9`"]
-        pub struct PIN9_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN9_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 9)) | (((value as u32) & 0x01) << 9);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin10`"]
-        pub type PIN10_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin10`"]
-        pub struct PIN10_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN10_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 10)) | (((value as u32) & 0x01) << 10);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin11`"]
-        pub type PIN11_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin11`"]
-        pub struct PIN11_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN11_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 11)) | (((value as u32) & 0x01) << 11);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin12`"]
-        pub type PIN12_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin12`"]
-        pub struct PIN12_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN12_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 12)) | (((value as u32) & 0x01) << 12);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin13`"]
-        pub type PIN13_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin13`"]
-        pub struct PIN13_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN13_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 13)) | (((value as u32) & 0x01) << 13);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin14`"]
-        pub type PIN14_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin14`"]
-        pub struct PIN14_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN14_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 14)) | (((value as u32) & 0x01) << 14);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin15`"]
-        pub type PIN15_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin15`"]
-        pub struct PIN15_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN15_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 15)) | (((value as u32) & 0x01) << 15);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin16`"]
-        pub type PIN16_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin16`"]
-        pub struct PIN16_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN16_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 16)) | (((value as u32) & 0x01) << 16);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin17`"]
-        pub type PIN17_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin17`"]
-        pub struct PIN17_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN17_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 17)) | (((value as u32) & 0x01) << 17);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin18`"]
-        pub type PIN18_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin18`"]
-        pub struct PIN18_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN18_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 18)) | (((value as u32) & 0x01) << 18);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin19`"]
-        pub type PIN19_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin19`"]
-        pub struct PIN19_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN19_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 19)) | (((value as u32) & 0x01) << 19);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin20`"]
-        pub type PIN20_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin20`"]
-        pub struct PIN20_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN20_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 20)) | (((value as u32) & 0x01) << 20);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin21`"]
-        pub type PIN21_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin21`"]
-        pub struct PIN21_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN21_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 21)) | (((value as u32) & 0x01) << 21);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin22`"]
-        pub type PIN22_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin22`"]
-        pub struct PIN22_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN22_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 22)) | (((value as u32) & 0x01) << 22);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin23`"]
-        pub type PIN23_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin23`"]
-        pub struct PIN23_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN23_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 23)) | (((value as u32) & 0x01) << 23);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin24`"]
-        pub type PIN24_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin24`"]
-        pub struct PIN24_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN24_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 24)) | (((value as u32) & 0x01) << 24);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin25`"]
-        pub type PIN25_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin25`"]
-        pub struct PIN25_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN25_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 25)) | (((value as u32) & 0x01) << 25);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin26`"]
-        pub type PIN26_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin26`"]
-        pub struct PIN26_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN26_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 26)) | (((value as u32) & 0x01) << 26);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin27`"]
-        pub type PIN27_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin27`"]
-        pub struct PIN27_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN27_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 27)) | (((value as u32) & 0x01) << 27);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin28`"]
-        pub type PIN28_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin28`"]
-        pub struct PIN28_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN28_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 28)) | (((value as u32) & 0x01) << 28);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin29`"]
-        pub type PIN29_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin29`"]
-        pub struct PIN29_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN29_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 29)) | (((value as u32) & 0x01) << 29);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin30`"]
-        pub type PIN30_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin30`"]
-        pub struct PIN30_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN30_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 30)) | (((value as u32) & 0x01) << 30);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin31`"]
-        pub type PIN31_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin31`"]
-        pub struct PIN31_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN31_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 31)) | (((value as u32) & 0x01) << 31);
+                self.w.bits = (self.w.bits & !(0x01 << self.offset))
+                    | (((value as u32) & 0x01) << self.offset);
                 self.w
             }
         }
         impl R {
+            #[doc = ""]
+            #[inline(always)]
+            pub unsafe fn pin(&self, n: usize) -> PIN_R {
+                PIN_R::new(((self.bits >> n) & 0x01) != 0)
+            }
             #[doc = "Bit 0"]
             #[inline(always)]
-            pub fn pin0(&self) -> PIN0_R {
-                PIN0_R::new((self.bits & 0x01) != 0)
+            pub fn pin0(&self) -> PIN_R {
+                PIN_R::new((self.bits & 0x01) != 0)
             }
             #[doc = "Bit 1"]
             #[inline(always)]
-            pub fn pin1(&self) -> PIN1_R {
-                PIN1_R::new(((self.bits >> 1) & 0x01) != 0)
+            pub fn pin1(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 1) & 0x01) != 0)
             }
             #[doc = "Bit 2"]
             #[inline(always)]
-            pub fn pin2(&self) -> PIN2_R {
-                PIN2_R::new(((self.bits >> 2) & 0x01) != 0)
+            pub fn pin2(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 2) & 0x01) != 0)
             }
             #[doc = "Bit 3"]
             #[inline(always)]
-            pub fn pin3(&self) -> PIN3_R {
-                PIN3_R::new(((self.bits >> 3) & 0x01) != 0)
+            pub fn pin3(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 3) & 0x01) != 0)
             }
             #[doc = "Bit 4"]
             #[inline(always)]
-            pub fn pin4(&self) -> PIN4_R {
-                PIN4_R::new(((self.bits >> 4) & 0x01) != 0)
+            pub fn pin4(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 4) & 0x01) != 0)
             }
             #[doc = "Bit 5"]
             #[inline(always)]
-            pub fn pin5(&self) -> PIN5_R {
-                PIN5_R::new(((self.bits >> 5) & 0x01) != 0)
+            pub fn pin5(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 5) & 0x01) != 0)
             }
             #[doc = "Bit 6"]
             #[inline(always)]
-            pub fn pin6(&self) -> PIN6_R {
-                PIN6_R::new(((self.bits >> 6) & 0x01) != 0)
+            pub fn pin6(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 6) & 0x01) != 0)
             }
             #[doc = "Bit 7"]
             #[inline(always)]
-            pub fn pin7(&self) -> PIN7_R {
-                PIN7_R::new(((self.bits >> 7) & 0x01) != 0)
+            pub fn pin7(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 7) & 0x01) != 0)
             }
             #[doc = "Bit 8"]
             #[inline(always)]
-            pub fn pin8(&self) -> PIN8_R {
-                PIN8_R::new(((self.bits >> 8) & 0x01) != 0)
+            pub fn pin8(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 8) & 0x01) != 0)
             }
             #[doc = "Bit 9"]
             #[inline(always)]
-            pub fn pin9(&self) -> PIN9_R {
-                PIN9_R::new(((self.bits >> 9) & 0x01) != 0)
+            pub fn pin9(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 9) & 0x01) != 0)
             }
             #[doc = "Bit 10"]
             #[inline(always)]
-            pub fn pin10(&self) -> PIN10_R {
-                PIN10_R::new(((self.bits >> 10) & 0x01) != 0)
+            pub fn pin10(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 10) & 0x01) != 0)
             }
             #[doc = "Bit 11"]
             #[inline(always)]
-            pub fn pin11(&self) -> PIN11_R {
-                PIN11_R::new(((self.bits >> 11) & 0x01) != 0)
+            pub fn pin11(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 11) & 0x01) != 0)
             }
             #[doc = "Bit 12"]
             #[inline(always)]
-            pub fn pin12(&self) -> PIN12_R {
-                PIN12_R::new(((self.bits >> 12) & 0x01) != 0)
+            pub fn pin12(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 12) & 0x01) != 0)
             }
             #[doc = "Bit 13"]
             #[inline(always)]
-            pub fn pin13(&self) -> PIN13_R {
-                PIN13_R::new(((self.bits >> 13) & 0x01) != 0)
+            pub fn pin13(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 13) & 0x01) != 0)
             }
             #[doc = "Bit 14"]
             #[inline(always)]
-            pub fn pin14(&self) -> PIN14_R {
-                PIN14_R::new(((self.bits >> 14) & 0x01) != 0)
+            pub fn pin14(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 14) & 0x01) != 0)
             }
             #[doc = "Bit 15"]
             #[inline(always)]
-            pub fn pin15(&self) -> PIN15_R {
-                PIN15_R::new(((self.bits >> 15) & 0x01) != 0)
+            pub fn pin15(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 15) & 0x01) != 0)
             }
             #[doc = "Bit 16"]
             #[inline(always)]
-            pub fn pin16(&self) -> PIN16_R {
-                PIN16_R::new(((self.bits >> 16) & 0x01) != 0)
+            pub fn pin16(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 16) & 0x01) != 0)
             }
             #[doc = "Bit 17"]
             #[inline(always)]
-            pub fn pin17(&self) -> PIN17_R {
-                PIN17_R::new(((self.bits >> 17) & 0x01) != 0)
+            pub fn pin17(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 17) & 0x01) != 0)
             }
             #[doc = "Bit 18"]
             #[inline(always)]
-            pub fn pin18(&self) -> PIN18_R {
-                PIN18_R::new(((self.bits >> 18) & 0x01) != 0)
+            pub fn pin18(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 18) & 0x01) != 0)
             }
             #[doc = "Bit 19"]
             #[inline(always)]
-            pub fn pin19(&self) -> PIN19_R {
-                PIN19_R::new(((self.bits >> 19) & 0x01) != 0)
+            pub fn pin19(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 19) & 0x01) != 0)
             }
             #[doc = "Bit 20"]
             #[inline(always)]
-            pub fn pin20(&self) -> PIN20_R {
-                PIN20_R::new(((self.bits >> 20) & 0x01) != 0)
+            pub fn pin20(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 20) & 0x01) != 0)
             }
             #[doc = "Bit 21"]
             #[inline(always)]
-            pub fn pin21(&self) -> PIN21_R {
-                PIN21_R::new(((self.bits >> 21) & 0x01) != 0)
+            pub fn pin21(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 21) & 0x01) != 0)
             }
             #[doc = "Bit 22"]
             #[inline(always)]
-            pub fn pin22(&self) -> PIN22_R {
-                PIN22_R::new(((self.bits >> 22) & 0x01) != 0)
+            pub fn pin22(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 22) & 0x01) != 0)
             }
             #[doc = "Bit 23"]
             #[inline(always)]
-            pub fn pin23(&self) -> PIN23_R {
-                PIN23_R::new(((self.bits >> 23) & 0x01) != 0)
+            pub fn pin23(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 23) & 0x01) != 0)
             }
             #[doc = "Bit 24"]
             #[inline(always)]
-            pub fn pin24(&self) -> PIN24_R {
-                PIN24_R::new(((self.bits >> 24) & 0x01) != 0)
+            pub fn pin24(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 24) & 0x01) != 0)
             }
             #[doc = "Bit 25"]
             #[inline(always)]
-            pub fn pin25(&self) -> PIN25_R {
-                PIN25_R::new(((self.bits >> 25) & 0x01) != 0)
+            pub fn pin25(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 25) & 0x01) != 0)
             }
             #[doc = "Bit 26"]
             #[inline(always)]
-            pub fn pin26(&self) -> PIN26_R {
-                PIN26_R::new(((self.bits >> 26) & 0x01) != 0)
+            pub fn pin26(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 26) & 0x01) != 0)
             }
             #[doc = "Bit 27"]
             #[inline(always)]
-            pub fn pin27(&self) -> PIN27_R {
-                PIN27_R::new(((self.bits >> 27) & 0x01) != 0)
+            pub fn pin27(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 27) & 0x01) != 0)
             }
             #[doc = "Bit 28"]
             #[inline(always)]
-            pub fn pin28(&self) -> PIN28_R {
-                PIN28_R::new(((self.bits >> 28) & 0x01) != 0)
+            pub fn pin28(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 28) & 0x01) != 0)
             }
             #[doc = "Bit 29"]
             #[inline(always)]
-            pub fn pin29(&self) -> PIN29_R {
-                PIN29_R::new(((self.bits >> 29) & 0x01) != 0)
+            pub fn pin29(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 29) & 0x01) != 0)
             }
             #[doc = "Bit 30"]
             #[inline(always)]
-            pub fn pin30(&self) -> PIN30_R {
-                PIN30_R::new(((self.bits >> 30) & 0x01) != 0)
+            pub fn pin30(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 30) & 0x01) != 0)
             }
             #[doc = "Bit 31"]
             #[inline(always)]
-            pub fn pin31(&self) -> PIN31_R {
-                PIN31_R::new(((self.bits >> 31) & 0x01) != 0)
+            pub fn pin31(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 31) & 0x01) != 0)
             }
         }
         impl W {
+            #[doc = ""]
+            #[inline(always)]
+            pub unsafe fn pin(&mut self, n: usize) -> PIN_W {
+                PIN_W { w: self, offset: n }
+            }
             #[doc = "Bit 0"]
             #[inline(always)]
-            pub fn pin0(&mut self) -> PIN0_W {
-                PIN0_W { w: self }
+            pub fn pin0(&mut self) -> PIN_W {
+                PIN_W { w: self, offset: 0 }
             }
             #[doc = "Bit 1"]
             #[inline(always)]
-            pub fn pin1(&mut self) -> PIN1_W {
-                PIN1_W { w: self }
+            pub fn pin1(&mut self) -> PIN_W {
+                PIN_W { w: self, offset: 1 }
             }
             #[doc = "Bit 2"]
             #[inline(always)]
-            pub fn pin2(&mut self) -> PIN2_W {
-                PIN2_W { w: self }
+            pub fn pin2(&mut self) -> PIN_W {
+                PIN_W { w: self, offset: 2 }
             }
             #[doc = "Bit 3"]
             #[inline(always)]
-            pub fn pin3(&mut self) -> PIN3_W {
-                PIN3_W { w: self }
+            pub fn pin3(&mut self) -> PIN_W {
+                PIN_W { w: self, offset: 3 }
             }
             #[doc = "Bit 4"]
             #[inline(always)]
-            pub fn pin4(&mut self) -> PIN4_W {
-                PIN4_W { w: self }
+            pub fn pin4(&mut self) -> PIN_W {
+                PIN_W { w: self, offset: 4 }
             }
             #[doc = "Bit 5"]
             #[inline(always)]
-            pub fn pin5(&mut self) -> PIN5_W {
-                PIN5_W { w: self }
+            pub fn pin5(&mut self) -> PIN_W {
+                PIN_W { w: self, offset: 5 }
             }
             #[doc = "Bit 6"]
             #[inline(always)]
-            pub fn pin6(&mut self) -> PIN6_W {
-                PIN6_W { w: self }
+            pub fn pin6(&mut self) -> PIN_W {
+                PIN_W { w: self, offset: 6 }
             }
             #[doc = "Bit 7"]
             #[inline(always)]
-            pub fn pin7(&mut self) -> PIN7_W {
-                PIN7_W { w: self }
+            pub fn pin7(&mut self) -> PIN_W {
+                PIN_W { w: self, offset: 7 }
             }
             #[doc = "Bit 8"]
             #[inline(always)]
-            pub fn pin8(&mut self) -> PIN8_W {
-                PIN8_W { w: self }
+            pub fn pin8(&mut self) -> PIN_W {
+                PIN_W { w: self, offset: 8 }
             }
             #[doc = "Bit 9"]
             #[inline(always)]
-            pub fn pin9(&mut self) -> PIN9_W {
-                PIN9_W { w: self }
+            pub fn pin9(&mut self) -> PIN_W {
+                PIN_W { w: self, offset: 9 }
             }
             #[doc = "Bit 10"]
             #[inline(always)]
-            pub fn pin10(&mut self) -> PIN10_W {
-                PIN10_W { w: self }
+            pub fn pin10(&mut self) -> PIN_W {
+                PIN_W {
+                    w: self,
+                    offset: 10,
+                }
             }
             #[doc = "Bit 11"]
             #[inline(always)]
-            pub fn pin11(&mut self) -> PIN11_W {
-                PIN11_W { w: self }
+            pub fn pin11(&mut self) -> PIN_W {
+                PIN_W {
+                    w: self,
+                    offset: 11,
+                }
             }
             #[doc = "Bit 12"]
             #[inline(always)]
-            pub fn pin12(&mut self) -> PIN12_W {
-                PIN12_W { w: self }
+            pub fn pin12(&mut self) -> PIN_W {
+                PIN_W {
+                    w: self,
+                    offset: 12,
+                }
             }
             #[doc = "Bit 13"]
             #[inline(always)]
-            pub fn pin13(&mut self) -> PIN13_W {
-                PIN13_W { w: self }
+            pub fn pin13(&mut self) -> PIN_W {
+                PIN_W {
+                    w: self,
+                    offset: 13,
+                }
             }
             #[doc = "Bit 14"]
             #[inline(always)]
-            pub fn pin14(&mut self) -> PIN14_W {
-                PIN14_W { w: self }
+            pub fn pin14(&mut self) -> PIN_W {
+                PIN_W {
+                    w: self,
+                    offset: 14,
+                }
             }
             #[doc = "Bit 15"]
             #[inline(always)]
-            pub fn pin15(&mut self) -> PIN15_W {
-                PIN15_W { w: self }
+            pub fn pin15(&mut self) -> PIN_W {
+                PIN_W {
+                    w: self,
+                    offset: 15,
+                }
             }
             #[doc = "Bit 16"]
             #[inline(always)]
-            pub fn pin16(&mut self) -> PIN16_W {
-                PIN16_W { w: self }
+            pub fn pin16(&mut self) -> PIN_W {
+                PIN_W {
+                    w: self,
+                    offset: 16,
+                }
             }
             #[doc = "Bit 17"]
             #[inline(always)]
-            pub fn pin17(&mut self) -> PIN17_W {
-                PIN17_W { w: self }
+            pub fn pin17(&mut self) -> PIN_W {
+                PIN_W {
+                    w: self,
+                    offset: 17,
+                }
             }
             #[doc = "Bit 18"]
             #[inline(always)]
-            pub fn pin18(&mut self) -> PIN18_W {
-                PIN18_W { w: self }
+            pub fn pin18(&mut self) -> PIN_W {
+                PIN_W {
+                    w: self,
+                    offset: 18,
+                }
             }
             #[doc = "Bit 19"]
             #[inline(always)]
-            pub fn pin19(&mut self) -> PIN19_W {
-                PIN19_W { w: self }
+            pub fn pin19(&mut self) -> PIN_W {
+                PIN_W {
+                    w: self,
+                    offset: 19,
+                }
             }
             #[doc = "Bit 20"]
             #[inline(always)]
-            pub fn pin20(&mut self) -> PIN20_W {
-                PIN20_W { w: self }
+            pub fn pin20(&mut self) -> PIN_W {
+                PIN_W {
+                    w: self,
+                    offset: 20,
+                }
             }
             #[doc = "Bit 21"]
             #[inline(always)]
-            pub fn pin21(&mut self) -> PIN21_W {
-                PIN21_W { w: self }
+            pub fn pin21(&mut self) -> PIN_W {
+                PIN_W {
+                    w: self,
+                    offset: 21,
+                }
             }
             #[doc = "Bit 22"]
             #[inline(always)]
-            pub fn pin22(&mut self) -> PIN22_W {
-                PIN22_W { w: self }
+            pub fn pin22(&mut self) -> PIN_W {
+                PIN_W {
+                    w: self,
+                    offset: 22,
+                }
             }
             #[doc = "Bit 23"]
             #[inline(always)]
-            pub fn pin23(&mut self) -> PIN23_W {
-                PIN23_W { w: self }
+            pub fn pin23(&mut self) -> PIN_W {
+                PIN_W {
+                    w: self,
+                    offset: 23,
+                }
             }
             #[doc = "Bit 24"]
             #[inline(always)]
-            pub fn pin24(&mut self) -> PIN24_W {
-                PIN24_W { w: self }
+            pub fn pin24(&mut self) -> PIN_W {
+                PIN_W {
+                    w: self,
+                    offset: 24,
+                }
             }
             #[doc = "Bit 25"]
             #[inline(always)]
-            pub fn pin25(&mut self) -> PIN25_W {
-                PIN25_W { w: self }
+            pub fn pin25(&mut self) -> PIN_W {
+                PIN_W {
+                    w: self,
+                    offset: 25,
+                }
             }
             #[doc = "Bit 26"]
             #[inline(always)]
-            pub fn pin26(&mut self) -> PIN26_W {
-                PIN26_W { w: self }
+            pub fn pin26(&mut self) -> PIN_W {
+                PIN_W {
+                    w: self,
+                    offset: 26,
+                }
             }
             #[doc = "Bit 27"]
             #[inline(always)]
-            pub fn pin27(&mut self) -> PIN27_W {
-                PIN27_W { w: self }
+            pub fn pin27(&mut self) -> PIN_W {
+                PIN_W {
+                    w: self,
+                    offset: 27,
+                }
             }
             #[doc = "Bit 28"]
             #[inline(always)]
-            pub fn pin28(&mut self) -> PIN28_W {
-                PIN28_W { w: self }
+            pub fn pin28(&mut self) -> PIN_W {
+                PIN_W {
+                    w: self,
+                    offset: 28,
+                }
             }
             #[doc = "Bit 29"]
             #[inline(always)]
-            pub fn pin29(&mut self) -> PIN29_W {
-                PIN29_W { w: self }
+            pub fn pin29(&mut self) -> PIN_W {
+                PIN_W {
+                    w: self,
+                    offset: 29,
+                }
             }
             #[doc = "Bit 30"]
             #[inline(always)]
-            pub fn pin30(&mut self) -> PIN30_W {
-                PIN30_W { w: self }
+            pub fn pin30(&mut self) -> PIN_W {
+                PIN_W {
+                    w: self,
+                    offset: 30,
+                }
             }
             #[doc = "Bit 31"]
             #[inline(always)]
-            pub fn pin31(&mut self) -> PIN31_W {
-                PIN31_W { w: self }
+            pub fn pin31(&mut self) -> PIN_W {
+                PIN_W {
+                    w: self,
+                    offset: 31,
+                }
             }
         }
     }
@@ -16278,13 +7620,14 @@ pub mod gpiohs {
                 0
             }
         }
-        #[doc = "Reader of field `pin0`"]
-        pub type PIN0_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin0`"]
-        pub struct PIN0_W<'a> {
+        #[doc = "Reader of field `pin%s`"]
+        pub type PIN_R = crate::R<bool, bool>;
+        #[doc = "Write proxy for fields `pin(0-31)`"]
+        pub struct PIN_W<'a> {
             w: &'a mut W,
+            offset: usize,
         }
-        impl<'a> PIN0_W<'a> {
+        impl<'a> PIN_W<'a> {
             #[doc = r"Sets the field bit"]
             #[inline(always)]
             pub fn set_bit(self) -> &'a mut W {
@@ -16298,1076 +7641,409 @@ pub mod gpiohs {
             #[doc = r"Writes raw bits to the field"]
             #[inline(always)]
             pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !0x01) | ((value as u32) & 0x01);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin1`"]
-        pub type PIN1_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin1`"]
-        pub struct PIN1_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN1_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 1)) | (((value as u32) & 0x01) << 1);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin2`"]
-        pub type PIN2_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin2`"]
-        pub struct PIN2_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN2_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 2)) | (((value as u32) & 0x01) << 2);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin3`"]
-        pub type PIN3_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin3`"]
-        pub struct PIN3_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN3_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 3)) | (((value as u32) & 0x01) << 3);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin4`"]
-        pub type PIN4_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin4`"]
-        pub struct PIN4_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN4_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 4)) | (((value as u32) & 0x01) << 4);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin5`"]
-        pub type PIN5_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin5`"]
-        pub struct PIN5_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN5_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 5)) | (((value as u32) & 0x01) << 5);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin6`"]
-        pub type PIN6_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin6`"]
-        pub struct PIN6_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN6_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 6)) | (((value as u32) & 0x01) << 6);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin7`"]
-        pub type PIN7_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin7`"]
-        pub struct PIN7_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN7_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 7)) | (((value as u32) & 0x01) << 7);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin8`"]
-        pub type PIN8_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin8`"]
-        pub struct PIN8_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN8_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 8)) | (((value as u32) & 0x01) << 8);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin9`"]
-        pub type PIN9_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin9`"]
-        pub struct PIN9_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN9_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 9)) | (((value as u32) & 0x01) << 9);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin10`"]
-        pub type PIN10_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin10`"]
-        pub struct PIN10_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN10_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 10)) | (((value as u32) & 0x01) << 10);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin11`"]
-        pub type PIN11_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin11`"]
-        pub struct PIN11_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN11_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 11)) | (((value as u32) & 0x01) << 11);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin12`"]
-        pub type PIN12_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin12`"]
-        pub struct PIN12_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN12_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 12)) | (((value as u32) & 0x01) << 12);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin13`"]
-        pub type PIN13_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin13`"]
-        pub struct PIN13_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN13_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 13)) | (((value as u32) & 0x01) << 13);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin14`"]
-        pub type PIN14_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin14`"]
-        pub struct PIN14_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN14_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 14)) | (((value as u32) & 0x01) << 14);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin15`"]
-        pub type PIN15_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin15`"]
-        pub struct PIN15_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN15_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 15)) | (((value as u32) & 0x01) << 15);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin16`"]
-        pub type PIN16_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin16`"]
-        pub struct PIN16_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN16_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 16)) | (((value as u32) & 0x01) << 16);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin17`"]
-        pub type PIN17_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin17`"]
-        pub struct PIN17_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN17_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 17)) | (((value as u32) & 0x01) << 17);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin18`"]
-        pub type PIN18_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin18`"]
-        pub struct PIN18_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN18_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 18)) | (((value as u32) & 0x01) << 18);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin19`"]
-        pub type PIN19_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin19`"]
-        pub struct PIN19_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN19_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 19)) | (((value as u32) & 0x01) << 19);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin20`"]
-        pub type PIN20_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin20`"]
-        pub struct PIN20_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN20_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 20)) | (((value as u32) & 0x01) << 20);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin21`"]
-        pub type PIN21_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin21`"]
-        pub struct PIN21_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN21_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 21)) | (((value as u32) & 0x01) << 21);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin22`"]
-        pub type PIN22_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin22`"]
-        pub struct PIN22_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN22_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 22)) | (((value as u32) & 0x01) << 22);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin23`"]
-        pub type PIN23_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin23`"]
-        pub struct PIN23_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN23_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 23)) | (((value as u32) & 0x01) << 23);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin24`"]
-        pub type PIN24_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin24`"]
-        pub struct PIN24_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN24_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 24)) | (((value as u32) & 0x01) << 24);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin25`"]
-        pub type PIN25_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin25`"]
-        pub struct PIN25_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN25_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 25)) | (((value as u32) & 0x01) << 25);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin26`"]
-        pub type PIN26_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin26`"]
-        pub struct PIN26_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN26_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 26)) | (((value as u32) & 0x01) << 26);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin27`"]
-        pub type PIN27_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin27`"]
-        pub struct PIN27_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN27_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 27)) | (((value as u32) & 0x01) << 27);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin28`"]
-        pub type PIN28_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin28`"]
-        pub struct PIN28_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN28_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 28)) | (((value as u32) & 0x01) << 28);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin29`"]
-        pub type PIN29_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin29`"]
-        pub struct PIN29_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN29_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 29)) | (((value as u32) & 0x01) << 29);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin30`"]
-        pub type PIN30_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin30`"]
-        pub struct PIN30_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN30_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 30)) | (((value as u32) & 0x01) << 30);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin31`"]
-        pub type PIN31_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin31`"]
-        pub struct PIN31_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN31_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 31)) | (((value as u32) & 0x01) << 31);
+                self.w.bits = (self.w.bits & !(0x01 << self.offset))
+                    | (((value as u32) & 0x01) << self.offset);
                 self.w
             }
         }
         impl R {
+            #[doc = ""]
+            #[inline(always)]
+            pub unsafe fn pin(&self, n: usize) -> PIN_R {
+                PIN_R::new(((self.bits >> n) & 0x01) != 0)
+            }
             #[doc = "Bit 0"]
             #[inline(always)]
-            pub fn pin0(&self) -> PIN0_R {
-                PIN0_R::new((self.bits & 0x01) != 0)
+            pub fn pin0(&self) -> PIN_R {
+                PIN_R::new((self.bits & 0x01) != 0)
             }
             #[doc = "Bit 1"]
             #[inline(always)]
-            pub fn pin1(&self) -> PIN1_R {
-                PIN1_R::new(((self.bits >> 1) & 0x01) != 0)
+            pub fn pin1(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 1) & 0x01) != 0)
             }
             #[doc = "Bit 2"]
             #[inline(always)]
-            pub fn pin2(&self) -> PIN2_R {
-                PIN2_R::new(((self.bits >> 2) & 0x01) != 0)
+            pub fn pin2(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 2) & 0x01) != 0)
             }
             #[doc = "Bit 3"]
             #[inline(always)]
-            pub fn pin3(&self) -> PIN3_R {
-                PIN3_R::new(((self.bits >> 3) & 0x01) != 0)
+            pub fn pin3(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 3) & 0x01) != 0)
             }
             #[doc = "Bit 4"]
             #[inline(always)]
-            pub fn pin4(&self) -> PIN4_R {
-                PIN4_R::new(((self.bits >> 4) & 0x01) != 0)
+            pub fn pin4(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 4) & 0x01) != 0)
             }
             #[doc = "Bit 5"]
             #[inline(always)]
-            pub fn pin5(&self) -> PIN5_R {
-                PIN5_R::new(((self.bits >> 5) & 0x01) != 0)
+            pub fn pin5(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 5) & 0x01) != 0)
             }
             #[doc = "Bit 6"]
             #[inline(always)]
-            pub fn pin6(&self) -> PIN6_R {
-                PIN6_R::new(((self.bits >> 6) & 0x01) != 0)
+            pub fn pin6(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 6) & 0x01) != 0)
             }
             #[doc = "Bit 7"]
             #[inline(always)]
-            pub fn pin7(&self) -> PIN7_R {
-                PIN7_R::new(((self.bits >> 7) & 0x01) != 0)
+            pub fn pin7(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 7) & 0x01) != 0)
             }
             #[doc = "Bit 8"]
             #[inline(always)]
-            pub fn pin8(&self) -> PIN8_R {
-                PIN8_R::new(((self.bits >> 8) & 0x01) != 0)
+            pub fn pin8(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 8) & 0x01) != 0)
             }
             #[doc = "Bit 9"]
             #[inline(always)]
-            pub fn pin9(&self) -> PIN9_R {
-                PIN9_R::new(((self.bits >> 9) & 0x01) != 0)
+            pub fn pin9(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 9) & 0x01) != 0)
             }
             #[doc = "Bit 10"]
             #[inline(always)]
-            pub fn pin10(&self) -> PIN10_R {
-                PIN10_R::new(((self.bits >> 10) & 0x01) != 0)
+            pub fn pin10(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 10) & 0x01) != 0)
             }
             #[doc = "Bit 11"]
             #[inline(always)]
-            pub fn pin11(&self) -> PIN11_R {
-                PIN11_R::new(((self.bits >> 11) & 0x01) != 0)
+            pub fn pin11(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 11) & 0x01) != 0)
             }
             #[doc = "Bit 12"]
             #[inline(always)]
-            pub fn pin12(&self) -> PIN12_R {
-                PIN12_R::new(((self.bits >> 12) & 0x01) != 0)
+            pub fn pin12(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 12) & 0x01) != 0)
             }
             #[doc = "Bit 13"]
             #[inline(always)]
-            pub fn pin13(&self) -> PIN13_R {
-                PIN13_R::new(((self.bits >> 13) & 0x01) != 0)
+            pub fn pin13(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 13) & 0x01) != 0)
             }
             #[doc = "Bit 14"]
             #[inline(always)]
-            pub fn pin14(&self) -> PIN14_R {
-                PIN14_R::new(((self.bits >> 14) & 0x01) != 0)
+            pub fn pin14(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 14) & 0x01) != 0)
             }
             #[doc = "Bit 15"]
             #[inline(always)]
-            pub fn pin15(&self) -> PIN15_R {
-                PIN15_R::new(((self.bits >> 15) & 0x01) != 0)
+            pub fn pin15(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 15) & 0x01) != 0)
             }
             #[doc = "Bit 16"]
             #[inline(always)]
-            pub fn pin16(&self) -> PIN16_R {
-                PIN16_R::new(((self.bits >> 16) & 0x01) != 0)
+            pub fn pin16(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 16) & 0x01) != 0)
             }
             #[doc = "Bit 17"]
             #[inline(always)]
-            pub fn pin17(&self) -> PIN17_R {
-                PIN17_R::new(((self.bits >> 17) & 0x01) != 0)
+            pub fn pin17(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 17) & 0x01) != 0)
             }
             #[doc = "Bit 18"]
             #[inline(always)]
-            pub fn pin18(&self) -> PIN18_R {
-                PIN18_R::new(((self.bits >> 18) & 0x01) != 0)
+            pub fn pin18(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 18) & 0x01) != 0)
             }
             #[doc = "Bit 19"]
             #[inline(always)]
-            pub fn pin19(&self) -> PIN19_R {
-                PIN19_R::new(((self.bits >> 19) & 0x01) != 0)
+            pub fn pin19(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 19) & 0x01) != 0)
             }
             #[doc = "Bit 20"]
             #[inline(always)]
-            pub fn pin20(&self) -> PIN20_R {
-                PIN20_R::new(((self.bits >> 20) & 0x01) != 0)
+            pub fn pin20(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 20) & 0x01) != 0)
             }
             #[doc = "Bit 21"]
             #[inline(always)]
-            pub fn pin21(&self) -> PIN21_R {
-                PIN21_R::new(((self.bits >> 21) & 0x01) != 0)
+            pub fn pin21(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 21) & 0x01) != 0)
             }
             #[doc = "Bit 22"]
             #[inline(always)]
-            pub fn pin22(&self) -> PIN22_R {
-                PIN22_R::new(((self.bits >> 22) & 0x01) != 0)
+            pub fn pin22(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 22) & 0x01) != 0)
             }
             #[doc = "Bit 23"]
             #[inline(always)]
-            pub fn pin23(&self) -> PIN23_R {
-                PIN23_R::new(((self.bits >> 23) & 0x01) != 0)
+            pub fn pin23(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 23) & 0x01) != 0)
             }
             #[doc = "Bit 24"]
             #[inline(always)]
-            pub fn pin24(&self) -> PIN24_R {
-                PIN24_R::new(((self.bits >> 24) & 0x01) != 0)
+            pub fn pin24(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 24) & 0x01) != 0)
             }
             #[doc = "Bit 25"]
             #[inline(always)]
-            pub fn pin25(&self) -> PIN25_R {
-                PIN25_R::new(((self.bits >> 25) & 0x01) != 0)
+            pub fn pin25(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 25) & 0x01) != 0)
             }
             #[doc = "Bit 26"]
             #[inline(always)]
-            pub fn pin26(&self) -> PIN26_R {
-                PIN26_R::new(((self.bits >> 26) & 0x01) != 0)
+            pub fn pin26(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 26) & 0x01) != 0)
             }
             #[doc = "Bit 27"]
             #[inline(always)]
-            pub fn pin27(&self) -> PIN27_R {
-                PIN27_R::new(((self.bits >> 27) & 0x01) != 0)
+            pub fn pin27(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 27) & 0x01) != 0)
             }
             #[doc = "Bit 28"]
             #[inline(always)]
-            pub fn pin28(&self) -> PIN28_R {
-                PIN28_R::new(((self.bits >> 28) & 0x01) != 0)
+            pub fn pin28(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 28) & 0x01) != 0)
             }
             #[doc = "Bit 29"]
             #[inline(always)]
-            pub fn pin29(&self) -> PIN29_R {
-                PIN29_R::new(((self.bits >> 29) & 0x01) != 0)
+            pub fn pin29(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 29) & 0x01) != 0)
             }
             #[doc = "Bit 30"]
             #[inline(always)]
-            pub fn pin30(&self) -> PIN30_R {
-                PIN30_R::new(((self.bits >> 30) & 0x01) != 0)
+            pub fn pin30(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 30) & 0x01) != 0)
             }
             #[doc = "Bit 31"]
             #[inline(always)]
-            pub fn pin31(&self) -> PIN31_R {
-                PIN31_R::new(((self.bits >> 31) & 0x01) != 0)
+            pub fn pin31(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 31) & 0x01) != 0)
             }
         }
         impl W {
+            #[doc = ""]
+            #[inline(always)]
+            pub unsafe fn pin(&mut self, n: usize) -> PIN_W {
+                PIN_W { w: self, offset: n }
+            }
             #[doc = "Bit 0"]
             #[inline(always)]
-            pub fn pin0(&mut self) -> PIN0_W {
-                PIN0_W { w: self }
+            pub fn pin0(&mut self) -> PIN_W {
+                PIN_W { w: self, offset: 0 }
             }
             #[doc = "Bit 1"]
             #[inline(always)]
-            pub fn pin1(&mut self) -> PIN1_W {
-                PIN1_W { w: self }
+            pub fn pin1(&mut self) -> PIN_W {
+                PIN_W { w: self, offset: 1 }
             }
             #[doc = "Bit 2"]
             #[inline(always)]
-            pub fn pin2(&mut self) -> PIN2_W {
-                PIN2_W { w: self }
+            pub fn pin2(&mut self) -> PIN_W {
+                PIN_W { w: self, offset: 2 }
             }
             #[doc = "Bit 3"]
             #[inline(always)]
-            pub fn pin3(&mut self) -> PIN3_W {
-                PIN3_W { w: self }
+            pub fn pin3(&mut self) -> PIN_W {
+                PIN_W { w: self, offset: 3 }
             }
             #[doc = "Bit 4"]
             #[inline(always)]
-            pub fn pin4(&mut self) -> PIN4_W {
-                PIN4_W { w: self }
+            pub fn pin4(&mut self) -> PIN_W {
+                PIN_W { w: self, offset: 4 }
             }
             #[doc = "Bit 5"]
             #[inline(always)]
-            pub fn pin5(&mut self) -> PIN5_W {
-                PIN5_W { w: self }
+            pub fn pin5(&mut self) -> PIN_W {
+                PIN_W { w: self, offset: 5 }
             }
             #[doc = "Bit 6"]
             #[inline(always)]
-            pub fn pin6(&mut self) -> PIN6_W {
-                PIN6_W { w: self }
+            pub fn pin6(&mut self) -> PIN_W {
+                PIN_W { w: self, offset: 6 }
             }
             #[doc = "Bit 7"]
             #[inline(always)]
-            pub fn pin7(&mut self) -> PIN7_W {
-                PIN7_W { w: self }
+            pub fn pin7(&mut self) -> PIN_W {
+                PIN_W { w: self, offset: 7 }
             }
             #[doc = "Bit 8"]
             #[inline(always)]
-            pub fn pin8(&mut self) -> PIN8_W {
-                PIN8_W { w: self }
+            pub fn pin8(&mut self) -> PIN_W {
+                PIN_W { w: self, offset: 8 }
             }
             #[doc = "Bit 9"]
             #[inline(always)]
-            pub fn pin9(&mut self) -> PIN9_W {
-                PIN9_W { w: self }
+            pub fn pin9(&mut self) -> PIN_W {
+                PIN_W { w: self, offset: 9 }
             }
             #[doc = "Bit 10"]
             #[inline(always)]
-            pub fn pin10(&mut self) -> PIN10_W {
-                PIN10_W { w: self }
+            pub fn pin10(&mut self) -> PIN_W {
+                PIN_W {
+                    w: self,
+                    offset: 10,
+                }
             }
             #[doc = "Bit 11"]
             #[inline(always)]
-            pub fn pin11(&mut self) -> PIN11_W {
-                PIN11_W { w: self }
+            pub fn pin11(&mut self) -> PIN_W {
+                PIN_W {
+                    w: self,
+                    offset: 11,
+                }
             }
             #[doc = "Bit 12"]
             #[inline(always)]
-            pub fn pin12(&mut self) -> PIN12_W {
-                PIN12_W { w: self }
+            pub fn pin12(&mut self) -> PIN_W {
+                PIN_W {
+                    w: self,
+                    offset: 12,
+                }
             }
             #[doc = "Bit 13"]
             #[inline(always)]
-            pub fn pin13(&mut self) -> PIN13_W {
-                PIN13_W { w: self }
+            pub fn pin13(&mut self) -> PIN_W {
+                PIN_W {
+                    w: self,
+                    offset: 13,
+                }
             }
             #[doc = "Bit 14"]
             #[inline(always)]
-            pub fn pin14(&mut self) -> PIN14_W {
-                PIN14_W { w: self }
+            pub fn pin14(&mut self) -> PIN_W {
+                PIN_W {
+                    w: self,
+                    offset: 14,
+                }
             }
             #[doc = "Bit 15"]
             #[inline(always)]
-            pub fn pin15(&mut self) -> PIN15_W {
-                PIN15_W { w: self }
+            pub fn pin15(&mut self) -> PIN_W {
+                PIN_W {
+                    w: self,
+                    offset: 15,
+                }
             }
             #[doc = "Bit 16"]
             #[inline(always)]
-            pub fn pin16(&mut self) -> PIN16_W {
-                PIN16_W { w: self }
+            pub fn pin16(&mut self) -> PIN_W {
+                PIN_W {
+                    w: self,
+                    offset: 16,
+                }
             }
             #[doc = "Bit 17"]
             #[inline(always)]
-            pub fn pin17(&mut self) -> PIN17_W {
-                PIN17_W { w: self }
+            pub fn pin17(&mut self) -> PIN_W {
+                PIN_W {
+                    w: self,
+                    offset: 17,
+                }
             }
             #[doc = "Bit 18"]
             #[inline(always)]
-            pub fn pin18(&mut self) -> PIN18_W {
-                PIN18_W { w: self }
+            pub fn pin18(&mut self) -> PIN_W {
+                PIN_W {
+                    w: self,
+                    offset: 18,
+                }
             }
             #[doc = "Bit 19"]
             #[inline(always)]
-            pub fn pin19(&mut self) -> PIN19_W {
-                PIN19_W { w: self }
+            pub fn pin19(&mut self) -> PIN_W {
+                PIN_W {
+                    w: self,
+                    offset: 19,
+                }
             }
             #[doc = "Bit 20"]
             #[inline(always)]
-            pub fn pin20(&mut self) -> PIN20_W {
-                PIN20_W { w: self }
+            pub fn pin20(&mut self) -> PIN_W {
+                PIN_W {
+                    w: self,
+                    offset: 20,
+                }
             }
             #[doc = "Bit 21"]
             #[inline(always)]
-            pub fn pin21(&mut self) -> PIN21_W {
-                PIN21_W { w: self }
+            pub fn pin21(&mut self) -> PIN_W {
+                PIN_W {
+                    w: self,
+                    offset: 21,
+                }
             }
             #[doc = "Bit 22"]
             #[inline(always)]
-            pub fn pin22(&mut self) -> PIN22_W {
-                PIN22_W { w: self }
+            pub fn pin22(&mut self) -> PIN_W {
+                PIN_W {
+                    w: self,
+                    offset: 22,
+                }
             }
             #[doc = "Bit 23"]
             #[inline(always)]
-            pub fn pin23(&mut self) -> PIN23_W {
-                PIN23_W { w: self }
+            pub fn pin23(&mut self) -> PIN_W {
+                PIN_W {
+                    w: self,
+                    offset: 23,
+                }
             }
             #[doc = "Bit 24"]
             #[inline(always)]
-            pub fn pin24(&mut self) -> PIN24_W {
-                PIN24_W { w: self }
+            pub fn pin24(&mut self) -> PIN_W {
+                PIN_W {
+                    w: self,
+                    offset: 24,
+                }
             }
             #[doc = "Bit 25"]
             #[inline(always)]
-            pub fn pin25(&mut self) -> PIN25_W {
-                PIN25_W { w: self }
+            pub fn pin25(&mut self) -> PIN_W {
+                PIN_W {
+                    w: self,
+                    offset: 25,
+                }
             }
             #[doc = "Bit 26"]
             #[inline(always)]
-            pub fn pin26(&mut self) -> PIN26_W {
-                PIN26_W { w: self }
+            pub fn pin26(&mut self) -> PIN_W {
+                PIN_W {
+                    w: self,
+                    offset: 26,
+                }
             }
             #[doc = "Bit 27"]
             #[inline(always)]
-            pub fn pin27(&mut self) -> PIN27_W {
-                PIN27_W { w: self }
+            pub fn pin27(&mut self) -> PIN_W {
+                PIN_W {
+                    w: self,
+                    offset: 27,
+                }
             }
             #[doc = "Bit 28"]
             #[inline(always)]
-            pub fn pin28(&mut self) -> PIN28_W {
-                PIN28_W { w: self }
+            pub fn pin28(&mut self) -> PIN_W {
+                PIN_W {
+                    w: self,
+                    offset: 28,
+                }
             }
             #[doc = "Bit 29"]
             #[inline(always)]
-            pub fn pin29(&mut self) -> PIN29_W {
-                PIN29_W { w: self }
+            pub fn pin29(&mut self) -> PIN_W {
+                PIN_W {
+                    w: self,
+                    offset: 29,
+                }
             }
             #[doc = "Bit 30"]
             #[inline(always)]
-            pub fn pin30(&mut self) -> PIN30_W {
-                PIN30_W { w: self }
+            pub fn pin30(&mut self) -> PIN_W {
+                PIN_W {
+                    w: self,
+                    offset: 30,
+                }
             }
             #[doc = "Bit 31"]
             #[inline(always)]
-            pub fn pin31(&mut self) -> PIN31_W {
-                PIN31_W { w: self }
+            pub fn pin31(&mut self) -> PIN_W {
+                PIN_W {
+                    w: self,
+                    offset: 31,
+                }
             }
         }
     }
@@ -17394,13 +8070,14 @@ pub mod gpiohs {
                 0
             }
         }
-        #[doc = "Reader of field `pin0`"]
-        pub type PIN0_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin0`"]
-        pub struct PIN0_W<'a> {
+        #[doc = "Reader of field `pin%s`"]
+        pub type PIN_R = crate::R<bool, bool>;
+        #[doc = "Write proxy for fields `pin(0-31)`"]
+        pub struct PIN_W<'a> {
             w: &'a mut W,
+            offset: usize,
         }
-        impl<'a> PIN0_W<'a> {
+        impl<'a> PIN_W<'a> {
             #[doc = r"Sets the field bit"]
             #[inline(always)]
             pub fn set_bit(self) -> &'a mut W {
@@ -17414,1076 +8091,409 @@ pub mod gpiohs {
             #[doc = r"Writes raw bits to the field"]
             #[inline(always)]
             pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !0x01) | ((value as u32) & 0x01);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin1`"]
-        pub type PIN1_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin1`"]
-        pub struct PIN1_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN1_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 1)) | (((value as u32) & 0x01) << 1);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin2`"]
-        pub type PIN2_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin2`"]
-        pub struct PIN2_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN2_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 2)) | (((value as u32) & 0x01) << 2);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin3`"]
-        pub type PIN3_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin3`"]
-        pub struct PIN3_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN3_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 3)) | (((value as u32) & 0x01) << 3);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin4`"]
-        pub type PIN4_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin4`"]
-        pub struct PIN4_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN4_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 4)) | (((value as u32) & 0x01) << 4);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin5`"]
-        pub type PIN5_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin5`"]
-        pub struct PIN5_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN5_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 5)) | (((value as u32) & 0x01) << 5);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin6`"]
-        pub type PIN6_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin6`"]
-        pub struct PIN6_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN6_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 6)) | (((value as u32) & 0x01) << 6);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin7`"]
-        pub type PIN7_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin7`"]
-        pub struct PIN7_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN7_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 7)) | (((value as u32) & 0x01) << 7);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin8`"]
-        pub type PIN8_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin8`"]
-        pub struct PIN8_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN8_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 8)) | (((value as u32) & 0x01) << 8);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin9`"]
-        pub type PIN9_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin9`"]
-        pub struct PIN9_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN9_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 9)) | (((value as u32) & 0x01) << 9);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin10`"]
-        pub type PIN10_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin10`"]
-        pub struct PIN10_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN10_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 10)) | (((value as u32) & 0x01) << 10);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin11`"]
-        pub type PIN11_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin11`"]
-        pub struct PIN11_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN11_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 11)) | (((value as u32) & 0x01) << 11);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin12`"]
-        pub type PIN12_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin12`"]
-        pub struct PIN12_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN12_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 12)) | (((value as u32) & 0x01) << 12);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin13`"]
-        pub type PIN13_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin13`"]
-        pub struct PIN13_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN13_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 13)) | (((value as u32) & 0x01) << 13);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin14`"]
-        pub type PIN14_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin14`"]
-        pub struct PIN14_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN14_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 14)) | (((value as u32) & 0x01) << 14);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin15`"]
-        pub type PIN15_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin15`"]
-        pub struct PIN15_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN15_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 15)) | (((value as u32) & 0x01) << 15);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin16`"]
-        pub type PIN16_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin16`"]
-        pub struct PIN16_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN16_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 16)) | (((value as u32) & 0x01) << 16);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin17`"]
-        pub type PIN17_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin17`"]
-        pub struct PIN17_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN17_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 17)) | (((value as u32) & 0x01) << 17);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin18`"]
-        pub type PIN18_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin18`"]
-        pub struct PIN18_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN18_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 18)) | (((value as u32) & 0x01) << 18);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin19`"]
-        pub type PIN19_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin19`"]
-        pub struct PIN19_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN19_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 19)) | (((value as u32) & 0x01) << 19);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin20`"]
-        pub type PIN20_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin20`"]
-        pub struct PIN20_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN20_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 20)) | (((value as u32) & 0x01) << 20);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin21`"]
-        pub type PIN21_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin21`"]
-        pub struct PIN21_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN21_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 21)) | (((value as u32) & 0x01) << 21);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin22`"]
-        pub type PIN22_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin22`"]
-        pub struct PIN22_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN22_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 22)) | (((value as u32) & 0x01) << 22);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin23`"]
-        pub type PIN23_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin23`"]
-        pub struct PIN23_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN23_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 23)) | (((value as u32) & 0x01) << 23);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin24`"]
-        pub type PIN24_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin24`"]
-        pub struct PIN24_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN24_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 24)) | (((value as u32) & 0x01) << 24);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin25`"]
-        pub type PIN25_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin25`"]
-        pub struct PIN25_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN25_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 25)) | (((value as u32) & 0x01) << 25);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin26`"]
-        pub type PIN26_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin26`"]
-        pub struct PIN26_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN26_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 26)) | (((value as u32) & 0x01) << 26);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin27`"]
-        pub type PIN27_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin27`"]
-        pub struct PIN27_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN27_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 27)) | (((value as u32) & 0x01) << 27);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin28`"]
-        pub type PIN28_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin28`"]
-        pub struct PIN28_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN28_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 28)) | (((value as u32) & 0x01) << 28);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin29`"]
-        pub type PIN29_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin29`"]
-        pub struct PIN29_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN29_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 29)) | (((value as u32) & 0x01) << 29);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin30`"]
-        pub type PIN30_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin30`"]
-        pub struct PIN30_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN30_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 30)) | (((value as u32) & 0x01) << 30);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin31`"]
-        pub type PIN31_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin31`"]
-        pub struct PIN31_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN31_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 31)) | (((value as u32) & 0x01) << 31);
+                self.w.bits = (self.w.bits & !(0x01 << self.offset))
+                    | (((value as u32) & 0x01) << self.offset);
                 self.w
             }
         }
         impl R {
+            #[doc = ""]
+            #[inline(always)]
+            pub unsafe fn pin(&self, n: usize) -> PIN_R {
+                PIN_R::new(((self.bits >> n) & 0x01) != 0)
+            }
             #[doc = "Bit 0"]
             #[inline(always)]
-            pub fn pin0(&self) -> PIN0_R {
-                PIN0_R::new((self.bits & 0x01) != 0)
+            pub fn pin0(&self) -> PIN_R {
+                PIN_R::new((self.bits & 0x01) != 0)
             }
             #[doc = "Bit 1"]
             #[inline(always)]
-            pub fn pin1(&self) -> PIN1_R {
-                PIN1_R::new(((self.bits >> 1) & 0x01) != 0)
+            pub fn pin1(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 1) & 0x01) != 0)
             }
             #[doc = "Bit 2"]
             #[inline(always)]
-            pub fn pin2(&self) -> PIN2_R {
-                PIN2_R::new(((self.bits >> 2) & 0x01) != 0)
+            pub fn pin2(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 2) & 0x01) != 0)
             }
             #[doc = "Bit 3"]
             #[inline(always)]
-            pub fn pin3(&self) -> PIN3_R {
-                PIN3_R::new(((self.bits >> 3) & 0x01) != 0)
+            pub fn pin3(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 3) & 0x01) != 0)
             }
             #[doc = "Bit 4"]
             #[inline(always)]
-            pub fn pin4(&self) -> PIN4_R {
-                PIN4_R::new(((self.bits >> 4) & 0x01) != 0)
+            pub fn pin4(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 4) & 0x01) != 0)
             }
             #[doc = "Bit 5"]
             #[inline(always)]
-            pub fn pin5(&self) -> PIN5_R {
-                PIN5_R::new(((self.bits >> 5) & 0x01) != 0)
+            pub fn pin5(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 5) & 0x01) != 0)
             }
             #[doc = "Bit 6"]
             #[inline(always)]
-            pub fn pin6(&self) -> PIN6_R {
-                PIN6_R::new(((self.bits >> 6) & 0x01) != 0)
+            pub fn pin6(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 6) & 0x01) != 0)
             }
             #[doc = "Bit 7"]
             #[inline(always)]
-            pub fn pin7(&self) -> PIN7_R {
-                PIN7_R::new(((self.bits >> 7) & 0x01) != 0)
+            pub fn pin7(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 7) & 0x01) != 0)
             }
             #[doc = "Bit 8"]
             #[inline(always)]
-            pub fn pin8(&self) -> PIN8_R {
-                PIN8_R::new(((self.bits >> 8) & 0x01) != 0)
+            pub fn pin8(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 8) & 0x01) != 0)
             }
             #[doc = "Bit 9"]
             #[inline(always)]
-            pub fn pin9(&self) -> PIN9_R {
-                PIN9_R::new(((self.bits >> 9) & 0x01) != 0)
+            pub fn pin9(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 9) & 0x01) != 0)
             }
             #[doc = "Bit 10"]
             #[inline(always)]
-            pub fn pin10(&self) -> PIN10_R {
-                PIN10_R::new(((self.bits >> 10) & 0x01) != 0)
+            pub fn pin10(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 10) & 0x01) != 0)
             }
             #[doc = "Bit 11"]
             #[inline(always)]
-            pub fn pin11(&self) -> PIN11_R {
-                PIN11_R::new(((self.bits >> 11) & 0x01) != 0)
+            pub fn pin11(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 11) & 0x01) != 0)
             }
             #[doc = "Bit 12"]
             #[inline(always)]
-            pub fn pin12(&self) -> PIN12_R {
-                PIN12_R::new(((self.bits >> 12) & 0x01) != 0)
+            pub fn pin12(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 12) & 0x01) != 0)
             }
             #[doc = "Bit 13"]
             #[inline(always)]
-            pub fn pin13(&self) -> PIN13_R {
-                PIN13_R::new(((self.bits >> 13) & 0x01) != 0)
+            pub fn pin13(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 13) & 0x01) != 0)
             }
             #[doc = "Bit 14"]
             #[inline(always)]
-            pub fn pin14(&self) -> PIN14_R {
-                PIN14_R::new(((self.bits >> 14) & 0x01) != 0)
+            pub fn pin14(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 14) & 0x01) != 0)
             }
             #[doc = "Bit 15"]
             #[inline(always)]
-            pub fn pin15(&self) -> PIN15_R {
-                PIN15_R::new(((self.bits >> 15) & 0x01) != 0)
+            pub fn pin15(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 15) & 0x01) != 0)
             }
             #[doc = "Bit 16"]
             #[inline(always)]
-            pub fn pin16(&self) -> PIN16_R {
-                PIN16_R::new(((self.bits >> 16) & 0x01) != 0)
+            pub fn pin16(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 16) & 0x01) != 0)
             }
             #[doc = "Bit 17"]
             #[inline(always)]
-            pub fn pin17(&self) -> PIN17_R {
-                PIN17_R::new(((self.bits >> 17) & 0x01) != 0)
+            pub fn pin17(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 17) & 0x01) != 0)
             }
             #[doc = "Bit 18"]
             #[inline(always)]
-            pub fn pin18(&self) -> PIN18_R {
-                PIN18_R::new(((self.bits >> 18) & 0x01) != 0)
+            pub fn pin18(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 18) & 0x01) != 0)
             }
             #[doc = "Bit 19"]
             #[inline(always)]
-            pub fn pin19(&self) -> PIN19_R {
-                PIN19_R::new(((self.bits >> 19) & 0x01) != 0)
+            pub fn pin19(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 19) & 0x01) != 0)
             }
             #[doc = "Bit 20"]
             #[inline(always)]
-            pub fn pin20(&self) -> PIN20_R {
-                PIN20_R::new(((self.bits >> 20) & 0x01) != 0)
+            pub fn pin20(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 20) & 0x01) != 0)
             }
             #[doc = "Bit 21"]
             #[inline(always)]
-            pub fn pin21(&self) -> PIN21_R {
-                PIN21_R::new(((self.bits >> 21) & 0x01) != 0)
+            pub fn pin21(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 21) & 0x01) != 0)
             }
             #[doc = "Bit 22"]
             #[inline(always)]
-            pub fn pin22(&self) -> PIN22_R {
-                PIN22_R::new(((self.bits >> 22) & 0x01) != 0)
+            pub fn pin22(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 22) & 0x01) != 0)
             }
             #[doc = "Bit 23"]
             #[inline(always)]
-            pub fn pin23(&self) -> PIN23_R {
-                PIN23_R::new(((self.bits >> 23) & 0x01) != 0)
+            pub fn pin23(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 23) & 0x01) != 0)
             }
             #[doc = "Bit 24"]
             #[inline(always)]
-            pub fn pin24(&self) -> PIN24_R {
-                PIN24_R::new(((self.bits >> 24) & 0x01) != 0)
+            pub fn pin24(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 24) & 0x01) != 0)
             }
             #[doc = "Bit 25"]
             #[inline(always)]
-            pub fn pin25(&self) -> PIN25_R {
-                PIN25_R::new(((self.bits >> 25) & 0x01) != 0)
+            pub fn pin25(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 25) & 0x01) != 0)
             }
             #[doc = "Bit 26"]
             #[inline(always)]
-            pub fn pin26(&self) -> PIN26_R {
-                PIN26_R::new(((self.bits >> 26) & 0x01) != 0)
+            pub fn pin26(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 26) & 0x01) != 0)
             }
             #[doc = "Bit 27"]
             #[inline(always)]
-            pub fn pin27(&self) -> PIN27_R {
-                PIN27_R::new(((self.bits >> 27) & 0x01) != 0)
+            pub fn pin27(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 27) & 0x01) != 0)
             }
             #[doc = "Bit 28"]
             #[inline(always)]
-            pub fn pin28(&self) -> PIN28_R {
-                PIN28_R::new(((self.bits >> 28) & 0x01) != 0)
+            pub fn pin28(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 28) & 0x01) != 0)
             }
             #[doc = "Bit 29"]
             #[inline(always)]
-            pub fn pin29(&self) -> PIN29_R {
-                PIN29_R::new(((self.bits >> 29) & 0x01) != 0)
+            pub fn pin29(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 29) & 0x01) != 0)
             }
             #[doc = "Bit 30"]
             #[inline(always)]
-            pub fn pin30(&self) -> PIN30_R {
-                PIN30_R::new(((self.bits >> 30) & 0x01) != 0)
+            pub fn pin30(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 30) & 0x01) != 0)
             }
             #[doc = "Bit 31"]
             #[inline(always)]
-            pub fn pin31(&self) -> PIN31_R {
-                PIN31_R::new(((self.bits >> 31) & 0x01) != 0)
+            pub fn pin31(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 31) & 0x01) != 0)
             }
         }
         impl W {
+            #[doc = ""]
+            #[inline(always)]
+            pub unsafe fn pin(&mut self, n: usize) -> PIN_W {
+                PIN_W { w: self, offset: n }
+            }
             #[doc = "Bit 0"]
             #[inline(always)]
-            pub fn pin0(&mut self) -> PIN0_W {
-                PIN0_W { w: self }
+            pub fn pin0(&mut self) -> PIN_W {
+                PIN_W { w: self, offset: 0 }
             }
             #[doc = "Bit 1"]
             #[inline(always)]
-            pub fn pin1(&mut self) -> PIN1_W {
-                PIN1_W { w: self }
+            pub fn pin1(&mut self) -> PIN_W {
+                PIN_W { w: self, offset: 1 }
             }
             #[doc = "Bit 2"]
             #[inline(always)]
-            pub fn pin2(&mut self) -> PIN2_W {
-                PIN2_W { w: self }
+            pub fn pin2(&mut self) -> PIN_W {
+                PIN_W { w: self, offset: 2 }
             }
             #[doc = "Bit 3"]
             #[inline(always)]
-            pub fn pin3(&mut self) -> PIN3_W {
-                PIN3_W { w: self }
+            pub fn pin3(&mut self) -> PIN_W {
+                PIN_W { w: self, offset: 3 }
             }
             #[doc = "Bit 4"]
             #[inline(always)]
-            pub fn pin4(&mut self) -> PIN4_W {
-                PIN4_W { w: self }
+            pub fn pin4(&mut self) -> PIN_W {
+                PIN_W { w: self, offset: 4 }
             }
             #[doc = "Bit 5"]
             #[inline(always)]
-            pub fn pin5(&mut self) -> PIN5_W {
-                PIN5_W { w: self }
+            pub fn pin5(&mut self) -> PIN_W {
+                PIN_W { w: self, offset: 5 }
             }
             #[doc = "Bit 6"]
             #[inline(always)]
-            pub fn pin6(&mut self) -> PIN6_W {
-                PIN6_W { w: self }
+            pub fn pin6(&mut self) -> PIN_W {
+                PIN_W { w: self, offset: 6 }
             }
             #[doc = "Bit 7"]
             #[inline(always)]
-            pub fn pin7(&mut self) -> PIN7_W {
-                PIN7_W { w: self }
+            pub fn pin7(&mut self) -> PIN_W {
+                PIN_W { w: self, offset: 7 }
             }
             #[doc = "Bit 8"]
             #[inline(always)]
-            pub fn pin8(&mut self) -> PIN8_W {
-                PIN8_W { w: self }
+            pub fn pin8(&mut self) -> PIN_W {
+                PIN_W { w: self, offset: 8 }
             }
             #[doc = "Bit 9"]
             #[inline(always)]
-            pub fn pin9(&mut self) -> PIN9_W {
-                PIN9_W { w: self }
+            pub fn pin9(&mut self) -> PIN_W {
+                PIN_W { w: self, offset: 9 }
             }
             #[doc = "Bit 10"]
             #[inline(always)]
-            pub fn pin10(&mut self) -> PIN10_W {
-                PIN10_W { w: self }
+            pub fn pin10(&mut self) -> PIN_W {
+                PIN_W {
+                    w: self,
+                    offset: 10,
+                }
             }
             #[doc = "Bit 11"]
             #[inline(always)]
-            pub fn pin11(&mut self) -> PIN11_W {
-                PIN11_W { w: self }
+            pub fn pin11(&mut self) -> PIN_W {
+                PIN_W {
+                    w: self,
+                    offset: 11,
+                }
             }
             #[doc = "Bit 12"]
             #[inline(always)]
-            pub fn pin12(&mut self) -> PIN12_W {
-                PIN12_W { w: self }
+            pub fn pin12(&mut self) -> PIN_W {
+                PIN_W {
+                    w: self,
+                    offset: 12,
+                }
             }
             #[doc = "Bit 13"]
             #[inline(always)]
-            pub fn pin13(&mut self) -> PIN13_W {
-                PIN13_W { w: self }
+            pub fn pin13(&mut self) -> PIN_W {
+                PIN_W {
+                    w: self,
+                    offset: 13,
+                }
             }
             #[doc = "Bit 14"]
             #[inline(always)]
-            pub fn pin14(&mut self) -> PIN14_W {
-                PIN14_W { w: self }
+            pub fn pin14(&mut self) -> PIN_W {
+                PIN_W {
+                    w: self,
+                    offset: 14,
+                }
             }
             #[doc = "Bit 15"]
             #[inline(always)]
-            pub fn pin15(&mut self) -> PIN15_W {
-                PIN15_W { w: self }
+            pub fn pin15(&mut self) -> PIN_W {
+                PIN_W {
+                    w: self,
+                    offset: 15,
+                }
             }
             #[doc = "Bit 16"]
             #[inline(always)]
-            pub fn pin16(&mut self) -> PIN16_W {
-                PIN16_W { w: self }
+            pub fn pin16(&mut self) -> PIN_W {
+                PIN_W {
+                    w: self,
+                    offset: 16,
+                }
             }
             #[doc = "Bit 17"]
             #[inline(always)]
-            pub fn pin17(&mut self) -> PIN17_W {
-                PIN17_W { w: self }
+            pub fn pin17(&mut self) -> PIN_W {
+                PIN_W {
+                    w: self,
+                    offset: 17,
+                }
             }
             #[doc = "Bit 18"]
             #[inline(always)]
-            pub fn pin18(&mut self) -> PIN18_W {
-                PIN18_W { w: self }
+            pub fn pin18(&mut self) -> PIN_W {
+                PIN_W {
+                    w: self,
+                    offset: 18,
+                }
             }
             #[doc = "Bit 19"]
             #[inline(always)]
-            pub fn pin19(&mut self) -> PIN19_W {
-                PIN19_W { w: self }
+            pub fn pin19(&mut self) -> PIN_W {
+                PIN_W {
+                    w: self,
+                    offset: 19,
+                }
             }
             #[doc = "Bit 20"]
             #[inline(always)]
-            pub fn pin20(&mut self) -> PIN20_W {
-                PIN20_W { w: self }
+            pub fn pin20(&mut self) -> PIN_W {
+                PIN_W {
+                    w: self,
+                    offset: 20,
+                }
             }
             #[doc = "Bit 21"]
             #[inline(always)]
-            pub fn pin21(&mut self) -> PIN21_W {
-                PIN21_W { w: self }
+            pub fn pin21(&mut self) -> PIN_W {
+                PIN_W {
+                    w: self,
+                    offset: 21,
+                }
             }
             #[doc = "Bit 22"]
             #[inline(always)]
-            pub fn pin22(&mut self) -> PIN22_W {
-                PIN22_W { w: self }
+            pub fn pin22(&mut self) -> PIN_W {
+                PIN_W {
+                    w: self,
+                    offset: 22,
+                }
             }
             #[doc = "Bit 23"]
             #[inline(always)]
-            pub fn pin23(&mut self) -> PIN23_W {
-                PIN23_W { w: self }
+            pub fn pin23(&mut self) -> PIN_W {
+                PIN_W {
+                    w: self,
+                    offset: 23,
+                }
             }
             #[doc = "Bit 24"]
             #[inline(always)]
-            pub fn pin24(&mut self) -> PIN24_W {
-                PIN24_W { w: self }
+            pub fn pin24(&mut self) -> PIN_W {
+                PIN_W {
+                    w: self,
+                    offset: 24,
+                }
             }
             #[doc = "Bit 25"]
             #[inline(always)]
-            pub fn pin25(&mut self) -> PIN25_W {
-                PIN25_W { w: self }
+            pub fn pin25(&mut self) -> PIN_W {
+                PIN_W {
+                    w: self,
+                    offset: 25,
+                }
             }
             #[doc = "Bit 26"]
             #[inline(always)]
-            pub fn pin26(&mut self) -> PIN26_W {
-                PIN26_W { w: self }
+            pub fn pin26(&mut self) -> PIN_W {
+                PIN_W {
+                    w: self,
+                    offset: 26,
+                }
             }
             #[doc = "Bit 27"]
             #[inline(always)]
-            pub fn pin27(&mut self) -> PIN27_W {
-                PIN27_W { w: self }
+            pub fn pin27(&mut self) -> PIN_W {
+                PIN_W {
+                    w: self,
+                    offset: 27,
+                }
             }
             #[doc = "Bit 28"]
             #[inline(always)]
-            pub fn pin28(&mut self) -> PIN28_W {
-                PIN28_W { w: self }
+            pub fn pin28(&mut self) -> PIN_W {
+                PIN_W {
+                    w: self,
+                    offset: 28,
+                }
             }
             #[doc = "Bit 29"]
             #[inline(always)]
-            pub fn pin29(&mut self) -> PIN29_W {
-                PIN29_W { w: self }
+            pub fn pin29(&mut self) -> PIN_W {
+                PIN_W {
+                    w: self,
+                    offset: 29,
+                }
             }
             #[doc = "Bit 30"]
             #[inline(always)]
-            pub fn pin30(&mut self) -> PIN30_W {
-                PIN30_W { w: self }
+            pub fn pin30(&mut self) -> PIN_W {
+                PIN_W {
+                    w: self,
+                    offset: 30,
+                }
             }
             #[doc = "Bit 31"]
             #[inline(always)]
-            pub fn pin31(&mut self) -> PIN31_W {
-                PIN31_W { w: self }
+            pub fn pin31(&mut self) -> PIN_W {
+                PIN_W {
+                    w: self,
+                    offset: 31,
+                }
             }
         }
     }
@@ -18510,13 +8520,14 @@ pub mod gpiohs {
                 0
             }
         }
-        #[doc = "Reader of field `pin0`"]
-        pub type PIN0_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin0`"]
-        pub struct PIN0_W<'a> {
+        #[doc = "Reader of field `pin%s`"]
+        pub type PIN_R = crate::R<bool, bool>;
+        #[doc = "Write proxy for fields `pin(0-31)`"]
+        pub struct PIN_W<'a> {
             w: &'a mut W,
+            offset: usize,
         }
-        impl<'a> PIN0_W<'a> {
+        impl<'a> PIN_W<'a> {
             #[doc = r"Sets the field bit"]
             #[inline(always)]
             pub fn set_bit(self) -> &'a mut W {
@@ -18530,1076 +8541,409 @@ pub mod gpiohs {
             #[doc = r"Writes raw bits to the field"]
             #[inline(always)]
             pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !0x01) | ((value as u32) & 0x01);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin1`"]
-        pub type PIN1_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin1`"]
-        pub struct PIN1_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN1_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 1)) | (((value as u32) & 0x01) << 1);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin2`"]
-        pub type PIN2_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin2`"]
-        pub struct PIN2_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN2_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 2)) | (((value as u32) & 0x01) << 2);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin3`"]
-        pub type PIN3_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin3`"]
-        pub struct PIN3_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN3_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 3)) | (((value as u32) & 0x01) << 3);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin4`"]
-        pub type PIN4_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin4`"]
-        pub struct PIN4_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN4_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 4)) | (((value as u32) & 0x01) << 4);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin5`"]
-        pub type PIN5_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin5`"]
-        pub struct PIN5_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN5_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 5)) | (((value as u32) & 0x01) << 5);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin6`"]
-        pub type PIN6_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin6`"]
-        pub struct PIN6_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN6_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 6)) | (((value as u32) & 0x01) << 6);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin7`"]
-        pub type PIN7_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin7`"]
-        pub struct PIN7_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN7_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 7)) | (((value as u32) & 0x01) << 7);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin8`"]
-        pub type PIN8_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin8`"]
-        pub struct PIN8_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN8_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 8)) | (((value as u32) & 0x01) << 8);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin9`"]
-        pub type PIN9_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin9`"]
-        pub struct PIN9_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN9_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 9)) | (((value as u32) & 0x01) << 9);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin10`"]
-        pub type PIN10_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin10`"]
-        pub struct PIN10_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN10_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 10)) | (((value as u32) & 0x01) << 10);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin11`"]
-        pub type PIN11_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin11`"]
-        pub struct PIN11_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN11_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 11)) | (((value as u32) & 0x01) << 11);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin12`"]
-        pub type PIN12_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin12`"]
-        pub struct PIN12_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN12_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 12)) | (((value as u32) & 0x01) << 12);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin13`"]
-        pub type PIN13_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin13`"]
-        pub struct PIN13_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN13_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 13)) | (((value as u32) & 0x01) << 13);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin14`"]
-        pub type PIN14_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin14`"]
-        pub struct PIN14_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN14_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 14)) | (((value as u32) & 0x01) << 14);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin15`"]
-        pub type PIN15_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin15`"]
-        pub struct PIN15_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN15_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 15)) | (((value as u32) & 0x01) << 15);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin16`"]
-        pub type PIN16_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin16`"]
-        pub struct PIN16_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN16_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 16)) | (((value as u32) & 0x01) << 16);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin17`"]
-        pub type PIN17_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin17`"]
-        pub struct PIN17_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN17_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 17)) | (((value as u32) & 0x01) << 17);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin18`"]
-        pub type PIN18_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin18`"]
-        pub struct PIN18_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN18_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 18)) | (((value as u32) & 0x01) << 18);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin19`"]
-        pub type PIN19_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin19`"]
-        pub struct PIN19_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN19_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 19)) | (((value as u32) & 0x01) << 19);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin20`"]
-        pub type PIN20_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin20`"]
-        pub struct PIN20_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN20_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 20)) | (((value as u32) & 0x01) << 20);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin21`"]
-        pub type PIN21_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin21`"]
-        pub struct PIN21_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN21_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 21)) | (((value as u32) & 0x01) << 21);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin22`"]
-        pub type PIN22_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin22`"]
-        pub struct PIN22_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN22_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 22)) | (((value as u32) & 0x01) << 22);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin23`"]
-        pub type PIN23_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin23`"]
-        pub struct PIN23_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN23_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 23)) | (((value as u32) & 0x01) << 23);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin24`"]
-        pub type PIN24_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin24`"]
-        pub struct PIN24_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN24_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 24)) | (((value as u32) & 0x01) << 24);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin25`"]
-        pub type PIN25_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin25`"]
-        pub struct PIN25_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN25_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 25)) | (((value as u32) & 0x01) << 25);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin26`"]
-        pub type PIN26_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin26`"]
-        pub struct PIN26_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN26_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 26)) | (((value as u32) & 0x01) << 26);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin27`"]
-        pub type PIN27_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin27`"]
-        pub struct PIN27_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN27_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 27)) | (((value as u32) & 0x01) << 27);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin28`"]
-        pub type PIN28_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin28`"]
-        pub struct PIN28_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN28_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 28)) | (((value as u32) & 0x01) << 28);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin29`"]
-        pub type PIN29_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin29`"]
-        pub struct PIN29_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN29_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 29)) | (((value as u32) & 0x01) << 29);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin30`"]
-        pub type PIN30_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin30`"]
-        pub struct PIN30_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN30_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 30)) | (((value as u32) & 0x01) << 30);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin31`"]
-        pub type PIN31_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin31`"]
-        pub struct PIN31_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN31_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 31)) | (((value as u32) & 0x01) << 31);
+                self.w.bits = (self.w.bits & !(0x01 << self.offset))
+                    | (((value as u32) & 0x01) << self.offset);
                 self.w
             }
         }
         impl R {
+            #[doc = ""]
+            #[inline(always)]
+            pub unsafe fn pin(&self, n: usize) -> PIN_R {
+                PIN_R::new(((self.bits >> n) & 0x01) != 0)
+            }
             #[doc = "Bit 0"]
             #[inline(always)]
-            pub fn pin0(&self) -> PIN0_R {
-                PIN0_R::new((self.bits & 0x01) != 0)
+            pub fn pin0(&self) -> PIN_R {
+                PIN_R::new((self.bits & 0x01) != 0)
             }
             #[doc = "Bit 1"]
             #[inline(always)]
-            pub fn pin1(&self) -> PIN1_R {
-                PIN1_R::new(((self.bits >> 1) & 0x01) != 0)
+            pub fn pin1(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 1) & 0x01) != 0)
             }
             #[doc = "Bit 2"]
             #[inline(always)]
-            pub fn pin2(&self) -> PIN2_R {
-                PIN2_R::new(((self.bits >> 2) & 0x01) != 0)
+            pub fn pin2(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 2) & 0x01) != 0)
             }
             #[doc = "Bit 3"]
             #[inline(always)]
-            pub fn pin3(&self) -> PIN3_R {
-                PIN3_R::new(((self.bits >> 3) & 0x01) != 0)
+            pub fn pin3(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 3) & 0x01) != 0)
             }
             #[doc = "Bit 4"]
             #[inline(always)]
-            pub fn pin4(&self) -> PIN4_R {
-                PIN4_R::new(((self.bits >> 4) & 0x01) != 0)
+            pub fn pin4(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 4) & 0x01) != 0)
             }
             #[doc = "Bit 5"]
             #[inline(always)]
-            pub fn pin5(&self) -> PIN5_R {
-                PIN5_R::new(((self.bits >> 5) & 0x01) != 0)
+            pub fn pin5(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 5) & 0x01) != 0)
             }
             #[doc = "Bit 6"]
             #[inline(always)]
-            pub fn pin6(&self) -> PIN6_R {
-                PIN6_R::new(((self.bits >> 6) & 0x01) != 0)
+            pub fn pin6(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 6) & 0x01) != 0)
             }
             #[doc = "Bit 7"]
             #[inline(always)]
-            pub fn pin7(&self) -> PIN7_R {
-                PIN7_R::new(((self.bits >> 7) & 0x01) != 0)
+            pub fn pin7(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 7) & 0x01) != 0)
             }
             #[doc = "Bit 8"]
             #[inline(always)]
-            pub fn pin8(&self) -> PIN8_R {
-                PIN8_R::new(((self.bits >> 8) & 0x01) != 0)
+            pub fn pin8(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 8) & 0x01) != 0)
             }
             #[doc = "Bit 9"]
             #[inline(always)]
-            pub fn pin9(&self) -> PIN9_R {
-                PIN9_R::new(((self.bits >> 9) & 0x01) != 0)
+            pub fn pin9(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 9) & 0x01) != 0)
             }
             #[doc = "Bit 10"]
             #[inline(always)]
-            pub fn pin10(&self) -> PIN10_R {
-                PIN10_R::new(((self.bits >> 10) & 0x01) != 0)
+            pub fn pin10(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 10) & 0x01) != 0)
             }
             #[doc = "Bit 11"]
             #[inline(always)]
-            pub fn pin11(&self) -> PIN11_R {
-                PIN11_R::new(((self.bits >> 11) & 0x01) != 0)
+            pub fn pin11(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 11) & 0x01) != 0)
             }
             #[doc = "Bit 12"]
             #[inline(always)]
-            pub fn pin12(&self) -> PIN12_R {
-                PIN12_R::new(((self.bits >> 12) & 0x01) != 0)
+            pub fn pin12(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 12) & 0x01) != 0)
             }
             #[doc = "Bit 13"]
             #[inline(always)]
-            pub fn pin13(&self) -> PIN13_R {
-                PIN13_R::new(((self.bits >> 13) & 0x01) != 0)
+            pub fn pin13(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 13) & 0x01) != 0)
             }
             #[doc = "Bit 14"]
             #[inline(always)]
-            pub fn pin14(&self) -> PIN14_R {
-                PIN14_R::new(((self.bits >> 14) & 0x01) != 0)
+            pub fn pin14(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 14) & 0x01) != 0)
             }
             #[doc = "Bit 15"]
             #[inline(always)]
-            pub fn pin15(&self) -> PIN15_R {
-                PIN15_R::new(((self.bits >> 15) & 0x01) != 0)
+            pub fn pin15(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 15) & 0x01) != 0)
             }
             #[doc = "Bit 16"]
             #[inline(always)]
-            pub fn pin16(&self) -> PIN16_R {
-                PIN16_R::new(((self.bits >> 16) & 0x01) != 0)
+            pub fn pin16(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 16) & 0x01) != 0)
             }
             #[doc = "Bit 17"]
             #[inline(always)]
-            pub fn pin17(&self) -> PIN17_R {
-                PIN17_R::new(((self.bits >> 17) & 0x01) != 0)
+            pub fn pin17(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 17) & 0x01) != 0)
             }
             #[doc = "Bit 18"]
             #[inline(always)]
-            pub fn pin18(&self) -> PIN18_R {
-                PIN18_R::new(((self.bits >> 18) & 0x01) != 0)
+            pub fn pin18(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 18) & 0x01) != 0)
             }
             #[doc = "Bit 19"]
             #[inline(always)]
-            pub fn pin19(&self) -> PIN19_R {
-                PIN19_R::new(((self.bits >> 19) & 0x01) != 0)
+            pub fn pin19(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 19) & 0x01) != 0)
             }
             #[doc = "Bit 20"]
             #[inline(always)]
-            pub fn pin20(&self) -> PIN20_R {
-                PIN20_R::new(((self.bits >> 20) & 0x01) != 0)
+            pub fn pin20(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 20) & 0x01) != 0)
             }
             #[doc = "Bit 21"]
             #[inline(always)]
-            pub fn pin21(&self) -> PIN21_R {
-                PIN21_R::new(((self.bits >> 21) & 0x01) != 0)
+            pub fn pin21(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 21) & 0x01) != 0)
             }
             #[doc = "Bit 22"]
             #[inline(always)]
-            pub fn pin22(&self) -> PIN22_R {
-                PIN22_R::new(((self.bits >> 22) & 0x01) != 0)
+            pub fn pin22(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 22) & 0x01) != 0)
             }
             #[doc = "Bit 23"]
             #[inline(always)]
-            pub fn pin23(&self) -> PIN23_R {
-                PIN23_R::new(((self.bits >> 23) & 0x01) != 0)
+            pub fn pin23(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 23) & 0x01) != 0)
             }
             #[doc = "Bit 24"]
             #[inline(always)]
-            pub fn pin24(&self) -> PIN24_R {
-                PIN24_R::new(((self.bits >> 24) & 0x01) != 0)
+            pub fn pin24(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 24) & 0x01) != 0)
             }
             #[doc = "Bit 25"]
             #[inline(always)]
-            pub fn pin25(&self) -> PIN25_R {
-                PIN25_R::new(((self.bits >> 25) & 0x01) != 0)
+            pub fn pin25(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 25) & 0x01) != 0)
             }
             #[doc = "Bit 26"]
             #[inline(always)]
-            pub fn pin26(&self) -> PIN26_R {
-                PIN26_R::new(((self.bits >> 26) & 0x01) != 0)
+            pub fn pin26(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 26) & 0x01) != 0)
             }
             #[doc = "Bit 27"]
             #[inline(always)]
-            pub fn pin27(&self) -> PIN27_R {
-                PIN27_R::new(((self.bits >> 27) & 0x01) != 0)
+            pub fn pin27(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 27) & 0x01) != 0)
             }
             #[doc = "Bit 28"]
             #[inline(always)]
-            pub fn pin28(&self) -> PIN28_R {
-                PIN28_R::new(((self.bits >> 28) & 0x01) != 0)
+            pub fn pin28(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 28) & 0x01) != 0)
             }
             #[doc = "Bit 29"]
             #[inline(always)]
-            pub fn pin29(&self) -> PIN29_R {
-                PIN29_R::new(((self.bits >> 29) & 0x01) != 0)
+            pub fn pin29(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 29) & 0x01) != 0)
             }
             #[doc = "Bit 30"]
             #[inline(always)]
-            pub fn pin30(&self) -> PIN30_R {
-                PIN30_R::new(((self.bits >> 30) & 0x01) != 0)
+            pub fn pin30(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 30) & 0x01) != 0)
             }
             #[doc = "Bit 31"]
             #[inline(always)]
-            pub fn pin31(&self) -> PIN31_R {
-                PIN31_R::new(((self.bits >> 31) & 0x01) != 0)
+            pub fn pin31(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 31) & 0x01) != 0)
             }
         }
         impl W {
+            #[doc = ""]
+            #[inline(always)]
+            pub unsafe fn pin(&mut self, n: usize) -> PIN_W {
+                PIN_W { w: self, offset: n }
+            }
             #[doc = "Bit 0"]
             #[inline(always)]
-            pub fn pin0(&mut self) -> PIN0_W {
-                PIN0_W { w: self }
+            pub fn pin0(&mut self) -> PIN_W {
+                PIN_W { w: self, offset: 0 }
             }
             #[doc = "Bit 1"]
             #[inline(always)]
-            pub fn pin1(&mut self) -> PIN1_W {
-                PIN1_W { w: self }
+            pub fn pin1(&mut self) -> PIN_W {
+                PIN_W { w: self, offset: 1 }
             }
             #[doc = "Bit 2"]
             #[inline(always)]
-            pub fn pin2(&mut self) -> PIN2_W {
-                PIN2_W { w: self }
+            pub fn pin2(&mut self) -> PIN_W {
+                PIN_W { w: self, offset: 2 }
             }
             #[doc = "Bit 3"]
             #[inline(always)]
-            pub fn pin3(&mut self) -> PIN3_W {
-                PIN3_W { w: self }
+            pub fn pin3(&mut self) -> PIN_W {
+                PIN_W { w: self, offset: 3 }
             }
             #[doc = "Bit 4"]
             #[inline(always)]
-            pub fn pin4(&mut self) -> PIN4_W {
-                PIN4_W { w: self }
+            pub fn pin4(&mut self) -> PIN_W {
+                PIN_W { w: self, offset: 4 }
             }
             #[doc = "Bit 5"]
             #[inline(always)]
-            pub fn pin5(&mut self) -> PIN5_W {
-                PIN5_W { w: self }
+            pub fn pin5(&mut self) -> PIN_W {
+                PIN_W { w: self, offset: 5 }
             }
             #[doc = "Bit 6"]
             #[inline(always)]
-            pub fn pin6(&mut self) -> PIN6_W {
-                PIN6_W { w: self }
+            pub fn pin6(&mut self) -> PIN_W {
+                PIN_W { w: self, offset: 6 }
             }
             #[doc = "Bit 7"]
             #[inline(always)]
-            pub fn pin7(&mut self) -> PIN7_W {
-                PIN7_W { w: self }
+            pub fn pin7(&mut self) -> PIN_W {
+                PIN_W { w: self, offset: 7 }
             }
             #[doc = "Bit 8"]
             #[inline(always)]
-            pub fn pin8(&mut self) -> PIN8_W {
-                PIN8_W { w: self }
+            pub fn pin8(&mut self) -> PIN_W {
+                PIN_W { w: self, offset: 8 }
             }
             #[doc = "Bit 9"]
             #[inline(always)]
-            pub fn pin9(&mut self) -> PIN9_W {
-                PIN9_W { w: self }
+            pub fn pin9(&mut self) -> PIN_W {
+                PIN_W { w: self, offset: 9 }
             }
             #[doc = "Bit 10"]
             #[inline(always)]
-            pub fn pin10(&mut self) -> PIN10_W {
-                PIN10_W { w: self }
+            pub fn pin10(&mut self) -> PIN_W {
+                PIN_W {
+                    w: self,
+                    offset: 10,
+                }
             }
             #[doc = "Bit 11"]
             #[inline(always)]
-            pub fn pin11(&mut self) -> PIN11_W {
-                PIN11_W { w: self }
+            pub fn pin11(&mut self) -> PIN_W {
+                PIN_W {
+                    w: self,
+                    offset: 11,
+                }
             }
             #[doc = "Bit 12"]
             #[inline(always)]
-            pub fn pin12(&mut self) -> PIN12_W {
-                PIN12_W { w: self }
+            pub fn pin12(&mut self) -> PIN_W {
+                PIN_W {
+                    w: self,
+                    offset: 12,
+                }
             }
             #[doc = "Bit 13"]
             #[inline(always)]
-            pub fn pin13(&mut self) -> PIN13_W {
-                PIN13_W { w: self }
+            pub fn pin13(&mut self) -> PIN_W {
+                PIN_W {
+                    w: self,
+                    offset: 13,
+                }
             }
             #[doc = "Bit 14"]
             #[inline(always)]
-            pub fn pin14(&mut self) -> PIN14_W {
-                PIN14_W { w: self }
+            pub fn pin14(&mut self) -> PIN_W {
+                PIN_W {
+                    w: self,
+                    offset: 14,
+                }
             }
             #[doc = "Bit 15"]
             #[inline(always)]
-            pub fn pin15(&mut self) -> PIN15_W {
-                PIN15_W { w: self }
+            pub fn pin15(&mut self) -> PIN_W {
+                PIN_W {
+                    w: self,
+                    offset: 15,
+                }
             }
             #[doc = "Bit 16"]
             #[inline(always)]
-            pub fn pin16(&mut self) -> PIN16_W {
-                PIN16_W { w: self }
+            pub fn pin16(&mut self) -> PIN_W {
+                PIN_W {
+                    w: self,
+                    offset: 16,
+                }
             }
             #[doc = "Bit 17"]
             #[inline(always)]
-            pub fn pin17(&mut self) -> PIN17_W {
-                PIN17_W { w: self }
+            pub fn pin17(&mut self) -> PIN_W {
+                PIN_W {
+                    w: self,
+                    offset: 17,
+                }
             }
             #[doc = "Bit 18"]
             #[inline(always)]
-            pub fn pin18(&mut self) -> PIN18_W {
-                PIN18_W { w: self }
+            pub fn pin18(&mut self) -> PIN_W {
+                PIN_W {
+                    w: self,
+                    offset: 18,
+                }
             }
             #[doc = "Bit 19"]
             #[inline(always)]
-            pub fn pin19(&mut self) -> PIN19_W {
-                PIN19_W { w: self }
+            pub fn pin19(&mut self) -> PIN_W {
+                PIN_W {
+                    w: self,
+                    offset: 19,
+                }
             }
             #[doc = "Bit 20"]
             #[inline(always)]
-            pub fn pin20(&mut self) -> PIN20_W {
-                PIN20_W { w: self }
+            pub fn pin20(&mut self) -> PIN_W {
+                PIN_W {
+                    w: self,
+                    offset: 20,
+                }
             }
             #[doc = "Bit 21"]
             #[inline(always)]
-            pub fn pin21(&mut self) -> PIN21_W {
-                PIN21_W { w: self }
+            pub fn pin21(&mut self) -> PIN_W {
+                PIN_W {
+                    w: self,
+                    offset: 21,
+                }
             }
             #[doc = "Bit 22"]
             #[inline(always)]
-            pub fn pin22(&mut self) -> PIN22_W {
-                PIN22_W { w: self }
+            pub fn pin22(&mut self) -> PIN_W {
+                PIN_W {
+                    w: self,
+                    offset: 22,
+                }
             }
             #[doc = "Bit 23"]
             #[inline(always)]
-            pub fn pin23(&mut self) -> PIN23_W {
-                PIN23_W { w: self }
+            pub fn pin23(&mut self) -> PIN_W {
+                PIN_W {
+                    w: self,
+                    offset: 23,
+                }
             }
             #[doc = "Bit 24"]
             #[inline(always)]
-            pub fn pin24(&mut self) -> PIN24_W {
-                PIN24_W { w: self }
+            pub fn pin24(&mut self) -> PIN_W {
+                PIN_W {
+                    w: self,
+                    offset: 24,
+                }
             }
             #[doc = "Bit 25"]
             #[inline(always)]
-            pub fn pin25(&mut self) -> PIN25_W {
-                PIN25_W { w: self }
+            pub fn pin25(&mut self) -> PIN_W {
+                PIN_W {
+                    w: self,
+                    offset: 25,
+                }
             }
             #[doc = "Bit 26"]
             #[inline(always)]
-            pub fn pin26(&mut self) -> PIN26_W {
-                PIN26_W { w: self }
+            pub fn pin26(&mut self) -> PIN_W {
+                PIN_W {
+                    w: self,
+                    offset: 26,
+                }
             }
             #[doc = "Bit 27"]
             #[inline(always)]
-            pub fn pin27(&mut self) -> PIN27_W {
-                PIN27_W { w: self }
+            pub fn pin27(&mut self) -> PIN_W {
+                PIN_W {
+                    w: self,
+                    offset: 27,
+                }
             }
             #[doc = "Bit 28"]
             #[inline(always)]
-            pub fn pin28(&mut self) -> PIN28_W {
-                PIN28_W { w: self }
+            pub fn pin28(&mut self) -> PIN_W {
+                PIN_W {
+                    w: self,
+                    offset: 28,
+                }
             }
             #[doc = "Bit 29"]
             #[inline(always)]
-            pub fn pin29(&mut self) -> PIN29_W {
-                PIN29_W { w: self }
+            pub fn pin29(&mut self) -> PIN_W {
+                PIN_W {
+                    w: self,
+                    offset: 29,
+                }
             }
             #[doc = "Bit 30"]
             #[inline(always)]
-            pub fn pin30(&mut self) -> PIN30_W {
-                PIN30_W { w: self }
+            pub fn pin30(&mut self) -> PIN_W {
+                PIN_W {
+                    w: self,
+                    offset: 30,
+                }
             }
             #[doc = "Bit 31"]
             #[inline(always)]
-            pub fn pin31(&mut self) -> PIN31_W {
-                PIN31_W { w: self }
+            pub fn pin31(&mut self) -> PIN_W {
+                PIN_W {
+                    w: self,
+                    offset: 31,
+                }
             }
         }
     }
@@ -19626,13 +8970,14 @@ pub mod gpiohs {
                 0
             }
         }
-        #[doc = "Reader of field `pin0`"]
-        pub type PIN0_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin0`"]
-        pub struct PIN0_W<'a> {
+        #[doc = "Reader of field `pin%s`"]
+        pub type PIN_R = crate::R<bool, bool>;
+        #[doc = "Write proxy for fields `pin(0-31)`"]
+        pub struct PIN_W<'a> {
             w: &'a mut W,
+            offset: usize,
         }
-        impl<'a> PIN0_W<'a> {
+        impl<'a> PIN_W<'a> {
             #[doc = r"Sets the field bit"]
             #[inline(always)]
             pub fn set_bit(self) -> &'a mut W {
@@ -19646,1076 +8991,409 @@ pub mod gpiohs {
             #[doc = r"Writes raw bits to the field"]
             #[inline(always)]
             pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !0x01) | ((value as u32) & 0x01);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin1`"]
-        pub type PIN1_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin1`"]
-        pub struct PIN1_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN1_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 1)) | (((value as u32) & 0x01) << 1);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin2`"]
-        pub type PIN2_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin2`"]
-        pub struct PIN2_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN2_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 2)) | (((value as u32) & 0x01) << 2);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin3`"]
-        pub type PIN3_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin3`"]
-        pub struct PIN3_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN3_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 3)) | (((value as u32) & 0x01) << 3);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin4`"]
-        pub type PIN4_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin4`"]
-        pub struct PIN4_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN4_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 4)) | (((value as u32) & 0x01) << 4);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin5`"]
-        pub type PIN5_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin5`"]
-        pub struct PIN5_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN5_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 5)) | (((value as u32) & 0x01) << 5);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin6`"]
-        pub type PIN6_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin6`"]
-        pub struct PIN6_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN6_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 6)) | (((value as u32) & 0x01) << 6);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin7`"]
-        pub type PIN7_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin7`"]
-        pub struct PIN7_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN7_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 7)) | (((value as u32) & 0x01) << 7);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin8`"]
-        pub type PIN8_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin8`"]
-        pub struct PIN8_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN8_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 8)) | (((value as u32) & 0x01) << 8);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin9`"]
-        pub type PIN9_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin9`"]
-        pub struct PIN9_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN9_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 9)) | (((value as u32) & 0x01) << 9);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin10`"]
-        pub type PIN10_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin10`"]
-        pub struct PIN10_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN10_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 10)) | (((value as u32) & 0x01) << 10);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin11`"]
-        pub type PIN11_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin11`"]
-        pub struct PIN11_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN11_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 11)) | (((value as u32) & 0x01) << 11);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin12`"]
-        pub type PIN12_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin12`"]
-        pub struct PIN12_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN12_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 12)) | (((value as u32) & 0x01) << 12);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin13`"]
-        pub type PIN13_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin13`"]
-        pub struct PIN13_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN13_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 13)) | (((value as u32) & 0x01) << 13);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin14`"]
-        pub type PIN14_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin14`"]
-        pub struct PIN14_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN14_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 14)) | (((value as u32) & 0x01) << 14);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin15`"]
-        pub type PIN15_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin15`"]
-        pub struct PIN15_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN15_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 15)) | (((value as u32) & 0x01) << 15);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin16`"]
-        pub type PIN16_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin16`"]
-        pub struct PIN16_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN16_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 16)) | (((value as u32) & 0x01) << 16);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin17`"]
-        pub type PIN17_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin17`"]
-        pub struct PIN17_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN17_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 17)) | (((value as u32) & 0x01) << 17);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin18`"]
-        pub type PIN18_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin18`"]
-        pub struct PIN18_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN18_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 18)) | (((value as u32) & 0x01) << 18);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin19`"]
-        pub type PIN19_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin19`"]
-        pub struct PIN19_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN19_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 19)) | (((value as u32) & 0x01) << 19);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin20`"]
-        pub type PIN20_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin20`"]
-        pub struct PIN20_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN20_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 20)) | (((value as u32) & 0x01) << 20);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin21`"]
-        pub type PIN21_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin21`"]
-        pub struct PIN21_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN21_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 21)) | (((value as u32) & 0x01) << 21);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin22`"]
-        pub type PIN22_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin22`"]
-        pub struct PIN22_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN22_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 22)) | (((value as u32) & 0x01) << 22);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin23`"]
-        pub type PIN23_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin23`"]
-        pub struct PIN23_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN23_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 23)) | (((value as u32) & 0x01) << 23);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin24`"]
-        pub type PIN24_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin24`"]
-        pub struct PIN24_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN24_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 24)) | (((value as u32) & 0x01) << 24);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin25`"]
-        pub type PIN25_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin25`"]
-        pub struct PIN25_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN25_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 25)) | (((value as u32) & 0x01) << 25);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin26`"]
-        pub type PIN26_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin26`"]
-        pub struct PIN26_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN26_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 26)) | (((value as u32) & 0x01) << 26);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin27`"]
-        pub type PIN27_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin27`"]
-        pub struct PIN27_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN27_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 27)) | (((value as u32) & 0x01) << 27);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin28`"]
-        pub type PIN28_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin28`"]
-        pub struct PIN28_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN28_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 28)) | (((value as u32) & 0x01) << 28);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin29`"]
-        pub type PIN29_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin29`"]
-        pub struct PIN29_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN29_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 29)) | (((value as u32) & 0x01) << 29);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin30`"]
-        pub type PIN30_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin30`"]
-        pub struct PIN30_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN30_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 30)) | (((value as u32) & 0x01) << 30);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin31`"]
-        pub type PIN31_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin31`"]
-        pub struct PIN31_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN31_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 31)) | (((value as u32) & 0x01) << 31);
+                self.w.bits = (self.w.bits & !(0x01 << self.offset))
+                    | (((value as u32) & 0x01) << self.offset);
                 self.w
             }
         }
         impl R {
+            #[doc = ""]
+            #[inline(always)]
+            pub unsafe fn pin(&self, n: usize) -> PIN_R {
+                PIN_R::new(((self.bits >> n) & 0x01) != 0)
+            }
             #[doc = "Bit 0"]
             #[inline(always)]
-            pub fn pin0(&self) -> PIN0_R {
-                PIN0_R::new((self.bits & 0x01) != 0)
+            pub fn pin0(&self) -> PIN_R {
+                PIN_R::new((self.bits & 0x01) != 0)
             }
             #[doc = "Bit 1"]
             #[inline(always)]
-            pub fn pin1(&self) -> PIN1_R {
-                PIN1_R::new(((self.bits >> 1) & 0x01) != 0)
+            pub fn pin1(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 1) & 0x01) != 0)
             }
             #[doc = "Bit 2"]
             #[inline(always)]
-            pub fn pin2(&self) -> PIN2_R {
-                PIN2_R::new(((self.bits >> 2) & 0x01) != 0)
+            pub fn pin2(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 2) & 0x01) != 0)
             }
             #[doc = "Bit 3"]
             #[inline(always)]
-            pub fn pin3(&self) -> PIN3_R {
-                PIN3_R::new(((self.bits >> 3) & 0x01) != 0)
+            pub fn pin3(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 3) & 0x01) != 0)
             }
             #[doc = "Bit 4"]
             #[inline(always)]
-            pub fn pin4(&self) -> PIN4_R {
-                PIN4_R::new(((self.bits >> 4) & 0x01) != 0)
+            pub fn pin4(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 4) & 0x01) != 0)
             }
             #[doc = "Bit 5"]
             #[inline(always)]
-            pub fn pin5(&self) -> PIN5_R {
-                PIN5_R::new(((self.bits >> 5) & 0x01) != 0)
+            pub fn pin5(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 5) & 0x01) != 0)
             }
             #[doc = "Bit 6"]
             #[inline(always)]
-            pub fn pin6(&self) -> PIN6_R {
-                PIN6_R::new(((self.bits >> 6) & 0x01) != 0)
+            pub fn pin6(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 6) & 0x01) != 0)
             }
             #[doc = "Bit 7"]
             #[inline(always)]
-            pub fn pin7(&self) -> PIN7_R {
-                PIN7_R::new(((self.bits >> 7) & 0x01) != 0)
+            pub fn pin7(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 7) & 0x01) != 0)
             }
             #[doc = "Bit 8"]
             #[inline(always)]
-            pub fn pin8(&self) -> PIN8_R {
-                PIN8_R::new(((self.bits >> 8) & 0x01) != 0)
+            pub fn pin8(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 8) & 0x01) != 0)
             }
             #[doc = "Bit 9"]
             #[inline(always)]
-            pub fn pin9(&self) -> PIN9_R {
-                PIN9_R::new(((self.bits >> 9) & 0x01) != 0)
+            pub fn pin9(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 9) & 0x01) != 0)
             }
             #[doc = "Bit 10"]
             #[inline(always)]
-            pub fn pin10(&self) -> PIN10_R {
-                PIN10_R::new(((self.bits >> 10) & 0x01) != 0)
+            pub fn pin10(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 10) & 0x01) != 0)
             }
             #[doc = "Bit 11"]
             #[inline(always)]
-            pub fn pin11(&self) -> PIN11_R {
-                PIN11_R::new(((self.bits >> 11) & 0x01) != 0)
+            pub fn pin11(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 11) & 0x01) != 0)
             }
             #[doc = "Bit 12"]
             #[inline(always)]
-            pub fn pin12(&self) -> PIN12_R {
-                PIN12_R::new(((self.bits >> 12) & 0x01) != 0)
+            pub fn pin12(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 12) & 0x01) != 0)
             }
             #[doc = "Bit 13"]
             #[inline(always)]
-            pub fn pin13(&self) -> PIN13_R {
-                PIN13_R::new(((self.bits >> 13) & 0x01) != 0)
+            pub fn pin13(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 13) & 0x01) != 0)
             }
             #[doc = "Bit 14"]
             #[inline(always)]
-            pub fn pin14(&self) -> PIN14_R {
-                PIN14_R::new(((self.bits >> 14) & 0x01) != 0)
+            pub fn pin14(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 14) & 0x01) != 0)
             }
             #[doc = "Bit 15"]
             #[inline(always)]
-            pub fn pin15(&self) -> PIN15_R {
-                PIN15_R::new(((self.bits >> 15) & 0x01) != 0)
+            pub fn pin15(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 15) & 0x01) != 0)
             }
             #[doc = "Bit 16"]
             #[inline(always)]
-            pub fn pin16(&self) -> PIN16_R {
-                PIN16_R::new(((self.bits >> 16) & 0x01) != 0)
+            pub fn pin16(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 16) & 0x01) != 0)
             }
             #[doc = "Bit 17"]
             #[inline(always)]
-            pub fn pin17(&self) -> PIN17_R {
-                PIN17_R::new(((self.bits >> 17) & 0x01) != 0)
+            pub fn pin17(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 17) & 0x01) != 0)
             }
             #[doc = "Bit 18"]
             #[inline(always)]
-            pub fn pin18(&self) -> PIN18_R {
-                PIN18_R::new(((self.bits >> 18) & 0x01) != 0)
+            pub fn pin18(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 18) & 0x01) != 0)
             }
             #[doc = "Bit 19"]
             #[inline(always)]
-            pub fn pin19(&self) -> PIN19_R {
-                PIN19_R::new(((self.bits >> 19) & 0x01) != 0)
+            pub fn pin19(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 19) & 0x01) != 0)
             }
             #[doc = "Bit 20"]
             #[inline(always)]
-            pub fn pin20(&self) -> PIN20_R {
-                PIN20_R::new(((self.bits >> 20) & 0x01) != 0)
+            pub fn pin20(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 20) & 0x01) != 0)
             }
             #[doc = "Bit 21"]
             #[inline(always)]
-            pub fn pin21(&self) -> PIN21_R {
-                PIN21_R::new(((self.bits >> 21) & 0x01) != 0)
+            pub fn pin21(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 21) & 0x01) != 0)
             }
             #[doc = "Bit 22"]
             #[inline(always)]
-            pub fn pin22(&self) -> PIN22_R {
-                PIN22_R::new(((self.bits >> 22) & 0x01) != 0)
+            pub fn pin22(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 22) & 0x01) != 0)
             }
             #[doc = "Bit 23"]
             #[inline(always)]
-            pub fn pin23(&self) -> PIN23_R {
-                PIN23_R::new(((self.bits >> 23) & 0x01) != 0)
+            pub fn pin23(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 23) & 0x01) != 0)
             }
             #[doc = "Bit 24"]
             #[inline(always)]
-            pub fn pin24(&self) -> PIN24_R {
-                PIN24_R::new(((self.bits >> 24) & 0x01) != 0)
+            pub fn pin24(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 24) & 0x01) != 0)
             }
             #[doc = "Bit 25"]
             #[inline(always)]
-            pub fn pin25(&self) -> PIN25_R {
-                PIN25_R::new(((self.bits >> 25) & 0x01) != 0)
+            pub fn pin25(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 25) & 0x01) != 0)
             }
             #[doc = "Bit 26"]
             #[inline(always)]
-            pub fn pin26(&self) -> PIN26_R {
-                PIN26_R::new(((self.bits >> 26) & 0x01) != 0)
+            pub fn pin26(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 26) & 0x01) != 0)
             }
             #[doc = "Bit 27"]
             #[inline(always)]
-            pub fn pin27(&self) -> PIN27_R {
-                PIN27_R::new(((self.bits >> 27) & 0x01) != 0)
+            pub fn pin27(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 27) & 0x01) != 0)
             }
             #[doc = "Bit 28"]
             #[inline(always)]
-            pub fn pin28(&self) -> PIN28_R {
-                PIN28_R::new(((self.bits >> 28) & 0x01) != 0)
+            pub fn pin28(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 28) & 0x01) != 0)
             }
             #[doc = "Bit 29"]
             #[inline(always)]
-            pub fn pin29(&self) -> PIN29_R {
-                PIN29_R::new(((self.bits >> 29) & 0x01) != 0)
+            pub fn pin29(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 29) & 0x01) != 0)
             }
             #[doc = "Bit 30"]
             #[inline(always)]
-            pub fn pin30(&self) -> PIN30_R {
-                PIN30_R::new(((self.bits >> 30) & 0x01) != 0)
+            pub fn pin30(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 30) & 0x01) != 0)
             }
             #[doc = "Bit 31"]
             #[inline(always)]
-            pub fn pin31(&self) -> PIN31_R {
-                PIN31_R::new(((self.bits >> 31) & 0x01) != 0)
+            pub fn pin31(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 31) & 0x01) != 0)
             }
         }
         impl W {
+            #[doc = ""]
+            #[inline(always)]
+            pub unsafe fn pin(&mut self, n: usize) -> PIN_W {
+                PIN_W { w: self, offset: n }
+            }
             #[doc = "Bit 0"]
             #[inline(always)]
-            pub fn pin0(&mut self) -> PIN0_W {
-                PIN0_W { w: self }
+            pub fn pin0(&mut self) -> PIN_W {
+                PIN_W { w: self, offset: 0 }
             }
             #[doc = "Bit 1"]
             #[inline(always)]
-            pub fn pin1(&mut self) -> PIN1_W {
-                PIN1_W { w: self }
+            pub fn pin1(&mut self) -> PIN_W {
+                PIN_W { w: self, offset: 1 }
             }
             #[doc = "Bit 2"]
             #[inline(always)]
-            pub fn pin2(&mut self) -> PIN2_W {
-                PIN2_W { w: self }
+            pub fn pin2(&mut self) -> PIN_W {
+                PIN_W { w: self, offset: 2 }
             }
             #[doc = "Bit 3"]
             #[inline(always)]
-            pub fn pin3(&mut self) -> PIN3_W {
-                PIN3_W { w: self }
+            pub fn pin3(&mut self) -> PIN_W {
+                PIN_W { w: self, offset: 3 }
             }
             #[doc = "Bit 4"]
             #[inline(always)]
-            pub fn pin4(&mut self) -> PIN4_W {
-                PIN4_W { w: self }
+            pub fn pin4(&mut self) -> PIN_W {
+                PIN_W { w: self, offset: 4 }
             }
             #[doc = "Bit 5"]
             #[inline(always)]
-            pub fn pin5(&mut self) -> PIN5_W {
-                PIN5_W { w: self }
+            pub fn pin5(&mut self) -> PIN_W {
+                PIN_W { w: self, offset: 5 }
             }
             #[doc = "Bit 6"]
             #[inline(always)]
-            pub fn pin6(&mut self) -> PIN6_W {
-                PIN6_W { w: self }
+            pub fn pin6(&mut self) -> PIN_W {
+                PIN_W { w: self, offset: 6 }
             }
             #[doc = "Bit 7"]
             #[inline(always)]
-            pub fn pin7(&mut self) -> PIN7_W {
-                PIN7_W { w: self }
+            pub fn pin7(&mut self) -> PIN_W {
+                PIN_W { w: self, offset: 7 }
             }
             #[doc = "Bit 8"]
             #[inline(always)]
-            pub fn pin8(&mut self) -> PIN8_W {
-                PIN8_W { w: self }
+            pub fn pin8(&mut self) -> PIN_W {
+                PIN_W { w: self, offset: 8 }
             }
             #[doc = "Bit 9"]
             #[inline(always)]
-            pub fn pin9(&mut self) -> PIN9_W {
-                PIN9_W { w: self }
+            pub fn pin9(&mut self) -> PIN_W {
+                PIN_W { w: self, offset: 9 }
             }
             #[doc = "Bit 10"]
             #[inline(always)]
-            pub fn pin10(&mut self) -> PIN10_W {
-                PIN10_W { w: self }
+            pub fn pin10(&mut self) -> PIN_W {
+                PIN_W {
+                    w: self,
+                    offset: 10,
+                }
             }
             #[doc = "Bit 11"]
             #[inline(always)]
-            pub fn pin11(&mut self) -> PIN11_W {
-                PIN11_W { w: self }
+            pub fn pin11(&mut self) -> PIN_W {
+                PIN_W {
+                    w: self,
+                    offset: 11,
+                }
             }
             #[doc = "Bit 12"]
             #[inline(always)]
-            pub fn pin12(&mut self) -> PIN12_W {
-                PIN12_W { w: self }
+            pub fn pin12(&mut self) -> PIN_W {
+                PIN_W {
+                    w: self,
+                    offset: 12,
+                }
             }
             #[doc = "Bit 13"]
             #[inline(always)]
-            pub fn pin13(&mut self) -> PIN13_W {
-                PIN13_W { w: self }
+            pub fn pin13(&mut self) -> PIN_W {
+                PIN_W {
+                    w: self,
+                    offset: 13,
+                }
             }
             #[doc = "Bit 14"]
             #[inline(always)]
-            pub fn pin14(&mut self) -> PIN14_W {
-                PIN14_W { w: self }
+            pub fn pin14(&mut self) -> PIN_W {
+                PIN_W {
+                    w: self,
+                    offset: 14,
+                }
             }
             #[doc = "Bit 15"]
             #[inline(always)]
-            pub fn pin15(&mut self) -> PIN15_W {
-                PIN15_W { w: self }
+            pub fn pin15(&mut self) -> PIN_W {
+                PIN_W {
+                    w: self,
+                    offset: 15,
+                }
             }
             #[doc = "Bit 16"]
             #[inline(always)]
-            pub fn pin16(&mut self) -> PIN16_W {
-                PIN16_W { w: self }
+            pub fn pin16(&mut self) -> PIN_W {
+                PIN_W {
+                    w: self,
+                    offset: 16,
+                }
             }
             #[doc = "Bit 17"]
             #[inline(always)]
-            pub fn pin17(&mut self) -> PIN17_W {
-                PIN17_W { w: self }
+            pub fn pin17(&mut self) -> PIN_W {
+                PIN_W {
+                    w: self,
+                    offset: 17,
+                }
             }
             #[doc = "Bit 18"]
             #[inline(always)]
-            pub fn pin18(&mut self) -> PIN18_W {
-                PIN18_W { w: self }
+            pub fn pin18(&mut self) -> PIN_W {
+                PIN_W {
+                    w: self,
+                    offset: 18,
+                }
             }
             #[doc = "Bit 19"]
             #[inline(always)]
-            pub fn pin19(&mut self) -> PIN19_W {
-                PIN19_W { w: self }
+            pub fn pin19(&mut self) -> PIN_W {
+                PIN_W {
+                    w: self,
+                    offset: 19,
+                }
             }
             #[doc = "Bit 20"]
             #[inline(always)]
-            pub fn pin20(&mut self) -> PIN20_W {
-                PIN20_W { w: self }
+            pub fn pin20(&mut self) -> PIN_W {
+                PIN_W {
+                    w: self,
+                    offset: 20,
+                }
             }
             #[doc = "Bit 21"]
             #[inline(always)]
-            pub fn pin21(&mut self) -> PIN21_W {
-                PIN21_W { w: self }
+            pub fn pin21(&mut self) -> PIN_W {
+                PIN_W {
+                    w: self,
+                    offset: 21,
+                }
             }
             #[doc = "Bit 22"]
             #[inline(always)]
-            pub fn pin22(&mut self) -> PIN22_W {
-                PIN22_W { w: self }
+            pub fn pin22(&mut self) -> PIN_W {
+                PIN_W {
+                    w: self,
+                    offset: 22,
+                }
             }
             #[doc = "Bit 23"]
             #[inline(always)]
-            pub fn pin23(&mut self) -> PIN23_W {
-                PIN23_W { w: self }
+            pub fn pin23(&mut self) -> PIN_W {
+                PIN_W {
+                    w: self,
+                    offset: 23,
+                }
             }
             #[doc = "Bit 24"]
             #[inline(always)]
-            pub fn pin24(&mut self) -> PIN24_W {
-                PIN24_W { w: self }
+            pub fn pin24(&mut self) -> PIN_W {
+                PIN_W {
+                    w: self,
+                    offset: 24,
+                }
             }
             #[doc = "Bit 25"]
             #[inline(always)]
-            pub fn pin25(&mut self) -> PIN25_W {
-                PIN25_W { w: self }
+            pub fn pin25(&mut self) -> PIN_W {
+                PIN_W {
+                    w: self,
+                    offset: 25,
+                }
             }
             #[doc = "Bit 26"]
             #[inline(always)]
-            pub fn pin26(&mut self) -> PIN26_W {
-                PIN26_W { w: self }
+            pub fn pin26(&mut self) -> PIN_W {
+                PIN_W {
+                    w: self,
+                    offset: 26,
+                }
             }
             #[doc = "Bit 27"]
             #[inline(always)]
-            pub fn pin27(&mut self) -> PIN27_W {
-                PIN27_W { w: self }
+            pub fn pin27(&mut self) -> PIN_W {
+                PIN_W {
+                    w: self,
+                    offset: 27,
+                }
             }
             #[doc = "Bit 28"]
             #[inline(always)]
-            pub fn pin28(&mut self) -> PIN28_W {
-                PIN28_W { w: self }
+            pub fn pin28(&mut self) -> PIN_W {
+                PIN_W {
+                    w: self,
+                    offset: 28,
+                }
             }
             #[doc = "Bit 29"]
             #[inline(always)]
-            pub fn pin29(&mut self) -> PIN29_W {
-                PIN29_W { w: self }
+            pub fn pin29(&mut self) -> PIN_W {
+                PIN_W {
+                    w: self,
+                    offset: 29,
+                }
             }
             #[doc = "Bit 30"]
             #[inline(always)]
-            pub fn pin30(&mut self) -> PIN30_W {
-                PIN30_W { w: self }
+            pub fn pin30(&mut self) -> PIN_W {
+                PIN_W {
+                    w: self,
+                    offset: 30,
+                }
             }
             #[doc = "Bit 31"]
             #[inline(always)]
-            pub fn pin31(&mut self) -> PIN31_W {
-                PIN31_W { w: self }
+            pub fn pin31(&mut self) -> PIN_W {
+                PIN_W {
+                    w: self,
+                    offset: 31,
+                }
             }
         }
     }
@@ -27486,13 +16164,14 @@ is an array"]
                 0
             }
         }
-        #[doc = "Reader of field `ch1_en`"]
-        pub type CH1_EN_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `ch1_en`"]
-        pub struct CH1_EN_W<'a> {
+        #[doc = "Reader of field `ch%s_en`"]
+        pub type CH_EN_R = crate::R<bool, bool>;
+        #[doc = "Write proxy for fields `ch_en(1-6)`"]
+        pub struct CH_EN_W<'a> {
             w: &'a mut W,
+            offset: usize,
         }
-        impl<'a> CH1_EN_W<'a> {
+        impl<'a> CH_EN_W<'a> {
             #[doc = r"Sets the field bit"]
             #[inline(always)]
             pub fn set_bit(self) -> &'a mut W {
@@ -27506,17 +16185,19 @@ is an array"]
             #[doc = r"Writes raw bits to the field"]
             #[inline(always)]
             pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !0x01) | ((value as u64) & 0x01);
+                self.w.bits = (self.w.bits & !(0x01 << self.offset))
+                    | (((value as u64) & 0x01) << self.offset);
                 self.w
             }
         }
-        #[doc = "Reader of field `ch2_en`"]
-        pub type CH2_EN_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `ch2_en`"]
-        pub struct CH2_EN_W<'a> {
+        #[doc = "Reader of field `ch%s_en_we`"]
+        pub type CH_EN_WE_R = crate::R<bool, bool>;
+        #[doc = "Write proxy for fields `ch_en_we(1-6)`"]
+        pub struct CH_EN_WE_W<'a> {
             w: &'a mut W,
+            offset: usize,
         }
-        impl<'a> CH2_EN_W<'a> {
+        impl<'a> CH_EN_WE_W<'a> {
             #[doc = r"Sets the field bit"]
             #[inline(always)]
             pub fn set_bit(self) -> &'a mut W {
@@ -27530,17 +16211,19 @@ is an array"]
             #[doc = r"Writes raw bits to the field"]
             #[inline(always)]
             pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 1)) | (((value as u64) & 0x01) << 1);
+                self.w.bits = (self.w.bits & !(0x01 << self.offset))
+                    | (((value as u64) & 0x01) << self.offset);
                 self.w
             }
         }
-        #[doc = "Reader of field `ch3_en`"]
-        pub type CH3_EN_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `ch3_en`"]
-        pub struct CH3_EN_W<'a> {
+        #[doc = "Reader of field `ch%s_susp`"]
+        pub type CH_SUSP_R = crate::R<bool, bool>;
+        #[doc = "Write proxy for fields `ch_susp(1-6)`"]
+        pub struct CH_SUSP_W<'a> {
             w: &'a mut W,
+            offset: usize,
         }
-        impl<'a> CH3_EN_W<'a> {
+        impl<'a> CH_SUSP_W<'a> {
             #[doc = r"Sets the field bit"]
             #[inline(always)]
             pub fn set_bit(self) -> &'a mut W {
@@ -27554,17 +16237,19 @@ is an array"]
             #[doc = r"Writes raw bits to the field"]
             #[inline(always)]
             pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 2)) | (((value as u64) & 0x01) << 2);
+                self.w.bits = (self.w.bits & !(0x01 << self.offset))
+                    | (((value as u64) & 0x01) << self.offset);
                 self.w
             }
         }
-        #[doc = "Reader of field `ch4_en`"]
-        pub type CH4_EN_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `ch4_en`"]
-        pub struct CH4_EN_W<'a> {
+        #[doc = "Reader of field `ch%s_susp_we`"]
+        pub type CH_SUSP_WE_R = crate::R<bool, bool>;
+        #[doc = "Write proxy for fields `ch_susp_we(1-6)`"]
+        pub struct CH_SUSP_WE_W<'a> {
             w: &'a mut W,
+            offset: usize,
         }
-        impl<'a> CH4_EN_W<'a> {
+        impl<'a> CH_SUSP_WE_W<'a> {
             #[doc = r"Sets the field bit"]
             #[inline(always)]
             pub fn set_bit(self) -> &'a mut W {
@@ -27578,497 +16263,18 @@ is an array"]
             #[doc = r"Writes raw bits to the field"]
             #[inline(always)]
             pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 3)) | (((value as u64) & 0x01) << 3);
+                self.w.bits = (self.w.bits & !(0x01 << self.offset))
+                    | (((value as u64) & 0x01) << self.offset);
                 self.w
             }
         }
-        #[doc = "Reader of field `ch5_en`"]
-        pub type CH5_EN_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `ch5_en`"]
-        pub struct CH5_EN_W<'a> {
+        #[doc = "Reader of field `ch%s_abort`"]
+        pub type CH_ABORT_R = crate::R<bool, bool>;
+        #[doc = "Write proxy for field `ch%s_abort`"]
+        pub struct CH_ABORT_W<'a> {
             w: &'a mut W,
         }
-        impl<'a> CH5_EN_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 4)) | (((value as u64) & 0x01) << 4);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `ch6_en`"]
-        pub type CH6_EN_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `ch6_en`"]
-        pub struct CH6_EN_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> CH6_EN_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 5)) | (((value as u64) & 0x01) << 5);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `ch1_en_we`"]
-        pub type CH1_EN_WE_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `ch1_en_we`"]
-        pub struct CH1_EN_WE_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> CH1_EN_WE_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 8)) | (((value as u64) & 0x01) << 8);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `ch2_en_we`"]
-        pub type CH2_EN_WE_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `ch2_en_we`"]
-        pub struct CH2_EN_WE_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> CH2_EN_WE_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 9)) | (((value as u64) & 0x01) << 9);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `ch3_en_we`"]
-        pub type CH3_EN_WE_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `ch3_en_we`"]
-        pub struct CH3_EN_WE_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> CH3_EN_WE_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 10)) | (((value as u64) & 0x01) << 10);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `ch4_en_we`"]
-        pub type CH4_EN_WE_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `ch4_en_we`"]
-        pub struct CH4_EN_WE_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> CH4_EN_WE_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 11)) | (((value as u64) & 0x01) << 11);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `ch5_en_we`"]
-        pub type CH5_EN_WE_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `ch5_en_we`"]
-        pub struct CH5_EN_WE_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> CH5_EN_WE_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 12)) | (((value as u64) & 0x01) << 12);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `ch6_en_we`"]
-        pub type CH6_EN_WE_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `ch6_en_we`"]
-        pub struct CH6_EN_WE_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> CH6_EN_WE_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 13)) | (((value as u64) & 0x01) << 13);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `ch1_susp`"]
-        pub type CH1_SUSP_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `ch1_susp`"]
-        pub struct CH1_SUSP_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> CH1_SUSP_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 16)) | (((value as u64) & 0x01) << 16);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `ch2_susp`"]
-        pub type CH2_SUSP_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `ch2_susp`"]
-        pub struct CH2_SUSP_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> CH2_SUSP_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 17)) | (((value as u64) & 0x01) << 17);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `ch3_susp`"]
-        pub type CH3_SUSP_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `ch3_susp`"]
-        pub struct CH3_SUSP_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> CH3_SUSP_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 18)) | (((value as u64) & 0x01) << 18);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `ch4_susp`"]
-        pub type CH4_SUSP_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `ch4_susp`"]
-        pub struct CH4_SUSP_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> CH4_SUSP_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 19)) | (((value as u64) & 0x01) << 19);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `ch5_susp`"]
-        pub type CH5_SUSP_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `ch5_susp`"]
-        pub struct CH5_SUSP_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> CH5_SUSP_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 20)) | (((value as u64) & 0x01) << 20);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `ch6_susp`"]
-        pub type CH6_SUSP_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `ch6_susp`"]
-        pub struct CH6_SUSP_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> CH6_SUSP_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 21)) | (((value as u64) & 0x01) << 21);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `ch1_susp_we`"]
-        pub type CH1_SUSP_WE_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `ch1_susp_we`"]
-        pub struct CH1_SUSP_WE_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> CH1_SUSP_WE_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 24)) | (((value as u64) & 0x01) << 24);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `ch2_susp_we`"]
-        pub type CH2_SUSP_WE_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `ch2_susp_we`"]
-        pub struct CH2_SUSP_WE_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> CH2_SUSP_WE_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 25)) | (((value as u64) & 0x01) << 25);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `ch3_susp_we`"]
-        pub type CH3_SUSP_WE_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `ch3_susp_we`"]
-        pub struct CH3_SUSP_WE_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> CH3_SUSP_WE_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 26)) | (((value as u64) & 0x01) << 26);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `ch4_susp_we`"]
-        pub type CH4_SUSP_WE_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `ch4_susp_we`"]
-        pub struct CH4_SUSP_WE_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> CH4_SUSP_WE_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 27)) | (((value as u64) & 0x01) << 27);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `ch5_susp_we`"]
-        pub type CH5_SUSP_WE_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `ch5_susp_we`"]
-        pub struct CH5_SUSP_WE_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> CH5_SUSP_WE_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 28)) | (((value as u64) & 0x01) << 28);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `ch6_susp_we`"]
-        pub type CH6_SUSP_WE_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `ch6_susp_we`"]
-        pub struct CH6_SUSP_WE_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> CH6_SUSP_WE_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 29)) | (((value as u64) & 0x01) << 29);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `ch1_abort`"]
-        pub type CH1_ABORT_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `ch1_abort`"]
-        pub struct CH1_ABORT_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> CH1_ABORT_W<'a> {
+        impl<'a> CH_ABORT_W<'a> {
             #[doc = r"Sets the field bit"]
             #[inline(always)]
             pub fn set_bit(self) -> &'a mut W {
@@ -28086,13 +16292,14 @@ is an array"]
                 self.w
             }
         }
-        #[doc = "Reader of field `ch2_abort`"]
-        pub type CH2_ABORT_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `ch2_abort`"]
-        pub struct CH2_ABORT_W<'a> {
+        #[doc = "Reader of field `ch%s_abort_we`"]
+        pub type CH_ABORT_WE_R = crate::R<bool, bool>;
+        #[doc = "Write proxy for fields `ch_abort_we(1-6)`"]
+        pub struct CH_ABORT_WE_W<'a> {
             w: &'a mut W,
+            offset: usize,
         }
-        impl<'a> CH2_ABORT_W<'a> {
+        impl<'a> CH_ABORT_WE_W<'a> {
             #[doc = r"Sets the field bit"]
             #[inline(always)]
             pub fn set_bit(self) -> &'a mut W {
@@ -28106,612 +16313,454 @@ is an array"]
             #[doc = r"Writes raw bits to the field"]
             #[inline(always)]
             pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 33)) | (((value as u64) & 0x01) << 33);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `ch3_abort`"]
-        pub type CH3_ABORT_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `ch3_abort`"]
-        pub struct CH3_ABORT_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> CH3_ABORT_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 34)) | (((value as u64) & 0x01) << 34);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `ch4_abort`"]
-        pub type CH4_ABORT_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `ch4_abort`"]
-        pub struct CH4_ABORT_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> CH4_ABORT_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 35)) | (((value as u64) & 0x01) << 35);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `ch5_abort`"]
-        pub type CH5_ABORT_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `ch5_abort`"]
-        pub struct CH5_ABORT_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> CH5_ABORT_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 36)) | (((value as u64) & 0x01) << 36);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `ch6_abort`"]
-        pub type CH6_ABORT_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `ch6_abort`"]
-        pub struct CH6_ABORT_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> CH6_ABORT_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 37)) | (((value as u64) & 0x01) << 37);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `ch1_abort_we`"]
-        pub type CH1_ABORT_WE_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `ch1_abort_we`"]
-        pub struct CH1_ABORT_WE_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> CH1_ABORT_WE_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 40)) | (((value as u64) & 0x01) << 40);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `ch2_abort_we`"]
-        pub type CH2_ABORT_WE_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `ch2_abort_we`"]
-        pub struct CH2_ABORT_WE_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> CH2_ABORT_WE_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 41)) | (((value as u64) & 0x01) << 41);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `ch3_abort_we`"]
-        pub type CH3_ABORT_WE_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `ch3_abort_we`"]
-        pub struct CH3_ABORT_WE_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> CH3_ABORT_WE_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 42)) | (((value as u64) & 0x01) << 42);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `ch4_abort_we`"]
-        pub type CH4_ABORT_WE_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `ch4_abort_we`"]
-        pub struct CH4_ABORT_WE_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> CH4_ABORT_WE_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 43)) | (((value as u64) & 0x01) << 43);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `ch5_abort_we`"]
-        pub type CH5_ABORT_WE_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `ch5_abort_we`"]
-        pub struct CH5_ABORT_WE_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> CH5_ABORT_WE_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 44)) | (((value as u64) & 0x01) << 44);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `ch6_abort_we`"]
-        pub type CH6_ABORT_WE_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `ch6_abort_we`"]
-        pub struct CH6_ABORT_WE_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> CH6_ABORT_WE_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 45)) | (((value as u64) & 0x01) << 45);
+                self.w.bits = (self.w.bits & !(0x01 << self.offset))
+                    | (((value as u64) & 0x01) << self.offset);
                 self.w
             }
         }
         impl R {
+            #[doc = "Enable channel %s"]
+            #[inline(always)]
+            pub unsafe fn ch_en(&self, n: usize) -> CH_EN_R {
+                CH_EN_R::new(((self.bits >> n - 1) & 0x01) != 0)
+            }
             #[doc = "Bit 0 - Enable channel 1"]
             #[inline(always)]
-            pub fn ch1_en(&self) -> CH1_EN_R {
-                CH1_EN_R::new((self.bits & 0x01) != 0)
+            pub fn ch1_en(&self) -> CH_EN_R {
+                CH_EN_R::new((self.bits & 0x01) != 0)
             }
             #[doc = "Bit 1 - Enable channel 2"]
             #[inline(always)]
-            pub fn ch2_en(&self) -> CH2_EN_R {
-                CH2_EN_R::new(((self.bits >> 1) & 0x01) != 0)
+            pub fn ch2_en(&self) -> CH_EN_R {
+                CH_EN_R::new(((self.bits >> 1) & 0x01) != 0)
             }
             #[doc = "Bit 2 - Enable channel 3"]
             #[inline(always)]
-            pub fn ch3_en(&self) -> CH3_EN_R {
-                CH3_EN_R::new(((self.bits >> 2) & 0x01) != 0)
+            pub fn ch3_en(&self) -> CH_EN_R {
+                CH_EN_R::new(((self.bits >> 2) & 0x01) != 0)
             }
             #[doc = "Bit 3 - Enable channel 4"]
             #[inline(always)]
-            pub fn ch4_en(&self) -> CH4_EN_R {
-                CH4_EN_R::new(((self.bits >> 3) & 0x01) != 0)
+            pub fn ch4_en(&self) -> CH_EN_R {
+                CH_EN_R::new(((self.bits >> 3) & 0x01) != 0)
             }
             #[doc = "Bit 4 - Enable channel 5"]
             #[inline(always)]
-            pub fn ch5_en(&self) -> CH5_EN_R {
-                CH5_EN_R::new(((self.bits >> 4) & 0x01) != 0)
+            pub fn ch5_en(&self) -> CH_EN_R {
+                CH_EN_R::new(((self.bits >> 4) & 0x01) != 0)
             }
             #[doc = "Bit 5 - Enable channel 6"]
             #[inline(always)]
-            pub fn ch6_en(&self) -> CH6_EN_R {
-                CH6_EN_R::new(((self.bits >> 5) & 0x01) != 0)
+            pub fn ch6_en(&self) -> CH_EN_R {
+                CH_EN_R::new(((self.bits >> 5) & 0x01) != 0)
+            }
+            #[doc = "Write enable channel %s"]
+            #[inline(always)]
+            pub unsafe fn ch_en_we(&self, n: usize) -> CH_EN_WE_R {
+                CH_EN_WE_R::new(((self.bits >> n - 1 + 8) & 0x01) != 0)
             }
             #[doc = "Bit 8 - Write enable channel 1"]
             #[inline(always)]
-            pub fn ch1_en_we(&self) -> CH1_EN_WE_R {
-                CH1_EN_WE_R::new(((self.bits >> 8) & 0x01) != 0)
+            pub fn ch1_en_we(&self) -> CH_EN_WE_R {
+                CH_EN_WE_R::new(((self.bits >> 8) & 0x01) != 0)
             }
             #[doc = "Bit 9 - Write enable channel 2"]
             #[inline(always)]
-            pub fn ch2_en_we(&self) -> CH2_EN_WE_R {
-                CH2_EN_WE_R::new(((self.bits >> 9) & 0x01) != 0)
+            pub fn ch2_en_we(&self) -> CH_EN_WE_R {
+                CH_EN_WE_R::new(((self.bits >> 9) & 0x01) != 0)
             }
             #[doc = "Bit 10 - Write enable channel 3"]
             #[inline(always)]
-            pub fn ch3_en_we(&self) -> CH3_EN_WE_R {
-                CH3_EN_WE_R::new(((self.bits >> 10) & 0x01) != 0)
+            pub fn ch3_en_we(&self) -> CH_EN_WE_R {
+                CH_EN_WE_R::new(((self.bits >> 10) & 0x01) != 0)
             }
             #[doc = "Bit 11 - Write enable channel 4"]
             #[inline(always)]
-            pub fn ch4_en_we(&self) -> CH4_EN_WE_R {
-                CH4_EN_WE_R::new(((self.bits >> 11) & 0x01) != 0)
+            pub fn ch4_en_we(&self) -> CH_EN_WE_R {
+                CH_EN_WE_R::new(((self.bits >> 11) & 0x01) != 0)
             }
             #[doc = "Bit 12 - Write enable channel 5"]
             #[inline(always)]
-            pub fn ch5_en_we(&self) -> CH5_EN_WE_R {
-                CH5_EN_WE_R::new(((self.bits >> 12) & 0x01) != 0)
+            pub fn ch5_en_we(&self) -> CH_EN_WE_R {
+                CH_EN_WE_R::new(((self.bits >> 12) & 0x01) != 0)
             }
             #[doc = "Bit 13 - Write enable channel 6"]
             #[inline(always)]
-            pub fn ch6_en_we(&self) -> CH6_EN_WE_R {
-                CH6_EN_WE_R::new(((self.bits >> 13) & 0x01) != 0)
+            pub fn ch6_en_we(&self) -> CH_EN_WE_R {
+                CH_EN_WE_R::new(((self.bits >> 13) & 0x01) != 0)
+            }
+            #[doc = "Suspend request channel %s"]
+            #[inline(always)]
+            pub unsafe fn ch_susp(&self, n: usize) -> CH_SUSP_R {
+                CH_SUSP_R::new(((self.bits >> n - 1 + 16) & 0x01) != 0)
             }
             #[doc = "Bit 16 - Suspend request channel 1"]
             #[inline(always)]
-            pub fn ch1_susp(&self) -> CH1_SUSP_R {
-                CH1_SUSP_R::new(((self.bits >> 16) & 0x01) != 0)
+            pub fn ch1_susp(&self) -> CH_SUSP_R {
+                CH_SUSP_R::new(((self.bits >> 16) & 0x01) != 0)
             }
             #[doc = "Bit 17 - Suspend request channel 2"]
             #[inline(always)]
-            pub fn ch2_susp(&self) -> CH2_SUSP_R {
-                CH2_SUSP_R::new(((self.bits >> 17) & 0x01) != 0)
+            pub fn ch2_susp(&self) -> CH_SUSP_R {
+                CH_SUSP_R::new(((self.bits >> 17) & 0x01) != 0)
             }
             #[doc = "Bit 18 - Suspend request channel 3"]
             #[inline(always)]
-            pub fn ch3_susp(&self) -> CH3_SUSP_R {
-                CH3_SUSP_R::new(((self.bits >> 18) & 0x01) != 0)
+            pub fn ch3_susp(&self) -> CH_SUSP_R {
+                CH_SUSP_R::new(((self.bits >> 18) & 0x01) != 0)
             }
             #[doc = "Bit 19 - Suspend request channel 4"]
             #[inline(always)]
-            pub fn ch4_susp(&self) -> CH4_SUSP_R {
-                CH4_SUSP_R::new(((self.bits >> 19) & 0x01) != 0)
+            pub fn ch4_susp(&self) -> CH_SUSP_R {
+                CH_SUSP_R::new(((self.bits >> 19) & 0x01) != 0)
             }
             #[doc = "Bit 20 - Suspend request channel 5"]
             #[inline(always)]
-            pub fn ch5_susp(&self) -> CH5_SUSP_R {
-                CH5_SUSP_R::new(((self.bits >> 20) & 0x01) != 0)
+            pub fn ch5_susp(&self) -> CH_SUSP_R {
+                CH_SUSP_R::new(((self.bits >> 20) & 0x01) != 0)
             }
             #[doc = "Bit 21 - Suspend request channel 6"]
             #[inline(always)]
-            pub fn ch6_susp(&self) -> CH6_SUSP_R {
-                CH6_SUSP_R::new(((self.bits >> 21) & 0x01) != 0)
+            pub fn ch6_susp(&self) -> CH_SUSP_R {
+                CH_SUSP_R::new(((self.bits >> 21) & 0x01) != 0)
+            }
+            #[doc = "Enable write to ch%s_susp bit"]
+            #[inline(always)]
+            pub unsafe fn ch_susp_we(&self, n: usize) -> CH_SUSP_WE_R {
+                CH_SUSP_WE_R::new(((self.bits >> n - 1 + 24) & 0x01) != 0)
             }
             #[doc = "Bit 24 - Enable write to ch1_susp bit"]
             #[inline(always)]
-            pub fn ch1_susp_we(&self) -> CH1_SUSP_WE_R {
-                CH1_SUSP_WE_R::new(((self.bits >> 24) & 0x01) != 0)
+            pub fn ch1_susp_we(&self) -> CH_SUSP_WE_R {
+                CH_SUSP_WE_R::new(((self.bits >> 24) & 0x01) != 0)
             }
             #[doc = "Bit 25 - Enable write to ch2_susp bit"]
             #[inline(always)]
-            pub fn ch2_susp_we(&self) -> CH2_SUSP_WE_R {
-                CH2_SUSP_WE_R::new(((self.bits >> 25) & 0x01) != 0)
+            pub fn ch2_susp_we(&self) -> CH_SUSP_WE_R {
+                CH_SUSP_WE_R::new(((self.bits >> 25) & 0x01) != 0)
             }
             #[doc = "Bit 26 - Enable write to ch3_susp bit"]
             #[inline(always)]
-            pub fn ch3_susp_we(&self) -> CH3_SUSP_WE_R {
-                CH3_SUSP_WE_R::new(((self.bits >> 26) & 0x01) != 0)
+            pub fn ch3_susp_we(&self) -> CH_SUSP_WE_R {
+                CH_SUSP_WE_R::new(((self.bits >> 26) & 0x01) != 0)
             }
             #[doc = "Bit 27 - Enable write to ch4_susp bit"]
             #[inline(always)]
-            pub fn ch4_susp_we(&self) -> CH4_SUSP_WE_R {
-                CH4_SUSP_WE_R::new(((self.bits >> 27) & 0x01) != 0)
+            pub fn ch4_susp_we(&self) -> CH_SUSP_WE_R {
+                CH_SUSP_WE_R::new(((self.bits >> 27) & 0x01) != 0)
             }
             #[doc = "Bit 28 - Enable write to ch5_susp bit"]
             #[inline(always)]
-            pub fn ch5_susp_we(&self) -> CH5_SUSP_WE_R {
-                CH5_SUSP_WE_R::new(((self.bits >> 28) & 0x01) != 0)
+            pub fn ch5_susp_we(&self) -> CH_SUSP_WE_R {
+                CH_SUSP_WE_R::new(((self.bits >> 28) & 0x01) != 0)
             }
             #[doc = "Bit 29 - Enable write to ch6_susp bit"]
             #[inline(always)]
-            pub fn ch6_susp_we(&self) -> CH6_SUSP_WE_R {
-                CH6_SUSP_WE_R::new(((self.bits >> 29) & 0x01) != 0)
+            pub fn ch6_susp_we(&self) -> CH_SUSP_WE_R {
+                CH_SUSP_WE_R::new(((self.bits >> 29) & 0x01) != 0)
             }
-            #[doc = "Bit 32 - Abort request channel 1"]
+            #[doc = "Bit 32 - Abort request channel %s"]
             #[inline(always)]
-            pub fn ch1_abort(&self) -> CH1_ABORT_R {
-                CH1_ABORT_R::new(((self.bits >> 32) & 0x01) != 0)
+            pub fn ch_abort(&self) -> CH_ABORT_R {
+                CH_ABORT_R::new(((self.bits >> 32) & 0x01) != 0)
             }
-            #[doc = "Bit 33 - Abort request channel 2"]
+            #[doc = "Enable write to ch%s_abort bit"]
             #[inline(always)]
-            pub fn ch2_abort(&self) -> CH2_ABORT_R {
-                CH2_ABORT_R::new(((self.bits >> 33) & 0x01) != 0)
-            }
-            #[doc = "Bit 34 - Abort request channel 3"]
-            #[inline(always)]
-            pub fn ch3_abort(&self) -> CH3_ABORT_R {
-                CH3_ABORT_R::new(((self.bits >> 34) & 0x01) != 0)
-            }
-            #[doc = "Bit 35 - Abort request channel 4"]
-            #[inline(always)]
-            pub fn ch4_abort(&self) -> CH4_ABORT_R {
-                CH4_ABORT_R::new(((self.bits >> 35) & 0x01) != 0)
-            }
-            #[doc = "Bit 36 - Abort request channel 5"]
-            #[inline(always)]
-            pub fn ch5_abort(&self) -> CH5_ABORT_R {
-                CH5_ABORT_R::new(((self.bits >> 36) & 0x01) != 0)
-            }
-            #[doc = "Bit 37 - Abort request channel 6"]
-            #[inline(always)]
-            pub fn ch6_abort(&self) -> CH6_ABORT_R {
-                CH6_ABORT_R::new(((self.bits >> 37) & 0x01) != 0)
+            pub unsafe fn ch_abort_we(&self, n: usize) -> CH_ABORT_WE_R {
+                CH_ABORT_WE_R::new(((self.bits >> n - 1 + 40) & 0x01) != 0)
             }
             #[doc = "Bit 40 - Enable write to ch1_abort bit"]
             #[inline(always)]
-            pub fn ch1_abort_we(&self) -> CH1_ABORT_WE_R {
-                CH1_ABORT_WE_R::new(((self.bits >> 40) & 0x01) != 0)
+            pub fn ch1_abort_we(&self) -> CH_ABORT_WE_R {
+                CH_ABORT_WE_R::new(((self.bits >> 40) & 0x01) != 0)
             }
             #[doc = "Bit 41 - Enable write to ch2_abort bit"]
             #[inline(always)]
-            pub fn ch2_abort_we(&self) -> CH2_ABORT_WE_R {
-                CH2_ABORT_WE_R::new(((self.bits >> 41) & 0x01) != 0)
+            pub fn ch2_abort_we(&self) -> CH_ABORT_WE_R {
+                CH_ABORT_WE_R::new(((self.bits >> 41) & 0x01) != 0)
             }
             #[doc = "Bit 42 - Enable write to ch3_abort bit"]
             #[inline(always)]
-            pub fn ch3_abort_we(&self) -> CH3_ABORT_WE_R {
-                CH3_ABORT_WE_R::new(((self.bits >> 42) & 0x01) != 0)
+            pub fn ch3_abort_we(&self) -> CH_ABORT_WE_R {
+                CH_ABORT_WE_R::new(((self.bits >> 42) & 0x01) != 0)
             }
             #[doc = "Bit 43 - Enable write to ch4_abort bit"]
             #[inline(always)]
-            pub fn ch4_abort_we(&self) -> CH4_ABORT_WE_R {
-                CH4_ABORT_WE_R::new(((self.bits >> 43) & 0x01) != 0)
+            pub fn ch4_abort_we(&self) -> CH_ABORT_WE_R {
+                CH_ABORT_WE_R::new(((self.bits >> 43) & 0x01) != 0)
             }
             #[doc = "Bit 44 - Enable write to ch5_abort bit"]
             #[inline(always)]
-            pub fn ch5_abort_we(&self) -> CH5_ABORT_WE_R {
-                CH5_ABORT_WE_R::new(((self.bits >> 44) & 0x01) != 0)
+            pub fn ch5_abort_we(&self) -> CH_ABORT_WE_R {
+                CH_ABORT_WE_R::new(((self.bits >> 44) & 0x01) != 0)
             }
             #[doc = "Bit 45 - Enable write to ch6_abort bit"]
             #[inline(always)]
-            pub fn ch6_abort_we(&self) -> CH6_ABORT_WE_R {
-                CH6_ABORT_WE_R::new(((self.bits >> 45) & 0x01) != 0)
+            pub fn ch6_abort_we(&self) -> CH_ABORT_WE_R {
+                CH_ABORT_WE_R::new(((self.bits >> 45) & 0x01) != 0)
             }
         }
         impl W {
+            #[doc = "Enable channel %s"]
+            #[inline(always)]
+            pub unsafe fn ch_en(&mut self, n: usize) -> CH_EN_W {
+                CH_EN_W {
+                    w: self,
+                    offset: n - 1,
+                }
+            }
             #[doc = "Bit 0 - Enable channel 1"]
             #[inline(always)]
-            pub fn ch1_en(&mut self) -> CH1_EN_W {
-                CH1_EN_W { w: self }
+            pub fn ch1_en(&mut self) -> CH_EN_W {
+                CH_EN_W { w: self, offset: 0 }
             }
             #[doc = "Bit 1 - Enable channel 2"]
             #[inline(always)]
-            pub fn ch2_en(&mut self) -> CH2_EN_W {
-                CH2_EN_W { w: self }
+            pub fn ch2_en(&mut self) -> CH_EN_W {
+                CH_EN_W { w: self, offset: 1 }
             }
             #[doc = "Bit 2 - Enable channel 3"]
             #[inline(always)]
-            pub fn ch3_en(&mut self) -> CH3_EN_W {
-                CH3_EN_W { w: self }
+            pub fn ch3_en(&mut self) -> CH_EN_W {
+                CH_EN_W { w: self, offset: 2 }
             }
             #[doc = "Bit 3 - Enable channel 4"]
             #[inline(always)]
-            pub fn ch4_en(&mut self) -> CH4_EN_W {
-                CH4_EN_W { w: self }
+            pub fn ch4_en(&mut self) -> CH_EN_W {
+                CH_EN_W { w: self, offset: 3 }
             }
             #[doc = "Bit 4 - Enable channel 5"]
             #[inline(always)]
-            pub fn ch5_en(&mut self) -> CH5_EN_W {
-                CH5_EN_W { w: self }
+            pub fn ch5_en(&mut self) -> CH_EN_W {
+                CH_EN_W { w: self, offset: 4 }
             }
             #[doc = "Bit 5 - Enable channel 6"]
             #[inline(always)]
-            pub fn ch6_en(&mut self) -> CH6_EN_W {
-                CH6_EN_W { w: self }
+            pub fn ch6_en(&mut self) -> CH_EN_W {
+                CH_EN_W { w: self, offset: 5 }
+            }
+            #[doc = "Write enable channel %s"]
+            #[inline(always)]
+            pub unsafe fn ch_en_we(&mut self, n: usize) -> CH_EN_WE_W {
+                CH_EN_WE_W {
+                    w: self,
+                    offset: n - 1 + 8,
+                }
             }
             #[doc = "Bit 8 - Write enable channel 1"]
             #[inline(always)]
-            pub fn ch1_en_we(&mut self) -> CH1_EN_WE_W {
-                CH1_EN_WE_W { w: self }
+            pub fn ch1_en_we(&mut self) -> CH_EN_WE_W {
+                CH_EN_WE_W { w: self, offset: 8 }
             }
             #[doc = "Bit 9 - Write enable channel 2"]
             #[inline(always)]
-            pub fn ch2_en_we(&mut self) -> CH2_EN_WE_W {
-                CH2_EN_WE_W { w: self }
+            pub fn ch2_en_we(&mut self) -> CH_EN_WE_W {
+                CH_EN_WE_W { w: self, offset: 9 }
             }
             #[doc = "Bit 10 - Write enable channel 3"]
             #[inline(always)]
-            pub fn ch3_en_we(&mut self) -> CH3_EN_WE_W {
-                CH3_EN_WE_W { w: self }
+            pub fn ch3_en_we(&mut self) -> CH_EN_WE_W {
+                CH_EN_WE_W {
+                    w: self,
+                    offset: 10,
+                }
             }
             #[doc = "Bit 11 - Write enable channel 4"]
             #[inline(always)]
-            pub fn ch4_en_we(&mut self) -> CH4_EN_WE_W {
-                CH4_EN_WE_W { w: self }
+            pub fn ch4_en_we(&mut self) -> CH_EN_WE_W {
+                CH_EN_WE_W {
+                    w: self,
+                    offset: 11,
+                }
             }
             #[doc = "Bit 12 - Write enable channel 5"]
             #[inline(always)]
-            pub fn ch5_en_we(&mut self) -> CH5_EN_WE_W {
-                CH5_EN_WE_W { w: self }
+            pub fn ch5_en_we(&mut self) -> CH_EN_WE_W {
+                CH_EN_WE_W {
+                    w: self,
+                    offset: 12,
+                }
             }
             #[doc = "Bit 13 - Write enable channel 6"]
             #[inline(always)]
-            pub fn ch6_en_we(&mut self) -> CH6_EN_WE_W {
-                CH6_EN_WE_W { w: self }
+            pub fn ch6_en_we(&mut self) -> CH_EN_WE_W {
+                CH_EN_WE_W {
+                    w: self,
+                    offset: 13,
+                }
+            }
+            #[doc = "Suspend request channel %s"]
+            #[inline(always)]
+            pub unsafe fn ch_susp(&mut self, n: usize) -> CH_SUSP_W {
+                CH_SUSP_W {
+                    w: self,
+                    offset: n - 1 + 16,
+                }
             }
             #[doc = "Bit 16 - Suspend request channel 1"]
             #[inline(always)]
-            pub fn ch1_susp(&mut self) -> CH1_SUSP_W {
-                CH1_SUSP_W { w: self }
+            pub fn ch1_susp(&mut self) -> CH_SUSP_W {
+                CH_SUSP_W {
+                    w: self,
+                    offset: 16,
+                }
             }
             #[doc = "Bit 17 - Suspend request channel 2"]
             #[inline(always)]
-            pub fn ch2_susp(&mut self) -> CH2_SUSP_W {
-                CH2_SUSP_W { w: self }
+            pub fn ch2_susp(&mut self) -> CH_SUSP_W {
+                CH_SUSP_W {
+                    w: self,
+                    offset: 17,
+                }
             }
             #[doc = "Bit 18 - Suspend request channel 3"]
             #[inline(always)]
-            pub fn ch3_susp(&mut self) -> CH3_SUSP_W {
-                CH3_SUSP_W { w: self }
+            pub fn ch3_susp(&mut self) -> CH_SUSP_W {
+                CH_SUSP_W {
+                    w: self,
+                    offset: 18,
+                }
             }
             #[doc = "Bit 19 - Suspend request channel 4"]
             #[inline(always)]
-            pub fn ch4_susp(&mut self) -> CH4_SUSP_W {
-                CH4_SUSP_W { w: self }
+            pub fn ch4_susp(&mut self) -> CH_SUSP_W {
+                CH_SUSP_W {
+                    w: self,
+                    offset: 19,
+                }
             }
             #[doc = "Bit 20 - Suspend request channel 5"]
             #[inline(always)]
-            pub fn ch5_susp(&mut self) -> CH5_SUSP_W {
-                CH5_SUSP_W { w: self }
+            pub fn ch5_susp(&mut self) -> CH_SUSP_W {
+                CH_SUSP_W {
+                    w: self,
+                    offset: 20,
+                }
             }
             #[doc = "Bit 21 - Suspend request channel 6"]
             #[inline(always)]
-            pub fn ch6_susp(&mut self) -> CH6_SUSP_W {
-                CH6_SUSP_W { w: self }
+            pub fn ch6_susp(&mut self) -> CH_SUSP_W {
+                CH_SUSP_W {
+                    w: self,
+                    offset: 21,
+                }
+            }
+            #[doc = "Enable write to ch%s_susp bit"]
+            #[inline(always)]
+            pub unsafe fn ch_susp_we(&mut self, n: usize) -> CH_SUSP_WE_W {
+                CH_SUSP_WE_W {
+                    w: self,
+                    offset: n - 1 + 24,
+                }
             }
             #[doc = "Bit 24 - Enable write to ch1_susp bit"]
             #[inline(always)]
-            pub fn ch1_susp_we(&mut self) -> CH1_SUSP_WE_W {
-                CH1_SUSP_WE_W { w: self }
+            pub fn ch1_susp_we(&mut self) -> CH_SUSP_WE_W {
+                CH_SUSP_WE_W {
+                    w: self,
+                    offset: 24,
+                }
             }
             #[doc = "Bit 25 - Enable write to ch2_susp bit"]
             #[inline(always)]
-            pub fn ch2_susp_we(&mut self) -> CH2_SUSP_WE_W {
-                CH2_SUSP_WE_W { w: self }
+            pub fn ch2_susp_we(&mut self) -> CH_SUSP_WE_W {
+                CH_SUSP_WE_W {
+                    w: self,
+                    offset: 25,
+                }
             }
             #[doc = "Bit 26 - Enable write to ch3_susp bit"]
             #[inline(always)]
-            pub fn ch3_susp_we(&mut self) -> CH3_SUSP_WE_W {
-                CH3_SUSP_WE_W { w: self }
+            pub fn ch3_susp_we(&mut self) -> CH_SUSP_WE_W {
+                CH_SUSP_WE_W {
+                    w: self,
+                    offset: 26,
+                }
             }
             #[doc = "Bit 27 - Enable write to ch4_susp bit"]
             #[inline(always)]
-            pub fn ch4_susp_we(&mut self) -> CH4_SUSP_WE_W {
-                CH4_SUSP_WE_W { w: self }
+            pub fn ch4_susp_we(&mut self) -> CH_SUSP_WE_W {
+                CH_SUSP_WE_W {
+                    w: self,
+                    offset: 27,
+                }
             }
             #[doc = "Bit 28 - Enable write to ch5_susp bit"]
             #[inline(always)]
-            pub fn ch5_susp_we(&mut self) -> CH5_SUSP_WE_W {
-                CH5_SUSP_WE_W { w: self }
+            pub fn ch5_susp_we(&mut self) -> CH_SUSP_WE_W {
+                CH_SUSP_WE_W {
+                    w: self,
+                    offset: 28,
+                }
             }
             #[doc = "Bit 29 - Enable write to ch6_susp bit"]
             #[inline(always)]
-            pub fn ch6_susp_we(&mut self) -> CH6_SUSP_WE_W {
-                CH6_SUSP_WE_W { w: self }
+            pub fn ch6_susp_we(&mut self) -> CH_SUSP_WE_W {
+                CH_SUSP_WE_W {
+                    w: self,
+                    offset: 29,
+                }
             }
-            #[doc = "Bit 32 - Abort request channel 1"]
+            #[doc = "Bit 32 - Abort request channel %s"]
             #[inline(always)]
-            pub fn ch1_abort(&mut self) -> CH1_ABORT_W {
-                CH1_ABORT_W { w: self }
+            pub fn ch_abort(&mut self) -> CH_ABORT_W {
+                CH_ABORT_W { w: self }
             }
-            #[doc = "Bit 33 - Abort request channel 2"]
+            #[doc = "Enable write to ch%s_abort bit"]
             #[inline(always)]
-            pub fn ch2_abort(&mut self) -> CH2_ABORT_W {
-                CH2_ABORT_W { w: self }
-            }
-            #[doc = "Bit 34 - Abort request channel 3"]
-            #[inline(always)]
-            pub fn ch3_abort(&mut self) -> CH3_ABORT_W {
-                CH3_ABORT_W { w: self }
-            }
-            #[doc = "Bit 35 - Abort request channel 4"]
-            #[inline(always)]
-            pub fn ch4_abort(&mut self) -> CH4_ABORT_W {
-                CH4_ABORT_W { w: self }
-            }
-            #[doc = "Bit 36 - Abort request channel 5"]
-            #[inline(always)]
-            pub fn ch5_abort(&mut self) -> CH5_ABORT_W {
-                CH5_ABORT_W { w: self }
-            }
-            #[doc = "Bit 37 - Abort request channel 6"]
-            #[inline(always)]
-            pub fn ch6_abort(&mut self) -> CH6_ABORT_W {
-                CH6_ABORT_W { w: self }
+            pub unsafe fn ch_abort_we(&mut self, n: usize) -> CH_ABORT_WE_W {
+                CH_ABORT_WE_W {
+                    w: self,
+                    offset: n - 1 + 40,
+                }
             }
             #[doc = "Bit 40 - Enable write to ch1_abort bit"]
             #[inline(always)]
-            pub fn ch1_abort_we(&mut self) -> CH1_ABORT_WE_W {
-                CH1_ABORT_WE_W { w: self }
+            pub fn ch1_abort_we(&mut self) -> CH_ABORT_WE_W {
+                CH_ABORT_WE_W {
+                    w: self,
+                    offset: 40,
+                }
             }
             #[doc = "Bit 41 - Enable write to ch2_abort bit"]
             #[inline(always)]
-            pub fn ch2_abort_we(&mut self) -> CH2_ABORT_WE_W {
-                CH2_ABORT_WE_W { w: self }
+            pub fn ch2_abort_we(&mut self) -> CH_ABORT_WE_W {
+                CH_ABORT_WE_W {
+                    w: self,
+                    offset: 41,
+                }
             }
             #[doc = "Bit 42 - Enable write to ch3_abort bit"]
             #[inline(always)]
-            pub fn ch3_abort_we(&mut self) -> CH3_ABORT_WE_W {
-                CH3_ABORT_WE_W { w: self }
+            pub fn ch3_abort_we(&mut self) -> CH_ABORT_WE_W {
+                CH_ABORT_WE_W {
+                    w: self,
+                    offset: 42,
+                }
             }
             #[doc = "Bit 43 - Enable write to ch4_abort bit"]
             #[inline(always)]
-            pub fn ch4_abort_we(&mut self) -> CH4_ABORT_WE_W {
-                CH4_ABORT_WE_W { w: self }
+            pub fn ch4_abort_we(&mut self) -> CH_ABORT_WE_W {
+                CH_ABORT_WE_W {
+                    w: self,
+                    offset: 43,
+                }
             }
             #[doc = "Bit 44 - Enable write to ch5_abort bit"]
             #[inline(always)]
-            pub fn ch5_abort_we(&mut self) -> CH5_ABORT_WE_W {
-                CH5_ABORT_WE_W { w: self }
+            pub fn ch5_abort_we(&mut self) -> CH_ABORT_WE_W {
+                CH_ABORT_WE_W {
+                    w: self,
+                    offset: 44,
+                }
             }
             #[doc = "Bit 45 - Enable write to ch6_abort bit"]
             #[inline(always)]
-            pub fn ch6_abort_we(&mut self) -> CH6_ABORT_WE_W {
-                CH6_ABORT_WE_W { w: self }
+            pub fn ch6_abort_we(&mut self) -> CH_ABORT_WE_W {
+                CH_ABORT_WE_W {
+                    w: self,
+                    offset: 45,
+                }
             }
         }
     }
@@ -28738,13 +16787,14 @@ is an array"]
                 0
             }
         }
-        #[doc = "Reader of field `ch1_intstat`"]
-        pub type CH1_INTSTAT_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `ch1_intstat`"]
-        pub struct CH1_INTSTAT_W<'a> {
+        #[doc = "Reader of field `ch%s_intstat`"]
+        pub type CH_INTSTAT_R = crate::R<bool, bool>;
+        #[doc = "Write proxy for fields `ch_intstat(1-6)`"]
+        pub struct CH_INTSTAT_W<'a> {
             w: &'a mut W,
+            offset: usize,
         }
-        impl<'a> CH1_INTSTAT_W<'a> {
+        impl<'a> CH_INTSTAT_W<'a> {
             #[doc = r"Sets the field bit"]
             #[inline(always)]
             pub fn set_bit(self) -> &'a mut W {
@@ -28758,127 +16808,8 @@ is an array"]
             #[doc = r"Writes raw bits to the field"]
             #[inline(always)]
             pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !0x01) | ((value as u64) & 0x01);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `ch2_intstat`"]
-        pub type CH2_INTSTAT_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `ch2_intstat`"]
-        pub struct CH2_INTSTAT_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> CH2_INTSTAT_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 1)) | (((value as u64) & 0x01) << 1);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `ch3_intstat`"]
-        pub type CH3_INTSTAT_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `ch3_intstat`"]
-        pub struct CH3_INTSTAT_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> CH3_INTSTAT_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 2)) | (((value as u64) & 0x01) << 2);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `ch4_intstat`"]
-        pub type CH4_INTSTAT_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `ch4_intstat`"]
-        pub struct CH4_INTSTAT_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> CH4_INTSTAT_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 3)) | (((value as u64) & 0x01) << 3);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `ch5_intstat`"]
-        pub type CH5_INTSTAT_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `ch5_intstat`"]
-        pub struct CH5_INTSTAT_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> CH5_INTSTAT_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 4)) | (((value as u64) & 0x01) << 4);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `ch6_intstat`"]
-        pub type CH6_INTSTAT_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `ch6_intstat`"]
-        pub struct CH6_INTSTAT_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> CH6_INTSTAT_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 5)) | (((value as u64) & 0x01) << 5);
+                self.w.bits = (self.w.bits & !(0x01 << self.offset))
+                    | (((value as u64) & 0x01) << self.offset);
                 self.w
             }
         }
@@ -28907,35 +16838,40 @@ is an array"]
             }
         }
         impl R {
+            #[doc = "Channel %s interrupt bit"]
+            #[inline(always)]
+            pub unsafe fn ch_intstat(&self, n: usize) -> CH_INTSTAT_R {
+                CH_INTSTAT_R::new(((self.bits >> n - 1) & 0x01) != 0)
+            }
             #[doc = "Bit 0 - Channel 1 interrupt bit"]
             #[inline(always)]
-            pub fn ch1_intstat(&self) -> CH1_INTSTAT_R {
-                CH1_INTSTAT_R::new((self.bits & 0x01) != 0)
+            pub fn ch1_intstat(&self) -> CH_INTSTAT_R {
+                CH_INTSTAT_R::new((self.bits & 0x01) != 0)
             }
             #[doc = "Bit 1 - Channel 2 interrupt bit"]
             #[inline(always)]
-            pub fn ch2_intstat(&self) -> CH2_INTSTAT_R {
-                CH2_INTSTAT_R::new(((self.bits >> 1) & 0x01) != 0)
+            pub fn ch2_intstat(&self) -> CH_INTSTAT_R {
+                CH_INTSTAT_R::new(((self.bits >> 1) & 0x01) != 0)
             }
             #[doc = "Bit 2 - Channel 3 interrupt bit"]
             #[inline(always)]
-            pub fn ch3_intstat(&self) -> CH3_INTSTAT_R {
-                CH3_INTSTAT_R::new(((self.bits >> 2) & 0x01) != 0)
+            pub fn ch3_intstat(&self) -> CH_INTSTAT_R {
+                CH_INTSTAT_R::new(((self.bits >> 2) & 0x01) != 0)
             }
             #[doc = "Bit 3 - Channel 4 interrupt bit"]
             #[inline(always)]
-            pub fn ch4_intstat(&self) -> CH4_INTSTAT_R {
-                CH4_INTSTAT_R::new(((self.bits >> 3) & 0x01) != 0)
+            pub fn ch4_intstat(&self) -> CH_INTSTAT_R {
+                CH_INTSTAT_R::new(((self.bits >> 3) & 0x01) != 0)
             }
             #[doc = "Bit 4 - Channel 5 interrupt bit"]
             #[inline(always)]
-            pub fn ch5_intstat(&self) -> CH5_INTSTAT_R {
-                CH5_INTSTAT_R::new(((self.bits >> 4) & 0x01) != 0)
+            pub fn ch5_intstat(&self) -> CH_INTSTAT_R {
+                CH_INTSTAT_R::new(((self.bits >> 4) & 0x01) != 0)
             }
             #[doc = "Bit 5 - Channel 6 interrupt bit"]
             #[inline(always)]
-            pub fn ch6_intstat(&self) -> CH6_INTSTAT_R {
-                CH6_INTSTAT_R::new(((self.bits >> 5) & 0x01) != 0)
+            pub fn ch6_intstat(&self) -> CH_INTSTAT_R {
+                CH_INTSTAT_R::new(((self.bits >> 5) & 0x01) != 0)
             }
             #[doc = "Bit 16 - Common register status bit"]
             #[inline(always)]
@@ -28944,35 +16880,43 @@ is an array"]
             }
         }
         impl W {
+            #[doc = "Channel %s interrupt bit"]
+            #[inline(always)]
+            pub unsafe fn ch_intstat(&mut self, n: usize) -> CH_INTSTAT_W {
+                CH_INTSTAT_W {
+                    w: self,
+                    offset: n - 1,
+                }
+            }
             #[doc = "Bit 0 - Channel 1 interrupt bit"]
             #[inline(always)]
-            pub fn ch1_intstat(&mut self) -> CH1_INTSTAT_W {
-                CH1_INTSTAT_W { w: self }
+            pub fn ch1_intstat(&mut self) -> CH_INTSTAT_W {
+                CH_INTSTAT_W { w: self, offset: 0 }
             }
             #[doc = "Bit 1 - Channel 2 interrupt bit"]
             #[inline(always)]
-            pub fn ch2_intstat(&mut self) -> CH2_INTSTAT_W {
-                CH2_INTSTAT_W { w: self }
+            pub fn ch2_intstat(&mut self) -> CH_INTSTAT_W {
+                CH_INTSTAT_W { w: self, offset: 1 }
             }
             #[doc = "Bit 2 - Channel 3 interrupt bit"]
             #[inline(always)]
-            pub fn ch3_intstat(&mut self) -> CH3_INTSTAT_W {
-                CH3_INTSTAT_W { w: self }
+            pub fn ch3_intstat(&mut self) -> CH_INTSTAT_W {
+                CH_INTSTAT_W { w: self, offset: 2 }
             }
             #[doc = "Bit 3 - Channel 4 interrupt bit"]
             #[inline(always)]
-            pub fn ch4_intstat(&mut self) -> CH4_INTSTAT_W {
-                CH4_INTSTAT_W { w: self }
+            pub fn ch4_intstat(&mut self) -> CH_INTSTAT_W {
+                CH_INTSTAT_W { w: self, offset: 3 }
             }
             #[doc = "Bit 4 - Channel 5 interrupt bit"]
             #[inline(always)]
-            pub fn ch5_intstat(&mut self) -> CH5_INTSTAT_W {
-                CH5_INTSTAT_W { w: self }
+            pub fn ch5_intstat(&mut self) -> CH_INTSTAT_W {
+                CH_INTSTAT_W { w: self, offset: 4 }
             }
             #[doc = "Bit 5 - Channel 6 interrupt bit"]
             #[inline(always)]
-            pub fn ch6_intstat(&mut self) -> CH6_INTSTAT_W {
-                CH6_INTSTAT_W { w: self }
+            pub fn ch6_intstat(&mut self) -> CH_INTSTAT_W {
+                CH_INTSTAT_W { w: self, offset: 5 }
             }
             #[doc = "Bit 16 - Common register status bit"]
             #[inline(always)]
@@ -29916,13 +17860,14 @@ pub mod gpio {
                 0
             }
         }
-        #[doc = "Reader of field `pin0`"]
-        pub type PIN0_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin0`"]
-        pub struct PIN0_W<'a> {
+        #[doc = "Reader of field `pin%s`"]
+        pub type PIN_R = crate::R<bool, bool>;
+        #[doc = "Write proxy for fields `pin(0-7)`"]
+        pub struct PIN_W<'a> {
             w: &'a mut W,
+            offset: usize,
         }
-        impl<'a> PIN0_W<'a> {
+        impl<'a> PIN_W<'a> {
             #[doc = r"Sets the field bit"]
             #[inline(always)]
             pub fn set_bit(self) -> &'a mut W {
@@ -29936,260 +17881,103 @@ pub mod gpio {
             #[doc = r"Writes raw bits to the field"]
             #[inline(always)]
             pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !0x01) | ((value as u32) & 0x01);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin1`"]
-        pub type PIN1_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin1`"]
-        pub struct PIN1_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN1_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 1)) | (((value as u32) & 0x01) << 1);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin2`"]
-        pub type PIN2_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin2`"]
-        pub struct PIN2_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN2_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 2)) | (((value as u32) & 0x01) << 2);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin3`"]
-        pub type PIN3_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin3`"]
-        pub struct PIN3_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN3_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 3)) | (((value as u32) & 0x01) << 3);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin4`"]
-        pub type PIN4_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin4`"]
-        pub struct PIN4_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN4_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 4)) | (((value as u32) & 0x01) << 4);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin5`"]
-        pub type PIN5_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin5`"]
-        pub struct PIN5_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN5_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 5)) | (((value as u32) & 0x01) << 5);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin6`"]
-        pub type PIN6_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin6`"]
-        pub struct PIN6_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN6_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 6)) | (((value as u32) & 0x01) << 6);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin7`"]
-        pub type PIN7_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin7`"]
-        pub struct PIN7_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN7_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 7)) | (((value as u32) & 0x01) << 7);
+                self.w.bits = (self.w.bits & !(0x01 << self.offset))
+                    | (((value as u32) & 0x01) << self.offset);
                 self.w
             }
         }
         impl R {
+            #[doc = ""]
+            #[inline(always)]
+            pub unsafe fn pin(&self, n: usize) -> PIN_R {
+                PIN_R::new(((self.bits >> n) & 0x01) != 0)
+            }
             #[doc = "Bit 0"]
             #[inline(always)]
-            pub fn pin0(&self) -> PIN0_R {
-                PIN0_R::new((self.bits & 0x01) != 0)
+            pub fn pin0(&self) -> PIN_R {
+                PIN_R::new((self.bits & 0x01) != 0)
             }
             #[doc = "Bit 1"]
             #[inline(always)]
-            pub fn pin1(&self) -> PIN1_R {
-                PIN1_R::new(((self.bits >> 1) & 0x01) != 0)
+            pub fn pin1(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 1) & 0x01) != 0)
             }
             #[doc = "Bit 2"]
             #[inline(always)]
-            pub fn pin2(&self) -> PIN2_R {
-                PIN2_R::new(((self.bits >> 2) & 0x01) != 0)
+            pub fn pin2(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 2) & 0x01) != 0)
             }
             #[doc = "Bit 3"]
             #[inline(always)]
-            pub fn pin3(&self) -> PIN3_R {
-                PIN3_R::new(((self.bits >> 3) & 0x01) != 0)
+            pub fn pin3(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 3) & 0x01) != 0)
             }
             #[doc = "Bit 4"]
             #[inline(always)]
-            pub fn pin4(&self) -> PIN4_R {
-                PIN4_R::new(((self.bits >> 4) & 0x01) != 0)
+            pub fn pin4(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 4) & 0x01) != 0)
             }
             #[doc = "Bit 5"]
             #[inline(always)]
-            pub fn pin5(&self) -> PIN5_R {
-                PIN5_R::new(((self.bits >> 5) & 0x01) != 0)
+            pub fn pin5(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 5) & 0x01) != 0)
             }
             #[doc = "Bit 6"]
             #[inline(always)]
-            pub fn pin6(&self) -> PIN6_R {
-                PIN6_R::new(((self.bits >> 6) & 0x01) != 0)
+            pub fn pin6(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 6) & 0x01) != 0)
             }
             #[doc = "Bit 7"]
             #[inline(always)]
-            pub fn pin7(&self) -> PIN7_R {
-                PIN7_R::new(((self.bits >> 7) & 0x01) != 0)
+            pub fn pin7(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 7) & 0x01) != 0)
             }
         }
         impl W {
+            #[doc = ""]
+            #[inline(always)]
+            pub unsafe fn pin(&mut self, n: usize) -> PIN_W {
+                PIN_W { w: self, offset: n }
+            }
             #[doc = "Bit 0"]
             #[inline(always)]
-            pub fn pin0(&mut self) -> PIN0_W {
-                PIN0_W { w: self }
+            pub fn pin0(&mut self) -> PIN_W {
+                PIN_W { w: self, offset: 0 }
             }
             #[doc = "Bit 1"]
             #[inline(always)]
-            pub fn pin1(&mut self) -> PIN1_W {
-                PIN1_W { w: self }
+            pub fn pin1(&mut self) -> PIN_W {
+                PIN_W { w: self, offset: 1 }
             }
             #[doc = "Bit 2"]
             #[inline(always)]
-            pub fn pin2(&mut self) -> PIN2_W {
-                PIN2_W { w: self }
+            pub fn pin2(&mut self) -> PIN_W {
+                PIN_W { w: self, offset: 2 }
             }
             #[doc = "Bit 3"]
             #[inline(always)]
-            pub fn pin3(&mut self) -> PIN3_W {
-                PIN3_W { w: self }
+            pub fn pin3(&mut self) -> PIN_W {
+                PIN_W { w: self, offset: 3 }
             }
             #[doc = "Bit 4"]
             #[inline(always)]
-            pub fn pin4(&mut self) -> PIN4_W {
-                PIN4_W { w: self }
+            pub fn pin4(&mut self) -> PIN_W {
+                PIN_W { w: self, offset: 4 }
             }
             #[doc = "Bit 5"]
             #[inline(always)]
-            pub fn pin5(&mut self) -> PIN5_W {
-                PIN5_W { w: self }
+            pub fn pin5(&mut self) -> PIN_W {
+                PIN_W { w: self, offset: 5 }
             }
             #[doc = "Bit 6"]
             #[inline(always)]
-            pub fn pin6(&mut self) -> PIN6_W {
-                PIN6_W { w: self }
+            pub fn pin6(&mut self) -> PIN_W {
+                PIN_W { w: self, offset: 6 }
             }
             #[doc = "Bit 7"]
             #[inline(always)]
-            pub fn pin7(&mut self) -> PIN7_W {
-                PIN7_W { w: self }
+            pub fn pin7(&mut self) -> PIN_W {
+                PIN_W { w: self, offset: 7 }
             }
         }
     }
@@ -30218,48 +18006,49 @@ pub mod gpio {
         }
         #[doc = "\n\nValue on reset: 0"]
         #[derive(Clone, Copy, Debug, PartialEq)]
-        pub enum PIN0_A {
+        pub enum PIN_A {
             #[doc = "0: Pin is input"]
             INPUT = 0,
             #[doc = "1: Pin is output"]
             OUTPUT = 1,
         }
-        impl From<PIN0_A> for bool {
+        impl From<PIN_A> for bool {
             #[inline(always)]
-            fn from(variant: PIN0_A) -> Self {
+            fn from(variant: PIN_A) -> Self {
                 variant as u8 != 0
             }
         }
-        #[doc = "Reader of field `pin0`"]
-        pub type PIN0_R = crate::R<bool, PIN0_A>;
-        impl PIN0_R {
+        #[doc = "Reader of field `pin%s`"]
+        pub type PIN_R = crate::R<bool, PIN_A>;
+        impl PIN_R {
             #[doc = r"Get enumerated values variant"]
             #[inline(always)]
-            pub fn variant(&self) -> PIN0_A {
+            pub fn variant(&self) -> PIN_A {
                 match self.bits {
-                    false => PIN0_A::INPUT,
-                    true => PIN0_A::OUTPUT,
+                    false => PIN_A::INPUT,
+                    true => PIN_A::OUTPUT,
                 }
             }
             #[doc = "Checks if the value of the field is `INPUT`"]
             #[inline(always)]
             pub fn is_input(&self) -> bool {
-                *self == PIN0_A::INPUT
+                *self == PIN_A::INPUT
             }
             #[doc = "Checks if the value of the field is `OUTPUT`"]
             #[inline(always)]
             pub fn is_output(&self) -> bool {
-                *self == PIN0_A::OUTPUT
+                *self == PIN_A::OUTPUT
             }
         }
-        #[doc = "Write proxy for field `pin0`"]
-        pub struct PIN0_W<'a> {
+        #[doc = "Write proxy for fields `pin(0-7)`"]
+        pub struct PIN_W<'a> {
             w: &'a mut W,
+            offset: usize,
         }
-        impl<'a> PIN0_W<'a> {
+        impl<'a> PIN_W<'a> {
             #[doc = r"Writes `variant` to the field"]
             #[inline(always)]
-            pub fn variant(self, variant: PIN0_A) -> &'a mut W {
+            pub fn variant(self, variant: PIN_A) -> &'a mut W {
                 {
                     self.bit(variant.into())
                 }
@@ -30267,12 +18056,12 @@ pub mod gpio {
             #[doc = "Pin is input"]
             #[inline(always)]
             pub fn input(self) -> &'a mut W {
-                self.variant(PIN0_A::INPUT)
+                self.variant(PIN_A::INPUT)
             }
             #[doc = "Pin is output"]
             #[inline(always)]
             pub fn output(self) -> &'a mut W {
-                self.variant(PIN0_A::OUTPUT)
+                self.variant(PIN_A::OUTPUT)
             }
             #[doc = r"Sets the field bit"]
             #[inline(always)]
@@ -30287,393 +18076,103 @@ pub mod gpio {
             #[doc = r"Writes raw bits to the field"]
             #[inline(always)]
             pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !0x01) | ((value as u32) & 0x01);
-                self.w
-            }
-        }
-        #[doc = ""]
-        pub type PIN1_A = PIN0_A;
-        #[doc = "Reader of field `pin1`"]
-        pub type PIN1_R = crate::R<bool, PIN1_A>;
-        #[doc = "Write proxy for field `pin1`"]
-        pub struct PIN1_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN1_W<'a> {
-            #[doc = r"Writes `variant` to the field"]
-            #[inline(always)]
-            pub fn variant(self, variant: PIN1_A) -> &'a mut W {
-                {
-                    self.bit(variant.into())
-                }
-            }
-            #[doc = "Pin is input"]
-            #[inline(always)]
-            pub fn input(self) -> &'a mut W {
-                self.variant(PIN1_A::INPUT)
-            }
-            #[doc = "Pin is output"]
-            #[inline(always)]
-            pub fn output(self) -> &'a mut W {
-                self.variant(PIN1_A::OUTPUT)
-            }
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 1)) | (((value as u32) & 0x01) << 1);
-                self.w
-            }
-        }
-        #[doc = ""]
-        pub type PIN2_A = PIN0_A;
-        #[doc = "Reader of field `pin2`"]
-        pub type PIN2_R = crate::R<bool, PIN2_A>;
-        #[doc = "Write proxy for field `pin2`"]
-        pub struct PIN2_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN2_W<'a> {
-            #[doc = r"Writes `variant` to the field"]
-            #[inline(always)]
-            pub fn variant(self, variant: PIN2_A) -> &'a mut W {
-                {
-                    self.bit(variant.into())
-                }
-            }
-            #[doc = "Pin is input"]
-            #[inline(always)]
-            pub fn input(self) -> &'a mut W {
-                self.variant(PIN2_A::INPUT)
-            }
-            #[doc = "Pin is output"]
-            #[inline(always)]
-            pub fn output(self) -> &'a mut W {
-                self.variant(PIN2_A::OUTPUT)
-            }
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 2)) | (((value as u32) & 0x01) << 2);
-                self.w
-            }
-        }
-        #[doc = ""]
-        pub type PIN3_A = PIN0_A;
-        #[doc = "Reader of field `pin3`"]
-        pub type PIN3_R = crate::R<bool, PIN3_A>;
-        #[doc = "Write proxy for field `pin3`"]
-        pub struct PIN3_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN3_W<'a> {
-            #[doc = r"Writes `variant` to the field"]
-            #[inline(always)]
-            pub fn variant(self, variant: PIN3_A) -> &'a mut W {
-                {
-                    self.bit(variant.into())
-                }
-            }
-            #[doc = "Pin is input"]
-            #[inline(always)]
-            pub fn input(self) -> &'a mut W {
-                self.variant(PIN3_A::INPUT)
-            }
-            #[doc = "Pin is output"]
-            #[inline(always)]
-            pub fn output(self) -> &'a mut W {
-                self.variant(PIN3_A::OUTPUT)
-            }
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 3)) | (((value as u32) & 0x01) << 3);
-                self.w
-            }
-        }
-        #[doc = ""]
-        pub type PIN4_A = PIN0_A;
-        #[doc = "Reader of field `pin4`"]
-        pub type PIN4_R = crate::R<bool, PIN4_A>;
-        #[doc = "Write proxy for field `pin4`"]
-        pub struct PIN4_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN4_W<'a> {
-            #[doc = r"Writes `variant` to the field"]
-            #[inline(always)]
-            pub fn variant(self, variant: PIN4_A) -> &'a mut W {
-                {
-                    self.bit(variant.into())
-                }
-            }
-            #[doc = "Pin is input"]
-            #[inline(always)]
-            pub fn input(self) -> &'a mut W {
-                self.variant(PIN4_A::INPUT)
-            }
-            #[doc = "Pin is output"]
-            #[inline(always)]
-            pub fn output(self) -> &'a mut W {
-                self.variant(PIN4_A::OUTPUT)
-            }
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 4)) | (((value as u32) & 0x01) << 4);
-                self.w
-            }
-        }
-        #[doc = ""]
-        pub type PIN5_A = PIN0_A;
-        #[doc = "Reader of field `pin5`"]
-        pub type PIN5_R = crate::R<bool, PIN5_A>;
-        #[doc = "Write proxy for field `pin5`"]
-        pub struct PIN5_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN5_W<'a> {
-            #[doc = r"Writes `variant` to the field"]
-            #[inline(always)]
-            pub fn variant(self, variant: PIN5_A) -> &'a mut W {
-                {
-                    self.bit(variant.into())
-                }
-            }
-            #[doc = "Pin is input"]
-            #[inline(always)]
-            pub fn input(self) -> &'a mut W {
-                self.variant(PIN5_A::INPUT)
-            }
-            #[doc = "Pin is output"]
-            #[inline(always)]
-            pub fn output(self) -> &'a mut W {
-                self.variant(PIN5_A::OUTPUT)
-            }
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 5)) | (((value as u32) & 0x01) << 5);
-                self.w
-            }
-        }
-        #[doc = ""]
-        pub type PIN6_A = PIN0_A;
-        #[doc = "Reader of field `pin6`"]
-        pub type PIN6_R = crate::R<bool, PIN6_A>;
-        #[doc = "Write proxy for field `pin6`"]
-        pub struct PIN6_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN6_W<'a> {
-            #[doc = r"Writes `variant` to the field"]
-            #[inline(always)]
-            pub fn variant(self, variant: PIN6_A) -> &'a mut W {
-                {
-                    self.bit(variant.into())
-                }
-            }
-            #[doc = "Pin is input"]
-            #[inline(always)]
-            pub fn input(self) -> &'a mut W {
-                self.variant(PIN6_A::INPUT)
-            }
-            #[doc = "Pin is output"]
-            #[inline(always)]
-            pub fn output(self) -> &'a mut W {
-                self.variant(PIN6_A::OUTPUT)
-            }
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 6)) | (((value as u32) & 0x01) << 6);
-                self.w
-            }
-        }
-        #[doc = ""]
-        pub type PIN7_A = PIN0_A;
-        #[doc = "Reader of field `pin7`"]
-        pub type PIN7_R = crate::R<bool, PIN7_A>;
-        #[doc = "Write proxy for field `pin7`"]
-        pub struct PIN7_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN7_W<'a> {
-            #[doc = r"Writes `variant` to the field"]
-            #[inline(always)]
-            pub fn variant(self, variant: PIN7_A) -> &'a mut W {
-                {
-                    self.bit(variant.into())
-                }
-            }
-            #[doc = "Pin is input"]
-            #[inline(always)]
-            pub fn input(self) -> &'a mut W {
-                self.variant(PIN7_A::INPUT)
-            }
-            #[doc = "Pin is output"]
-            #[inline(always)]
-            pub fn output(self) -> &'a mut W {
-                self.variant(PIN7_A::OUTPUT)
-            }
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 7)) | (((value as u32) & 0x01) << 7);
+                self.w.bits = (self.w.bits & !(0x01 << self.offset))
+                    | (((value as u32) & 0x01) << self.offset);
                 self.w
             }
         }
         impl R {
+            #[doc = ""]
+            #[inline(always)]
+            pub unsafe fn pin(&self, n: usize) -> PIN_R {
+                PIN_R::new(((self.bits >> n) & 0x01) != 0)
+            }
             #[doc = "Bit 0"]
             #[inline(always)]
-            pub fn pin0(&self) -> PIN0_R {
-                PIN0_R::new((self.bits & 0x01) != 0)
+            pub fn pin0(&self) -> PIN_R {
+                PIN_R::new((self.bits & 0x01) != 0)
             }
             #[doc = "Bit 1"]
             #[inline(always)]
-            pub fn pin1(&self) -> PIN1_R {
-                PIN1_R::new(((self.bits >> 1) & 0x01) != 0)
+            pub fn pin1(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 1) & 0x01) != 0)
             }
             #[doc = "Bit 2"]
             #[inline(always)]
-            pub fn pin2(&self) -> PIN2_R {
-                PIN2_R::new(((self.bits >> 2) & 0x01) != 0)
+            pub fn pin2(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 2) & 0x01) != 0)
             }
             #[doc = "Bit 3"]
             #[inline(always)]
-            pub fn pin3(&self) -> PIN3_R {
-                PIN3_R::new(((self.bits >> 3) & 0x01) != 0)
+            pub fn pin3(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 3) & 0x01) != 0)
             }
             #[doc = "Bit 4"]
             #[inline(always)]
-            pub fn pin4(&self) -> PIN4_R {
-                PIN4_R::new(((self.bits >> 4) & 0x01) != 0)
+            pub fn pin4(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 4) & 0x01) != 0)
             }
             #[doc = "Bit 5"]
             #[inline(always)]
-            pub fn pin5(&self) -> PIN5_R {
-                PIN5_R::new(((self.bits >> 5) & 0x01) != 0)
+            pub fn pin5(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 5) & 0x01) != 0)
             }
             #[doc = "Bit 6"]
             #[inline(always)]
-            pub fn pin6(&self) -> PIN6_R {
-                PIN6_R::new(((self.bits >> 6) & 0x01) != 0)
+            pub fn pin6(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 6) & 0x01) != 0)
             }
             #[doc = "Bit 7"]
             #[inline(always)]
-            pub fn pin7(&self) -> PIN7_R {
-                PIN7_R::new(((self.bits >> 7) & 0x01) != 0)
+            pub fn pin7(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 7) & 0x01) != 0)
             }
         }
         impl W {
+            #[doc = ""]
+            #[inline(always)]
+            pub unsafe fn pin(&mut self, n: usize) -> PIN_W {
+                PIN_W { w: self, offset: n }
+            }
             #[doc = "Bit 0"]
             #[inline(always)]
-            pub fn pin0(&mut self) -> PIN0_W {
-                PIN0_W { w: self }
+            pub fn pin0(&mut self) -> PIN_W {
+                PIN_W { w: self, offset: 0 }
             }
             #[doc = "Bit 1"]
             #[inline(always)]
-            pub fn pin1(&mut self) -> PIN1_W {
-                PIN1_W { w: self }
+            pub fn pin1(&mut self) -> PIN_W {
+                PIN_W { w: self, offset: 1 }
             }
             #[doc = "Bit 2"]
             #[inline(always)]
-            pub fn pin2(&mut self) -> PIN2_W {
-                PIN2_W { w: self }
+            pub fn pin2(&mut self) -> PIN_W {
+                PIN_W { w: self, offset: 2 }
             }
             #[doc = "Bit 3"]
             #[inline(always)]
-            pub fn pin3(&mut self) -> PIN3_W {
-                PIN3_W { w: self }
+            pub fn pin3(&mut self) -> PIN_W {
+                PIN_W { w: self, offset: 3 }
             }
             #[doc = "Bit 4"]
             #[inline(always)]
-            pub fn pin4(&mut self) -> PIN4_W {
-                PIN4_W { w: self }
+            pub fn pin4(&mut self) -> PIN_W {
+                PIN_W { w: self, offset: 4 }
             }
             #[doc = "Bit 5"]
             #[inline(always)]
-            pub fn pin5(&mut self) -> PIN5_W {
-                PIN5_W { w: self }
+            pub fn pin5(&mut self) -> PIN_W {
+                PIN_W { w: self, offset: 5 }
             }
             #[doc = "Bit 6"]
             #[inline(always)]
-            pub fn pin6(&mut self) -> PIN6_W {
-                PIN6_W { w: self }
+            pub fn pin6(&mut self) -> PIN_W {
+                PIN_W { w: self, offset: 6 }
             }
             #[doc = "Bit 7"]
             #[inline(always)]
-            pub fn pin7(&mut self) -> PIN7_W {
-                PIN7_W { w: self }
+            pub fn pin7(&mut self) -> PIN_W {
+                PIN_W { w: self, offset: 7 }
             }
         }
     }
@@ -30934,13 +18433,14 @@ pub mod gpio {
                 0
             }
         }
-        #[doc = "Reader of field `pin0`"]
-        pub type PIN0_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin0`"]
-        pub struct PIN0_W<'a> {
+        #[doc = "Reader of field `pin%s`"]
+        pub type PIN_R = crate::R<bool, bool>;
+        #[doc = "Write proxy for fields `pin(0-7)`"]
+        pub struct PIN_W<'a> {
             w: &'a mut W,
+            offset: usize,
         }
-        impl<'a> PIN0_W<'a> {
+        impl<'a> PIN_W<'a> {
             #[doc = r"Sets the field bit"]
             #[inline(always)]
             pub fn set_bit(self) -> &'a mut W {
@@ -30954,260 +18454,103 @@ pub mod gpio {
             #[doc = r"Writes raw bits to the field"]
             #[inline(always)]
             pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !0x01) | ((value as u32) & 0x01);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin1`"]
-        pub type PIN1_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin1`"]
-        pub struct PIN1_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN1_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 1)) | (((value as u32) & 0x01) << 1);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin2`"]
-        pub type PIN2_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin2`"]
-        pub struct PIN2_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN2_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 2)) | (((value as u32) & 0x01) << 2);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin3`"]
-        pub type PIN3_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin3`"]
-        pub struct PIN3_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN3_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 3)) | (((value as u32) & 0x01) << 3);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin4`"]
-        pub type PIN4_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin4`"]
-        pub struct PIN4_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN4_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 4)) | (((value as u32) & 0x01) << 4);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin5`"]
-        pub type PIN5_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin5`"]
-        pub struct PIN5_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN5_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 5)) | (((value as u32) & 0x01) << 5);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin6`"]
-        pub type PIN6_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin6`"]
-        pub struct PIN6_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN6_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 6)) | (((value as u32) & 0x01) << 6);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `pin7`"]
-        pub type PIN7_R = crate::R<bool, bool>;
-        #[doc = "Write proxy for field `pin7`"]
-        pub struct PIN7_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> PIN7_W<'a> {
-            #[doc = r"Sets the field bit"]
-            #[inline(always)]
-            pub fn set_bit(self) -> &'a mut W {
-                self.bit(true)
-            }
-            #[doc = r"Clears the field bit"]
-            #[inline(always)]
-            pub fn clear_bit(self) -> &'a mut W {
-                self.bit(false)
-            }
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub fn bit(self, value: bool) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x01 << 7)) | (((value as u32) & 0x01) << 7);
+                self.w.bits = (self.w.bits & !(0x01 << self.offset))
+                    | (((value as u32) & 0x01) << self.offset);
                 self.w
             }
         }
         impl R {
+            #[doc = ""]
+            #[inline(always)]
+            pub unsafe fn pin(&self, n: usize) -> PIN_R {
+                PIN_R::new(((self.bits >> n) & 0x01) != 0)
+            }
             #[doc = "Bit 0"]
             #[inline(always)]
-            pub fn pin0(&self) -> PIN0_R {
-                PIN0_R::new((self.bits & 0x01) != 0)
+            pub fn pin0(&self) -> PIN_R {
+                PIN_R::new((self.bits & 0x01) != 0)
             }
             #[doc = "Bit 1"]
             #[inline(always)]
-            pub fn pin1(&self) -> PIN1_R {
-                PIN1_R::new(((self.bits >> 1) & 0x01) != 0)
+            pub fn pin1(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 1) & 0x01) != 0)
             }
             #[doc = "Bit 2"]
             #[inline(always)]
-            pub fn pin2(&self) -> PIN2_R {
-                PIN2_R::new(((self.bits >> 2) & 0x01) != 0)
+            pub fn pin2(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 2) & 0x01) != 0)
             }
             #[doc = "Bit 3"]
             #[inline(always)]
-            pub fn pin3(&self) -> PIN3_R {
-                PIN3_R::new(((self.bits >> 3) & 0x01) != 0)
+            pub fn pin3(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 3) & 0x01) != 0)
             }
             #[doc = "Bit 4"]
             #[inline(always)]
-            pub fn pin4(&self) -> PIN4_R {
-                PIN4_R::new(((self.bits >> 4) & 0x01) != 0)
+            pub fn pin4(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 4) & 0x01) != 0)
             }
             #[doc = "Bit 5"]
             #[inline(always)]
-            pub fn pin5(&self) -> PIN5_R {
-                PIN5_R::new(((self.bits >> 5) & 0x01) != 0)
+            pub fn pin5(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 5) & 0x01) != 0)
             }
             #[doc = "Bit 6"]
             #[inline(always)]
-            pub fn pin6(&self) -> PIN6_R {
-                PIN6_R::new(((self.bits >> 6) & 0x01) != 0)
+            pub fn pin6(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 6) & 0x01) != 0)
             }
             #[doc = "Bit 7"]
             #[inline(always)]
-            pub fn pin7(&self) -> PIN7_R {
-                PIN7_R::new(((self.bits >> 7) & 0x01) != 0)
+            pub fn pin7(&self) -> PIN_R {
+                PIN_R::new(((self.bits >> 7) & 0x01) != 0)
             }
         }
         impl W {
+            #[doc = ""]
+            #[inline(always)]
+            pub unsafe fn pin(&mut self, n: usize) -> PIN_W {
+                PIN_W { w: self, offset: n }
+            }
             #[doc = "Bit 0"]
             #[inline(always)]
-            pub fn pin0(&mut self) -> PIN0_W {
-                PIN0_W { w: self }
+            pub fn pin0(&mut self) -> PIN_W {
+                PIN_W { w: self, offset: 0 }
             }
             #[doc = "Bit 1"]
             #[inline(always)]
-            pub fn pin1(&mut self) -> PIN1_W {
-                PIN1_W { w: self }
+            pub fn pin1(&mut self) -> PIN_W {
+                PIN_W { w: self, offset: 1 }
             }
             #[doc = "Bit 2"]
             #[inline(always)]
-            pub fn pin2(&mut self) -> PIN2_W {
-                PIN2_W { w: self }
+            pub fn pin2(&mut self) -> PIN_W {
+                PIN_W { w: self, offset: 2 }
             }
             #[doc = "Bit 3"]
             #[inline(always)]
-            pub fn pin3(&mut self) -> PIN3_W {
-                PIN3_W { w: self }
+            pub fn pin3(&mut self) -> PIN_W {
+                PIN_W { w: self, offset: 3 }
             }
             #[doc = "Bit 4"]
             #[inline(always)]
-            pub fn pin4(&mut self) -> PIN4_W {
-                PIN4_W { w: self }
+            pub fn pin4(&mut self) -> PIN_W {
+                PIN_W { w: self, offset: 4 }
             }
             #[doc = "Bit 5"]
             #[inline(always)]
-            pub fn pin5(&mut self) -> PIN5_W {
-                PIN5_W { w: self }
+            pub fn pin5(&mut self) -> PIN_W {
+                PIN_W { w: self, offset: 5 }
             }
             #[doc = "Bit 6"]
             #[inline(always)]
-            pub fn pin6(&mut self) -> PIN6_W {
-                PIN6_W { w: self }
+            pub fn pin6(&mut self) -> PIN_W {
+                PIN_W { w: self, offset: 6 }
             }
             #[doc = "Bit 7"]
             #[inline(always)]
-            pub fn pin7(&mut self) -> PIN7_W {
-                PIN7_W { w: self }
+            pub fn pin7(&mut self) -> PIN_W {
+                PIN_W { w: self, offset: 7 }
             }
         }
     }
@@ -38681,104 +26024,83 @@ pub mod apu {
                 0
             }
         }
-        #[doc = "Reader of field `rd_idx0`"]
-        pub type RD_IDX0_R = crate::R<u8, u8>;
-        #[doc = "Write proxy for field `rd_idx0`"]
-        pub struct RD_IDX0_W<'a> {
+        #[doc = "Reader of field `rd_idx%s`"]
+        pub type RD_IDX_R = crate::R<u8, u8>;
+        #[doc = "Write proxy for fields `rd_idx(0-3)`"]
+        pub struct RD_IDX_W<'a> {
             w: &'a mut W,
+            offset: usize,
         }
-        impl<'a> RD_IDX0_W<'a> {
+        impl<'a> RD_IDX_W<'a> {
             #[doc = r"Writes raw bits to the field"]
             #[inline(always)]
             pub unsafe fn bits(self, value: u8) -> &'a mut W {
-                self.w.bits = (self.w.bits & !0x3f) | ((value as u32) & 0x3f);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `rd_idx1`"]
-        pub type RD_IDX1_R = crate::R<u8, u8>;
-        #[doc = "Write proxy for field `rd_idx1`"]
-        pub struct RD_IDX1_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> RD_IDX1_W<'a> {
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub unsafe fn bits(self, value: u8) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x3f << 8)) | (((value as u32) & 0x3f) << 8);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `rd_idx2`"]
-        pub type RD_IDX2_R = crate::R<u8, u8>;
-        #[doc = "Write proxy for field `rd_idx2`"]
-        pub struct RD_IDX2_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> RD_IDX2_W<'a> {
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub unsafe fn bits(self, value: u8) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x3f << 16)) | (((value as u32) & 0x3f) << 16);
-                self.w
-            }
-        }
-        #[doc = "Reader of field `rd_idx3`"]
-        pub type RD_IDX3_R = crate::R<u8, u8>;
-        #[doc = "Write proxy for field `rd_idx3`"]
-        pub struct RD_IDX3_W<'a> {
-            w: &'a mut W,
-        }
-        impl<'a> RD_IDX3_W<'a> {
-            #[doc = r"Writes raw bits to the field"]
-            #[inline(always)]
-            pub unsafe fn bits(self, value: u8) -> &'a mut W {
-                self.w.bits = (self.w.bits & !(0x3f << 24)) | (((value as u32) & 0x3f) << 24);
+                self.w.bits = (self.w.bits & !(0x3f << self.offset))
+                    | (((value as u32) & 0x3f) << self.offset);
                 self.w
             }
         }
         impl R {
+            #[doc = "rd_idx%s"]
+            #[inline(always)]
+            pub unsafe fn rd_idx(&self, n: usize) -> RD_IDX_R {
+                RD_IDX_R::new(((self.bits >> n * 8) & 0x3f) as u8)
+            }
             #[doc = "Bits 0:5 - rd_idx0"]
             #[inline(always)]
-            pub fn rd_idx0(&self) -> RD_IDX0_R {
-                RD_IDX0_R::new((self.bits & 0x3f) as u8)
+            pub fn rd_idx0(&self) -> RD_IDX_R {
+                RD_IDX_R::new((self.bits & 0x3f) as u8)
             }
             #[doc = "Bits 8:13 - rd_idx1"]
             #[inline(always)]
-            pub fn rd_idx1(&self) -> RD_IDX1_R {
-                RD_IDX1_R::new(((self.bits >> 8) & 0x3f) as u8)
+            pub fn rd_idx1(&self) -> RD_IDX_R {
+                RD_IDX_R::new(((self.bits >> 8) & 0x3f) as u8)
             }
             #[doc = "Bits 16:21 - rd_idx2"]
             #[inline(always)]
-            pub fn rd_idx2(&self) -> RD_IDX2_R {
-                RD_IDX2_R::new(((self.bits >> 16) & 0x3f) as u8)
+            pub fn rd_idx2(&self) -> RD_IDX_R {
+                RD_IDX_R::new(((self.bits >> 16) & 0x3f) as u8)
             }
             #[doc = "Bits 24:29 - rd_idx3"]
             #[inline(always)]
-            pub fn rd_idx3(&self) -> RD_IDX3_R {
-                RD_IDX3_R::new(((self.bits >> 24) & 0x3f) as u8)
+            pub fn rd_idx3(&self) -> RD_IDX_R {
+                RD_IDX_R::new(((self.bits >> 24) & 0x3f) as u8)
             }
         }
         impl W {
+            #[doc = "rd_idx%s"]
+            #[inline(always)]
+            pub unsafe fn rd_idx(&mut self, n: usize) -> RD_IDX_W {
+                RD_IDX_W {
+                    w: self,
+                    offset: n * 8,
+                }
+            }
             #[doc = "Bits 0:5 - rd_idx0"]
             #[inline(always)]
-            pub fn rd_idx0(&mut self) -> RD_IDX0_W {
-                RD_IDX0_W { w: self }
+            pub fn rd_idx0(&mut self) -> RD_IDX_W {
+                RD_IDX_W { w: self, offset: 0 }
             }
             #[doc = "Bits 8:13 - rd_idx1"]
             #[inline(always)]
-            pub fn rd_idx1(&mut self) -> RD_IDX1_W {
-                RD_IDX1_W { w: self }
+            pub fn rd_idx1(&mut self) -> RD_IDX_W {
+                RD_IDX_W { w: self, offset: 8 }
             }
             #[doc = "Bits 16:21 - rd_idx2"]
             #[inline(always)]
-            pub fn rd_idx2(&mut self) -> RD_IDX2_W {
-                RD_IDX2_W { w: self }
+            pub fn rd_idx2(&mut self) -> RD_IDX_W {
+                RD_IDX_W {
+                    w: self,
+                    offset: 16,
+                }
             }
             #[doc = "Bits 24:29 - rd_idx3"]
             #[inline(always)]
-            pub fn rd_idx3(&mut self) -> RD_IDX3_W {
-                RD_IDX3_W { w: self }
+            pub fn rd_idx3(&mut self) -> RD_IDX_W {
+                RD_IDX_W {
+                    w: self,
+                    offset: 24,
+                }
             }
         }
     }
