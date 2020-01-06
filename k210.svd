@@ -321,38 +321,13 @@
                     <description>Input Value Register</description>
                     <addressOffset>0x000</addressOffset>
                     <fields>
-                        <field><name>pin0</name><lsb>0</lsb><msb>0</msb></field>
-                        <field><name>pin1</name><lsb>1</lsb><msb>1</msb></field>
-                        <field><name>pin2</name><lsb>2</lsb><msb>2</msb></field>
-                        <field><name>pin3</name><lsb>3</lsb><msb>3</msb></field>
-                        <field><name>pin4</name><lsb>4</lsb><msb>4</msb></field>
-                        <field><name>pin5</name><lsb>5</lsb><msb>5</msb></field>
-                        <field><name>pin6</name><lsb>6</lsb><msb>6</msb></field>
-                        <field><name>pin7</name><lsb>7</lsb><msb>7</msb></field>
-                        <field><name>pin8</name><lsb>8</lsb><msb>8</msb></field>
-                        <field><name>pin9</name><lsb>9</lsb><msb>9</msb></field>
-                        <field><name>pin10</name><lsb>10</lsb><msb>10</msb></field>
-                        <field><name>pin11</name><lsb>11</lsb><msb>11</msb></field>
-                        <field><name>pin12</name><lsb>12</lsb><msb>12</msb></field>
-                        <field><name>pin13</name><lsb>13</lsb><msb>13</msb></field>
-                        <field><name>pin14</name><lsb>14</lsb><msb>14</msb></field>
-                        <field><name>pin15</name><lsb>15</lsb><msb>15</msb></field>
-                        <field><name>pin16</name><lsb>16</lsb><msb>16</msb></field>
-                        <field><name>pin17</name><lsb>17</lsb><msb>17</msb></field>
-                        <field><name>pin18</name><lsb>18</lsb><msb>18</msb></field>
-                        <field><name>pin19</name><lsb>19</lsb><msb>19</msb></field>
-                        <field><name>pin20</name><lsb>20</lsb><msb>20</msb></field>
-                        <field><name>pin21</name><lsb>21</lsb><msb>21</msb></field>
-                        <field><name>pin22</name><lsb>22</lsb><msb>22</msb></field>
-                        <field><name>pin23</name><lsb>23</lsb><msb>23</msb></field>
-                        <field><name>pin24</name><lsb>24</lsb><msb>24</msb></field>
-                        <field><name>pin25</name><lsb>25</lsb><msb>25</msb></field>
-                        <field><name>pin26</name><lsb>26</lsb><msb>26</msb></field>
-                        <field><name>pin27</name><lsb>27</lsb><msb>27</msb></field>
-                        <field><name>pin28</name><lsb>28</lsb><msb>28</msb></field>
-                        <field><name>pin29</name><lsb>29</lsb><msb>29</msb></field>
-                        <field><name>pin30</name><lsb>30</lsb><msb>30</msb></field>
-                        <field><name>pin31</name><lsb>31</lsb><msb>31</msb></field>
+                        <field>
+                            <name>pin%s</name>
+                            <lsb>0</lsb>
+                            <msb>0</msb>
+                            <dim>32</dim>
+                            <dimIncrement>1</dimIncrement>
+                        </field>
                     </fields>
                 </register>
                 <register>
@@ -360,38 +335,13 @@
                     <description>Pin Input Enable Register</description>
                     <addressOffset>0x004</addressOffset>
                     <fields>
-                        <field><name>pin0</name><lsb>0</lsb><msb>0</msb></field>
-                        <field><name>pin1</name><lsb>1</lsb><msb>1</msb></field>
-                        <field><name>pin2</name><lsb>2</lsb><msb>2</msb></field>
-                        <field><name>pin3</name><lsb>3</lsb><msb>3</msb></field>
-                        <field><name>pin4</name><lsb>4</lsb><msb>4</msb></field>
-                        <field><name>pin5</name><lsb>5</lsb><msb>5</msb></field>
-                        <field><name>pin6</name><lsb>6</lsb><msb>6</msb></field>
-                        <field><name>pin7</name><lsb>7</lsb><msb>7</msb></field>
-                        <field><name>pin8</name><lsb>8</lsb><msb>8</msb></field>
-                        <field><name>pin9</name><lsb>9</lsb><msb>9</msb></field>
-                        <field><name>pin10</name><lsb>10</lsb><msb>10</msb></field>
-                        <field><name>pin11</name><lsb>11</lsb><msb>11</msb></field>
-                        <field><name>pin12</name><lsb>12</lsb><msb>12</msb></field>
-                        <field><name>pin13</name><lsb>13</lsb><msb>13</msb></field>
-                        <field><name>pin14</name><lsb>14</lsb><msb>14</msb></field>
-                        <field><name>pin15</name><lsb>15</lsb><msb>15</msb></field>
-                        <field><name>pin16</name><lsb>16</lsb><msb>16</msb></field>
-                        <field><name>pin17</name><lsb>17</lsb><msb>17</msb></field>
-                        <field><name>pin18</name><lsb>18</lsb><msb>18</msb></field>
-                        <field><name>pin19</name><lsb>19</lsb><msb>19</msb></field>
-                        <field><name>pin20</name><lsb>20</lsb><msb>20</msb></field>
-                        <field><name>pin21</name><lsb>21</lsb><msb>21</msb></field>
-                        <field><name>pin22</name><lsb>22</lsb><msb>22</msb></field>
-                        <field><name>pin23</name><lsb>23</lsb><msb>23</msb></field>
-                        <field><name>pin24</name><lsb>24</lsb><msb>24</msb></field>
-                        <field><name>pin25</name><lsb>25</lsb><msb>25</msb></field>
-                        <field><name>pin26</name><lsb>26</lsb><msb>26</msb></field>
-                        <field><name>pin27</name><lsb>27</lsb><msb>27</msb></field>
-                        <field><name>pin28</name><lsb>28</lsb><msb>28</msb></field>
-                        <field><name>pin29</name><lsb>29</lsb><msb>29</msb></field>
-                        <field><name>pin30</name><lsb>30</lsb><msb>30</msb></field>
-                        <field><name>pin31</name><lsb>31</lsb><msb>31</msb></field>
+                        <field>
+                            <name>pin%s</name>
+                            <lsb>0</lsb>
+                            <msb>0</msb>
+                            <dim>32</dim>
+                            <dimIncrement>1</dimIncrement>
+                        </field>
                     </fields>
                 </register>
                 <register>
@@ -399,38 +349,13 @@
                     <description>Pin Output Enable Register</description>
                     <addressOffset>0x008</addressOffset>
                     <fields>
-                        <field><name>pin0</name><lsb>0</lsb><msb>0</msb></field>
-                        <field><name>pin1</name><lsb>1</lsb><msb>1</msb></field>
-                        <field><name>pin2</name><lsb>2</lsb><msb>2</msb></field>
-                        <field><name>pin3</name><lsb>3</lsb><msb>3</msb></field>
-                        <field><name>pin4</name><lsb>4</lsb><msb>4</msb></field>
-                        <field><name>pin5</name><lsb>5</lsb><msb>5</msb></field>
-                        <field><name>pin6</name><lsb>6</lsb><msb>6</msb></field>
-                        <field><name>pin7</name><lsb>7</lsb><msb>7</msb></field>
-                        <field><name>pin8</name><lsb>8</lsb><msb>8</msb></field>
-                        <field><name>pin9</name><lsb>9</lsb><msb>9</msb></field>
-                        <field><name>pin10</name><lsb>10</lsb><msb>10</msb></field>
-                        <field><name>pin11</name><lsb>11</lsb><msb>11</msb></field>
-                        <field><name>pin12</name><lsb>12</lsb><msb>12</msb></field>
-                        <field><name>pin13</name><lsb>13</lsb><msb>13</msb></field>
-                        <field><name>pin14</name><lsb>14</lsb><msb>14</msb></field>
-                        <field><name>pin15</name><lsb>15</lsb><msb>15</msb></field>
-                        <field><name>pin16</name><lsb>16</lsb><msb>16</msb></field>
-                        <field><name>pin17</name><lsb>17</lsb><msb>17</msb></field>
-                        <field><name>pin18</name><lsb>18</lsb><msb>18</msb></field>
-                        <field><name>pin19</name><lsb>19</lsb><msb>19</msb></field>
-                        <field><name>pin20</name><lsb>20</lsb><msb>20</msb></field>
-                        <field><name>pin21</name><lsb>21</lsb><msb>21</msb></field>
-                        <field><name>pin22</name><lsb>22</lsb><msb>22</msb></field>
-                        <field><name>pin23</name><lsb>23</lsb><msb>23</msb></field>
-                        <field><name>pin24</name><lsb>24</lsb><msb>24</msb></field>
-                        <field><name>pin25</name><lsb>25</lsb><msb>25</msb></field>
-                        <field><name>pin26</name><lsb>26</lsb><msb>26</msb></field>
-                        <field><name>pin27</name><lsb>27</lsb><msb>27</msb></field>
-                        <field><name>pin28</name><lsb>28</lsb><msb>28</msb></field>
-                        <field><name>pin29</name><lsb>29</lsb><msb>29</msb></field>
-                        <field><name>pin30</name><lsb>30</lsb><msb>30</msb></field>
-                        <field><name>pin31</name><lsb>31</lsb><msb>31</msb></field>
+                        <field>
+                            <name>pin%s</name>
+                            <lsb>0</lsb>
+                            <msb>0</msb>
+                            <dim>32</dim>
+                            <dimIncrement>1</dimIncrement>
+                        </field>
                     </fields>
                 </register>
                 <register>
@@ -438,38 +363,13 @@
                     <description>Output Value Register</description>
                     <addressOffset>0x00C</addressOffset>
                     <fields>
-                        <field><name>pin0</name><lsb>0</lsb><msb>0</msb></field>
-                        <field><name>pin1</name><lsb>1</lsb><msb>1</msb></field>
-                        <field><name>pin2</name><lsb>2</lsb><msb>2</msb></field>
-                        <field><name>pin3</name><lsb>3</lsb><msb>3</msb></field>
-                        <field><name>pin4</name><lsb>4</lsb><msb>4</msb></field>
-                        <field><name>pin5</name><lsb>5</lsb><msb>5</msb></field>
-                        <field><name>pin6</name><lsb>6</lsb><msb>6</msb></field>
-                        <field><name>pin7</name><lsb>7</lsb><msb>7</msb></field>
-                        <field><name>pin8</name><lsb>8</lsb><msb>8</msb></field>
-                        <field><name>pin9</name><lsb>9</lsb><msb>9</msb></field>
-                        <field><name>pin10</name><lsb>10</lsb><msb>10</msb></field>
-                        <field><name>pin11</name><lsb>11</lsb><msb>11</msb></field>
-                        <field><name>pin12</name><lsb>12</lsb><msb>12</msb></field>
-                        <field><name>pin13</name><lsb>13</lsb><msb>13</msb></field>
-                        <field><name>pin14</name><lsb>14</lsb><msb>14</msb></field>
-                        <field><name>pin15</name><lsb>15</lsb><msb>15</msb></field>
-                        <field><name>pin16</name><lsb>16</lsb><msb>16</msb></field>
-                        <field><name>pin17</name><lsb>17</lsb><msb>17</msb></field>
-                        <field><name>pin18</name><lsb>18</lsb><msb>18</msb></field>
-                        <field><name>pin19</name><lsb>19</lsb><msb>19</msb></field>
-                        <field><name>pin20</name><lsb>20</lsb><msb>20</msb></field>
-                        <field><name>pin21</name><lsb>21</lsb><msb>21</msb></field>
-                        <field><name>pin22</name><lsb>22</lsb><msb>22</msb></field>
-                        <field><name>pin23</name><lsb>23</lsb><msb>23</msb></field>
-                        <field><name>pin24</name><lsb>24</lsb><msb>24</msb></field>
-                        <field><name>pin25</name><lsb>25</lsb><msb>25</msb></field>
-                        <field><name>pin26</name><lsb>26</lsb><msb>26</msb></field>
-                        <field><name>pin27</name><lsb>27</lsb><msb>27</msb></field>
-                        <field><name>pin28</name><lsb>28</lsb><msb>28</msb></field>
-                        <field><name>pin29</name><lsb>29</lsb><msb>29</msb></field>
-                        <field><name>pin30</name><lsb>30</lsb><msb>30</msb></field>
-                        <field><name>pin31</name><lsb>31</lsb><msb>31</msb></field>
+                        <field>
+                            <name>pin%s</name>
+                            <lsb>0</lsb>
+                            <msb>0</msb>
+                            <dim>32</dim>
+                            <dimIncrement>1</dimIncrement>
+                        </field>
                     </fields>
                 </register>
                 <register>
@@ -477,38 +377,13 @@
                     <description>Internal Pull-Up Enable Register</description>
                     <addressOffset>0x010</addressOffset>
                     <fields>
-                        <field><name>pin0</name><lsb>0</lsb><msb>0</msb></field>
-                        <field><name>pin1</name><lsb>1</lsb><msb>1</msb></field>
-                        <field><name>pin2</name><lsb>2</lsb><msb>2</msb></field>
-                        <field><name>pin3</name><lsb>3</lsb><msb>3</msb></field>
-                        <field><name>pin4</name><lsb>4</lsb><msb>4</msb></field>
-                        <field><name>pin5</name><lsb>5</lsb><msb>5</msb></field>
-                        <field><name>pin6</name><lsb>6</lsb><msb>6</msb></field>
-                        <field><name>pin7</name><lsb>7</lsb><msb>7</msb></field>
-                        <field><name>pin8</name><lsb>8</lsb><msb>8</msb></field>
-                        <field><name>pin9</name><lsb>9</lsb><msb>9</msb></field>
-                        <field><name>pin10</name><lsb>10</lsb><msb>10</msb></field>
-                        <field><name>pin11</name><lsb>11</lsb><msb>11</msb></field>
-                        <field><name>pin12</name><lsb>12</lsb><msb>12</msb></field>
-                        <field><name>pin13</name><lsb>13</lsb><msb>13</msb></field>
-                        <field><name>pin14</name><lsb>14</lsb><msb>14</msb></field>
-                        <field><name>pin15</name><lsb>15</lsb><msb>15</msb></field>
-                        <field><name>pin16</name><lsb>16</lsb><msb>16</msb></field>
-                        <field><name>pin17</name><lsb>17</lsb><msb>17</msb></field>
-                        <field><name>pin18</name><lsb>18</lsb><msb>18</msb></field>
-                        <field><name>pin19</name><lsb>19</lsb><msb>19</msb></field>
-                        <field><name>pin20</name><lsb>20</lsb><msb>20</msb></field>
-                        <field><name>pin21</name><lsb>21</lsb><msb>21</msb></field>
-                        <field><name>pin22</name><lsb>22</lsb><msb>22</msb></field>
-                        <field><name>pin23</name><lsb>23</lsb><msb>23</msb></field>
-                        <field><name>pin24</name><lsb>24</lsb><msb>24</msb></field>
-                        <field><name>pin25</name><lsb>25</lsb><msb>25</msb></field>
-                        <field><name>pin26</name><lsb>26</lsb><msb>26</msb></field>
-                        <field><name>pin27</name><lsb>27</lsb><msb>27</msb></field>
-                        <field><name>pin28</name><lsb>28</lsb><msb>28</msb></field>
-                        <field><name>pin29</name><lsb>29</lsb><msb>29</msb></field>
-                        <field><name>pin30</name><lsb>30</lsb><msb>30</msb></field>
-                        <field><name>pin31</name><lsb>31</lsb><msb>31</msb></field>
+                        <field>
+                            <name>pin%s</name>
+                            <lsb>0</lsb>
+                            <msb>0</msb>
+                            <dim>32</dim>
+                            <dimIncrement>1</dimIncrement>
+                        </field>
                     </fields>
                 </register>
                 <register>
@@ -516,38 +391,13 @@
                     <description>Drive Strength Register</description>
                     <addressOffset>0x014</addressOffset>
                     <fields>
-                        <field><name>pin0</name><lsb>0</lsb><msb>0</msb></field>
-                        <field><name>pin1</name><lsb>1</lsb><msb>1</msb></field>
-                        <field><name>pin2</name><lsb>2</lsb><msb>2</msb></field>
-                        <field><name>pin3</name><lsb>3</lsb><msb>3</msb></field>
-                        <field><name>pin4</name><lsb>4</lsb><msb>4</msb></field>
-                        <field><name>pin5</name><lsb>5</lsb><msb>5</msb></field>
-                        <field><name>pin6</name><lsb>6</lsb><msb>6</msb></field>
-                        <field><name>pin7</name><lsb>7</lsb><msb>7</msb></field>
-                        <field><name>pin8</name><lsb>8</lsb><msb>8</msb></field>
-                        <field><name>pin9</name><lsb>9</lsb><msb>9</msb></field>
-                        <field><name>pin10</name><lsb>10</lsb><msb>10</msb></field>
-                        <field><name>pin11</name><lsb>11</lsb><msb>11</msb></field>
-                        <field><name>pin12</name><lsb>12</lsb><msb>12</msb></field>
-                        <field><name>pin13</name><lsb>13</lsb><msb>13</msb></field>
-                        <field><name>pin14</name><lsb>14</lsb><msb>14</msb></field>
-                        <field><name>pin15</name><lsb>15</lsb><msb>15</msb></field>
-                        <field><name>pin16</name><lsb>16</lsb><msb>16</msb></field>
-                        <field><name>pin17</name><lsb>17</lsb><msb>17</msb></field>
-                        <field><name>pin18</name><lsb>18</lsb><msb>18</msb></field>
-                        <field><name>pin19</name><lsb>19</lsb><msb>19</msb></field>
-                        <field><name>pin20</name><lsb>20</lsb><msb>20</msb></field>
-                        <field><name>pin21</name><lsb>21</lsb><msb>21</msb></field>
-                        <field><name>pin22</name><lsb>22</lsb><msb>22</msb></field>
-                        <field><name>pin23</name><lsb>23</lsb><msb>23</msb></field>
-                        <field><name>pin24</name><lsb>24</lsb><msb>24</msb></field>
-                        <field><name>pin25</name><lsb>25</lsb><msb>25</msb></field>
-                        <field><name>pin26</name><lsb>26</lsb><msb>26</msb></field>
-                        <field><name>pin27</name><lsb>27</lsb><msb>27</msb></field>
-                        <field><name>pin28</name><lsb>28</lsb><msb>28</msb></field>
-                        <field><name>pin29</name><lsb>29</lsb><msb>29</msb></field>
-                        <field><name>pin30</name><lsb>30</lsb><msb>30</msb></field>
-                        <field><name>pin31</name><lsb>31</lsb><msb>31</msb></field>
+                        <field>
+                            <name>pin%s</name>
+                            <lsb>0</lsb>
+                            <msb>0</msb>
+                            <dim>32</dim>
+                            <dimIncrement>1</dimIncrement>
+                        </field>
                     </fields>
                 </register>
                 <register>
@@ -555,38 +405,13 @@
                     <description>Rise Interrupt Enable Register</description>
                     <addressOffset>0x018</addressOffset>
                     <fields>
-                        <field><name>pin0</name><lsb>0</lsb><msb>0</msb></field>
-                        <field><name>pin1</name><lsb>1</lsb><msb>1</msb></field>
-                        <field><name>pin2</name><lsb>2</lsb><msb>2</msb></field>
-                        <field><name>pin3</name><lsb>3</lsb><msb>3</msb></field>
-                        <field><name>pin4</name><lsb>4</lsb><msb>4</msb></field>
-                        <field><name>pin5</name><lsb>5</lsb><msb>5</msb></field>
-                        <field><name>pin6</name><lsb>6</lsb><msb>6</msb></field>
-                        <field><name>pin7</name><lsb>7</lsb><msb>7</msb></field>
-                        <field><name>pin8</name><lsb>8</lsb><msb>8</msb></field>
-                        <field><name>pin9</name><lsb>9</lsb><msb>9</msb></field>
-                        <field><name>pin10</name><lsb>10</lsb><msb>10</msb></field>
-                        <field><name>pin11</name><lsb>11</lsb><msb>11</msb></field>
-                        <field><name>pin12</name><lsb>12</lsb><msb>12</msb></field>
-                        <field><name>pin13</name><lsb>13</lsb><msb>13</msb></field>
-                        <field><name>pin14</name><lsb>14</lsb><msb>14</msb></field>
-                        <field><name>pin15</name><lsb>15</lsb><msb>15</msb></field>
-                        <field><name>pin16</name><lsb>16</lsb><msb>16</msb></field>
-                        <field><name>pin17</name><lsb>17</lsb><msb>17</msb></field>
-                        <field><name>pin18</name><lsb>18</lsb><msb>18</msb></field>
-                        <field><name>pin19</name><lsb>19</lsb><msb>19</msb></field>
-                        <field><name>pin20</name><lsb>20</lsb><msb>20</msb></field>
-                        <field><name>pin21</name><lsb>21</lsb><msb>21</msb></field>
-                        <field><name>pin22</name><lsb>22</lsb><msb>22</msb></field>
-                        <field><name>pin23</name><lsb>23</lsb><msb>23</msb></field>
-                        <field><name>pin24</name><lsb>24</lsb><msb>24</msb></field>
-                        <field><name>pin25</name><lsb>25</lsb><msb>25</msb></field>
-                        <field><name>pin26</name><lsb>26</lsb><msb>26</msb></field>
-                        <field><name>pin27</name><lsb>27</lsb><msb>27</msb></field>
-                        <field><name>pin28</name><lsb>28</lsb><msb>28</msb></field>
-                        <field><name>pin29</name><lsb>29</lsb><msb>29</msb></field>
-                        <field><name>pin30</name><lsb>30</lsb><msb>30</msb></field>
-                        <field><name>pin31</name><lsb>31</lsb><msb>31</msb></field>
+                        <field>
+                            <name>pin%s</name>
+                            <lsb>0</lsb>
+                            <msb>0</msb>
+                            <dim>32</dim>
+                            <dimIncrement>1</dimIncrement>
+                        </field>
                     </fields>
                 </register>
                 <register>
@@ -594,38 +419,13 @@
                     <description>Rise Interrupt Pending Register</description>
                     <addressOffset>0x01C</addressOffset>
                     <fields>
-                        <field><name>pin0</name><lsb>0</lsb><msb>0</msb></field>
-                        <field><name>pin1</name><lsb>1</lsb><msb>1</msb></field>
-                        <field><name>pin2</name><lsb>2</lsb><msb>2</msb></field>
-                        <field><name>pin3</name><lsb>3</lsb><msb>3</msb></field>
-                        <field><name>pin4</name><lsb>4</lsb><msb>4</msb></field>
-                        <field><name>pin5</name><lsb>5</lsb><msb>5</msb></field>
-                        <field><name>pin6</name><lsb>6</lsb><msb>6</msb></field>
-                        <field><name>pin7</name><lsb>7</lsb><msb>7</msb></field>
-                        <field><name>pin8</name><lsb>8</lsb><msb>8</msb></field>
-                        <field><name>pin9</name><lsb>9</lsb><msb>9</msb></field>
-                        <field><name>pin10</name><lsb>10</lsb><msb>10</msb></field>
-                        <field><name>pin11</name><lsb>11</lsb><msb>11</msb></field>
-                        <field><name>pin12</name><lsb>12</lsb><msb>12</msb></field>
-                        <field><name>pin13</name><lsb>13</lsb><msb>13</msb></field>
-                        <field><name>pin14</name><lsb>14</lsb><msb>14</msb></field>
-                        <field><name>pin15</name><lsb>15</lsb><msb>15</msb></field>
-                        <field><name>pin16</name><lsb>16</lsb><msb>16</msb></field>
-                        <field><name>pin17</name><lsb>17</lsb><msb>17</msb></field>
-                        <field><name>pin18</name><lsb>18</lsb><msb>18</msb></field>
-                        <field><name>pin19</name><lsb>19</lsb><msb>19</msb></field>
-                        <field><name>pin20</name><lsb>20</lsb><msb>20</msb></field>
-                        <field><name>pin21</name><lsb>21</lsb><msb>21</msb></field>
-                        <field><name>pin22</name><lsb>22</lsb><msb>22</msb></field>
-                        <field><name>pin23</name><lsb>23</lsb><msb>23</msb></field>
-                        <field><name>pin24</name><lsb>24</lsb><msb>24</msb></field>
-                        <field><name>pin25</name><lsb>25</lsb><msb>25</msb></field>
-                        <field><name>pin26</name><lsb>26</lsb><msb>26</msb></field>
-                        <field><name>pin27</name><lsb>27</lsb><msb>27</msb></field>
-                        <field><name>pin28</name><lsb>28</lsb><msb>28</msb></field>
-                        <field><name>pin29</name><lsb>29</lsb><msb>29</msb></field>
-                        <field><name>pin30</name><lsb>30</lsb><msb>30</msb></field>
-                        <field><name>pin31</name><lsb>31</lsb><msb>31</msb></field>
+                        <field>
+                            <name>pin%s</name>
+                            <lsb>0</lsb>
+                            <msb>0</msb>
+                            <dim>32</dim>
+                            <dimIncrement>1</dimIncrement>
+                        </field>
                     </fields>
                 </register>
                 <register>
@@ -633,38 +433,13 @@
                     <description>Fall Interrupt Enable Register</description>
                     <addressOffset>0x020</addressOffset>
                     <fields>
-                        <field><name>pin0</name><lsb>0</lsb><msb>0</msb></field>
-                        <field><name>pin1</name><lsb>1</lsb><msb>1</msb></field>
-                        <field><name>pin2</name><lsb>2</lsb><msb>2</msb></field>
-                        <field><name>pin3</name><lsb>3</lsb><msb>3</msb></field>
-                        <field><name>pin4</name><lsb>4</lsb><msb>4</msb></field>
-                        <field><name>pin5</name><lsb>5</lsb><msb>5</msb></field>
-                        <field><name>pin6</name><lsb>6</lsb><msb>6</msb></field>
-                        <field><name>pin7</name><lsb>7</lsb><msb>7</msb></field>
-                        <field><name>pin8</name><lsb>8</lsb><msb>8</msb></field>
-                        <field><name>pin9</name><lsb>9</lsb><msb>9</msb></field>
-                        <field><name>pin10</name><lsb>10</lsb><msb>10</msb></field>
-                        <field><name>pin11</name><lsb>11</lsb><msb>11</msb></field>
-                        <field><name>pin12</name><lsb>12</lsb><msb>12</msb></field>
-                        <field><name>pin13</name><lsb>13</lsb><msb>13</msb></field>
-                        <field><name>pin14</name><lsb>14</lsb><msb>14</msb></field>
-                        <field><name>pin15</name><lsb>15</lsb><msb>15</msb></field>
-                        <field><name>pin16</name><lsb>16</lsb><msb>16</msb></field>
-                        <field><name>pin17</name><lsb>17</lsb><msb>17</msb></field>
-                        <field><name>pin18</name><lsb>18</lsb><msb>18</msb></field>
-                        <field><name>pin19</name><lsb>19</lsb><msb>19</msb></field>
-                        <field><name>pin20</name><lsb>20</lsb><msb>20</msb></field>
-                        <field><name>pin21</name><lsb>21</lsb><msb>21</msb></field>
-                        <field><name>pin22</name><lsb>22</lsb><msb>22</msb></field>
-                        <field><name>pin23</name><lsb>23</lsb><msb>23</msb></field>
-                        <field><name>pin24</name><lsb>24</lsb><msb>24</msb></field>
-                        <field><name>pin25</name><lsb>25</lsb><msb>25</msb></field>
-                        <field><name>pin26</name><lsb>26</lsb><msb>26</msb></field>
-                        <field><name>pin27</name><lsb>27</lsb><msb>27</msb></field>
-                        <field><name>pin28</name><lsb>28</lsb><msb>28</msb></field>
-                        <field><name>pin29</name><lsb>29</lsb><msb>29</msb></field>
-                        <field><name>pin30</name><lsb>30</lsb><msb>30</msb></field>
-                        <field><name>pin31</name><lsb>31</lsb><msb>31</msb></field>
+                        <field>
+                            <name>pin%s</name>
+                            <lsb>0</lsb>
+                            <msb>0</msb>
+                            <dim>32</dim>
+                            <dimIncrement>1</dimIncrement>
+                        </field>
                     </fields>
                 </register>
                 <register>
@@ -672,38 +447,13 @@
                     <description>Fall Interrupt Pending Register</description>
                     <addressOffset>0x024</addressOffset>
                     <fields>
-                        <field><name>pin0</name><lsb>0</lsb><msb>0</msb></field>
-                        <field><name>pin1</name><lsb>1</lsb><msb>1</msb></field>
-                        <field><name>pin2</name><lsb>2</lsb><msb>2</msb></field>
-                        <field><name>pin3</name><lsb>3</lsb><msb>3</msb></field>
-                        <field><name>pin4</name><lsb>4</lsb><msb>4</msb></field>
-                        <field><name>pin5</name><lsb>5</lsb><msb>5</msb></field>
-                        <field><name>pin6</name><lsb>6</lsb><msb>6</msb></field>
-                        <field><name>pin7</name><lsb>7</lsb><msb>7</msb></field>
-                        <field><name>pin8</name><lsb>8</lsb><msb>8</msb></field>
-                        <field><name>pin9</name><lsb>9</lsb><msb>9</msb></field>
-                        <field><name>pin10</name><lsb>10</lsb><msb>10</msb></field>
-                        <field><name>pin11</name><lsb>11</lsb><msb>11</msb></field>
-                        <field><name>pin12</name><lsb>12</lsb><msb>12</msb></field>
-                        <field><name>pin13</name><lsb>13</lsb><msb>13</msb></field>
-                        <field><name>pin14</name><lsb>14</lsb><msb>14</msb></field>
-                        <field><name>pin15</name><lsb>15</lsb><msb>15</msb></field>
-                        <field><name>pin16</name><lsb>16</lsb><msb>16</msb></field>
-                        <field><name>pin17</name><lsb>17</lsb><msb>17</msb></field>
-                        <field><name>pin18</name><lsb>18</lsb><msb>18</msb></field>
-                        <field><name>pin19</name><lsb>19</lsb><msb>19</msb></field>
-                        <field><name>pin20</name><lsb>20</lsb><msb>20</msb></field>
-                        <field><name>pin21</name><lsb>21</lsb><msb>21</msb></field>
-                        <field><name>pin22</name><lsb>22</lsb><msb>22</msb></field>
-                        <field><name>pin23</name><lsb>23</lsb><msb>23</msb></field>
-                        <field><name>pin24</name><lsb>24</lsb><msb>24</msb></field>
-                        <field><name>pin25</name><lsb>25</lsb><msb>25</msb></field>
-                        <field><name>pin26</name><lsb>26</lsb><msb>26</msb></field>
-                        <field><name>pin27</name><lsb>27</lsb><msb>27</msb></field>
-                        <field><name>pin28</name><lsb>28</lsb><msb>28</msb></field>
-                        <field><name>pin29</name><lsb>29</lsb><msb>29</msb></field>
-                        <field><name>pin30</name><lsb>30</lsb><msb>30</msb></field>
-                        <field><name>pin31</name><lsb>31</lsb><msb>31</msb></field>
+                        <field>
+                            <name>pin%s</name>
+                            <lsb>0</lsb>
+                            <msb>0</msb>
+                            <dim>32</dim>
+                            <dimIncrement>1</dimIncrement>
+                        </field>
                     </fields>
                 </register>
                 <register>
@@ -711,38 +461,13 @@
                     <description>High Interrupt Enable Register</description>
                     <addressOffset>0x028</addressOffset>
                     <fields>
-                        <field><name>pin0</name><lsb>0</lsb><msb>0</msb></field>
-                        <field><name>pin1</name><lsb>1</lsb><msb>1</msb></field>
-                        <field><name>pin2</name><lsb>2</lsb><msb>2</msb></field>
-                        <field><name>pin3</name><lsb>3</lsb><msb>3</msb></field>
-                        <field><name>pin4</name><lsb>4</lsb><msb>4</msb></field>
-                        <field><name>pin5</name><lsb>5</lsb><msb>5</msb></field>
-                        <field><name>pin6</name><lsb>6</lsb><msb>6</msb></field>
-                        <field><name>pin7</name><lsb>7</lsb><msb>7</msb></field>
-                        <field><name>pin8</name><lsb>8</lsb><msb>8</msb></field>
-                        <field><name>pin9</name><lsb>9</lsb><msb>9</msb></field>
-                        <field><name>pin10</name><lsb>10</lsb><msb>10</msb></field>
-                        <field><name>pin11</name><lsb>11</lsb><msb>11</msb></field>
-                        <field><name>pin12</name><lsb>12</lsb><msb>12</msb></field>
-                        <field><name>pin13</name><lsb>13</lsb><msb>13</msb></field>
-                        <field><name>pin14</name><lsb>14</lsb><msb>14</msb></field>
-                        <field><name>pin15</name><lsb>15</lsb><msb>15</msb></field>
-                        <field><name>pin16</name><lsb>16</lsb><msb>16</msb></field>
-                        <field><name>pin17</name><lsb>17</lsb><msb>17</msb></field>
-                        <field><name>pin18</name><lsb>18</lsb><msb>18</msb></field>
-                        <field><name>pin19</name><lsb>19</lsb><msb>19</msb></field>
-                        <field><name>pin20</name><lsb>20</lsb><msb>20</msb></field>
-                        <field><name>pin21</name><lsb>21</lsb><msb>21</msb></field>
-                        <field><name>pin22</name><lsb>22</lsb><msb>22</msb></field>
-                        <field><name>pin23</name><lsb>23</lsb><msb>23</msb></field>
-                        <field><name>pin24</name><lsb>24</lsb><msb>24</msb></field>
-                        <field><name>pin25</name><lsb>25</lsb><msb>25</msb></field>
-                        <field><name>pin26</name><lsb>26</lsb><msb>26</msb></field>
-                        <field><name>pin27</name><lsb>27</lsb><msb>27</msb></field>
-                        <field><name>pin28</name><lsb>28</lsb><msb>28</msb></field>
-                        <field><name>pin29</name><lsb>29</lsb><msb>29</msb></field>
-                        <field><name>pin30</name><lsb>30</lsb><msb>30</msb></field>
-                        <field><name>pin31</name><lsb>31</lsb><msb>31</msb></field>
+                        <field>
+                            <name>pin%s</name>
+                            <lsb>0</lsb>
+                            <msb>0</msb>
+                            <dim>32</dim>
+                            <dimIncrement>1</dimIncrement>
+                        </field>
                     </fields>
                 </register>
                 <register>
@@ -750,38 +475,13 @@
                     <description>High Interrupt Pending Register</description>
                     <addressOffset>0x02C</addressOffset>
                     <fields>
-                        <field><name>pin0</name><lsb>0</lsb><msb>0</msb></field>
-                        <field><name>pin1</name><lsb>1</lsb><msb>1</msb></field>
-                        <field><name>pin2</name><lsb>2</lsb><msb>2</msb></field>
-                        <field><name>pin3</name><lsb>3</lsb><msb>3</msb></field>
-                        <field><name>pin4</name><lsb>4</lsb><msb>4</msb></field>
-                        <field><name>pin5</name><lsb>5</lsb><msb>5</msb></field>
-                        <field><name>pin6</name><lsb>6</lsb><msb>6</msb></field>
-                        <field><name>pin7</name><lsb>7</lsb><msb>7</msb></field>
-                        <field><name>pin8</name><lsb>8</lsb><msb>8</msb></field>
-                        <field><name>pin9</name><lsb>9</lsb><msb>9</msb></field>
-                        <field><name>pin10</name><lsb>10</lsb><msb>10</msb></field>
-                        <field><name>pin11</name><lsb>11</lsb><msb>11</msb></field>
-                        <field><name>pin12</name><lsb>12</lsb><msb>12</msb></field>
-                        <field><name>pin13</name><lsb>13</lsb><msb>13</msb></field>
-                        <field><name>pin14</name><lsb>14</lsb><msb>14</msb></field>
-                        <field><name>pin15</name><lsb>15</lsb><msb>15</msb></field>
-                        <field><name>pin16</name><lsb>16</lsb><msb>16</msb></field>
-                        <field><name>pin17</name><lsb>17</lsb><msb>17</msb></field>
-                        <field><name>pin18</name><lsb>18</lsb><msb>18</msb></field>
-                        <field><name>pin19</name><lsb>19</lsb><msb>19</msb></field>
-                        <field><name>pin20</name><lsb>20</lsb><msb>20</msb></field>
-                        <field><name>pin21</name><lsb>21</lsb><msb>21</msb></field>
-                        <field><name>pin22</name><lsb>22</lsb><msb>22</msb></field>
-                        <field><name>pin23</name><lsb>23</lsb><msb>23</msb></field>
-                        <field><name>pin24</name><lsb>24</lsb><msb>24</msb></field>
-                        <field><name>pin25</name><lsb>25</lsb><msb>25</msb></field>
-                        <field><name>pin26</name><lsb>26</lsb><msb>26</msb></field>
-                        <field><name>pin27</name><lsb>27</lsb><msb>27</msb></field>
-                        <field><name>pin28</name><lsb>28</lsb><msb>28</msb></field>
-                        <field><name>pin29</name><lsb>29</lsb><msb>29</msb></field>
-                        <field><name>pin30</name><lsb>30</lsb><msb>30</msb></field>
-                        <field><name>pin31</name><lsb>31</lsb><msb>31</msb></field>
+                        <field>
+                            <name>pin%s</name>
+                            <lsb>0</lsb>
+                            <msb>0</msb>
+                            <dim>32</dim>
+                            <dimIncrement>1</dimIncrement>
+                        </field>
                     </fields>
                 </register>
                 <register>
@@ -789,38 +489,13 @@
                     <description>Low Interrupt Enable Register</description>
                     <addressOffset>0x030</addressOffset>
                     <fields>
-                        <field><name>pin0</name><lsb>0</lsb><msb>0</msb></field>
-                        <field><name>pin1</name><lsb>1</lsb><msb>1</msb></field>
-                        <field><name>pin2</name><lsb>2</lsb><msb>2</msb></field>
-                        <field><name>pin3</name><lsb>3</lsb><msb>3</msb></field>
-                        <field><name>pin4</name><lsb>4</lsb><msb>4</msb></field>
-                        <field><name>pin5</name><lsb>5</lsb><msb>5</msb></field>
-                        <field><name>pin6</name><lsb>6</lsb><msb>6</msb></field>
-                        <field><name>pin7</name><lsb>7</lsb><msb>7</msb></field>
-                        <field><name>pin8</name><lsb>8</lsb><msb>8</msb></field>
-                        <field><name>pin9</name><lsb>9</lsb><msb>9</msb></field>
-                        <field><name>pin10</name><lsb>10</lsb><msb>10</msb></field>
-                        <field><name>pin11</name><lsb>11</lsb><msb>11</msb></field>
-                        <field><name>pin12</name><lsb>12</lsb><msb>12</msb></field>
-                        <field><name>pin13</name><lsb>13</lsb><msb>13</msb></field>
-                        <field><name>pin14</name><lsb>14</lsb><msb>14</msb></field>
-                        <field><name>pin15</name><lsb>15</lsb><msb>15</msb></field>
-                        <field><name>pin16</name><lsb>16</lsb><msb>16</msb></field>
-                        <field><name>pin17</name><lsb>17</lsb><msb>17</msb></field>
-                        <field><name>pin18</name><lsb>18</lsb><msb>18</msb></field>
-                        <field><name>pin19</name><lsb>19</lsb><msb>19</msb></field>
-                        <field><name>pin20</name><lsb>20</lsb><msb>20</msb></field>
-                        <field><name>pin21</name><lsb>21</lsb><msb>21</msb></field>
-                        <field><name>pin22</name><lsb>22</lsb><msb>22</msb></field>
-                        <field><name>pin23</name><lsb>23</lsb><msb>23</msb></field>
-                        <field><name>pin24</name><lsb>24</lsb><msb>24</msb></field>
-                        <field><name>pin25</name><lsb>25</lsb><msb>25</msb></field>
-                        <field><name>pin26</name><lsb>26</lsb><msb>26</msb></field>
-                        <field><name>pin27</name><lsb>27</lsb><msb>27</msb></field>
-                        <field><name>pin28</name><lsb>28</lsb><msb>28</msb></field>
-                        <field><name>pin29</name><lsb>29</lsb><msb>29</msb></field>
-                        <field><name>pin30</name><lsb>30</lsb><msb>30</msb></field>
-                        <field><name>pin31</name><lsb>31</lsb><msb>31</msb></field>
+                        <field>
+                            <name>pin%s</name>
+                            <lsb>0</lsb>
+                            <msb>0</msb>
+                            <dim>32</dim>
+                            <dimIncrement>1</dimIncrement>
+                        </field>
                     </fields>
                 </register>
                 <register>
@@ -828,38 +503,13 @@
                     <description>Low Interrupt Pending Register</description>
                     <addressOffset>0x034</addressOffset>
                     <fields>
-                        <field><name>pin0</name><lsb>0</lsb><msb>0</msb></field>
-                        <field><name>pin1</name><lsb>1</lsb><msb>1</msb></field>
-                        <field><name>pin2</name><lsb>2</lsb><msb>2</msb></field>
-                        <field><name>pin3</name><lsb>3</lsb><msb>3</msb></field>
-                        <field><name>pin4</name><lsb>4</lsb><msb>4</msb></field>
-                        <field><name>pin5</name><lsb>5</lsb><msb>5</msb></field>
-                        <field><name>pin6</name><lsb>6</lsb><msb>6</msb></field>
-                        <field><name>pin7</name><lsb>7</lsb><msb>7</msb></field>
-                        <field><name>pin8</name><lsb>8</lsb><msb>8</msb></field>
-                        <field><name>pin9</name><lsb>9</lsb><msb>9</msb></field>
-                        <field><name>pin10</name><lsb>10</lsb><msb>10</msb></field>
-                        <field><name>pin11</name><lsb>11</lsb><msb>11</msb></field>
-                        <field><name>pin12</name><lsb>12</lsb><msb>12</msb></field>
-                        <field><name>pin13</name><lsb>13</lsb><msb>13</msb></field>
-                        <field><name>pin14</name><lsb>14</lsb><msb>14</msb></field>
-                        <field><name>pin15</name><lsb>15</lsb><msb>15</msb></field>
-                        <field><name>pin16</name><lsb>16</lsb><msb>16</msb></field>
-                        <field><name>pin17</name><lsb>17</lsb><msb>17</msb></field>
-                        <field><name>pin18</name><lsb>18</lsb><msb>18</msb></field>
-                        <field><name>pin19</name><lsb>19</lsb><msb>19</msb></field>
-                        <field><name>pin20</name><lsb>20</lsb><msb>20</msb></field>
-                        <field><name>pin21</name><lsb>21</lsb><msb>21</msb></field>
-                        <field><name>pin22</name><lsb>22</lsb><msb>22</msb></field>
-                        <field><name>pin23</name><lsb>23</lsb><msb>23</msb></field>
-                        <field><name>pin24</name><lsb>24</lsb><msb>24</msb></field>
-                        <field><name>pin25</name><lsb>25</lsb><msb>25</msb></field>
-                        <field><name>pin26</name><lsb>26</lsb><msb>26</msb></field>
-                        <field><name>pin27</name><lsb>27</lsb><msb>27</msb></field>
-                        <field><name>pin28</name><lsb>28</lsb><msb>28</msb></field>
-                        <field><name>pin29</name><lsb>29</lsb><msb>29</msb></field>
-                        <field><name>pin30</name><lsb>30</lsb><msb>30</msb></field>
-                        <field><name>pin31</name><lsb>31</lsb><msb>31</msb></field>
+                        <field>
+                            <name>pin%s</name>
+                            <lsb>0</lsb>
+                            <msb>0</msb>
+                            <dim>32</dim>
+                            <dimIncrement>1</dimIncrement>
+                        </field>
                     </fields>
                 </register>
                 <register>
@@ -867,38 +517,13 @@
                     <description>HW I/O Function Enable Register</description>
                     <addressOffset>0x038</addressOffset>
                     <fields>
-                        <field><name>pin0</name><lsb>0</lsb><msb>0</msb></field>
-                        <field><name>pin1</name><lsb>1</lsb><msb>1</msb></field>
-                        <field><name>pin2</name><lsb>2</lsb><msb>2</msb></field>
-                        <field><name>pin3</name><lsb>3</lsb><msb>3</msb></field>
-                        <field><name>pin4</name><lsb>4</lsb><msb>4</msb></field>
-                        <field><name>pin5</name><lsb>5</lsb><msb>5</msb></field>
-                        <field><name>pin6</name><lsb>6</lsb><msb>6</msb></field>
-                        <field><name>pin7</name><lsb>7</lsb><msb>7</msb></field>
-                        <field><name>pin8</name><lsb>8</lsb><msb>8</msb></field>
-                        <field><name>pin9</name><lsb>9</lsb><msb>9</msb></field>
-                        <field><name>pin10</name><lsb>10</lsb><msb>10</msb></field>
-                        <field><name>pin11</name><lsb>11</lsb><msb>11</msb></field>
-                        <field><name>pin12</name><lsb>12</lsb><msb>12</msb></field>
-                        <field><name>pin13</name><lsb>13</lsb><msb>13</msb></field>
-                        <field><name>pin14</name><lsb>14</lsb><msb>14</msb></field>
-                        <field><name>pin15</name><lsb>15</lsb><msb>15</msb></field>
-                        <field><name>pin16</name><lsb>16</lsb><msb>16</msb></field>
-                        <field><name>pin17</name><lsb>17</lsb><msb>17</msb></field>
-                        <field><name>pin18</name><lsb>18</lsb><msb>18</msb></field>
-                        <field><name>pin19</name><lsb>19</lsb><msb>19</msb></field>
-                        <field><name>pin20</name><lsb>20</lsb><msb>20</msb></field>
-                        <field><name>pin21</name><lsb>21</lsb><msb>21</msb></field>
-                        <field><name>pin22</name><lsb>22</lsb><msb>22</msb></field>
-                        <field><name>pin23</name><lsb>23</lsb><msb>23</msb></field>
-                        <field><name>pin24</name><lsb>24</lsb><msb>24</msb></field>
-                        <field><name>pin25</name><lsb>25</lsb><msb>25</msb></field>
-                        <field><name>pin26</name><lsb>26</lsb><msb>26</msb></field>
-                        <field><name>pin27</name><lsb>27</lsb><msb>27</msb></field>
-                        <field><name>pin28</name><lsb>28</lsb><msb>28</msb></field>
-                        <field><name>pin29</name><lsb>29</lsb><msb>29</msb></field>
-                        <field><name>pin30</name><lsb>30</lsb><msb>30</msb></field>
-                        <field><name>pin31</name><lsb>31</lsb><msb>31</msb></field>
+                        <field>
+                            <name>pin%s</name>
+                            <lsb>0</lsb>
+                            <msb>0</msb>
+                            <dim>32</dim>
+                            <dimIncrement>1</dimIncrement>
+                        </field>
                     </fields>
                 </register>
                 <register>
@@ -906,38 +531,13 @@
                     <description>HW I/O Function Select Register</description>
                     <addressOffset>0x03C</addressOffset>
                     <fields>
-                        <field><name>pin0</name><lsb>0</lsb><msb>0</msb></field>
-                        <field><name>pin1</name><lsb>1</lsb><msb>1</msb></field>
-                        <field><name>pin2</name><lsb>2</lsb><msb>2</msb></field>
-                        <field><name>pin3</name><lsb>3</lsb><msb>3</msb></field>
-                        <field><name>pin4</name><lsb>4</lsb><msb>4</msb></field>
-                        <field><name>pin5</name><lsb>5</lsb><msb>5</msb></field>
-                        <field><name>pin6</name><lsb>6</lsb><msb>6</msb></field>
-                        <field><name>pin7</name><lsb>7</lsb><msb>7</msb></field>
-                        <field><name>pin8</name><lsb>8</lsb><msb>8</msb></field>
-                        <field><name>pin9</name><lsb>9</lsb><msb>9</msb></field>
-                        <field><name>pin10</name><lsb>10</lsb><msb>10</msb></field>
-                        <field><name>pin11</name><lsb>11</lsb><msb>11</msb></field>
-                        <field><name>pin12</name><lsb>12</lsb><msb>12</msb></field>
-                        <field><name>pin13</name><lsb>13</lsb><msb>13</msb></field>
-                        <field><name>pin14</name><lsb>14</lsb><msb>14</msb></field>
-                        <field><name>pin15</name><lsb>15</lsb><msb>15</msb></field>
-                        <field><name>pin16</name><lsb>16</lsb><msb>16</msb></field>
-                        <field><name>pin17</name><lsb>17</lsb><msb>17</msb></field>
-                        <field><name>pin18</name><lsb>18</lsb><msb>18</msb></field>
-                        <field><name>pin19</name><lsb>19</lsb><msb>19</msb></field>
-                        <field><name>pin20</name><lsb>20</lsb><msb>20</msb></field>
-                        <field><name>pin21</name><lsb>21</lsb><msb>21</msb></field>
-                        <field><name>pin22</name><lsb>22</lsb><msb>22</msb></field>
-                        <field><name>pin23</name><lsb>23</lsb><msb>23</msb></field>
-                        <field><name>pin24</name><lsb>24</lsb><msb>24</msb></field>
-                        <field><name>pin25</name><lsb>25</lsb><msb>25</msb></field>
-                        <field><name>pin26</name><lsb>26</lsb><msb>26</msb></field>
-                        <field><name>pin27</name><lsb>27</lsb><msb>27</msb></field>
-                        <field><name>pin28</name><lsb>28</lsb><msb>28</msb></field>
-                        <field><name>pin29</name><lsb>29</lsb><msb>29</msb></field>
-                        <field><name>pin30</name><lsb>30</lsb><msb>30</msb></field>
-                        <field><name>pin31</name><lsb>31</lsb><msb>31</msb></field>
+                        <field>
+                            <name>pin%s</name>
+                            <lsb>0</lsb>
+                            <msb>0</msb>
+                            <dim>32</dim>
+                            <dimIncrement>1</dimIncrement>
+                        </field>
                     </fields>
                 </register>
                 <register>
@@ -945,38 +545,13 @@
                     <description>Output XOR (invert) Register</description>
                     <addressOffset>0x040</addressOffset>
                     <fields>
-                        <field><name>pin0</name><lsb>0</lsb><msb>0</msb></field>
-                        <field><name>pin1</name><lsb>1</lsb><msb>1</msb></field>
-                        <field><name>pin2</name><lsb>2</lsb><msb>2</msb></field>
-                        <field><name>pin3</name><lsb>3</lsb><msb>3</msb></field>
-                        <field><name>pin4</name><lsb>4</lsb><msb>4</msb></field>
-                        <field><name>pin5</name><lsb>5</lsb><msb>5</msb></field>
-                        <field><name>pin6</name><lsb>6</lsb><msb>6</msb></field>
-                        <field><name>pin7</name><lsb>7</lsb><msb>7</msb></field>
-                        <field><name>pin8</name><lsb>8</lsb><msb>8</msb></field>
-                        <field><name>pin9</name><lsb>9</lsb><msb>9</msb></field>
-                        <field><name>pin10</name><lsb>10</lsb><msb>10</msb></field>
-                        <field><name>pin11</name><lsb>11</lsb><msb>11</msb></field>
-                        <field><name>pin12</name><lsb>12</lsb><msb>12</msb></field>
-                        <field><name>pin13</name><lsb>13</lsb><msb>13</msb></field>
-                        <field><name>pin14</name><lsb>14</lsb><msb>14</msb></field>
-                        <field><name>pin15</name><lsb>15</lsb><msb>15</msb></field>
-                        <field><name>pin16</name><lsb>16</lsb><msb>16</msb></field>
-                        <field><name>pin17</name><lsb>17</lsb><msb>17</msb></field>
-                        <field><name>pin18</name><lsb>18</lsb><msb>18</msb></field>
-                        <field><name>pin19</name><lsb>19</lsb><msb>19</msb></field>
-                        <field><name>pin20</name><lsb>20</lsb><msb>20</msb></field>
-                        <field><name>pin21</name><lsb>21</lsb><msb>21</msb></field>
-                        <field><name>pin22</name><lsb>22</lsb><msb>22</msb></field>
-                        <field><name>pin23</name><lsb>23</lsb><msb>23</msb></field>
-                        <field><name>pin24</name><lsb>24</lsb><msb>24</msb></field>
-                        <field><name>pin25</name><lsb>25</lsb><msb>25</msb></field>
-                        <field><name>pin26</name><lsb>26</lsb><msb>26</msb></field>
-                        <field><name>pin27</name><lsb>27</lsb><msb>27</msb></field>
-                        <field><name>pin28</name><lsb>28</lsb><msb>28</msb></field>
-                        <field><name>pin29</name><lsb>29</lsb><msb>29</msb></field>
-                        <field><name>pin30</name><lsb>30</lsb><msb>30</msb></field>
-                        <field><name>pin31</name><lsb>31</lsb><msb>31</msb></field>
+                        <field>
+                            <name>pin%s</name>
+                            <lsb>0</lsb>
+                            <msb>0</msb>
+                            <dim>32</dim>
+                            <dimIncrement>1</dimIncrement>
+                        </field>
                     </fields>
                 </register>
             </registers>
@@ -1509,189 +1084,54 @@
                     <size>64</size>
                     <fields>
                         <field>
-                            <name>ch1_en</name>
-                            <description>Enable channel 1</description>
+                            <name>ch%s_en</name>
+                            <description>Enable channel %s</description>
                             <bitRange>[0:0]</bitRange>
-                        </field>
-                        <field>
-                            <name>ch2_en</name>
-                            <description>Enable channel 2</description>
-                            <bitRange>[1:1]</bitRange>
-                        </field>
-                        <field>
-                            <name>ch3_en</name>
-                            <description>Enable channel 3</description>
-                            <bitRange>[2:2]</bitRange>
-                        </field>
-                        <field>
-                            <name>ch4_en</name>
-                            <description>Enable channel 4</description>
-                            <bitRange>[3:3]</bitRange>
-                        </field>
-                        <field>
-                            <name>ch5_en</name>
-                            <description>Enable channel 5</description>
-                            <bitRange>[4:4]</bitRange>
-                        </field>
-                        <field>
-                            <name>ch6_en</name>
-                            <description>Enable channel 6</description>
-                            <bitRange>[5:5]</bitRange>
+                            <dim>6</dim>
+                            <dimIncrement>1</dimIncrement>
+                            <dimIndex>1-6</dimIndex>
                         </field>
                         <!-- reserved bit 6..7 -->
                         <field>
-                            <name>ch1_en_we</name>
-                            <description>Write enable channel 1</description>
+                            <name>ch%s_en_we</name>
+                            <description>Write enable channel %s</description>
                             <bitRange>[8:8]</bitRange>
-                        </field>
-                        <field>
-                            <name>ch2_en_we</name>
-                            <description>Write enable channel 2</description>
-                            <bitRange>[9:9]</bitRange>
-                        </field>
-                        <field>
-                            <name>ch3_en_we</name>
-                            <description>Write enable channel 3</description>
-                            <bitRange>[10:10]</bitRange>
-                        </field>
-                        <field>
-                            <name>ch4_en_we</name>
-                            <description>Write enable channel 4</description>
-                            <bitRange>[11:11]</bitRange>
-                        </field>
-                        <field>
-                            <name>ch5_en_we</name>
-                            <description>Write enable channel 5</description>
-                            <bitRange>[12:12]</bitRange>
-                        </field>
-                        <field>
-                            <name>ch6_en_we</name>
-                            <description>Write enable channel 6</description>
-                            <bitRange>[13:13]</bitRange>
+                            <dim>6</dim>
+                            <dimIncrement>1</dimIncrement>
+                            <dimIndex>1-6</dimIndex>
                         </field>
                         <!-- reserved bit 14..15 -->
                         <field>
-                            <name>ch1_susp</name>
-                            <description>Suspend request channel 1</description>
+                            <name>ch%s_susp</name>
+                            <description>Suspend request channel %s</description>
                             <bitRange>[16:16]</bitRange>
-                        </field>
-                        <field>
-                            <name>ch2_susp</name>
-                            <description>Suspend request channel 2</description>
-                            <bitRange>[17:17]</bitRange>
-                        </field>
-                        <field>
-                            <name>ch3_susp</name>
-                            <description>Suspend request channel 3</description>
-                            <bitRange>[18:18]</bitRange>
-                        </field>
-                        <field>
-                            <name>ch4_susp</name>
-                            <description>Suspend request channel 4</description>
-                            <bitRange>[19:19]</bitRange>
-                        </field>
-                        <field>
-                            <name>ch5_susp</name>
-                            <description>Suspend request channel 5</description>
-                            <bitRange>[20:20]</bitRange>
-                        </field>
-                        <field>
-                            <name>ch6_susp</name>
-                            <description>Suspend request channel 6</description>
-                            <bitRange>[21:21]</bitRange>
+                            <dim>6</dim>
+                            <dimIncrement>1</dimIncrement>
+                            <dimIndex>1-6</dimIndex>
                         </field>
                         <!-- reserved bit 22.23 -->
                         <field>
-                            <name>ch1_susp_we</name>
-                            <description>Enable write to ch1_susp bit</description>
+                            <name>ch%s_susp_we</name>
+                            <description>Enable write to ch%s_susp bit</description>
                             <bitRange>[24:24]</bitRange>
-                        </field>
-                        <field>
-                            <name>ch2_susp_we</name>
-                            <description>Enable write to ch2_susp bit</description>
-                            <bitRange>[25:25]</bitRange>
-                        </field>
-                        <field>
-                            <name>ch3_susp_we</name>
-                            <description>Enable write to ch3_susp bit</description>
-                            <bitRange>[26:26]</bitRange>
-                        </field>
-                        <field>
-                            <name>ch4_susp_we</name>
-                            <description>Enable write to ch4_susp bit</description>
-                            <bitRange>[27:27]</bitRange>
-                        </field>
-                        <field>
-                            <name>ch5_susp_we</name>
-                            <description>Enable write to ch5_susp bit</description>
-                            <bitRange>[28:28]</bitRange>
-                        </field>
-                        <field>
-                            <name>ch6_susp_we</name>
-                            <description>Enable write to ch6_susp bit</description>
-                            <bitRange>[29:29]</bitRange>
+                            <dim>6</dim>
+                            <dimIncrement>1</dimIncrement>
+                            <dimIndex>1-6</dimIndex>
                         </field>
                         <!-- reserved bit 30..31 -->
                         <field>
-                            <name>ch1_abort</name>
-                            <description>Abort request channel 1</description>
+                            <name>ch%s_abort</name>
+                            <description>Abort request channel %s</description>
                             <bitRange>[32:32]</bitRange>
-                        </field>
-                        <field>
-                            <name>ch2_abort</name>
-                            <description>Abort request channel 2</description>
-                            <bitRange>[33:33]</bitRange>
-                        </field>
-                        <field>
-                            <name>ch3_abort</name>
-                            <description>Abort request channel 3</description>
-                            <bitRange>[34:34]</bitRange>
-                        </field>
-                        <field>
-                            <name>ch4_abort</name>
-                            <description>Abort request channel 4</description>
-                            <bitRange>[35:35]</bitRange>
-                        </field>
-                        <field>
-                            <name>ch5_abort</name>
-                            <description>Abort request channel 5</description>
-                            <bitRange>[36:36]</bitRange>
-                        </field>
-                        <field>
-                            <name>ch6_abort</name>
-                            <description>Abort request channel 6</description>
-                            <bitRange>[37:37]</bitRange>
                         </field>
                         <!-- reserved bit 38..39 -->
                         <field>
-                            <name>ch1_abort_we</name>
-                            <description>Enable write to ch1_abort bit</description>
+                            <name>ch%s_abort_we</name>
+                            <description>Enable write to ch%s_abort bit</description>
                             <bitRange>[40:40]</bitRange>
-                        </field>
-                        <field>
-                            <name>ch2_abort_we</name>
-                            <description>Enable write to ch2_abort bit</description>
-                            <bitRange>[41:41]</bitRange>
-                        </field>
-                        <field>
-                            <name>ch3_abort_we</name>
-                            <description>Enable write to ch3_abort bit</description>
-                            <bitRange>[42:42]</bitRange>
-                        </field>
-                        <field>
-                            <name>ch4_abort_we</name>
-                            <description>Enable write to ch4_abort bit</description>
-                            <bitRange>[43:43]</bitRange>
-                        </field>
-                        <field>
-                            <name>ch5_abort_we</name>
-                            <description>Enable write to ch5_abort bit</description>
-                            <bitRange>[44:44]</bitRange>
-                        </field>
-                        <field>
-                            <name>ch6_abort_we</name>
-                            <description>Enable write to ch6_abort bit</description>
-                            <bitRange>[45:45]</bitRange>
+                            <dim>6</dim>
+                            <dimIncrement>1</dimIncrement>
+                            <dimIndex>1-6</dimIndex>
                         </field>
                         <!-- reserved bit 46..63 -->
                     </fields>
@@ -1704,34 +1144,12 @@
                     <size>64</size>
                     <fields>
                         <field>
-                            <name>ch1_intstat</name>
-                            <description>Channel 1 interrupt bit</description>
+                            <name>ch%s_intstat</name>
+                            <description>Channel %s interrupt bit</description>
                             <bitRange>[0:0]</bitRange>
-                        </field>
-                        <field>
-                            <name>ch2_intstat</name>
-                            <description>Channel 2 interrupt bit</description>
-                            <bitRange>[1:1]</bitRange>
-                        </field>
-                        <field>
-                            <name>ch3_intstat</name>
-                            <description>Channel 3 interrupt bit</description>
-                            <bitRange>[2:2]</bitRange>
-                        </field>
-                        <field>
-                            <name>ch4_intstat</name>
-                            <description>Channel 4 interrupt bit</description>
-                            <bitRange>[3:3]</bitRange>
-                        </field>
-                        <field>
-                            <name>ch5_intstat</name>
-                            <description>Channel 5 interrupt bit</description>
-                            <bitRange>[4:4]</bitRange>
-                        </field>
-                        <field>
-                            <name>ch6_intstat</name>
-                            <description>Channel 6 interrupt bit</description>
-                            <bitRange>[5:5]</bitRange>
+                            <dim>6</dim>
+                            <dimIncrement>1</dimIncrement>
+                            <dimIndex>1-6</dimIndex>
                         </field>
                         <!-- reserved bit 6..15 -->
                         <field>
@@ -2799,14 +2217,13 @@
                     <description>Data (output) registers</description>
                     <addressOffset>0x00</addressOffset>
                     <fields>
-                        <field><name>pin0</name><lsb>0</lsb><msb>0</msb></field>
-                        <field><name>pin1</name><lsb>1</lsb><msb>1</msb></field>
-                        <field><name>pin2</name><lsb>2</lsb><msb>2</msb></field>
-                        <field><name>pin3</name><lsb>3</lsb><msb>3</msb></field>
-                        <field><name>pin4</name><lsb>4</lsb><msb>4</msb></field>
-                        <field><name>pin5</name><lsb>5</lsb><msb>5</msb></field>
-                        <field><name>pin6</name><lsb>6</lsb><msb>6</msb></field>
-                        <field><name>pin7</name><lsb>7</lsb><msb>7</msb></field>
+                        <field>
+                            <name>pin%s</name>
+                            <lsb>0</lsb>
+                            <msb>0</msb>
+                            <dim>8</dim>
+                            <dimIncrement>1</dimIncrement>
+                        </field>
                     </fields>
                 </register>
                 <register>
@@ -2815,9 +2232,11 @@
                     <addressOffset>0x04</addressOffset>
                     <fields>
                         <field>
-                            <name>pin0</name>
+                            <name>pin%s</name>
                             <lsb>0</lsb>
                             <msb>0</msb>
+                            <dim>8</dim>
+                            <dimIncrement>1</dimIncrement>
                             <enumeratedValues>
                                 <name>DIRECTION</name>
                                 <enumeratedValue>
@@ -2832,13 +2251,6 @@
                                 </enumeratedValue>
                             </enumeratedValues>
                         </field>
-                        <field><name>pin1</name><lsb>1</lsb><msb>1</msb><enumeratedValues derivedFrom="DIRECTION"/></field>
-                        <field><name>pin2</name><lsb>2</lsb><msb>2</msb><enumeratedValues derivedFrom="DIRECTION"/></field>
-                        <field><name>pin3</name><lsb>3</lsb><msb>3</msb><enumeratedValues derivedFrom="DIRECTION"/></field>
-                        <field><name>pin4</name><lsb>4</lsb><msb>4</msb><enumeratedValues derivedFrom="DIRECTION"/></field>
-                        <field><name>pin5</name><lsb>5</lsb><msb>5</msb><enumeratedValues derivedFrom="DIRECTION"/></field>
-                        <field><name>pin6</name><lsb>6</lsb><msb>6</msb><enumeratedValues derivedFrom="DIRECTION"/></field>
-                        <field><name>pin7</name><lsb>7</lsb><msb>7</msb><enumeratedValues derivedFrom="DIRECTION"/></field>
                     </fields>
                 </register>
                 <register>
@@ -2891,14 +2303,13 @@
                     <description>External port (data input) registers</description>
                     <addressOffset>0x50</addressOffset>
                     <fields>
-                        <field><name>pin0</name><lsb>0</lsb><msb>0</msb></field>
-                        <field><name>pin1</name><lsb>1</lsb><msb>1</msb></field>
-                        <field><name>pin2</name><lsb>2</lsb><msb>2</msb></field>
-                        <field><name>pin3</name><lsb>3</lsb><msb>3</msb></field>
-                        <field><name>pin4</name><lsb>4</lsb><msb>4</msb></field>
-                        <field><name>pin5</name><lsb>5</lsb><msb>5</msb></field>
-                        <field><name>pin6</name><lsb>6</lsb><msb>6</msb></field>
-                        <field><name>pin7</name><lsb>7</lsb><msb>7</msb></field>
+                        <field>
+                            <name>pin%s</name>
+                            <lsb>0</lsb>
+                            <msb>0</msb>
+                            <dim>8</dim>
+                            <dimIncrement>1</dimIncrement>
+                        </field>
                     </fields>
                 </register>
                 <register>
@@ -4617,29 +4028,13 @@
                     <dimIncrement>0x04</dimIncrement>
                     <fields>
                         <field>
-                            <name>rd_idx0</name>
-                            <description>rd_idx0</description>
+                            <name>rd_idx%s</name>
+                            <description>rd_idx%s</description>
                             <bitRange>[5:0]</bitRange>
+                            <dim>4</dim>
+                            <dimIncrement>8</dimIncrement>
                         </field>
                         <!-- reserved bit 7..6 -->
-                        <field>
-                            <name>rd_idx1</name>
-                            <description>rd_idx1</description>
-                            <bitRange>[13:8]</bitRange>
-                        </field>
-                        <!-- reserved bit 15..14 -->
-                        <field>
-                            <name>rd_idx2</name>
-                            <description>rd_idx2</description>
-                            <bitRange>[21:16]</bitRange>
-                        </field>
-                        <!-- reserved bit 23..22 -->
-                        <field>
-                            <name>rd_idx3</name>
-                            <description>rd_idx3</description>
-                            <bitRange>[29:24]</bitRange>
-                        </field>
-                        <!-- reserved bit 31..30 -->
                     </fields>
                 </register>
                 <register>
