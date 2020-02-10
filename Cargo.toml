@@ -10,7 +10,7 @@ license = "ISC"
 edition = "2018"
 
 [dependencies]
-bare-metal = "0.2.5"
+bare-metal = "0.2.4"
 riscv = "0.5.4"
 riscv-rt = { version = "0.6.1", optional = true }
 vcell = "0.1.2"
