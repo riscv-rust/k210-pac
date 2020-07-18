@@ -11,8 +11,8 @@ edition = "2018"
 
 [dependencies]
 bare-metal = "0.2.4"
-riscv = "0.5.4"
-riscv-rt = { version = "0.7", optional = true }
+riscv = "0.6.0"
+riscv-rt = { version = "0.8", optional = true }
 vcell = "0.1.2"
 
 [features]
